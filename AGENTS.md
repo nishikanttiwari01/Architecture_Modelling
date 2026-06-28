@@ -108,6 +108,194 @@ Update status only when the definition in `WORKFLOW.md` has been met.
 - Use colour sparingly and never as the only carrier of meaning.
 - Maintain accessibility through sufficient contrast and textual explanation.
 
+## Diagram tooling policy
+
+Use PlantUML as the primary diagram generator.
+
+Codex should create editable `.puml` files for:
+
+- UML diagrams
+- C4 diagrams
+- Sequence diagrams
+- State machines
+- Component diagrams
+- Deployment diagrams
+- Simple entity relationship diagrams
+- Many ArchiMate-style explanatory diagrams
+
+Recommended VS Code extension:
+
+```text
+Ctrl+P
+ext install jebbs.plantuml
+```
+
+The PlantUML extension supports live preview with `Alt+D` and exports diagrams from individual files or the whole workspace. It supports SVG and local or server rendering. For local rendering, Java is required. On Windows, the extension normally includes its PlantUML JAR and a Graphviz copy.
+
+PlantUML should be the main tool for this book.
+
+Example:
+
+```plantuml
+@startuml
+actor Customer
+participant "Mobile Banking" as Mobile
+participant "Payment Service" as Payment
+database "Account Database" as DB
+
+Customer -> Mobile: Submit payment
+Mobile -> Payment: Create payment
+Payment -> DB: Reserve funds
+DB --> Payment: Funds reserved
+Payment --> Mobile: Payment accepted
+@enduml
+```
+
+Codex writes this source file, and the extension renders it.
+
+Use Mermaid as a secondary tool only for simpler diagrams:
+
+- Basic flowcharts
+- Simple sequence diagrams
+- Timelines
+- Git graphs
+- Small relationship diagrams
+- Diagrams embedded directly inside Markdown
+
+Optional VS Code extension:
+
+```text
+Ctrl+P
+ext install MermaidChart.vscode-mermaid-chart
+```
+
+The Mermaid extension supports `.mmd` files, Markdown Mermaid blocks, live previews, error highlighting and SVG or PNG export.
+
+For repeatable command-line rendering, Mermaid CLI may be installed inside the repository:
+
+```powershell
+npm install --save-dev @mermaid-js/mermaid-cli
+```
+
+Render Mermaid files with:
+
+```powershell
+npx mmdc `
+  -i diagrams/source/mermaid/example.mmd `
+  -o diagrams/exported/svg/example.svg
+```
+
+The official Mermaid CLI generates SVG, PNG and PDF from Mermaid source files.
+
+Do not use Mermaid as the only tool. It is excellent for fast and simple diagrams, but it is less suitable for:
+
+- Detailed UML
+- Formal BPMN
+- Detailed C4 diagrams
+- Formal ArchiMate notation
+- Large diagrams requiring precise layout
+- Complex banking processes
+
+Use Draw.io integration for manual diagrams when automatic layout is not good enough, especially for:
+
+- Capability maps
+- Heat maps
+- Architecture roadmaps
+- Complex application landscapes
+- Detailed cloud and infrastructure diagrams
+- Highly formatted book illustrations
+- Diagrams needing precise manual placement
+
+Recommended VS Code extension:
+
+```text
+Ctrl+P
+ext install hediet.vscode-drawio
+```
+
+The Draw.io extension is free, works inside VS Code, supports `.drawio` files and can operate offline. Codex can create or modify Draw.io XML, but final visual adjustment may occasionally require manual placement.
+
+Use Camunda Desktop Modeler for formal business-process and decision diagrams.
+
+Camunda Desktop Modeler is installed separately from VS Code, but `.bpmn` and `.dmn` files remain inside the Git repository. It supports BPMN, DMN and forms, and can be associated with those file types on Windows.
+
+Use Camunda Modeler for:
+
+- Customer onboarding
+- Loan origination
+- Payments
+- Fraud investigations
+- Know Your Customer (KYC) and Anti-Money Laundering (AML)
+- Business decision models
+- Exceptions, timers and escalation processes
+
+Codex can generate the initial BPMN XML, but formal BPMN diagrams should be opened and visually reviewed in Camunda Modeler.
+
+### Diagram tool mapping
+
+| Diagram type | Primary tool |
+|---|---|
+| UML | PlantUML |
+| C4 | C4-PlantUML |
+| Sequence diagrams | PlantUML |
+| State machines | PlantUML |
+| Component diagrams | PlantUML |
+| Deployment diagrams | PlantUML |
+| Simple ERDs | PlantUML |
+| Simple flowcharts | Mermaid |
+| Timelines | Mermaid |
+| BPMN | Camunda Modeler |
+| DMN | Camunda Modeler |
+| Capability maps | Draw.io |
+| Heat maps | Draw.io |
+| Roadmaps | Draw.io |
+| Complex infrastructure views | Draw.io |
+| Formal reusable C4 model | Structurizr later, if needed |
+
+### Codex diagram workflow
+
+When creating diagrams, Codex should:
+
+1. Read the diagram specification.
+2. Create `.puml`, `.mmd`, `.bpmn`, `.dmn` or `.drawio` source.
+3. Run a preview or rendering command when available.
+4. Generate SVG output.
+5. Add the diagram reference to the chapter.
+6. Update `DIAGRAM_REGISTER.md`.
+
+### Recommended initial installation
+
+Install only these two VS Code extensions now:
+
+- `jebbs.plantuml`
+- `hediet.vscode-drawio`
+
+Optionally add:
+
+- `MermaidChart.vscode-mermaid-chart`
+
+Install Camunda Desktop Modeler when work begins on the BPMN chapter.
+
+### Repository source format
+
+Use this source and export structure:
+
+```text
+diagrams/
+├── source/
+│   ├── plantuml/      # UML, C4, sequence, state, deployment
+│   ├── mermaid/       # Simple flows and timelines
+│   ├── bpmn/          # Camunda BPMN files
+│   ├── dmn/           # Camunda decision models
+│   └── drawio/        # Capability maps and manual layouts
+│
+└── exported/
+    ├── svg/           # Primary book output
+    └── png/           # Preview or fallback
+```
+
+For the book, SVG should be the final output format because it stays sharp in PDF, print and web versions.
+
 ## Source and citation rules
 
 - Create one source note per meaningful source using `templates/source-note-template.md`.
