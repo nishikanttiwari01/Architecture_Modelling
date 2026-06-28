@@ -18,6 +18,7 @@ Thumbs.db
 
 # Generated exports not intended for source control
 *.log
+.superpowers/
 
 # Secrets
 .env

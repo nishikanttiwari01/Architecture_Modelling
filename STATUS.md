@@ -23,7 +23,7 @@
 | 02 | Model, View and Viewpoint | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 03 | How to Read Architecture Diagrams | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 04 | UML: Unified Modeling Language | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 05 | The C4 Model | Planned | 0 | 0 | 0 | 0 | 0 | — |
+| 05 | The C4 Model | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review |
 | 06 | BPMN: Business Process Model and Notation | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 07 | ArchiMate | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 08 | Data Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -107,6 +107,6 @@
 
 ## Current recommended next task
 
-Complete the missing detailed subsection synchronisation for `BOOK_PLAN.md` if the 2,358-line plan artefact is supplied. Then develop Chapter 5, **The C4 Model**, as the prototype chapter and prototype diagram set whose structure, tone and diagram workflow will guide the rest of the manuscript.
+Review Chapter 5, **The C4 Model**, for author approval. Then use it as the prototype pattern for the remaining chapters and continue with the next selected chapter.
 
 Last updated: 2026-06-28

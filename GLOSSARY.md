@@ -20,6 +20,8 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Software system | A cohesive collection of software that delivers value to users or other systems. | C4 Level 1 concept. |
 | Container (C4) | A separately runnable or deployable unit that executes code or stores data. | It does not automatically mean Docker or Kubernetes. |
 | Component (C4) | A grouping of related functionality encapsulated behind an interface inside a container. | Do not use for individual classes. |
+| System Context diagram | A C4 view that shows one software system, the people who use it and the external systems it interacts with. | Use to establish scope before internal design detail. |
+| System Landscape diagram | A C4 view that shows multiple software systems in a wider organisational or enterprise landscape. | Use for estate-level relationships, not detailed process flow. |
 | Actor | A person, role, organisation or system that interacts with a subject. | State which meaning is intended. |
 | Interface | A defined point of interaction between elements. | Label protocol and responsibility where relevant. |
 | API | An application programming interface that exposes defined operations or resources. | An API is an interface, not the implementation itself. |

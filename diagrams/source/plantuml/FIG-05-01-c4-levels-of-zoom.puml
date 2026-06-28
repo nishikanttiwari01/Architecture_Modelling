@@ -1,0 +1,33 @@
+@startuml
+title FIG-05-01. C4 levels of zoom
+
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam rectangle {
+  BackgroundColor #E8F1FA
+  BorderColor #2F5D7C
+  FontColor #111111
+  RoundCorner 8
+}
+skinparam arrow {
+  Color #555555
+  FontColor #333333
+}
+
+left to right direction
+
+rectangle "System Context\n\nQuestion:\nWho uses the system,\nand what is around it?" as context
+rectangle "Container\n\nQuestion:\nWhat runs or stores data\ninside the system?" as container
+rectangle "Component\n\nQuestion:\nWhat major parts sit inside\na container?" as component
+rectangle "Code\n\nQuestion:\nWhat classes or code units\nmatter for this design?" as code
+
+context --> container : zoom in
+container --> component : zoom in
+component --> code : zoom in
+
+note bottom of code
+  The code level is optional for many
+  architecture discussions.
+end note
+
+@enduml

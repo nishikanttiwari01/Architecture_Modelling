@@ -1,11 +1,20 @@
 # C4-PlantUML
 
-This directory is reserved for a locally stored, version-pinned C4-PlantUML library.
+This directory stores the local, version-pinned C4-PlantUML library used for publication diagrams in this book.
 
-Rules:
+## Local version
+
+- **C4-PlantUML version:** 2.9.0
+- **Source project:** `plantuml-stdlib/C4-PlantUML`
+- **Local source:** extracted from the PlantUML standard library bundled with `jebbs.plantuml` 2.18.1
+- **PlantUML version used for extraction:** 1.2024.3
+- **Extraction date:** 2026-06-28
+- **Licence:** MIT, see `LICENSE`
+- **Localisation:** Internal `!include <C4/...>` statements were changed to relative local includes so publication diagrams use this repository copy.
+
+## Rules
 
 - Do not use unversioned `!includeurl` statements in publication diagrams.
-- Record the exact C4-PlantUML version, source URL, licence and access date in `SOURCE_REGISTER.md` before using the library for book figures.
+- Include these local files from diagram source files.
+- Record source details in `SOURCE_REGISTER.md` and `research/c4/c4-plantuml-2.9.0.md`.
 - Do not download or commit third-party binary files unless the author explicitly authorises them.
-
-Current status: library not yet installed.

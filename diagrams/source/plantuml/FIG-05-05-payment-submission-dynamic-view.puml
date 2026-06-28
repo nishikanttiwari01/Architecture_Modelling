@@ -1,0 +1,31 @@
+@startuml
+title FIG-05-05. Payment submission dynamic view
+!include ../../lib/C4-PlantUML/C4_Dynamic.puml
+
+LAYOUT_LEFT_RIGHT()
+
+Person(customer, "Retail Customer", "Initiates the payment.")
+System_Ext(channels, "Horizon Digital Channels", "Web and mobile customer experiences.")
+System_Ext(core, "Core Deposit System", "Legacy deposit account processing.")
+System_Ext(fincrime, "Financial Crime Platform", "Screening and monitoring.")
+System_Ext(integration, "Enterprise Integration Platform", "APIs, adapters and routing.")
+System_Ext(events, "Event Platform", "Enterprise event distribution.")
+
+System_Boundary(payments, "Payments Platform") {
+  Container(api, "Payments API", "API application", "Receives and exposes payment requests.")
+  Container(orchestration, "Payment Orchestration Service", "Application service", "Coordinates payment submission.")
+  ContainerDb(status, "Payment Status Store", "Operational data store", "Stores payment state.")
+}
+
+Rel(customer, channels, "Submits payment", $index="1")
+Rel(channels, api, "Create payment", "HTTPS/API", $index="2")
+Rel(api, orchestration, "Validate and create payment", $index="3")
+Rel(orchestration, fincrime, "Screen payment", "Internal API", $index="4")
+Rel(orchestration, integration, "Post debit request", "Internal API", $index="5")
+Rel(integration, core, "Reserve or post funds", "Adapter call", $index="6")
+Rel(orchestration, status, "Record accepted status", $index="7")
+Rel(orchestration, events, "Publish PaymentAccepted", $index="8")
+Rel(api, channels, "Return accepted status", $index="9")
+
+SHOW_LEGEND()
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+title FIG-05-03. Online store container view
+!include ../../lib/C4-PlantUML/C4_Container.puml
+
+LAYOUT_LEFT_RIGHT()
+
+Person(customer, "Customer", "Uses the online store.")
+System_Ext(payment, "Payment Provider System", "Authorises and captures payments.")
+System_Ext(delivery, "Delivery Partner System", "Receives fulfilment requests and delivery updates.")
+
+System_Boundary(store, "Online Store") {
+  Container(web, "Web Application", "Browser application", "Presents catalogue, basket, checkout and order tracking.")
+  Container(api, "API Application", "Application service", "Handles orders, payments, returns and fulfilment integration.")
+  ContainerDb(orderdb, "Order Database", "Relational database", "Stores customers, baskets, orders, payments and shipments.")
+}
+
+Rel(customer, web, "Uses", "HTTPS")
+Rel(web, api, "Calls", "JSON/HTTPS")
+Rel(api, orderdb, "Reads and writes")
+Rel(api, payment, "Requests payment authorisation", "HTTPS/API")
+Rel(api, delivery, "Requests fulfilment", "HTTPS/API")
+
+SHOW_LEGEND()
+@enduml

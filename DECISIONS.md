@@ -66,6 +66,17 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Consequences:** C4-PlantUML is reserved under `diagrams/lib/C4-PlantUML/`; unversioned `!includeurl` usage is not allowed in publication PlantUML sources.
 - **Related chapters/files:** `AGENTS.md`, `SOURCE_REGISTER.md`, `diagrams/lib/C4-PlantUML/README.md`
 
+## DEC-009: Pin C4-PlantUML from the installed PlantUML standard library
+
+- **Status:** Approved
+- **Date:** 2026-06-28
+- **Decision:** Use the C4-PlantUML 2.9.0 files extracted from the installed PlantUML 1.2024.3 standard library as the local C4-PlantUML dependency under `diagrams/lib/C4-PlantUML/`.
+- **Context:** The VS Code PlantUML extension is installed and includes a working PlantUML runtime. The repository policy requires local, version-pinned C4-PlantUML files rather than unversioned remote includes.
+- **Alternatives considered:** Use PlantUML's bundled `<C4/...>` standard library directly; download C4-PlantUML separately; defer C4 rendering until later.
+- **Reason:** Extracting the bundled standard library gives a local, reproducible dependency without introducing remote render-time includes or third-party binaries.
+- **Consequences:** The copied C4 files are stored in the repository, internal C4 include statements are localised, and source details are recorded in `SOURCE_REGISTER.md` and `research/c4/c4-plantuml-2.9.0.md`.
+- **Related chapters/files:** `diagrams/lib/C4-PlantUML/`, `SOURCE_REGISTER.md`, `research/c4/c4-plantuml-2.9.0.md`, Chapter 5 diagrams.
+
 ## Decision template
 
 ```markdown

@@ -1,0 +1,30 @@
+@startuml
+title FIG-05-04. Horizon Bank payments platform view
+!include ../../lib/C4-PlantUML/C4_Container.puml
+
+LAYOUT_LEFT_RIGHT()
+
+Person(customer, "Retail Customer", "Initiates payments through digital channels.")
+System_Ext(channels, "Horizon Digital Channels", "Web and mobile customer experiences.")
+System_Ext(core, "Core Deposit System", "Legacy deposit account processing.")
+System_Ext(fincrime, "Financial Crime Platform", "Screening, monitoring, alerts and cases.")
+System_Ext(integration, "Enterprise Integration Platform", "APIs, adapters and routing.")
+System_Ext(events, "Event Platform", "Enterprise event distribution.")
+
+System_Boundary(payments, "Payments Platform") {
+  Container(api, "Payments API", "API application", "Receives payment requests and exposes payment status.")
+  Container(orchestration, "Payment Orchestration Service", "Application service", "Validates, screens, posts and coordinates payment submission.")
+  ContainerDb(status, "Payment Status Store", "Operational data store", "Stores payment state and references for customer and operations queries.")
+}
+
+Rel(customer, channels, "Uses")
+Rel(channels, api, "Submits and queries payments", "HTTPS/API")
+Rel(api, orchestration, "Creates payment request")
+Rel(orchestration, integration, "Requests account posting", "Internal API")
+Rel(integration, core, "Adapts posting request")
+Rel(orchestration, fincrime, "Requests sanctions and fraud screening", "Internal API")
+Rel(orchestration, status, "Records payment status")
+Rel(orchestration, events, "Publishes payment events")
+
+SHOW_LEGEND()
+@enduml

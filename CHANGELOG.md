@@ -4,6 +4,14 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-28
 
+### Completed Chapter 5 prototype
+
+- Drafted Chapter 5, **The C4 Model**, as the prototype chapter.
+- Added official C4, Structurizr and C4-PlantUML source notes under `research/c4/`.
+- Pinned C4-PlantUML 2.9.0 locally under `diagrams/lib/C4-PlantUML/`.
+- Added five Chapter 5 diagram specifications, PlantUML sources, SVG exports and PNG review previews.
+- Updated `DIAGRAM_REGISTER.md`, `SOURCE_REGISTER.md`, `GLOSSARY.md`, `DECISIONS.md`, `STATUS.md` and the Chapter 5 quality-gate review.
+
 ### Added diagram production controls
 
 - Added diagram specification, library and style directories.

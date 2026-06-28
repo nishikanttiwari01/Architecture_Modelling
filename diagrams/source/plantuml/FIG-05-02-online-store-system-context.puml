@@ -1,0 +1,20 @@
+@startuml
+title FIG-05-02. Online store system context
+!include ../../lib/C4-PlantUML/C4_Context.puml
+
+LAYOUT_LEFT_RIGHT()
+
+Person(customer, "Customer", "Browses products, places orders and tracks delivery.")
+Person(support, "Customer Support Agent", "Helps customers with orders and returns.")
+
+System(store, "Online Store", "Allows customers to browse, order, pay and track delivery.")
+System_Ext(payment, "Payment Provider System", "Authorises and captures card payments.")
+System_Ext(delivery, "Delivery Partner System", "Receives fulfilment requests and provides delivery updates.")
+
+Rel(customer, store, "Browses, orders and tracks")
+Rel(support, store, "Supports orders and returns")
+Rel(store, payment, "Sends payment requests", "HTTPS/API")
+Rel(store, delivery, "Sends fulfilment requests", "HTTPS/API")
+
+SHOW_LEGEND()
+@enduml
