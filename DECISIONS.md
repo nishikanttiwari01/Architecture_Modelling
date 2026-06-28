@@ -88,6 +88,16 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Consequences:** `scripts/check-structure.py` still requires draft scaffolding for early-status chapters, while allowing production-status chapters to omit it.
 - **Related chapters/files:** `scripts/check-structure.py`, Chapter 5.
 
+## DEC-011: Use Chapter 5 as the prototype chapter model
+
+- **Status:** Approved
+- **Date:** 2026-06-28
+- **Decision:** Use Chapter 5, The C4 Model, as the structural and writing model for subsequent substantive chapters.
+- **Context:** The author gave a final verdict that Chapter 5 passes as the prototype chapter at `9.1/10`.
+- **Reason:** Chapter 5 now demonstrates the desired sequence of beginner explanation, formal terminology, examples, diagrams, comparison, mistakes, exercise, checklist and references.
+- **Consequences:** Future chapters should follow the Chapter 5 teaching pattern unless their subject requires a deliberate variation. Chapter 5 diagrams remain `Review` until SVG visual inspection in VS Code is complete.
+- **Related chapters/files:** Chapter 5, `STYLE_GUIDE.md`, `WORKFLOW.md`, `reviews/chapter-gates/CH-05-quality-gate.md`.
+
 ## Decision template
 
 ```markdown

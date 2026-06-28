@@ -4,6 +4,12 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-28
 
+### Approved Chapter 5 prototype
+
+- Recorded the author verdict that Chapter 5 passes as the prototype chapter at `9.1/10`.
+- Marked Chapter 5 `Approved` while keeping Chapter 5 diagrams at `Review`.
+- Recorded Chapter 5 as the structural and writing model for subsequent chapters.
+
 ### Corrected Chapter 5 before author approval
 
 - Added Chapter 5 figures `FIG-05-06` through `FIG-05-08` with diagram specifications, PlantUML source, SVG exports and PNG review previews.

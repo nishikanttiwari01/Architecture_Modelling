@@ -2,7 +2,7 @@
 title: "The C4 Model"
 chapter: 5
 part: "part-02-modelling-languages"
-status: "Ready for Author Approval"
+status: "Approved"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---

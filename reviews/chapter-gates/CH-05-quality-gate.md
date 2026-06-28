@@ -5,7 +5,8 @@
 - **Chapter:** 5, The C4 Model
 - **Review date:** 2026-06-28
 - **Reviewer:** Codex
-- **Status recommendation:** Ready for Author Approval
+- **Status recommendation:** Approved by author
+- **Author verdict:** Chapter 5 passes as the prototype chapter at `9.1/10`. It is approved as the structural and writing model for subsequent chapters. Diagrams remain `Review` until SVG visual inspection in VS Code is complete.
 
 ## Quality scores
 
@@ -62,4 +63,4 @@ The chapter uses existing Simple Online Store and Horizon Bank names and keeps s
 
 ## Gate decision
 
-The corrected chapter meets the quality-gate threshold: average score is at least 9.0 and no category is below 8.5. Chapter 5 may remain `Ready for Author Approval`. The chapter and diagrams must not be marked `Approved` without explicit author action.
+The corrected chapter meets the quality-gate threshold: average score is at least 9.0 and no category is below 8.5. The author approved Chapter 5 as the prototype structural and writing model. Chapter 5 diagrams remain `Review` until SVG visual inspection in VS Code is complete.
