@@ -4,6 +4,13 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-28
 
+### Completed Chapter 1 draft
+
+- Drafted Chapter 1, **What Is Architecture Modelling?**, using Chapter 5 as the approved structural and writing model.
+- Added the `ISO-42010` source note and source-register entry for architecture-description vocabulary.
+- Added `FIG-01-01` with diagram specification, PlantUML source, SVG export and PNG review preview.
+- Updated Chapter 1 status, diagram register and quality-gate review.
+
 ### Approved Chapter 5 prototype
 
 - Recorded the author verdict that Chapter 5 passes as the prototype chapter at `9.1/10`.

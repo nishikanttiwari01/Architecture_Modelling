@@ -11,6 +11,8 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Viewpoint | A reusable convention for constructing a type of view. | Distinguish from the individual view created for one system. |
 | Notation | A defined set of visual or textual symbols and rules. | UML and BPMN are notations/languages. |
 | Framework | A structured body of concepts, methods and guidance. | TOGAF is a framework; ArchiMate is a modelling language. |
+| Stakeholder | A person, group or organisation with an interest in the architecture. | Link stakeholders to concerns before choosing views. |
+| Concern | An interest or question that an architecture description should address for a stakeholder. | Use concrete concerns such as security, cost, resilience or usability. |
 | Capability | An ability an organisation possesses to achieve an outcome. | Avoid describing a sequence of tasks as a capability. |
 | Value stream | A sequence of value-creating stages that delivers an outcome to a stakeholder. | Distinguish from detailed process flow. |
 | Business process | An ordered set of activities that produces a business outcome. | BPMN is commonly used to model it. |

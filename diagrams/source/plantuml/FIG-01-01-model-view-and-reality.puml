@@ -1,0 +1,43 @@
+@startuml
+title FIG-01-01. Model, view and reality
+
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam rectangle {
+  BackgroundColor #F2F7F5
+  BorderColor #2F5E4E
+  FontColor #111111
+  RoundCorner 8
+}
+skinparam arrow {
+  Color #555555
+  FontColor #333333
+}
+
+left to right direction
+
+rectangle "Real situation\n\nPeople, systems, data,\nprocesses, constraints\nand goals" as reality
+rectangle "Architecture model\n\nA purposeful simplification\nthat keeps the facts needed\nfor a decision" as model
+rectangle "Business view\n\nWhat outcome and\nwho is involved?" as business
+rectangle "Software view\n\nWhat systems and\ninterfaces matter?" as software
+rectangle "Deployment view\n\nWhere does it run\nand operate?" as deployment
+rectangle "Decision or action\n\nChoose, explain, review,\nchange or govern" as decision
+
+reality -right-> model : select relevant facts
+model -right-> business : create view
+model -right-> software : create view
+model -right-> deployment : create view
+business -right-> decision : inform
+software -right-> decision : inform
+deployment -right-> decision : inform
+business -[hidden]down-> software
+software -[hidden]down-> deployment
+decision -[dashed]-> reality : changes what exists
+
+note bottom of model
+  A model is not the whole reality.
+  It is useful because it leaves
+  irrelevant detail out.
+end note
+
+@enduml
