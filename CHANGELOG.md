@@ -4,6 +4,13 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-28
 
+### Refined Chapter 1 before author approval
+
+- Refined the Chapter 1 architecture definition.
+- Added `Method` to the terminology table and glossary.
+- Clarified the framework definition and updated reader outcomes.
+- Updated Chapter 1 tracking, resume state and quality-gate scores.
+
 ### Completed Chapter 1 draft
 
 - Drafted Chapter 1, **What Is Architecture Modelling?**, using Chapter 5 as the approved structural and writing model.

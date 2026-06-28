@@ -11,24 +11,24 @@
 
 | Area | Score | Notes |
 |---|---:|---|
-| Scope coverage | 9.1 | Covers the purpose of architecture modelling, key vocabulary, simplification, stakeholders, structure, behaviour, abstraction levels and time states. |
+| Scope coverage | 9.2 | Covers the purpose of architecture modelling, key vocabulary, simplification, stakeholders, structure, behaviour, abstraction levels and time states. The terminology now includes method. |
 | Beginner clarity | 9.2 | Uses plain explanations before formal terms and keeps the opening chapter free of notation-specific detail. |
-| Technical accuracy | 9.0 | Uses repository glossary terms and ISO 42010 concepts for views, viewpoints, stakeholders and concerns without copying standard text. |
-| Expert depth | 8.8 | Gives enough nuance for an opening chapter, with deeper treatment deliberately deferred to Chapter 2 and later notation chapters. |
+| Technical accuracy | 9.2 | Corrects the architecture definition and distinguishes method, notation and framework more accurately. |
+| Expert depth | 8.9 | Gives enough nuance for an opening chapter, with deeper treatment deliberately deferred to Chapter 2 and later notation chapters. |
 | Logical flow | 9.1 | Moves from why models exist to vocabulary, examples, model families, mistakes, cheat sheet and practice. |
 | Examples and exercises | 9.0 | Uses Simple Online Store first and Horizon Bank second, with a practical returns-feature exercise. |
 | Diagram quality | 8.9 | `FIG-01-01` is rendered, readable and conceptually appropriate. It should still be opened in VS Code before any diagram approval. |
-| Source quality | 8.9 | Adds `ISO-42010` as a primary source for architecture-description vocabulary. |
-| Consistency with rest of book | 9.1 | Follows the Chapter 5 structural model and introduces terms used throughout the manuscript. |
-| Writing and editorial quality | 9.1 | Uses British English, short paragraphs, concrete language and no reader-facing draft scaffolding. |
+| Source quality | 8.9 | Uses `ISO-42010` as a primary source for architecture-description vocabulary and does not copy standard text. |
+| Consistency with rest of book | 9.2 | Follows the Chapter 5 structural model and aligns terminology with the glossary and Chapter 2 dependency. |
+| Writing and editorial quality | 9.2 | Uses British English, short paragraphs, concrete language and no reader-facing draft scaffolding. |
 
-**Average score:** 9.0
+**Average score:** 9.1
 
 ## Review perspectives
 
 ### Beginner reader
 
-The chapter starts with the practical reason for modelling and avoids overwhelming the reader with notation detail. It makes the central distinction between reality, model, diagram and view early.
+The chapter starts with the practical reason for modelling and avoids overwhelming the reader with notation detail. It now explains method as a separate idea from notation and framework.
 
 ### Solution architect
 
@@ -36,15 +36,15 @@ The chapter gives a usable framing for selecting views by audience, concern and 
 
 ### Enterprise architect
 
-The Horizon Bank examples connect the foundations to enterprise-scale change without introducing BIAN or detailed banking architecture too early.
+The updated architecture definition is more accurate for systems and enterprises because it separates architecture from both the diagram and the entity being described.
 
 ### Technical editor
 
-The chapter removes draft scaffolding, uses stable source keys and follows the Chapter 5 prose pattern.
+The terminology table is clearer after adding method and refining framework. The chapter keeps stable source keys and follows the Chapter 5 prose pattern.
 
 ### Diagram reviewer
 
-`FIG-01-01` has a specification, editable PlantUML source, SVG export and PNG preview. Visual inspection of the PNG found no clipped text or unreadable labels.
+`FIG-01-01` has a specification, editable PlantUML source, SVG export and PNG preview. The diagram remains in `Review`.
 
 ### Source and copyright checker
 
@@ -57,4 +57,4 @@ The chapter uses `[ISO-42010]` as a vocabulary source and paraphrases the standa
 
 ## Gate decision
 
-The chapter meets the quality-gate threshold for `Ready for Author Approval`. The chapter must not be marked `Approved` without explicit author action. The diagram remains `Review`.
+The chapter meets the quality-gate threshold for `Ready for Author Approval`. The average is above 9.0 and no category is below 8.5. The chapter must not be marked `Approved` without explicit author action. The diagram remains `Review`.

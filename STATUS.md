@@ -19,11 +19,11 @@
 
 | ID | Chapter | Status | Research % | Draft % | Diagrams % | Review % | Sources verified % | Next action |
 |---:|---|---|---:|---:|---:|---:|---:|---|
-| 01 | What Is Architecture Modelling? | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review |
+| 01 | What Is Architecture Modelling? | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review, then Chapter 2 |
 | 02 | Model, View and Viewpoint | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 03 | How to Read Architecture Diagrams | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 04 | UML: Unified Modeling Language | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 05 | The C4 Model | Approved | 100 | 100 | 100 | 100 | 100 | Use as structural and writing model |
+| 05 | The C4 Model | Approved | 100 | 100 | 100 | 100 | 100 | Prototype reference |
 | 06 | BPMN: Business Process Model and Notation | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 07 | ArchiMate | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 08 | Data Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |

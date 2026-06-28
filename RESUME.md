@@ -2,11 +2,13 @@
 
 ## Last completed work
 
-Chapter 1, **What Is Architecture Modelling?**, has been drafted to `Ready for Author Approval` using Chapter 5 as the approved structural and writing model. Chapter 5 remains approved as the prototype chapter.
+Chapter 1, **What Is Architecture Modelling?**, has been drafted to `Ready for Author Approval` using Chapter 5 as the approved structural and writing model. The Chapter 1 draft is committed and pushed to `origin/main`.
 
 ## Current Git commit
 
-Chapter 5 prototype work is committed locally. See the latest Git commit for the exact hash in this checkout.
+- Current pushed commit at the start of this correction: `0416370112ef897bcdbaa07a285bcd390ecb25dc`
+- Branch: `main`
+- Remote: `origin/main`
 
 ## Current status
 
@@ -14,20 +16,18 @@ Chapter 5 prototype work is committed locally. See the latest Git commit for the
 - Chapter 5 status: `Approved`
 - Diagram status for Chapter 1 figure `FIG-01-01`: `Review`
 - Diagram status for Chapter 5 figures `FIG-05-01` through `FIG-05-08`: `Review`
-- Working branch: `main`
 
 ## Pending non-critical issues
 
-- Chapter 4 is still a stub, so the C4 versus UML comparison should be reviewed again after Chapter 4 is drafted.
-- C4-PlantUML 2.9.0 was extracted from the installed PlantUML standard library; the local extracted file records the version but not the upstream release date.
 - Chapter 1 awaits author review.
-- Chapter 5 diagrams remain `Review` until the SVGs have been visually opened in VS Code and the layout is personally accepted.
-- Long horizontal diagrams should be checked again during final page-layout review.
+- Chapter 1 and Chapter 5 diagrams remain `Review` until the SVGs have been visually opened in VS Code and the layouts are personally accepted.
+- Chapter 4 is still a stub, so the C4 versus UML comparison in Chapter 5 should be reviewed again after Chapter 4 is drafted.
+- C4-PlantUML 2.9.0 was extracted from the installed PlantUML standard library; the local extracted file records the version but not the upstream release date.
 
 ## Next chapter
 
-To be selected after author review of Chapter 5. The repository previously recommended Chapter 5 as the prototype before scaling the pattern.
+Chapter 2, **Model, View and Viewpoint**, after Chapter 1 author review or revision.
 
 ## Next exact action
 
-Review Chapter 1. If approved or revised, continue to Chapter 2 using Chapter 5 as the structural and writing model. Do not mark any diagrams `Approved` until the SVGs have been visually opened in VS Code and accepted.
+Review Chapter 1. If it is approved or revised, continue to Chapter 2 using Chapter 5 as the structural and writing model. Do not mark any diagrams `Approved` until the SVGs have been visually opened in VS Code and accepted.

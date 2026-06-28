@@ -10,7 +10,8 @@ This file controls terminology across the manuscript. Add a term when it first b
 | View | A representation of a system from the perspective of related stakeholder concerns. | Use with a stated purpose and audience. |
 | Viewpoint | A reusable convention for constructing a type of view. | Distinguish from the individual view created for one system. |
 | Notation | A defined set of visual or textual symbols and rules. | UML and BPMN are notations/languages. |
-| Framework | A structured body of concepts, methods and guidance. | TOGAF is a framework; ArchiMate is a modelling language. |
+| Method | A defined way of carrying out architecture work through a sequence of activities and decisions. | A method explains how to work; a notation explains how to represent the result. |
+| Framework | A structured body that can include concepts, guidance, roles, governance, methods, viewpoints and modelling languages. | TOGAF is a framework; ArchiMate is a modelling language. |
 | Stakeholder | A person, group or organisation with an interest in the architecture. | Link stakeholders to concerns before choosing views. |
 | Concern | An interest or question that an architecture description should address for a stakeholder. | Use concrete concerns such as security, cost, resilience or usability. |
 | Capability | An ability an organisation possesses to achieve an outcome. | Avoid describing a sequence of tasks as a capability. |

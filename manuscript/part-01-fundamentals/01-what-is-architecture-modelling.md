@@ -18,7 +18,7 @@ Introduce architecture modelling, why it matters, and how models support communi
 By the end of this chapter, the reader should be able to:
 
 - Explain why architecture modelling is useful.
-- Distinguish architecture, model, diagram, view, viewpoint, notation and framework.
+- Distinguish architecture, model, diagram, view, viewpoint, notation, method and framework.
 - Explain why every model is a deliberate simplification.
 - Identify the audience and question for a model before choosing a diagram.
 - Recognise common mistakes when people use diagrams as if they were complete architecture.
@@ -73,11 +73,12 @@ The words around architecture modelling are often used loosely. This book uses t
 | View | A representation prepared for particular stakeholder concerns. | State the audience and question. |
 | Viewpoint | A reusable convention for creating a type of view. | Distinguish the recipe from the specific view. |
 | Notation | A defined set of symbols and rules. | UML, BPMN and ArchiMate are notations or modelling languages. |
-| Framework | A structured body of concepts, methods and guidance. | TOGAF is a framework; C4 is a modelling approach for software architecture. |
+| Method | A defined way of carrying out architecture work through a sequence of activities and decisions. | A method explains how to work; a notation explains how to represent the result. |
+| Framework | A structured body that can include concepts, guidance, roles, governance, methods, viewpoints and modelling languages. | TOGAF is a framework; C4 is a modelling approach for software architecture. |
 
 The official architecture-description vocabulary uses concepts such as stakeholders, concerns, architecture views and architecture viewpoints [ISO-42010]. This chapter does not reproduce the standard. It uses the same core ideas and explains them in the practical language used throughout this book.
 
-An **architecture** is the subject matter. It is the shape of a system or enterprise: what parts exist, how they relate, what rules guide them and why those choices matter.
+An **architecture** is not the diagram and not the entity itself. It is the important concepts, structures, relationships and governing principles that shape how a system or enterprise is realised and evolves in its environment.
 
 A **model** is a selected representation of that subject matter. It might describe the business capabilities of a bank, the main software systems in an online store, the lifecycle of customer data or the deployment of an application across environments.
 
@@ -89,7 +90,9 @@ A **viewpoint** is the pattern used to create a view. For example, a system cont
 
 A **notation** gives visual or textual rules. Business Process Model and Notation (BPMN) has events, activities, gateways and flows. Unified Modeling Language (UML) has many diagram types. The C4 model uses a small vocabulary for software architecture views.
 
-A **framework** is broader. It may include concepts, method guidance, roles, processes and governance. Some frameworks include or recommend modelling languages, but the framework and the notation are not the same thing.
+A **method** explains how to do the work. It may define activities, decisions, review points and sequencing. A notation explains how to represent the result, so a team may use one method while producing several different diagram types.
+
+A **framework** is broader again. It can include concepts, guidance, roles, governance, methods, viewpoints and modelling languages. Some frameworks include or recommend modelling languages, but the framework, method and notation are not the same thing.
 
 ## A model is a deliberate simplification
 
