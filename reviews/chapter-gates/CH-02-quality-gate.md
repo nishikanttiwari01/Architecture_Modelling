@@ -6,6 +6,7 @@
 - **Review date:** 2026-06-28
 - **Reviewer:** Codex
 - **Status recommendation:** Ready for Author Approval
+- **Author verdict:** Approved on 2026-06-28. Chapter 2 diagrams remain `Review` until visual SVG acceptance.
 
 ## Quality scores
 
@@ -57,4 +58,4 @@ The chapter paraphrases ISO 42010 terminology and uses the stable `[ISO-42010]` 
 
 ## Gate decision
 
-The revised chapter meets the quality-gate threshold for `Ready for Author Approval`. The average is at least 9.0 and no category is below 8.5. The chapter must not be marked `Approved` without explicit author action. `FIG-02-01` remains in `Review`.
+The revised chapter meets the quality-gate threshold and has been explicitly approved by the author. `FIG-02-01` remains in `Review`.

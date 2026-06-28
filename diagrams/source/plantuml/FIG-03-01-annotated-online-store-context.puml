@@ -1,0 +1,59 @@
+@startuml
+title FIG-03-01. Annotated online store context diagram
+
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam rectangle {
+  BackgroundColor #F4F8FB
+  BorderColor #2B4D66
+  FontColor #111111
+  RoundCorner 8
+}
+skinparam package {
+  BackgroundColor #FFFFFF
+  BorderColor #5B6B7A
+  FontColor #111111
+}
+skinparam note {
+  BackgroundColor #FFF7D6
+  BorderColor #8A6D1D
+  FontColor #111111
+}
+skinparam arrow {
+  Color #555555
+  FontColor #333333
+}
+skinparam linetype polyline
+
+left to right direction
+
+rectangle "Customer\n\nPerson" as customer
+rectangle "Customer Support Agent\n\nPerson" as support
+
+rectangle "System boundary:\nOnline Store\n\nSystem in scope" as store
+
+rectangle "Payment Provider System\n\nExternal system" as payment
+rectangle "Delivery Partner System\n\nExternal system" as delivery
+
+customer -[hidden]down-> support
+payment -[hidden]down-> delivery
+customer -[hidden]right-> store
+store -[hidden]right-> payment
+
+customer -right-> store : A
+support -right-> store : B
+store -right-> payment : C
+store -right-> delivery : D
+
+rectangle "Relationship labels\n\nA Browse, order and track delivery\nB Support returns\nC Authorise or refund payment\nD Delivery request and tracking" as relationships #FFF7D6
+
+rectangle "Reading checks\n\n1. Start with title, purpose and viewpoint.\n2. Find the scope boundary.\n3. Identify people and roles.\n4. Identify external systems.\n5. Read arrow labels and direction.\n6. State omissions and assumptions." as checks #FFF7D6
+
+rectangle "Deliberate omissions\n\nInternal components, database tables,\ncloud deployment and detailed\nprocess flow are not shown." as omissions #FFF7D6
+
+store -[hidden]down-> relationships
+relationships -[hidden]down-> checks
+checks -[hidden]right-> omissions
+
+@enduml

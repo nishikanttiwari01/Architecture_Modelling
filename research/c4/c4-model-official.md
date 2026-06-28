@@ -16,10 +16,11 @@
 - Common C4 abstractions include people, software systems, containers and components.
 - C4 also supports supplementary diagrams such as dynamic, deployment and system landscape diagrams.
 - A C4 container is a separately runnable or deployable unit or data store, not automatically a Docker container.
+- C4 System Context diagrams can be used as original teaching examples for reading people, software systems, external dependencies and relationship direction.
 
 ## Relevant summary
 
-The official C4 documentation provides the normative teaching source for Chapter 5. It presents C4 as a way to describe software architecture through a small set of abstractions and levels of zoom, so readers can move from broad context to implementation detail without mixing abstraction levels.
+The official C4 documentation provides the normative teaching source for Chapter 5 and supports the context-diagram vocabulary used in Chapter 3. It presents C4 as a way to describe software architecture through a small set of abstractions and levels of zoom, so readers can move from broad context to implementation detail without mixing abstraction levels.
 
 ## Terminology and version notes
 
@@ -31,4 +32,4 @@ Do not reproduce official diagrams. Use original examples based on the Simple On
 
 ## Verification status
 
-Verified for Chapter 5 drafting on 2026-06-28.
+Verified for Chapter 3 and Chapter 5 drafting on 2026-06-28.

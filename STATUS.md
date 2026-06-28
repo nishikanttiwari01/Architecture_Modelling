@@ -20,8 +20,8 @@
 | ID | Chapter | Status | Research % | Draft % | Diagrams % | Review % | Sources verified % | Next action |
 |---:|---|---|---:|---:|---:|---:|---:|---|
 | 01 | What Is Architecture Modelling? | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review, then start Chapter 2 |
-| 02 | Model, View and Viewpoint | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review, then start Chapter 3 |
-| 03 | How to Read Architecture Diagrams | Planned | 0 | 0 | 0 | 0 | 0 | — |
+| 02 | Model, View and Viewpoint | Approved | 100 | 100 | 100 | 100 | 100 | Approved; diagrams remain Review |
+| 03 | How to Read Architecture Diagrams | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review, then start Chapter 4 |
 | 04 | UML: Unified Modeling Language | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 05 | The C4 Model | Approved | 100 | 100 | 100 | 100 | 100 | Prototype reference |
 | 06 | BPMN: Business Process Model and Notation | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -107,6 +107,6 @@
 
 ## Current recommended next task
 
-Review Chapter 2, **Model, View and Viewpoint**, for author approval. Then start Chapter 3, **How to Read Architecture Diagrams**.
+Review Chapter 3, **How to Read Architecture Diagrams**, for author approval. Then start Chapter 4, **UML: Unified Modeling Language**.
 
 Last updated: 2026-06-28

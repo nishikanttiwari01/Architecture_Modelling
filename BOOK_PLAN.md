@@ -242,7 +242,6 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
   - Start with title, purpose and audience
   - Find the scope and boundary
   - Identify actors, systems and responsibilities
@@ -256,7 +255,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Key takeaways
   - Practical exercise
   - Review checklist
-  - Drafting notes
+  - References and further reading
 
 ### Part II: Major Modelling Languages and Approaches
 

@@ -4,6 +4,13 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-28
 
+### Completed Chapter 3 draft
+
+- Recorded the author's approval of Chapter 2 while keeping `FIG-02-01` at `Review`.
+- Drafted Chapter 3, **How to Read Architecture Diagrams**, to `Ready for Author Approval`.
+- Added `FIG-03-01` with diagram specification, editable PlantUML source, SVG export and PNG review preview.
+- Added a Chapter 3 quality gate and updated project tracking.
+
 ### Revised Chapter 2 before author approval
 
 - Reduced Chapter 2 repetition with Chapter 1 and strengthened the viewpoint definition.

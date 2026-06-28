@@ -13,7 +13,7 @@
 ## Supported claims
 
 - Claim: Architecture descriptions use concepts such as stakeholders, concerns, architecture views, architecture viewpoints, architecture models, model kinds and correspondences.
-- Intended chapter(s): Chapter 1 and Chapter 2
+- Intended chapter(s): Chapter 1, Chapter 2 and Chapter 3
 - Normative or interpretive: Normative source for vocabulary; chapter explanations are practical interpretation.
 
 ## Relevant summary
@@ -22,7 +22,7 @@ The standard provides vocabulary and requirements for architecture descriptions 
 
 ## Terminology and version notes
 
-Use the source key `[ISO-42010]`. Do not imply that Chapter 1 or Chapter 2 reproduces the full standard. These chapters use the standard to support vocabulary and then explain the ideas in beginner-friendly language.
+Use the source key `[ISO-42010]`. Do not imply that Chapter 1, Chapter 2 or Chapter 3 reproduces the full standard. These chapters use the standard to support vocabulary and then explain the ideas in beginner-friendly language.
 
 ## Copyright or reuse notes
 
