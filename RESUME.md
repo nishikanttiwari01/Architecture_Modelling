@@ -6,7 +6,7 @@ Chapter 1, **What Is Architecture Modelling?**, has been drafted to `Ready for A
 
 ## Current Git commit
 
-- Current pushed commit at the start of this correction: `0416370112ef897bcdbaa07a285bcd390ecb25dc`
+- Current pushed commit: `0def993660e34710f8af5bad0c887c1ec6385a3c`
 - Branch: `main`
 - Remote: `origin/main`
 

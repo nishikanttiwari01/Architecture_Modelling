@@ -19,7 +19,7 @@
 
 | ID | Chapter | Status | Research % | Draft % | Diagrams % | Review % | Sources verified % | Next action |
 |---:|---|---|---:|---:|---:|---:|---:|---|
-| 01 | What Is Architecture Modelling? | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review, then Chapter 2 |
+| 01 | What Is Architecture Modelling? | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review, then start Chapter 2 |
 | 02 | Model, View and Viewpoint | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 03 | How to Read Architecture Diagrams | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 04 | UML: Unified Modeling Language | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -107,6 +107,6 @@
 
 ## Current recommended next task
 
-Review Chapter 5, **The C4 Model**, for author approval. Then use it as the prototype pattern for the remaining chapters and continue with the next selected chapter.
+Review Chapter 1, **What Is Architecture Modelling?**, for author approval. Then start Chapter 2, **Model, View and Viewpoint**.
 
 Last updated: 2026-06-28

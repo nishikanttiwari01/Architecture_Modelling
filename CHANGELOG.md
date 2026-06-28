@@ -4,6 +4,12 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-28
 
+### Aligned book plan and tracking
+
+- Replaced the compressed root `BOOK_PLAN.md` detail section with the full 63-chapter subsection structure.
+- Updated current project tracking so Chapter 1 author review is the next action before Chapter 2.
+- Recorded the current pushed commit in `RESUME.md`.
+
 ### Refined Chapter 1 before author approval
 
 - Refined the Chapter 1 architecture definition.
