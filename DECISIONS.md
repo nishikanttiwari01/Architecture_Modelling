@@ -48,6 +48,24 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Decision:** Codex and automated scripts may move a chapter to `Ready for Author Approval`, but only the author can mark it `Approved`.
 - **Reason:** Editorial responsibility remains with the author.
 
+## DEC-007: Use specification-first diagram production
+
+- **Status:** Approved
+- **Date:** 2026-06-28
+- **Decision:** Every book diagram requires a diagram specification before source creation. Codex may prepare the specification, but diagram source creation waits for author approval of the specification.
+- **Reason:** The book needs diagrams that answer a clear reader question, use the right notation and remain visually suitable for publication.
+- **Consequences:** Diagram specifications live under `diagrams/specifications/`, source files live under `diagrams/source/`, SVG exports live under `diagrams/exported/svg/`, and `DIAGRAM_REGISTER.md` remains the tracking point.
+- **Related chapters/files:** `AGENTS.md`, `WORKFLOW.md`, `DIAGRAM_REGISTER.md`, `templates/diagram-specification-template.md`
+
+## DEC-008: Use local version-pinned diagram libraries
+
+- **Status:** Approved
+- **Date:** 2026-06-28
+- **Decision:** C4-PlantUML and similar diagram libraries must be stored locally and version-pinned before use in publication diagrams.
+- **Reason:** Publication diagrams must be reproducible and should not depend on unversioned remote includes.
+- **Consequences:** C4-PlantUML is reserved under `diagrams/lib/C4-PlantUML/`; unversioned `!includeurl` usage is not allowed in publication PlantUML sources.
+- **Related chapters/files:** `AGENTS.md`, `SOURCE_REGISTER.md`, `diagrams/lib/C4-PlantUML/README.md`
+
 ## Decision template
 
 ```markdown

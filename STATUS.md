@@ -107,6 +107,6 @@
 
 ## Current recommended next task
 
-Complete the project-control review, then develop Chapter 5, **The C4 Model**, as the prototype chapter whose structure and tone will guide the rest of the manuscript.
+Complete the missing detailed subsection synchronisation for `BOOK_PLAN.md` if the 2,358-line plan artefact is supplied. Then develop Chapter 5, **The C4 Model**, as the prototype chapter and prototype diagram set whose structure, tone and diagram workflow will guide the rest of the manuscript.
 
 Last updated: 2026-06-28

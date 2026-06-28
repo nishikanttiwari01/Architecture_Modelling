@@ -11,3 +11,5 @@ Add a row before creating a new figure. Do not reuse an ID.
 ## Status values
 
 Planned, Drafting, Review, Approved, Exported, Deprecated.
+
+Codex must never mark a diagram `Approved`. Codex may move a diagram to `Review` after successful rendering and validation. Only the author may mark a diagram `Approved`. `Exported` means an output file exists; it does not imply approval.

@@ -1,0 +1,56 @@
+name: Validate handbook
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Compile scripts
+        shell: pwsh
+        run: python -m py_compile scripts/build-book.py scripts/check-links.py scripts/check-structure.py scripts/check-terminology.py scripts/word-count.py scripts/validate-diagrams.py scripts/check-diagram-register.py
+
+      - name: Check repository structure
+        shell: pwsh
+        run: python scripts/check-structure.py
+
+      - name: Check links
+        shell: pwsh
+        run: python scripts/check-links.py
+
+      - name: Check terminology
+        shell: pwsh
+        run: python scripts/check-terminology.py
+
+      - name: Validate diagram conventions
+        shell: pwsh
+        run: python scripts/validate-diagrams.py
+
+      - name: Check diagram register
+        shell: pwsh
+        run: python scripts/check-diagram-register.py
+
+      - name: Build combined manuscript
+        shell: pwsh
+        run: python scripts/build-book.py
+
+      - name: Report word counts
+        shell: pwsh
+        run: python scripts/word-count.py
+
+      - name: Render diagrams when tools are available
+        shell: pwsh
+        run: powershell -ExecutionPolicy Bypass -File ./scripts/render-all-diagrams.ps1

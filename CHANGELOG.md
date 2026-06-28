@@ -4,6 +4,18 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-28
 
+### Added diagram production controls
+
+- Added diagram specification, library and style directories.
+- Added BPMN and DMN source directories.
+- Added a diagram specification template.
+- Added PlantUML and Mermaid rendering scripts.
+- Added diagram validation and register-check scripts.
+- Added GitHub Actions validation for structure, links, terminology, diagrams, build and word count.
+- Added specification-first diagram workflow, author-only diagram approval rules and visual-review gates.
+- Added local version-pinned C4-PlantUML dependency policy.
+- Updated Mermaid guidance to use the installed `bierner.markdown-mermaid` extension for Markdown preview.
+
 ### Corrected after repository verification
 
 - Removed duplicate `Practical exercise` and `Review checklist` headings from chapter stubs.

@@ -20,9 +20,23 @@ Write the chapter using the agreed teaching sequence and examples. Add source ke
 
 ## 4. Diagram
 
-Register, create and explain each required figure. Keep editable source and SVG export.
+Register, specify, create, render, visually review and explain each required figure. Keep editable source and SVG export.
 
 **Exit criteria:** Required diagrams are present or explicitly deferred with a reason; status may be `Diagramming`.
+
+Required diagram workflow:
+
+1. Add or confirm the `DIAGRAM_REGISTER.md` row.
+2. Create a specification under `diagrams/specifications/` from `templates/diagram-specification-template.md`.
+3. Obtain author approval for the specification before creating source.
+4. Create source under the appropriate `diagrams/source/` subdirectory.
+5. Render SVG output where the toolchain supports terminal rendering.
+6. Run `python scripts/validate-diagrams.py`.
+7. Run `python scripts/check-diagram-register.py`.
+8. Visually review the rendered SVG or PNG for clipping, overlap, line crossings, font size, contrast, arrow direction, terminology and page-width readability.
+9. Update chapter text, caption and `DIAGRAM_REGISTER.md`.
+
+Codex may move a diagram to `Review` after successful rendering and validation. Only the author may mark a diagram `Approved`. `Exported` only means that an output file exists.
 
 ## 5. Review
 

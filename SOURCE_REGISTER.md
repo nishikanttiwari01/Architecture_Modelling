@@ -9,4 +9,5 @@ Register sources that support several chapters, major definitions or version-sen
 | OMG-DMN | Object Management Group | Decision Model and Notation specification | Verify current | — | — | DMN | Pending | Planned |
 | OPEN-GROUP-ARCHIMATE | The Open Group | ArchiMate specification | Verify current | — | — | ArchiMate | Pending | Planned |
 | C4-OFFICIAL | C4 model | Official C4 model documentation | Current web version | — | — | C4 | Pending | Planned |
+| C4-PLANTUML | C4-PlantUML project | C4-PlantUML library for PlantUML-based C4 diagrams | Pin before use | — | — | C4 diagrams | diagrams/lib/C4-PlantUML/README.md | Planned |
 | BIAN-OFFICIAL | BIAN | Service Landscape and supporting deliverables | Verify current | — | — | BIAN | Pending | Planned |

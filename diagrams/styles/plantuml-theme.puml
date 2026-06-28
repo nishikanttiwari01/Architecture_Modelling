@@ -1,0 +1,27 @@
+' Shared PlantUML style for Architecture Modelling diagrams.
+' Keep this file small and conservative so diagrams remain readable in print.
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam ArrowColor #333333
+skinparam ArrowThickness 1.2
+skinparam NoteBackgroundColor #FFF8DC
+skinparam NoteBorderColor #666666
+skinparam rectangle {
+  BorderColor #333333
+  BackgroundColor #F7F9FB
+}
+skinparam component {
+  BorderColor #333333
+  BackgroundColor #F7F9FB
+}
+skinparam database {
+  BorderColor #333333
+  BackgroundColor #F2F5F7
+}
+skinparam actor {
+  BorderColor #333333
+  BackgroundColor #FFFFFF
+}

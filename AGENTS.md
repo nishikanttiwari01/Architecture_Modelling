@@ -8,13 +8,14 @@ Help create and maintain **Architecture Modelling: A Practical Beginner’s Hand
 
 1. `BOOK_PLAN.md`
 2. `STATUS.md`
-3. `STYLE_GUIDE.md`
-4. `SOURCE_POLICY.md`
-5. `DECISIONS.md`
-6. `GLOSSARY.md`
-7. The target chapter
-8. The preceding and following chapter, where they exist
-9. Relevant research notes and diagram-register entries
+3. `WORKFLOW.md`
+4. `STYLE_GUIDE.md`
+5. `SOURCE_POLICY.md`
+6. `DECISIONS.md`
+7. `GLOSSARY.md`
+8. The target chapter
+9. The preceding and following chapter, where they exist
+10. Relevant research notes and diagram-register entries
 
 Do not ask the author to repeat information that already exists in these files.
 
@@ -107,6 +108,13 @@ Update status only when the definition in `WORKFLOW.md` has been met.
 - Label important relationships and direction.
 - Use colour sparingly and never as the only carrier of meaning.
 - Maintain accessibility through sufficient contrast and textual explanation.
+- Create or update a diagram specification under `diagrams/specifications/` before creating diagram source.
+- Do not create diagram source until the diagram specification is approved by the author.
+- Codex must never mark a diagram `Approved`.
+- Codex may move a diagram to `Review` after successful rendering and basic validation.
+- Only the author may mark a diagram `Approved`.
+- `Exported` means an output file exists; it does not imply approval.
+- After rendering, inspect the SVG or PNG and verify: no clipped text, no overlapping labels, no unreadable font sizes, no excessive line crossings, correct arrow direction, sufficient contrast, consistent terminology, readable layout at intended book-page width, and agreement among caption, chapter explanation and figure content.
 
 ## Diagram tooling policy
 
@@ -162,14 +170,7 @@ Use Mermaid as a secondary tool only for simpler diagrams:
 - Small relationship diagrams
 - Diagrams embedded directly inside Markdown
 
-Optional VS Code extension:
-
-```text
-Ctrl+P
-ext install MermaidChart.vscode-mermaid-chart
-```
-
-The Mermaid extension supports `.mmd` files, Markdown Mermaid blocks, live previews, error highlighting and SVG or PNG export.
+Use the installed `bierner.markdown-mermaid` extension for Mermaid preview inside Markdown. Use Mermaid CLI only when repeatable SVG export is required. Do not install an additional Mermaid extension unless the existing preview capability proves insufficient.
 
 For repeatable command-line rendering, Mermaid CLI may be installed inside the repository:
 
@@ -195,6 +196,12 @@ Do not use Mermaid as the only tool. It is excellent for fast and simple diagram
 - Formal ArchiMate notation
 - Large diagrams requiring precise layout
 - Complex banking processes
+
+### C4-PlantUML dependency
+
+Use a locally stored and version-pinned C4-PlantUML library under `diagrams/lib/C4-PlantUML/`.
+
+Do not use an unversioned `!includeurl` in publication diagrams. Record the library version and licence in `SOURCE_REGISTER.md` before using it for book figures. Do not download or commit third-party binary files unless the author explicitly authorises that action.
 
 Use Draw.io integration for manual diagrams when automatic layout is not good enough, especially for:
 
@@ -257,11 +264,15 @@ Codex can generate the initial BPMN XML, but formal BPMN diagrams should be open
 When creating diagrams, Codex should:
 
 1. Read the diagram specification.
-2. Create `.puml`, `.mmd`, `.bpmn`, `.dmn` or `.drawio` source.
-3. Run a preview or rendering command when available.
-4. Generate SVG output.
-5. Add the diagram reference to the chapter.
-6. Update `DIAGRAM_REGISTER.md`.
+2. Confirm the specification is author-approved.
+3. Create `.puml`, `.mmd`, `.bpmn`, `.dmn` or `.drawio` source.
+4. Run a preview or rendering command when available.
+5. Generate SVG output.
+6. Confirm the SVG exists.
+7. Validate the register entry.
+8. Visually review the output.
+9. Add the diagram reference to the chapter.
+10. Update `DIAGRAM_REGISTER.md`.
 
 ### Recommended initial installation
 
@@ -272,7 +283,7 @@ Install only these two VS Code extensions now:
 
 Optionally add:
 
-- `MermaidChart.vscode-mermaid-chart`
+- `bierner.markdown-mermaid`, if it is not already installed
 
 Install Camunda Desktop Modeler when work begins on the BPMN chapter.
 
@@ -282,12 +293,17 @@ Use this source and export structure:
 
 ```text
 diagrams/
+├── specifications/
+├── lib/
+│   └── C4-PlantUML/
+├── styles/
 ├── source/
 │   ├── plantuml/      # UML, C4, sequence, state, deployment
 │   ├── mermaid/       # Simple flows and timelines
 │   ├── bpmn/          # Camunda BPMN files
 │   ├── dmn/           # Camunda decision models
-│   └── drawio/        # Capability maps and manual layouts
+│   ├── drawio/        # Capability maps and manual layouts
+│   └── archimate/     # ArchiMate-style explanatory diagrams when not PlantUML
 │
 └── exported/
     ├── svg/           # Primary book output
@@ -320,6 +336,8 @@ Run these before completing a substantial task:
 python scripts/check-structure.py
 python scripts/check-links.py
 python scripts/check-terminology.py
+python scripts/validate-diagrams.py
+python scripts/check-diagram-register.py
 python scripts/word-count.py
 ```
 
