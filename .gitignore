@@ -1,0 +1,25 @@
+# Build output
+build/
+dist/
+*.tmp
+*.bak
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editors and operating systems
+.vscode/settings.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated exports not intended for source control
+*.log
+
+# Secrets
+.env
+.env.*
+!*.env.example
