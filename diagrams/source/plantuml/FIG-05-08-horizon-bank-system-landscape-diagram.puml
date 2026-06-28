@@ -1,0 +1,35 @@
+@startuml
+title FIG-05-08. Horizon Bank system landscape diagram
+!include ../../lib/C4-PlantUML/C4_Context.puml
+
+LAYOUT_LEFT_RIGHT()
+
+Person(customer, "Retail Customer", "Uses retail banking services.")
+Person(ops, "Operations Analyst", "Monitors and investigates payment operations.")
+
+Enterprise_Boundary(bank, "Horizon Bank") {
+  System(channels, "Horizon Digital Channels", "Web and mobile customer experiences.")
+  System(onboarding, "Customer Onboarding Platform", "Captures and progresses new customer applications.")
+  System(party, "Party and Customer Platform", "Manages customer profile and relationship data.")
+  System(payments, "Payments Platform", "Receives and coordinates customer payment submissions.")
+  System(core, "Core Deposit System", "Maintains deposit accounts and balances.")
+  System(fincrime, "Financial Crime Platform", "Provides sanctions, fraud and monitoring controls.")
+  System(integration, "Enterprise Integration Platform", "Provides APIs, adapters and routing between systems.")
+  System(events, "Event Platform", "Distributes enterprise events.")
+  System(data, "Enterprise Data Platform", "Receives operational data for reporting and analytics.")
+}
+
+Rel(customer, channels, "Uses")
+Rel(ops, payments, "Monitors and investigates")
+Rel(channels, onboarding, "Starts onboarding journeys")
+Rel(channels, party, "Requests customer profile")
+Rel(channels, payments, "Submits and queries payments")
+Rel(payments, party, "Requests customer context")
+Rel(payments, fincrime, "Requests screening")
+Rel(payments, integration, "Requests account posting")
+Rel(integration, core, "Adapts account posting")
+Rel(payments, events, "Publishes payment events")
+Rel(events, data, "Feeds payment and channel events")
+
+SHOW_LEGEND()
+@enduml

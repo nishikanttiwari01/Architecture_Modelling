@@ -4,6 +4,15 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-28
 
+### Corrected Chapter 5 before author approval
+
+- Added Chapter 5 figures `FIG-05-06` through `FIG-05-08` with diagram specifications, PlantUML source, SVG exports and PNG review previews.
+- Updated `DIAGRAM_REGISTER.md` so all Chapter 5 diagrams are listed with `Review` status and no diagram is marked `Approved`.
+- Corrected the C4 Component definition to state that components are related functionality behind a well-defined interface inside one deployable container.
+- Removed reader-facing production headings from Chapter 5 and moved production status into `RESUME.md`, `CHANGELOG.md` and the Chapter 5 quality gate.
+- Added a reader-facing references and further-reading section connected to Appendix H.
+- Updated the Chapter 5 quality gate after re-reviewing the corrected chapter and all eight figures.
+
 ### Completed Chapter 5 prototype
 
 - Drafted Chapter 5, **The C4 Model**, as the prototype chapter.

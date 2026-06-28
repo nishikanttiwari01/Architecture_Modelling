@@ -1,0 +1,39 @@
+@startuml
+title FIG-05-07. Horizon Bank production deployment diagram
+!include ../../lib/C4-PlantUML/C4_Deployment.puml
+
+LAYOUT_LEFT_RIGHT()
+
+Person(customer, "Retail Customer", "Uses web or mobile banking.")
+System_Ext(channels, "Horizon Digital Channels", "Customer-facing web and mobile channels.")
+System_Ext(fincrime, "Financial Crime Platform", "Screening, monitoring, alerts and cases.")
+System_Ext(integration, "Enterprise Integration Platform", "APIs, adapters and routing.")
+System_Ext(core, "Core Deposit System", "Deposit account processing.")
+System_Ext(events, "Event Platform", "Enterprise event distribution.")
+
+Deployment_Node(edge, "Internet edge", "Production ingress", "Routes approved digital channel traffic to payments APIs.") {
+  Container(edgeGateway, "API Gateway", "Gateway", "Terminates external API traffic and applies routing policy.")
+}
+
+Deployment_Node(prod, "Horizon Bank production", "Controlled runtime environment", "Hosts payments platform runtime and data services.") {
+  Deployment_Node(appNode, "Application runtime", "Managed application platform", "Runs the payments application containers.") {
+    Container(api, "Payments API", "API application", "Receives payment requests and exposes payment status.")
+    Container(orchestration, "Payment Orchestration Service", "Application service", "Coordinates validation, screening, posting and status.")
+  }
+  Deployment_Node(dataNode, "Managed data service", "Operational data store", "Stores durable payment state for production use.") {
+    ContainerDb(status, "Payment Status Store", "Database", "Stores payment state and references.")
+  }
+}
+
+Rel(customer, channels, "Uses")
+Rel(channels, edgeGateway, "Submits payment request", "HTTPS/API")
+Rel(edgeGateway, api, "Routes payment API call", "HTTPS")
+Rel(api, orchestration, "Creates payment")
+Rel(orchestration, status, "Records payment state")
+Rel(orchestration, fincrime, "Requests screening")
+Rel(orchestration, integration, "Requests posting")
+Rel(integration, core, "Adapts posting request")
+Rel(orchestration, events, "Publishes payment events")
+
+SHOW_LEGEND()
+@enduml

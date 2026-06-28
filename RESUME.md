@@ -2,7 +2,7 @@
 
 ## Last completed work
 
-Chapter 5, **The C4 Model**, has been drafted as the prototype chapter. Source notes, diagram specifications, PlantUML sources, SVG exports, PNG review previews, project registers and a quality-gate review have been created or updated.
+Chapter 5, **The C4 Model**, has been drafted and corrected as the prototype chapter. Source notes, eight diagram specifications, PlantUML sources, SVG exports, PNG review previews, project registers and a refreshed quality-gate review have been created or updated.
 
 ## Current Git commit
 
@@ -11,7 +11,7 @@ Chapter 5 prototype work is committed locally. See the latest Git commit for the
 ## Current status
 
 - Chapter 5 status: `Ready for Author Approval`
-- Diagram status for Chapter 5 figures: `Review`
+- Diagram status for Chapter 5 figures `FIG-05-01` through `FIG-05-08`: `Review`
 - Working branch: `main`
 
 ## Pending non-critical issues
@@ -26,4 +26,4 @@ To be selected after author review of Chapter 5. The repository previously recom
 
 ## Next exact action
 
-Run the full repository validation suite, review `git diff`, then commit the Chapter 5 prototype if all checks pass.
+Author review of Chapter 5. Do not begin another chapter until Chapter 5 has passed author review or the author directs otherwise.

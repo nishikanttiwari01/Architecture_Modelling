@@ -1,0 +1,32 @@
+@startuml
+title FIG-05-06. Online Store API component diagram
+!include ../../lib/C4-PlantUML/C4_Component.puml
+
+LAYOUT_LEFT_RIGHT()
+
+Container(web, "Web Application", "Browser application", "Lets customers browse, manage baskets and place orders.")
+ContainerDb(orderdb, "Order Database", "Relational database", "Stores baskets, orders and payment references.")
+System_Ext(payment, "Payment Provider System", "Authorises payments and captures funds.")
+System_Ext(delivery, "Delivery Partner System", "Receives fulfilment and delivery requests.")
+
+Container_Boundary(api, "API Application") {
+  Component(orderApi, "Order API", "REST controller", "Exposes basket, checkout and order status operations.")
+  Component(basket, "Basket Service", "Application component", "Validates basket contents and prices before checkout.")
+  Component(repo, "Order Repository", "Data access component", "Encapsulates order persistence behind a repository interface.")
+  Component(paymentAdapter, "Payment Adapter", "Integration component", "Encapsulates the payment provider interface.")
+  Component(fulfilmentAdapter, "Fulfilment Adapter", "Integration component", "Encapsulates the delivery partner interface.")
+  ComponentQueue(notification, "Notification Publisher", "Event publisher", "Publishes order lifecycle events for downstream subscribers.")
+}
+
+Rel(web, orderApi, "Calls", "HTTPS/JSON")
+Rel(orderApi, basket, "Checks basket")
+Rel(orderApi, repo, "Stores and reads orders")
+Rel(repo, orderdb, "Reads and writes")
+Rel(orderApi, paymentAdapter, "Requests payment")
+Rel(paymentAdapter, payment, "Authorises payment", "Provider API")
+Rel(orderApi, fulfilmentAdapter, "Requests fulfilment")
+Rel(fulfilmentAdapter, delivery, "Creates delivery request", "Partner API")
+Rel(orderApi, notification, "Publishes order event")
+
+SHOW_LEGEND()
+@enduml

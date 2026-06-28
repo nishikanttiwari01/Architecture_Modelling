@@ -40,17 +40,15 @@ By the end of this chapter, the reader should be able to:
 ## Worked examples
 
 - Simple Online Store system context and container views
-- Horizon Bank payments platform container and dynamic views
+- Simple Online Store API component view
+- Horizon Bank payments platform container, dynamic and deployment views
+- Horizon Bank system landscape view
 
 ## Source requirements
 
 - `[C4-OFFICIAL]` supports C4 terminology and diagram types.
 - `[STRUCTURIZR-C4]` supports practical tooling and diagrams-as-code context.
 - `[C4-PLANTUML-2.9.0]` supports the local rendering dependency used for figures.
-
-## Planned chapter structure
-
-The completed chapter follows the approved Chapter 5 structure: C4 overview, core concepts, System Context, Container, Component, Code, Dynamic diagrams, Deployment diagrams, System Landscape diagrams, C4 versus UML, common mistakes, cheat sheet, takeaways, exercise, checklist and source keys.
 
 ## What C4 is
 
@@ -75,7 +73,7 @@ C4 uses a small vocabulary. The vocabulary is simple, but the terms must be used
 | Person | A human role or group that interacts with the software system. | Use roles, not individual names, unless the person is genuinely unique. |
 | Software system | A software product or system that delivers value to people or other systems. | Set the boundary clearly. Do not show every application in the organisation as one system. |
 | Container | A separately runnable or deployable unit, or a data store, inside a software system. | A C4 container is not automatically a Docker container. |
-| Component | A meaningful grouping of responsibilities inside one container. | Do not use components for every class or function. |
+| Component | Related functionality inside one container, encapsulated behind a well-defined interface. | A component is not separately deployable. The containing container is the deployable unit. |
 
 A **person** is normally a user, operator, administrator or external role. In the Simple Online Store example, `Customer` and `Customer Support Agent` are people. In Horizon Bank, `Retail Customer`, `Operations Analyst` and `Compliance Officer` are people or business roles.
 
@@ -83,7 +81,7 @@ A **software system** is the thing being described as a whole. In a context diag
 
 A **container** is one of the most misunderstood C4 words. In C4, a container means something that runs code or stores data, such as a web application, mobile app, API application, database, message broker or batch process [C4-OFFICIAL]. It may be deployed using Docker, but it does not have to be. If a team says "container" in a C4 workshop, ask whether they mean a C4 container or a containerisation technology.
 
-A **component** sits inside a container and groups related responsibilities. In an API application, components might include an order controller, payment adapter, fulfilment service and notification publisher. Components are useful when a container is large enough that developers need a finer structural view.
+A **component** sits inside one container. It groups related functionality and hides that functionality behind a well-defined interface [C4-OFFICIAL]. In an API application, components might include an order controller, payment adapter, fulfilment service and notification publisher. These components are not separately deployable services in the C4 sense. The API Application is the deployable container; the components are internal parts of that container. Components are useful when a container is large enough that developers need a finer structural view.
 
 ## Level 1: System Context
 
@@ -125,6 +123,12 @@ Use a component view when a container is large enough that its internal structur
 
 Component diagrams are not always necessary. If a container is small and understood by the team, a component view can become busy documentation with little value. The question is not "can we decompose this?" The question is "does this decomposition help someone make or review a design decision?"
 
+![FIG-05-06. Online Store API component diagram](../../diagrams/exported/svg/FIG-05-06-online-store-api-component-diagram.svg)
+
+Figure FIG-05-06. Online Store API component diagram. It shows components inside the API Application container, not separately deployable services.
+
+In this component view, the Web Application calls the Order API. The Order API coordinates basket checks, order persistence, payment authorisation, fulfilment requests and notification publication. The Payment Adapter and Fulfilment Adapter are useful because they hide external system details behind clear interfaces. That does not make them independent microservices. They are components inside the API Application container.
+
 In a banking environment, component views can be valuable for containers that coordinate several controls. A Payment Orchestration Service might have components for validation, screening orchestration, account posting, status management and event publication. That view would help a development team reason about responsibilities and dependencies. It would not be the right diagram for a business audience trying to understand the end-to-end payment process.
 
 ## Level 4: Code
@@ -136,6 +140,20 @@ C4 deliberately treats the Code level as optional [C4-OFFICIAL]. Many architectu
 Use a Code view when a class structure, package boundary or internal dependency pattern is important enough to discuss outside the code editor. For example, if a team is introducing a payment adapter interface to separate the API Application from multiple payment providers, a small code-level diagram may help. If the team only needs to understand that the API Application talks to the Payment Provider System, a container view is enough.
 
 For beginners, the safest rule is: do not draw the Code level first. Start with context. Move to containers. Add components if needed. Add code only when there is a specific code-level question.
+
+## Horizon Bank payments platform example
+
+The Horizon Bank payments example applies the same C4 thinking to a more realistic enterprise context. The target payments platform is not the whole bank. It is one software system in a wider landscape. It receives payment requests from Horizon Digital Channels, coordinates validation and screening, posts to the Core Deposit System through the Enterprise Integration Platform, records payment status and publishes payment events.
+
+![FIG-05-04. Horizon Bank payments platform view](../../diagrams/exported/svg/FIG-05-04-horizon-bank-payments-platform-view.svg)
+
+Figure FIG-05-04. Horizon Bank payments platform view. It shows the main containers inside the Payments Platform and the neighbouring systems they depend on.
+
+This is a C4 Container view, so it deliberately does not show the full business process for a payment. It also does not show a BIAN Service Domain mapping. Those views may be useful later, but they answer different questions. Here the question is software structure: what are the main containers, and which systems do they call?
+
+The Payments API is the entry point for digital channels. The Payment Orchestration Service coordinates the main payment submission responsibilities. The Payment Status Store keeps operational state so customers and operations teams can query payment progress. Financial Crime Platform, Enterprise Integration Platform, Core Deposit System and Event Platform remain outside the Payments Platform boundary because they are neighbouring systems.
+
+This separation helps prevent a common enterprise architecture error: mixing business process, application structure and infrastructure in one diagram without saying why. A payment process model should show tasks, decisions, roles and exceptions. A container view should show software responsibilities and dependencies. A deployment view should show runtime placement. These views can be connected, but they should not be blurred.
 
 ## Dynamic diagrams
 
@@ -159,6 +177,12 @@ Deployment views are useful when the architecture discussion moves from logical 
 
 Keep the distinction between a Container diagram and a Deployment diagram clear. The Container diagram says that the Online Store has a Web Application, API Application and Order Database. The Deployment diagram says where those things run, for example in a cloud region, Kubernetes cluster, managed database service or on-premises environment.
 
+![FIG-05-07. Horizon Bank production deployment diagram](../../diagrams/exported/svg/FIG-05-07-horizon-bank-production-deployment-diagram.svg)
+
+Figure FIG-05-07. Horizon Bank production deployment diagram. It shows a simplified production placement for the main payments containers and neighbouring systems.
+
+The Horizon Bank deployment view places the Payments API and Payment Orchestration Service on an application runtime node and places the Payment Status Store on a managed data service. It also shows an internet edge before the Payments API and the neighbouring systems reached from production. This view helps platform and security teams discuss runtime placement without turning the figure into a full cloud network diagram.
+
 Do not put every network component into a C4 deployment view unless the reader needs it. A useful deployment view shows enough infrastructure to answer the current question. If the question is about resilience across availability zones, show the zones. If the question is about firewall rules, a more detailed infrastructure or security diagram may be better.
 
 ## System landscape diagrams
@@ -167,21 +191,13 @@ A System Landscape diagram answers: **which software systems exist in a wider en
 
 The landscape view sits above a single system context. It is useful when an organisation needs to understand many systems at once. In Horizon Bank, a landscape view might show Horizon Digital Channels, Customer Onboarding Platform, Party and Customer Platform, Payments Platform, Core Deposit System, Financial Crime Platform, Enterprise Integration Platform, Event Platform and Enterprise Data Platform.
 
+![FIG-05-08. Horizon Bank system landscape diagram](../../diagrams/exported/svg/FIG-05-08-horizon-bank-system-landscape-diagram.svg)
+
+Figure FIG-05-08. Horizon Bank system landscape diagram. It shows the wider software estate around digital channels and payments.
+
+The landscape view makes the Payments Platform visible as one system among several. Horizon Digital Channels depend on customer, onboarding and payments systems. The Payments Platform depends on customer context, financial-crime screening, account posting through integration and event publication. This is useful before zooming into one system context because it shows where ownership and dependencies cross system boundaries.
+
 This view is helpful for enterprise architecture because it reveals ownership, dependencies, duplication and migration opportunities. It is not the place for detailed process steps or class structure. If the diagram becomes too crowded, split it by domain, audience or decision. A payments-focused landscape may be more useful than one diagram containing the whole bank.
-
-## Horizon Bank payments platform example
-
-The Horizon Bank payments example applies the same C4 thinking to a more realistic enterprise context. The target payments platform is not the whole bank. It is one software system in a wider landscape. It receives payment requests from Horizon Digital Channels, coordinates validation and screening, posts to the Core Deposit System through the Enterprise Integration Platform, records payment status and publishes payment events.
-
-![FIG-05-04. Horizon Bank payments platform view](../../diagrams/exported/svg/FIG-05-04-horizon-bank-payments-platform-view.svg)
-
-Figure FIG-05-04. Horizon Bank payments platform view. It shows the main containers inside the Payments Platform and the neighbouring systems they depend on.
-
-This is a C4 Container view, so it deliberately does not show the full business process for a payment. It also does not show a BIAN Service Domain mapping. Those views may be useful later, but they answer different questions. Here the question is software structure: what are the main containers, and which systems do they call?
-
-The Payments API is the entry point for digital channels. The Payment Orchestration Service coordinates the main payment submission responsibilities. The Payment Status Store keeps operational state so customers and operations teams can query payment progress. Financial Crime Platform, Enterprise Integration Platform, Core Deposit System and Event Platform remain outside the Payments Platform boundary because they are neighbouring systems.
-
-This separation helps prevent a common enterprise architecture error: mixing business process, application structure and infrastructure in one diagram without saying why. A payment process model should show tasks, decisions, roles and exceptions. A container view should show software responsibilities and dependencies. A deployment view should show runtime placement. These views can be connected, but they should not be blurred.
 
 ## C4 versus UML
 
@@ -265,14 +281,10 @@ Suggested answer:
 - [ ] The diagram is simple enough to read at book-page width.
 - [ ] The diagram text explains what has been omitted.
 
-## Source keys
+## References and further reading
+
+Chapter source notes are maintained in the repository under `research/c4/` and registered in `SOURCE_REGISTER.md`. Appendix H, [Glossary and Source Notes](../appendices/appendix-h-glossary-sources.md), is the intended publication location for the final source-key index once the appendix is completed.
 
 - `[C4-OFFICIAL]`: Official C4 model documentation.
 - `[STRUCTURIZR-C4]`: Structurizr documentation for practical C4 tooling and diagrams-as-code context.
 - `[C4-PLANTUML-2.9.0]`: Local C4-PlantUML library used for Chapter 5 diagrams.
-
-## Drafting notes
-
-- Prototype chapter completed on 2026-06-28.
-- Chapter quality gate recorded in `reviews/chapter-gates/CH-05-quality-gate.md`.
-- Chapter 4 is still planned, so the C4 versus UML comparison should be revisited after Chapter 4 is drafted.

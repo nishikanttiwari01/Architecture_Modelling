@@ -11,55 +11,55 @@
 
 | Area | Score | Notes |
 |---|---:|---|
-| Scope coverage | 9.3 | Covers all planned C4 topics: context, container, component, code, dynamic, deployment, system landscape, UML comparison and mistakes. |
-| Beginner clarity | 9.1 | Starts with zoom metaphor, then introduces formal C4 terms and simple examples. |
-| Technical accuracy | 9.0 | Uses official C4 concepts and avoids the C4 container versus Docker mistake. |
-| Expert depth | 8.8 | Good architecture guidance, with deeper C4 governance deferred to later chapters. |
-| Logical flow | 9.1 | Moves from concept to online store to Horizon Bank and then comparison. |
-| Examples and exercises | 9.0 | Simple Online Store and Horizon Bank examples are consistent with repository examples. |
-| Diagram quality | 8.9 | Five rendered diagrams are readable; dynamic view has a dense but numbered interaction path. |
-| Source quality | 8.7 | Uses official C4 and Structurizr sources; C4-PlantUML local extraction records version but not release date. |
-| Consistency with rest of book | 9.0 | Uses glossary terms and preserves the distinction between software structure, process and deployment. |
-| Writing and editorial quality | 9.1 | British English, no em dashes, clear headings and concise paragraphs. |
+| Scope coverage | 9.3 | Covers C4 context, container, component, code, dynamic, deployment and system landscape views, plus UML comparison, mistakes, exercise and review checklist. |
+| Beginner clarity | 9.2 | Starts with the zoom idea, explains plain-language terms before formal detail and uses the online store before the banking example. |
+| Technical accuracy | 9.2 | Corrects the official C4 component meaning, keeps C4 containers distinct from Docker containers and keeps deployment nodes separate from logical containers. |
+| Expert depth | 8.9 | Gives practical architecture guidance across software, enterprise and deployment views. Deeper C4 governance and tooling patterns remain appropriate for later chapters. |
+| Logical flow | 9.1 | Moves from vocabulary to C4 levels, then supporting views, Horizon Bank application and comparison with UML. |
+| Examples and exercises | 9.2 | Uses Simple Online Store and Horizon Bank consistently, with context, container, component, dynamic, deployment and landscape coverage. |
+| Diagram quality | 9.0 | Eight diagram specifications, PlantUML sources, SVG exports and PNG previews exist. The longer deployment and landscape views are readable, with final page-layout scaling still worth checking. |
+| Source quality | 8.9 | Uses official C4, Structurizr and local C4-PlantUML source notes. The C4-PlantUML local extraction records version `2.9.0`, but not the upstream release date. |
+| Consistency with rest of book | 9.1 | Follows the repository examples, glossary terms, diagram workflow and author-only approval rules. |
+| Writing and editorial quality | 9.2 | British English, concise paragraphs, no reader-facing drafting headings and no em dashes detected in the chapter text. |
 
-**Average score:** 9.0
+**Average score:** 9.1
 
 ## Review perspectives
 
 ### Beginner reader
 
-The chapter introduces C4 through a simple zoom metaphor before formal terms. The online store example appears before Horizon Bank, which keeps the learning curve manageable.
+The chapter explains C4 as levels of zoom and introduces one concept at a time. The online store example makes context, container and component views concrete before the reader reaches the more complex Horizon Bank material.
 
 ### Solution architect
 
-The chapter gives practical guidance on choosing context, container, component, dynamic and deployment views. It clearly separates software structure from business process and infrastructure detail.
+The chapter now provides usable guidance for context, container, component, dynamic and deployment views. The component section is technically sharper because it explains that components sit inside one deployable container.
 
 ### Enterprise architect
 
-The system landscape section and Horizon Bank example connect C4 to broader enterprise modelling without overstretching C4 into business capability or BIAN modelling.
+The system landscape figure and explanation show how C4 can support wider estate conversations without turning C4 into capability mapping, BIAN modelling or process modelling.
 
 ### Technical editor
 
-The chapter avoids em dashes, unexplained jargon and marketing language. Acronyms are defined where first used in the chapter.
+The reader-facing draft scaffolding has been removed. The references section preserves source keys and connects source presentation to Appendix H.
 
 ### Diagram reviewer
 
-All five diagram specifications exist. PlantUML source and SVG exports exist. PNG previews were generated for visual review. The figures are readable and use text labels rather than colour alone.
+All eight Chapter 5 diagrams have specifications, PlantUML source, SVG exports and PNG review previews. Visual inspection found no clipped text, no unreadable labels and no incorrect arrow direction. `FIG-05-07` and `FIG-05-08` are long horizontal figures, so they should be checked again during final page-layout production.
 
 ### Source and copyright checker
 
-Official and primary sources are recorded in `research/c4/` and `SOURCE_REGISTER.md`. No official diagrams or standards text are copied.
+Official and primary C4-related sources are recorded in `research/c4/` and `SOURCE_REGISTER.md`. The chapter paraphrases source material and does not reproduce official diagrams or long copyrighted text.
 
 ### Consistency reviewer
 
-The chapter uses existing Simple Online Store and Horizon Bank names. It preserves the repository rule that a C4 container is not automatically Docker.
+The chapter uses existing Simple Online Store and Horizon Bank names and keeps software structure, runtime interaction, deployment and enterprise landscape concerns separate.
 
 ## Open issues
 
-- Chapter 4 is still a stub, so the C4 versus UML section may need a later consistency pass after Chapter 4 is drafted.
-- The local C4-PlantUML library records version `2.9.0`, but the local extracted file does not record its release date.
-- The dynamic view should be revisited during final page-layout review because long horizontal figures may need scaling.
+- Chapter 4 is still a stub, so the C4 versus UML section should receive another consistency pass after Chapter 4 is drafted.
+- The local C4-PlantUML library records version `2.9.0`, but the local extracted file does not record its upstream release date.
+- Long horizontal figures should be checked again during final page-layout review.
 
 ## Gate decision
 
-No critical findings remain. Chapter 5 can move to `Ready for Author Approval`. The chapter and diagrams must not be marked `Approved` without explicit author action.
+The corrected chapter meets the quality-gate threshold: average score is at least 9.0 and no category is below 8.5. Chapter 5 may remain `Ready for Author Approval`. The chapter and diagrams must not be marked `Approved` without explicit author action.

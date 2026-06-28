@@ -99,6 +99,14 @@ FRONTMATTER_KEYS = {
     "last_updated",
 }
 
+PRODUCTION_STATUSES = {
+    "Under Review",
+    "Revision Required",
+    "Ready for Author Approval",
+    "Approved",
+    "Published",
+}
+
 
 def parse_simple_frontmatter(text: str) -> dict[str, str]:
     if not text.startswith("---\n"):
@@ -209,19 +217,25 @@ def main() -> int:
                 f"{path.relative_to(ROOT)}: duplicate headings {duplicates}"
             )
 
-        for required_heading in [
+        required_headings = [
             "## Chapter purpose",
             "## Reader outcomes",
             "## Prerequisites and dependencies",
             "## Required models and artefacts",
             "## Worked examples",
             "## Source requirements",
-            "## Planned chapter structure",
             "## Key takeaways",
             "## Practical exercise",
             "## Review checklist",
-            "## Drafting notes",
-        ]:
+        ]
+        if metadata.get("status") not in PRODUCTION_STATUSES:
+            required_headings.extend(
+                [
+                    "## Planned chapter structure",
+                    "## Drafting notes",
+                ]
+            )
+        for required_heading in required_headings:
             if required_heading not in text:
                 errors.append(
                     f"{path.relative_to(ROOT)}: missing section {required_heading}"
