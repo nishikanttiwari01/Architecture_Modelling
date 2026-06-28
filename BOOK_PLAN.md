@@ -214,8 +214,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
-  - Why the terms are often confused
+  - Why these terms are often confused
   - What is a model?
   - What is a view?
   - What is a viewpoint?
@@ -228,7 +227,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Key takeaways
   - Practical exercise
   - Review checklist
-  - Drafting notes
+  - References and further reading
 
 #### 3. How to Read Architecture Diagrams
 

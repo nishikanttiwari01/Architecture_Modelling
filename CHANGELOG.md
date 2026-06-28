@@ -4,6 +4,12 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-28
 
+### Completed Chapter 2 draft
+
+- Drafted Chapter 2, **Model, View and Viewpoint**, to `Ready for Author Approval`.
+- Added the required viewpoint map and cross-view traceability matrix as reader-facing tables.
+- Reused `[ISO-42010]` for architecture-description vocabulary and updated Chapter 2 tracking.
+
 ### Aligned book plan and tracking
 
 - Replaced the compressed root `BOOK_PLAN.md` detail section with the full 63-chapter subsection structure.
