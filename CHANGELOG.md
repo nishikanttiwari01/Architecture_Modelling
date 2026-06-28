@@ -12,6 +12,7 @@ All notable repository and manuscript changes are recorded here. This is a proje
 - Removed reader-facing production headings from Chapter 5 and moved production status into `RESUME.md`, `CHANGELOG.md` and the Chapter 5 quality gate.
 - Added a reader-facing references and further-reading section connected to Appendix H.
 - Updated the Chapter 5 quality gate after re-reviewing the corrected chapter and all eight figures.
+- Recorded the production-chapter scaffolding rule in `DECISIONS.md`.
 
 ### Completed Chapter 5 prototype
 

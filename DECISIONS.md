@@ -77,6 +77,17 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Consequences:** The copied C4 files are stored in the repository, internal C4 include statements are localised, and source details are recorded in `SOURCE_REGISTER.md` and `research/c4/c4-plantuml-2.9.0.md`.
 - **Related chapters/files:** `diagrams/lib/C4-PlantUML/`, `SOURCE_REGISTER.md`, `research/c4/c4-plantuml-2.9.0.md`, Chapter 5 diagrams.
 
+## DEC-010: Remove draft scaffolding from production-ready chapters
+
+- **Status:** Approved
+- **Date:** 2026-06-28
+- **Decision:** Chapters in production review statuses do not need reader-facing `Planned chapter structure` or `Drafting notes` sections.
+- **Context:** Chapter 5 reached `Ready for Author Approval`, and the author requested removal of those reader-facing production headings.
+- **Alternatives considered:** Keep the headings to satisfy the structure checker; remove them only from Chapter 5 without updating validation.
+- **Reason:** Draft scaffolding is useful while a chapter is planned or being drafted, but it should not appear in a chapter being prepared for author approval.
+- **Consequences:** `scripts/check-structure.py` still requires draft scaffolding for early-status chapters, while allowing production-status chapters to omit it.
+- **Related chapters/files:** `scripts/check-structure.py`, Chapter 5.
+
 ## Decision template
 
 ```markdown
