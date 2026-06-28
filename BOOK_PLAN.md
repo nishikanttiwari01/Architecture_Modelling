@@ -218,6 +218,8 @@ The subsection structure below records the approved 63-chapter plan currently re
   - What is a model?
   - What is a view?
   - What is a viewpoint?
+  - Practical viewpoint specification template
+  - Expert note: ISO 42010 terminology
   - Stakeholders, concerns and viewpoints
   - Abstraction and decomposition
   - Consistency between views

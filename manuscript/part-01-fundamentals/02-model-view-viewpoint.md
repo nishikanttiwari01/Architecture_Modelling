@@ -19,8 +19,8 @@ By the end of this chapter, the reader should be able to:
 
 - Explain the difference between a model, a view and a viewpoint.
 - Connect stakeholders and concerns to the views they need.
-- Use abstraction and decomposition without mixing unrelated levels of detail.
-- Maintain consistency between views that describe the same system or enterprise.
+- Use a viewpoint specification to guide modelling work.
+- Maintain consistency between related views.
 - Create a small viewpoint map and cross-view traceability matrix.
 - Apply the ideas to the Simple Online Store and Horizon Bank examples.
 
@@ -32,6 +32,7 @@ By the end of this chapter, the reader should be able to:
 
 - Viewpoint map
 - Cross-view traceability matrix
+- FIG-02-01: From Stakeholder Concerns to Architecture Views
 
 ## Worked examples
 
@@ -40,49 +41,51 @@ By the end of this chapter, the reader should be able to:
 
 ## Source requirements
 
-- `[ISO-42010]` supports vocabulary for architecture descriptions, stakeholders, concerns, architecture views and architecture viewpoints.
+- `[ISO-42010]` supports vocabulary for architecture descriptions, stakeholders, concerns, architecture views, architecture viewpoints, architecture models, model kinds and correspondences.
 - Chapter examples are original and use the repository's Simple Online Store and Horizon Bank case studies.
 
 ## Why these terms are often confused
+
+Chapter 1 introduced architecture, model, diagram, view, viewpoint, notation, method and framework. This chapter does not restart that whole explanation. It slows down on the three terms that cause the most confusion in daily architecture work: model, view and viewpoint.
 
 People often use model, view, viewpoint and diagram as if they mean the same thing. In casual conversation that may seem harmless. In architecture work it causes practical problems because people stop asking which audience, question and level of detail a representation is meant to serve.
 
 A developer may ask for "the architecture diagram" and expect software responsibilities. A business sponsor may hear the same phrase and expect outcomes, capabilities and scope. A security reviewer may expect trust boundaries and sensitive data flows. If the modeller responds with one crowded picture, every stakeholder receives a partial answer and several important questions remain hidden.
 
-This chapter separates the terms so that later chapters can use them consistently:
+This chapter uses the terms in the following practical way:
 
 | Term | Plain explanation | Practical test |
 |---|---|---|
-| Model | A purposeful abstraction of part of reality. | What facts has it selected, and what has it omitted? |
-| View | A representation prepared for particular stakeholder concerns. | Who is it for, and what question does it answer? |
-| Viewpoint | A reusable convention for creating a type of view. | What rules, content and review questions guide this kind of view? |
+| Model | A purposeful abstraction of part of reality. | What facts has it selected and omitted? |
+| View | A representation prepared for stakeholder concerns. | Who is it for, and what question does it answer? |
+| Viewpoint | A reusable specification for a type of view. | What rules guide construction, interpretation, analysis and review? |
 | Diagram | A visual representation of selected model content. | Is this one picture, or the whole representation package? |
 
 The official architecture-description vocabulary includes stakeholders, concerns, architecture views and architecture viewpoints [ISO-42010]. This book uses those ideas in practical language. The aim is not to turn every beginner into a standards specialist. The aim is to help the reader ask better questions before drawing or reviewing a model.
 
 ## What is a model?
 
-A model is a deliberate representation of something more complex than the representation itself. It may describe a software system, a business process, a banking operating model, a data domain, a deployment environment or a planned migration.
+A model is a deliberate representation of something more complex than the representation itself. Chapter 1 explained why a model must simplify reality. Here the extra point is that one model may support several views.
 
-The model is not the real thing. It is an abstraction created for a purpose. A model of the Simple Online Store may include Customer, Online Store, Payment Provider System and Delivery Partner System. It may leave out tax rules, database indexes, browser versions and warehouse shifts because those facts do not matter for the current conversation.
+A model of the Simple Online Store may include Customer, Online Store, Payment Provider System and Delivery Partner System. A context view may use those elements to discuss scope. A security view may use the same elements to discuss trust boundaries. A deployment view may add runtime detail later.
 
-A model can be expressed through diagrams, tables, text, catalogues and decision records. For example, a software architecture model may include a C4 Container diagram, an interface catalogue, a list of ownership responsibilities and notes about known constraints. The diagram helps people see relationships quickly, but the model is broader than the diagram.
+A model can be expressed through diagrams, tables, text, catalogues and decision records. For example, a software architecture model may include a C4 Container diagram, an interface catalogue, a list of ownership responsibilities and notes about known constraints.
 
-The first discipline of modelling is therefore selection. A modeller chooses which facts matter for the question. The second discipline is honesty. The modeller says what the model includes, what it excludes and what is still uncertain.
+The first discipline of modelling is selection. A modeller chooses which facts matter for the question. The second discipline is honesty. The modeller says what the model includes, what it excludes and what is still uncertain.
 
 ## What is a view?
 
-A view is a representation of a system or enterprise from the perspective of related stakeholder concerns. It is not just a drawing style. It is a prepared answer for a particular audience.
+A view is a representation of a system or enterprise from the perspective of related stakeholder concerns. It is not just a drawing style. It is a prepared answer for one or several stakeholders whose concerns overlap.
 
 Consider the Simple Online Store. The product owner may need a context view that shows customers, support agents, the store and external partners. The development team may need a logical software structure view that shows the web application, API application, order database and integration points. The operations engineer may need a deployment view that shows runtime environments, monitoring and support ownership.
 
-Those views can all describe the same store. They should not contain identical detail. If they did, at least two of them would be poorly designed. A useful view selects the model content that addresses the concerns of its readers.
+Those views can all describe the same store. They should not contain identical detail. If they did, at least two of them would be poorly designed. A useful view selects the model content that addresses the concerns of its readers, even when the readership spans more than one role.
 
 A view may contain one diagram, several diagrams, tables, explanatory prose and open issues. For example, a security view may include a data-flow diagram, a table of trust boundaries, a short list of assumptions and a review checklist. Calling all of that "the diagram" hides the work needed to make the representation useful.
 
 ## What is a viewpoint?
 
-A viewpoint is a reusable convention for constructing and reviewing a type of view. If a view is the specific answer prepared for a situation, a viewpoint is the recipe for preparing that kind of answer.
+A viewpoint is a reusable specification for constructing, interpreting, analysing and reviewing a type of architecture view. If a view is the specific answer prepared for a situation, a viewpoint is the reusable specification for preparing and judging that kind of answer.
 
 A context viewpoint might say:
 
@@ -90,6 +93,7 @@ A context viewpoint might say:
 - Show the people, organisations and external systems around it.
 - Label the relationships that cross the boundary.
 - Exclude internal components unless they are needed to explain scope.
+- Explain how to interpret relationship labels.
 - Review whether the boundary, actors and external dependencies are clear.
 
 Using that viewpoint, the team can create a specific context view for the Simple Online Store or for Horizon Bank's Payments Platform. The resulting views are different because the subjects differ, but the construction rules are similar.
@@ -98,13 +102,52 @@ Mature architecture work also separates viewpoint from notation, method and fram
 
 This distinction matters when teams reuse good practice. A viewpoint can be standardised inside an organisation. A view is created for a specific system, project, date and audience. Confusing the two leads to weak governance: teams may copy a diagram without understanding the rules that made it useful.
 
+## Practical viewpoint specification template
+
+The following template is deliberately compact. It is enough for a team to define a repeatable viewpoint without turning the work into a standards manual.
+
+| Field | What to write |
+|---|---|
+| Name | The viewpoint name, such as Context Viewpoint or Deployment Viewpoint. |
+| Purpose | The question this type of view answers. |
+| Stakeholders | The roles that normally use the view. |
+| Concerns | The stakeholder concerns the view is intended to address. |
+| Model content | The kinds of elements and relationships included. |
+| Notation or model kinds | The notation, model kind or representation form used. |
+| Construction rules | Rules for scope, boundaries, naming, relationship direction and required labels. |
+| Interpretation and analysis guidance | How readers should interpret the view and what analysis it supports. |
+| Consistency rules | How this view must correspond with related views. |
+| Exclusions | Detail that should normally be left out. |
+| Sources | Source keys, standards, framework guidance or local repository conventions. |
+
+For example, a context viewpoint for the Simple Online Store might include customers, support agents, the Online Store, the Payment Provider System and the Delivery Partner System. It would exclude classes, database columns and cloud runtime nodes because those belong to more detailed views.
+
+## Expert note: ISO 42010 terminology
+
+ISO/IEC/IEEE 42010:2022 is the source behind several formal terms used in this chapter [ISO-42010]. The book paraphrases the terms rather than reproducing the standard.
+
+| Formal term | Beginner-friendly meaning |
+|---|---|
+| Architecture description | The set of work products used to express an architecture for stakeholders. |
+| Architecture view | A representation within the architecture description that addresses one or more stakeholder concerns. |
+| Architecture viewpoint | A specification that governs how to construct, interpret, analyse and review a type of architecture view. |
+| Architecture model | A model used within an architecture description, often as part of one or more views. |
+| Model kind | A convention for a type of model, including the concepts, relationships, notation or rules it uses. |
+| Correspondence between views | A recorded relationship that helps show how elements in different views agree or relate. |
+
+The practical lesson is simple: a view should not stand alone as an isolated picture. It should be tied to concerns, guided by a viewpoint, supported by models and checked against related views.
+
+![FIG-02-01. From stakeholder concerns to architecture views](../../diagrams/exported/svg/FIG-02-01-stakeholder-concerns-to-architecture-views.svg)
+
+Figure FIG-02-01. From stakeholder concerns to architecture views. It shows how stakeholders raise concerns, a viewpoint guides the creation and review of an architecture view, model kinds or notation shape the models, and correspondence checks keep related views consistent.
+
 ## Stakeholders, concerns and viewpoints
 
-Architecture views should start with stakeholders and concerns. A stakeholder is a person, group or organisation with an interest in the architecture. A concern is something that stakeholder needs the architecture description to address.
+Chapter 1 introduced the stakeholder-to-view idea. This chapter adds the viewpoint step between the concern and the view.
 
 Concerns are best written as questions. "Security" is a topic. "Where does customer data cross a trust boundary?" is a concern that can guide a model. "Cost" is a topic. "Which legacy systems must remain during the first migration release?" is a concern.
 
-The viewpoint map below is a practical way to connect stakeholders, concerns and views before drawing anything.
+The viewpoint map below is a practical way to connect stakeholders, concerns, viewpoints and views before drawing anything.
 
 | Stakeholder | Concern written as a question | Useful viewpoint | Typical view content |
 |---|---|---|---|
@@ -116,15 +159,15 @@ The viewpoint map below is a practical way to connect stakeholders, concerns and
 | Operations engineer | Where does it run, and who supports it? | Deployment viewpoint | Environments, runtime nodes, monitoring and operational ownership |
 | Enterprise architect | How does this change fit the wider estate? | Landscape or capability viewpoint | Systems, capabilities, dependencies, lifecycle and roadmap position |
 
-The table is not a universal rule. It is a thinking aid. In real work, one stakeholder may need several views and one view may serve several stakeholders. The important habit is to state the concern first, then choose the viewpoint.
+The table is not a universal rule. It is a thinking aid. In real work, one stakeholder may need several views and one view may serve several stakeholders whose concerns overlap. The important habit is to state the concern first, then choose the viewpoint.
 
 ## Abstraction and decomposition
 
-Abstraction means leaving out lower-level detail so that a higher-level question can be answered. Decomposition means breaking a subject into smaller parts so that responsibilities and relationships can be understood.
+Chapter 1 introduced conceptual, logical and physical levels. Here the focus is on using those levels inside a viewpoint.
 
-Both are useful, but they must be handled carefully. A capability map abstracts away system design so that business leaders can discuss organisational abilities. A component view decomposes a software container so developers can discuss internal responsibilities. Mixing both levels in one diagram usually creates confusion.
+Abstraction means leaving out lower-level detail so that a higher-level question can be answered. Decomposition means breaking a subject into smaller parts so that responsibilities and relationships can be understood. A viewpoint should say which level it expects.
 
-The modeller should decide the level before choosing the notation:
+Use this quick check before choosing notation:
 
 | Level | Main question | Example content | Detail to avoid at this level |
 |---|---|---|---|
@@ -146,32 +189,34 @@ Common consistency checks include:
 - Current-state, transition-state and target-state views are labelled.
 - Security boundaries, data ownership and operational ownership are not contradicted across views.
 
-A cross-view traceability matrix helps teams manage this without forcing every detail into every diagram.
+A cross-view traceability matrix helps teams manage this without forcing every detail into every diagram. Keep it narrow enough to read on a book page.
 
-| Architecture element or concern | Context view | Software structure view | Data view | Deployment view | Security view |
-|---|---|---|---|---|---|
-| Customer identity | Customer actor uses account features | Identity responsibility allocated to API or identity service | Customer and identity records identified | Runtime identity provider placement shown if relevant | Authentication and trust boundary reviewed |
-| Order submission | Customer submits order to store | Web application calls API application | Order data ownership identified | Runtime path shown for production support | Sensitive data exposure checked |
-| Payment authorisation | Store depends on payment provider | Payment component or integration owns call | Payment reference and status modelled | Network path to provider shown if needed | External trust boundary and control points shown |
-| Delivery handover | Store depends on delivery partner | Delivery integration owns notification | Delivery address and tracking data identified | Integration runtime shown if operationally relevant | Personal data sharing reviewed |
+| Element or concern | Where it appears | Consistency question |
+|---|---|---|
+| Customer identity | Context, data and security views | Is the same customer identity concept used across the views? |
+| Order submission | Context, software structure and security views | Does the software responsibility match the external interaction shown in context? |
+| Payment authorisation | Context, software structure, data, deployment and security views | Are provider dependency, payment status, runtime path and trust boundary compatible? |
+| Delivery handover | Context, software structure, data and security views | Is shared delivery data consistent with the integration and privacy explanation? |
 
-The matrix does not replace views. It helps reviewers see whether important subjects are covered by the right views and whether the views agree.
+The matrix does not replace views. It helps reviewers see whether important subjects are covered by the right views and whether the views agree. For a larger programme, this matrix can become a repository artefact with links to the relevant diagrams, model files and decisions.
 
 ## Viewpoint catalogue
 
 A viewpoint catalogue is a reusable list of common viewpoint types. It helps teams avoid starting every modelling conversation from a blank page.
 
-| Viewpoint | Main question | Common audience | Useful notation or form | Common mistake |
-|---|---|---|---|---|
-| Context | What is in scope, and what surrounds it? | Sponsors, product owners, delivery teams | C4 context, simple box-and-line view | Adding internal design too early |
-| Capability | What abilities does the organisation need? | Business and enterprise architects | Capability map | Turning process steps into capabilities |
-| Process | What happens over time to produce an outcome? | Business analysts, operations teams | BPMN, swimlane, activity view | Hiding decisions and exceptions |
-| Software structure | Which software parts own which responsibilities? | Architects and developers | C4 container or component, UML component | Mixing deployment nodes with logical parts |
-| Interaction | How do participants collaborate at runtime? | Developers, testers, analysts | Sequence diagram, C4 dynamic view | Showing only the happy path when failure matters |
-| Data | What information exists, moves and changes? | Data architects, analysts, engineers | Conceptual data model, data-flow view, lineage view | Treating a physical schema as the whole data model |
-| Deployment | Where does the system run? | Operations, platform, security teams | C4 deployment, UML deployment, cloud view | Omitting environment and support boundaries |
-| Security | Where are threats, controls and trust boundaries? | Security and risk reviewers | Threat-model data-flow view, trust-boundary view | Using colour without labels or control meaning |
-| Migration | How do we move from current to target? | Programme and architecture teams | Roadmap, transition architecture, dependency map | Drawing only the target and ignoring transition risk |
+| Viewpoint | Main question | Typical form |
+|---|---|---|
+| Context | What is in scope, and what surrounds it? | C4 context or simple box-and-line view |
+| Capability | What abilities does the organisation need? | Capability map |
+| Process | What happens over time to produce an outcome? | BPMN, swimlane or activity view |
+| Software structure | Which software parts own which responsibilities? | C4 container, C4 component or UML component view |
+| Interaction | How do participants collaborate at runtime? | Sequence diagram or C4 dynamic view |
+| Data | What information exists, moves and changes? | Conceptual data model, data-flow view or lineage view |
+| Deployment | Where does the system run? | C4 deployment, UML deployment or cloud view |
+| Security | Where are threats, controls and trust boundaries? | Threat-model data-flow or trust-boundary view |
+| Migration | How do we move from current to target? | Roadmap, transition architecture or dependency map |
+
+Common mistakes are usually viewpoint mistakes before they are notation mistakes. Context views become cluttered when they add internal design too early. Capability views become misleading when they describe process steps. Software structure views become confusing when they mix logical components with deployment nodes. Security views become weak when colour is used without labelled controls or trust boundaries.
 
 This catalogue is intentionally modest. Later chapters expand the individual notations. At this stage, the reader should focus on matching the viewpoint to the concern.
 
@@ -204,30 +249,29 @@ No single view should carry all of that detail. The modelling task is to create 
 
 ## Chapter summary and knowledge check
 
-The central idea of this chapter is straightforward: a model selects facts, a view presents selected model content for stakeholder concerns, and a viewpoint guides how a type of view should be created and reviewed.
+The central idea of this chapter is straightforward: a model selects facts, a view presents selected model content for stakeholder concerns, and a viewpoint guides how a type of view should be constructed, interpreted, analysed and reviewed.
 
-Use these questions to test understanding:
+Use these scenario-based questions to test understanding:
 
-| Question | Good answer should include |
+| Scenario question | Good answer should include |
 |---|---|
-| Why is a model not the real system? | It is a purposeful abstraction that selects and omits facts. |
-| Why is a view not just a diagram? | It may include diagrams, tables, prose, assumptions and review questions for stakeholder concerns. |
-| What is the difference between a view and a viewpoint? | A view is specific to a system and situation. A viewpoint is the reusable convention for that type of view. |
-| Why should concerns be written as questions? | Questions guide scope, content, notation and review. |
-| What does cross-view consistency mean? | Views can differ in detail but should not contradict names, boundaries, relationships or assumptions. |
+| A sponsor asks whether the returns feature includes delivery collection. Which view comes first? | A context or process view, with the scope and external delivery partner visible. |
+| A developer asks where refund logic belongs. Which viewpoint helps next? | A software structure viewpoint, probably container or component level, after scope is agreed. |
+| A security reviewer asks where customer data crosses a boundary. What should the viewpoint require? | Trust boundaries, sensitive data movement, control points and interpretation guidance. |
+| A data view says Payment Status, but a process view says Refund State. What should be checked? | A correspondence or traceability check between the related concepts. |
+| A diagram shows capabilities, classes and cloud subnets together. What is the likely problem? | Mixed abstraction levels and an unclear viewpoint. |
 
 If the reader can answer those questions, later chapters on UML, C4, BPMN, ArchiMate, data and BIAN will be easier to understand.
 
 ## Key takeaways
 
-- A model is a purposeful abstraction, not a complete copy of reality.
-- A view is prepared for stakeholder concerns, not for decoration.
-- A viewpoint is a reusable convention for creating and reviewing a type of view.
-- Concerns are most useful when written as concrete questions.
-- Abstraction hides detail for a purpose, while decomposition breaks a subject into understandable parts.
-- Different views should be consistent without containing identical detail.
-- A viewpoint catalogue helps teams choose suitable views repeatably.
-- Traceability between views prevents architecture descriptions from becoming disconnected fragments.
+- A model selects facts for a purpose.
+- A view addresses one or more stakeholder concerns.
+- A viewpoint specifies how to construct, interpret, analyse and review a type of view.
+- Concerns work best as concrete questions.
+- Model kinds and notations shape how model content is expressed.
+- Correspondence checks keep related views consistent.
+- A viewpoint catalogue makes view selection repeatable.
 
 ## Practical exercise
 
@@ -257,6 +301,7 @@ The exact answer can vary. A strong answer connects each view to a stakeholder c
 - [ ] Each view names its stakeholder audience.
 - [ ] Each stakeholder concern is written as a question.
 - [ ] The chosen viewpoint fits the concern and abstraction level.
+- [ ] The viewpoint specification covers construction, interpretation, analysis and review.
 - [ ] Conceptual, logical and physical details are not mixed accidentally.
 - [ ] Decomposed views identify the parent element they explain.
 - [ ] Cross-view names, boundaries and relationships are consistent.

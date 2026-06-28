@@ -4,6 +4,13 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-28
 
+### Revised Chapter 2 before author approval
+
+- Reduced Chapter 2 repetition with Chapter 1 and strengthened the viewpoint definition.
+- Added a practical viewpoint specification template and an ISO 42010 expert note.
+- Added `FIG-02-01` with specification, PlantUML source, SVG export and PNG review preview.
+- Recalculated the Chapter 2 quality gate and updated registers and tracking.
+
 ### Completed Chapter 2 draft
 
 - Drafted Chapter 2, **Model, View and Viewpoint**, to `Ready for Author Approval`.

@@ -8,7 +8,7 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Model | A purposeful abstraction of part of reality. | A model may be represented by several diagrams or views. |
 | Diagram | A visual representation of selected model content. | A diagram is not automatically the complete model. |
 | View | A representation of a system from the perspective of related stakeholder concerns. | Use with a stated purpose and audience. |
-| Viewpoint | A reusable convention for constructing a type of view. | Distinguish from the individual view created for one system. |
+| Viewpoint | A reusable specification for constructing, interpreting, analysing and reviewing a type of view. | Distinguish from the individual view created for one system. |
 | Notation | A defined set of visual or textual symbols and rules. | UML and BPMN are notations/languages. |
 | Method | A defined way of carrying out architecture work through a sequence of activities and decisions. | A method explains how to work; a notation explains how to represent the result. |
 | Framework | A structured body that can include concepts, guidance, roles, governance, methods, viewpoints and modelling languages. | TOGAF is a framework; ArchiMate is a modelling language. |

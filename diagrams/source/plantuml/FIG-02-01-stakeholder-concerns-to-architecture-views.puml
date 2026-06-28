@@ -1,0 +1,55 @@
+@startuml
+title FIG-02-01. From Stakeholder Concerns to Architecture Views
+
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+skinparam rectangle {
+  BackgroundColor #F4F8FB
+  BorderColor #2B4D66
+  FontColor #111111
+  RoundCorner 8
+}
+skinparam package {
+  BackgroundColor #FFFFFF
+  BorderColor #5B6B7A
+  FontColor #111111
+}
+skinparam arrow {
+  Color #555555
+  FontColor #333333
+}
+
+left to right direction
+
+rectangle "Stakeholders\n\nSponsor\nDeveloper\nSecurity reviewer\nOperations engineer" as stakeholders
+rectangle "Concerns\n\nQuestions about\nscope, risk, data,\nresponsibility and support" as concerns
+
+rectangle "Architecture viewpoint\n\nReusable specification for\nconstructing, interpreting,\nanalysing and reviewing\na type of view" as viewpoint
+
+rectangle "Notation or model kinds\n\nSymbols, model rules\nand representation forms" as kinds
+
+package "Architecture view" as viewA {
+  rectangle "Architecture models\n\nSelected elements,\nrelationships and\nsupporting tables" as modelsA
+}
+
+package "Related architecture view" as viewB {
+  rectangle "Related models\n\nOverlapping names,\nboundaries or\nrelationships" as modelsB
+}
+
+stakeholders -right-> concerns : raise
+concerns -right-> viewpoint : addressed by
+viewpoint -right-> viewA : guides view creation and review
+kinds -up-> modelsA : shape model content
+modelsA -[hidden]-> viewA
+viewpoint -down-> kinds : selects or constrains
+viewA -right-> viewB : related concern
+viewA <-[dashed]-> viewB : correspondence checks consistency
+
+note bottom of viewpoint
+  A viewpoint is reusable.
+  A view is created for one
+  system, enterprise or decision.
+end note
+
+@enduml

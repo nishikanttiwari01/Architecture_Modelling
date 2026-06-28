@@ -12,17 +12,17 @@
 
 ## Supported claims
 
-- Claim: Architecture descriptions use concepts such as stakeholders, concerns, architecture views and architecture viewpoints.
+- Claim: Architecture descriptions use concepts such as stakeholders, concerns, architecture views, architecture viewpoints, architecture models, model kinds and correspondences.
 - Intended chapter(s): Chapter 1 and Chapter 2
 - Normative or interpretive: Normative source for vocabulary; chapter explanations are practical interpretation.
 
 ## Relevant summary
 
-The standard provides vocabulary and requirements for architecture descriptions of systems, software and enterprises. For this book, it supports the distinction between the thing being described, the concerns of stakeholders, and the views used to address those concerns.
+The standard provides vocabulary and requirements for architecture descriptions of systems, software and enterprises. For this book, it supports the distinction between the thing being described, the concerns of stakeholders, the views used to address those concerns, the viewpoints that govern views, the models used in views, model kinds and correspondences between architecture-description elements.
 
 ## Terminology and version notes
 
-Use the source key `[ISO-42010]`. Do not imply that Chapter 1 reproduces the full standard. Chapter 1 uses the standard to support vocabulary and then explains the ideas in beginner-friendly language.
+Use the source key `[ISO-42010]`. Do not imply that Chapter 1 or Chapter 2 reproduces the full standard. These chapters use the standard to support vocabulary and then explain the ideas in beginner-friendly language.
 
 ## Copyright or reuse notes
 
@@ -31,4 +31,3 @@ Do not copy standard text or diagrams. Paraphrase definitions and create origina
 ## Verification status
 
 Checked
-
