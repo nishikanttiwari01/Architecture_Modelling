@@ -18,6 +18,7 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Capability | An ability an organisation possesses to achieve an outcome. | Avoid describing a sequence of tasks as a capability. |
 | Value stream | A sequence of value-creating stages that delivers an outcome to a stakeholder. | Distinguish from detailed process flow. |
 | Business process | An ordered set of activities that produces a business outcome. | BPMN is commonly used to model it. |
+| Business Process Model and Notation (BPMN) | A standard notation for modelling business processes, collaborations and process behaviour. | Use for business-process flow, participants, events, decisions and exceptions; do not treat it as a software structure diagram. |
 | Business service | An externally visible unit of business behaviour that provides value. | Clarify the consumer. |
 | Application service | Behaviour exposed by an application to support users or other applications. | Distinguish from an application component. |
 | Application component | A modular, replaceable and encapsulated part of an application architecture. | ArchiMate and UML use related but not identical concepts. |

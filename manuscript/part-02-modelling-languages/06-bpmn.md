@@ -2,9 +2,9 @@
 title: "BPMN: Business Process Model and Notation"
 chapter: 6
 part: "part-02-modelling-languages"
-status: "Planned"
+status: "Researching"
 author: "Nishikant Tiwari"
-last_updated: "2026-06-28"
+last_updated: "2026-06-29"
 ---
 
 # 6. BPMN: Business Process Model and Notation
@@ -40,10 +40,9 @@ By the end of this chapter, the reader should be able to:
 
 ## Source requirements
 
-- Identify official or primary sources for normative terminology.
-- Record framework or standard versions where relevant.
-- Create source notes under the matching `research/` directory.
-- Distinguish official definitions from the author’s practical recommendations.
+- `[OMG-BPMN]` supports BPMN 2.0.2 terminology and notation.
+- Distinguish official definitions from the author's practical recommendations.
+- Use original teaching examples and do not reproduce official OMG diagrams.
 
 ## Planned chapter structure
 

@@ -5,7 +5,7 @@ Register sources that support several chapters, major definitions or version-sen
 | Source key | Organisation / author | Title | Version | Publication date | Access date | Primary topics | Note file | Status |
 |---|---|---|---|---|---|---|---|---|
 | OMG-UML | Object Management Group | Unified Modeling Language specification | 2.5.1 | December 2017 | 2026-06-29 | UML terminology and diagram taxonomy | research/uml/omg-uml-2.5.1.md | Recorded |
-| OMG-BPMN | Object Management Group | Business Process Model and Notation specification | Verify current | — | — | BPMN | Pending | Planned |
+| OMG-BPMN | Object Management Group | Business Process Model and Notation specification | 2.0.2 | January 2014 | 2026-06-29 | BPMN terminology and notation | research/bpmn/omg-bpmn-2.0.2.md | Recorded |
 | OMG-DMN | Object Management Group | Decision Model and Notation specification | Verify current | — | — | DMN | Pending | Planned |
 | OPEN-GROUP-ARCHIMATE | The Open Group | ArchiMate specification | Verify current | — | — | ArchiMate | Pending | Planned |
 | C4-OFFICIAL | C4 model | Official C4 model documentation | Current web documentation | Not stated | 2026-06-28 | C4 concepts and context diagram examples | research/c4/c4-model-official.md | Recorded |

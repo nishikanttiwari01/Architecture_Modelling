@@ -4,6 +4,13 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-29
 
+### Approved Chapter 4 and opened Chapter 6
+
+- Recorded the author's approval of Chapter 4 while keeping all Chapter 4 diagrams at `Review`.
+- Moved Chapter 6, **BPMN: Business Process Model and Notation**, to `Researching`.
+- Added the official OMG BPMN 2.0.2 source note and registered `[OMG-BPMN]`.
+- Added BPMN to the working glossary.
+
 ### Corrected Chapter 4 UML example semantics
 
 - Corrected `FIG-04-01` so required eligibility checking uses `include` and conditional exception, refund and collection behaviour uses guarded `extend`.
