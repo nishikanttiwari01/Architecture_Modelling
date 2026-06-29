@@ -4,6 +4,13 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-29
 
+### Completed Chapter 6 before author approval
+
+- Drafted Chapter 6, **BPMN: Business Process Model and Notation**, using the Chapter 5 prototype pattern.
+- Added three Chapter 6 BPMN figure specifications, editable BPMN XML sources, SVG exports and PNG review previews.
+- Added BPMN glossary terms for pools, lanes, sequence flows, message flows and gateways.
+- Recalculated the Chapter 6 quality gate and moved the chapter to `Ready for Author Approval`.
+
 ### Approved Chapter 4 and opened Chapter 6
 
 - Recorded the author's approval of Chapter 4 while keeping all Chapter 4 diagrams at `Review`.

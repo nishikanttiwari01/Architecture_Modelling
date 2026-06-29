@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" id="Definitions_FIG_06_02" targetNamespace="https://example.local/architecture-modelling/chapter-06">
+  <bpmn:collaboration id="Collaboration_CustomerOnboarding" name="Horizon Bank customer onboarding">
+    <bpmn:participant id="Participant_Customer" name="Retail Customer" />
+    <bpmn:participant id="Participant_Bank" name="Horizon Bank" processRef="Process_HorizonBankOnboarding" />
+    <bpmn:participant id="Participant_FinancialCrime" name="Financial Crime Platform" processRef="Process_FinancialCrimeScreening" />
+    <bpmn:messageFlow id="Message_Application" name="Submit application" sourceRef="Participant_Customer" targetRef="Task_CaptureApplication" />
+    <bpmn:messageFlow id="Message_ScreeningRequest" name="Screening request" sourceRef="Task_RequestScreening" targetRef="Task_ScreenCustomer" />
+    <bpmn:messageFlow id="Message_ScreeningResult" name="Screening result" sourceRef="Task_ReturnScreeningResult" targetRef="Gateway_ScreeningClear" />
+    <bpmn:messageFlow id="Message_Outcome" name="Onboarding outcome" sourceRef="Task_SendOutcome" targetRef="Participant_Customer" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_HorizonBankOnboarding" name="Horizon Bank onboarding process" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_HorizonBank">
+      <bpmn:lane id="Lane_DigitalChannels" name="Digital Channels">
+        <bpmn:flowNodeRef>Start_ApplicationReceived</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_CaptureApplication</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_OnboardingOperations" name="Onboarding Operations">
+        <bpmn:flowNodeRef>Task_ValidateApplication</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_RequestScreening</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_ScreeningClear</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_OpenCustomerProfile</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_SendOutcome</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>End_ProfileOpened</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>End_ApplicationRejected</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Compliance" name="Compliance">
+        <bpmn:flowNodeRef>Task_ReviewScreeningException</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="Start_ApplicationReceived" name="Application received">
+      <bpmn:outgoing>Flow_OB_01</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Task_CaptureApplication" name="Capture application">
+      <bpmn:incoming>Flow_OB_01</bpmn:incoming>
+      <bpmn:outgoing>Flow_OB_02</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_ValidateApplication" name="Validate application">
+      <bpmn:incoming>Flow_OB_02</bpmn:incoming>
+      <bpmn:outgoing>Flow_OB_03</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_RequestScreening" name="Request screening">
+      <bpmn:incoming>Flow_OB_03</bpmn:incoming>
+      <bpmn:outgoing>Flow_OB_04</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="Gateway_ScreeningClear" name="Screening clear?">
+      <bpmn:incoming>Flow_OB_04</bpmn:incoming>
+      <bpmn:outgoing>Flow_OB_Clear</bpmn:outgoing>
+      <bpmn:outgoing>Flow_OB_Exception</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Task_OpenCustomerProfile" name="Open customer profile">
+      <bpmn:incoming>Flow_OB_Clear</bpmn:incoming>
+      <bpmn:incoming>Flow_OB_ClearAfterReview</bpmn:incoming>
+      <bpmn:outgoing>Flow_OB_05</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_SendOutcome" name="Send onboarding outcome">
+      <bpmn:incoming>Flow_OB_05</bpmn:incoming>
+      <bpmn:outgoing>Flow_OB_06</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="End_ProfileOpened" name="Profile opened">
+      <bpmn:incoming>Flow_OB_06</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="Task_ReviewScreeningException" name="Review screening exception">
+      <bpmn:incoming>Flow_OB_Exception</bpmn:incoming>
+      <bpmn:outgoing>Flow_OB_ClearAfterReview</bpmn:outgoing>
+      <bpmn:outgoing>Flow_OB_Reject</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="End_ApplicationRejected" name="Application rejected">
+      <bpmn:incoming>Flow_OB_Reject</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_OB_01" sourceRef="Start_ApplicationReceived" targetRef="Task_CaptureApplication" />
+    <bpmn:sequenceFlow id="Flow_OB_02" sourceRef="Task_CaptureApplication" targetRef="Task_ValidateApplication" />
+    <bpmn:sequenceFlow id="Flow_OB_03" sourceRef="Task_ValidateApplication" targetRef="Task_RequestScreening" />
+    <bpmn:sequenceFlow id="Flow_OB_04" sourceRef="Task_RequestScreening" targetRef="Gateway_ScreeningClear" />
+    <bpmn:sequenceFlow id="Flow_OB_Clear" name="clear" sourceRef="Gateway_ScreeningClear" targetRef="Task_OpenCustomerProfile" />
+    <bpmn:sequenceFlow id="Flow_OB_Exception" name="possible match" sourceRef="Gateway_ScreeningClear" targetRef="Task_ReviewScreeningException" />
+    <bpmn:sequenceFlow id="Flow_OB_ClearAfterReview" name="clear after review" sourceRef="Task_ReviewScreeningException" targetRef="Task_OpenCustomerProfile" />
+    <bpmn:sequenceFlow id="Flow_OB_Reject" name="reject" sourceRef="Task_ReviewScreeningException" targetRef="End_ApplicationRejected" />
+    <bpmn:sequenceFlow id="Flow_OB_05" sourceRef="Task_OpenCustomerProfile" targetRef="Task_SendOutcome" />
+    <bpmn:sequenceFlow id="Flow_OB_06" sourceRef="Task_SendOutcome" targetRef="End_ProfileOpened" />
+  </bpmn:process>
+  <bpmn:process id="Process_FinancialCrimeScreening" name="Financial crime screening" isExecutable="false">
+    <bpmn:task id="Task_ScreenCustomer" name="Screen customer">
+      <bpmn:outgoing>Flow_FC_01</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_ReturnScreeningResult" name="Return screening result">
+      <bpmn:incoming>Flow_FC_01</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_FC_01" sourceRef="Task_ScreenCustomer" targetRef="Task_ReturnScreeningResult" />
+  </bpmn:process>
+</bpmn:definitions>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" id="Definitions_FIG_06_01" targetNamespace="https://example.local/architecture-modelling/chapter-06">
+  <bpmn:process id="Process_OnlineStoreOrderFulfilment" name="Online Store order fulfilment" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_OnlineStore">
+      <bpmn:lane id="Lane_CustomerService" name="Customer Service">
+        <bpmn:flowNodeRef>Start_OrderPlaced</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_ReceiveOrder</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_CancelOrder</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_NotifyCustomer</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>End_CancellationNotified</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Fulfilment" name="Fulfilment">
+        <bpmn:flowNodeRef>Task_CheckStock</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_StockAvailable</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_PickItems</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_PackParcel</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_DispatchParcel</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>End_OrderDispatched</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="Start_OrderPlaced" name="Order placed">
+      <bpmn:outgoing>Flow_01</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Task_ReceiveOrder" name="Receive order">
+      <bpmn:incoming>Flow_01</bpmn:incoming>
+      <bpmn:outgoing>Flow_02</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_CheckStock" name="Check stock">
+      <bpmn:incoming>Flow_02</bpmn:incoming>
+      <bpmn:outgoing>Flow_03</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="Gateway_StockAvailable" name="Stock available?">
+      <bpmn:incoming>Flow_03</bpmn:incoming>
+      <bpmn:outgoing>Flow_InStock</bpmn:outgoing>
+      <bpmn:outgoing>Flow_OutOfStock</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Task_PickItems" name="Pick items">
+      <bpmn:incoming>Flow_InStock</bpmn:incoming>
+      <bpmn:outgoing>Flow_04</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_PackParcel" name="Pack parcel">
+      <bpmn:incoming>Flow_04</bpmn:incoming>
+      <bpmn:outgoing>Flow_05</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_DispatchParcel" name="Dispatch parcel">
+      <bpmn:incoming>Flow_05</bpmn:incoming>
+      <bpmn:outgoing>Flow_06</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="End_OrderDispatched" name="Order dispatched">
+      <bpmn:incoming>Flow_06</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="Task_CancelOrder" name="Cancel order">
+      <bpmn:incoming>Flow_OutOfStock</bpmn:incoming>
+      <bpmn:outgoing>Flow_07</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_NotifyCustomer" name="Notify customer">
+      <bpmn:incoming>Flow_07</bpmn:incoming>
+      <bpmn:outgoing>Flow_08</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="End_CancellationNotified" name="Customer notified of cancellation">
+      <bpmn:incoming>Flow_08</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_01" sourceRef="Start_OrderPlaced" targetRef="Task_ReceiveOrder" />
+    <bpmn:sequenceFlow id="Flow_02" sourceRef="Task_ReceiveOrder" targetRef="Task_CheckStock" />
+    <bpmn:sequenceFlow id="Flow_03" sourceRef="Task_CheckStock" targetRef="Gateway_StockAvailable" />
+    <bpmn:sequenceFlow id="Flow_InStock" name="in stock" sourceRef="Gateway_StockAvailable" targetRef="Task_PickItems" />
+    <bpmn:sequenceFlow id="Flow_04" sourceRef="Task_PickItems" targetRef="Task_PackParcel" />
+    <bpmn:sequenceFlow id="Flow_05" sourceRef="Task_PackParcel" targetRef="Task_DispatchParcel" />
+    <bpmn:sequenceFlow id="Flow_06" sourceRef="Task_DispatchParcel" targetRef="End_OrderDispatched" />
+    <bpmn:sequenceFlow id="Flow_OutOfStock" name="out of stock" sourceRef="Gateway_StockAvailable" targetRef="Task_CancelOrder" />
+    <bpmn:sequenceFlow id="Flow_07" sourceRef="Task_CancelOrder" targetRef="Task_NotifyCustomer" />
+    <bpmn:sequenceFlow id="Flow_08" sourceRef="Task_NotifyCustomer" targetRef="End_CancellationNotified" />
+  </bpmn:process>
+</bpmn:definitions>

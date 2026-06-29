@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1220" height="430" viewBox="0 0 1220 430" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-06-03. Horizon Bank Payment Repair BPMN Exception Process</title>
+  <desc id="desc">BPMN process showing repair after payment posting failure, with response and timeout paths.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#222"/>
+    </marker>
+    <style>
+      .pool { fill:#ffffff; stroke:#222; stroke-width:1.5; }
+      .lane { fill:#f7f8fa; stroke:#667085; stroke-width:1; }
+      .task { fill:#eef4ff; stroke:#175cd3; stroke-width:1.4; }
+      .event { fill:#ffffff; stroke:#222; stroke-width:2; }
+      .end { fill:#ffffff; stroke:#222; stroke-width:4; }
+      .timer { fill:#fff; stroke:#b42318; stroke-width:2; }
+      .gateway { fill:#fff7e6; stroke:#b54708; stroke-width:1.5; }
+      .flow { stroke:#222; stroke-width:1.5; fill:none; marker-end:url(#arrow); }
+      .label { font: 15px Arial, sans-serif; fill:#111827; }
+      .small { font: 13px Arial, sans-serif; fill:#344054; }
+      .title { font: bold 18px Arial, sans-serif; fill:#111827; }
+      .laneText { font: bold 14px Arial, sans-serif; fill:#111827; }
+    </style>
+  </defs>
+  <text x="610" y="26" text-anchor="middle" class="title">FIG-06-03. Horizon Bank Payment Repair BPMN Exception Process</text>
+  <rect x="40" y="55" width="1140" height="320" rx="4" class="pool"/>
+  <rect x="40" y="55" width="1140" height="90" class="lane"/>
+  <rect x="40" y="145" width="1140" height="130" class="lane"/>
+  <rect x="40" y="275" width="1140" height="100" class="lane"/>
+  <text x="62" y="96" class="laneText">Payments</text>
+  <text x="62" y="114" class="laneText">Platform</text>
+  <text x="62" y="213" class="laneText">Operations Analyst</text>
+  <text x="62" y="330" class="laneText">Retail Customer</text>
+
+  <circle cx="180" cy="100" r="18" class="event"/>
+  <text x="180" y="133" text-anchor="middle" class="small">Posting failed</text>
+  <rect x="250" y="73" width="130" height="54" rx="10" class="task"/>
+  <text x="315" y="104" text-anchor="middle" class="label">Create repair case</text>
+  <rect x="455" y="185" width="130" height="54" rx="10" class="task"/>
+  <text x="520" y="216" text-anchor="middle" class="label">Review exception</text>
+  <rect x="650" y="185" width="130" height="54" rx="10" class="task"/>
+  <text x="715" y="216" text-anchor="middle" class="label">Request correction</text>
+  <polygon points="850,212 890,172 930,212 890,252" class="gateway"/>
+  <text x="890" y="217" text-anchor="middle" class="label">X</text>
+  <text x="890" y="270" text-anchor="middle" class="small">Correction in time?</text>
+
+  <rect x="760" y="305" width="130" height="54" rx="10" class="task"/>
+  <text x="825" y="336" text-anchor="middle" class="label">Provide correction</text>
+  <rect x="980" y="73" width="130" height="54" rx="10" class="task"/>
+  <text x="1045" y="104" text-anchor="middle" class="label">Resubmit payment</text>
+  <circle cx="1140" cy="100" r="18" class="end"/>
+  <text x="1140" y="133" text-anchor="middle" class="small">Payment resubmitted</text>
+
+  <circle cx="1000" cy="212" r="19" class="timer"/>
+  <circle cx="1000" cy="212" r="12" fill="none" stroke="#b42318" stroke-width="1.4"/>
+  <path d="M1000 212 L1000 203 M1000 212 L1008 216" stroke="#b42318" stroke-width="1.4"/>
+  <text x="1000" y="250" text-anchor="middle" class="small">Correction timeout</text>
+  <rect x="1060" y="185" width="90" height="54" rx="10" class="task"/>
+  <text x="1105" y="216" text-anchor="middle" class="label">Close case</text>
+  <circle cx="1160" cy="212" r="18" class="end"/>
+  <text x="1160" y="250" text-anchor="middle" class="small">Case timed out</text>
+
+  <path d="M198 100 L250 100" class="flow"/>
+  <path d="M380 100 C420 100 420 212 455 212" class="flow"/>
+  <path d="M585 212 L650 212" class="flow"/>
+  <path d="M780 212 L850 212" class="flow"/>
+  <path d="M890 252 C880 295 865 320 890 332" class="flow"/>
+  <text x="900" y="304" class="small">[response received]</text>
+  <path d="M760 332 C675 332 675 100 980 100" class="flow"/>
+  <path d="M1110 100 L1122 100" class="flow"/>
+  <path d="M930 212 L981 212" class="flow"/>
+  <text x="942" y="200" class="small">[timer expired]</text>
+  <path d="M1019 212 L1060 212" class="flow"/>
+  <path d="M1150 212 L1142 212" class="flow"/>
+</svg>

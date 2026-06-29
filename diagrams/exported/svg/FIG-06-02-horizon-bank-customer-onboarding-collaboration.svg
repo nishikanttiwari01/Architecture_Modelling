@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="520" viewBox="0 0 1280 520" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-06-02. Horizon Bank Customer Onboarding BPMN Collaboration</title>
+  <desc id="desc">BPMN collaboration showing customer, Horizon Bank and Financial Crime Platform message exchange.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#222"/>
+    </marker>
+    <marker id="msgArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffffff" stroke="#6941c6" stroke-width="1.5"/>
+    </marker>
+    <style>
+      .pool { fill:#ffffff; stroke:#222; stroke-width:1.5; }
+      .lane { fill:#f7f8fa; stroke:#667085; stroke-width:1; }
+      .task { fill:#eef4ff; stroke:#175cd3; stroke-width:1.4; }
+      .event { fill:#ffffff; stroke:#222; stroke-width:2; }
+      .end { fill:#ffffff; stroke:#222; stroke-width:4; }
+      .gateway { fill:#fff7e6; stroke:#b54708; stroke-width:1.5; }
+      .flow { stroke:#222; stroke-width:1.5; fill:none; marker-end:url(#arrow); }
+      .message { stroke:#6941c6; stroke-width:1.7; stroke-dasharray:7 5; fill:none; marker-end:url(#msgArrow); }
+      .label { font: 15px Arial, sans-serif; fill:#111827; }
+      .small { font: 13px Arial, sans-serif; fill:#344054; }
+      .title { font: bold 18px Arial, sans-serif; fill:#111827; }
+      .poolText { font: bold 14px Arial, sans-serif; fill:#111827; }
+    </style>
+  </defs>
+  <text x="640" y="26" text-anchor="middle" class="title">FIG-06-02. Horizon Bank Customer Onboarding BPMN Collaboration</text>
+
+  <rect x="40" y="60" width="1180" height="70" rx="4" class="pool"/>
+  <text x="62" y="100" class="poolText">Retail Customer</text>
+  <rect x="175" y="78" width="130" height="36" rx="10" class="task"/>
+  <text x="240" y="101" text-anchor="middle" class="label">Submit application</text>
+  <rect x="1080" y="78" width="115" height="36" rx="10" class="task"/>
+  <text x="1138" y="101" text-anchor="middle" class="label">Receive outcome</text>
+
+  <rect x="40" y="165" width="1180" height="220" rx="4" class="pool"/>
+  <rect x="40" y="165" width="1180" height="70" class="lane"/>
+  <rect x="40" y="235" width="1180" height="85" class="lane"/>
+  <rect x="40" y="320" width="1180" height="65" class="lane"/>
+  <text x="62" y="205" class="poolText">Digital Channels</text>
+  <text x="62" y="282" class="poolText">Onboarding Operations</text>
+  <text x="62" y="358" class="poolText">Compliance</text>
+
+  <circle cx="185" cy="200" r="16" class="event"/>
+  <text x="185" y="228" text-anchor="middle" class="small">Application</text>
+  <rect x="245" y="178" width="120" height="44" rx="10" class="task"/>
+  <text x="305" y="205" text-anchor="middle" class="label">Capture application</text>
+  <rect x="420" y="255" width="120" height="44" rx="10" class="task"/>
+  <text x="480" y="282" text-anchor="middle" class="label">Validate application</text>
+  <rect x="590" y="255" width="120" height="44" rx="10" class="task"/>
+  <text x="650" y="282" text-anchor="middle" class="label">Request screening</text>
+  <polygon points="770,277 805,242 840,277 805,312" class="gateway"/>
+  <text x="805" y="282" text-anchor="middle" class="label">X</text>
+  <text x="805" y="332" text-anchor="middle" class="small">Screening clear?</text>
+  <rect x="900" y="255" width="125" height="44" rx="10" class="task"/>
+  <text x="962" y="282" text-anchor="middle" class="label">Open profile</text>
+  <rect x="1060" y="255" width="120" height="44" rx="10" class="task"/>
+  <text x="1120" y="282" text-anchor="middle" class="label">Send outcome</text>
+  <circle cx="1185" cy="277" r="16" class="end"/>
+
+  <rect x="900" y="338" width="150" height="40" rx="10" class="task"/>
+  <text x="975" y="363" text-anchor="middle" class="label">Review exception</text>
+  <circle cx="1130" cy="358" r="16" class="end"/>
+  <text x="1130" y="390" text-anchor="middle" class="small">Rejected</text>
+
+  <rect x="40" y="420" width="1180" height="70" rx="4" class="pool"/>
+  <text x="62" y="461" class="poolText">Financial Crime Platform</text>
+  <rect x="610" y="438" width="120" height="36" rx="10" class="task"/>
+  <text x="670" y="461" text-anchor="middle" class="label">Screen customer</text>
+  <rect x="805" y="438" width="145" height="36" rx="10" class="task"/>
+  <text x="878" y="461" text-anchor="middle" class="label">Return result</text>
+
+  <path d="M201 200 L245 200" class="flow"/>
+  <path d="M365 200 C390 200 390 277 420 277" class="flow"/>
+  <path d="M540 277 L590 277" class="flow"/>
+  <path d="M710 277 L770 277" class="flow"/>
+  <path d="M840 277 L900 277" class="flow"/>
+  <text x="858" y="264" class="small">[clear]</text>
+  <path d="M1025 277 L1060 277" class="flow"/>
+  <path d="M1180 277 L1169 277" class="flow"/>
+  <path d="M805 312 C820 352 855 358 900 358" class="flow"/>
+  <text x="830" y="352" class="small">[possible match]</text>
+  <path d="M1050 358 L1114 358" class="flow"/>
+  <path d="M975 338 C975 310 940 300 915 299" class="flow"/>
+  <text x="935" y="322" class="small">[clear after review]</text>
+
+  <path d="M305 96 C305 135 305 160 305 178" class="message"/>
+  <text x="318" y="146" class="small">application</text>
+  <path d="M650 299 C650 365 655 410 670 438" class="message"/>
+  <text x="670" y="402" class="small">screening request</text>
+  <path d="M878 438 C860 385 830 338 805 312" class="message"/>
+  <text x="890" y="400" class="small">screening result</text>
+  <path d="M1120 255 C1120 190 1130 135 1138 114" class="message"/>
+  <text x="1140" y="168" class="small">outcome</text>
+</svg>

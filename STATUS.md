@@ -24,7 +24,7 @@
 | 03 | How to Read Architecture Diagrams | Approved | 100 | 100 | 100 | 100 | 100 | Approved; diagrams remain Review |
 | 04 | UML: Unified Modeling Language | Approved | 100 | 100 | 100 | 100 | 100 | Approved; diagrams remain Review |
 | 05 | The C4 Model | Approved | 100 | 100 | 100 | 100 | 100 | Prototype reference |
-| 06 | BPMN: Business Process Model and Notation | Researching | 10 | 0 | 0 | 0 | 10 | Continue BPMN research from official OMG source |
+| 06 | BPMN: Business Process Model and Notation | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; diagrams remain Review |
 | 07 | ArchiMate | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 08 | Data Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 09 | Decision Modelling and DMN | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -107,6 +107,6 @@
 
 ## Current recommended next task
 
-Continue Chapter 6, **BPMN: Business Process Model and Notation**, research using the official OMG BPMN source. Chapter 4 is author-approved, and Chapter 4 diagrams remain at `Review`.
+Review Chapter 6, **BPMN: Business Process Model and Notation**, for author approval. Chapter 6 diagrams remain at `Review`.
 
 Last updated: 2026-06-29

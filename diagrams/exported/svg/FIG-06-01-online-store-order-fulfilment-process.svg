@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="360" viewBox="0 0 1260 360" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-06-01. Online Store Order Fulfilment BPMN Process</title>
+  <desc id="desc">BPMN process showing order fulfilment inside the Online Store with customer service and fulfilment lanes.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#222"/>
+    </marker>
+    <style>
+      .pool { fill:#ffffff; stroke:#222; stroke-width:1.5; }
+      .lane { fill:#f7f8fa; stroke:#667085; stroke-width:1; }
+      .task { fill:#eef4ff; stroke:#175cd3; stroke-width:1.4; }
+      .event { fill:#ffffff; stroke:#222; stroke-width:2; }
+      .end { fill:#ffffff; stroke:#222; stroke-width:4; }
+      .gateway { fill:#fff7e6; stroke:#b54708; stroke-width:1.5; }
+      .flow { stroke:#222; stroke-width:1.5; fill:none; marker-end:url(#arrow); }
+      .label { font: 15px Arial, sans-serif; fill:#111827; }
+      .small { font: 13px Arial, sans-serif; fill:#344054; }
+      .title { font: bold 18px Arial, sans-serif; fill:#111827; }
+      .laneText { font: bold 14px Arial, sans-serif; fill:#111827; }
+    </style>
+  </defs>
+  <text x="630" y="26" text-anchor="middle" class="title">FIG-06-01. Online Store Order Fulfilment BPMN Process</text>
+  <rect x="40" y="55" width="1180" height="260" rx="4" class="pool"/>
+  <rect x="40" y="55" width="1180" height="100" class="lane"/>
+  <rect x="40" y="155" width="1180" height="160" class="lane"/>
+  <text x="64" y="100" class="laneText">Customer</text>
+  <text x="64" y="118" class="laneText">Service</text>
+  <text x="64" y="238" class="laneText">Fulfilment</text>
+
+  <circle cx="180" cy="105" r="18" class="event"/>
+  <text x="180" y="140" text-anchor="middle" class="small">Order placed</text>
+  <rect x="245" y="78" width="120" height="54" rx="10" class="task"/>
+  <text x="305" y="110" text-anchor="middle" class="label">Receive order</text>
+
+  <rect x="430" y="205" width="120" height="54" rx="10" class="task"/>
+  <text x="490" y="237" text-anchor="middle" class="label">Check stock</text>
+  <polygon points="625,232 660,197 695,232 660,267" class="gateway"/>
+  <text x="660" y="237" text-anchor="middle" class="label">X</text>
+  <text x="660" y="288" text-anchor="middle" class="small">Stock available?</text>
+
+  <rect x="750" y="205" width="105" height="54" rx="10" class="task"/>
+  <text x="802" y="237" text-anchor="middle" class="label">Pick items</text>
+  <rect x="900" y="205" width="105" height="54" rx="10" class="task"/>
+  <text x="952" y="237" text-anchor="middle" class="label">Pack parcel</text>
+  <rect x="1040" y="205" width="105" height="54" rx="10" class="task"/>
+  <text x="1092" y="237" text-anchor="middle" class="label">Dispatch</text>
+  <text x="1092" y="254" text-anchor="middle" class="label">parcel</text>
+  <circle cx="1190" cy="105" r="18" class="end"/>
+  <text x="1190" y="76" text-anchor="middle" class="small">Order</text>
+  <text x="1190" y="92" text-anchor="middle" class="small">dispatched</text>
+
+  <rect x="750" y="78" width="105" height="54" rx="10" class="task"/>
+  <text x="802" y="110" text-anchor="middle" class="label">Cancel order</text>
+  <rect x="900" y="78" width="120" height="54" rx="10" class="task"/>
+  <text x="960" y="110" text-anchor="middle" class="label">Notify customer</text>
+  <circle cx="1075" cy="105" r="18" class="end"/>
+  <text x="1075" y="137" text-anchor="middle" class="small">Cancellation</text>
+  <text x="1075" y="153" text-anchor="middle" class="small">sent</text>
+
+  <path d="M198 105 L245 105" class="flow"/>
+  <path d="M365 105 C395 105 395 232 430 232" class="flow"/>
+  <path d="M550 232 L625 232" class="flow"/>
+  <path d="M695 232 L750 232" class="flow"/>
+  <text x="720" y="220" class="small">[in stock]</text>
+  <path d="M855 232 L900 232" class="flow"/>
+  <path d="M1005 232 L1040 232" class="flow"/>
+  <path d="M1145 232 C1190 232 1190 160 1190 123" class="flow"/>
+  <path d="M660 197 C680 130 710 105 750 105" class="flow"/>
+  <text x="690" y="145" class="small">[out of stock]</text>
+  <path d="M855 105 L900 105" class="flow"/>
+  <path d="M1020 105 L1057 105" class="flow"/>
+</svg>

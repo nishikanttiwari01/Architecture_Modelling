@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" id="Definitions_FIG_06_03" targetNamespace="https://example.local/architecture-modelling/chapter-06">
+  <bpmn:process id="Process_PaymentRepair" name="Horizon Bank payment repair" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_PaymentRepair">
+      <bpmn:lane id="Lane_PaymentsPlatform" name="Payments Platform">
+        <bpmn:flowNodeRef>Start_PostingFailed</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_CreateRepairCase</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_ResubmitPayment</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>End_PaymentResubmitted</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_OperationsAnalyst" name="Operations Analyst">
+        <bpmn:flowNodeRef>Task_ReviewException</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_RequestCorrection</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_CorrectionReceived</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_CorrectionTimeout</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_CloseCase</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>End_CaseTimedOut</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_RetailCustomer" name="Retail Customer">
+        <bpmn:flowNodeRef>Task_ProvideCorrection</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="Start_PostingFailed" name="Posting failed">
+      <bpmn:outgoing>Flow_PR_01</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Task_CreateRepairCase" name="Create repair case">
+      <bpmn:incoming>Flow_PR_01</bpmn:incoming>
+      <bpmn:outgoing>Flow_PR_02</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_ReviewException" name="Review exception">
+      <bpmn:incoming>Flow_PR_02</bpmn:incoming>
+      <bpmn:outgoing>Flow_PR_03</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_RequestCorrection" name="Request correction">
+      <bpmn:incoming>Flow_PR_03</bpmn:incoming>
+      <bpmn:outgoing>Flow_PR_04</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="Gateway_CorrectionReceived" name="Correction received in time?">
+      <bpmn:incoming>Flow_PR_04</bpmn:incoming>
+      <bpmn:outgoing>Flow_PR_Response</bpmn:outgoing>
+      <bpmn:outgoing>Flow_PR_Timeout</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Task_ProvideCorrection" name="Provide correction">
+      <bpmn:incoming>Flow_PR_Response</bpmn:incoming>
+      <bpmn:outgoing>Flow_PR_05</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_ResubmitPayment" name="Resubmit payment">
+      <bpmn:incoming>Flow_PR_05</bpmn:incoming>
+      <bpmn:outgoing>Flow_PR_06</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="End_PaymentResubmitted" name="Payment resubmitted">
+      <bpmn:incoming>Flow_PR_06</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:intermediateCatchEvent id="Event_CorrectionTimeout" name="Correction timeout">
+      <bpmn:incoming>Flow_PR_Timeout</bpmn:incoming>
+      <bpmn:outgoing>Flow_PR_07</bpmn:outgoing>
+      <bpmn:timerEventDefinition />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:task id="Task_CloseCase" name="Close case">
+      <bpmn:incoming>Flow_PR_07</bpmn:incoming>
+      <bpmn:outgoing>Flow_PR_08</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="End_CaseTimedOut" name="Case timed out">
+      <bpmn:incoming>Flow_PR_08</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_PR_01" sourceRef="Start_PostingFailed" targetRef="Task_CreateRepairCase" />
+    <bpmn:sequenceFlow id="Flow_PR_02" sourceRef="Task_CreateRepairCase" targetRef="Task_ReviewException" />
+    <bpmn:sequenceFlow id="Flow_PR_03" sourceRef="Task_ReviewException" targetRef="Task_RequestCorrection" />
+    <bpmn:sequenceFlow id="Flow_PR_04" sourceRef="Task_RequestCorrection" targetRef="Gateway_CorrectionReceived" />
+    <bpmn:sequenceFlow id="Flow_PR_Response" name="response received" sourceRef="Gateway_CorrectionReceived" targetRef="Task_ProvideCorrection" />
+    <bpmn:sequenceFlow id="Flow_PR_05" sourceRef="Task_ProvideCorrection" targetRef="Task_ResubmitPayment" />
+    <bpmn:sequenceFlow id="Flow_PR_06" sourceRef="Task_ResubmitPayment" targetRef="End_PaymentResubmitted" />
+    <bpmn:sequenceFlow id="Flow_PR_Timeout" name="timer expired" sourceRef="Gateway_CorrectionReceived" targetRef="Event_CorrectionTimeout" />
+    <bpmn:sequenceFlow id="Flow_PR_07" sourceRef="Event_CorrectionTimeout" targetRef="Task_CloseCase" />
+    <bpmn:sequenceFlow id="Flow_PR_08" sourceRef="Task_CloseCase" targetRef="End_CaseTimedOut" />
+  </bpmn:process>
+</bpmn:definitions>
