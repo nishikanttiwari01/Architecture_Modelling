@@ -10,6 +10,7 @@ This file controls terminology across the manuscript. Add a term when it first b
 | View | A representation of a system from the perspective of related stakeholder concerns. | Use with a stated purpose and audience. |
 | Viewpoint | A reusable specification for constructing, interpreting, analysing and reviewing a type of view. | Distinguish from the individual view created for one system. |
 | Notation | A defined set of visual or textual symbols and rules. | UML and BPMN are notations/languages. |
+| Unified Modeling Language (UML) | A general-purpose modelling language for describing software-intensive systems with structural and behavioural diagrams. | Use UML when its notation helps answer a specific question; do not imply every UML diagram is needed. |
 | Method | A defined way of carrying out architecture work through a sequence of activities and decisions. | A method explains how to work; a notation explains how to represent the result. |
 | Framework | A structured body that can include concepts, guidance, roles, governance, methods, viewpoints and modelling languages. | TOGAF is a framework; ArchiMate is a modelling language. |
 | Stakeholder | A person, group or organisation with an interest in the architecture. | Link stakeholders to concerns before choosing views. |
@@ -26,6 +27,10 @@ This file controls terminology across the manuscript. Add a term when it first b
 | System Context diagram | A C4 view that shows one software system, the people who use it and the external systems it interacts with. | Use to establish scope before internal design detail. |
 | System Landscape diagram | A C4 view that shows multiple software systems in a wider organisational or enterprise landscape. | Use for estate-level relationships, not detailed process flow. |
 | Actor | A person, role, organisation or system that interacts with a subject. | State which meaning is intended. |
+| Use case | A goal-oriented interaction between actors and a subject system. | Use for scope and user goals, not for internal screen or code design. |
+| Class | A UML classifier that describes a set of objects with common features, such as attributes, operations and relationships. | Keep analysis classes separate from physical database tables unless that mapping is intentional. |
+| Lifeline | A participant in an interaction, usually shown in a UML sequence diagram. | Use for roles or system parts in one scenario; avoid turning it into an organisational chart. |
+| State | A condition in the lifecycle of an entity or system where particular behaviour or rules apply. | Use state machines for meaningful lifecycle changes, not simple linear task lists. |
 | Interface | A defined point of interaction between elements. | Label protocol and responsibility where relevant. |
 | API | An application programming interface that exposes defined operations or resources. | An API is an interface, not the implementation itself. |
 | Event | A record that something of business or technical significance happened. | Use past-tense names for facts, such as `PaymentAuthorised`. |

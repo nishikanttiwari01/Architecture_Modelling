@@ -4,7 +4,7 @@ Register sources that support several chapters, major definitions or version-sen
 
 | Source key | Organisation / author | Title | Version | Publication date | Access date | Primary topics | Note file | Status |
 |---|---|---|---|---|---|---|---|---|
-| OMG-UML | Object Management Group | Unified Modeling Language specification | Verify current | — | — | UML | Pending | Planned |
+| OMG-UML | Object Management Group | Unified Modeling Language specification | 2.5.1 | December 2017 | 2026-06-29 | UML terminology and diagram taxonomy | research/uml/omg-uml-2.5.1.md | Recorded |
 | OMG-BPMN | Object Management Group | Business Process Model and Notation specification | Verify current | — | — | BPMN | Pending | Planned |
 | OMG-DMN | Object Management Group | Decision Model and Notation specification | Verify current | — | — | DMN | Pending | Planned |
 | OPEN-GROUP-ARCHIMATE | The Open Group | ArchiMate specification | Verify current | — | — | ArchiMate | Pending | Planned |

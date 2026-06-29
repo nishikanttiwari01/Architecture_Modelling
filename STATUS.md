@@ -21,8 +21,8 @@
 |---:|---|---|---:|---:|---:|---:|---:|---|
 | 01 | What Is Architecture Modelling? | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review |
 | 02 | Model, View and Viewpoint | Approved | 100 | 100 | 100 | 100 | 100 | Approved; diagrams remain Review |
-| 03 | How to Read Architecture Diagrams | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review, then start Chapter 4 |
-| 04 | UML: Unified Modeling Language | Planned | 0 | 0 | 0 | 0 | 0 | — |
+| 03 | How to Read Architecture Diagrams | Approved | 100 | 100 | 100 | 100 | 100 | Approved; diagrams remain Review |
+| 04 | UML: Unified Modeling Language | Diagramming | 100 | 100 | 15 | 20 | 100 | Author review of UML diagram specifications before PlantUML source creation |
 | 05 | The C4 Model | Approved | 100 | 100 | 100 | 100 | 100 | Prototype reference |
 | 06 | BPMN: Business Process Model and Notation | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 07 | ArchiMate | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -107,6 +107,6 @@
 
 ## Current recommended next task
 
-Review Chapter 3, **How to Read Architecture Diagrams**, for author approval. Then start Chapter 4, **UML: Unified Modeling Language**.
+Review Chapter 4, **UML: Unified Modeling Language**, focusing on the drafted prose and author approval of the seven UML diagram specifications before PlantUML source creation.
 
 Last updated: 2026-06-29

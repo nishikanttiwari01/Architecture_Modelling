@@ -2,7 +2,7 @@
 title: "How to Read Architecture Diagrams"
 chapter: 3
 part: "part-01-fundamentals"
-status: "Ready for Author Approval"
+status: "Approved"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-29"
 ---

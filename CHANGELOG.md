@@ -4,6 +4,19 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-29
 
+### Drafted Chapter 4 UML
+
+- Added the official OMG UML 2.5.1 source note and updated `SOURCE_REGISTER.md`.
+- Drafted Chapter 4, **UML: Unified Modeling Language**, using the Chapter 5 prototype pattern.
+- Added seven planned Chapter 4 figure entries and diagram specifications for UML use case, class, component, sequence, activity, state machine and deployment diagrams.
+- Updated glossary terms for UML, use case, class, lifeline and state.
+- Moved Chapter 4 to `Diagramming` while holding diagram source creation for author approval of specifications.
+
+### Approved Chapter 3 and moved focus to Chapter 4
+
+- Recorded the author's approval of Chapter 3 while keeping Chapter 3 diagrams at `Review`.
+- Updated project tracking so Chapter 4, **UML: Unified Modeling Language**, is the next recommended task.
+
 ### Revised Chapter 3 before author approval
 
 - Corrected `FIG-03-01` relationship labels and added a visible purpose cue.
