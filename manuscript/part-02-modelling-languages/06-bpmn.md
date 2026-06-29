@@ -2,7 +2,7 @@
 title: "BPMN: Business Process Model and Notation"
 chapter: 6
 part: "part-02-modelling-languages"
-status: "Revision Required"
+status: "Ready for Author Approval"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-29"
 ---

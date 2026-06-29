@@ -4,6 +4,13 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-29
 
+### Completed Chapter 6 modeler and layout validation
+
+- Recorded manual Camunda Desktop Modeler 5.48.0 validation for all three Chapter 6 BPMN files.
+- Improved Chapter 6 BPMN publication rendering so parent participant names remain visible for lane-based pools.
+- Adjusted BPMNDI label bounds and regenerated SVG exports and PNG previews for the final Chapter 6 layout pass.
+- Recalculated the Chapter 6 quality gate at 9.1 and returned the chapter to `Ready for Author Approval`.
+
 ### Corrected Chapter 6 BPMN collaboration and event semantics
 
 - Corrected `FIG-06-01` to use an Order received message start event.

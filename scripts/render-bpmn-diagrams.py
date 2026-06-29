@@ -69,9 +69,10 @@ def text_block(
     ]
 
 
-def collect_model(root: ET.Element) -> tuple[dict[str, ET.Element], dict[str, str]]:
+def collect_model(root: ET.Element) -> tuple[dict[str, ET.Element], dict[str, str], set[str]]:
     elements: dict[str, ET.Element] = {}
     lanes: dict[str, str] = {}
+    processes_with_lanes: set[str] = set()
     for element in root.iter():
         element_id = element.attrib.get("id")
         if element_id:
@@ -79,7 +80,9 @@ def collect_model(root: ET.Element) -> tuple[dict[str, ET.Element], dict[str, st
         if local_name(element.tag) == "lane":
             for ref in element.findall("bpmn:flowNodeRef", NS):
                 lanes[ref.text or ""] = element_id or ""
-    return elements, lanes
+        if local_name(element.tag) == "process" and element.find("bpmn:laneSet", NS) is not None and element_id:
+            processes_with_lanes.add(element_id)
+    return elements, lanes, processes_with_lanes
 
 
 def bounds(shape: ET.Element) -> tuple[float, float, float, float]:
@@ -123,7 +126,7 @@ def draw_gateway(x: float, y: float, w: float, h: float, kind: str) -> list[str]
 def render(source: Path, target: Path) -> None:
     tree = ET.parse(source)
     root = tree.getroot()
-    elements, lane_membership = collect_model(root)
+    elements, lane_membership, processes_with_lanes = collect_model(root)
     shapes = root.findall(".//bpmndi:BPMNShape", NS)
     edges = root.findall(".//bpmndi:BPMNEdge", NS)
 
@@ -168,6 +171,7 @@ def render(source: Path, target: Path) -> None:
         "      .small { font: 13px Arial, sans-serif; fill:#344054; }",
         "      .title { font: bold 18px Arial, sans-serif; fill:#111827; }",
         "      .poolText { font: bold 14px Arial, sans-serif; fill:#111827; }",
+        "      .labelBadge { fill:#ffffff; stroke:#667085; stroke-width:1; }",
         "      .gatewayMarker { font: 16px Arial, sans-serif; fill:#111827; }",
         "      .eventMarker, .eventMarkerCircle { fill:none; stroke:#111827; stroke-width:1.3; }",
         "      .messageIcon { fill:#ffffff; stroke:#111827; stroke-width:1.2; }",
@@ -177,6 +181,7 @@ def render(source: Path, target: Path) -> None:
         f'  <text x="{width / 2:.0f}" y="26" text-anchor="middle" class="title">{escape(title)}</text>',
     ]
 
+    participant_labels: list[tuple[float, float, float, float, str, bool]] = []
     for shape in shapes:
         bpmn_id = shape.attrib["bpmnElement"]
         element = elements.get(bpmn_id)
@@ -187,7 +192,7 @@ def render(source: Path, target: Path) -> None:
         name = element.attrib.get("name", "")
         if kind == "participant":
             out.append(f'<rect x="{x:.0f}" y="{y:.0f}" width="{w:.0f}" height="{h:.0f}" rx="4" class="pool"/>')
-            out.extend(text_block(x + 22, y + h / 2 - 7, name, anchor="start", css="poolText", width=18, line_height=17))
+            participant_labels.append((x, y, w, h, name, element.attrib.get("processRef") in processes_with_lanes))
         elif kind == "lane":
             out.append(f'<rect x="{x:.0f}" y="{y:.0f}" width="{w:.0f}" height="{h:.0f}" class="lane"/>')
             out.extend(text_block(x + 22, y + h / 2 - 7, name, anchor="start", css="poolText", width=12, line_height=17))
@@ -207,6 +212,13 @@ def render(source: Path, target: Path) -> None:
             if label is not None and name:
                 lx, ly, lw, lh = (float(label.attrib[k]) for k in ("x", "y", "width", "height"))
                 out.extend(text_block(lx + lw / 2, ly + max(12, lh / 2), name, css="small", width=max(10, int(lw / 7))))
+
+    for x, y, w, h, name, contains_lanes in participant_labels:
+        if contains_lanes:
+            out.append(f'<rect x="{x + 10:.0f}" y="{max(34, y - 24):.0f}" width="{max(92, len(name) * 8 + 20):.0f}" height="22" rx="3" class="labelBadge"/>')
+            out.extend(text_block(x + 20, max(49, y - 8), name, anchor="start", css="poolText", width=24, line_height=17))
+        else:
+            out.extend(text_block(x + 22, y + h / 2 - 7, name, anchor="start", css="poolText", width=18, line_height=17))
 
     for edge in edges:
         bpmn_id = edge.attrib["bpmnElement"]

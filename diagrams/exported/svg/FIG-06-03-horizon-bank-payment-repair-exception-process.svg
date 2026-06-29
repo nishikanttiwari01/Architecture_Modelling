@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1340" height="525" viewBox="0 0 1340 525" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1460" height="525" viewBox="0 0 1460 525" role="img" aria-labelledby="title desc">
   <title id="title">FIG-06-03. Horizon Bank Payment Repair BPMN Exception Collaboration</title>
   <desc id="desc">BPMN collaboration showing payment repair, correction waiting and timeout handling.</desc>
   <defs>
@@ -18,77 +18,80 @@
       .small { font: 13px Arial, sans-serif; fill:#344054; }
       .title { font: bold 18px Arial, sans-serif; fill:#111827; }
       .poolText { font: bold 14px Arial, sans-serif; fill:#111827; }
+      .labelBadge { fill:#ffffff; stroke:#667085; stroke-width:1; }
       .gatewayMarker { font: 16px Arial, sans-serif; fill:#111827; }
       .eventMarker, .eventMarkerCircle { fill:none; stroke:#111827; stroke-width:1.3; }
       .messageIcon { fill:#ffffff; stroke:#111827; stroke-width:1.2; }
       .iconLine, .timerHand, .timerIcon { fill:none; stroke:#111827; stroke-width:1.2; }
     </style>
   </defs>
-  <text x="670" y="26" text-anchor="middle" class="title">FIG-06-03. Horizon Bank Payment Repair BPMN Exception Collaboration</text>
-<rect x="40" y="60" width="1260" height="70" rx="4" class="pool"/>
-<text x="62" y="88" text-anchor="start" class="poolText">Retail Customer</text>
-<rect x="40" y="165" width="1260" height="320" rx="4" class="pool"/>
-<text x="62" y="318" text-anchor="start" class="poolText">Horizon Bank</text>
-<rect x="40" y="165" width="1260" height="95" class="lane"/>
-<text x="62" y="197" text-anchor="start" class="poolText">Payments</text>
-<text x="62" y="214" text-anchor="start" class="poolText">Platform</text>
-<rect x="40" y="260" width="1260" height="225" class="lane"/>
-<text x="62" y="357" text-anchor="start" class="poolText">Operations</text>
-<text x="62" y="374" text-anchor="start" class="poolText">Analyst</text>
-<circle cx="180" cy="210" r="18" class="event"/>
-<text x="180" y="236" text-anchor="middle" class="small">Posting</text>
-<text x="180" y="252" text-anchor="middle" class="small">failed</text>
-<rect x="250" y="183" width="130" height="54" rx="10" class="task"/>
-<text x="315" y="215" text-anchor="middle" class="label">Create repair case</text>
-<rect x="455" y="303" width="130" height="54" rx="10" class="task"/>
-<text x="520" y="335" text-anchor="middle" class="label">Review exception</text>
-<rect x="650" y="303" width="130" height="54" rx="10" class="task"/>
-<text x="715" y="335" text-anchor="middle" class="label">Request correction</text>
-<polygon points="870,290 905,325 870,360 835,325" class="gateway"/>
-<polygon points="870,309 885,320 879,338 861,338 855,320" class="eventMarker"/>
-<circle cx="870" cy="325" r="9" class="eventMarkerCircle"/>
-<text x="870" y="366" text-anchor="middle" class="small">Wait for</text>
-<text x="870" y="382" text-anchor="middle" class="small">correction</text>
-<circle cx="968" cy="290" r="18" class="event"/>
-<circle cx="968" cy="290" r="13" class="innerEvent"/>
-<rect x="958" y="283" width="20" height="14" class="messageIcon"/>
-<path d="M958 283 L968 291 L978 283" class="iconLine"/>
-<text x="968" y="242" text-anchor="middle" class="small">Correction</text>
-<text x="968" y="258" text-anchor="middle" class="small">received</text>
-<circle cx="968" cy="418" r="18" class="event"/>
-<circle cx="968" cy="418" r="13" class="innerEvent"/>
-<circle cx="968" cy="418" r="11" class="timerIcon"/>
-<path d="M968 418 L968 409 M968 418 L976 422" class="timerHand"/>
-<text x="968" y="448" text-anchor="middle" class="small">Correction</text>
-<text x="968" y="464" text-anchor="middle" class="small">deadline reached</text>
-<rect x="1045" y="263" width="120" height="54" rx="10" class="task"/>
-<text x="1105" y="287" text-anchor="middle" class="label">Validate</text>
-<text x="1105" y="303" text-anchor="middle" class="label">correction</text>
-<rect x="1045" y="183" width="120" height="54" rx="10" class="task"/>
-<text x="1105" y="215" text-anchor="middle" class="label">Resubmit payment</text>
-<circle cx="1240" cy="210" r="18" class="end"/>
-<text x="1240" y="236" text-anchor="middle" class="small">Payment</text>
-<text x="1240" y="252" text-anchor="middle" class="small">resubmitted</text>
-<rect x="1075" y="391" width="90" height="54" rx="10" class="task"/>
-<text x="1120" y="423" text-anchor="middle" class="label">Close case</text>
-<circle cx="1240" cy="418" r="18" class="end"/>
-<text x="1240" y="442" text-anchor="middle" class="small">Case timed</text>
-<text x="1240" y="458" text-anchor="middle" class="small">out</text>
-<path d="M198 210 L250 210" class="flow"/>
-<path d="M380 210 L420 210 L420 330 L455 330" class="flow"/>
-<path d="M585 330 L650 330" class="flow"/>
-<path d="M780 330 L835 325" class="flow"/>
-<path d="M905 325 L930 290 L950 290" class="flow"/>
-<path d="M905 325 L930 418 L950 418" class="flow"/>
-<path d="M986 290 L1045 290" class="flow"/>
-<path d="M1105 263 L1105 237" class="flow"/>
-<path d="M1165 210 L1222 210" class="flow"/>
-<path d="M986 418 L1075 418" class="flow"/>
-<path d="M1165 418 L1222 418" class="flow"/>
-<path d="M715 303 L715 130" class="message"/>
-<text x="783" y="194" text-anchor="middle" class="small">Correction</text>
-<text x="783" y="210" text-anchor="middle" class="small">request</text>
-<path d="M968 130 L968 272" class="message"/>
-<text x="1044" y="182" text-anchor="middle" class="small">Corrected</text>
-<text x="1044" y="198" text-anchor="middle" class="small">information</text>
+  <text x="730" y="26" text-anchor="middle" class="title">FIG-06-03. Horizon Bank Payment Repair BPMN Exception Collaboration</text>
+<rect x="160" y="60" width="1260" height="70" rx="4" class="pool"/>
+<rect x="160" y="165" width="1260" height="320" rx="4" class="pool"/>
+<rect x="160" y="260" width="1260" height="225" class="lane"/>
+<text x="182" y="357" text-anchor="start" class="poolText">Operations</text>
+<text x="182" y="374" text-anchor="start" class="poolText">Analyst</text>
+<rect x="160" y="165" width="1260" height="95" class="lane"/>
+<text x="182" y="197" text-anchor="start" class="poolText">Payments</text>
+<text x="182" y="214" text-anchor="start" class="poolText">Platform</text>
+<circle cx="300" cy="210" r="18" class="event"/>
+<text x="300" y="236" text-anchor="middle" class="small">Posting</text>
+<text x="300" y="252" text-anchor="middle" class="small">failed</text>
+<rect x="370" y="183" width="130" height="54" rx="10" class="task"/>
+<text x="435" y="215" text-anchor="middle" class="label">Create repair case</text>
+<rect x="575" y="303" width="130" height="54" rx="10" class="task"/>
+<text x="640" y="335" text-anchor="middle" class="label">Review exception</text>
+<rect x="770" y="303" width="130" height="54" rx="10" class="task"/>
+<text x="835" y="335" text-anchor="middle" class="label">Request correction</text>
+<polygon points="990,290 1025,325 990,360 955,325" class="gateway"/>
+<polygon points="990,309 1005,320 999,338 981,338 975,320" class="eventMarker"/>
+<circle cx="990" cy="325" r="9" class="eventMarkerCircle"/>
+<text x="990" y="366" text-anchor="middle" class="small">Wait for</text>
+<text x="990" y="382" text-anchor="middle" class="small">correction</text>
+<circle cx="1088" cy="290" r="18" class="event"/>
+<circle cx="1088" cy="290" r="13" class="innerEvent"/>
+<rect x="1078" y="283" width="20" height="14" class="messageIcon"/>
+<path d="M1078 283 L1088 291 L1098 283" class="iconLine"/>
+<text x="1088" y="242" text-anchor="middle" class="small">Correction</text>
+<text x="1088" y="258" text-anchor="middle" class="small">received</text>
+<circle cx="1088" cy="418" r="18" class="event"/>
+<circle cx="1088" cy="418" r="13" class="innerEvent"/>
+<circle cx="1088" cy="418" r="11" class="timerIcon"/>
+<path d="M1088 418 L1088 409 M1088 418 L1096 422" class="timerHand"/>
+<text x="1088" y="436" text-anchor="middle" class="small">Correction</text>
+<text x="1088" y="452" text-anchor="middle" class="small">deadline</text>
+<text x="1088" y="468" text-anchor="middle" class="small">reached</text>
+<rect x="1165" y="263" width="120" height="54" rx="10" class="task"/>
+<text x="1225" y="287" text-anchor="middle" class="label">Validate</text>
+<text x="1225" y="303" text-anchor="middle" class="label">correction</text>
+<rect x="1165" y="183" width="120" height="54" rx="10" class="task"/>
+<text x="1225" y="215" text-anchor="middle" class="label">Resubmit payment</text>
+<circle cx="1360" cy="210" r="18" class="end"/>
+<text x="1360" y="238" text-anchor="middle" class="small">Payment</text>
+<text x="1360" y="254" text-anchor="middle" class="small">resubmitted</text>
+<rect x="1195" y="391" width="90" height="54" rx="10" class="task"/>
+<text x="1240" y="423" text-anchor="middle" class="label">Close case</text>
+<circle cx="1360" cy="418" r="18" class="end"/>
+<text x="1360" y="442" text-anchor="middle" class="small">Case timed</text>
+<text x="1360" y="458" text-anchor="middle" class="small">out</text>
+<text x="182" y="88" text-anchor="start" class="poolText">Retail Customer</text>
+<rect x="170" y="141" width="116" height="22" rx="3" class="labelBadge"/>
+<text x="180" y="157" text-anchor="start" class="poolText">Horizon Bank</text>
+<path d="M318 210 L370 210" class="flow"/>
+<path d="M500 210 L540 210 L540 330 L575 330" class="flow"/>
+<path d="M705 330 L770 330" class="flow"/>
+<path d="M900 330 L955 325" class="flow"/>
+<path d="M1025 325 L1050 290 L1070 290" class="flow"/>
+<path d="M1025 325 L1050 418 L1070 418" class="flow"/>
+<path d="M1106 290 L1165 290" class="flow"/>
+<path d="M1225 263 L1225 237" class="flow"/>
+<path d="M1285 210 L1342 210" class="flow"/>
+<path d="M1106 418 L1195 418" class="flow"/>
+<path d="M1285 418 L1342 418" class="flow"/>
+<path d="M835 303 L835 130" class="message"/>
+<text x="904" y="140" text-anchor="middle" class="small">Correction</text>
+<text x="904" y="156" text-anchor="middle" class="small">request</text>
+<path d="M1088 130 L1088 272" class="message"/>
+<text x="1164" y="140" text-anchor="middle" class="small">Corrected</text>
+<text x="1164" y="156" text-anchor="middle" class="small">information</text>
 </svg>

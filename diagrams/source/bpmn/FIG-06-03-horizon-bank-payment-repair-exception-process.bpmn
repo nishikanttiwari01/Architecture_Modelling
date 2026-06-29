@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_FIG_06_03" targetNamespace="https://example.local/architecture-modelling/chapter-06">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_FIG_06_03" targetNamespace="https://example.local/architecture-modelling/chapter-06" exporter="Camunda Modeler" exporterVersion="5.48.0">
   <bpmn:message id="Message_CorrectionRequest" name="Correction request" />
   <bpmn:message id="Message_CorrectedInformation" name="Corrected information" />
   <bpmn:collaboration id="Collaboration_PaymentRepair" name="Horizon Bank payment repair">
@@ -10,12 +10,6 @@
   </bpmn:collaboration>
   <bpmn:process id="Process_PaymentRepair" name="Horizon Bank payment repair" isExecutable="false">
     <bpmn:laneSet id="LaneSet_PaymentRepair">
-      <bpmn:lane id="Lane_PaymentsPlatform" name="Payments Platform">
-        <bpmn:flowNodeRef>Start_PostingFailed</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_CreateRepairCase</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_ResubmitPayment</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>End_PaymentResubmitted</bpmn:flowNodeRef>
-      </bpmn:lane>
       <bpmn:lane id="Lane_OperationsAnalyst" name="Operations Analyst">
         <bpmn:flowNodeRef>Task_ReviewException</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_RequestCorrection</bpmn:flowNodeRef>
@@ -25,6 +19,12 @@
         <bpmn:flowNodeRef>Task_ValidateCorrection</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_CloseCase</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>End_CaseTimedOut</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_PaymentsPlatform" name="Payments Platform">
+        <bpmn:flowNodeRef>Start_PostingFailed</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_CreateRepairCase</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_ResubmitPayment</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>End_PaymentResubmitted</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
     <bpmn:startEvent id="Start_PostingFailed" name="Posting failed">
@@ -84,65 +84,141 @@
     <bpmn:sequenceFlow id="Flow_PR_WaitForMessage" sourceRef="Gateway_WaitForCorrection" targetRef="Event_CorrectionReceived" />
     <bpmn:sequenceFlow id="Flow_PR_WaitForTimer" sourceRef="Gateway_WaitForCorrection" targetRef="Event_CorrectionDeadlineReached" />
     <bpmn:sequenceFlow id="Flow_PR_05" sourceRef="Event_CorrectionReceived" targetRef="Task_ValidateCorrection" />
+    <bpmn:sequenceFlow id="Flow_PR_08" sourceRef="Event_CorrectionDeadlineReached" targetRef="Task_CloseCase" />
     <bpmn:sequenceFlow id="Flow_PR_06" sourceRef="Task_ValidateCorrection" targetRef="Task_ResubmitPayment" />
     <bpmn:sequenceFlow id="Flow_PR_07" sourceRef="Task_ResubmitPayment" targetRef="End_PaymentResubmitted" />
-    <bpmn:sequenceFlow id="Flow_PR_08" sourceRef="Event_CorrectionDeadlineReached" targetRef="Task_CloseCase" />
     <bpmn:sequenceFlow id="Flow_PR_09" sourceRef="Task_CloseCase" targetRef="End_CaseTimedOut" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_FIG_06_03">
     <bpmndi:BPMNPlane id="BPMNPlane_FIG_06_03" bpmnElement="Collaboration_PaymentRepair">
-      <bpmndi:BPMNShape id="Shape_Participant_RetailCustomer" bpmnElement="Participant_RetailCustomer" isHorizontal="true"><dc:Bounds x="40" y="60" width="1260" height="70" /></bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Shape_Participant_HorizonBank" bpmnElement="Participant_HorizonBank" isHorizontal="true"><dc:Bounds x="40" y="165" width="1260" height="320" /></bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Shape_Lane_PaymentsPlatform" bpmnElement="Lane_PaymentsPlatform" isHorizontal="true"><dc:Bounds x="40" y="165" width="1260" height="95" /></bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Shape_Lane_OperationsAnalyst" bpmnElement="Lane_OperationsAnalyst" isHorizontal="true"><dc:Bounds x="40" y="260" width="1260" height="225" /></bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Shape_Start_PostingFailed" bpmnElement="Start_PostingFailed">
-        <dc:Bounds x="162" y="192" width="36" height="36" />
-        <bpmndi:BPMNLabel><dc:Bounds x="138" y="232" width="84" height="24" /></bpmndi:BPMNLabel>
+      <bpmndi:BPMNShape id="Shape_Participant_RetailCustomer" bpmnElement="Participant_RetailCustomer" isHorizontal="true">
+        <dc:Bounds x="160" y="60" width="1260" height="70" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Shape_Task_CreateRepairCase" bpmnElement="Task_CreateRepairCase"><dc:Bounds x="250" y="183" width="130" height="54" /></bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Shape_Task_ReviewException" bpmnElement="Task_ReviewException"><dc:Bounds x="455" y="303" width="130" height="54" /></bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Shape_Task_RequestCorrection" bpmnElement="Task_RequestCorrection"><dc:Bounds x="650" y="303" width="130" height="54" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Participant_HorizonBank" bpmnElement="Participant_HorizonBank" isHorizontal="true">
+        <dc:Bounds x="160" y="165" width="1260" height="320" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Lane_OperationsAnalyst" bpmnElement="Lane_OperationsAnalyst" isHorizontal="true">
+        <dc:Bounds x="160" y="260" width="1260" height="225" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Lane_PaymentsPlatform" bpmnElement="Lane_PaymentsPlatform" isHorizontal="true">
+        <dc:Bounds x="160" y="165" width="1260" height="95" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Start_PostingFailed" bpmnElement="Start_PostingFailed">
+        <dc:Bounds x="282" y="192" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="267" y="232" width="67" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_CreateRepairCase" bpmnElement="Task_CreateRepairCase">
+        <dc:Bounds x="370" y="183" width="130" height="54" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_ReviewException" bpmnElement="Task_ReviewException">
+        <dc:Bounds x="575" y="303" width="130" height="54" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_RequestCorrection" bpmnElement="Task_RequestCorrection">
+        <dc:Bounds x="770" y="303" width="130" height="54" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Shape_Gateway_WaitForCorrection" bpmnElement="Gateway_WaitForCorrection">
-        <dc:Bounds x="835" y="290" width="70" height="70" />
-        <bpmndi:BPMNLabel><dc:Bounds x="817" y="362" width="106" height="20" /></bpmndi:BPMNLabel>
+        <dc:Bounds x="955" y="290" width="70" height="70" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="946" y="362" width="89" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Shape_Event_CorrectionReceived" bpmnElement="Event_CorrectionReceived">
-        <dc:Bounds x="950" y="272" width="36" height="36" />
-        <bpmndi:BPMNLabel><dc:Bounds x="922" y="236" width="92" height="28" /></bpmndi:BPMNLabel>
+        <dc:Bounds x="1070" y="272" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1063" y="236" width="51" height="27" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Shape_Event_CorrectionDeadlineReached" bpmnElement="Event_CorrectionDeadlineReached">
-        <dc:Bounds x="950" y="400" width="36" height="36" />
-        <bpmndi:BPMNLabel><dc:Bounds x="912" y="438" width="112" height="36" /></bpmndi:BPMNLabel>
+        <dc:Bounds x="1070" y="400" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1040" y="438" width="96" height="27" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Shape_Task_ValidateCorrection" bpmnElement="Task_ValidateCorrection"><dc:Bounds x="1045" y="263" width="120" height="54" /></bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Shape_Task_ResubmitPayment" bpmnElement="Task_ResubmitPayment"><dc:Bounds x="1045" y="183" width="120" height="54" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_ValidateCorrection" bpmnElement="Task_ValidateCorrection">
+        <dc:Bounds x="1165" y="263" width="120" height="54" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_ResubmitPayment" bpmnElement="Task_ResubmitPayment">
+        <dc:Bounds x="1165" y="183" width="120" height="54" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Shape_End_PaymentResubmitted" bpmnElement="End_PaymentResubmitted">
-        <dc:Bounds x="1222" y="192" width="36" height="36" />
-        <bpmndi:BPMNLabel><dc:Bounds x="1190" y="232" width="100" height="24" /></bpmndi:BPMNLabel>
+        <dc:Bounds x="1342" y="192" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1331" y="232" width="58" height="27" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Shape_Task_CloseCase" bpmnElement="Task_CloseCase"><dc:Bounds x="1075" y="391" width="90" height="54" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_CloseCase" bpmnElement="Task_CloseCase">
+        <dc:Bounds x="1195" y="391" width="90" height="54" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Shape_End_CaseTimedOut" bpmnElement="End_CaseTimedOut">
-        <dc:Bounds x="1222" y="400" width="36" height="36" />
-        <bpmndi:BPMNLabel><dc:Bounds x="1198" y="438" width="84" height="24" /></bpmndi:BPMNLabel>
+        <dc:Bounds x="1342" y="400" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1323" y="438" width="74" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Edge_Flow_PR_01" bpmnElement="Flow_PR_01"><di:waypoint x="198" y="210" /><di:waypoint x="250" y="210" /></bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Edge_Flow_PR_02" bpmnElement="Flow_PR_02"><di:waypoint x="380" y="210" /><di:waypoint x="420" y="210" /><di:waypoint x="420" y="330" /><di:waypoint x="455" y="330" /></bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Edge_Flow_PR_03" bpmnElement="Flow_PR_03"><di:waypoint x="585" y="330" /><di:waypoint x="650" y="330" /></bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Edge_Flow_PR_04" bpmnElement="Flow_PR_04"><di:waypoint x="780" y="330" /><di:waypoint x="835" y="325" /></bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Edge_Flow_PR_WaitForMessage" bpmnElement="Flow_PR_WaitForMessage"><di:waypoint x="905" y="325" /><di:waypoint x="930" y="290" /><di:waypoint x="950" y="290" /></bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Edge_Flow_PR_WaitForTimer" bpmnElement="Flow_PR_WaitForTimer"><di:waypoint x="905" y="325" /><di:waypoint x="930" y="418" /><di:waypoint x="950" y="418" /></bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Edge_Flow_PR_05" bpmnElement="Flow_PR_05"><di:waypoint x="986" y="290" /><di:waypoint x="1045" y="290" /></bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Edge_Flow_PR_06" bpmnElement="Flow_PR_06"><di:waypoint x="1105" y="263" /><di:waypoint x="1105" y="237" /></bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Edge_Flow_PR_07" bpmnElement="Flow_PR_07"><di:waypoint x="1165" y="210" /><di:waypoint x="1222" y="210" /></bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Edge_Flow_PR_08" bpmnElement="Flow_PR_08"><di:waypoint x="986" y="418" /><di:waypoint x="1075" y="418" /></bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Edge_Flow_PR_09" bpmnElement="Flow_PR_09"><di:waypoint x="1165" y="418" /><di:waypoint x="1222" y="418" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_01" bpmnElement="Flow_PR_01">
+        <di:waypoint x="318" y="210" />
+        <di:waypoint x="370" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_02" bpmnElement="Flow_PR_02">
+        <di:waypoint x="500" y="210" />
+        <di:waypoint x="540" y="210" />
+        <di:waypoint x="540" y="330" />
+        <di:waypoint x="575" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_03" bpmnElement="Flow_PR_03">
+        <di:waypoint x="705" y="330" />
+        <di:waypoint x="770" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_04" bpmnElement="Flow_PR_04">
+        <di:waypoint x="900" y="330" />
+        <di:waypoint x="955" y="325" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_WaitForMessage" bpmnElement="Flow_PR_WaitForMessage">
+        <di:waypoint x="1025" y="325" />
+        <di:waypoint x="1050" y="290" />
+        <di:waypoint x="1070" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_WaitForTimer" bpmnElement="Flow_PR_WaitForTimer">
+        <di:waypoint x="1025" y="325" />
+        <di:waypoint x="1050" y="418" />
+        <di:waypoint x="1070" y="418" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_05" bpmnElement="Flow_PR_05">
+        <di:waypoint x="1106" y="290" />
+        <di:waypoint x="1165" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_06" bpmnElement="Flow_PR_06">
+        <di:waypoint x="1225" y="263" />
+        <di:waypoint x="1225" y="237" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_07" bpmnElement="Flow_PR_07">
+        <di:waypoint x="1285" y="210" />
+        <di:waypoint x="1342" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_08" bpmnElement="Flow_PR_08">
+        <di:waypoint x="1106" y="418" />
+        <di:waypoint x="1195" y="418" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_09" bpmnElement="Flow_PR_09">
+        <di:waypoint x="1285" y="418" />
+        <di:waypoint x="1342" y="418" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Edge_MessageFlow_CorrectionRequest" bpmnElement="MessageFlow_CorrectionRequest">
-        <di:waypoint x="715" y="303" /><di:waypoint x="715" y="130" />
-        <bpmndi:BPMNLabel><dc:Bounds x="728" y="190" width="110" height="18" /></bpmndi:BPMNLabel>
+        <di:waypoint x="835" y="303" />
+        <di:waypoint x="835" y="130" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="858" y="136" width="91" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Edge_MessageFlow_CorrectedInformation" bpmnElement="MessageFlow_CorrectedInformation">
-        <di:waypoint x="968" y="130" /><di:waypoint x="968" y="272" />
-        <bpmndi:BPMNLabel><dc:Bounds x="982" y="178" width="124" height="18" /></bpmndi:BPMNLabel>
+        <di:waypoint x="1088" y="130" />
+        <di:waypoint x="1088" y="272" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1111" y="136" width="106" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
