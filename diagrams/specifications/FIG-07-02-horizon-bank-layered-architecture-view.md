@@ -10,7 +10,7 @@ Beginners, enterprise architects, solution architects and architecture reviewers
 
 ## Question answered
 
-How does a customer-onboarding capability connect to a business service, application service, application component and technology support?
+How does a customer-onboarding capability connect to a Service in the Business domain, a Service in the Application domain, an application component and technology support?
 
 Decision or concern: decide whether the target onboarding architecture has traceable support from business need through application and technology support.
 
@@ -22,16 +22,17 @@ ArchiMate 4 elements:
 - Capability: Customer Onboarding
 - Business actor: Horizon Bank
 - Role: Account Provider
-- Business process: Customer Onboarding Process
-- Business service: Open Customer Profile
+- Process in the Business domain: Customer Onboarding Process
+- Service in the Business domain: Open Customer Profile Service
 - Business object: Customer Record
 - Application component: Customer Onboarding Platform
 - Application component: Party and Customer Platform
 - Application component: Financial Crime Platform
-- Application function: Customer Profile Management Function
-- Application service: Customer Profile Management Service
-- Technology service: Runtime Hosting Service
-- Technology node: Application Runtime Node
+- Function in the Application domain: Customer Profile Management Function
+- Service in the Application domain: Customer Profile Management Service
+- Technology Node: Application Runtime Node
+- Function in the Technology domain: Runtime Hosting Function
+- Service in the Technology domain: Runtime Hosting Service
 
 ## Required relationships
 
@@ -40,14 +41,16 @@ Relationship types and directions:
 - Composition from Customer Management capability to Customer Onboarding capability.
 - Assignment from Horizon Bank actor to Account Provider role.
 - Assignment from Account Provider role to Customer Onboarding Process.
-- Realisation from Customer Onboarding Process to Open Customer Profile business service.
-- Serving from Open Customer Profile business service to Retail Customer or the customer-facing concern if included.
+- Realisation from Customer Onboarding Process to Open Customer Profile Service.
+- Serving from Open Customer Profile Service to Retail Customer or the customer-facing concern if included.
 - Assignment from Party and Customer Platform to Customer Profile Management Function.
 - Realisation from Customer Profile Management Function to Customer Profile Management Service.
 - Serving from Customer Profile Management Service to Customer Onboarding Process.
 - Access from Customer Profile Management Function to Customer Record.
+- Assignment from Application Runtime Node to Runtime Hosting Function.
+- Realisation from Runtime Hosting Function to Runtime Hosting Service.
 - Serving from Runtime Hosting Service to Party and Customer Platform and Customer Onboarding Platform.
-- Assignment or deployment relationship from Application Runtime Node to relevant deployed artifacts only if artifacts are included. Do not imply that the Technology Service itself is a Node.
+- Assignment or deployment relationship from Application Runtime Node to relevant deployed artifacts only if artifacts are included. Do not imply that the Service in the Technology domain itself is a Node.
 
 ## Reusable model concepts
 
@@ -84,6 +87,10 @@ No BPMN gateways, detailed API contracts, security controls, deployment topology
 ## Accessibility requirements
 
 Use readable labels, clear arrow direction and high contrast. Avoid relying on colour alone to distinguish domains. Keep relationship crossings low.
+
+## Source creation authorisation
+
+The author authorised source creation from the corrected specification on 2026-06-29. The rendered diagram remains in `Review`.
 
 ## Review criteria
 

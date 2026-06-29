@@ -29,7 +29,7 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Gap (ArchiMate 3.2 historical) | A removed ArchiMate element formerly used for a difference between architecture states. | Do not use as current ArchiMate 4 notation in Chapter 7 diagrams. |
 | Technology Node (ArchiMate) | A technology active structure element that can host, process, store or execute technology behaviour. | Do not treat every managed technology service as a node by default. |
 | System Software (ArchiMate) | Software that provides an environment for applications or technology behaviour. | Distinguish from the business application being modelled. |
-| Technology Service (ArchiMate) | Technology behaviour exposed for use by applications or other technology elements. | Use when the concern is consumed technology capability rather than runtime placement. |
+| Service in the Technology domain (ArchiMate) | Technology behaviour exposed for use by applications or other technology elements. | Use when the concern is consumed technology capability rather than runtime placement. |
 | Artifact (ArchiMate) | A deployable or stored technology item. | The official ArchiMate spelling is `Artifact`; the book otherwise uses British English for ordinary prose. |
 | BPMN pool | A participant in a BPMN process or collaboration. | Use for a process owner, organisation or major participant; do not use as a C4 container. |
 | BPMN lane | A responsibility partition inside a BPMN pool. | Use only when it clarifies who performs work. |

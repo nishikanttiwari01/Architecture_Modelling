@@ -66,6 +66,10 @@ No detailed value streams, BPMN process steps, application components, data enti
 
 Use high contrast, readable labels and no colour-only meaning. The figure must remain readable at book-page width and must not rely on small decorative icons.
 
+## Source creation authorisation
+
+The author authorised source creation from the corrected specification on 2026-06-29. The rendered diagram remains in `Review`.
+
 ## Review criteria
 
 - Capabilities read as abilities, not activities.

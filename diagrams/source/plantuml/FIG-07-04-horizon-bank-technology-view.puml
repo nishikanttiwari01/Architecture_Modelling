@@ -1,0 +1,71 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+title FIG-07-04. Horizon Bank technology view
+
+skinparam linetype ortho
+skinparam rectangle {
+  RoundCorner 8
+}
+
+left to right direction
+
+rectangle "Customer Onboarding\nPlatform\n<<Application Component>>" as app_onboarding #EAF6E8
+rectangle "Party and Customer\nPlatform\n<<Application Component>>" as app_party #EAF6E8
+rectangle "Enterprise Integration\nPlatform\n<<Application Component>>" as app_integration #EAF6E8
+rectangle "Event Platform\n<<Application Component>>" as app_events #EAF6E8
+
+rectangle "Application Runtime\nNode\n<<Technology Node>>" as runtime_node #F1E8FA
+rectangle "Container Platform\n<<System Software>>" as container_sw #F1E8FA
+rectangle "Runtime Hosting\nFunction\n<<Function>>" as runtime_func #F1E8FA
+rectangle "Runtime Hosting\nService\n<<Service>>" as runtime_svc #F1E8FA
+
+rectangle "Data Platform\nNode\n<<Technology Node>>" as data_node #F1E8FA
+rectangle "Database Management\nSystem\n<<System Software>>" as db_sw #F1E8FA
+rectangle "Database Management\nFunction\n<<Function>>" as db_func #F1E8FA
+rectangle "Database\nService\n<<Service>>" as db_svc #F1E8FA
+
+rectangle "Integration Runtime\nNode\n<<Technology Node>>" as integration_node #F1E8FA
+rectangle "API Gateway\nFunction\n<<Function>>" as api_func #F1E8FA
+rectangle "API Gateway\nService\n<<Service>>" as api_svc #F1E8FA
+
+rectangle "Messaging\nFunction\n<<Function>>" as msg_func #F1E8FA
+rectangle "Enterprise Messaging\nService\n<<Service>>" as msg_svc #F1E8FA
+
+artifact "Customer Onboarding\nService Package\n<<Artifact>>" as onboarding_art #FFFFFF
+artifact "Customer Profile\nService Package\n<<Artifact>>" as profile_art #FFFFFF
+
+runtime_node -up-> runtime_func : A
+runtime_func -up-> runtime_svc : R
+runtime_svc -up-> app_onboarding : S
+runtime_svc -up-> app_party : S
+runtime_node -down-> container_sw : C
+
+data_node -up-> db_func : A
+db_func -up-> db_svc : R
+db_svc -up-> app_party : S
+data_node -down-> db_sw : C
+
+integration_node -up-> api_func : A
+api_func -up-> api_svc : R
+api_svc -up-> app_integration : S
+
+runtime_node -up-> msg_func : A
+msg_func -up-> msg_svc : R
+msg_svc -up-> app_events : S
+
+onboarding_art -right-> runtime_node : D
+profile_art -right-> runtime_node : D
+
+runtime_node -[hidden]right-> data_node
+data_node -[hidden]right-> integration_node
+
+legend right
+  A = Assignment. R = Realisation. S = Serving.
+  C = Composition. D = Deployment.
+  Technology Node -> Function -> Service is explicit.
+  System Software is shown where the node environment matters.
+  Artifacts are deployable packages.
+  Managed capability is modelled as a Service unless node detail matters.
+endlegend
+@enduml

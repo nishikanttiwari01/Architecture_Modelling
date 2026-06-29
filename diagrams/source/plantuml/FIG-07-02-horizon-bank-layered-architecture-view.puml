@@ -1,0 +1,58 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+title FIG-07-02. Horizon Bank layered architecture view
+
+skinparam linetype ortho
+skinparam rectangle {
+  RoundCorner 8
+}
+
+top to bottom direction
+
+rectangle "Customer Management\n<<Capability>>\nStrategy domain" as cap_customer #E8F1FA
+rectangle "Customer Onboarding\n<<Capability>>\nStrategy domain" as cap_onboarding #E8F1FA
+
+rectangle "Horizon Bank\n<<Actor>>\nBusiness domain" as actor_bank #FFF4D6
+rectangle "Account Provider\n<<Role>>\nBusiness domain" as role_provider #FFF4D6
+rectangle "Customer Onboarding\nProcess\n<<Process>>\nBusiness domain" as bp_onboarding #FFF4D6
+rectangle "Open Customer Profile\nService\n<<Service>>\nBusiness domain" as bs_open_profile #FFF4D6
+rectangle "Customer Record\n<<Business Object>>\nBusiness domain" as bo_customer #F7F9FB
+
+rectangle "Party and Customer\nPlatform\n<<Application Component>>\nApplication domain" as app_party #EAF6E8
+rectangle "Customer Profile\nManagement Function\n<<Function>>\nApplication domain" as app_func #EAF6E8
+rectangle "Customer Profile\nManagement Service\n<<Service>>\nApplication domain" as app_service #EAF6E8
+rectangle "Customer Onboarding\nPlatform\n<<Application Component>>\nApplication domain" as app_onboarding #EAF6E8
+rectangle "Financial Crime\nPlatform\n<<Application Component>>\nApplication domain" as app_fincrime #EAF6E8
+
+rectangle "Application Runtime\nNode\n<<Technology Node>>\nTechnology domain" as tech_node #F1E8FA
+rectangle "Runtime Hosting\nFunction\n<<Function>>\nTechnology domain" as tech_func #F1E8FA
+rectangle "Runtime Hosting\nService\n<<Service>>\nTechnology domain" as tech_service #F1E8FA
+
+cap_customer -down-> cap_onboarding : C
+actor_bank -down-> role_provider : A
+role_provider -down-> bp_onboarding : A
+bp_onboarding -right-> bs_open_profile : R
+bs_open_profile -up-> cap_onboarding : S
+
+app_party -down-> app_func : A
+app_func -right-> app_service : R
+app_service -up-> bp_onboarding : S
+app_func -left-> bo_customer : Ac
+app_onboarding -right-> app_fincrime : F
+
+tech_node -down-> tech_func : A
+tech_func -right-> tech_service : R
+tech_service -up-> app_party : S
+tech_service -up-> app_onboarding : S
+
+legend right
+  Domains are shown in element labels.
+  C = Composition. A = Assignment. R = Realisation.
+  S = Serving. Ac = Access. F = Flow.
+  Assignment: active structure performs behaviour.
+  Realisation: behaviour fulfils a service.
+  Serving: service supports a consumer or concern.
+  Access: behaviour uses a passive structure element.
+endlegend
+@enduml

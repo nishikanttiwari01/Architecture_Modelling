@@ -35,7 +35,7 @@ Relationship types and directions:
 - Influence from drivers to assessments.
 - Influence from assessments to goals.
 - Influence from goals to outcomes.
-- Realisation from requirements to goals only if the direction is explicitly explained as requirement fulfilment. Otherwise use influence from requirements to goals.
+- Influence from requirements to goals. Do not use realisation between requirements and goals unless a later licensed ArchiMate 4 relationship review confirms a stronger relationship for this book.
 - Influence from principle to requirements where the principle shapes the requirement.
 
 ## Reusable model concepts
@@ -46,7 +46,7 @@ Relationship types and directions:
 
 ## Notation and legend
 
-Use ArchiMate 4 motivation notation. The legend must identify Stakeholder, Driver, Assessment, Goal, Outcome, Requirement, Principle, influence, association and optional realisation. Avoid using the removed ArchiMate 3.2 Constraint element.
+Use ArchiMate 4 motivation notation. The legend must identify Stakeholder, Driver, Assessment, Goal, Outcome, Requirement, Principle, influence and association. Avoid using the removed ArchiMate 3.2 Constraint element.
 
 ## Main flow or structure
 
@@ -72,6 +72,10 @@ No detailed solution design, project plan, regulatory advice, risk-control catal
 ## Accessibility requirements
 
 Use readable labels and concise wording. Avoid vague goal labels. Ensure line direction is easy to follow from drivers and assessments to goals, outcomes and requirements.
+
+## Source creation authorisation
+
+The author authorised source creation from the corrected specification on 2026-06-29. The rendered diagram remains in `Review`.
 
 ## Review criteria
 

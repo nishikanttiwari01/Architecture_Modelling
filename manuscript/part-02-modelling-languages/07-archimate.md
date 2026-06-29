@@ -30,12 +30,12 @@ By the end of this chapter, the reader should be able to:
 
 ## Required models and artefacts
 
-- FIG-07-01: Retail banking capability map, specification prepared, source deferred pending author approval
-- FIG-07-02: Horizon Bank layered architecture view, specification prepared, source deferred pending author approval
-- FIG-07-03: Horizon Bank application cooperation view, specification prepared, source deferred pending author approval
-- FIG-07-04: Horizon Bank technology view, specification prepared, source deferred pending author approval
-- FIG-07-05: Horizon Bank motivation view, specification prepared, source deferred pending author approval
-- FIG-07-06: Horizon Bank implementation and migration view, specification prepared, source deferred pending author approval
+- FIG-07-01: Retail banking capability map, specification approved, source created and rendered for review
+- FIG-07-02: Horizon Bank layered architecture view, specification approved, source created and rendered for review
+- FIG-07-03: Horizon Bank application cooperation view, specification approved, source created and rendered for review
+- FIG-07-04: Horizon Bank technology view, specification approved, source created and rendered for review
+- FIG-07-05: Horizon Bank motivation view, specification approved, source created and rendered for review
+- FIG-07-06: Horizon Bank implementation and migration view, specification approved, source created and rendered for review
 
 ## Worked examples
 
@@ -137,6 +137,10 @@ For Horizon Bank, a retail banking capability map might include Customer Managem
 
 Use strategy elements when capability ownership, investment planning or transformation scope is the main question. Do not use them to describe detailed workflow steps.
 
+![FIG-07-01. Retail banking capability map](../../diagrams/exported/svg/FIG-07-01-retail-banking-capability-map.svg)
+
+Figure FIG-07-01. Retail banking capability map. The view shows stable retail banking capabilities and a small motivation cue. It does not show process sequence, system ownership or BIAN Service Domains.
+
 ## Business domain
 
 The business domain answers: **which business actors, roles, behaviour, services and business objects are involved?**
@@ -157,23 +161,27 @@ The beginner pattern to learn is explicit:
 
 ```text
 Application Component
-→ assigned to Application Function or Process
-→ realises Application Service
+→ assigned to Function in the Application domain
+→ realises Service in the Application domain
 → serves another element
 ```
 
-In ArchiMate 4, behaviour concepts are streamlined across domains, so the phrase "Application Function or Process" should be read as a function or process placed in the application domain. The modelling pattern is still useful because it prevents a common shortcut: drawing an application component directly to every consumer without explaining the behaviour and service it provides.
+In ArchiMate 4, behaviour concepts are streamlined across domains. In this beginner pattern, the function and service are placed in the application domain. The modelling pattern is useful because it prevents a common shortcut: drawing an application component directly to every consumer without explaining the behaviour and service it provides.
 
 For Horizon Bank:
 
 - Party and Customer Platform is an Application Component.
 - Customer Profile Management Function is behaviour assigned to that component.
-- Customer Profile Management is an Application Service realised by that function.
+- Customer Profile Management is a Service in the Application domain realised by that function.
 - The service serves the Customer Onboarding process and other consuming application behaviour.
 
 This explicit chain is better for teaching than a single derived relationship from component to business process. A derived shortcut may be acceptable in a simplified view, but the diagram or caption should say that the service and function are implied.
 
 Do not confuse an ArchiMate Application Component with a C4 component. A C4 component sits inside one container. An ArchiMate Application Component is an enterprise architecture element and may represent a larger application or a modular part of an application estate.
+
+![FIG-07-03. Horizon Bank application cooperation view](../../diagrams/exported/svg/FIG-07-03-horizon-bank-application-cooperation-view.svg)
+
+Figure FIG-07-03. Horizon Bank application cooperation view. Each application chain shows an Application Component assigned to a Function in the Application domain, which realises a Service in the Application domain. The services then serve consuming behaviour, while flow and access show information movement and data use.
 
 ## Technology domain
 
@@ -183,13 +191,34 @@ A **Technology Node** is a technology active structure element that can host, pr
 
 **System Software** is software that provides an environment for applications or technology behaviour, such as an operating system, database management system, application server or container platform. It is not the same as the business application being described.
 
-A **Technology Service** is technology behaviour exposed for use by applications or other technology elements. Examples include API Gateway Service, Messaging Service, Runtime Hosting Service and Database Service.
+A **Service in the Technology domain** is technology behaviour exposed for use by applications or other technology elements. Examples include API Gateway Service, Messaging Service, Runtime Hosting Service and Database Service.
 
 An **Artifact** is a deployable or stored technology item, such as an application package, configuration file, database schema artifact or deployable container image. Do not confuse an artifact with a business object or application data object.
 
-Deployment or hosting is usually shown by assigning or placing artifacts on nodes, and by showing technology services serving application components or application behaviour. Be precise: a managed database service is not automatically a Technology Node. It may be modelled as a Technology Service when the concern is consumption of database capability, or as a node plus system software when the concern is hosting or runtime structure.
+Deployment or hosting is usually shown by assigning or placing artifacts on nodes, and by showing Services in the Technology domain serving application components or application behaviour. Be precise: a managed database service is not automatically a Technology Node. It may be modelled as a Service in the Technology domain when the concern is consumption of database capability, or as a node plus system software when the concern is hosting or runtime structure.
 
 For Horizon Bank, Customer Onboarding Platform may depend on a Runtime Hosting Service. Party and Customer Platform may use a Database Service. The Customer Profile Service Package may be an Artifact deployed to an Application Runtime Node. Choose the representation that answers the reader's concern.
+
+The explicit technology pattern is:
+
+```text
+Technology Node
+→ assigned to Function in the Technology domain
+→ realises Service in the Technology domain
+→ serves another element
+```
+
+FIG-07-02 pulls strategy, business, application and technology concepts into one traceability view. It is useful for review because it shows whether the same Customer Onboarding concern is connected across domains rather than copied into unrelated diagrams.
+
+![FIG-07-02. Horizon Bank layered architecture view](../../diagrams/exported/svg/FIG-07-02-horizon-bank-layered-architecture-view.svg)
+
+Figure FIG-07-02. Horizon Bank layered architecture view. The view uses a compact legend for relationship types and shows domain labels on each element so the reader can trace the concern across strategy, business, application and technology domains.
+
+FIG-07-04 then focuses only on the technology support. Runtime Hosting Function, Database Management Function, Messaging Function and API Gateway Function are Functions in the Technology domain. The managed database capability is shown as a Service in the Technology domain unless the model needs to expose the node and system software that provide it.
+
+![FIG-07-04. Horizon Bank technology view](../../diagrams/exported/svg/FIG-07-04-horizon-bank-technology-view.svg)
+
+Figure FIG-07-04. Horizon Bank technology view. The view makes the Technology Node to Function to Service chain explicit, includes System Software and Artifacts where hosting concerns matter, and avoids treating every managed platform capability as a node.
 
 ## Physical domain
 
@@ -213,6 +242,10 @@ Motivation views are useful in review meetings because they expose the logic beh
 
 Avoid vague goal labels. A goal such as "be digital" is too vague. A goal such as "reduce duplicate customer capture across retail products" gives the architecture team something to trace.
 
+![FIG-07-05. Horizon Bank motivation view](../../diagrams/exported/svg/FIG-07-05-horizon-bank-motivation-view.svg)
+
+Figure FIG-07-05. Horizon Bank motivation view. The view uses Influence from Requirements to Goals rather than Realisation, so it shows how requirements shape goals without claiming that a requirement fulfils a goal as an implementation result.
+
 ## Implementation and migration elements
 
 Implementation and migration elements answer: **how does the architecture move from current state to target state?**
@@ -224,6 +257,10 @@ Earlier ArchiMate versions included a Gap element. ArchiMate 4 removed it, so th
 For Horizon Bank, a migration view might show a current plateau with product-specific onboarding and duplicate customer stores, a transition plateau where Customer Onboarding Platform and Party and Customer Platform are introduced for new retail products, and a target plateau where onboarding services are reused across retail and small business channels.
 
 This view helps keep transformation realistic. It shows that enterprise architecture is not only a target picture. It must also describe sequencing, dependency, risk and temporary coexistence.
+
+![FIG-07-06. Horizon Bank implementation and migration view](../../diagrams/exported/svg/FIG-07-06-horizon-bank-implementation-migration-view.svg)
+
+Figure FIG-07-06. Horizon Bank implementation and migration view. Plateaus are ordered by layout, not by Triggering relationships. Events, Work Packages, Deliverables and labelled associations explain movement from Current State to Transition State and Target State.
 
 ## Core relationships
 
@@ -297,7 +334,7 @@ The third mistake is mixing abstraction levels. A view that combines "Customer M
 
 The fourth mistake is skipping the application realisation chain. A component-to-consumer shortcut may hide the behaviour and service that actually explain the dependency.
 
-The fifth mistake is treating a managed technology service as a node without asking the architecture question. If the concern is consumption, model a Technology Service. If the concern is hosting or execution, show the Technology Node, System Software and Artifact where needed.
+The fifth mistake is treating a managed technology service as a node without asking the architecture question. If the concern is consumption, model a Service in the Technology domain. If the concern is hosting or execution, show the Technology Node, System Software and Artifact where needed.
 
 The sixth mistake is using historical ArchiMate elements as if they were current ArchiMate 4 elements. Do not use removed elements such as Gap or Constraint in new Chapter 7 diagrams.
 
@@ -308,7 +345,7 @@ The sixth mistake is using historical ArchiMate elements as if they were current
 | Strategy domain | What abilities and direction matter? | Capability, Resource, Value Stream, Course of Action | Do not turn process steps into capabilities |
 | Business domain | Who performs business behaviour and what service is visible? | Actor, Role, Process, Function, Event, Service, Business Object | Actor and Role are not the same concept |
 | Application domain | Which applications perform behaviour and realise services? | Application Component, Process, Function, Service, Data Object | Do not skip the component to behaviour to service chain without saying so |
-| Technology domain | Which technology hosts or supports the applications? | Technology Node, System Software, Technology Service, Artifact | A managed service is not automatically a node |
+| Technology domain | Which technology hosts or supports the applications? | Technology Node, System Software, Service in the Technology domain, Artifact | A managed service is not automatically a node |
 | Physical domain | Which real-world facilities or equipment matter? | Facility, Equipment, Material | Use only when physical context affects the decision |
 | Motivation | Why is change needed? | Stakeholder, Driver, Assessment, Goal, Outcome, Requirement, Principle | Avoid vague goals |
 | Migration | How does architecture change over time? | Work Package, Deliverable, Plateau, Event | Do not use the removed Gap element as current notation |
@@ -321,7 +358,7 @@ The sixth mistake is using historical ArchiMate elements as if they were current
 - One ArchiMate model can support several views, and the same concept should be reused across those views.
 - Use BPMN for detailed process flow and C4 for software architecture views.
 - Actors perform behaviour; roles describe responsibilities performed by actors.
-- Application services should usually be traced through behaviour assigned to application components.
+- Services in the Application domain should usually be traced through behaviour assigned to application components.
 - Relationship choice, direction, legend and scope are essential in ArchiMate.
 
 ## Practical exercise
@@ -350,8 +387,8 @@ Suggested answer:
 - [ ] The model concepts are reused consistently across capability, layered, application, technology, motivation and migration views.
 - [ ] Formal ArchiMate 4 terminology is used where the chapter refers to the current standard.
 - [ ] Business actors and roles are not confused.
-- [ ] Application services are traced through assigned application behaviour unless a derived shortcut is explicitly stated.
-- [ ] Technology Node, System Software, Technology Service and Artifact are distinguished.
+- [ ] Services in the Application domain are traced through assigned application behaviour unless a derived shortcut is explicitly stated.
+- [ ] Technology Node, System Software, Service in the Technology domain and Artifact are distinguished.
 - [ ] Business, application and technology details are not mixed without clear relationships.
 - [ ] Capabilities describe abilities, not process steps.
 - [ ] Relationship types and directions are meaningful.

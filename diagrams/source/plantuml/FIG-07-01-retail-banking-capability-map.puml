@@ -1,0 +1,36 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+title FIG-07-01. Retail banking capability map
+
+skinparam linetype ortho
+skinparam rectangle {
+  RoundCorner 8
+}
+
+left to right direction
+
+package "Retail Banking\n<<Capability>>\n\nNesting shows composition\nfrom parent capability to child capabilities" as retail #E8F1FA {
+  rectangle "Customer\nManagement\n<<Capability>>" as customer #E8F1FA
+  rectangle "Account\nManagement\n<<Capability>>" as account #E8F1FA
+  rectangle "Payments\n<<Capability>>" as payments #E8F1FA
+  rectangle "Cards\n<<Capability>>" as cards #E8F1FA
+  rectangle "Lending\n<<Capability>>" as lending #E8F1FA
+  rectangle "Customer\nSupport\n<<Capability>>" as support #E8F1FA
+  rectangle "Financial Crime\nManagement\n<<Capability>>" as fincrime #E8F1FA
+}
+
+rectangle "Consolidate\ncustomer identity\n<<Course of Action>>" as course #F7E8D0
+rectangle "Reduced duplicate\ncustomer capture\n<<Outcome>>" as outcome #EAF6E8
+
+fincrime -right-> customer : serving
+course -right-> outcome : influence
+
+legend right
+  Blue = Capability
+  Tan = Course of Action
+  Green = Outcome
+  Nesting = composition from Retail Banking to child capabilities.
+  Arrows are labelled with relationship type.
+endlegend
+@enduml

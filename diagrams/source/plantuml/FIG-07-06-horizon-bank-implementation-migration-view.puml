@@ -1,0 +1,62 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+title FIG-07-06. Horizon Bank implementation and migration view
+
+skinparam linetype ortho
+skinparam rectangle {
+  RoundCorner 8
+}
+
+left to right direction
+
+package "Current State\n<<Plateau>>" as current #F7F9FB {
+  rectangle "Product-specific\nonboarding\n<<Process>>" as current_onboarding #FFF4D6
+  rectangle "Duplicate customer\nstores\n<<Data Object>>" as duplicate_stores #FFFFFF
+  rectangle "Core Deposit\nSystem\n<<Application Component>>" as current_core #EAF6E8
+}
+
+package "Transition State\n<<Plateau>>" as transition #F7F9FB {
+  rectangle "Customer Onboarding\nPlatform\n<<Application Component>>" as transition_onboarding #EAF6E8
+  rectangle "Party and Customer\nPlatform\n<<Application Component>>" as transition_party #EAF6E8
+  rectangle "Core Deposit\nSystem retained\n<<Application Component>>" as transition_core #EAF6E8
+}
+
+package "Target State\n<<Plateau>>" as target #F7F9FB {
+  rectangle "Reusable onboarding\nservice\n<<Deliverable>>" as target_onboarding #E8F1FA
+  rectangle "Customer profile\nservice\n<<Deliverable>>" as target_profile #E8F1FA
+  rectangle "Reduced duplicate\ncustomer capture\n<<Outcome>>" as target_outcome #EAF6E8
+}
+
+rectangle "Introduce Customer\nOnboarding Platform\n<<Work Package>>" as wp_onboarding #F7E8D0
+rectangle "Introduce Party and\nCustomer Platform\n<<Work Package>>" as wp_party #F7E8D0
+rectangle "Integrate retained\nCore Deposit System\n<<Work Package>>" as wp_core #F7E8D0
+rectangle "Transition release\ncompleted\n<<Event>>" as event_transition #FFF4D6
+
+current .. transition : A1
+transition .. target : A2
+
+wp_onboarding -right-> target_onboarding : R
+wp_party -right-> target_profile : R
+wp_core .. transition_core : A3
+
+target_onboarding -down-> target_outcome : I
+target_profile -up-> target_outcome : I
+event_transition .. transition : A4
+
+transition_onboarding .. target_onboarding : A5
+transition_party .. target_profile : A5
+current_core .. transition_core : A6
+
+legend bottom
+  R = Realisation. I = Influence.
+  A1 = planned transition. A2 = target adoption.
+  A3 = retained integration. A4 = release event association.
+  A5 = concept reused in target deliverables. A6 = retained system.
+  Plateaus are ordered by layout, not Triggering.
+  Work Packages realise Deliverables.
+  Deliverables influence the Outcome.
+  Associations explain movement and retained systems.
+  The removed Gap element is not used.
+endlegend
+@enduml

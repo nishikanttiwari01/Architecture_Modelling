@@ -4,6 +4,14 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-29
 
+### Completed Chapter 7 ArchiMate diagram set
+
+- Corrected the six Chapter 7 diagram specifications to use ArchiMate 4 generic behaviour element names and the explicit technology-domain Node to Function to Service chain.
+- Created original PlantUML source files, SVG exports and PNG review previews for `FIG-07-01` through `FIG-07-06`.
+- Inserted all six rendered diagrams into Chapter 7 with captions and explanations.
+- Updated `DIAGRAM_REGISTER.md` so Chapter 7 figures are `Review`, not `Approved`.
+- Recalculated the Chapter 7 quality gate at 9.1 while keeping the chapter `Under Review`.
+
 ### Revised Chapter 7 to ArchiMate 4
 
 - Updated Chapter 7, **ArchiMate**, from the historical ArchiMate 3.2 source basis to the current ArchiMate 4 source basis.

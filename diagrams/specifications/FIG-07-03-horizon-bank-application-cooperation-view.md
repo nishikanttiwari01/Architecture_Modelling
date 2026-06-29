@@ -23,16 +23,16 @@ ArchiMate 4 elements:
 - Application component: Party and Customer Platform
 - Application component: Financial Crime Platform
 - Application component: Enterprise Integration Platform
-- Application function: Application Capture Function
-- Application function: Onboarding Orchestration Function
-- Application function: Customer Profile Management Function
-- Application function: Screening Request Function
-- Application function: Integration Routing Function
-- Application service: Application Capture Service
-- Application service: Onboarding Orchestration Service
-- Application service: Customer Profile Management Service
-- Application service: Screening Request Service
-- Application service: Integration Routing Service
+- Function in the Application domain: Application Capture Function
+- Function in the Application domain: Onboarding Orchestration Function
+- Function in the Application domain: Customer Profile Management Function
+- Function in the Application domain: Screening Request Function
+- Function in the Application domain: Integration Routing Function
+- Service in the Application domain: Application Capture Service
+- Service in the Application domain: Onboarding Orchestration Service
+- Service in the Application domain: Customer Profile Management Service
+- Service in the Application domain: Screening Request Service
+- Service in the Application domain: Integration Routing Service
 - Data object: Customer Record
 
 ## Required relationships
@@ -56,7 +56,7 @@ Relationship types and directions:
 
 ## Notation and legend
 
-Use ArchiMate 4 application-domain notation. The legend must distinguish Application Component, Function, Application Service, Data Object, assignment, realisation, serving, access and optional flow. Use colour only as a secondary aid.
+Use ArchiMate 4 application-domain notation. The legend must distinguish Application Component, Function in the Application domain, Service in the Application domain, Data Object, assignment, realisation, serving, access and optional flow. Use colour only as a secondary aid.
 
 ## Main flow or structure
 
@@ -83,10 +83,14 @@ No business-process sequence, BPMN exception handling, C4 container internals, A
 
 Use readable labels and avoid dense crossing lines. Label non-obvious serving and flow relationships. Keep the component to function to service chain visually traceable.
 
+## Source creation authorisation
+
+The author authorised source creation from the corrected specification on 2026-06-29. The rendered diagram remains in `Review`.
+
 ## Review criteria
 
 - The view remains at application architecture level.
-- Application services are not confused with physical microservices.
-- Every application service is realised by behaviour assigned to an application component.
+- Services in the Application domain are not confused with physical microservices.
+- Every Service in the Application domain is realised by behaviour assigned to an application component.
 - Data object use is limited to what supports the architecture concern.
 - The view complements, rather than duplicates, C4 container diagrams.

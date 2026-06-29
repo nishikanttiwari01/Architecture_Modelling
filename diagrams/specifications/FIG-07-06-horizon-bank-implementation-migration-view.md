@@ -29,7 +29,8 @@ ArchiMate 4 elements:
 
 Relationship types and directions:
 
-- Triggering from Current State to Transition State, then from Transition State to Target State, if a state progression arrow is shown.
+- Do not use Triggering directly between Plateaus merely to show time order.
+- Use left-to-right layout, labelled associations, Events, Work Packages and Deliverables to explain movement from Current State to Transition State to Target State.
 - Realisation from each work package to its deliverable.
 - Influence from deliverables to Reduced duplicate customer capture outcome.
 - Association or aggregation from plateaus to the application components present in that state, if shown.
@@ -44,11 +45,11 @@ Relationship types and directions:
 
 ## Notation and legend
 
-Use ArchiMate 4 implementation and migration notation. The legend must identify Plateau, Work Package, Deliverable, Outcome, Event, realisation, triggering, influence and association or aggregation. It must explicitly state that Gap is not used because it is not current ArchiMate 4 notation.
+Use ArchiMate 4 implementation and migration notation. The legend must identify Plateau, Work Package, Deliverable, Outcome, Event, realisation, influence and association or aggregation. It must explicitly state that Plateau order is shown by layout and labelled associations, not by Triggering, and that Gap is not used because it is not current ArchiMate 4 notation.
 
 ## Main flow or structure
 
-Arrange plateaus from left to right: Current State, Transition State, Target State. Place work packages and deliverables between the relevant plateaus.
+Arrange plateaus from left to right: Current State, Transition State, Target State. Place work packages and deliverables between the relevant plateaus and use Events such as Transition release completed to mark movement.
 
 ## Alternative and exception flows
 
@@ -70,6 +71,10 @@ No Gantt chart, sprint plan, detailed dependency network, cost model, procuremen
 ## Accessibility requirements
 
 Use readable labels, clear left-to-right progression and no colour-only meaning. Keep state labels and deliverable labels large enough for book-page width.
+
+## Source creation authorisation
+
+The author authorised source creation from the corrected specification on 2026-06-29. The rendered diagram remains in `Review`.
 
 ## Review criteria
 

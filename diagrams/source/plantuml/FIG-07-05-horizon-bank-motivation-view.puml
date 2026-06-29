@@ -1,0 +1,62 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+title FIG-07-05. Horizon Bank motivation view
+
+skinparam linetype ortho
+skinparam rectangle {
+  RoundCorner 8
+}
+
+top to bottom direction
+
+rectangle "Retail Banking\nSponsor\n<<Stakeholder>>" as sponsor #FFF4D6
+rectangle "Compliance\nReviewer\n<<Stakeholder>>" as compliance #FFF4D6
+
+rectangle "Duplicate customer\ndatabases\n<<Driver>>" as driver_dup #F7E8D0
+rectangle "Slow product\nlaunches\n<<Driver>>" as driver_slow #F7E8D0
+rectangle "Limited process\nvisibility\n<<Driver>>" as driver_visibility #F7E8D0
+
+rectangle "Customer data\nfragmented\n<<Assessment>>" as assess_data #F7E8D0
+rectangle "Onboarding duplicated\nacross products\n<<Assessment>>" as assess_onboarding #F7E8D0
+
+rectangle "Trusted customer\nview\n<<Goal>>" as goal_trusted #EAF6E8
+rectangle "Improved straight-\nthrough processing\n<<Goal>>" as goal_stp #EAF6E8
+rectangle "Reusable onboarding\ncapability\n<<Goal>>" as goal_reuse #EAF6E8
+
+rectangle "Reduced duplicate\ncustomer capture\n<<Outcome>>" as outcome_duplicate #EAF6E8
+rectangle "Faster retail\nproduct onboarding\n<<Outcome>>" as outcome_faster #EAF6E8
+
+rectangle "Reuse customer\nidentity service\n<<Requirement>>" as req_identity #E8F1FA
+rectangle "Record screening\nevidence\n<<Requirement>>" as req_screening #E8F1FA
+rectangle "Integrate retained\ncore systems\n<<Requirement>>" as req_core #E8F1FA
+rectangle "Customer data has\naccountable system\nof record\n<<Principle>>" as principle_record #E8F1FA
+
+sponsor -down-> driver_dup : association
+sponsor -down-> driver_slow : association
+compliance -down-> driver_visibility : association
+
+driver_dup -down-> assess_data : influence
+driver_slow -down-> assess_onboarding : influence
+driver_visibility -down-> assess_onboarding : influence
+
+assess_data -down-> goal_trusted : influence
+assess_onboarding -down-> goal_stp : influence
+assess_onboarding -down-> goal_reuse : influence
+
+goal_trusted -down-> outcome_duplicate : influence
+goal_stp -down-> outcome_faster : influence
+goal_reuse -down-> outcome_faster : influence
+
+principle_record -down-> req_identity : influence
+req_identity -left-> goal_trusted : influence
+req_screening -left-> goal_stp : influence
+req_core -left-> goal_reuse : influence
+
+legend right
+  Motivation elements explain why the architecture changes.
+  Influence is used between Requirements and Goals.
+  Realisation is deliberately not used here.
+  No removed Constraint element is used.
+endlegend
+@enduml

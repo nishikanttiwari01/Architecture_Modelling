@@ -1,0 +1,63 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+title FIG-07-03. Horizon Bank application cooperation view
+
+skinparam linetype ortho
+skinparam rectangle {
+  RoundCorner 8
+}
+
+left to right direction
+
+rectangle "Horizon Digital\nChannels\n<<Application Component>>" as channels #EAF6E8
+rectangle "Application Capture\nFunction\n<<Function>>" as capture_func #EAF6E8
+rectangle "Application Capture\nService\n<<Service>>" as capture_svc #EAF6E8
+
+rectangle "Customer Onboarding\nPlatform\n<<Application Component>>" as onboarding #EAF6E8
+rectangle "Onboarding\nOrchestration Function\n<<Function>>" as orchestration_func #EAF6E8
+rectangle "Onboarding\nOrchestration Service\n<<Service>>" as orchestration_svc #EAF6E8
+
+rectangle "Party and Customer\nPlatform\n<<Application Component>>" as party #EAF6E8
+rectangle "Customer Profile\nManagement Function\n<<Function>>" as profile_func #EAF6E8
+rectangle "Customer Profile\nManagement Service\n<<Service>>" as profile_svc #EAF6E8
+rectangle "Customer Record\n<<Data Object>>" as customer_record #F7F9FB
+
+rectangle "Financial Crime\nPlatform\n<<Application Component>>" as fincrime #EAF6E8
+rectangle "Screening Request\nFunction\n<<Function>>" as screening_func #EAF6E8
+rectangle "Screening Request\nService\n<<Service>>" as screening_svc #EAF6E8
+
+rectangle "Enterprise Integration\nPlatform\n<<Application Component>>" as integration #EAF6E8
+rectangle "Integration Routing\nFunction\n<<Function>>" as routing_func #EAF6E8
+rectangle "Integration Routing\nService\n<<Service>>" as routing_svc #EAF6E8
+
+channels -right-> capture_func : A
+capture_func -right-> capture_svc : R
+capture_svc -right-> orchestration_func : S
+
+onboarding -right-> orchestration_func : A
+orchestration_func -right-> orchestration_svc : R
+
+party -right-> profile_func : A
+profile_func -right-> profile_svc : R
+profile_svc -up-> orchestration_func : S
+profile_func -down-> customer_record : Ac
+
+fincrime -right-> screening_func : A
+screening_func -right-> screening_svc : R
+screening_svc -up-> orchestration_func : S
+orchestration_func -down-> screening_func : F
+
+integration -right-> routing_func : A
+routing_func -right-> routing_svc : R
+routing_svc -up-> orchestration_func : S
+
+legend bottom
+  A = Assignment. R = Realisation. S = Serving.
+  Ac = Access. F = Flow of screening request information.
+  Each chain is Application Component -> Function -> Service.
+  Serving points from provider service to consuming function.
+  Access points from behaviour to a data object.
+  Flow shows transferred screening request information.
+endlegend
+@enduml
