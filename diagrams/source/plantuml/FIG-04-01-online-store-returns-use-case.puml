@@ -1,0 +1,34 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+left to right direction
+title FIG-04-01. Online Store Returns Use Case Diagram
+
+actor Customer
+actor "Customer Support Agent" as Support
+
+rectangle "Online Store" as OnlineStore {
+  usecase "Request return" as RequestReturn
+  usecase "Review return\nexception" as ReviewException
+  usecase "Request refund" as RequestRefund
+  usecase "Request collection" as RequestCollection
+}
+
+actor "Payment Provider System" as PaymentProvider
+actor "Delivery Partner System" as DeliveryPartner
+
+Customer -- RequestReturn
+Support -- ReviewException
+RequestRefund -- PaymentProvider
+RequestCollection -- DeliveryPartner
+
+RequestReturn ..> RequestRefund : <<include>>
+RequestReturn ..> RequestCollection : <<include>>
+ReviewException ..> RequestReturn : <<extend>>\n[policy exception]
+
+legend right
+  Solid line = actor association
+  <<include>> = required reused behaviour
+  <<extend>> = conditional behaviour
+endlegend
+@enduml

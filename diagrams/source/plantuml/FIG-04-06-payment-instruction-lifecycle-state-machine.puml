@@ -1,0 +1,31 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+title FIG-04-06. Payment Instruction Lifecycle State Machine
+
+state "Screening Pending" as ScreeningPending
+state "Posting Pending" as PostingPending
+state "Sent to Scheme" as SentToScheme
+
+[*] --> Received : submitted / create
+Received --> Validated : checksPassed
+Validated --> ScreeningPending : requestScreening
+
+ScreeningPending --> Rejected : screeningResult [failed]\n/ recordRejection
+ScreeningPending --> PostingPending : screeningResult [passed]\n/ requestPosting
+
+PostingPending --> Accepted : postingResult [accepted]\n/ recordAccepted
+PostingPending --> Failed : postingResult [failed]\n/ recordFailure
+
+Accepted --> SentToScheme : sent
+SentToScheme --> Settled : settled
+
+Rejected --> [*]
+Settled --> [*]
+Failed --> [*]
+
+note bottom
+  Transition labels use event [guard] / effect.
+  Repair, cancellation and resubmission are excluded.
+end note
+@enduml

@@ -1,0 +1,37 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+left to right direction
+title FIG-04-07. Horizon Bank Payments Deployment Diagram
+
+node "Customer Device\n<<device>>" as Device
+node "Internet Edge\n<<device>>" as Edge
+
+node "Horizon Bank Production" as Production {
+  node "Application Runtime\n<<execution environment>>" as AppRuntime {
+    artifact "Payments API\nartefact" as PaymentsApi
+    artifact "Payment Orchestration\nService artefact" as Orchestration
+  }
+
+  node "Managed Data Service\n<<execution environment>>" as DataRuntime {
+    artifact "Payment Status\nStore artefact" as StatusStore
+  }
+}
+
+node "Financial Crime Platform\n<<external system>>" as FinancialCrime
+node "Enterprise Integration Platform\n<<external system>>" as Integration
+node "Event Platform\n<<external system>>" as EventPlatform
+
+Device -- Edge : HTTPS
+Edge -- AppRuntime : routes API traffic
+PaymentsApi ..> Orchestration : calls
+Orchestration ..> StatusStore : records status
+Orchestration -- FinancialCrime : screening request
+Orchestration -- Integration : posting request
+Orchestration -- EventPlatform : publish event
+
+note bottom
+  Nodes are computational resources.
+  Artefacts are deployed implementation items.
+end note
+@enduml

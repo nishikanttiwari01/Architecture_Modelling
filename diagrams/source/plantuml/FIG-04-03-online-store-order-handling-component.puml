@@ -1,0 +1,40 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+left to right direction
+title FIG-04-03. Online Store Order Handling Component Diagram
+
+actor "Web Application" as Web
+database "Order Database" as OrderDb
+component "Order API" as OrderApi
+component "Order Service" as OrderService
+component "Payment Adapter" as PaymentAdapter
+component "Fulfilment Adapter" as FulfilmentAdapter
+component "Notification Publisher" as NotificationPublisher
+component "Payment Provider System" as PaymentProvider <<external>>
+component "Delivery Partner System" as DeliveryPartner <<external>>
+
+interface "Order Submission" as IOrder
+interface "Payment Authorisation" as IPayment
+interface "Fulfilment Request" as IFulfilment
+
+Web ..> IOrder : requires
+OrderApi - IOrder : provides
+OrderApi --> OrderService : delegates
+OrderService --> OrderDb : reads and writes
+
+OrderService ..> IPayment : requires
+PaymentAdapter - IPayment : provides
+PaymentAdapter --> PaymentProvider : calls
+
+OrderService ..> IFulfilment : requires
+FulfilmentAdapter - IFulfilment : provides
+FulfilmentAdapter --> DeliveryPartner : calls
+
+OrderService --> NotificationPublisher : publishes events
+
+note bottom of OrderApi
+  Component = logical modular part.
+  Artefact and deployment node are separate views.
+end note
+@enduml

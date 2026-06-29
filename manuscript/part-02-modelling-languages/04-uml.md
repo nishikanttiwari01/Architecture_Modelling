@@ -2,7 +2,7 @@
 title: "UML: Unified Modeling Language"
 chapter: 4
 part: "part-02-modelling-languages"
-status: "Diagramming"
+status: "Ready for Author Approval"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-29"
 ---
@@ -50,10 +50,6 @@ By the end of this chapter, the reader should be able to:
 - Chapter guidance is the author's practical interpretation for beginner architecture work.
 - Diagrams are original teaching examples and must not reproduce OMG specification diagrams.
 
-## Planned chapter structure
-
-The chapter follows the Chapter 5 prototype pattern: plain-language explanation, diagram families, individual UML diagram types, worked examples, selection guidance, comparison, common mistakes, cheat sheet, exercise, checklist and references. The current prose draft is complete enough for diagram specification review. The figure sources and SVG exports remain pending until the author approves `FIG-04-01` through `FIG-04-07`.
-
 ## What UML is and is not
 
 Unified Modeling Language (UML) is a modelling language for describing software-intensive systems. In plain terms, it gives teams a shared set of diagram types for talking about structure, behaviour, interaction and deployment. It is useful when ordinary boxes and arrows are too vague, but it should still be used to answer a clear question.
@@ -90,6 +86,24 @@ For Horizon Bank, a use case diagram for customer onboarding might show Retail C
 
 Use case diagrams become weak when teams use them as screen maps or as lists of internal functions. "Click submit button" is usually too detailed. "Validate field" is usually an internal behaviour, not a user goal. Keep the diagram at the level of outcomes the actor cares about.
 
+### How to read use case notation
+
+| Notation element | How to read it |
+|---|---|
+| Actor | A person, role, organisation or external system that interacts with the subject. |
+| Use case | A goal or service the subject provides to an actor. |
+| Subject boundary | The box that shows what is inside the system or subject being described. |
+| Association | A line showing that an actor participates in a use case. |
+| Include | A required sub-behaviour reused by another use case. Read it as "always uses this". |
+| Extend | Optional or conditional behaviour that adds to a base use case. Read it with the condition. |
+| Generalisation | A specialised actor or use case inherits the meaning of a more general one. |
+
+![FIG-04-01. Online Store returns use case diagram](../../diagrams/exported/svg/FIG-04-01-online-store-returns-use-case.svg)
+
+Figure FIG-04-01. Online Store returns use case diagram. It shows actor goals and system scope for returns, not screens, classes or process sequence.
+
+Notice the subject boundary first. The Customer and Customer Support Agent are outside the Online Store because they interact with it. Payment Provider System and Delivery Partner System are also outside because they support refund and collection goals. The figure deliberately excludes the order of work, refund failure handling and deployment detail.
+
 ## Class diagrams
 
 A class diagram answers: **what important concepts exist, what information or behaviour do they have, and how are they related?**
@@ -102,17 +116,58 @@ For Horizon Bank, a simple conceptual class diagram might show Party, Customer, 
 
 The most common class-diagram problem is too much detail. Attributes, operations, visibility markers and multiplicities are useful only when they support the question. If the reader needs conceptual relationships, a small diagram with names and cardinality may be enough. If the reader needs implementation design, add operations and interfaces deliberately.
 
+### How to read class notation
+
+| Notation element | How to read it |
+|---|---|
+| Class compartments | A class box may show a name, attributes and operations in separate compartments. |
+| Attributes | Named data held by instances of the class, such as `orderId` or `status`. |
+| Operations | Behaviour offered by the class, such as `calculateTotal()`. |
+| Association | A structural relationship between classes. |
+| Multiplicity | Numbers such as `1`, `0..1` or `1..*` that show how many instances may participate. |
+| Generalisation | An inheritance relationship from a specialised class to a more general class. |
+| Dependency | A weaker "uses" relationship where one class depends on another. |
+| Aggregation | A whole-part relationship where the part may exist independently. |
+| Composition | A strong whole-part relationship where the part belongs to the whole's lifecycle. |
+
+![FIG-04-02. Online Store order concept class diagram](../../diagrams/exported/svg/FIG-04-02-online-store-order-concept-class.svg)
+
+Figure FIG-04-02. Online Store order concept class diagram. It shows analysis-level order concepts, selected attributes and relationships, not a database schema or code design.
+
+Notice the difference between association and composition. A Customer places many Orders, while an Order is composed of Order Lines. The figure deliberately avoids private fields, persistence annotations and implementation methods because the reader is learning domain structure, not code.
+
 ## Component diagrams
 
-A UML component diagram answers: **what replaceable or deployable parts provide or require interfaces?**
+A UML component diagram answers: **which modular system parts provide or require interfaces?**
 
-Component diagrams are useful when a team needs to discuss software responsibilities and interfaces without dropping into class-level detail. In UML, a component is a modular part of a system with encapsulated contents and defined interfaces [OMG-UML]. This is related to, but not identical with, a C4 component. Chapter 5 uses C4 component diagrams for parts inside one C4 container. UML component diagrams can be more formal about provided and required interfaces.
+Component diagrams are useful when a team needs to discuss software responsibilities and interfaces without dropping into class-level detail. In UML, a component is a modular, encapsulated and replaceable system part that defines provided and required interfaces [OMG-UML]. It is not automatically a deployable service. Deployment is a separate concern, represented with artefacts and deployment nodes.
+
+Keep four terms separate. A **component** is the logical modular part. An **interface** is the contract it provides or requires. An **artefact** is a physical implementation item, such as a package, executable or deployable file. A **deployment node** is the computational resource or execution environment where artefacts run. One component may be realised by one or more artefacts, and one artefact may be deployed to one or more nodes, but those are modelling choices, not automatic rules.
+
+This is related to, but not identical with, a C4 component. Chapter 5 uses C4 component diagrams for parts inside one C4 container. UML component diagrams can be more formal about provided and required interfaces.
 
 For the Online Store, a component diagram might show Web Application, Order API, Payment Adapter, Fulfilment Adapter and Notification Publisher. The useful part is not the box layout. It is the interface conversation: which component exposes order submission, which component requires payment authorisation, and which component publishes order events?
 
 For Horizon Bank, a Payments Platform component diagram might show Payments API, Payment Orchestration, Screening Adapter, Account Posting Adapter and Payment Status Store. It can also show dependencies on Financial Crime Platform, Enterprise Integration Platform and Event Platform. That still does not mean each component is a microservice. Physical deployment choices need separate justification.
 
 Use component diagrams when interfaces and replaceability matter. If the conversation is about enterprise systems and their relationships, a C4 System Landscape or ArchiMate application view may be clearer. If the conversation is about internal classes, a class diagram may fit better.
+
+### How to read component notation
+
+| Notation element | How to read it |
+|---|---|
+| Component | A modular, encapsulated and replaceable part of a system. |
+| Provided interface | A contract the component offers to other parts. Often shown as a lollipop symbol or interface element. |
+| Required interface | A contract the component needs from another part. Often shown as a socket or dependency to an interface. |
+| Dependency | A dashed arrow showing that one element depends on another. |
+| Port | An explicit interaction point on a component boundary. |
+| Artefact distinction | A component is logical. An artefact is a physical implementation item that may realise or package it. |
+
+![FIG-04-03. Online Store order handling component diagram](../../diagrams/exported/svg/FIG-04-03-online-store-order-handling-component.svg)
+
+Figure FIG-04-03. Online Store order handling component diagram. It shows logical components and interfaces for order handling, not deployment nodes or microservice boundaries.
+
+Notice that Payment Adapter and Fulfilment Adapter are components that isolate external dependencies. The component diagram helps discuss provided and required interfaces. It deliberately excludes runtime placement, Kubernetes detail and class-level implementation.
 
 ## Sequence diagrams
 
@@ -126,6 +181,26 @@ For Horizon Bank, a payment submission sequence might show Retail Customer, Hori
 
 Do not use one sequence diagram for every possible path. Draw the main path when it helps, then add separate diagrams or notes for important alternatives. If the real question is a human workflow with hand-offs, timers and exceptions, BPMN will usually be more suitable.
 
+### How to read sequence notation
+
+| Notation element | How to read it |
+|---|---|
+| Lifeline | A participant in the interaction, read from left to right across the top. |
+| Activation | A narrow bar showing when a participant is carrying out work. |
+| Synchronous message | A call where the sender waits for the receiver. |
+| Asynchronous message | A signal or message where the sender does not wait in the same way. |
+| Return | A response from receiver to sender, often shown with a dashed arrow. |
+| `alt` | Alternative paths, such as success or rejection. |
+| `opt` | Optional behaviour that happens only if a condition is true. |
+| `loop` | Repeated behaviour. |
+| `par` | Parallel behaviour. |
+
+![FIG-04-04. Horizon Bank payment submission sequence diagram](../../diagrams/exported/svg/FIG-04-04-horizon-bank-payment-submission-sequence.svg)
+
+Figure FIG-04-04. Horizon Bank payment submission sequence diagram. It shows one target-state payment submission interaction, including screening, posting, status recording and event publication.
+
+Read the messages from top to bottom. The diagram shows the main successful path and one alternative branch for rejection or posting failure. It deliberately excludes settlement, sanctions casework, retry rules and the full business process.
+
 ## Activity diagrams
 
 An activity diagram answers: **what flow of actions, decisions and parallel work leads to an outcome?**
@@ -137,6 +212,24 @@ For the Online Store, an activity diagram for returns could show Receive return 
 For Horizon Bank, an activity diagram might show high-level payment validation inside the Payments Platform: receive instruction, validate mandatory fields, check limits, request screening, decide whether to continue, post payment and publish status. This would be a system-behaviour view, not a complete operational process for payment repair, sanctions investigation or reconciliation.
 
 The main mistake is treating an activity diagram as a universal process model. For regulated banking processes with pools, message flows, events, timers and exception handling, BPMN should normally be used. Use UML activity diagrams when the flow is close to system logic or when the team already uses UML for design.
+
+### How to read activity notation
+
+| Notation element | How to read it |
+|---|---|
+| Initial and final nodes | The start and end of the activity flow. |
+| Action | A step of work or behaviour. |
+| Control flow | An arrow showing the order in which actions may occur. |
+| Decision and merge | A diamond that splits or rejoins alternative paths. |
+| Guards | Conditions on outgoing flows, such as `[valid]` or `[failed]`. |
+| Fork and join | Thick bars that split work into parallel flows or wait for parallel flows to complete. |
+| Swimlanes | Partitions that show responsibility, such as a platform or external service. |
+
+![FIG-04-05. Horizon Bank payment validation activity diagram](../../diagrams/exported/svg/FIG-04-05-horizon-bank-payment-validation-activity.svg)
+
+Figure FIG-04-05. Horizon Bank payment validation activity diagram. It shows system-level validation and screening flow inside the Payments Platform, not the complete operational payments process.
+
+Notice the guards on decision paths. They tell the reader why one path accepts the payment instruction while another rejects it. The figure deliberately excludes BPMN pools, human repair work, sanctions investigation and reconciliation.
 
 ## State machine diagrams
 
@@ -150,17 +243,52 @@ For Horizon Bank, a Payment Instruction might move through Received, Validated, 
 
 Do not use a state machine when a simple checklist would do. It is useful when an entity can remain in a state, receive events, reject invalid transitions or trigger different behaviour depending on its current state.
 
+### How to read state machine notation
+
+| Notation element | How to read it |
+|---|---|
+| State | A meaningful condition in the lifecycle of the subject. |
+| Initial and final pseudostates | Mark where the lifecycle starts and where this simplified view ends. |
+| Transition | An arrow showing a valid movement between states. |
+| Event | Something that triggers a transition. |
+| Guard | A condition in square brackets that must be true. |
+| Effect | Behaviour after the slash that happens when the transition fires. |
+| `event [guard] / effect` | Read as: when the event occurs, if the guard is true, perform the effect and move state. |
+
+![FIG-04-06. Payment instruction lifecycle state machine](../../diagrams/exported/svg/FIG-04-06-payment-instruction-lifecycle-state-machine.svg)
+
+Figure FIG-04-06. Payment instruction lifecycle state machine. It shows a simplified payment-instruction lifecycle and the events that move the instruction between states.
+
+Notice that states are conditions, not task names. `Screening Pending` and `Posting Pending` are useful because the payment can wait there and react differently to later events. The diagram deliberately excludes repair, resubmission, cancellation and detailed payment-scheme status codes.
+
 ## Deployment diagrams
 
 A deployment diagram answers: **where software artefacts run, and what runtime nodes they depend on?**
 
-UML deployment diagrams show nodes, execution environments, communication paths and deployed artefacts. They are useful when the discussion is about runtime placement rather than logical software structure. A node might represent a device, server, container platform, database service or execution environment. A UML artefact is a physical piece of implementation, such as an application package or deployable unit.
+UML deployment diagrams show nodes, execution environments, communication paths and deployed artefacts. They are useful when the discussion is about runtime placement rather than logical software structure. A UML node is a computational resource, usually a device or an execution environment. A device may be physical or virtual hardware. An execution environment is a runtime that hosts software, such as an application server, container platform or database service. A UML artefact is a physical piece of implementation, such as an application package, executable or deployable file.
 
 For the Online Store, a simple deployment diagram might show a customer browser, web application runtime, API application runtime, managed database and external payment and delivery systems. It can support questions about network paths, environments and operational ownership.
 
 For Horizon Bank, a deployment diagram might show an internet edge, application runtime for Payments API and Payment Orchestration Service, managed data store for payment status, and communication paths to Financial Crime Platform, Enterprise Integration Platform and Event Platform. Keep the diagram at the level needed for the architecture decision. If firewall rules, subnets and availability zones matter, a more detailed infrastructure diagram may be required.
 
 Deployment diagrams are often confused with component or container diagrams. The difference is the question. Component and container views ask what the software parts are. Deployment views ask where those parts run.
+
+### How to read deployment notation
+
+| Notation element | How to read it |
+|---|---|
+| Node | A computational resource that can host artefacts or other nodes. |
+| Device | A node representing physical or virtual hardware. |
+| Execution environment | A node representing runtime software that hosts artefacts. |
+| Artefact | A physical implementation item, such as an application package or executable. |
+| Communication path | A line showing that nodes can communicate. |
+| Deployment relationship | A relationship showing that an artefact is deployed to a node or execution environment. |
+
+![FIG-04-07. Horizon Bank payments deployment diagram](../../diagrams/exported/svg/FIG-04-07-horizon-bank-payments-deployment.svg)
+
+Figure FIG-04-07. Horizon Bank payments deployment diagram. It shows simplified runtime placement for payment artefacts, execution environments and neighbouring systems.
+
+Notice the distinction between artefacts and nodes. Payments API and Payment Orchestration Service are artefacts; the application runtime and managed data service are execution environments. The figure deliberately excludes subnet design, firewall rules, availability zones and disaster-recovery topology.
 
 ## Less commonly used UML diagrams
 
@@ -242,6 +370,7 @@ The sixth mistake is copying specification-style complexity into beginner docume
 - Sequence diagrams are best for one interaction scenario, not every possible path.
 - Class diagrams must state whether they are conceptual, design-level or code-level.
 - UML component diagrams focus on modular parts and interfaces, not automatically microservices.
+- UML components are not automatically deployable; artefacts and nodes handle deployment questions.
 - State machine diagrams are valuable when lifecycle rules and valid transitions matter.
 - Deployment diagrams answer runtime placement questions, not logical decomposition questions.
 
@@ -275,9 +404,3 @@ A deployment diagram is not the best first choice unless the team is making runt
 Chapter source notes are maintained in the repository under `research/uml/` and registered in `SOURCE_REGISTER.md`. Appendix H, [Glossary and Source Notes](../appendices/appendix-h-glossary-sources.md), is the intended publication location for the final source-key index once the appendix is completed.
 
 - `[OMG-UML]`: Object Management Group, Unified Modeling Language specification, version 2.5.1.
-
-## Drafting notes
-
-- Current status: prose draft and diagram specifications prepared.
-- Next step: author approval of the seven UML diagram specifications before PlantUML source creation.
-- Do not move the chapter to `Ready for Author Approval` until required diagrams are created, rendered, inserted and reviewed.

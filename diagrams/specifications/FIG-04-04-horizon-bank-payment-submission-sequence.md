@@ -1,4 +1,4 @@
-# FIG-04-04: Horizon Bank payment submission sequence diagram
+# FIG-04-04: Horizon Bank Payment Submission Sequence Diagram
 
 ## Purpose
 
@@ -11,6 +11,10 @@ Architects, developers and testers.
 ## Question answered
 
 In one successful payment submission scenario, who sends which message and in what order?
+
+## Abstraction level
+
+Runtime interaction view for one target-state scenario.
 
 ## Notation
 
@@ -30,15 +34,19 @@ UML sequence diagram.
 
 ## Required relationships
 
-- Retail Customer submits payment through Horizon Digital Channels
-- Horizon Digital Channels sends payment instruction to Payments API
-- Payments API asks Payment Orchestration Service to create payment
-- Payment Orchestration Service requests screening from Financial Crime Platform
-- Payment Orchestration Service requests account posting through Enterprise Integration Platform
-- Enterprise Integration Platform posts to Core Deposit System
-- Payment Orchestration Service records status in Payment Status Store
-- Payment Orchestration Service publishes payment event to Event Platform
-- Success response returns to Horizon Digital Channels
+- Retail Customer submits payment through Horizon Digital Channels.
+- Horizon Digital Channels sends payment instruction to Payments API.
+- Payments API asks Payment Orchestration Service to create payment.
+- Payment Orchestration Service requests screening from Financial Crime Platform.
+- Payment Orchestration Service requests account posting through Enterprise Integration Platform.
+- Enterprise Integration Platform posts to Core Deposit System.
+- Payment Orchestration Service records status in Payment Status Store.
+- Payment Orchestration Service publishes payment event to Event Platform.
+- Success response returns to Horizon Digital Channels.
+
+## Relationship semantics
+
+Solid messages represent calls or requests in the scenario. Dashed messages represent returns. The alternative fragment shows mutually exclusive outcomes. Message order is top-to-bottom, not left-to-right.
 
 ## Main flow or structure
 
@@ -46,7 +54,7 @@ Show the main successful path from top to bottom. Use concise message labels.
 
 ## Alternative and exception flows
 
-Include at most one note that rejected screening or failed posting requires a separate exception view.
+Include one alternative fragment for screening rejection or posting failure. Do not model settlement or repair paths.
 
 ## Scope
 
@@ -70,4 +78,5 @@ Keep lifeline count manageable and label messages in readable sentence case.
 
 - Message order matches the chapter explanation.
 - Lifelines use repository-controlled names.
+- Alternative fragment does not imply a complete payments exception model.
 - The figure does not imply a complete payments process.

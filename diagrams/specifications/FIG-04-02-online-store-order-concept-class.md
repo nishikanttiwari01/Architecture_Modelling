@@ -1,4 +1,4 @@
-# FIG-04-02: Online Store order concept class diagram
+# FIG-04-02: Online Store Order Concept Class Diagram
 
 ## Purpose
 
@@ -11,6 +11,10 @@ Beginners, analysts and developers.
 ## Question answered
 
 What important order-domain concepts exist, and how are they related?
+
+## Abstraction level
+
+Conceptual analysis view. It shows domain concepts and selected relationships, not database tables or implementation classes.
 
 ## Notation
 
@@ -28,13 +32,17 @@ UML class diagram.
 
 ## Required relationships
 
-- Customer places Order
-- Customer owns Basket
-- Basket contains Product references or basket items
-- Order contains Order Line
-- Order Line refers to Product
-- Order has Payment
-- Order has Shipment
+- Customer places Order.
+- Customer owns Basket.
+- Basket references Product.
+- Order contains Order Line.
+- Order Line refers to Product.
+- Order has Payment.
+- Order has Shipment.
+
+## Relationship semantics
+
+Association means a meaningful domain relationship. Multiplicity states how many instances can participate. Composition is used where the part belongs to the whole's lifecycle, such as Order Line inside Order. Aggregation is used only for a weaker whole-part reference.
 
 ## Main flow or structure
 
@@ -50,11 +58,11 @@ Conceptual order-domain structure for the Simple Online Store.
 
 ## Exclusions
 
-No private attributes, methods, persistence annotations, table names or implementation classes.
+No private attributes, persistence annotations, table names, infrastructure or implementation classes.
 
 ## Accessibility requirements
 
-Keep class boxes simple and readable. Avoid dense compartments.
+Keep class boxes simple and readable. Avoid dense compartments and tiny multiplicity labels.
 
 ## Source references
 
@@ -65,4 +73,5 @@ Keep class boxes simple and readable. Avoid dense compartments.
 
 - Diagram is clearly analysis-level, not physical database design.
 - Multiplicities are readable and not excessive.
+- Composition and aggregation are used sparingly and intentionally.
 - Concepts match the repository example.

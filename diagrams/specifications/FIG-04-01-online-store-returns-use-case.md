@@ -1,4 +1,4 @@
-# FIG-04-01: Online Store returns use case diagram
+# FIG-04-01: Online Store Returns Use Case Diagram
 
 ## Purpose
 
@@ -12,6 +12,10 @@ Beginners, analysts and architects.
 
 Who interacts with the Online Store returns feature, and what goals do they pursue?
 
+## Abstraction level
+
+Conceptual scope view. It shows actor goals, not workflow, screens, classes or deployment.
+
 ## Notation
 
 UML use case diagram.
@@ -20,16 +24,21 @@ UML use case diagram.
 
 - Subject boundary: Online Store
 - Actors: Customer, Customer Support Agent, Payment Provider System, Delivery Partner System
-- Use cases: Request return, Approve return exception, Request refund, Request collection
+- Use cases: Request return, Review return exception, Request refund, Request collection
 
 ## Required relationships
 
-- Customer participates in Request return
-- Customer Support Agent participates in Approve return exception
-- Request return may include Request refund when a refund is due
-- Request return may include Request collection when goods need collection
-- Payment Provider System supports Request refund
-- Delivery Partner System supports Request collection
+- Customer is associated with Request return.
+- Customer Support Agent is associated with Review return exception.
+- Review return exception extends Request return with condition `[policy exception]`.
+- Request return includes Request refund when the return outcome requires a refund.
+- Request return includes Request collection when goods need to be collected.
+- Payment Provider System is associated with Request refund.
+- Delivery Partner System is associated with Request collection.
+
+## Relationship semantics
+
+Associations mean participation, not control flow. `include` means required reused behaviour in this simplified returns scope. `extend` means conditional behaviour added to the base use case.
 
 ## Main flow or structure
 
@@ -37,7 +46,7 @@ Place the Online Store subject boundary in the centre. Put human actors to the l
 
 ## Alternative and exception flows
 
-Show Approve return exception as a separate use case linked to Customer Support Agent. Do not model detailed exception sequence in this figure.
+Show Review return exception as conditional behaviour. Do not model detailed exception sequence in this figure.
 
 ## Scope
 
@@ -61,4 +70,4 @@ Use clear labels, high contrast and no colour-only meaning. The figure must rema
 - Actor names match the repository example.
 - Use cases are actor goals, not internal implementation steps.
 - Subject boundary is visible.
-- Relationships are not over-modelled for a beginner chapter.
+- Include and extend relationships have correct semantics.

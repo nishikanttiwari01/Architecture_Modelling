@@ -1,0 +1,54 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+title FIG-04-04. Horizon Bank Payment Submission Sequence Diagram
+
+actor "Retail Customer" as Customer
+participant "Horizon Digital\nChannels" as Channels
+participant "Payments API" as API
+participant "Payment Orchestration\nService" as Orchestration
+participant "Financial Crime\nPlatform" as FinancialCrime
+participant "Enterprise Integration\nPlatform" as Integration
+participant "Core Deposit\nSystem" as Core
+database "Payment Status\nStore" as StatusStore
+queue "Event Platform" as EventPlatform
+
+Customer -> Channels : Submit payment
+activate Channels
+Channels -> API : Send payment instruction
+activate API
+API -> Orchestration : Create payment
+activate Orchestration
+Orchestration -> FinancialCrime : Request screening
+activate FinancialCrime
+FinancialCrime --> Orchestration : Screening result
+deactivate FinancialCrime
+
+alt screening passed
+  Orchestration -> Integration : Request account posting
+  activate Integration
+  Integration -> Core : Post accepted payment
+  activate Core
+  Core --> Integration : Posting result
+  deactivate Core
+  Integration --> Orchestration : Posting accepted
+  deactivate Integration
+  Orchestration -> StatusStore : Record accepted status
+  Orchestration ->> EventPlatform : Publish PaymentAccepted
+  Orchestration --> API : Payment accepted
+else screening failed or posting failed
+  Orchestration -> StatusStore : Record rejected or failed status
+  Orchestration --> API : Payment not accepted
+end
+
+API --> Channels : Return payment status
+deactivate Orchestration
+deactivate API
+Channels --> Customer : Show payment status
+deactivate Channels
+
+note bottom
+  One interaction scenario only.
+  Settlement, repair and retry paths are excluded.
+end note
+@enduml

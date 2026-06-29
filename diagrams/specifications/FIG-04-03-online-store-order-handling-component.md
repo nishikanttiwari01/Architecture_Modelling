@@ -1,4 +1,4 @@
-# FIG-04-03: Online Store order handling component diagram
+# FIG-04-03: Online Store Order Handling Component Diagram
 
 ## Purpose
 
@@ -11,6 +11,10 @@ Architects and developers.
 ## Question answered
 
 Which software components collaborate to handle orders, payments, fulfilment and notifications?
+
+## Abstraction level
+
+Logical software structure. It shows components and interfaces, not deployment artefacts or runtime nodes.
 
 ## Notation
 
@@ -27,17 +31,22 @@ UML component diagram.
 - Order Database
 - Payment Provider System
 - Delivery Partner System
+- Interfaces: Order Submission, Payment Authorisation, Fulfilment Request
 
 ## Required relationships
 
-- Web Application calls Order API
-- Order API delegates to Order Service
-- Order Service reads and writes Order Database
-- Order Service uses Payment Adapter for payment authorisation
-- Payment Adapter calls Payment Provider System
-- Order Service uses Fulfilment Adapter for delivery requests
-- Fulfilment Adapter calls Delivery Partner System
-- Order Service uses Notification Publisher for order events or customer notifications
+- Web Application requires Order Submission.
+- Order API provides Order Submission and delegates to Order Service.
+- Order Service reads and writes Order Database.
+- Order Service requires Payment Authorisation from Payment Adapter.
+- Payment Adapter depends on Payment Provider System.
+- Order Service requires Fulfilment Request from Fulfilment Adapter.
+- Fulfilment Adapter depends on Delivery Partner System.
+- Order Service uses Notification Publisher.
+
+## Relationship semantics
+
+Provided interfaces are contracts a component offers. Required interfaces are contracts a component needs. Dependencies show usage, not deployment. Component boundaries do not imply separate microservices.
 
 ## Main flow or structure
 
@@ -45,7 +54,7 @@ Place Online Store components together and external systems outside the boundary
 
 ## Alternative and exception flows
 
-Do not show detailed failure paths. Mention that failure handling belongs in sequence, activity or state views if needed.
+Do not show detailed failure paths. Failure handling belongs in sequence, activity or state views if needed.
 
 ## Scope
 
@@ -53,7 +62,7 @@ Logical component responsibilities for order handling.
 
 ## Exclusions
 
-No deployment nodes, Kubernetes detail, source-code classes or enterprise landscape.
+No deployment nodes, Kubernetes detail, source-code classes, artefact packaging or enterprise landscape.
 
 ## Accessibility requirements
 
@@ -66,6 +75,7 @@ Use clear component names and relationship labels. Do not rely on colour alone.
 
 ## Review criteria
 
-- Components are not presented as mandatory microservices.
+- Components are not presented as mandatory microservices or deployable artefacts.
+- Provided and required interfaces are visible or clearly labelled.
 - External systems are visually distinct.
 - Interface responsibilities are understandable to a beginner.

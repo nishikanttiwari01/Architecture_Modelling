@@ -1,0 +1,57 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+left to right direction
+title FIG-04-02. Online Store Order Concept Class Diagram
+
+skinparam classAttributeIconSize 0
+
+class Customer {
+  customerId
+  emailAddress
+}
+
+class Basket {
+  basketId
+}
+
+class Product {
+  productId
+  name
+  price
+}
+
+class Order {
+  orderId
+  status
+  placedDate
+}
+
+class "Order Line" as OrderLine {
+  quantity
+  lineTotal
+}
+
+class Payment {
+  paymentId
+  status
+}
+
+class Shipment {
+  shipmentId
+  trackingReference
+}
+
+Customer "1" -- "0..1" Basket : owns
+Customer "1" -- "0..*" Order : places
+Basket "1" o-- "0..*" Product : references
+Order "1" *-- "1..*" OrderLine : contains
+OrderLine "*" --> "1" Product : for product
+Order "1" -- "0..*" Payment : has
+Order "1" -- "0..*" Shipment : fulfilled by
+
+note bottom
+  Analysis-level concepts only.
+  This is not a database schema.
+end note
+@enduml

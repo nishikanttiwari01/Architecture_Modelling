@@ -1,4 +1,4 @@
-# FIG-04-05: Horizon Bank payment validation activity diagram
+# FIG-04-05: Horizon Bank Payment Validation Activity Diagram
 
 ## Purpose
 
@@ -12,35 +12,44 @@ Architects, analysts and developers.
 
 What flow of actions and decisions occurs before a payment instruction is accepted or rejected?
 
+## Abstraction level
+
+System behaviour view. It shows validation flow inside a software platform, not a full banking process.
+
 ## Notation
 
 UML activity diagram.
 
 ## Required elements
 
-- Start
+- Initial node
 - Receive payment instruction
 - Validate mandatory fields
 - Check payment limits
 - Request financial-crime screening
-- Decision: validation and screening passed?
+- Decision: checks passed?
 - Reject payment instruction
 - Accept payment for posting
 - Record status
-- End
+- Final node
+- Swimlanes for Payments Platform and Financial Crime Platform
 
 ## Required relationships
 
-- Start flows to Receive payment instruction
-- Mandatory-field validation precedes limit checking
-- Limit checking precedes screening request
-- Failed validation or screening flows to Reject payment instruction
-- Passed validation and screening flows to Accept payment for posting
-- Both accepted and rejected outcomes record status before end
+- Initial node flows to Receive payment instruction.
+- Mandatory-field validation precedes limit checking.
+- Limit checking precedes screening request.
+- Failed validation or screening flows to Reject payment instruction.
+- Passed validation and screening flows to Accept payment for posting.
+- Both accepted and rejected outcomes record status before the final node.
+
+## Relationship semantics
+
+Control flows show possible order of actions. Guard labels on decision edges define path conditions. Swimlanes show responsibility, not deployment ownership.
 
 ## Main flow or structure
 
-Use a simple top-to-bottom activity flow with one decision diamond and clear yes/no labels.
+Use a simple top-to-bottom activity flow with one decision diamond and clear guard labels.
 
 ## Alternative and exception flows
 
@@ -52,7 +61,7 @@ System-level validation flow inside the Payments Platform.
 
 ## Exclusions
 
-No BPMN pools, lanes, timers, message events or human operational workflow.
+No BPMN pools, lanes, timers, message events, human operational workflow or deployment detail.
 
 ## Accessibility requirements
 
@@ -66,5 +75,6 @@ Decision labels must be readable. Avoid crowded branching.
 ## Review criteria
 
 - The diagram is not presented as a full banking process.
-- Branch outcomes are labelled.
+- Branch outcomes are labelled with guards.
 - Activity names are verbs or verb phrases.
+- Swimlanes do not imply physical deployment.

@@ -1,0 +1,30 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+title FIG-04-05. Horizon Bank Payment Validation Activity Diagram
+
+|Payments Platform|
+start
+:Receive payment instruction;
+:Validate mandatory fields;
+:Check payment limits;
+
+|Financial Crime Platform|
+:Screen payment instruction;
+
+|Payments Platform|
+if (Checks passed?) then ([valid and clear])
+  :Accept payment for posting;
+  :Record accepted status;
+else ([invalid or screened out])
+  :Reject payment instruction;
+  :Record rejected status;
+endif
+
+stop
+
+legend right
+  Guards label the decision paths.
+  Swimlanes show responsibility, not deployment.
+endlegend
+@enduml

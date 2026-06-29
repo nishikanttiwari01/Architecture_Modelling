@@ -1,4 +1,4 @@
-# FIG-04-06: Payment instruction lifecycle state machine
+# FIG-04-06: Payment Instruction Lifecycle State Machine
 
 ## Purpose
 
@@ -12,13 +12,17 @@ Architects, developers, testers and operations.
 
 What meaningful states can a payment instruction be in, and what events move it between states?
 
+## Abstraction level
+
+Lifecycle behaviour view for one business object or system entity.
+
 ## Notation
 
 UML state machine diagram.
 
 ## Required elements
 
-- Initial state
+- Initial pseudostate
 - Received
 - Validated
 - Screening Pending
@@ -28,20 +32,24 @@ UML state machine diagram.
 - Sent to Scheme
 - Settled
 - Failed
-- Final state
+- Final pseudostate
 
 ## Required relationships
 
-- Initial state transitions to Received
-- Received transitions to Validated after mandatory checks pass
-- Validated transitions to Screening Pending when screening is requested
-- Screening Pending transitions to Rejected when screening fails
-- Screening Pending transitions to Posting Pending when screening passes
-- Posting Pending transitions to Accepted when account posting succeeds
-- Posting Pending transitions to Failed when posting fails
-- Accepted transitions to Sent to Scheme when outbound payment is sent
-- Sent to Scheme transitions to Settled when settlement confirmation is received
-- Rejected, Settled and Failed may transition to final state for this simplified view
+- Initial pseudostate transitions to Received.
+- Received transitions to Validated after mandatory checks pass.
+- Validated transitions to Screening Pending when screening is requested.
+- Screening Pending transitions to Rejected when screening fails.
+- Screening Pending transitions to Posting Pending when screening passes.
+- Posting Pending transitions to Accepted when account posting succeeds.
+- Posting Pending transitions to Failed when posting fails.
+- Accepted transitions to Sent to Scheme when outbound payment is sent.
+- Sent to Scheme transitions to Settled when settlement confirmation is received.
+- Rejected, Settled and Failed may transition to the final pseudostate for this simplified view.
+
+## Relationship semantics
+
+Transitions are valid lifecycle moves. Labels use `event [guard] / effect` where useful. States are conditions that can persist, not process tasks.
 
 ## Main flow or structure
 
@@ -57,7 +65,7 @@ Simplified lifecycle of a target-state payment instruction.
 
 ## Exclusions
 
-No process tasks, no message sequence and no deployment detail.
+No process tasks, no message sequence, no deployment detail and no complete payment-scheme status model.
 
 ## Accessibility requirements
 
@@ -71,5 +79,5 @@ Use readable state names and avoid crossing transition lines where possible.
 ## Review criteria
 
 - States are conditions, not task names.
-- Transitions have meaningful triggers or outcomes.
+- Transitions have meaningful triggers, guards or effects.
 - The simplified lifecycle does not imply complete payment-scheme status coverage.

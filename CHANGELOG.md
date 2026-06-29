@@ -4,6 +4,15 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-29
 
+### Completed Chapter 4 before author approval
+
+- Corrected the UML component explanation so components are not presented as automatically deployable.
+- Added notation-reading guidance for use case, class, component, sequence, activity, state machine and deployment diagrams.
+- Completed seven Chapter 4 diagram specifications with abstraction level and relationship semantics.
+- Added PlantUML sources, SVG exports and PNG review previews for `FIG-04-01` through `FIG-04-07`.
+- Inserted all seven Chapter 4 figures with captions and explanatory notes.
+- Recalculated the Chapter 4 quality gate and moved the chapter to `Ready for Author Approval`.
+
 ### Drafted Chapter 4 UML
 
 - Added the official OMG UML 2.5.1 source note and updated `SOURCE_REGISTER.md`.
