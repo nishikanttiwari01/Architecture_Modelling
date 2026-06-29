@@ -36,7 +36,7 @@ UML state machine diagram.
 
 ## Required relationships
 
-- Initial pseudostate transitions to Received.
+- Initial pseudostate transitions to Received without an external event label.
 - Received transitions to Validated after mandatory checks pass.
 - Validated transitions to Screening Pending when screening is requested.
 - Screening Pending transitions to Rejected when screening fails.
@@ -49,7 +49,7 @@ UML state machine diagram.
 
 ## Relationship semantics
 
-Transitions are valid lifecycle moves. Labels use `event [guard] / effect` where useful. States are conditions that can persist, not process tasks.
+Transitions are valid lifecycle moves. The initial pseudostate transition is unlabelled because it represents entry into the simplified lifecycle, not an external event. Other labels use `event [guard] / effect` where useful. States are conditions that can persist, not process tasks.
 
 ## Main flow or structure
 
@@ -79,5 +79,6 @@ Use readable state names and avoid crossing transition lines where possible.
 ## Review criteria
 
 - States are conditions, not task names.
+- Initial transition has no external event label.
 - Transitions have meaningful triggers, guards or effects.
 - The simplified lifecycle does not imply complete payment-scheme status coverage.

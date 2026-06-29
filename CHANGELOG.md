@@ -4,6 +4,13 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-29
 
+### Corrected Chapter 4 UML example semantics
+
+- Corrected `FIG-04-01` so required eligibility checking uses `include` and conditional exception, refund and collection behaviour uses guarded `extend`.
+- Corrected `FIG-04-02` by replacing Basket to Product aggregation with Basket Line composition and Product reference.
+- Corrected `FIG-04-03`, `FIG-04-04` and `FIG-04-06` for component notation, nested sequence alternatives and state-machine initial transition semantics.
+- Regenerated changed Chapter 4 SVG exports and PNG previews, then recalculated the Chapter 4 quality gate.
+
 ### Completed Chapter 4 before author approval
 
 - Corrected the UML component explanation so components are not presented as automatically deployable.

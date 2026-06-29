@@ -7,7 +7,7 @@ state "Screening Pending" as ScreeningPending
 state "Posting Pending" as PostingPending
 state "Sent to Scheme" as SentToScheme
 
-[*] --> Received : submitted / create
+[*] --> Received
 Received --> Validated : checksPassed
 Validated --> ScreeningPending : requestScreening
 

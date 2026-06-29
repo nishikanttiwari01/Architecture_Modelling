@@ -4,13 +4,16 @@
 left to right direction
 title FIG-04-03. Online Store Order Handling Component Diagram
 
-actor "Web Application" as Web
+package "Online Store order handling" {
+  component "Web Application" as Web
+  component "Order API" as OrderApi
+  component "Order Service" as OrderService
+  component "Payment Adapter" as PaymentAdapter
+  component "Fulfilment Adapter" as FulfilmentAdapter
+  component "Notification Publisher" as NotificationPublisher
+}
+
 database "Order Database" as OrderDb
-component "Order API" as OrderApi
-component "Order Service" as OrderService
-component "Payment Adapter" as PaymentAdapter
-component "Fulfilment Adapter" as FulfilmentAdapter
-component "Notification Publisher" as NotificationPublisher
 component "Payment Provider System" as PaymentProvider <<external>>
 component "Delivery Partner System" as DeliveryPartner <<external>>
 

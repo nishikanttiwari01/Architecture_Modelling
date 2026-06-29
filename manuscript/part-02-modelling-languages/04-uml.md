@@ -104,6 +104,8 @@ Figure FIG-04-01. Online Store returns use case diagram. It shows actor goals an
 
 Notice the subject boundary first. The Customer and Customer Support Agent are outside the Online Store because they interact with it. Payment Provider System and Delivery Partner System are also outside because they support refund and collection goals. The figure deliberately excludes the order of work, refund failure handling and deployment detail.
 
+Only Check return eligibility is included because every return request must use that behaviour. Refund, collection and exception review are modelled as conditional extensions, with guards showing when they are added to the base Request return use case.
+
 ## Class diagrams
 
 A class diagram answers: **what important concepts exist, what information or behaviour do they have, and how are they related?**
@@ -127,14 +129,14 @@ The most common class-diagram problem is too much detail. Attributes, operations
 | Multiplicity | Numbers such as `1`, `0..1` or `1..*` that show how many instances may participate. |
 | Generalisation | An inheritance relationship from a specialised class to a more general class. |
 | Dependency | A weaker "uses" relationship where one class depends on another. |
-| Aggregation | A whole-part relationship where the part may exist independently. |
+| Aggregation | A weak whole-part relationship. Shared aggregation has weak semantics, so a plain association is usually clearer unless whole-part meaning is important. |
 | Composition | A strong whole-part relationship where the part belongs to the whole's lifecycle. |
 
 ![FIG-04-02. Online Store order concept class diagram](../../diagrams/exported/svg/FIG-04-02-online-store-order-concept-class.svg)
 
 Figure FIG-04-02. Online Store order concept class diagram. It shows analysis-level order concepts, selected attributes and relationships, not a database schema or code design.
 
-Notice the difference between association and composition. A Customer places many Orders, while an Order is composed of Order Lines. The figure deliberately avoids private fields, persistence annotations and implementation methods because the reader is learning domain structure, not code.
+Notice the difference between association and composition. A Customer places many Orders, an Order is composed of Order Lines, and a Basket is composed of Basket Lines. Each Basket Line references one Product. The figure avoids shared aggregation because its meaning is often weak; the product reference is clearer as a simple association. The figure deliberately avoids private fields, persistence annotations and implementation methods because the reader is learning domain structure, not code.
 
 ## Component diagrams
 
@@ -167,7 +169,7 @@ Use component diagrams when interfaces and replaceability matter. If the convers
 
 Figure FIG-04-03. Online Store order handling component diagram. It shows logical components and interfaces for order handling, not deployment nodes or microservice boundaries.
 
-Notice that Payment Adapter and Fulfilment Adapter are components that isolate external dependencies. The component diagram helps discuss provided and required interfaces. It deliberately excludes runtime placement, Kubernetes detail and class-level implementation.
+Notice that Web Application, Order API, Order Service, Payment Adapter, Fulfilment Adapter and Notification Publisher are shown as components inside the logical Online Store order handling boundary. Payment Adapter and Fulfilment Adapter isolate external dependencies. The component diagram helps discuss provided and required interfaces. It deliberately excludes runtime placement, Kubernetes detail and class-level implementation.
 
 ## Sequence diagrams
 
@@ -199,7 +201,7 @@ Do not use one sequence diagram for every possible path. Draw the main path when
 
 Figure FIG-04-04. Horizon Bank payment submission sequence diagram. It shows one target-state payment submission interaction, including screening, posting, status recording and event publication.
 
-Read the messages from top to bottom. The diagram shows the main successful path and one alternative branch for rejection or posting failure. It deliberately excludes settlement, sanctions casework, retry rules and the full business process.
+Read the messages from top to bottom. The outer alternative separates screening passed from screening failed. If screening fails, the orchestration service records a rejected status. If screening passes, a nested alternative separates posting accepted from posting failed. `PaymentAccepted` is published only after posting succeeds; posting failure records a failed status. The figure deliberately excludes settlement, sanctions casework, retry rules and the full business process.
 
 ## Activity diagrams
 
@@ -259,7 +261,7 @@ Do not use a state machine when a simple checklist would do. It is useful when a
 
 Figure FIG-04-06. Payment instruction lifecycle state machine. It shows a simplified payment-instruction lifecycle and the events that move the instruction between states.
 
-Notice that states are conditions, not task names. `Screening Pending` and `Posting Pending` are useful because the payment can wait there and react differently to later events. The diagram deliberately excludes repair, resubmission, cancellation and detailed payment-scheme status codes.
+Notice that states are conditions, not task names. The initial transition is unlabelled because it marks entry into this simplified lifecycle, not an external business event. `Screening Pending` and `Posting Pending` are useful because the payment can wait there and react differently to later events. The diagram deliberately excludes repair, resubmission, cancellation and detailed payment-scheme status codes.
 
 ## Deployment diagrams
 

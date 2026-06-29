@@ -15,6 +15,10 @@ class Basket {
   basketId
 }
 
+class "Basket Line" as BasketLine {
+  quantity
+}
+
 class Product {
   productId
   name
@@ -44,7 +48,8 @@ class Shipment {
 
 Customer "1" -- "0..1" Basket : owns
 Customer "1" -- "0..*" Order : places
-Basket "1" o-- "0..*" Product : references
+Basket "1" *-- "0..*" BasketLine : contains
+BasketLine "*" --> "1" Product : for product
 Order "1" *-- "1..*" OrderLine : contains
 OrderLine "*" --> "1" Product : for product
 Order "1" -- "0..*" Payment : has
@@ -53,5 +58,6 @@ Order "1" -- "0..*" Shipment : fulfilled by
 note bottom
   Analysis-level concepts only.
   This is not a database schema.
+  Shared aggregation is avoided here.
 end note
 @enduml

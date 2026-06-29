@@ -2,11 +2,11 @@
 
 ## Last completed work
 
-Chapter 4, **UML: Unified Modeling Language**, has been completed before author approval. The chapter now includes corrected UML component semantics, notation-reading guidance for each core UML diagram type, seven diagram specifications, seven PlantUML sources, SVG exports, PNG review previews, figure captions and an updated quality gate.
+Chapter 4, **UML: Unified Modeling Language**, has been completed before author approval and received a final UML semantic correction pass. The chapter now includes corrected use case include and extend semantics, Basket Line composition in the class example, Web Application as a UML component, nested sequence alternatives, an unlabelled initial state-machine transition, notation-reading guidance for each core UML diagram type, seven diagram specifications, seven PlantUML sources, SVG exports, PNG review previews, figure captions and an updated quality gate.
 
 ## Current Git commit
 
-- Current pushed commit before this Chapter 4 completion: `7fa445c`
+- Current pushed commit before this semantic correction: `fbe7238`
 - Final pushed commit for this revision: reported after push, because a commit cannot truthfully contain its own final hash.
 - Branch: `main`
 - Remote: `origin/main`
@@ -27,7 +27,7 @@ Chapter 4, **UML: Unified Modeling Language**, has been completed before author 
 ## Pending non-critical issues
 
 - Chapter 1 awaits author review.
-- Chapter 4 awaits author review.
+- Chapter 4 awaits author review after the final UML semantic correction.
 - Chapter 1, Chapter 2, Chapter 3, Chapter 4 and Chapter 5 diagrams remain `Review`; no diagram is marked `Approved`.
 - The Chapter 4 sequence, component and deployment diagrams are wider than the simpler figures and should be checked again during final page-layout production.
 - C4-PlantUML 2.9.0 was extracted from the installed PlantUML standard library; the local extracted file records the version but not the upstream release date.

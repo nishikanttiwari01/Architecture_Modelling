@@ -24,6 +24,7 @@ UML class diagram.
 
 - Customer
 - Basket
+- Basket Line
 - Product
 - Order
 - Order Line
@@ -34,7 +35,8 @@ UML class diagram.
 
 - Customer places Order.
 - Customer owns Basket.
-- Basket references Product.
+- Basket is composed of zero or more Basket Lines.
+- Each Basket Line references one Product.
 - Order contains Order Line.
 - Order Line refers to Product.
 - Order has Payment.
@@ -42,7 +44,7 @@ UML class diagram.
 
 ## Relationship semantics
 
-Association means a meaningful domain relationship. Multiplicity states how many instances can participate. Composition is used where the part belongs to the whole's lifecycle, such as Order Line inside Order. Aggregation is used only for a weaker whole-part reference.
+Association means a meaningful domain relationship. Multiplicity states how many instances can participate. Composition is used where the part belongs to the whole's lifecycle, such as Basket Line inside Basket and Order Line inside Order. Shared aggregation has weak semantics and is avoided in this figure.
 
 ## Main flow or structure
 
@@ -73,5 +75,6 @@ Keep class boxes simple and readable. Avoid dense compartments and tiny multipli
 
 - Diagram is clearly analysis-level, not physical database design.
 - Multiplicities are readable and not excessive.
-- Composition and aggregation are used sparingly and intentionally.
+- Basket Line and Order Line composition are intentional whole-part relationships.
+- No shared aggregation is used.
 - Concepts match the repository example.

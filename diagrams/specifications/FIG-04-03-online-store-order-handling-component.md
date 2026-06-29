@@ -46,7 +46,7 @@ UML component diagram.
 
 ## Relationship semantics
 
-Provided interfaces are contracts a component offers. Required interfaces are contracts a component needs. Dependencies show usage, not deployment. Component boundaries do not imply separate microservices.
+Provided interfaces are contracts a component offers. Required interfaces are contracts a component needs. Dependencies show usage, not deployment. The logical component boundary groups software components and does not imply separate microservices.
 
 ## Main flow or structure
 
@@ -76,6 +76,8 @@ Use clear component names and relationship labels. Do not rely on colour alone.
 ## Review criteria
 
 - Components are not presented as mandatory microservices or deployable artefacts.
+- Web Application uses UML component notation, not actor notation.
+- All software elements inside the Online Store order handling boundary use component notation.
 - Provided and required interfaces are visible or clearly labelled.
 - External systems are visually distinct.
 - Interface responsibilities are understandable to a beginner.

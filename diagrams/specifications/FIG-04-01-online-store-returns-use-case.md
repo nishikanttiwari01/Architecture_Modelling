@@ -24,21 +24,22 @@ UML use case diagram.
 
 - Subject boundary: Online Store
 - Actors: Customer, Customer Support Agent, Payment Provider System, Delivery Partner System
-- Use cases: Request return, Review return exception, Request refund, Request collection
+- Use cases: Request return, Check return eligibility, Review return exception, Request refund, Request collection
 
 ## Required relationships
 
 - Customer is associated with Request return.
 - Customer Support Agent is associated with Review return exception.
 - Review return exception extends Request return with condition `[policy exception]`.
-- Request return includes Request refund when the return outcome requires a refund.
-- Request return includes Request collection when goods need to be collected.
+- Request return includes Check return eligibility.
+- Request refund extends Request return when the return outcome permits a refund.
+- Request collection extends Request return with condition `[collection required]`.
 - Payment Provider System is associated with Request refund.
 - Delivery Partner System is associated with Request collection.
 
 ## Relationship semantics
 
-Associations mean participation, not control flow. `include` means required reused behaviour in this simplified returns scope. `extend` means conditional behaviour added to the base use case.
+Associations mean participation, not control flow. `include` is used only for required reused behaviour. `extend` is used for conditional behaviour added to the base use case.
 
 ## Main flow or structure
 
@@ -46,7 +47,7 @@ Place the Online Store subject boundary in the centre. Put human actors to the l
 
 ## Alternative and exception flows
 
-Show Review return exception as conditional behaviour. Do not model detailed exception sequence in this figure.
+Show Review return exception, Request refund and Request collection as conditional extensions. Do not model detailed exception sequence in this figure.
 
 ## Scope
 
@@ -70,4 +71,5 @@ Use clear labels, high contrast and no colour-only meaning. The figure must rema
 - Actor names match the repository example.
 - Use cases are actor goals, not internal implementation steps.
 - Subject boundary is visible.
-- Include and extend relationships have correct semantics.
+- Include is used only for required eligibility checking.
+- Conditional refund, collection and exception behaviour use extend with conditions.

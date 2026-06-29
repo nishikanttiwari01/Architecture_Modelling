@@ -31,14 +31,20 @@ alt screening passed
   activate Core
   Core --> Integration : Posting result
   deactivate Core
-  Integration --> Orchestration : Posting accepted
+  alt posting accepted
+    Integration --> Orchestration : Posting accepted
+    Orchestration -> StatusStore : Record accepted status
+    Orchestration ->> EventPlatform : Publish PaymentAccepted
+    Orchestration --> API : Payment accepted
+  else posting failed
+    Integration --> Orchestration : Posting failed
+    Orchestration -> StatusStore : Record failed status
+    Orchestration --> API : Payment failed
+  end
   deactivate Integration
-  Orchestration -> StatusStore : Record accepted status
-  Orchestration ->> EventPlatform : Publish PaymentAccepted
-  Orchestration --> API : Payment accepted
-else screening failed or posting failed
-  Orchestration -> StatusStore : Record rejected or failed status
-  Orchestration --> API : Payment not accepted
+else screening failed
+  Orchestration -> StatusStore : Record rejected status
+  Orchestration --> API : Payment rejected
 end
 
 API --> Channels : Return payment status
@@ -50,5 +56,6 @@ deactivate Channels
 note bottom
   One interaction scenario only.
   Settlement, repair and retry paths are excluded.
+  PaymentAccepted is published only after posting succeeds.
 end note
 @enduml

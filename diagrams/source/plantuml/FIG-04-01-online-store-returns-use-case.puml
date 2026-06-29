@@ -9,6 +9,7 @@ actor "Customer Support Agent" as Support
 
 rectangle "Online Store" as OnlineStore {
   usecase "Request return" as RequestReturn
+  usecase "Check return\neligibility" as CheckEligibility
   usecase "Review return\nexception" as ReviewException
   usecase "Request refund" as RequestRefund
   usecase "Request collection" as RequestCollection
@@ -22,13 +23,14 @@ Support -- ReviewException
 RequestRefund -- PaymentProvider
 RequestCollection -- DeliveryPartner
 
-RequestReturn ..> RequestRefund : <<include>>
-RequestReturn ..> RequestCollection : <<include>>
+RequestReturn ..> CheckEligibility : <<include>>
 ReviewException ..> RequestReturn : <<extend>>\n[policy exception]
+RequestRefund ..> RequestReturn : <<extend>>\n[approved and refundable]
+RequestCollection ..> RequestReturn : <<extend>>\n[collection required]
 
 legend right
   Solid line = actor association
-  <<include>> = required reused behaviour
+  <<include>> = required behaviour
   <<extend>> = conditional behaviour
 endlegend
 @enduml
