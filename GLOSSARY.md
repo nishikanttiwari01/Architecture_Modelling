@@ -19,6 +19,12 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Value stream | A sequence of value-creating stages that delivers an outcome to a stakeholder. | Distinguish from detailed process flow. |
 | Business process | An ordered set of activities that produces a business outcome. | BPMN is commonly used to model it. |
 | Business Process Model and Notation (BPMN) | A standard notation for modelling business processes, collaborations and process behaviour. | Use for business-process flow, participants, events, decisions and exceptions; do not treat it as a software structure diagram. |
+| ArchiMate | The Open Group enterprise architecture modelling language for describing relationships across strategy, business, application, technology, motivation and migration concerns. | Use when architecture traceability crosses domains; do not use it as a replacement for BPMN process detail or C4 software design views. |
+| The Open Group Architecture Framework (TOGAF) | An enterprise architecture framework and method from The Open Group. | Distinguish from ArchiMate, which is a modelling language. |
+| Strategy layer (ArchiMate) | ArchiMate concepts for organisational abilities, resources, value streams and courses of action. | Use for capability and strategic direction questions, not detailed process flow. |
+| Motivation element (ArchiMate) | An ArchiMate concept that explains why an architecture exists or what constrains it, such as a stakeholder, driver, goal, requirement or constraint. | Keep goals concrete enough to trace to architecture choices. |
+| Plateau (ArchiMate) | A relatively stable architecture state in an implementation and migration view. | Use for current, transition or target states; do not turn it into a delivery schedule. |
+| Gap (ArchiMate) | A difference between two architecture states or plateaus. | Use to show what must change between states. |
 | BPMN pool | A participant in a BPMN process or collaboration. | Use for a process owner, organisation or major participant; do not use as a C4 container. |
 | BPMN lane | A responsibility partition inside a BPMN pool. | Use only when it clarifies who performs work. |
 | Sequence flow | A BPMN arrow showing the order of work inside one process. | Do not draw it across pool boundaries. |

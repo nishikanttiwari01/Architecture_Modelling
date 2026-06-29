@@ -24,8 +24,8 @@
 | 03 | How to Read Architecture Diagrams | Approved | 100 | 100 | 100 | 100 | 100 | Approved; diagrams remain Review |
 | 04 | UML: Unified Modeling Language | Approved | 100 | 100 | 100 | 100 | 100 | Approved; diagrams remain Review |
 | 05 | The C4 Model | Approved | 100 | 100 | 100 | 100 | 100 | Prototype reference |
-| 06 | BPMN: Business Process Model and Notation | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; diagrams remain Review |
-| 07 | ArchiMate | Planned | 0 | 0 | 0 | 0 | 0 | — |
+| 06 | BPMN: Business Process Model and Notation | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; diagrams remain Review |
+| 07 | ArchiMate | Under Review | 100 | 100 | 20 | 80 | 100 | Author approve Chapter 7 diagram specifications before source/rendering |
 | 08 | Data Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 09 | Decision Modelling and DMN | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 10 | Domain and Event Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -107,6 +107,6 @@
 
 ## Current recommended next task
 
-Review Chapter 6, **BPMN: Business Process Model and Notation**, for author approval. Chapter 6 diagrams remain at `Review`.
+Review Chapter 7, **ArchiMate**, and approve or revise the Chapter 7 diagram specifications before diagram source creation. Chapter 6 is author-approved; Chapter 6 diagrams remain at `Review`.
 
 Last updated: 2026-06-29

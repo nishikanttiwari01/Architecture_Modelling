@@ -7,7 +7,7 @@ Register sources that support several chapters, major definitions or version-sen
 | OMG-UML | Object Management Group | Unified Modeling Language specification | 2.5.1 | December 2017 | 2026-06-29 | UML terminology and diagram taxonomy | research/uml/omg-uml-2.5.1.md | Recorded |
 | OMG-BPMN | Object Management Group | Business Process Model and Notation specification | 2.0.2 | January 2014 | 2026-06-29 | BPMN terminology and notation | research/bpmn/omg-bpmn-2.0.2.md | Recorded |
 | OMG-DMN | Object Management Group | Decision Model and Notation specification | Verify current | — | — | DMN | Pending | Planned |
-| OPEN-GROUP-ARCHIMATE | The Open Group | ArchiMate specification | Verify current | — | — | ArchiMate | Pending | Planned |
+| OPEN-GROUP-ARCHIMATE-3.2 | The Open Group | ArchiMate specification | 3.2 | October 2022 | 2026-06-29 | ArchiMate concepts, layers, relationships and viewpoints | research/archimate/open-group-archimate-3.2.md | Recorded |
 | C4-OFFICIAL | C4 model | Official C4 model documentation | Current web documentation | Not stated | 2026-06-28 | C4 concepts and context diagram examples | research/c4/c4-model-official.md | Recorded |
 | STRUCTURIZR-C4 | Structurizr | Structurizr documentation | Current web documentation | Not stated | 2026-06-28 | C4 tooling and diagrams as code | research/c4/structurizr-c4-documentation.md | Recorded |
 | C4-PLANTUML | C4-PlantUML project | C4-PlantUML library for PlantUML-based C4 diagrams | 2.9.0 | Release date not recorded in local file | 2026-06-28 | C4 diagrams | research/c4/c4-plantuml-2.9.0.md | Recorded |

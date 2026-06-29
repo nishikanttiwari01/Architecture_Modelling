@@ -4,6 +4,15 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-29
 
+### Drafted Chapter 7 ArchiMate
+
+- Recorded the author's approval of Chapter 6 while keeping Chapter 6 diagrams at `Review`.
+- Added the official The Open Group ArchiMate 3.2 source note and registered `[OPEN-GROUP-ARCHIMATE-3.2]`.
+- Drafted Chapter 7, **ArchiMate**, using the Chapter 5 prototype pattern and keeping ArchiMate distinct from TOGAF, C4 and BPMN.
+- Added six Chapter 7 diagram specifications and registered the planned figures, with source/export deferred pending author approval of the specifications.
+- Added ArchiMate glossary terms for ArchiMate, TOGAF, strategy layer, motivation element, plateau and gap.
+- Moved Chapter 7 to `Under Review` because diagram source creation is blocked until the new specifications are author-approved.
+
 ### Completed Chapter 6 modeler and layout validation
 
 - Recorded manual Camunda Desktop Modeler 5.48.0 validation for all three Chapter 6 BPMN files.
