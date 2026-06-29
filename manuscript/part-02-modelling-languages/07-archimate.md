@@ -11,18 +11,18 @@ last_updated: "2026-06-29"
 
 ## Chapter purpose
 
-Explain enterprise architecture modelling across strategy, business, application, technology and transformation layers.
+Explain enterprise architecture modelling across strategy, business, application, technology and transformation domains.
 
 ## Reader outcomes
 
 By the end of this chapter, the reader should be able to:
 
 - Explain what ArchiMate is and where it helps enterprise architecture work.
-- Read basic ArchiMate elements across strategy, business, application, technology, motivation and migration views.
+- Read basic ArchiMate 4 notation across strategy, business, application, technology, motivation and migration views.
 - Distinguish ArchiMate from The Open Group Architecture Framework (TOGAF), C4 and Business Process Model and Notation (BPMN).
-- Select an ArchiMate view for a realistic architecture question.
+- Reuse the same ArchiMate model concepts across several stakeholder views.
 - Apply ArchiMate ideas to the Simple Online Store and Horizon Bank examples.
-- Avoid common ArchiMate mistakes, especially over-large layered diagrams, mixed abstraction and notation decoration.
+- Avoid common ArchiMate mistakes, especially over-large diagrams, mixed abstraction and weak relationship semantics.
 
 ## Prerequisites and dependencies
 
@@ -40,11 +40,12 @@ By the end of this chapter, the reader should be able to:
 ## Worked examples
 
 - Retail bank capability map
-- Horizon Bank layered architecture
+- Horizon Bank customer onboarding architecture
 
 ## Source requirements
 
-- `[OPEN-GROUP-ARCHIMATE-3.2]` supports ArchiMate 3.2 terminology and language structure.
+- `[OPEN-GROUP-ARCHIMATE-4]` supports the current ArchiMate 4 version, terminology and public release changes.
+- `[OPEN-GROUP-ARCHIMATE-3.2]` remains a historical source note only and is not the current normative source for this chapter.
 - Chapter guidance is the author's practical interpretation for beginner architecture work.
 - Diagrams are planned as original teaching examples and must not reproduce The Open Group specification diagrams.
 
@@ -52,124 +53,198 @@ By the end of this chapter, the reader should be able to:
 
 ArchiMate is a modelling language for enterprise architecture. In plain language, it helps architects show how business needs, capabilities, processes, applications, data, technology and change work relate to each other.
 
-It answers questions such as: **which business capability is supported by which application service, which application component provides that service, and which technology platform hosts it?** That is a different question from "what are the steps in this process?" or "what classes are inside this component?"
+It answers questions such as: **which capability is in scope, which business service is needed, which application service supports it, which application component provides that service, and which technology support is required?** That is a different question from "what are the steps in this process?" or "what classes are inside this component?"
 
-The official ArchiMate specification is maintained by The Open Group [OPEN-GROUP-ARCHIMATE-3.2]. This chapter does not reproduce the full language. It teaches the subset that beginners most often need for architecture conversations: layers, common elements, common relationships and practical viewpoints.
+The current official specification is ArchiMate 4, released by The Open Group in April 2026 [OPEN-GROUP-ARCHIMATE-4]. ArchiMate 4 changes some terminology from earlier versions. The most important beginner change is that the formal word **domain** replaces the older habit of speaking only about layers. Many practitioners still say business layer, application layer and technology layer in conversation, but this chapter uses **domain** when it refers to ArchiMate 4 formally.
 
-ArchiMate is useful when a team needs traceability across different architecture domains. A single view might show that the Customer Onboarding capability is realised by a business process, supported by the Customer Onboarding Platform, exposed through an application service and hosted on a target cloud platform. That trace is difficult to express in BPMN or C4 alone.
+ArchiMate is useful when a team needs traceability across architecture domains. A single model might connect Customer Onboarding capability, Open Customer Profile service, Customer Onboarding process, Customer Profile Management application service, Party and Customer Platform, and the technology services that host or support it.
 
-ArchiMate is not a process notation, a user-interface design tool or a replacement for detailed software design. It is strongest when the question crosses business, application and technology boundaries at enterprise architecture level.
+ArchiMate is not a process notation, a user-interface design tool or a replacement for detailed software design. It is strongest when the question crosses business, application, technology, motivation and migration concerns at enterprise architecture level.
 
 ## ArchiMate and TOGAF
 
-ArchiMate and TOGAF are related, but they are not the same thing. TOGAF is an enterprise architecture framework and method. ArchiMate is a modelling language that can be used to describe architecture content.
+ArchiMate and TOGAF are related, but they are not the same thing. TOGAF is an enterprise architecture framework and method. ArchiMate is a modelling language that can be used to describe selected architecture content.
 
-A practical way to remember the distinction is this: TOGAF helps structure the work, while ArchiMate helps represent selected results of the work. TOGAF may guide an architecture team through baseline architecture, target architecture, migration planning and governance. ArchiMate can then show the baseline application landscape, target capabilities, motivation for change and transition plateaus.
+A practical way to remember the distinction is this: TOGAF helps structure the work, while ArchiMate helps represent selected results of the work. TOGAF may guide a team through baseline architecture, target architecture, migration planning and governance. ArchiMate can then show the baseline landscape, target capabilities, motivation for change and transition plateaus.
 
 An organisation can use ArchiMate without adopting the full TOGAF method. It can also use TOGAF and choose other notations for some work products. The two are compatible, but one does not force the other.
 
-For beginners, the important point is to choose the notation because it answers a question. Do not draw ArchiMate symbols only because a governance template asks for an enterprise architecture model. A useful ArchiMate view should still have a title, purpose, audience, scope and clear exclusions.
+For beginners, the important point is to choose ArchiMate because it answers a question. Do not draw ArchiMate symbols only because a governance template asks for an enterprise architecture model. A useful ArchiMate view still needs a title, purpose, audience, scope, legend and clear exclusions.
 
-## Strategy layer
+## Models, views and reuse
 
-The strategy layer answers: **what abilities and resources does the organisation need, and how will it pursue its goals?**
+Chapter 2 explained that one model may support several views. ArchiMate makes that idea practical for enterprise architecture.
 
-Common strategy elements include capabilities, resources, value streams and courses of action. A capability describes an ability the organisation has or needs, such as Customer Onboarding, Payment Processing or Fraud Investigation. A value stream describes stages that deliver value to a stakeholder. A course of action describes an approach or direction, such as "consolidate customer identity across products".
+The model is the organised set of concepts and relationships: Customer Onboarding capability, Retail Customer actor, Open Customer Profile service, Customer Onboarding process, Party and Customer Platform, Customer Record and Transition State. A diagram is a view that selects some of those concepts for a stakeholder concern.
 
-For Horizon Bank, a retail banking capability map might include Customer Management, Account Management, Payments, Lending, Cards, Financial Crime Management and Customer Support. This is not a process model. It does not show the order of onboarding tasks. It shows stable abilities that the bank must manage, improve and govern.
+This matters because the same concept should be reused across views. If Customer Onboarding appears in a capability map, a layered view, an application cooperation view and a migration view, it should refer to the same model concept unless the diagram says otherwise. The diagrams are not unrelated copies. They are views over a shared enterprise model.
 
-The strategy layer is useful early in architecture work because it separates what the organisation needs to be able to do from the current applications that happen to do it. That distinction matters in Horizon Bank because the starting problems include product-specific silos and duplicate customer databases.
+Reusing model concepts helps reviewers ask better questions:
+
+| Reused concept | Appears in | Consistency question |
+|---|---|---|
+| Customer Onboarding capability | Capability map and layered view | Does the business process support the same capability that the map shows? |
+| Customer Profile Management service | Layered and application cooperation views | Is the same application service used consistently? |
+| Party and Customer Platform | Application, technology and migration views | Does the migration path explain how this component is introduced? |
+| Trusted customer view goal | Motivation and migration views | Do the work packages and deliverables support the stated goal? |
+
+If a diagram uses a different name, the reader may assume a different concept. That may be correct, but the model must say so.
+
+## How to read ArchiMate notation
+
+A beginner should read an ArchiMate diagram in three passes: identify element kinds, read relationship meaning and check the legend.
+
+ArchiMate element kinds can be understood as a small set of questions:
+
+| Kind | Plain question | Examples in this chapter |
+|---|---|---|
+| Active structure | Who or what can perform behaviour? | Actor, Role, Application Component, Technology Node, System Software |
+| Behaviour | What does something do? | Process, Function, Event |
+| Passive structure | What is used, produced or stored? | Business Object, Data Object, Artifact |
+| Service | What externally visible behaviour is offered? | Open Customer Profile, Customer Profile Management, API Gateway Service |
+| Strategy | What ability or direction matters? | Capability, Value Stream, Course of Action |
+| Motivation | Why is this needed or constrained? | Stakeholder, Driver, Assessment, Goal, Outcome, Requirement, Principle |
+| Implementation and migration | How does the architecture change? | Work Package, Deliverable, Plateau, Event |
+
+Relationships carry the meaning. Read them before trusting the diagram:
+
+| Relationship | Plain meaning | Direction to check |
+|---|---|---|
+| Composition | Strong whole-to-part structure | From whole to part |
+| Aggregation | Weaker grouping | From grouping to member |
+| Assignment | An active element performs behaviour | From performer to behaviour |
+| Realisation | One element fulfils another | From realising element to realised element |
+| Serving | One element provides behaviour to another | From provider to consumer |
+| Access | Behaviour uses, reads or writes passive structure | From behaviour to passive structure |
+| Flow | Something is transferred | From source to target |
+| Triggering | One behaviour starts or follows another | From trigger to triggered behaviour |
+| Influence | One motivation element affects another | From influencing element to influenced element |
+| Association | A weak or general relationship | Direction may be absent or non-semantic |
+
+Direction matters. A service serving a process is different from a process serving a service. A component assigned to a function is different from a function assigned to a component.
+
+Nesting can be used to show containment or grouping, but it must not hide relationship meaning. If a diagram nests capabilities inside Retail Banking, the caption or legend should say whether this means composition, aggregation or only visual grouping.
+
+Colour can help separate domains, but it must not be the only carrier of meaning. A reader should still understand the diagram from labels, legends, relationship types and surrounding prose.
+
+## Strategy domain
+
+The strategy domain answers: **what abilities and strategic direction does the organisation need?**
+
+Common strategy elements include Capability, Resource, Value Stream and Course of Action [OPEN-GROUP-ARCHIMATE-4]. A capability describes an ability the organisation has or needs, such as Customer Onboarding, Payment Processing or Fraud Investigation. A value stream describes stages that deliver value to a stakeholder. A course of action describes an approach or direction, such as "consolidate customer identity across products".
+
+For Horizon Bank, a retail banking capability map might include Customer Management, Account Management, Payments, Lending, Cards, Customer Support and Financial Crime Management. This is not a process model. It does not show the order of onboarding tasks. It shows stable abilities that the bank must manage, improve and govern.
 
 Use strategy elements when capability ownership, investment planning or transformation scope is the main question. Do not use them to describe detailed workflow steps.
 
-## Business layer
+## Business domain
 
-The business layer answers: **what business roles, behaviour, services and information are involved?**
+The business domain answers: **which business actors, roles, behaviour, services and business objects are involved?**
 
-Common business elements include business actors, roles, collaborations, interfaces, processes, functions, events, services, objects, contracts and products. A business actor might be Retail Customer or Horizon Bank. A business role might be Customer Support Agent. A business process might be Customer Onboarding. A business service might be Open Current Account or Submit Payment Instruction.
+An **actor** is an entity capable of performing behaviour. It may be a person, organisation or organisational unit. A **role** is a responsibility that an actor performs. One actor may perform several roles, and the same role may be performed by different actors.
 
-This layer overlaps with the territory of BPMN, but the purpose is different. BPMN is usually better for detailed process flow, gateways, timers, pools and message exchange. ArchiMate is better when the process needs to connect upward to capabilities and downward to applications and technology.
+For example, Horizon Bank is a business actor. The same bank actor may perform the Account Provider role and the Payment Service Provider role. A Customer Support Agent role may be performed by different employees, teams or outsourced operations actors, depending on the organisation. This distinction matters because a role describes responsibility, while an actor identifies who or what can perform behaviour.
 
-For example, Chapter 6 used BPMN to show the flow of customer onboarding. In ArchiMate, the same area might be represented as the Customer Onboarding business process realising the Open Customer Profile business service, serving the Retail Customer role and using the Identity Evidence business object.
+Common business-domain elements include Actor, Role, Process, Function, Event, Service and Business Object. In a Horizon Bank onboarding view, Retail Customer may be an actor, Applicant may be a role, Customer Onboarding may be a process, Open Customer Profile may be a business service and Identity Evidence may be a business object.
 
-The business layer should stay at architecture level. If the view contains every click, screen and exception branch, it has probably moved beyond what ArchiMate is meant to communicate.
+This domain overlaps with BPMN, but the purpose is different. BPMN is better for detailed process flow, gateways, timers, pools and message exchange. ArchiMate is better when the process needs to connect upward to capabilities and downward to application and technology support.
 
-## Application layer
+## Application domain
 
-The application layer answers: **which application components provide which services and use which data?**
+The application domain answers: **which application components perform behaviour, realise services and use data?**
 
-Common application elements include application components, collaborations, interfaces, functions, processes, events, services and data objects. An application component is a modular part of the application architecture. An application service is behaviour exposed by an application for use by people, business processes or other applications.
+The beginner pattern to learn is explicit:
 
-For Horizon Bank, Customer Onboarding Platform, Party and Customer Platform, Financial Crime Platform, Payments Platform and Enterprise Integration Platform are application components from the repository example landscape. Customer Screening Request, Customer Profile Management and Payment Status Query could be application services, depending on the view's scope.
+```text
+Application Component
+→ assigned to Application Function or Process
+→ realises Application Service
+→ serves another element
+```
 
-The application layer is often where ArchiMate becomes useful for traceability. It can show that a business process uses an application service, and that the service is realised by one or more application components. This helps a team avoid a common problem: discussing application replacement without knowing which business capabilities or services depend on the application.
+In ArchiMate 4, behaviour concepts are streamlined across domains, so the phrase "Application Function or Process" should be read as a function or process placed in the application domain. The modelling pattern is still useful because it prevents a common shortcut: drawing an application component directly to every consumer without explaining the behaviour and service it provides.
 
-Do not confuse an ArchiMate application component with a C4 component. A C4 component sits inside one container. An ArchiMate application component is an enterprise architecture element and may represent a larger application or a modular part of an application estate. Use the term that matches the notation and level of abstraction.
+For Horizon Bank:
 
-## Technology layer
+- Party and Customer Platform is an Application Component.
+- Customer Profile Management Function is behaviour assigned to that component.
+- Customer Profile Management is an Application Service realised by that function.
+- The service serves the Customer Onboarding process and other consuming application behaviour.
 
-The technology layer answers: **which technology services, nodes, devices, networks and artefacts support the applications?**
+This explicit chain is better for teaching than a single derived relationship from component to business process. A derived shortcut may be acceptable in a simplified view, but the diagram or caption should say that the service and function are implied.
 
-Common technology elements include nodes, devices, system software, technology services, communication networks, paths and artefacts. At architecture level, a node might represent a cloud application runtime, an integration platform runtime or a managed database service. An artefact might represent a deployable package, configuration item or stored data structure when that detail is needed.
+Do not confuse an ArchiMate Application Component with a C4 component. A C4 component sits inside one container. An ArchiMate Application Component is an enterprise architecture element and may represent a larger application or a modular part of an application estate.
 
-For Horizon Bank, a technology view might show that Customer Onboarding Platform runs on a target cloud application platform, uses a managed relational database, sends events through the Event Platform and connects to retained legacy systems through the Enterprise Integration Platform.
+## Technology domain
 
-This layer is not the same as a detailed deployment diagram. A UML deployment diagram or C4 deployment view may be better when the question is runtime placement, execution nodes, protocols and operational responsibility. ArchiMate is useful when the technology view must remain connected to business and application architecture.
+The technology domain answers: **which technology active structure, services and artifacts support the applications?**
 
-Keep technology views readable. If every subnet, firewall rule, cluster, pod and storage volume appears in one ArchiMate diagram, the view will stop answering an enterprise architecture question.
+A **Technology Node** is a technology active structure element that can host, process, store or execute technology behaviour. A node may represent a server, runtime environment, platform node or other execution environment at the chosen abstraction level.
 
-## Physical layer
+**System Software** is software that provides an environment for applications or technology behaviour, such as an operating system, database management system, application server or container platform. It is not the same as the business application being described.
 
-The physical layer answers: **which physical facilities, equipment, distribution networks or materials matter to the architecture?**
+A **Technology Service** is technology behaviour exposed for use by applications or other technology elements. Examples include API Gateway Service, Messaging Service, Runtime Hosting Service and Database Service.
+
+An **Artifact** is a deployable or stored technology item, such as an application package, configuration file, database schema artifact or deployable container image. Do not confuse an artifact with a business object or application data object.
+
+Deployment or hosting is usually shown by assigning or placing artifacts on nodes, and by showing technology services serving application components or application behaviour. Be precise: a managed database service is not automatically a Technology Node. It may be modelled as a Technology Service when the concern is consumption of database capability, or as a node plus system software when the concern is hosting or runtime structure.
+
+For Horizon Bank, Customer Onboarding Platform may depend on a Runtime Hosting Service. Party and Customer Platform may use a Database Service. The Customer Profile Service Package may be an Artifact deployed to an Application Runtime Node. Choose the representation that answers the reader's concern.
+
+## Physical domain
+
+The physical domain answers: **which physical facilities, equipment, distribution networks or materials matter to the architecture?**
 
 Many digital architecture models do not need physical elements. They become useful when the architecture depends on branches, cash machines, devices, warehouses, telecommunications equipment, production facilities or material movement.
 
 For a retail bank, a physical view might show branch locations, cash devices and network connectivity at a high level. For the Simple Online Store, physical elements might matter if the architecture discussion includes fulfilment centres, packing stations or delivery hand-off points.
 
-Use the physical layer only when physical reality affects the design decision. Do not add it just because the language provides the elements.
+Use the physical domain only when physical reality affects the design decision. Do not add it just because the language provides the elements.
 
 ## Motivation elements
 
-Motivation elements answer: **why does this architecture need to change, and what constraints shape the answer?**
+Motivation elements answer: **why does this architecture need to change, and what goals or requirements shape it?**
 
-Common motivation elements include stakeholders, drivers, assessments, goals, outcomes, principles, requirements and constraints. They help connect architecture views to reasons rather than treating diagrams as neutral pictures.
+Common motivation elements include Stakeholder, Driver, Assessment, Goal, Outcome, Principle and Requirement [OPEN-GROUP-ARCHIMATE-4]. They connect architecture views to reasons rather than treating diagrams as neutral pictures.
 
-For Horizon Bank, drivers might include slow product launches, duplicate customer databases and limited end-to-end process visibility. Goals might include improved straight-through processing and a trusted party and customer view. Requirements might include reusable customer identity services, auditability of screening decisions and integration with retained core systems.
+For Horizon Bank, drivers might include slow product launches, duplicate customer databases and limited end-to-end process visibility. Assessments might state that customer data is fragmented and onboarding is duplicated across products. Goals might include improved straight-through processing and a trusted party and customer view. Requirements might include reusable customer identity services, auditability of screening decisions and integration with retained core systems.
 
-Motivation views are useful in review meetings because they expose the logic behind the design. If the target application view does not support the stated goals, the inconsistency is visible. If a constraint is missing, such as a retained legacy system or regulatory record-keeping need, the team can correct the model before turning it into delivery work.
+Motivation views are useful in review meetings because they expose the logic behind the design. If the target application view does not support the stated goals, the inconsistency is visible.
 
-Avoid turning motivation views into slogan maps. Goals should be concrete enough to test against architecture choices. A goal such as "be digital" is too vague. A goal such as "reduce duplicate customer capture across retail products" gives the architecture team something to trace.
+Avoid vague goal labels. A goal such as "be digital" is too vague. A goal such as "reduce duplicate customer capture across retail products" gives the architecture team something to trace.
 
 ## Implementation and migration elements
 
 Implementation and migration elements answer: **how does the architecture move from current state to target state?**
 
-Common elements include work packages, deliverables, implementation events, plateaus and gaps. A plateau represents a stable architecture state, such as Current State, Transition State 1 or Target State. A gap represents the difference between two plateaus.
+Common elements include Work Package, Deliverable, Plateau and Event [OPEN-GROUP-ARCHIMATE-4]. A plateau represents a relatively stable architecture state, such as Current State, Transition State or Target State. A work package represents a unit of change work. A deliverable represents an output of that work. ArchiMate 4 uses the generic Event element rather than a separate Implementation Event.
+
+Earlier ArchiMate versions included a Gap element. ArchiMate 4 removed it, so this chapter does not use Gap as current notation. If the team needs to describe the difference between current and target states, use prose, assessment, outcome, deliverables or labelled relationships rather than drawing a Gap element.
 
 For Horizon Bank, a migration view might show a current plateau with product-specific onboarding and duplicate customer stores, a transition plateau where Customer Onboarding Platform and Party and Customer Platform are introduced for new retail products, and a target plateau where onboarding services are reused across retail and small business channels.
 
 This view helps keep transformation realistic. It shows that enterprise architecture is not only a target picture. It must also describe sequencing, dependency, risk and temporary coexistence.
 
-Do not use migration elements as a project plan substitute. They show architecture-level change, not every task in a delivery schedule.
-
 ## Core relationships
 
-ArchiMate diagrams are only useful when the relationships carry meaning. Boxes without clear relationships are inventory, not architecture.
+ArchiMate diagrams are only useful when relationships carry meaning. Boxes without clear relationships are inventory, not architecture.
 
-Common relationships include composition, aggregation, assignment, realisation, serving, access, flow, triggering, influence, association and specialisation [OPEN-GROUP-ARCHIMATE-3.2]. A beginner does not need to memorise every relationship on day one, but the modeller must use them consistently.
+This chapter uses a beginner subset of the ArchiMate 4 relationship types: composition, aggregation, assignment, realisation, serving, access, flow, triggering, influence and association [OPEN-GROUP-ARCHIMATE-4].
 
 Some practical interpretations are:
 
 | Relationship | Plain meaning | Example |
 |---|---|---|
-| Composition | This thing is made of these parts | Customer Management capability contains Customer Onboarding capability |
-| Realisation | This element fulfils or implements another | Customer Onboarding Platform realises Customer Capture service |
-| Serving | This element provides useful behaviour to another | Customer Profile Management service serves Customer Onboarding process |
-| Assignment | This active element performs this behaviour | Customer Support Agent performs Review Exception |
-| Access | This behaviour uses or changes information | Open Customer Profile process accesses Customer Record |
+| Composition | This thing is made of these parts | Retail Banking capability is composed of Customer Management and Payments capabilities |
+| Aggregation | This thing groups related parts | Onboarding Transformation groups several work packages |
+| Assignment | This active element performs behaviour | Party and Customer Platform is assigned to Customer Profile Management Function |
+| Realisation | This element fulfils another | Customer Profile Management Function realises Customer Profile Management Service |
+| Serving | This element provides behaviour to another | Customer Profile Management Service serves Customer Onboarding Process |
+| Access | This behaviour uses or changes information | Customer Profile Management Function accesses Customer Record |
 | Flow | Something passes from one element to another | Screening Request flows to Financial Crime Platform |
-| Triggering | One behaviour starts or follows another | Application Submitted triggers Customer Onboarding |
-| Influence | One motivation element affects another | Duplicate customer data influences the goal of trusted customer view |
+| Triggering | One behaviour starts or follows another | Application Submitted Event triggers Customer Onboarding Process |
+| Influence | One motivation element affects another | Duplicate customer data influences the Trusted Customer View goal |
+| Association | A weak or general relationship | Use only when a more precise relationship is not justified |
 
 Relationship direction matters. If the arrow direction is wrong, the model can imply the wrong dependency. Label relationships when the meaning is not obvious to the audience.
 
@@ -182,10 +257,10 @@ Useful early viewpoints include:
 | Viewpoint | Question answered | Typical audience |
 |---|---|---|
 | Capability map | What abilities does the organisation need or improve? | Business architects, sponsors and portfolio teams |
-| Layered view | How do business, application and technology elements connect? | Enterprise and solution architects |
-| Application cooperation view | How do application components collaborate and expose services? | Solution architects and application owners |
-| Technology view | What technology services and nodes support the applications? | Platform, infrastructure and operations teams |
-| Motivation view | Why is the change needed and what constrains it? | Sponsors, architects and reviewers |
+| Layered or domain traceability view | How do business, application and technology concepts connect? | Enterprise and solution architects |
+| Application cooperation view | How do application components collaborate through services and data? | Solution architects and application owners |
+| Technology view | What technology services, nodes and artifacts support the applications? | Platform, infrastructure and operations teams |
+| Motivation view | Why is the change needed and what requirements shape it? | Sponsors, architects and reviewers |
 | Implementation and migration view | What changes between current, transition and target states? | Transformation, delivery and governance teams |
 
 Do not put every element in every view. A capability map should not include database tables. A technology view should not include every business goal. A migration view should show meaningful architecture states, not a detailed Gantt chart.
@@ -204,11 +279,11 @@ For Horizon Bank, both may be needed. ArchiMate can show how Customer Onboarding
 
 ## ArchiMate versus BPMN
 
-ArchiMate and BPMN also overlap, but they answer different process questions.
+ArchiMate and BPMN overlap around business behaviour, but they answer different process questions.
 
 BPMN is stronger when the reader needs process sequence, gateways, events, timers, pools, lanes and message flows. Chapter 6 used BPMN to show onboarding and payment repair behaviour.
 
-ArchiMate is stronger when the reader needs to place a business process in a wider architecture context. It can show that Customer Onboarding is part of Customer Management, realises a business service, uses Customer Profile Management from the Party and Customer Platform, and is constrained by screening requirements.
+ArchiMate is stronger when the reader needs to place a business process in a wider architecture context. It can show that Customer Onboarding belongs to Customer Management capability, realises or supports a business service, uses Customer Profile Management from the Party and Customer Platform, and is shaped by screening requirements.
 
 Use BPMN when process flow and exception behaviour are the focus. Use ArchiMate when process content needs to connect to capabilities, services, applications, technology and change.
 
@@ -216,38 +291,38 @@ Use BPMN when process flow and exception behaviour are the focus. Use ArchiMate 
 
 The first mistake is creating a one-page enterprise map that shows everything. A diagram with every capability, process, application, database, network and project usually answers no question well.
 
-The second mistake is using ArchiMate as decoration. If every relationship is a generic association, the diagram may look formal while saying very little. Choose relationships that express dependency, realisation, serving, access or flow.
+The second mistake is using ArchiMate as decoration. If every relationship is a generic association, the diagram may look formal while saying little. Choose relationships that express composition, assignment, realisation, serving, access, flow or influence.
 
 The third mistake is mixing abstraction levels. A view that combines "Customer Management capability", "click Submit", "Customer table column" and "Kubernetes pod" is probably not a coherent architecture view.
 
-The fourth mistake is treating ArchiMate as a replacement for specialist notations. Use BPMN for detailed business process flow, C4 for software structure and UML when its software or behavioural notation is the better fit.
+The fourth mistake is skipping the application realisation chain. A component-to-consumer shortcut may hide the behaviour and service that actually explain the dependency.
 
-The fifth mistake is ignoring motivation and migration. Enterprise architecture views should often show why the design exists and how change will happen, not only the target boxes.
+The fifth mistake is treating a managed technology service as a node without asking the architecture question. If the concern is consumption, model a Technology Service. If the concern is hosting or execution, show the Technology Node, System Software and Artifact where needed.
 
-The sixth mistake is inventing local meanings for standard symbols without explanation. If a team uses a simplified subset, document that subset and keep it consistent.
+The sixth mistake is using historical ArchiMate elements as if they were current ArchiMate 4 elements. Do not use removed elements such as Gap or Constraint in new Chapter 7 diagrams.
 
 ## Chapter cheat sheet
 
 | Area | Plain question | Typical elements | Watch out for |
 |---|---|---|---|
-| Strategy | What abilities and direction matter? | Capability, resource, value stream, course of action | Do not turn process steps into capabilities |
-| Business | What business behaviour and services are involved? | Actor, role, process, service, object | Do not replace BPMN detail when flow is the question |
-| Application | Which applications provide which services? | Application component, service, interface, data object | Do not confuse with C4 component level |
-| Technology | Which technology supports the applications? | Node, technology service, network, artefact | Do not model every infrastructure detail |
-| Physical | Which real-world facilities or equipment matter? | Facility, equipment, material | Use only when physical context affects the decision |
-| Motivation | Why is change needed? | Stakeholder, driver, goal, requirement, constraint | Avoid vague goals |
-| Migration | How does architecture change over time? | Plateau, gap, work package, deliverable | Do not turn it into a project schedule |
+| Strategy domain | What abilities and direction matter? | Capability, Resource, Value Stream, Course of Action | Do not turn process steps into capabilities |
+| Business domain | Who performs business behaviour and what service is visible? | Actor, Role, Process, Function, Event, Service, Business Object | Actor and Role are not the same concept |
+| Application domain | Which applications perform behaviour and realise services? | Application Component, Process, Function, Service, Data Object | Do not skip the component to behaviour to service chain without saying so |
+| Technology domain | Which technology hosts or supports the applications? | Technology Node, System Software, Technology Service, Artifact | A managed service is not automatically a node |
+| Physical domain | Which real-world facilities or equipment matter? | Facility, Equipment, Material | Use only when physical context affects the decision |
+| Motivation | Why is change needed? | Stakeholder, Driver, Assessment, Goal, Outcome, Requirement, Principle | Avoid vague goals |
+| Migration | How does architecture change over time? | Work Package, Deliverable, Plateau, Event | Do not use the removed Gap element as current notation |
 
 ## Key takeaways
 
 - ArchiMate is an enterprise architecture modelling language for connecting business, application, technology, motivation and change.
+- ArchiMate 4 is the current normative version for this chapter.
 - TOGAF is a framework and method; ArchiMate is a language that can represent selected architecture content.
-- Use ArchiMate when the architecture question crosses domains and needs traceability.
+- One ArchiMate model can support several views, and the same concept should be reused across those views.
 - Use BPMN for detailed process flow and C4 for software architecture views.
-- Capabilities describe organisational abilities, not task sequences.
-- Relationship choice and direction are essential in ArchiMate.
-- Motivation and migration views help explain why a target architecture exists and how the organisation can move towards it.
-- Keep each view scoped to one audience and one decision.
+- Actors perform behaviour; roles describe responsibilities performed by actors.
+- Application services should usually be traced through behaviour assigned to application components.
+- Relationship choice, direction, legend and scope are essential in ArchiMate.
 
 ## Practical exercise
 
@@ -256,29 +331,31 @@ Horizon Bank wants to reduce duplicate customer capture across retail products. 
 Create a small ArchiMate modelling plan before drawing:
 
 1. Which capability or capabilities are in scope?
-2. Which business service should be visible to the customer or channel?
-3. Which application components support the change?
+2. Which actor and role distinction matters?
+3. Which application component to function to service chain should be visible?
 4. Which motivation elements explain the change?
-5. Which migration states should be shown?
+5. Which migration states should be shown without using a Gap element?
 
 Suggested answer:
 
 - Scope Customer Management and Customer Onboarding as capabilities. Avoid modelling every retail banking capability in the first view.
-- Show a business service such as Open Customer Profile or Open Current Account, depending on the chosen scope.
-- Include Customer Onboarding Platform, Party and Customer Platform, Financial Crime Platform, Horizon Digital Channels and retained Core Deposit System where they are relevant.
-- Use drivers such as duplicate customer databases and slow product launches, with goals such as trusted customer view and improved straight-through processing.
-- Show Current State, Transition State and Target State as plateaus if the question is migration. Keep delivery tasks and dates outside the first architecture view.
+- Treat Horizon Bank as an actor and Account Provider or Customer Service Provider as possible roles, depending on the concern.
+- Show Party and Customer Platform assigned to Customer Profile Management Function, which realises Customer Profile Management Service, which serves Customer Onboarding Process.
+- Use drivers such as duplicate customer databases and slow product launches, assessments such as customer data fragmented, and goals such as trusted customer view and improved straight-through processing.
+- Show Current State, Transition State and Target State as plateaus. Explain differences between states in prose, deliverables or assessment notes rather than drawing a Gap element.
 
 ## Review checklist
 
-- [ ] The view has a stated purpose, audience and architecture question.
-- [ ] Business, application and technology elements are not mixed without a clear relationship.
+- [ ] The view has a stated purpose, audience, concern and scope.
+- [ ] The model concepts are reused consistently across capability, layered, application, technology, motivation and migration views.
+- [ ] Formal ArchiMate 4 terminology is used where the chapter refers to the current standard.
+- [ ] Business actors and roles are not confused.
+- [ ] Application services are traced through assigned application behaviour unless a derived shortcut is explicitly stated.
+- [ ] Technology Node, System Software, Technology Service and Artifact are distinguished.
+- [ ] Business, application and technology details are not mixed without clear relationships.
 - [ ] Capabilities describe abilities, not process steps.
-- [ ] Application components and services are named consistently with the repository examples.
 - [ ] Relationship types and directions are meaningful.
-- [ ] Motivation elements explain why the architecture exists.
-- [ ] Migration views distinguish current, transition and target states.
-- [ ] The view does not replace BPMN, C4 or UML where those notations answer the question better.
+- [ ] Removed ArchiMate 3.2 elements are not used as current ArchiMate 4 notation.
 - [ ] Diagram specifications are author-approved before source files are created.
 - [ ] Terminology, link, diagram-register and manuscript checks pass.
 
@@ -286,4 +363,5 @@ Suggested answer:
 
 Chapter source notes are maintained in the repository under `research/archimate/` and registered in `SOURCE_REGISTER.md`. Appendix H, [Glossary and Source Notes](../appendices/appendix-h-glossary-sources.md), is the intended publication location for the final source-key index once the appendix is completed.
 
-- `[OPEN-GROUP-ARCHIMATE-3.2]`: The Open Group ArchiMate 3.2 Specification.
+- `[OPEN-GROUP-ARCHIMATE-4]`: The Open Group ArchiMate 4 Specification, current normative source.
+- `[OPEN-GROUP-ARCHIMATE-3.2]`: The Open Group ArchiMate 3.2 Specification, retained as a historical source note.

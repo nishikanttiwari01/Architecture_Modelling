@@ -4,6 +4,14 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-29
 
+### Revised Chapter 7 to ArchiMate 4
+
+- Updated Chapter 7, **ArchiMate**, from the historical ArchiMate 3.2 source basis to the current ArchiMate 4 source basis.
+- Added the official Open Group ArchiMate 4 source note and preserved the ArchiMate 3.2 source note as historical.
+- Added explicit guidance on reading ArchiMate notation, model reuse, actor versus role, application component to behaviour to service realisation, and technology node/service/artifact distinctions.
+- Rewrote the six Chapter 7 diagram specifications to use ArchiMate 4 elements, relationship directions, reusable model concepts, notation legends, accessibility requirements and review criteria.
+- Kept Chapter 7 at `Under Review` and did not create diagram source files.
+
 ### Drafted Chapter 7 ArchiMate
 
 - Recorded the author's approval of Chapter 6 while keeping Chapter 6 diagrams at `Review`.

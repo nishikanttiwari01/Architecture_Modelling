@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Show a simplified current, transition and target architecture path for Horizon Bank customer onboarding.
+Show a simplified current, transition and target architecture path for Horizon Bank customer onboarding using ArchiMate 4 migration elements.
 
 ## Audience
 
@@ -10,34 +10,45 @@ Transformation leads, enterprise architects, delivery planners, governance revie
 
 ## Question answered
 
-How does Horizon Bank move from product-specific onboarding to a reusable onboarding and customer platform?
+How does Horizon Bank move from product-specific onboarding to reusable onboarding and customer-platform capabilities without using removed ArchiMate 3.2 Gap notation?
 
-## Abstraction level
-
-Architecture migration overview. It shows major architecture states and work packages, not a detailed project schedule.
-
-## Notation
-
-ArchiMate implementation and migration view.
+Decision or concern: decide the main architecture states, work packages and deliverables for the onboarding transformation.
 
 ## Required elements
 
+ArchiMate 4 elements:
+
 - Plateaus: Current State, Transition State, Target State
-- Gaps: Duplicate onboarding removed, Trusted customer view established
 - Work packages: Introduce Customer Onboarding Platform, Introduce Party and Customer Platform, Integrate retained Core Deposit System
 - Deliverables: Reusable onboarding service, Customer profile service, Core system adapter
-- Constraint or note: Core Deposit System retained initially
+- Outcome: Reduced duplicate customer capture
+- Event: Transition release completed
+- Application components: Customer Onboarding Platform, Party and Customer Platform, Core Deposit System
 
 ## Required relationships
 
-- Work packages realise deliverables.
-- Deliverables help close gaps between plateaus.
-- Transition State follows Current State and precedes Target State.
-- Retained Core Deposit System constrains the transition.
+Relationship types and directions:
+
+- Triggering from Current State to Transition State, then from Transition State to Target State, if a state progression arrow is shown.
+- Realisation from each work package to its deliverable.
+- Influence from deliverables to Reduced duplicate customer capture outcome.
+- Association or aggregation from plateaus to the application components present in that state, if shown.
+- Serving or access relationships should be omitted unless needed for the migration concern.
+- Do not use the removed Gap element. Differences between states must be explained through labels, deliverables, outcomes or prose.
+
+## Reusable model concepts
+
+- Customer Onboarding Platform and Party and Customer Platform must match FIG-07-02 and FIG-07-03.
+- Reduced duplicate customer capture outcome must match FIG-07-05.
+- Core Deposit System must match `examples/horizon-bank/system-landscape.md` and remain identified as retained initially.
+
+## Notation and legend
+
+Use ArchiMate 4 implementation and migration notation. The legend must identify Plateau, Work Package, Deliverable, Outcome, Event, realisation, triggering, influence and association or aggregation. It must explicitly state that Gap is not used because it is not current ArchiMate 4 notation.
 
 ## Main flow or structure
 
-Arrange plateaus from left to right. Place work packages and deliverables between the relevant plateaus.
+Arrange plateaus from left to right: Current State, Transition State, Target State. Place work packages and deliverables between the relevant plateaus.
 
 ## Alternative and exception flows
 
@@ -49,20 +60,21 @@ High-level customer onboarding transformation for Horizon Bank.
 
 ## Exclusions
 
-No Gantt chart, sprint plan, detailed dependency network, cost model, procurement plan or release-management procedure.
-
-## Accessibility requirements
-
-Use readable labels, clear left-to-right progression and no colour-only meaning.
+No Gantt chart, sprint plan, detailed dependency network, cost model, procurement plan, release-management procedure, BPMN flow or C4 container internals.
 
 ## Source references
 
-- `[OPEN-GROUP-ARCHIMATE-3.2]` for plateau, gap, work package and deliverable concepts.
+- `[OPEN-GROUP-ARCHIMATE-4]` for plateau, work package, deliverable, event and outcome concepts.
 - `examples/horizon-bank/README.md` and `examples/horizon-bank/system-landscape.md` for stable scenario context.
+
+## Accessibility requirements
+
+Use readable labels, clear left-to-right progression and no colour-only meaning. Keep state labels and deliverable labels large enough for book-page width.
 
 ## Review criteria
 
 - The migration view shows architecture states, not detailed delivery tasks.
 - Current, transition and target states are distinct.
-- Retained legacy constraints are visible.
+- Retained legacy limits are visible in labels or prose without using the removed Constraint element.
+- The removed Gap element is not used.
 - The view aligns with the motivation and layered views.

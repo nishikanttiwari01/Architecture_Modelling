@@ -28,9 +28,11 @@ For this handbook, the source supports the official vocabulary and the existence
 
 ## Terminology and version notes
 
-Version 3.2 is recorded as the current version used for Chapter 7 drafting on 2026-06-29. The public specification URL required sign-in or restricted access in the execution environment, so future publication review should re-open the official Open Group publication page and confirm the current version before final release.
+Version 3.2 is retained as a historical source note. It must not be presented as the current ArchiMate version after the repository recorded `[OPEN-GROUP-ARCHIMATE-4]` as the current normative source on 2026-06-29.
 
-The chapter uses British English but preserves official element names such as `Business Process`, `Application Component`, `Technology Service`, `Plateau` and `Gap` when referring to ArchiMate concepts.
+The public specification URL required sign-in or restricted access in the execution environment when the note was created. Future publication review should use the current ArchiMate 4 source note unless a historical comparison is required.
+
+The historical note preserves official ArchiMate 3.2 element names such as `Business Process`, `Application Component`, `Technology Service`, `Plateau` and `Gap` when comparing older material. Chapter 7 should not use removed 3.2 elements such as `Gap` as current ArchiMate 4 notation.
 
 ## Copyright or reuse notes
 
@@ -38,4 +40,4 @@ Do not copy The Open Group diagrams, metamodel tables or specification text into
 
 ## Verification status
 
-Checked
+Historical

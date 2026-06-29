@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Show a simple ArchiMate-style capability map for retail banking.
+Show a small ArchiMate 4 strategy-domain capability map for retail banking.
 
 ## Audience
 
@@ -10,55 +10,66 @@ Beginners, business architects, enterprise architects and transformation sponsor
 
 ## Question answered
 
-Which stable retail banking abilities are in scope before the team discusses processes, applications or projects?
+Which stable retail banking abilities are in scope before the team discusses process sequence, applications, projects or technology?
 
-## Abstraction level
-
-Strategy and capability overview. It shows abilities, not process order, organisation structure or system design.
-
-## Notation
-
-ArchiMate-style capability map using a small subset of strategy elements.
+Decision or concern: decide capability scope before lower-level modelling begins.
 
 ## Required elements
 
+ArchiMate 4 elements:
+
 - Capability: Retail Banking
-- Child capabilities: Customer Management, Account Management, Payments, Cards, Lending, Customer Support, Financial Crime Management
-- Optional grouping cue for core customer-facing capabilities and control/support capabilities
+- Capabilities: Customer Management, Account Management, Payments, Cards, Lending, Customer Support, Financial Crime Management
+- Optional Course of Action: Consolidate customer identity
+- Optional Outcome: Reduced duplicate customer capture
 
 ## Required relationships
 
-- Retail Banking is composed of the child capabilities.
-- Financial Crime Management supports or serves relevant retail capabilities where shown.
+Relationship types and directions:
+
+- Composition from Retail Banking capability to each child capability.
+- Influence from Consolidate customer identity course of action to Reduced duplicate customer capture outcome, if those optional elements are included.
+- Serving may be used only if Financial Crime Management is explicitly shown as providing support to another capability. If used, direction must run from Financial Crime Management to the served capability.
+
+## Reusable model concepts
+
+- Customer Management capability must be the same concept reused in FIG-07-02 and FIG-07-06.
+- Financial Crime Management capability must align with the Financial Crime Platform application component used in later views, without implying that the capability and application are the same thing.
+- Reduced duplicate customer capture outcome must align with FIG-07-05 motivation content.
+
+## Notation and legend
+
+Use ArchiMate 4 strategy-domain notation. Capability boxes may share one colour, and motivation elements, if included, must use a distinct style. The legend must explain capability, course of action, outcome, composition and influence. Colour must not be the only carrier of meaning.
 
 ## Main flow or structure
 
-Use a map layout rather than a sequence. Put Retail Banking as the parent scope and arrange child capabilities in readable rows.
+Use a map layout rather than a sequence. Put Retail Banking as the parent capability and arrange child capabilities in readable rows.
 
 ## Alternative and exception flows
 
-Not applicable. This is a structural capability view, not a process view.
+Not applicable. This is a structural capability view, not a process or exception view.
 
 ## Scope
 
-Retail banking capabilities used as a beginner example for ArchiMate strategy concepts.
+Retail banking capabilities used as a beginner example for ArchiMate strategy modelling.
 
 ## Exclusions
 
-No detailed value streams, BPMN process steps, application components, database entities, BIAN Service Domains or technology nodes.
-
-## Accessibility requirements
-
-Use high contrast, readable labels and no colour-only meaning. The figure must remain readable at book-page width.
+No detailed value streams, BPMN process steps, application components, data entities, BIAN Service Domains, technology nodes or project tasks.
 
 ## Source references
 
-- `[OPEN-GROUP-ARCHIMATE-3.2]` for ArchiMate strategy concepts and relationships.
+- `[OPEN-GROUP-ARCHIMATE-4]` for ArchiMate 4 strategy-domain concepts and relationships.
 - `examples/horizon-bank/README.md` for Horizon Bank business lines and starting problems.
+
+## Accessibility requirements
+
+Use high contrast, readable labels and no colour-only meaning. The figure must remain readable at book-page width and must not rely on small decorative icons.
 
 ## Review criteria
 
 - Capabilities read as abilities, not activities.
 - The map does not imply detailed process sequence.
-- Relationship meaning is clear from the caption and labels.
-- Terminology matches `GLOSSARY.md`.
+- Relationship meaning is clear from labels, legend and caption.
+- All included element types are valid for ArchiMate 4.
+- Terminology matches `GLOSSARY.md` and Chapter 7.
