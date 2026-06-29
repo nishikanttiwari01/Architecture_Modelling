@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" id="Definitions_FIG_06_02" targetNamespace="https://example.local/architecture-modelling/chapter-06">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_FIG_06_02" targetNamespace="https://example.local/architecture-modelling/chapter-06">
+  <bpmn:message id="Message_Application" name="Submit application" />
+  <bpmn:message id="Message_ScreeningRequest" name="Screening request" />
+  <bpmn:message id="Message_ScreeningResult" name="Screening result" />
+  <bpmn:message id="Message_Outcome" name="Onboarding outcome" />
   <bpmn:collaboration id="Collaboration_CustomerOnboarding" name="Horizon Bank customer onboarding">
     <bpmn:participant id="Participant_Customer" name="Retail Customer" />
     <bpmn:participant id="Participant_Bank" name="Horizon Bank" processRef="Process_HorizonBankOnboarding" />
-    <bpmn:participant id="Participant_FinancialCrime" name="Financial Crime Platform" processRef="Process_FinancialCrimeScreening" />
-    <bpmn:messageFlow id="Message_Application" name="Submit application" sourceRef="Participant_Customer" targetRef="Task_CaptureApplication" />
-    <bpmn:messageFlow id="Message_ScreeningRequest" name="Screening request" sourceRef="Task_RequestScreening" targetRef="Task_ScreenCustomer" />
-    <bpmn:messageFlow id="Message_ScreeningResult" name="Screening result" sourceRef="Task_ReturnScreeningResult" targetRef="Gateway_ScreeningClear" />
-    <bpmn:messageFlow id="Message_Outcome" name="Onboarding outcome" sourceRef="Task_SendOutcome" targetRef="Participant_Customer" />
+    <bpmn:participant id="Participant_FinancialCrime" name="Financial Crime Platform" />
+    <bpmn:messageFlow id="MessageFlow_Application" name="Submit application" sourceRef="Participant_Customer" targetRef="Start_ApplicationReceived" messageRef="Message_Application" />
+    <bpmn:messageFlow id="MessageFlow_ScreeningRequest" name="Screening request" sourceRef="Task_RequestScreening" targetRef="Participant_FinancialCrime" messageRef="Message_ScreeningRequest" />
+    <bpmn:messageFlow id="MessageFlow_ScreeningResult" name="Screening result" sourceRef="Participant_FinancialCrime" targetRef="Event_ReceiveScreeningResult" messageRef="Message_ScreeningResult" />
+    <bpmn:messageFlow id="MessageFlow_Outcome" name="Onboarding outcome" sourceRef="Task_SendOutcome" targetRef="Participant_Customer" messageRef="Message_Outcome" />
   </bpmn:collaboration>
   <bpmn:process id="Process_HorizonBankOnboarding" name="Horizon Bank onboarding process" isExecutable="false">
     <bpmn:laneSet id="LaneSet_HorizonBank">
@@ -18,18 +22,21 @@
       <bpmn:lane id="Lane_OnboardingOperations" name="Onboarding Operations">
         <bpmn:flowNodeRef>Task_ValidateApplication</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_RequestScreening</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_ReceiveScreeningResult</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_ScreeningClear</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_OpenCustomerProfile</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_SendOutcome</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>End_ProfileOpened</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>End_ApplicationRejected</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_Compliance" name="Compliance">
         <bpmn:flowNodeRef>Task_ReviewScreeningException</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_ExceptionDecision</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>End_ApplicationRejected</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
     <bpmn:startEvent id="Start_ApplicationReceived" name="Application received">
       <bpmn:outgoing>Flow_OB_01</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_ApplicationReceived" messageRef="Message_Application" />
     </bpmn:startEvent>
     <bpmn:task id="Task_CaptureApplication" name="Capture application">
       <bpmn:incoming>Flow_OB_01</bpmn:incoming>
@@ -43,49 +50,131 @@
       <bpmn:incoming>Flow_OB_03</bpmn:incoming>
       <bpmn:outgoing>Flow_OB_04</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:exclusiveGateway id="Gateway_ScreeningClear" name="Screening clear?">
+    <bpmn:intermediateCatchEvent id="Event_ReceiveScreeningResult" name="Receive result">
       <bpmn:incoming>Flow_OB_04</bpmn:incoming>
+      <bpmn:outgoing>Flow_OB_05</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_ScreeningResult" messageRef="Message_ScreeningResult" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:exclusiveGateway id="Gateway_ScreeningClear" name="Screening clear?">
+      <bpmn:incoming>Flow_OB_05</bpmn:incoming>
       <bpmn:outgoing>Flow_OB_Clear</bpmn:outgoing>
       <bpmn:outgoing>Flow_OB_Exception</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:task id="Task_OpenCustomerProfile" name="Open customer profile">
       <bpmn:incoming>Flow_OB_Clear</bpmn:incoming>
       <bpmn:incoming>Flow_OB_ClearAfterReview</bpmn:incoming>
-      <bpmn:outgoing>Flow_OB_05</bpmn:outgoing>
-    </bpmn:task>
-    <bpmn:task id="Task_SendOutcome" name="Send onboarding outcome">
-      <bpmn:incoming>Flow_OB_05</bpmn:incoming>
       <bpmn:outgoing>Flow_OB_06</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:endEvent id="End_ProfileOpened" name="Profile opened">
+    <bpmn:task id="Task_SendOutcome" name="Send onboarding outcome">
       <bpmn:incoming>Flow_OB_06</bpmn:incoming>
+      <bpmn:outgoing>Flow_OB_07</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="End_ProfileOpened" name="Profile opened">
+      <bpmn:incoming>Flow_OB_07</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:task id="Task_ReviewScreeningException" name="Review screening exception">
       <bpmn:incoming>Flow_OB_Exception</bpmn:incoming>
+      <bpmn:outgoing>Flow_OB_08</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="Gateway_ExceptionDecision" name="Exception clear?">
+      <bpmn:incoming>Flow_OB_08</bpmn:incoming>
       <bpmn:outgoing>Flow_OB_ClearAfterReview</bpmn:outgoing>
       <bpmn:outgoing>Flow_OB_Reject</bpmn:outgoing>
-    </bpmn:task>
+    </bpmn:exclusiveGateway>
     <bpmn:endEvent id="End_ApplicationRejected" name="Application rejected">
       <bpmn:incoming>Flow_OB_Reject</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_OB_01" sourceRef="Start_ApplicationReceived" targetRef="Task_CaptureApplication" />
     <bpmn:sequenceFlow id="Flow_OB_02" sourceRef="Task_CaptureApplication" targetRef="Task_ValidateApplication" />
     <bpmn:sequenceFlow id="Flow_OB_03" sourceRef="Task_ValidateApplication" targetRef="Task_RequestScreening" />
-    <bpmn:sequenceFlow id="Flow_OB_04" sourceRef="Task_RequestScreening" targetRef="Gateway_ScreeningClear" />
+    <bpmn:sequenceFlow id="Flow_OB_04" sourceRef="Task_RequestScreening" targetRef="Event_ReceiveScreeningResult" />
+    <bpmn:sequenceFlow id="Flow_OB_05" sourceRef="Event_ReceiveScreeningResult" targetRef="Gateway_ScreeningClear" />
     <bpmn:sequenceFlow id="Flow_OB_Clear" name="clear" sourceRef="Gateway_ScreeningClear" targetRef="Task_OpenCustomerProfile" />
     <bpmn:sequenceFlow id="Flow_OB_Exception" name="possible match" sourceRef="Gateway_ScreeningClear" targetRef="Task_ReviewScreeningException" />
-    <bpmn:sequenceFlow id="Flow_OB_ClearAfterReview" name="clear after review" sourceRef="Task_ReviewScreeningException" targetRef="Task_OpenCustomerProfile" />
-    <bpmn:sequenceFlow id="Flow_OB_Reject" name="reject" sourceRef="Task_ReviewScreeningException" targetRef="End_ApplicationRejected" />
-    <bpmn:sequenceFlow id="Flow_OB_05" sourceRef="Task_OpenCustomerProfile" targetRef="Task_SendOutcome" />
-    <bpmn:sequenceFlow id="Flow_OB_06" sourceRef="Task_SendOutcome" targetRef="End_ProfileOpened" />
+    <bpmn:sequenceFlow id="Flow_OB_06" sourceRef="Task_OpenCustomerProfile" targetRef="Task_SendOutcome" />
+    <bpmn:sequenceFlow id="Flow_OB_07" sourceRef="Task_SendOutcome" targetRef="End_ProfileOpened" />
+    <bpmn:sequenceFlow id="Flow_OB_08" sourceRef="Task_ReviewScreeningException" targetRef="Gateway_ExceptionDecision" />
+    <bpmn:sequenceFlow id="Flow_OB_ClearAfterReview" name="clear" sourceRef="Gateway_ExceptionDecision" targetRef="Task_OpenCustomerProfile" />
+    <bpmn:sequenceFlow id="Flow_OB_Reject" name="reject" sourceRef="Gateway_ExceptionDecision" targetRef="End_ApplicationRejected" />
   </bpmn:process>
-  <bpmn:process id="Process_FinancialCrimeScreening" name="Financial crime screening" isExecutable="false">
-    <bpmn:task id="Task_ScreenCustomer" name="Screen customer">
-      <bpmn:outgoing>Flow_FC_01</bpmn:outgoing>
-    </bpmn:task>
-    <bpmn:task id="Task_ReturnScreeningResult" name="Return screening result">
-      <bpmn:incoming>Flow_FC_01</bpmn:incoming>
-    </bpmn:task>
-    <bpmn:sequenceFlow id="Flow_FC_01" sourceRef="Task_ScreenCustomer" targetRef="Task_ReturnScreeningResult" />
-  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_FIG_06_02">
+    <bpmndi:BPMNPlane id="BPMNPlane_FIG_06_02" bpmnElement="Collaboration_CustomerOnboarding">
+      <bpmndi:BPMNShape id="Shape_Participant_Customer" bpmnElement="Participant_Customer" isHorizontal="true"><dc:Bounds x="40" y="60" width="1380" height="70" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Participant_Bank" bpmnElement="Participant_Bank" isHorizontal="true"><dc:Bounds x="40" y="165" width="1380" height="250" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Lane_DigitalChannels" bpmnElement="Lane_DigitalChannels" isHorizontal="true"><dc:Bounds x="40" y="165" width="1380" height="70" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Lane_OnboardingOperations" bpmnElement="Lane_OnboardingOperations" isHorizontal="true"><dc:Bounds x="40" y="235" width="1380" height="105" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Lane_Compliance" bpmnElement="Lane_Compliance" isHorizontal="true"><dc:Bounds x="40" y="340" width="1380" height="75" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Participant_FinancialCrime" bpmnElement="Participant_FinancialCrime" isHorizontal="true"><dc:Bounds x="40" y="450" width="1380" height="70" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Start_ApplicationReceived" bpmnElement="Start_ApplicationReceived">
+        <dc:Bounds x="167" y="182" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="145" y="222" width="80" height="28" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_CaptureApplication" bpmnElement="Task_CaptureApplication"><dc:Bounds x="245" y="178" width="120" height="44" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_ValidateApplication" bpmnElement="Task_ValidateApplication"><dc:Bounds x="420" y="260" width="120" height="44" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_RequestScreening" bpmnElement="Task_RequestScreening"><dc:Bounds x="585" y="260" width="120" height="44" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Event_ReceiveScreeningResult" bpmnElement="Event_ReceiveScreeningResult">
+        <dc:Bounds x="762" y="264" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="718" y="305" width="88" height="32" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Gateway_ScreeningClear" bpmnElement="Gateway_ScreeningClear" isMarkerVisible="true">
+        <dc:Bounds x="870" y="247" width="70" height="70" />
+        <bpmndi:BPMNLabel><dc:Bounds x="855" y="320" width="100" height="18" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_OpenCustomerProfile" bpmnElement="Task_OpenCustomerProfile"><dc:Bounds x="1000" y="260" width="125" height="44" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_SendOutcome" bpmnElement="Task_SendOutcome"><dc:Bounds x="1170" y="260" width="120" height="44" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_End_ProfileOpened" bpmnElement="End_ProfileOpened">
+        <dc:Bounds x="1342" y="264" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1318" y="305" width="84" height="24" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_ReviewScreeningException" bpmnElement="Task_ReviewScreeningException"><dc:Bounds x="990" y="356" width="150" height="44" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Gateway_ExceptionDecision" bpmnElement="Gateway_ExceptionDecision" isMarkerVisible="true">
+        <dc:Bounds x="1190" y="343" width="70" height="70" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1178" y="415" width="94" height="18" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_End_ApplicationRejected" bpmnElement="End_ApplicationRejected">
+        <dc:Bounds x="1342" y="360" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1318" y="402" width="84" height="24" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Edge_Flow_OB_01" bpmnElement="Flow_OB_01"><di:waypoint x="203" y="200" /><di:waypoint x="245" y="200" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_OB_02" bpmnElement="Flow_OB_02"><di:waypoint x="365" y="200" /><di:waypoint x="390" y="200" /><di:waypoint x="390" y="282" /><di:waypoint x="420" y="282" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_OB_03" bpmnElement="Flow_OB_03"><di:waypoint x="540" y="282" /><di:waypoint x="585" y="282" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_OB_04" bpmnElement="Flow_OB_04"><di:waypoint x="705" y="282" /><di:waypoint x="762" y="282" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_OB_05" bpmnElement="Flow_OB_05"><di:waypoint x="798" y="282" /><di:waypoint x="870" y="282" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_OB_Clear" bpmnElement="Flow_OB_Clear">
+        <di:waypoint x="940" y="282" /><di:waypoint x="1000" y="282" />
+        <bpmndi:BPMNLabel><dc:Bounds x="954" y="258" width="58" height="18" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_OB_Exception" bpmnElement="Flow_OB_Exception">
+        <di:waypoint x="905" y="317" /><di:waypoint x="940" y="378" /><di:waypoint x="990" y="378" />
+        <bpmndi:BPMNLabel><dc:Bounds x="916" y="342" width="98" height="18" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_OB_06" bpmnElement="Flow_OB_06"><di:waypoint x="1125" y="282" /><di:waypoint x="1170" y="282" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_OB_07" bpmnElement="Flow_OB_07"><di:waypoint x="1290" y="282" /><di:waypoint x="1342" y="282" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_OB_08" bpmnElement="Flow_OB_08"><di:waypoint x="1140" y="378" /><di:waypoint x="1190" y="378" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_OB_ClearAfterReview" bpmnElement="Flow_OB_ClearAfterReview">
+        <di:waypoint x="1225" y="343" /><di:waypoint x="1225" y="323" /><di:waypoint x="1062" y="323" /><di:waypoint x="1062" y="304" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1120" y="304" width="54" height="18" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_OB_Reject" bpmnElement="Flow_OB_Reject">
+        <di:waypoint x="1260" y="378" /><di:waypoint x="1342" y="378" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1282" y="354" width="58" height="18" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_MessageFlow_Application" bpmnElement="MessageFlow_Application">
+        <di:waypoint x="185" y="130" /><di:waypoint x="185" y="182" />
+        <bpmndi:BPMNLabel><dc:Bounds x="198" y="142" width="108" height="18" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_MessageFlow_ScreeningRequest" bpmnElement="MessageFlow_ScreeningRequest">
+        <di:waypoint x="645" y="304" /><di:waypoint x="645" y="450" />
+        <bpmndi:BPMNLabel><dc:Bounds x="658" y="374" width="112" height="18" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_MessageFlow_ScreeningResult" bpmnElement="MessageFlow_ScreeningResult">
+        <di:waypoint x="740" y="450" /><di:waypoint x="740" y="282" /><di:waypoint x="762" y="282" />
+        <bpmndi:BPMNLabel><dc:Bounds x="752" y="374" width="108" height="18" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_MessageFlow_Outcome" bpmnElement="MessageFlow_Outcome">
+        <di:waypoint x="1230" y="260" /><di:waypoint x="1230" y="130" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1244" y="176" width="112" height="18" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
 </bpmn:definitions>

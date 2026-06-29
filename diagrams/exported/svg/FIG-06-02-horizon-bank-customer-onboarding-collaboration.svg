@@ -1,18 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="520" viewBox="0 0 1280 520" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1460" height="560" viewBox="0 0 1460 560" role="img" aria-labelledby="title desc">
   <title id="title">FIG-06-02. Horizon Bank Customer Onboarding BPMN Collaboration</title>
-  <desc id="desc">BPMN collaboration showing customer, Horizon Bank and Financial Crime Platform message exchange.</desc>
+  <desc id="desc">BPMN collaboration showing black-box external participants and Horizon Bank onboarding flow.</desc>
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#222"/>
-    </marker>
-    <marker id="msgArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffffff" stroke="#6941c6" stroke-width="1.5"/>
-    </marker>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#222"/></marker>
+    <marker id="msgArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ffffff" stroke="#6941c6" stroke-width="1.5"/></marker>
     <style>
       .pool { fill:#ffffff; stroke:#222; stroke-width:1.5; }
       .lane { fill:#f7f8fa; stroke:#667085; stroke-width:1; }
       .task { fill:#eef4ff; stroke:#175cd3; stroke-width:1.4; }
       .event { fill:#ffffff; stroke:#222; stroke-width:2; }
+      .innerEvent { fill:none; stroke:#222; stroke-width:1.2; }
       .end { fill:#ffffff; stroke:#222; stroke-width:4; }
       .gateway { fill:#fff7e6; stroke:#b54708; stroke-width:1.5; }
       .flow { stroke:#222; stroke-width:1.5; fill:none; marker-end:url(#arrow); }
@@ -21,74 +18,97 @@
       .small { font: 13px Arial, sans-serif; fill:#344054; }
       .title { font: bold 18px Arial, sans-serif; fill:#111827; }
       .poolText { font: bold 14px Arial, sans-serif; fill:#111827; }
+      .gatewayMarker { font: 16px Arial, sans-serif; fill:#111827; }
+      .eventMarker, .eventMarkerCircle { fill:none; stroke:#111827; stroke-width:1.3; }
+      .messageIcon { fill:#ffffff; stroke:#111827; stroke-width:1.2; }
+      .iconLine, .timerHand, .timerIcon { fill:none; stroke:#111827; stroke-width:1.2; }
     </style>
   </defs>
-  <text x="640" y="26" text-anchor="middle" class="title">FIG-06-02. Horizon Bank Customer Onboarding BPMN Collaboration</text>
-
-  <rect x="40" y="60" width="1180" height="70" rx="4" class="pool"/>
-  <text x="62" y="100" class="poolText">Retail Customer</text>
-  <rect x="175" y="78" width="130" height="36" rx="10" class="task"/>
-  <text x="240" y="101" text-anchor="middle" class="label">Submit application</text>
-  <rect x="1080" y="78" width="115" height="36" rx="10" class="task"/>
-  <text x="1138" y="101" text-anchor="middle" class="label">Receive outcome</text>
-
-  <rect x="40" y="165" width="1180" height="220" rx="4" class="pool"/>
-  <rect x="40" y="165" width="1180" height="70" class="lane"/>
-  <rect x="40" y="235" width="1180" height="85" class="lane"/>
-  <rect x="40" y="320" width="1180" height="65" class="lane"/>
-  <text x="62" y="205" class="poolText">Digital Channels</text>
-  <text x="62" y="282" class="poolText">Onboarding Operations</text>
-  <text x="62" y="358" class="poolText">Compliance</text>
-
-  <circle cx="185" cy="200" r="16" class="event"/>
-  <text x="185" y="228" text-anchor="middle" class="small">Application</text>
-  <rect x="245" y="178" width="120" height="44" rx="10" class="task"/>
-  <text x="305" y="205" text-anchor="middle" class="label">Capture application</text>
-  <rect x="420" y="255" width="120" height="44" rx="10" class="task"/>
-  <text x="480" y="282" text-anchor="middle" class="label">Validate application</text>
-  <rect x="590" y="255" width="120" height="44" rx="10" class="task"/>
-  <text x="650" y="282" text-anchor="middle" class="label">Request screening</text>
-  <polygon points="770,277 805,242 840,277 805,312" class="gateway"/>
-  <text x="805" y="282" text-anchor="middle" class="label">X</text>
-  <text x="805" y="332" text-anchor="middle" class="small">Screening clear?</text>
-  <rect x="900" y="255" width="125" height="44" rx="10" class="task"/>
-  <text x="962" y="282" text-anchor="middle" class="label">Open profile</text>
-  <rect x="1060" y="255" width="120" height="44" rx="10" class="task"/>
-  <text x="1120" y="282" text-anchor="middle" class="label">Send outcome</text>
-  <circle cx="1185" cy="277" r="16" class="end"/>
-
-  <rect x="900" y="338" width="150" height="40" rx="10" class="task"/>
-  <text x="975" y="363" text-anchor="middle" class="label">Review exception</text>
-  <circle cx="1130" cy="358" r="16" class="end"/>
-  <text x="1130" y="390" text-anchor="middle" class="small">Rejected</text>
-
-  <rect x="40" y="420" width="1180" height="70" rx="4" class="pool"/>
-  <text x="62" y="461" class="poolText">Financial Crime Platform</text>
-  <rect x="610" y="438" width="120" height="36" rx="10" class="task"/>
-  <text x="670" y="461" text-anchor="middle" class="label">Screen customer</text>
-  <rect x="805" y="438" width="145" height="36" rx="10" class="task"/>
-  <text x="878" y="461" text-anchor="middle" class="label">Return result</text>
-
-  <path d="M201 200 L245 200" class="flow"/>
-  <path d="M365 200 C390 200 390 277 420 277" class="flow"/>
-  <path d="M540 277 L590 277" class="flow"/>
-  <path d="M710 277 L770 277" class="flow"/>
-  <path d="M840 277 L900 277" class="flow"/>
-  <text x="858" y="264" class="small">[clear]</text>
-  <path d="M1025 277 L1060 277" class="flow"/>
-  <path d="M1180 277 L1169 277" class="flow"/>
-  <path d="M805 312 C820 352 855 358 900 358" class="flow"/>
-  <text x="830" y="352" class="small">[possible match]</text>
-  <path d="M1050 358 L1114 358" class="flow"/>
-  <path d="M975 338 C975 310 940 300 915 299" class="flow"/>
-  <text x="935" y="322" class="small">[clear after review]</text>
-
-  <path d="M305 96 C305 135 305 160 305 178" class="message"/>
-  <text x="318" y="146" class="small">application</text>
-  <path d="M650 299 C650 365 655 410 670 438" class="message"/>
-  <text x="670" y="402" class="small">screening request</text>
-  <path d="M878 438 C860 385 830 338 805 312" class="message"/>
-  <text x="890" y="400" class="small">screening result</text>
-  <path d="M1120 255 C1120 190 1130 135 1138 114" class="message"/>
-  <text x="1140" y="168" class="small">outcome</text>
+  <text x="730" y="26" text-anchor="middle" class="title">FIG-06-02. Horizon Bank Customer Onboarding BPMN Collaboration</text>
+<rect x="40" y="60" width="1380" height="70" rx="4" class="pool"/>
+<text x="62" y="88" text-anchor="start" class="poolText">Retail Customer</text>
+<rect x="40" y="165" width="1380" height="250" rx="4" class="pool"/>
+<text x="62" y="283" text-anchor="start" class="poolText">Horizon Bank</text>
+<rect x="40" y="165" width="1380" height="70" class="lane"/>
+<text x="62" y="184" text-anchor="start" class="poolText">Digital</text>
+<text x="62" y="202" text-anchor="start" class="poolText">Channels</text>
+<rect x="40" y="235" width="1380" height="105" class="lane"/>
+<text x="62" y="272" text-anchor="start" class="poolText">Onboarding</text>
+<text x="62" y="289" text-anchor="start" class="poolText">Operations</text>
+<rect x="40" y="340" width="1380" height="75" class="lane"/>
+<text x="62" y="370" text-anchor="start" class="poolText">Compliance</text>
+<rect x="40" y="450" width="1380" height="70" rx="4" class="pool"/>
+<text x="62" y="470" text-anchor="start" class="poolText">Financial Crime</text>
+<text x="62" y="486" text-anchor="start" class="poolText">Platform</text>
+<circle cx="185" cy="200" r="18" class="event"/>
+<rect x="175" y="193" width="20" height="14" class="messageIcon"/>
+<path d="M175 193 L185 201 L195 193" class="iconLine"/>
+<text x="185" y="228" text-anchor="middle" class="small">Application</text>
+<text x="185" y="244" text-anchor="middle" class="small">received</text>
+<rect x="245" y="178" width="120" height="44" rx="10" class="task"/>
+<text x="305" y="197" text-anchor="middle" class="label">Capture</text>
+<text x="305" y="213" text-anchor="middle" class="label">application</text>
+<rect x="420" y="260" width="120" height="44" rx="10" class="task"/>
+<text x="480" y="279" text-anchor="middle" class="label">Validate</text>
+<text x="480" y="295" text-anchor="middle" class="label">application</text>
+<rect x="585" y="260" width="120" height="44" rx="10" class="task"/>
+<text x="645" y="287" text-anchor="middle" class="label">Request screening</text>
+<circle cx="780" cy="282" r="18" class="event"/>
+<circle cx="780" cy="282" r="13" class="innerEvent"/>
+<rect x="770" y="275" width="20" height="14" class="messageIcon"/>
+<path d="M770 275 L780 283 L790 275" class="iconLine"/>
+<text x="762" y="313" text-anchor="middle" class="small">Receive</text>
+<text x="762" y="329" text-anchor="middle" class="small">result</text>
+<polygon points="905,247 940,282 905,317 870,282" class="gateway"/>
+<text x="905" y="287" text-anchor="middle" class="gatewayMarker">X</text>
+<text x="905" y="324" text-anchor="middle" class="small">Screening</text>
+<text x="905" y="340" text-anchor="middle" class="small">clear?</text>
+<rect x="1000" y="260" width="125" height="44" rx="10" class="task"/>
+<text x="1062" y="279" text-anchor="middle" class="label">Open customer</text>
+<text x="1062" y="295" text-anchor="middle" class="label">profile</text>
+<rect x="1170" y="260" width="120" height="44" rx="10" class="task"/>
+<text x="1230" y="279" text-anchor="middle" class="label">Send onboarding</text>
+<text x="1230" y="295" text-anchor="middle" class="label">outcome</text>
+<circle cx="1360" cy="282" r="18" class="end"/>
+<text x="1360" y="309" text-anchor="middle" class="small">Profile</text>
+<text x="1360" y="325" text-anchor="middle" class="small">opened</text>
+<rect x="990" y="356" width="150" height="44" rx="10" class="task"/>
+<text x="1065" y="375" text-anchor="middle" class="label">Review screening</text>
+<text x="1065" y="391" text-anchor="middle" class="label">exception</text>
+<polygon points="1225,343 1260,378 1225,413 1190,378" class="gateway"/>
+<text x="1225" y="383" text-anchor="middle" class="gatewayMarker">X</text>
+<text x="1225" y="419" text-anchor="middle" class="small">Exception</text>
+<text x="1225" y="435" text-anchor="middle" class="small">clear?</text>
+<circle cx="1360" cy="378" r="18" class="end"/>
+<text x="1360" y="406" text-anchor="middle" class="small">Application</text>
+<text x="1360" y="422" text-anchor="middle" class="small">rejected</text>
+<path d="M203 200 L245 200" class="flow"/>
+<path d="M365 200 L390 200 L390 282 L420 282" class="flow"/>
+<path d="M540 282 L585 282" class="flow"/>
+<path d="M705 282 L762 282" class="flow"/>
+<path d="M798 282 L870 282" class="flow"/>
+<path d="M940 282 L1000 282" class="flow"/>
+<text x="983" y="270" text-anchor="middle" class="small">[clear]</text>
+<path d="M905 317 L940 378 L990 378" class="flow"/>
+<text x="965" y="346" text-anchor="middle" class="small">[possible</text>
+<text x="965" y="362" text-anchor="middle" class="small">match]</text>
+<path d="M1125 282 L1170 282" class="flow"/>
+<path d="M1290 282 L1342 282" class="flow"/>
+<path d="M1140 378 L1190 378" class="flow"/>
+<path d="M1225 343 L1225 323 L1062 323 L1062 304" class="flow"/>
+<text x="1147" y="316" text-anchor="middle" class="small">[clear]</text>
+<path d="M1260 378 L1342 378" class="flow"/>
+<text x="1311" y="366" text-anchor="middle" class="small">[reject]</text>
+<path d="M185 130 L185 182" class="message"/>
+<text x="252" y="146" text-anchor="middle" class="small">Submit</text>
+<text x="252" y="162" text-anchor="middle" class="small">application</text>
+<path d="M645 304 L645 450" class="message"/>
+<text x="714" y="378" text-anchor="middle" class="small">Screening</text>
+<text x="714" y="394" text-anchor="middle" class="small">request</text>
+<path d="M740 450 L740 282 L762 282" class="message"/>
+<text x="806" y="378" text-anchor="middle" class="small">Screening</text>
+<text x="806" y="394" text-anchor="middle" class="small">result</text>
+<path d="M1230 260 L1230 130" class="message"/>
+<text x="1300" y="180" text-anchor="middle" class="small">Onboarding</text>
+<text x="1300" y="196" text-anchor="middle" class="small">outcome</text>
 </svg>

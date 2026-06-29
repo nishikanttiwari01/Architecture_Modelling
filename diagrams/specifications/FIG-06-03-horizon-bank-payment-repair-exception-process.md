@@ -1,8 +1,8 @@
-# FIG-06-03: Horizon Bank Payment Repair BPMN Exception Process
+# FIG-06-03: Horizon Bank Payment Repair BPMN Exception Collaboration
 
 ## Purpose
 
-Show a simplified BPMN exception and timer process for payment repair after posting failure.
+Show a simplified BPMN exception and timer collaboration for payment repair after posting failure.
 
 ## Audience
 
@@ -10,24 +10,26 @@ Architects, operations stakeholders, process analysts and control reviewers.
 
 ## Question answered
 
-What happens when a payment cannot be posted and correction evidence is required?
+What happens when a payment cannot be posted and correction information must be requested from the customer?
 
 ## Abstraction level
 
-Exception-process overview. It shows repair behaviour, timeout and outcomes, not payment-system internals.
+Exception-collaboration overview. It shows repair behaviour, message exchange, timeout and outcomes, not payment-system internals.
 
 ## Notation
 
-BPMN process diagram.
+BPMN collaboration diagram.
 
 ## Required elements
 
-- Pool: Horizon Bank Payments Operations
-- Lanes: Payments Platform, Operations Analyst, Retail Customer
+- Pools: Retail Customer, Horizon Bank
+- Retail Customer: black-box external pool
+- Horizon Bank lanes: Payments Platform, Operations Analyst
 - Start event: Posting failed
-- Tasks: Create repair case, Review exception, Request correction, Provide correction, Resubmit payment, Close case
-- Intermediate timer event: Correction timeout
-- Exclusive gateway: Correction received in time?
+- Tasks: Create repair case, Review exception, Request correction, Validate correction, Resubmit payment, Close case
+- Event-based gateway: Wait for correction
+- Intermediate message catch event: Correction received
+- Intermediate timer catch event: Correction deadline reached
 - End events: Payment resubmitted, Case timed out
 
 ## Required relationships
@@ -35,21 +37,24 @@ BPMN process diagram.
 - Posting failed starts Create repair case.
 - Create repair case leads to Review exception.
 - Review exception leads to Request correction.
-- Request correction waits for either customer correction or timeout.
-- `[response received]` leads to Provide correction and Resubmit payment.
-- `[timer expired]` leads to Close case and Case timed out.
+- Horizon Bank sends a correction request to Retail Customer using message flow.
+- Wait for correction uses an event-based gateway.
+- Correction received is an intermediate message catch event reached by message flow from Retail Customer.
+- Correction deadline reached is an intermediate timer catch event.
+- Correction received leads to Validate correction and Resubmit payment.
+- Correction deadline reached leads to Close case and Case timed out.
 
 ## Main flow or structure
 
-Show the repair process from left to right. Make the timer path visible so the reader can see that the process does not wait indefinitely.
+Show the repair process from left to right. Put Retail Customer in a separate pool and keep Payments Platform and Operations Analyst as lanes inside Horizon Bank. Make the timer path visible so the reader can see that the process does not wait indefinitely.
 
 ## Alternative and exception flows
 
-Show only response received versus timer expired. Do not model sanctions investigation, accounting reconciliation, duplicate submission handling or payment scheme-specific rules.
+Show only correction received versus correction deadline reached. Do not model sanctions investigation, accounting reconciliation, duplicate submission handling or payment scheme-specific rules.
 
 ## Scope
 
-Simplified repair flow after account posting failure.
+Simplified repair collaboration after account posting failure.
 
 ## Exclusions
 
@@ -68,6 +73,8 @@ Use readable timer and gateway labels. Keep the diagram narrow enough for book-p
 ## Review criteria
 
 - Timer outcome is explicit.
-- Gateway conditions are readable.
-- Lanes represent responsibility, not software containers.
+- The waiting split is an event-based gateway, not a data decision.
+- Message flow crosses the customer boundary and sequence flow stays inside Horizon Bank.
+- Lanes represent responsibility inside Horizon Bank, not software containers.
+- Retail Customer is not modelled as a Horizon Bank lane.
 - The figure does not imply full payments exception coverage.

@@ -24,10 +24,12 @@ BPMN collaboration diagram.
 
 - Pools: Retail Customer, Horizon Bank, Financial Crime Platform
 - Horizon Bank lanes: Digital Channels, Onboarding Operations, Compliance
+- Retail Customer: black-box external pool
+- Financial Crime Platform: black-box external pool
 - Customer message: Submit application
 - Bank tasks: Capture application, Validate application, Request screening, Review screening exception, Open customer profile, Send onboarding outcome
-- Financial Crime Platform tasks: Screen customer, Return screening result
-- Exclusive gateway: Screening clear?
+- Intermediate message catch event: Receive result
+- Exclusive gateways: Screening clear?, Exception clear?
 - End events: Profile opened, Application rejected
 
 ## Required relationships
@@ -35,14 +37,16 @@ BPMN collaboration diagram.
 - Retail Customer sends application to Horizon Bank.
 - Horizon Bank captures and validates the application.
 - Horizon Bank sends screening request to Financial Crime Platform.
-- Financial Crime Platform returns screening result.
+- Financial Crime Platform returns a screening result to the receiving event in the Horizon Bank process.
+- Screening clear? is evaluated only after the result is received.
 - `[clear]` leads to opening the customer profile and sending outcome.
-- `[possible match]` leads to compliance review, then either profile opening or rejection.
+- `[possible match]` leads to compliance review.
+- Review screening exception leads to Exception clear?, with guarded `[clear]` and `[reject]` paths.
 - Horizon Bank sends the final onboarding outcome to Retail Customer.
 
 ## Main flow or structure
 
-Use separate pools for the customer, the bank and the financial-crime platform. Keep sequence flow inside the Horizon Bank process and use message flow between pools.
+Use separate pools for the customer, the bank and the financial-crime platform. Keep Retail Customer and Financial Crime Platform as black-box external participants. Keep sequence flow inside the Horizon Bank process and use message flow between pools.
 
 ## Alternative and exception flows
 
@@ -70,5 +74,8 @@ Use readable pool and lane labels, clear message-flow direction and concise task
 
 - Message flows cross pools.
 - Sequence flows stay within the Horizon Bank process.
+- The Retail Customer and Financial Crime Platform pools contain no internal tasks.
 - The Financial Crime Platform is shown as a separate participant, not as a Horizon Bank lane.
+- Screening clear? appears after the result has been received.
+- Review screening exception does not have uncontrolled outgoing flows.
 - The figure does not imply a complete onboarding operating procedure.

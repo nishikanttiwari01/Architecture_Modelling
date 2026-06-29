@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" id="Definitions_FIG_06_01" targetNamespace="https://example.local/architecture-modelling/chapter-06">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_FIG_06_01" targetNamespace="https://example.local/architecture-modelling/chapter-06">
+  <bpmn:message id="Message_OrderReceived" name="Order received" />
+  <bpmn:collaboration id="Collaboration_OnlineStoreOrderFulfilment" name="Online Store order fulfilment">
+    <bpmn:participant id="Participant_OnlineStore" name="Online Store" processRef="Process_OnlineStoreOrderFulfilment" />
+  </bpmn:collaboration>
   <bpmn:process id="Process_OnlineStoreOrderFulfilment" name="Online Store order fulfilment" isExecutable="false">
     <bpmn:laneSet id="LaneSet_OnlineStore">
       <bpmn:lane id="Lane_CustomerService" name="Customer Service">
-        <bpmn:flowNodeRef>Start_OrderPlaced</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Start_OrderReceived</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_ReceiveOrder</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_CancelOrder</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_NotifyCustomer</bpmn:flowNodeRef>
@@ -18,8 +22,9 @@
         <bpmn:flowNodeRef>End_OrderDispatched</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
-    <bpmn:startEvent id="Start_OrderPlaced" name="Order placed">
+    <bpmn:startEvent id="Start_OrderReceived" name="Order received">
       <bpmn:outgoing>Flow_01</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_OrderReceived" messageRef="Message_OrderReceived" />
     </bpmn:startEvent>
     <bpmn:task id="Task_ReceiveOrder" name="Receive order">
       <bpmn:incoming>Flow_01</bpmn:incoming>
@@ -60,7 +65,7 @@
     <bpmn:endEvent id="End_CancellationNotified" name="Customer notified of cancellation">
       <bpmn:incoming>Flow_08</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:sequenceFlow id="Flow_01" sourceRef="Start_OrderPlaced" targetRef="Task_ReceiveOrder" />
+    <bpmn:sequenceFlow id="Flow_01" sourceRef="Start_OrderReceived" targetRef="Task_ReceiveOrder" />
     <bpmn:sequenceFlow id="Flow_02" sourceRef="Task_ReceiveOrder" targetRef="Task_CheckStock" />
     <bpmn:sequenceFlow id="Flow_03" sourceRef="Task_CheckStock" targetRef="Gateway_StockAvailable" />
     <bpmn:sequenceFlow id="Flow_InStock" name="in stock" sourceRef="Gateway_StockAvailable" targetRef="Task_PickItems" />
@@ -71,4 +76,56 @@
     <bpmn:sequenceFlow id="Flow_07" sourceRef="Task_CancelOrder" targetRef="Task_NotifyCustomer" />
     <bpmn:sequenceFlow id="Flow_08" sourceRef="Task_NotifyCustomer" targetRef="End_CancellationNotified" />
   </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_FIG_06_01">
+    <bpmndi:BPMNPlane id="BPMNPlane_FIG_06_01" bpmnElement="Collaboration_OnlineStoreOrderFulfilment">
+      <bpmndi:BPMNShape id="Shape_Participant_OnlineStore" bpmnElement="Participant_OnlineStore" isHorizontal="true">
+        <dc:Bounds x="40" y="55" width="1180" height="260" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Lane_CustomerService" bpmnElement="Lane_CustomerService" isHorizontal="true">
+        <dc:Bounds x="40" y="55" width="1180" height="100" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Lane_Fulfilment" bpmnElement="Lane_Fulfilment" isHorizontal="true">
+        <dc:Bounds x="40" y="155" width="1180" height="160" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Start_OrderReceived" bpmnElement="Start_OrderReceived">
+        <dc:Bounds x="162" y="87" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="138" y="128" width="84" height="24" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_ReceiveOrder" bpmnElement="Task_ReceiveOrder"><dc:Bounds x="245" y="78" width="120" height="54" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_CheckStock" bpmnElement="Task_CheckStock"><dc:Bounds x="430" y="205" width="120" height="54" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Gateway_StockAvailable" bpmnElement="Gateway_StockAvailable" isMarkerVisible="true">
+        <dc:Bounds x="625" y="197" width="70" height="70" />
+        <bpmndi:BPMNLabel><dc:Bounds x="610" y="277" width="100" height="20" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_PickItems" bpmnElement="Task_PickItems"><dc:Bounds x="750" y="205" width="105" height="54" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_PackParcel" bpmnElement="Task_PackParcel"><dc:Bounds x="900" y="205" width="105" height="54" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_DispatchParcel" bpmnElement="Task_DispatchParcel"><dc:Bounds x="1040" y="205" width="105" height="54" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_End_OrderDispatched" bpmnElement="End_OrderDispatched">
+        <dc:Bounds x="1172" y="214" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1148" y="255" width="86" height="24" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_CancelOrder" bpmnElement="Task_CancelOrder"><dc:Bounds x="750" y="78" width="105" height="54" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_NotifyCustomer" bpmnElement="Task_NotifyCustomer"><dc:Bounds x="900" y="78" width="120" height="54" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_End_CancellationNotified" bpmnElement="End_CancellationNotified">
+        <dc:Bounds x="1072" y="87" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1036" y="128" width="108" height="36" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Edge_Flow_01" bpmnElement="Flow_01"><di:waypoint x="198" y="105" /><di:waypoint x="245" y="105" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_02" bpmnElement="Flow_02"><di:waypoint x="365" y="105" /><di:waypoint x="400" y="105" /><di:waypoint x="400" y="232" /><di:waypoint x="430" y="232" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_03" bpmnElement="Flow_03"><di:waypoint x="550" y="232" /><di:waypoint x="625" y="232" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_InStock" bpmnElement="Flow_InStock">
+        <di:waypoint x="695" y="232" /><di:waypoint x="750" y="232" />
+        <bpmndi:BPMNLabel><dc:Bounds x="704" y="210" width="80" height="18" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_04" bpmnElement="Flow_04"><di:waypoint x="855" y="232" /><di:waypoint x="900" y="232" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_05" bpmnElement="Flow_05"><di:waypoint x="1005" y="232" /><di:waypoint x="1040" y="232" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_06" bpmnElement="Flow_06"><di:waypoint x="1145" y="232" /><di:waypoint x="1172" y="232" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_OutOfStock" bpmnElement="Flow_OutOfStock">
+        <di:waypoint x="660" y="197" /><di:waypoint x="690" y="130" /><di:waypoint x="750" y="105" />
+        <bpmndi:BPMNLabel><dc:Bounds x="682" y="138" width="88" height="18" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_07" bpmnElement="Flow_07"><di:waypoint x="855" y="105" /><di:waypoint x="900" y="105" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_08" bpmnElement="Flow_08"><di:waypoint x="1020" y="105" /><di:waypoint x="1072" y="105" /></bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
 </bpmn:definitions>

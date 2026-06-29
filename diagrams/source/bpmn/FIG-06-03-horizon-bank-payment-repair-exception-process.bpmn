@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" id="Definitions_FIG_06_03" targetNamespace="https://example.local/architecture-modelling/chapter-06">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_FIG_06_03" targetNamespace="https://example.local/architecture-modelling/chapter-06">
+  <bpmn:message id="Message_CorrectionRequest" name="Correction request" />
+  <bpmn:message id="Message_CorrectedInformation" name="Corrected information" />
+  <bpmn:collaboration id="Collaboration_PaymentRepair" name="Horizon Bank payment repair">
+    <bpmn:participant id="Participant_RetailCustomer" name="Retail Customer" />
+    <bpmn:participant id="Participant_HorizonBank" name="Horizon Bank" processRef="Process_PaymentRepair" />
+    <bpmn:messageFlow id="MessageFlow_CorrectionRequest" name="Correction request" sourceRef="Task_RequestCorrection" targetRef="Participant_RetailCustomer" messageRef="Message_CorrectionRequest" />
+    <bpmn:messageFlow id="MessageFlow_CorrectedInformation" name="Corrected information" sourceRef="Participant_RetailCustomer" targetRef="Event_CorrectionReceived" messageRef="Message_CorrectedInformation" />
+  </bpmn:collaboration>
   <bpmn:process id="Process_PaymentRepair" name="Horizon Bank payment repair" isExecutable="false">
     <bpmn:laneSet id="LaneSet_PaymentRepair">
       <bpmn:lane id="Lane_PaymentsPlatform" name="Payments Platform">
@@ -11,13 +19,12 @@
       <bpmn:lane id="Lane_OperationsAnalyst" name="Operations Analyst">
         <bpmn:flowNodeRef>Task_ReviewException</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_RequestCorrection</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Gateway_CorrectionReceived</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_CorrectionTimeout</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_WaitForCorrection</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_CorrectionReceived</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_CorrectionDeadlineReached</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_ValidateCorrection</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_CloseCase</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>End_CaseTimedOut</bpmn:flowNodeRef>
-      </bpmn:lane>
-      <bpmn:lane id="Lane_RetailCustomer" name="Retail Customer">
-        <bpmn:flowNodeRef>Task_ProvideCorrection</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
     <bpmn:startEvent id="Start_PostingFailed" name="Posting failed">
@@ -35,43 +42,108 @@
       <bpmn:incoming>Flow_PR_03</bpmn:incoming>
       <bpmn:outgoing>Flow_PR_04</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:exclusiveGateway id="Gateway_CorrectionReceived" name="Correction received in time?">
+    <bpmn:eventBasedGateway id="Gateway_WaitForCorrection" name="Wait for correction">
       <bpmn:incoming>Flow_PR_04</bpmn:incoming>
-      <bpmn:outgoing>Flow_PR_Response</bpmn:outgoing>
-      <bpmn:outgoing>Flow_PR_Timeout</bpmn:outgoing>
-    </bpmn:exclusiveGateway>
-    <bpmn:task id="Task_ProvideCorrection" name="Provide correction">
-      <bpmn:incoming>Flow_PR_Response</bpmn:incoming>
+      <bpmn:outgoing>Flow_PR_WaitForMessage</bpmn:outgoing>
+      <bpmn:outgoing>Flow_PR_WaitForTimer</bpmn:outgoing>
+    </bpmn:eventBasedGateway>
+    <bpmn:intermediateCatchEvent id="Event_CorrectionReceived" name="Correction received">
+      <bpmn:incoming>Flow_PR_WaitForMessage</bpmn:incoming>
       <bpmn:outgoing>Flow_PR_05</bpmn:outgoing>
-    </bpmn:task>
-    <bpmn:task id="Task_ResubmitPayment" name="Resubmit payment">
+      <bpmn:messageEventDefinition id="MessageEventDefinition_CorrectionReceived" messageRef="Message_CorrectedInformation" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:intermediateCatchEvent id="Event_CorrectionDeadlineReached" name="Correction deadline reached">
+      <bpmn:incoming>Flow_PR_WaitForTimer</bpmn:incoming>
+      <bpmn:outgoing>Flow_PR_08</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_CorrectionDeadline">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">P5D</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:task id="Task_ValidateCorrection" name="Validate correction">
       <bpmn:incoming>Flow_PR_05</bpmn:incoming>
       <bpmn:outgoing>Flow_PR_06</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:endEvent id="End_PaymentResubmitted" name="Payment resubmitted">
+    <bpmn:task id="Task_ResubmitPayment" name="Resubmit payment">
       <bpmn:incoming>Flow_PR_06</bpmn:incoming>
-    </bpmn:endEvent>
-    <bpmn:intermediateCatchEvent id="Event_CorrectionTimeout" name="Correction timeout">
-      <bpmn:incoming>Flow_PR_Timeout</bpmn:incoming>
       <bpmn:outgoing>Flow_PR_07</bpmn:outgoing>
-      <bpmn:timerEventDefinition />
-    </bpmn:intermediateCatchEvent>
-    <bpmn:task id="Task_CloseCase" name="Close case">
+    </bpmn:task>
+    <bpmn:endEvent id="End_PaymentResubmitted" name="Payment resubmitted">
       <bpmn:incoming>Flow_PR_07</bpmn:incoming>
-      <bpmn:outgoing>Flow_PR_08</bpmn:outgoing>
+    </bpmn:endEvent>
+    <bpmn:task id="Task_CloseCase" name="Close case">
+      <bpmn:incoming>Flow_PR_08</bpmn:incoming>
+      <bpmn:outgoing>Flow_PR_09</bpmn:outgoing>
     </bpmn:task>
     <bpmn:endEvent id="End_CaseTimedOut" name="Case timed out">
-      <bpmn:incoming>Flow_PR_08</bpmn:incoming>
+      <bpmn:incoming>Flow_PR_09</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_PR_01" sourceRef="Start_PostingFailed" targetRef="Task_CreateRepairCase" />
     <bpmn:sequenceFlow id="Flow_PR_02" sourceRef="Task_CreateRepairCase" targetRef="Task_ReviewException" />
     <bpmn:sequenceFlow id="Flow_PR_03" sourceRef="Task_ReviewException" targetRef="Task_RequestCorrection" />
-    <bpmn:sequenceFlow id="Flow_PR_04" sourceRef="Task_RequestCorrection" targetRef="Gateway_CorrectionReceived" />
-    <bpmn:sequenceFlow id="Flow_PR_Response" name="response received" sourceRef="Gateway_CorrectionReceived" targetRef="Task_ProvideCorrection" />
-    <bpmn:sequenceFlow id="Flow_PR_05" sourceRef="Task_ProvideCorrection" targetRef="Task_ResubmitPayment" />
-    <bpmn:sequenceFlow id="Flow_PR_06" sourceRef="Task_ResubmitPayment" targetRef="End_PaymentResubmitted" />
-    <bpmn:sequenceFlow id="Flow_PR_Timeout" name="timer expired" sourceRef="Gateway_CorrectionReceived" targetRef="Event_CorrectionTimeout" />
-    <bpmn:sequenceFlow id="Flow_PR_07" sourceRef="Event_CorrectionTimeout" targetRef="Task_CloseCase" />
-    <bpmn:sequenceFlow id="Flow_PR_08" sourceRef="Task_CloseCase" targetRef="End_CaseTimedOut" />
+    <bpmn:sequenceFlow id="Flow_PR_04" sourceRef="Task_RequestCorrection" targetRef="Gateway_WaitForCorrection" />
+    <bpmn:sequenceFlow id="Flow_PR_WaitForMessage" sourceRef="Gateway_WaitForCorrection" targetRef="Event_CorrectionReceived" />
+    <bpmn:sequenceFlow id="Flow_PR_WaitForTimer" sourceRef="Gateway_WaitForCorrection" targetRef="Event_CorrectionDeadlineReached" />
+    <bpmn:sequenceFlow id="Flow_PR_05" sourceRef="Event_CorrectionReceived" targetRef="Task_ValidateCorrection" />
+    <bpmn:sequenceFlow id="Flow_PR_06" sourceRef="Task_ValidateCorrection" targetRef="Task_ResubmitPayment" />
+    <bpmn:sequenceFlow id="Flow_PR_07" sourceRef="Task_ResubmitPayment" targetRef="End_PaymentResubmitted" />
+    <bpmn:sequenceFlow id="Flow_PR_08" sourceRef="Event_CorrectionDeadlineReached" targetRef="Task_CloseCase" />
+    <bpmn:sequenceFlow id="Flow_PR_09" sourceRef="Task_CloseCase" targetRef="End_CaseTimedOut" />
   </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_FIG_06_03">
+    <bpmndi:BPMNPlane id="BPMNPlane_FIG_06_03" bpmnElement="Collaboration_PaymentRepair">
+      <bpmndi:BPMNShape id="Shape_Participant_RetailCustomer" bpmnElement="Participant_RetailCustomer" isHorizontal="true"><dc:Bounds x="40" y="60" width="1260" height="70" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Participant_HorizonBank" bpmnElement="Participant_HorizonBank" isHorizontal="true"><dc:Bounds x="40" y="165" width="1260" height="320" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Lane_PaymentsPlatform" bpmnElement="Lane_PaymentsPlatform" isHorizontal="true"><dc:Bounds x="40" y="165" width="1260" height="95" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Lane_OperationsAnalyst" bpmnElement="Lane_OperationsAnalyst" isHorizontal="true"><dc:Bounds x="40" y="260" width="1260" height="225" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Start_PostingFailed" bpmnElement="Start_PostingFailed">
+        <dc:Bounds x="162" y="192" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="138" y="232" width="84" height="24" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_CreateRepairCase" bpmnElement="Task_CreateRepairCase"><dc:Bounds x="250" y="183" width="130" height="54" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_ReviewException" bpmnElement="Task_ReviewException"><dc:Bounds x="455" y="303" width="130" height="54" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_RequestCorrection" bpmnElement="Task_RequestCorrection"><dc:Bounds x="650" y="303" width="130" height="54" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Gateway_WaitForCorrection" bpmnElement="Gateway_WaitForCorrection">
+        <dc:Bounds x="835" y="290" width="70" height="70" />
+        <bpmndi:BPMNLabel><dc:Bounds x="817" y="362" width="106" height="20" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Event_CorrectionReceived" bpmnElement="Event_CorrectionReceived">
+        <dc:Bounds x="950" y="272" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="922" y="236" width="92" height="28" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Event_CorrectionDeadlineReached" bpmnElement="Event_CorrectionDeadlineReached">
+        <dc:Bounds x="950" y="400" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="912" y="438" width="112" height="36" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_ValidateCorrection" bpmnElement="Task_ValidateCorrection"><dc:Bounds x="1045" y="263" width="120" height="54" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_ResubmitPayment" bpmnElement="Task_ResubmitPayment"><dc:Bounds x="1045" y="183" width="120" height="54" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_End_PaymentResubmitted" bpmnElement="End_PaymentResubmitted">
+        <dc:Bounds x="1222" y="192" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1190" y="232" width="100" height="24" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_CloseCase" bpmnElement="Task_CloseCase"><dc:Bounds x="1075" y="391" width="90" height="54" /></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_End_CaseTimedOut" bpmnElement="End_CaseTimedOut">
+        <dc:Bounds x="1222" y="400" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1198" y="438" width="84" height="24" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_01" bpmnElement="Flow_PR_01"><di:waypoint x="198" y="210" /><di:waypoint x="250" y="210" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_02" bpmnElement="Flow_PR_02"><di:waypoint x="380" y="210" /><di:waypoint x="420" y="210" /><di:waypoint x="420" y="330" /><di:waypoint x="455" y="330" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_03" bpmnElement="Flow_PR_03"><di:waypoint x="585" y="330" /><di:waypoint x="650" y="330" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_04" bpmnElement="Flow_PR_04"><di:waypoint x="780" y="330" /><di:waypoint x="835" y="325" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_WaitForMessage" bpmnElement="Flow_PR_WaitForMessage"><di:waypoint x="905" y="325" /><di:waypoint x="930" y="290" /><di:waypoint x="950" y="290" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_WaitForTimer" bpmnElement="Flow_PR_WaitForTimer"><di:waypoint x="905" y="325" /><di:waypoint x="930" y="418" /><di:waypoint x="950" y="418" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_05" bpmnElement="Flow_PR_05"><di:waypoint x="986" y="290" /><di:waypoint x="1045" y="290" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_06" bpmnElement="Flow_PR_06"><di:waypoint x="1105" y="263" /><di:waypoint x="1105" y="237" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_07" bpmnElement="Flow_PR_07"><di:waypoint x="1165" y="210" /><di:waypoint x="1222" y="210" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_08" bpmnElement="Flow_PR_08"><di:waypoint x="986" y="418" /><di:waypoint x="1075" y="418" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Flow_PR_09" bpmnElement="Flow_PR_09"><di:waypoint x="1165" y="418" /><di:waypoint x="1222" y="418" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_MessageFlow_CorrectionRequest" bpmnElement="MessageFlow_CorrectionRequest">
+        <di:waypoint x="715" y="303" /><di:waypoint x="715" y="130" />
+        <bpmndi:BPMNLabel><dc:Bounds x="728" y="190" width="110" height="18" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_MessageFlow_CorrectedInformation" bpmnElement="MessageFlow_CorrectedInformation">
+        <di:waypoint x="968" y="130" /><di:waypoint x="968" y="272" />
+        <bpmndi:BPMNLabel><dc:Bounds x="982" y="178" width="124" height="18" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
 </bpmn:definitions>

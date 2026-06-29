@@ -98,6 +98,17 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Consequences:** Future chapters should follow the Chapter 5 teaching pattern unless their subject requires a deliberate variation. Chapter 5 diagrams remain `Review` until SVG visual inspection in VS Code is complete.
 - **Related chapters/files:** Chapter 5, `STYLE_GUIDE.md`, `WORKFLOW.md`, `reviews/chapter-gates/CH-05-quality-gate.md`.
 
+## DEC-012: Render Chapter 6 BPMN teaching figures from BPMNDI
+
+- **Status:** Proposed
+- **Date:** 2026-06-29
+- **Decision:** Use `scripts/render-bpmn-diagrams.py` to render the Chapter 6 BPMN teaching figures from the BPMN XML and BPMN Diagram Interchange coordinates.
+- **Context:** Chapter 6 revisions require the XML source, SVG export and PNG preview to represent the same BPMN model. Camunda Modeler is the preferred manual BPMN tool, but it is not available in this environment.
+- **Alternatives considered:** Maintain SVG files by hand; defer SVG/PNG regeneration until Camunda Modeler is available.
+- **Reason:** Rendering from BPMNDI keeps the editable BPMN source as the layout source of truth and avoids SVG-only elements.
+- **Consequences:** The renderer supports only the simple BPMN subset used by these teaching examples. Camunda Modeler validation remains required before Chapter 6 can return to `Ready for Author Approval`.
+- **Related chapters/files:** Chapter 6, `diagrams/source/bpmn/FIG-06-*.bpmn`, `diagrams/exported/svg/FIG-06-*.svg`, `diagrams/exported/png/FIG-06-*.png`, `reviews/chapter-gates/CH-06-quality-gate.md`.
+
 ## Decision template
 
 ```markdown

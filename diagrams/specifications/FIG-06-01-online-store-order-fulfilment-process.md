@@ -10,7 +10,7 @@ Beginners, business analysts, process owners and architects.
 
 ## Question answered
 
-What are the main fulfilment steps inside the Online Store after an order is placed?
+What are the main fulfilment steps inside the Online Store after an order is received?
 
 ## Abstraction level
 
@@ -24,14 +24,14 @@ BPMN process diagram.
 
 - Pool: Online Store
 - Lanes: Customer Service, Fulfilment
-- Start event: Order placed
+- Message start event: Order received
 - Tasks: Receive order, Check stock, Pick items, Pack parcel, Dispatch parcel, Notify customer, Cancel order
 - Exclusive gateway: Stock available?
 - End events: Order dispatched, Customer notified of cancellation
 
 ## Required relationships
 
-- Order placed starts Receive order.
+- Order received starts Receive order.
 - Receive order leads to Check stock.
 - Check stock leads to Stock available?
 - `[in stock]` leads to Pick items, Pack parcel, Dispatch parcel and Order dispatched.

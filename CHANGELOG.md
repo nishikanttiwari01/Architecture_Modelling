@@ -4,6 +4,14 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-29
 
+### Corrected Chapter 6 BPMN collaboration and event semantics
+
+- Corrected `FIG-06-01` to use an Order received message start event.
+- Corrected `FIG-06-02` so Retail Customer and Financial Crime Platform are black-box pools, Horizon Bank receives the screening result before evaluating it, and compliance review uses a guarded gateway.
+- Corrected `FIG-06-03` so Retail Customer is a separate pool, correction messages use message flow, and the response-versus-timeout wait uses an event-based gateway.
+- Added BPMNDI layout information to all three Chapter 6 BPMN XML files and regenerated SVG exports and PNG previews.
+- Recalculated the Chapter 6 quality gate honestly and moved the chapter to `Revision Required` because Camunda Modeler validation could not be completed in this environment.
+
 ### Completed Chapter 6 before author approval
 
 - Drafted Chapter 6, **BPMN: Business Process Model and Notation**, using the Chapter 5 prototype pattern.

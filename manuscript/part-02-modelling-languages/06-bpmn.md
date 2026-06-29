@@ -2,7 +2,7 @@
 title: "BPMN: Business Process Model and Notation"
 chapter: 6
 part: "part-02-modelling-languages"
-status: "Ready for Author Approval"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-29"
 ---
@@ -32,7 +32,7 @@ By the end of this chapter, the reader should be able to:
 
 - FIG-06-01: BPMN process diagram for online store order fulfilment
 - FIG-06-02: BPMN collaboration diagram for Horizon Bank customer onboarding
-- FIG-06-03: BPMN exception and timer process for Horizon Bank payment repair
+- FIG-06-03: BPMN exception and timer collaboration for Horizon Bank payment repair
 
 ## Worked examples
 
@@ -78,9 +78,11 @@ An event answers: **what happens at a point in the process?**
 
 Events are shown as circles. A start event marks where a process begins. An intermediate event marks something that happens during the process, such as receiving a message, waiting for a timer or catching an error. An end event marks an outcome of the process.
 
-For the Simple Online Store, a start event might be Order placed. An intermediate message event might be Payment confirmation received. An end event might be Order dispatched or Order cancelled.
+For the Simple Online Store, a start event might be Order received. An intermediate message event might be Payment confirmation received. An end event might be Order dispatched or Order cancelled.
 
 For Horizon Bank, a customer onboarding process might start when an application is submitted. It may wait for identity evidence, receive screening results and end when the customer profile is opened or the application is rejected. In a payments process, a timer event may show that a repair case is created if a payment is not corrected within a defined period.
+
+An intermediate message catch event is a waiting point. It means the process is waiting until a message arrives, such as a screening result or corrected customer information. It is different from a task because no work is being performed while the process waits.
 
 Do not use events for every ordinary task. "Check address" is an activity, not an event. "Address evidence received" can be an event because it is something that happens and may trigger later work.
 
@@ -101,6 +103,8 @@ Avoid turning BPMN into a user-interface script. "Click Next" and "Open tab" are
 A gateway answers: **where does the process branch, merge or run work in parallel?**
 
 Gateways are shown as diamonds. An exclusive gateway chooses one path from several alternatives. A parallel gateway starts or joins paths that all happen. Inclusive gateways are useful when one or more paths may be taken, but they are harder for beginners and should be used sparingly.
+
+An event-based gateway is different from an exclusive gateway. It waits to see which event happens first, such as "correction received" or "correction deadline reached". Use it when the process is waiting for competing events, not when a worker or system is evaluating data.
 
 Guards on outgoing flows explain the decision. For example, a gateway after Check stock might have `[in stock]` and `[out of stock]` paths. A gateway after Screening result might have `[clear]` and `[possible match]` paths.
 
@@ -158,12 +162,14 @@ Common exception patterns include:
 
 | Pattern | BPMN idea | Example |
 |---|---|---|
-| Missing response | Timer event | Customer does not provide evidence within the requested period. |
-| Business exception | Boundary error or conditional event | Screening finds a possible sanctions match. |
-| Manual escalation | Escalation or message to another role | Operations asks Compliance to review an exception. |
-| Alternative ending | Different end event | Payment repaired, payment rejected or case timed out. |
+| Possible screening match | Gateway or conditional business outcome | A screening result is `[possible match]`, so the process goes to review before it can continue or reject the application. |
+| Technical activity failure | Boundary error event | A posting task fails because a downstream system rejects or cannot complete the operation. |
+| Overdue work | Boundary timer event | A customer does not provide correction information within the requested period. |
+| Higher-level intervention | Escalation | Operations asks a senior role or compliance team to intervene without pretending that the original task simply succeeded. |
 
 For Horizon Bank, a payment repair process may start when posting fails. Operations reviews the exception, requests correction, waits for a response and either resubmits the payment or closes the case. The timer matters because the process may need an explicit timeout path rather than an implied "someone will chase it".
+
+A boundary timer event sits on the edge of an activity and means the activity is interrupted or redirected when a deadline is reached. A boundary error event also sits on an activity boundary, but it catches a technical or process error from that activity. Both are useful when the exception belongs to a specific task rather than to the whole process. Escalation is for higher-level intervention, where another role or process must be alerted while the business situation is still being handled.
 
 ## BPMN process diagrams
 
@@ -173,7 +179,7 @@ A BPMN process diagram answers: **what is the flow inside one process owner or p
 
 Figure FIG-06-01. Online Store order fulfilment BPMN process. It shows the main fulfilment flow inside the Online Store, not payment authorisation, delivery-provider internals or software component design.
 
-Read the diagram from left to right. The Customer Service lane receives the order. The Fulfilment lane checks stock, picks, packs and dispatches the parcel. The process branches when stock is unavailable and ends with either dispatch or cancellation notice. The figure deliberately excludes payment capture, warehouse-system internals, delivery partner processing and return handling.
+Read the diagram from left to right. The message start event shows that the Online Store begins fulfilment when the order is received. The Customer Service lane receives the order. The Fulfilment lane checks stock, picks, packs and dispatches the parcel. The process branches when stock is unavailable and ends with either dispatch or cancellation notice. The figure deliberately excludes payment capture, warehouse-system internals, delivery partner processing and return handling.
 
 This kind of process diagram is useful when the team needs to agree the business flow before discussing application design. It is less useful when the question is which API, database or deployment node supports fulfilment.
 
@@ -185,7 +191,7 @@ A BPMN collaboration diagram answers: **which participants exchange messages whi
 
 Figure FIG-06-02. Horizon Bank customer onboarding BPMN collaboration. It shows message exchange between the customer, Horizon Bank and the Financial Crime Platform, not the internal architecture of those systems.
 
-Notice that message flows cross between pools, while sequence flows stay inside the Horizon Bank process. The Retail Customer submits an application and later receives an onboarding outcome. Horizon Bank requests screening from the Financial Crime Platform and receives a result. The diagram deliberately excludes user-interface screens, data model detail, integration protocols and the full financial-crime investigation process.
+Notice that message flows cross between pools, while sequence flows stay inside the Horizon Bank process. Retail Customer and Financial Crime Platform are black-box participants, so their internal tasks are not shown. Horizon Bank starts when it receives the application, requests screening, waits for the screening result and then evaluates Screening clear? only after the result has arrived. If the result is a possible match, Compliance reviews the exception and a second guarded decision chooses either `[clear]` or `[reject]`. The diagram deliberately excludes user-interface screens, data model detail, integration protocols and the full financial-crime investigation process.
 
 Collaboration diagrams are valuable in regulated environments because they make hand-offs visible. They show where the bank depends on an external participant or platform, and they help reviewers ask whether status, evidence, ownership and exception handling are clear.
 
@@ -193,11 +199,11 @@ Collaboration diagrams are valuable in regulated environments because they make 
 
 Exception views answer: **what happens when the normal process cannot continue?**
 
-![FIG-06-03. Horizon Bank payment repair BPMN exception process](../../diagrams/exported/svg/FIG-06-03-horizon-bank-payment-repair-exception-process.svg)
+![FIG-06-03. Horizon Bank payment repair BPMN exception collaboration](../../diagrams/exported/svg/FIG-06-03-horizon-bank-payment-repair-exception-process.svg)
 
-Figure FIG-06-03. Horizon Bank payment repair BPMN exception process. It shows a simplified repair path after payment posting failure, including an operations review, customer correction request and timeout outcome.
+Figure FIG-06-03. Horizon Bank payment repair BPMN exception collaboration. It shows a simplified repair path after payment posting failure, including an operations review, customer correction request, corrected-information message and timeout outcome.
 
-The timer event is the important part of this view. It shows that the process does not wait forever for correction evidence. If the customer responds in time, operations can resubmit the payment. If the timer expires, the case is closed as timed out. The figure deliberately excludes detailed payment scheme rules, sanctions casework, accounting reconciliation and system deployment.
+The event-based gateway is the important part of this view. It shows that the Horizon Bank process waits for whichever event happens first: corrected information arrives from the Retail Customer, or the correction deadline is reached. If the customer responds in time, operations validates the correction and the Payments Platform resubmits the payment. If the timer fires, the case is closed as timed out. Sequence flow stays inside the Horizon Bank pool, while the correction request and corrected information are message flows across the customer boundary. The figure deliberately excludes detailed payment scheme rules, sanctions casework, accounting reconciliation and system deployment.
 
 ## BPMN versus UML Activity
 
