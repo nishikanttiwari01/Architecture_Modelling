@@ -19,7 +19,7 @@
 
 | ID | Chapter | Status | Research % | Draft % | Diagrams % | Review % | Sources verified % | Next action |
 |---:|---|---|---:|---:|---:|---:|---:|---|
-| 01 | What Is Architecture Modelling? | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review, then start Chapter 2 |
+| 01 | What Is Architecture Modelling? | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review |
 | 02 | Model, View and Viewpoint | Approved | 100 | 100 | 100 | 100 | 100 | Approved; diagrams remain Review |
 | 03 | How to Read Architecture Diagrams | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review, then start Chapter 4 |
 | 04 | UML: Unified Modeling Language | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -109,4 +109,4 @@
 
 Review Chapter 3, **How to Read Architecture Diagrams**, for author approval. Then start Chapter 4, **UML: Unified Modeling Language**.
 
-Last updated: 2026-06-28
+Last updated: 2026-06-29

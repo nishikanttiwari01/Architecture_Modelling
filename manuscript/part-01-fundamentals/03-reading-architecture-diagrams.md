@@ -4,7 +4,7 @@ chapter: 3
 part: "part-01-fundamentals"
 status: "Ready for Author Approval"
 author: "Nishikant Tiwari"
-last_updated: "2026-06-28"
+last_updated: "2026-06-29"
 ---
 
 # 3. How to Read Architecture Diagrams
@@ -30,7 +30,9 @@ By the end of this chapter, the reader should be able to:
 
 ## Required models and artefacts
 
-- Annotated diagram
+- FIG-03-01: Annotated online store context diagram
+- FIG-03-02: Flawed Horizon Bank Payment Diagram
+- FIG-03-03: Reviewed Horizon Bank Payment Diagram
 - Diagram-reading checklist
 
 ## Worked examples
@@ -54,6 +56,16 @@ A diagram should be read like an answer to a question, not like a picture to adm
 
 If those three things are missing, the reader is forced to guess the viewpoint. A developer may assume the diagram explains software structure. A business sponsor may assume it explains scope. A security reviewer may search for trust boundaries that the diagram never intended to show.
 
+A useful diagram should also carry enough metadata to stop readers treating an old sketch as a current decision. At minimum, check for:
+
+| Metadata item | Reader question |
+|---|---|
+| Owner | Who is accountable for keeping the diagram correct? |
+| Last-updated date | How fresh is the information? |
+| Version | Which revision is being discussed or reviewed? |
+| Review or approval status | Is this draft, review, approved or superseded? |
+| Current, transition or target state | Is the diagram describing now, an interim state or the intended future? |
+
 Chapters 1 and 2 used the terms model, view and viewpoint. Apply them when reading diagrams. The diagram is a view or part of a view. It should address stakeholder concerns. A viewpoint should explain what belongs in this kind of view and how to interpret it [ISO-42010].
 
 For example, a Simple Online Store context diagram should answer a scope question: who uses the store, and which external systems does it depend on? It should not be judged as if it were a database model or deployment topology. The first reading habit is to identify the intended question before judging detail.
@@ -68,7 +80,7 @@ Look for words such as system, platform, process, domain, environment, organisat
 
 ![FIG-03-01. Annotated online store context diagram](../../diagrams/exported/svg/FIG-03-01-annotated-online-store-context.svg)
 
-Figure FIG-03-01. Annotated online store context diagram. It shows how a reader can inspect a context diagram by checking title and purpose, system boundary, actors, external systems, relationship labels, omissions and review questions.
+Figure FIG-03-01. Annotated online store context diagram. It shows how a reader can inspect a context diagram by checking title and purpose, system boundary, actors, external systems, relationship labels, omissions and review questions. Payment response detail is deliberately omitted; the delivery request and tracking update are shown as separate directional relationships.
 
 In Figure FIG-03-01, the Online Store is the system in scope. The Customer and Customer Support Agent are outside the system because they are people who interact with it. The Payment Provider System and Delivery Partner System are outside because they are external systems. That separation is more important than the exact drawing style.
 
@@ -84,7 +96,7 @@ Useful questions are:
 - Is it inside or outside the boundary?
 - Is it current, planned or target-state?
 
-For the Simple Online Store, the Customer places orders and tracks delivery. The Customer Support Agent handles support and return exceptions. The Online Store owns catalogue, basket, order and return interactions at this level of abstraction. The Payment Provider System authorises and refunds payments. The Delivery Partner System supports shipment and collection.
+For the Simple Online Store, the Customer places orders and tracks delivery. The Customer Support Agent handles support and return exceptions. The Online Store owns catalogue, basket, order and return interactions at this level of abstraction. The Payment Provider System receives authorisation or refund requests. Detailed payment responses are omitted from this context view. The Delivery Partner System receives delivery requests and sends tracking updates.
 
 The same reading habit applies to Horizon Bank. If a diagram shows Mobile Banking, Payment Orchestration, Core Banking, Fraud Screening and Sanctions Screening, do not assume they are all the same kind of thing. Some may be channels, some may be platforms, some may be external services and some may be logical responsibilities that are not separately deployed.
 
@@ -103,6 +115,8 @@ When reading an arrow, ask:
 Avoid filling in missing relationship meaning from memory. If an arrow from Online Store to Payment Provider System is labelled "authorises payment", the reader can infer a payment interaction. If the arrow is unlabelled, the reader does not know whether the store sends card details, receives status, redirects the customer or reconciles settlements.
 
 For Horizon Bank, relationship labels become even more important. "Screens payment" is not the same as "owns payment decision". "Publishes event" is not the same as "calls synchronously". "Replicates customer data" is not the same as "masters customer data". Good diagrams reduce guessing.
+
+Do not infer runtime sequence or dependency direction from spatial position alone. A box placed above another box is not automatically earlier in a process, more important, more trusted or a parent component. Position may be chosen only to make the page readable. Direction and meaning should come from the viewpoint, relationship labels, arrowheads and prose.
 
 ## Understand legends and notation
 
@@ -136,7 +150,9 @@ The problem is not that a diagram ever combines ideas. Sometimes an operations v
 
 Some boundaries are about scope. Others are about trust, ownership or control. These boundaries are easy to miss, but they often matter more than the boxes.
 
-A trust boundary exists where the basis of trust changes. The boundary between the Online Store and Payment Provider System is a trust boundary because payment data and responsibility cross from one organisation or system to another. In Horizon Bank, boundaries may exist between digital channels, payment orchestration, core banking, fraud screening, sanctions screening, data platforms and external schemes.
+A trust boundary exists where trust assumptions or trust levels change. It is not automatically the same as every system boundary, team boundary or organisational boundary. The question is whether the reader needs to understand a change in control, identity, assurance, data sensitivity, exposure or responsibility.
+
+The boundary between the Online Store and Payment Provider System may be a trust boundary if payment data, authorisation responsibility or security assumptions change at that point. It should not be labelled as a trust boundary merely because the provider is another box. In Horizon Bank, trust boundaries may exist between customer-facing channels, internal bank platforms, financial-crime services, core banking and external payment schemes, but the modeller should state the reason.
 
 Ownership boundaries answer a different question: who is responsible for change, operation, support or data quality? A diagram may show that one team owns a customer platform while another owns core deposits. If ownership is hidden, review decisions become slower because nobody knows who can approve change.
 
@@ -186,63 +202,98 @@ Use review questions before arguing about style. A visually attractive diagram c
 
 These questions are not only for reviewers. They are also useful while drawing. If the modeller cannot answer them, the diagram is not ready for review.
 
-## Practice exercise
+## Worked banking review
+
+Figure FIG-03-02 is intentionally flawed. It is not a recommended design. It is a realistic example of the kind of payment diagram that appears in workshops when the team has not yet agreed the viewpoint, state, ownership or level of abstraction.
+
+![FIG-03-02. Flawed Horizon Bank Payment Diagram](../../diagrams/exported/svg/FIG-03-02-flawed-horizon-bank-payment-diagram.svg)
+
+Figure FIG-03-02. Flawed Horizon Bank Payment Diagram. It deliberately includes unclear purpose, ambiguous current or target state, vague or missing relationship labels, mixed business and software concepts, hidden trust boundary, ambiguous ownership, an unexplained external payment rail and missing exception information.
+
+A reviewer should not start by redrawing it. The first step is to identify the problems precisely:
+
+- The purpose and state are unclear, so the reader cannot tell whether the diagram is current, transition or target.
+- Some relationships are vague or unlabelled, so arrow direction does not explain meaning.
+- A business activity, "Approve Payment", is mixed with software-system concepts.
+- The external payment rail is not explained, even though it changes control and trust assumptions.
+- Ownership is ambiguous for operations and several systems.
+- Exception, rejection, repair and manual-review paths are absent.
+
+Figure FIG-03-03 shows one corrected or annotated version. It is still a simplified teaching diagram, not a complete payment architecture.
+
+![FIG-03-03. Reviewed Horizon Bank Payment Diagram](../../diagrams/exported/svg/FIG-03-03-reviewed-horizon-bank-payment-diagram.svg)
+
+Figure FIG-03-03. Reviewed Horizon Bank Payment Diagram. It adds purpose, owner, version, review status, target-state metadata, system ownership, labelled relationship direction, a visible trust boundary for the external payment rail and an explicit exception path. The settlement-status response is stated in a note rather than drawn as a parallel arrow, to keep the review figure readable.
+
+The corrected version does not show everything. It still omits detailed fraud rules, sanctions list sources, message schemas, deployment nodes and operational runbooks. That is acceptable because the diagram states its purpose and keeps the omitted detail out of scope.
+
+## Guided practice: Online Store
 
 Re-read Figure FIG-03-01 and answer these questions:
 
 1. What is the system in scope?
 2. Which elements are people?
 3. Which elements are external systems?
-4. Which relationship would need more detail for security review?
-5. What does the diagram deliberately omit?
+4. Which relationships are shown with direction?
+5. Which response detail is deliberately omitted?
+6. Which relationship would need more detail for security review?
 
 Suggested answer:
 
 - The Online Store is the system in scope.
 - Customer and Customer Support Agent are people.
 - Payment Provider System and Delivery Partner System are external systems.
-- Payment authorisation and refund interactions may need more detail for security review because payment data and responsibility cross a boundary.
-- The diagram omits internal components, database tables, cloud deployment and detailed return workflow.
+- The diagram shows Customer to Online Store, Customer Support Agent to Online Store, Online Store to Payment Provider System, Online Store to Delivery Partner System and Delivery Partner System to Online Store.
+- Detailed payment responses are deliberately omitted.
+- Payment authorisation and refund interactions may need more detail for security review if payment data, authorisation responsibility or trust assumptions change at the provider boundary.
 
 ## Key takeaways
 
 - Read the title, purpose and audience before reading the boxes.
+- Check owner, date, version, review status and current, transition or target state.
 - Find the boundary before judging responsibilities.
 - Identify element types instead of treating every box as the same thing.
 - Relationship labels and arrow direction carry meaning only when the viewpoint defines them.
+- Spatial position does not automatically show runtime sequence or dependency direction.
 - Notation needs either formal rules or a clear legend.
 - Logical, physical, ownership and trust-boundary detail should not be mixed accidentally.
+- A trust boundary exists where trust assumptions or trust levels change.
 - Omissions are acceptable when they are explicit.
 - A diagram is useful when it supports a decision, explanation or review.
 
 ## Practical exercise
 
-You are reviewing a Horizon Bank payment diagram. It shows Mobile Banking, Payment Orchestration, Core Banking, Fraud Screening, Sanctions Screening and Customer Notification. The diagram has arrows but only two labels: "uses" and "updates".
+Review Figure FIG-03-02 independently before looking back at Figure FIG-03-03. Treat it as a diagram you have received for an architecture review.
 
 Write a review note with:
 
 1. Three questions you would ask before trusting the diagram.
 2. Two labels you would ask the modeller to add or refine.
 3. One boundary that should be made visible.
-4. One omission that may be acceptable if it is stated.
+4. One ownership issue that should be resolved.
+5. One omission that may be acceptable if it is stated.
 
 Suggested answer:
 
 - Ask whether the diagram is current state or target state, who the audience is and whether it is showing runtime interaction or logical dependency.
-- Replace vague labels such as "uses" with labels such as "submits payment instruction", "requests fraud decision", "screens against sanctions list" or "posts account entry".
-- Make the trust boundary visible where payment data leaves the channel or crosses into a financial-crime or external screening capability.
+- Replace vague labels such as "uses", "updates", "check" and "sends" with labels such as "submit payment instruction", "request fraud screening", "return screening decision" or "post accepted payment".
+- Make the trust boundary visible where payment data crosses from bank-controlled systems to the external payment rail, if trust assumptions or control levels change there.
+- Clarify which team owns Payment Orchestration, Operations and the external payment rail relationship.
 - It may be acceptable to omit deployment nodes if this is a logical interaction view and a separate deployment view exists.
 
 ## Review checklist
 
 - [ ] The diagram title states the subject and viewpoint.
 - [ ] The purpose and audience are clear.
+- [ ] Owner, date, version, review status and state are clear enough for the intended use.
 - [ ] The scope boundary is visible or explained.
 - [ ] People, systems, data stores, processes and runtime nodes are not confused.
 - [ ] Relationships are labelled and direction is meaningful.
+- [ ] Spatial position is not being mistaken for runtime sequence or dependency direction.
 - [ ] The notation or legend is sufficient for the intended reader.
 - [ ] Logical and physical detail are not mixed without explanation.
-- [ ] Trust and ownership boundaries are visible where relevant.
+- [ ] Trust boundaries are visible where trust assumptions or trust levels change.
+- [ ] Ownership boundaries are visible where responsibility matters.
 - [ ] Omissions and assumptions are stated.
 - [ ] The diagram supports a decision, explanation or review.
 

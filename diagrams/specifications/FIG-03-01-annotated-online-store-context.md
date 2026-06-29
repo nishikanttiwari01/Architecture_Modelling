@@ -19,21 +19,22 @@ Annotated context diagram using PlantUML. The example follows C4-style context c
 ## Required elements
 
 - Diagram title and purpose cue
+- Visible purpose cue: "Purpose: Identify system scope, users, external dependencies and relationships."
 - Customer
 - Customer Support Agent
 - Online Store system boundary
 - Payment Provider System
 - Delivery Partner System
-- Relationship labels
 - Omission note
 - Review-question note
 
 ## Required relationships
 
-- Customer uses the Online Store to browse, order and track delivery.
-- Customer Support Agent supports returns and exceptions through the Online Store.
-- Online Store requests payment authorisation and refunds from the Payment Provider System.
-- Online Store sends delivery requests and receives tracking updates from the Delivery Partner System.
+- Customer to Online Store: browse, order and track delivery.
+- Customer Support Agent to Online Store: manage returns and exceptions.
+- Online Store to Payment Provider System: request payment authorisation or refund.
+- Online Store to Delivery Partner System: send delivery request.
+- Delivery Partner System to Online Store: send tracking updates.
 
 ## Main flow or structure
 
@@ -63,8 +64,10 @@ Use concise labels, strong contrast, clear arrow labels and callout text that re
 ## Review criteria
 
 - The diagram is readable at book-page width.
-- Callouts explain how to inspect the diagram without overcrowding it.
+- Callouts explain the purpose, omissions and reading checks without overcrowding the diagram.
 - Arrow directions and labels match the Chapter 3 prose.
+- Delivery request and tracking update are represented as directional relationships.
+- Payment response detail is explicitly omitted.
 - The diagram uses stable Simple Online Store names.
 - SVG and PNG outputs have no clipped text, no unreadable font sizes and no overlapping labels.
 

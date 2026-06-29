@@ -1,0 +1,72 @@
+@startuml
+title FIG-03-03. Reviewed Horizon Bank Payment Diagram
+
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam rectangle {
+  BackgroundColor #F4F8FB
+  BorderColor #2B4D66
+  FontColor #111111
+  RoundCorner 8
+}
+skinparam package {
+  BackgroundColor #FFFFFF
+  BorderColor #5B6B7A
+  FontColor #111111
+}
+skinparam note {
+  BackgroundColor #FFF7D6
+  BorderColor #8A6D1D
+  FontColor #111111
+}
+skinparam arrow {
+  Color #555555
+  FontColor #333333
+}
+skinparam linetype polyline
+
+left to right direction
+
+rectangle "Purpose: Review target-state\npayment submission scope,\ndependencies and controls.\nOwner: Payments Architecture\nVersion: 1.0\nStatus: Review\nState: Target" as meta #FFF7D6
+
+rectangle "Customer\n\nPerson" as customer
+
+package "Horizon Bank trust zone" as bank {
+  rectangle "Mobile Banking\n\nDigital channel\nOwner: Digital Channels" as mobile
+  rectangle "Payment Orchestration\n\nPayment platform\nOwner: Payments" as orchestration
+  rectangle "Fraud Screening\n\nFinancial-crime system\nOwner: Financial Crime" as fraud
+  rectangle "Sanctions Screening\n\nFinancial-crime system\nOwner: Financial Crime" as sanctions
+  rectangle "Core Banking\n\nAccount system\nOwner: Core Accounts" as core
+  rectangle "Customer Notification\n\nMessaging service\nOwner: Digital Channels" as notify
+  rectangle "Payment Operations Queue\n\nException handling\nOwner: Payment Operations" as ops
+}
+
+rectangle "External Payment Rail\n\nExternal scheme or network\nOwner: external operator" as rail
+
+meta -[hidden]down-> mobile
+customer -right-> mobile : Submit payment\ninstruction
+mobile -right-> orchestration : Send payment\nrequest
+orchestration -down-> fraud : Request fraud\nscreening
+fraud -right-> sanctions : Forward for\nsanctions screening
+sanctions -up-> orchestration : Return screening\ndecision
+orchestration -right-> core : Post accepted\npayment
+core -right-> rail : Submit cleared\npayment
+orchestration -down-> ops : Route rejected or\nrepair payment
+orchestration -right-> notify : Send customer\nstatus event
+
+note bottom of rail
+Trust boundary: bank controls
+end at this external rail.
+Settlement status is returned
+to Core Banking, but the
+response line is omitted to
+keep this review figure readable.
+end note
+
+note bottom of ops
+Exception path is explicit:
+rejected, repair or manual review.
+end note
+
+@enduml

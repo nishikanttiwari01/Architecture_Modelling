@@ -251,7 +251,8 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Look for trust and ownership boundaries
   - Check omissions and assumptions
   - Review questions
-  - Practice exercise
+  - Worked banking review
+  - Guided practice: Online Store
   - Key takeaways
   - Practical exercise
   - Review checklist
@@ -1988,4 +1989,4 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-Last updated: 2026-06-28
+Last updated: 2026-06-29

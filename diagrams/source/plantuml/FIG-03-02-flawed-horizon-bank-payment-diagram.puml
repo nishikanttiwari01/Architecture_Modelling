@@ -1,0 +1,64 @@
+@startuml
+title FIG-03-02. Flawed Horizon Bank Payment Diagram
+
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam rectangle {
+  BackgroundColor #F4F8FB
+  BorderColor #2B4D66
+  FontColor #111111
+  RoundCorner 8
+}
+skinparam note {
+  BackgroundColor #FFF0F0
+  BorderColor #9B2C2C
+  FontColor #111111
+}
+skinparam arrow {
+  Color #555555
+  FontColor #333333
+}
+skinparam linetype polyline
+
+left to right direction
+
+rectangle "Purpose unclear\nState: current or target?" as meta #FFF0F0
+
+rectangle "Customer" as customer
+rectangle "Mobile Banking\n(app/channel)" as mobile
+rectangle "Payment Orchestration\n(system?)" as orchestration
+rectangle "Approve Payment\n(business activity?)" as approve
+rectangle "Fraud Screening" as fraud
+rectangle "Sanctions" as sanctions
+rectangle "Core Banking" as core
+rectangle "Payment Rail\nexternal?" as rail
+rectangle "Operations\nowner?" as ops
+
+meta -[hidden]down-> mobile
+customer -right-> mobile : uses
+mobile -right-> orchestration
+orchestration -right-> approve : updates
+approve -right-> core
+orchestration -down-> fraud : check
+fraud -right-> sanctions
+orchestration -right-> rail : sends
+rail -right-> core : updates
+ops -up-> orchestration
+
+note bottom of rail
+Unexplained external rail.
+No visible trust boundary.
+end note
+
+note bottom of core
+No exception, rejection or
+repair path is shown.
+end note
+
+note bottom of approve
+Mixed business activity and
+software/system concepts.
+end note
+
+@enduml

@@ -2,11 +2,12 @@
 
 ## Last completed work
 
-Chapter 3, **How to Read Architecture Diagrams**, has been drafted to `Ready for Author Approval` after the author approved Chapter 2. The chapter teaches a repeatable method for reading diagram title, purpose, audience, scope, actors, systems, relationships, notation, logical and physical levels, trust boundaries, ownership boundaries, omissions and review questions. It adds `FIG-03-01` with specification, editable PlantUML source, SVG export and PNG review preview.
+Chapter 3, **How to Read Architecture Diagrams**, has been revised before author review. The revision corrects `FIG-03-01` relationship semantics, adds a visible purpose cue, adds `FIG-03-02` and `FIG-03-03` for flawed and reviewed Horizon Bank payment diagrams, clarifies trust-boundary interpretation, adds diagram metadata guidance and separates guided Online Store practice from the independent Horizon Bank exercise.
 
 ## Current Git commit
 
-- Current pushed commit before Chapter 3 drafting: `caff6fdaf0346be5a9a65105ae2903f115604984`
+- Current pushed commit before this Chapter 3 revision: `92b3895f8af78cef267d59074948cb4e153befa1`
+- Final pushed commit for this revision: reported after push, because a commit cannot truthfully contain its own final hash.
 - Branch: `main`
 - Remote: `origin/main`
 
@@ -18,7 +19,7 @@ Chapter 3, **How to Read Architecture Diagrams**, has been drafted to `Ready for
 - Chapter 5 status: `Approved`
 - Diagram status for Chapter 1 figure `FIG-01-01`: `Review`
 - Diagram status for Chapter 2 figure `FIG-02-01`: `Review`
-- Diagram status for Chapter 3 figure `FIG-03-01`: `Review`
+- Diagram status for Chapter 3 figures `FIG-03-01` through `FIG-03-03`: `Review`
 - Diagram status for Chapter 5 figures `FIG-05-01` through `FIG-05-08`: `Review`
 
 ## Pending non-critical issues

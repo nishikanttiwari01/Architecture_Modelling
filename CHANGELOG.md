@@ -2,6 +2,15 @@
 
 All notable repository and manuscript changes are recorded here. This is a project history, not a replacement for Git commits.
 
+## 2026-06-29
+
+### Revised Chapter 3 before author approval
+
+- Corrected `FIG-03-01` relationship labels and added a visible purpose cue.
+- Added `FIG-03-02` and `FIG-03-03` with specifications, PlantUML sources, SVG exports and PNG review previews.
+- Clarified trust-boundary interpretation, diagram metadata, spatial positioning and Horizon Bank review practice.
+- Recalculated the Chapter 3 quality gate and updated project tracking.
+
 ## 2026-06-28
 
 ### Completed Chapter 3 draft

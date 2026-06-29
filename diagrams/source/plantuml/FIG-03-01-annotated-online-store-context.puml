@@ -31,6 +31,8 @@ left to right direction
 rectangle "Customer\n\nPerson" as customer
 rectangle "Customer Support Agent\n\nPerson" as support
 
+rectangle "Purpose: Identify system scope,\nusers, external dependencies\nand relationships." as purpose #FFF7D6
+
 rectangle "System boundary:\nOnline Store\n\nSystem in scope" as store
 
 rectangle "Payment Provider System\n\nExternal system" as payment
@@ -40,20 +42,19 @@ customer -[hidden]down-> support
 payment -[hidden]down-> delivery
 customer -[hidden]right-> store
 store -[hidden]right-> payment
+purpose -[hidden]down-> store
 
-customer -right-> store : A
-support -right-> store : B
-store -right-> payment : C
-store -right-> delivery : D
-
-rectangle "Relationship labels\n\nA Browse, order and track delivery\nB Support returns\nC Authorise or refund payment\nD Delivery request and tracking" as relationships #FFF7D6
+customer -right-> store : Browse, order,\ntrack delivery
+support -right-> store : Manage returns\nand exceptions
+store -right-> payment : Request payment\nauthorisation or refund
+store -right-> delivery : Send delivery\nrequest
+delivery -left-> store : Send tracking\nupdates
 
 rectangle "Reading checks\n\n1. Start with title, purpose and viewpoint.\n2. Find the scope boundary.\n3. Identify people and roles.\n4. Identify external systems.\n5. Read arrow labels and direction.\n6. State omissions and assumptions." as checks #FFF7D6
 
-rectangle "Deliberate omissions\n\nInternal components, database tables,\ncloud deployment and detailed\nprocess flow are not shown." as omissions #FFF7D6
+rectangle "Deliberate omissions\n\nInternal components, database tables,\ncloud deployment, payment responses\nand detailed process flow are not shown." as omissions #FFF7D6
 
-store -[hidden]down-> relationships
-relationships -[hidden]down-> checks
+store -[hidden]down-> checks
 checks -[hidden]right-> omissions
 
 @enduml
