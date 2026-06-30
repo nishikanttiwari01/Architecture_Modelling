@@ -5,34 +5,26 @@ top to bottom direction
 title FIG-08-04. Online Store order data flow
 
 skinparam linetype ortho
-skinparam nodesep 75
-skinparam ranksep 55
+skinparam nodesep 140
+skinparam ranksep 70
 
 rectangle "Customer\n<<External entity>>" as Customer #FFFFFF
 rectangle "Capture order\n<<Process>>" as Capture #EAF6E8
 rectangle "Authorise payment\n<<Process>>" as PaymentProcess #EAF6E8
 rectangle "Create shipment request\n<<Process>>" as ShipmentProcess #EAF6E8
 database "Order data\n<<Data store>>" as OrderStore #F2F5F7
-rectangle "Payment Provider System\n<<External system>>" as PaymentProvider #FFF4D6
-rectangle "Delivery Partner System\n<<External system>>" as DeliveryPartner #FFF4D6
-rectangle "Payment authorisation request\n<<Data flow>>" as PaymentRequest #FFFFFF
-rectangle "Payment authorisation result\n<<Data flow>>" as PaymentResult #FFFFFF
-rectangle "Shipment request\n<<Data flow>>" as ShipmentRequest #FFFFFF
-rectangle "Shipment confirmation\nand tracking data\n<<Data flow>>" as ShipmentConfirmation #FFFFFF
+rectangle "Payment Provider System\n<<External entity>>" as PaymentProvider #FFF4D6
+rectangle "Delivery Partner System\n<<External entity>>" as DeliveryPartner #FFF4D6
 
-Customer --> Capture : Order details
+Customer --> Capture : Basket and delivery details
 Capture --> PaymentProcess : Order total
 PaymentProcess --> ShipmentProcess : Paid order
 
-PaymentProcess -right-> PaymentRequest
-PaymentRequest -right-> PaymentProvider
-PaymentProvider -down-> PaymentResult
-PaymentResult -left-> PaymentProcess
+PaymentProcess -right-> PaymentProvider : Payment authorisation\nrequest
+PaymentProvider -down-> PaymentProcess : Payment authorisation\nresult
 
-ShipmentProcess -right-> ShipmentRequest
-ShipmentRequest -right-> DeliveryPartner
-DeliveryPartner -down-> ShipmentConfirmation
-ShipmentConfirmation -left-> ShipmentProcess
+ShipmentProcess -right-> DeliveryPartner : Shipment request
+DeliveryPartner -down-> ShipmentProcess : Shipment confirmation\nand tracking data
 
 Capture --> OrderStore : Order draft
 PaymentProcess --> OrderStore : Payment status
@@ -40,7 +32,7 @@ ShipmentProcess --> OrderStore : Shipment status
 
 note bottom
   DFD view.
-  Arrows show data movement and transformation, not process sequence ownership,
+  Direct labelled arrows show data movement and transformation, not process sequence ownership,
   database schema or software deployment.
 end note
 @enduml

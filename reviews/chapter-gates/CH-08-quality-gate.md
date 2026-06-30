@@ -6,7 +6,7 @@
 - **Review date:** 2026-06-30
 - **Reviewer:** Codex
 - **Status recommendation:** Ready for Author Approval
-- **Current gate:** Chapter 8 has been revised after initial review. It now includes six rendered teaching figures, corrected data-flow direction, corrected payment lineage, a new payment instruction lifecycle view, updated source and diagram tracking, glossary additions and register updates.
+- **Current gate:** Chapter 8 has been revised after final technical review. It now includes six rendered teaching figures, corrected DFD flow notation, corrected payment lineage, a payment instruction lifecycle view, updated source and diagram tracking, glossary additions and register updates.
 - **Diagram status:** `FIG-08-01` through `FIG-08-06` remain `Review`, not `Approved`.
 
 ## Quality scores
@@ -15,17 +15,17 @@
 |---|---:|---|
 | Scope coverage | 9.3 | Covers conceptual, logical and relational implementation models, ERDs, DFDs, lineage, lifecycle and canonical versus local models. |
 | Beginner clarity | 9.2 | Explains each model through the question it answers, clarifies Basket scope and separates plain language from formal terminology. |
-| Technical accuracy | 9.1 | Corrects FIG-08-04 with explicit directional flows and FIG-08-05 with traceable lineage inputs to a consolidated event. |
+| Technical accuracy | 9.2 | Corrects FIG-08-04 so payment and shipment data are labels on directional DFD arrows, and keeps FIG-08-05 lineage inputs traceable to a consolidated event. |
 | Expert depth | 9.0 | Includes Party versus Customer, data ownership, authoritative status, lifecycle responsibility and canonical/local trade-offs. |
 | Logical flow | 9.1 | Moves from business meaning to logical precision, relational implementation, data movement, lineage, lifecycle and governance. |
 | Examples and exercises | 9.1 | Uses Simple Online Store for basic data models and Horizon Bank for lineage, lifecycle and payment status reporting. |
-| Diagram quality | 9.0 | Six PlantUML figures render to SVG and PNG, remain readable, and keep scope and exclusions explicit. |
+| Diagram quality | 9.1 | Six PlantUML figures render to SVG and PNG, remain readable, and FIG-08-04 now uses only external entities, processes, a data store and labelled data-flow arrows. |
 | Source quality | 9.0 | Source notes and register entries cover Chen, Codd, W3C PROV-DM, DAMA-DMBOK2 and DeMarco. |
 | Repository tracking | 9.2 | `STATUS.md`, `RESUME.md`, `DIAGRAM_REGISTER.md`, `SOURCE_REGISTER.md` and Chapter 8 frontmatter agree on current state and assets. |
 | Consistency with rest of book | 9.2 | Keeps data modelling distinct from BPMN, C4, ArchiMate, deployment and process views. |
 | Writing and editorial quality | 9.1 | Uses British English, short paragraphs, original tables, actionable mistakes and no reader-facing draft scaffolding. |
 
-**Average score:** 9.12
+**Average score:** 9.14
 
 Minimum category score: 9.0.
 
@@ -38,7 +38,7 @@ Minimum category score: 9.0.
 | Source notes added and registered | Pass | `research/data/` contains five Chapter 8 source notes, and `SOURCE_REGISTER.md` records all five source keys. |
 | Diagrams registered | Pass | `DIAGRAM_REGISTER.md` includes `FIG-08-01` through `FIG-08-06` at `Review` and records Chapter 8 specification, source, SVG and PNG paths. |
 | Diagrams rendered | Pass | SVG and PNG outputs exist for all six Chapter 8 PlantUML figures. |
-| FIG-08-04 data flows corrected | Pass | Payment authorisation request/result and shipment request/confirmation are explicit directional flows. |
+| FIG-08-04 DFD notation corrected | Pass | Payment authorisation request/result and shipment request/confirmation are direct labels on directional arrows, not rectangular data-flow nodes. |
 | FIG-08-05 lineage corrected | Pass | Payment instruction, screening result, posting result and consolidated status all trace to the Payment data product. |
 | FIG-08-06 lifecycle added | Pass | Lifecycle view covers Captured, Validated, Screened, Posted, Distributed, Curated, Retained and Archived or Disposed. |
 | Diagrams remain Review | Pass | No Chapter 8 diagram is marked `Approved`. |
@@ -52,7 +52,7 @@ Minimum category score: 9.0.
 
 `FIG-08-03` is now described as a relational implementation model, not a fully DBMS-specific physical model.
 
-`FIG-08-04` now replaces vague exchange labels with explicit directional data flows.
+`FIG-08-04` now uses only normal DFD concepts: external entities, processes, one data store and labelled directional data flows. Payment authorisation request/result and shipment request/confirmation are arrow labels, not boxes.
 
 `FIG-08-05` no longer leaves screening and posting results as dead-end lineage outputs. Those results feed the consolidated payment status event and then the downstream data product.
 

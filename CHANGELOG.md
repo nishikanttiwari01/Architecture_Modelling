@@ -4,6 +4,11 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-30
 
+### Corrected Chapter 8 DFD notation
+
+- Updated `FIG-08-04` so payment authorisation and shipment data are shown as labelled directional arrows, not separate data-flow boxes.
+- Regenerated the `FIG-08-04` SVG and PNG exports and refreshed the Chapter 8 quality gate.
+
 ### Revised Chapter 8 data flow, lineage and lifecycle modelling
 
 - Corrected `FIG-08-04` to show explicit directional payment authorisation and shipment data flows.

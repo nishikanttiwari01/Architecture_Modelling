@@ -168,9 +168,9 @@ A DFD is different from an ERD. An ERD shows the structure of data. A DFD shows 
 
 ![FIG-08-04. Online Store order data flow](../../diagrams/exported/svg/FIG-08-04-online-store-order-data-flow.svg)
 
-Figure FIG-08-04. Online Store order data flow. The diagram shows directional data movement between the Customer, Online Store processes, Order data store and external systems. Payment authorisation request and result are separate flows, and shipment request and confirmation are separate flows. It is not a database schema, BPMN process or deployment view.
+Figure FIG-08-04. Online Store order data flow. The diagram shows directional data movement between the Customer, Online Store processes, Order data store and external entities. Payment authorisation request and result are separate labelled arrows, and shipment request and confirmation are separate labelled arrows. It is not a database schema, BPMN process or deployment view.
 
-DFDs are useful when integration and responsibility are unclear. If payment details move from the Online Store to the Payment Provider System, the data flow label should say whether the data is a payment authorisation request or an authorisation result. If shipment data moves to or from the Delivery Partner System, the diagram should distinguish the shipment request from shipment confirmation and tracking data.
+DFDs are useful when integration and responsibility are unclear. If payment details move from the Online Store to the Payment Provider System, the data flow label should say whether the data is a payment authorisation request or an authorisation result. If shipment data moves to or from the Delivery Partner System, the diagram should distinguish the shipment request from shipment confirmation and tracking data. These are labels on directional arrows, not additional boxes in the diagram.
 
 Use DFDs for data movement and transformation. Do not use them to define database tables. Do not use them to replace BPMN when the real question is business process sequence, waiting, exceptions and ownership.
 

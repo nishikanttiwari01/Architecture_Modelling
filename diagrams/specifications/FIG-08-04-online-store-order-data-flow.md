@@ -37,7 +37,7 @@ Informal data flow diagram in PlantUML.
 
 ## Main flow or structure
 
-Show movement and transformation of data. Distinguish processes, external entities and data stores through labels and stereotypes.
+Show movement and transformation of data using only normal DFD concepts: external entities, processes, a data store and labelled directional data flows. The exchanged data must appear as labels on arrows, not as separate data-flow boxes.
 
 ## Alternative and exception flows
 
@@ -63,6 +63,7 @@ Use readable arrows, labelled flows and sufficient contrast. Meaning must not de
 ## Review criteria
 
 - Data flows are labelled with information names.
+- Payment and shipment requests and results are direct labelled arrows, not rectangular nodes.
 - Processes are verbs, data stores are nouns and external entities are clear.
 - The diagram is not confused with an ERD or BPMN process.
 - It has no clipped text or overlapping labels.
