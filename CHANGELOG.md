@@ -11,6 +11,13 @@ All notable repository and manuscript changes are recorded here. This is a proje
 - Recorded that final book-page layout review remains pending for Chapter 9 diagrams, particularly `FIG-09-03`.
 - Set Chapter 10, **Domain and Event Modelling**, as the current chapter.
 
+### Began Chapter 10 Domain and Event Modelling research
+
+- Moved Chapter 10, **Domain and Event Modelling**, to `Researching`.
+- Added primary source notes for Domain-Driven Design, EventStorming, CloudEvents 1.0.2 and AsyncAPI 3.1.0.
+- Registered the Chapter 10 source keys in `SOURCE_REGISTER.md`.
+- Added initial Chapter 10 glossary terms for domain and event modelling.
+
 ### Corrected Chapter 9 final review findings
 
 - Corrected FEEL list literal examples to use square brackets and clarified the difference from decision-table unary-test alternatives.

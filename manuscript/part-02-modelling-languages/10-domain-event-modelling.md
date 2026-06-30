@@ -2,9 +2,9 @@
 title: "Domain and Event Modelling"
 chapter: 10
 part: "part-02-modelling-languages"
-status: "Planned"
+status: "Researching"
 author: "Nishikant Tiwari"
-last_updated: "2026-06-28"
+last_updated: "2026-06-30"
 ---
 
 # 10. Domain and Event Modelling
@@ -41,10 +41,11 @@ By the end of this chapter, the reader should be able to:
 
 ## Source requirements
 
-- Identify official or primary sources for normative terminology.
-- Record framework or standard versions where relevant.
-- Create source notes under the matching `research/` directory.
-- Distinguish official definitions from the author’s practical recommendations.
+- `[DDD-REFERENCE-2015]` is the primary source for Domain-Driven Design (DDD) vocabulary used in this chapter.
+- `[EVENTSTORMING-BRANDOLINI-2026]` is the primary source for EventStorming provenance and method framing.
+- `[CNCF-CLOUDEVENTS-1.0.2]` is the current verified CloudEvents source for event envelope terminology.
+- `[ASYNCAPI-3.1.0]` is the current verified AsyncAPI source for message-driven API contract terminology.
+- Chapter guidance must distinguish primary terminology, official specifications and the author’s practical beginner recommendations.
 
 ## Planned chapter structure
 

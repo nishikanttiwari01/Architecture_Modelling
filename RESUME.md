@@ -14,9 +14,9 @@ Chapter 9, **Decision Modelling and DMN**, is approved by the author. Final qual
 
 All Chapter 6, Chapter 7, Chapter 8 and Chapter 9 diagrams remain `Review`, not `Approved`. Final book-page layout review remains pending for diagrams, particularly `FIG-09-03`.
 
-## Current Git commit
+## Git reference
 
-- Latest pushed commit before Chapter 9 approval update: `e3da949`
+- Chapter 9 approval commit: `b90b2b7`
 - Branch: `main`
 - Remote: `origin/main`
 
@@ -31,7 +31,7 @@ All Chapter 6, Chapter 7, Chapter 8 and Chapter 9 diagrams remain `Review`, not 
 - Chapter 7 status: `Approved`
 - Chapter 8 status: `Approved`
 - Chapter 9 status: `Approved`
-- Chapter 10 status: `Planned`
+- Chapter 10 status: `Researching`
 - Diagram status for Chapter 1 figure `FIG-01-01`: `Review`
 - Diagram status for Chapter 2 figure `FIG-02-01`: `Review`
 - Diagram status for Chapter 3 figures `FIG-03-01` through `FIG-03-03`: `Review`
@@ -53,7 +53,7 @@ All Chapter 6, Chapter 7, Chapter 8 and Chapter 9 diagrams remain `Review`, not 
 
 ## Next chapter
 
-Chapter 10, **Domain and Event Modelling**, is the current chapter.
+Chapter 10, **Domain and Event Modelling**, is the current chapter and is `Researching`. Primary source notes have been started for Domain-Driven Design, EventStorming, CloudEvents and AsyncAPI.
 
 Chapter 9 now includes four rendered figures, `FIG-09-01` through `FIG-09-04`, all at `Review`. The figures use PlantUML teaching sources rather than semantic `.dmn` XML, per `DEC-015`, because current Camunda documentation describes DMN 1.3 modelling and no local DMN modeller CLI validated DMN 1.5 semantic files in this environment.
 
@@ -61,4 +61,4 @@ Final author-review corrections are applied for FEEL list literals, `FIG-09-02` 
 
 ## Next exact action
 
-Begin Chapter 10 research according to `BOOK_PLAN.md`, `AGENTS.md`, `WORKFLOW.md`, `STYLE_GUIDE.md` and `SOURCE_POLICY.md`.
+Continue Chapter 10 research and outline planning according to `BOOK_PLAN.md`, `AGENTS.md`, `WORKFLOW.md`, `STYLE_GUIDE.md` and `SOURCE_POLICY.md`.

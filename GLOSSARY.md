@@ -52,8 +52,16 @@ This file controls terminology across the manuscript. Add a term when it first b
 | State | A condition in the lifecycle of an entity or system where particular behaviour or rules apply. | Use state machines for meaningful lifecycle changes, not simple linear task lists. |
 | Interface | A defined point of interaction between elements. | Label protocol and responsibility where relevant. |
 | API | An application programming interface that exposes defined operations or resources. | An API is an interface, not the implementation itself. |
+| Domain model | A model of the concepts, rules and language used in a business or problem domain. | Do not reduce it to a database schema or class diagram too early. |
+| Domain-Driven Design (DDD) | An approach to software and architecture design that keeps the model close to the business domain and its language. | Treat DDD as a design approach, not a standards-body notation. |
+| Ubiquitous language | The shared language used by domain experts and delivery teams within a bounded context. | It is context-specific; the same word may have different meanings in different contexts. |
+| Subdomain | A part of the wider business domain with its own problem area and business importance. | Distinguish core, supporting and generic concerns where useful. |
 | Event | A record that something of business or technical significance happened. | Use past-tense names for facts, such as `PaymentAuthorised`. |
 | Command | A request for a system or domain to perform an action. | A command may be rejected; an event records an occurrence. |
+| Domain event | An event that records something meaningful in the domain, using business language. | Do not confuse it with every technical message emitted by a system. |
+| EventStorming | A collaborative workshop method for exploring a domain through events and related concepts. | Use it for discovery and shared understanding; it is not a publication notation by itself. |
+| Event-driven architecture | An architecture style in which systems publish and react to events. | Distinguish domain events, integration events and technical notifications. |
+| Event catalogue | A managed inventory of event definitions, owners, schemas and consumers. | Useful for governance; it should not be only a message-broker topic list. |
 | Entity | A domain or data object distinguished by identity over time. | Do not confuse with every database table. |
 | Value object | A domain object defined by its values rather than an enduring identity. | Common in domain-driven design. |
 | Bounded context | A boundary within which a domain model and its language are consistent. | It is a design boundary, not automatically a deployment unit. |
