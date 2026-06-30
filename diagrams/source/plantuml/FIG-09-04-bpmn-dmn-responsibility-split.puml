@@ -4,7 +4,6 @@
 left to right direction
 title FIG-09-04. BPMN and DMN Responsibility Split
 
-skinparam linetype ortho
 skinparam nodesep 90
 skinparam ranksep 70
 
@@ -21,10 +20,10 @@ package "DMN decision responsibility" as DMN #F2F5F7 {
 }
 
 Capture --> RuleTask
-RuleTask --> Decision
+RuleTask -down-> Decision : invoke decision,\nplatform-specific
 Inputs --> Decision
 Logic --> Decision
-Decision --> RuleTask
+Decision -up-> RuleTask : payment route\nresult
 RuleTask --> Gateway
 
 legend bottom

@@ -4,6 +4,13 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-30
 
+### Corrected Chapter 9 final review findings
+
+- Corrected FEEL list literal examples to use square brackets and clarified the difference from decision-table unary-test alternatives.
+- Corrected `FIG-09-02` so restricted and unrestricted product paths both check stock.
+- Corrected `FIG-09-03` to use direct information-requirement arrows into `Determine Payment Route` without an invented connector.
+- Labelled the `FIG-09-04` BPMN-to-DMN invocation and DMN-to-BPMN result arrows, regenerated changed figure exports and refreshed the Chapter 9 quality gate.
+
 ### Completed Chapter 9 Decision Modelling and DMN
 
 - Completed Chapter 9, **Decision Modelling and DMN**, and moved it to `Ready for Author Approval`.

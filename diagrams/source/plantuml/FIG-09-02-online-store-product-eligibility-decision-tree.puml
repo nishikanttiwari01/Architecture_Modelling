@@ -8,7 +8,11 @@ skinparam defaultFontSize 15
 start
 if (Restricted product?) then (yes)
   if (Destination allowed\nfor restricted item?) then (yes)
-    :Eligible with\nrestricted delivery;
+    if (In stock?) then (yes)
+      :Eligible with\nrestricted delivery;
+    else (no)
+      :Not eligible;
+    endif
   else (no)
     :Not eligible;
   endif
@@ -23,6 +27,7 @@ stop
 
 legend bottom
   General decision-modelling tree.
+  Restricted products must pass destination and stock checks.
   This is not a formal DMN Decision Requirements Diagram element.
 endlegend
 @enduml

@@ -27,13 +27,13 @@ DMN-style DRD teaching view rendered with PlantUML. It is not semantic `.dmn` XM
 
 ## Required relationships
 
-- Input data points into an information-requirements connector, which points to the decision.
+- Each input data element points directly to the decision as an information requirement.
 - Business knowledge model points to the decision as a knowledge requirement.
 - Knowledge sources point to the governed knowledge model or decision as authority requirements.
 
 ## Main flow or structure
 
-Inputs and reusable rules feed the payment routing decision. Policies govern the reusable rules and screening-related decision authority.
+Inputs and reusable rules feed the payment routing decision directly. Policies govern the reusable rules and screening-related decision authority.
 
 ## Alternative and exception flows
 
@@ -58,6 +58,7 @@ Use stereotypes or labels so meaning is not carried by colour alone. Relationshi
 ## Review criteria
 
 - Relationship direction points into the decision or governed element.
+- The diagram does not introduce a connector element for information requirements.
 - DRD is not shown as process sequence.
 - Decision, Input Data, Business Knowledge Model and Knowledge Source are distinguished.
 - The diagram status remains `Review`.

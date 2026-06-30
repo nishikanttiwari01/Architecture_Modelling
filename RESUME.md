@@ -14,7 +14,7 @@ All Chapter 6, Chapter 7 and Chapter 8 diagrams remain `Review`, not `Approved`.
 
 ## Current Git commit
 
-- Latest pushed commit before this Chapter 8 approval update: `235332e`
+- Latest pushed commit before final Chapter 9 corrections: `0c4a312`
 - Branch: `main`
 - Remote: `origin/main`
 
@@ -28,7 +28,7 @@ All Chapter 6, Chapter 7 and Chapter 8 diagrams remain `Review`, not `Approved`.
 - Chapter 6 status: `Approved`
 - Chapter 7 status: `Approved`
 - Chapter 8 status: `Approved`
-- Chapter 9 status: `Researching`
+- Chapter 9 status: `Ready for Author Approval`
 - Diagram status for Chapter 1 figure `FIG-01-01`: `Review`
 - Diagram status for Chapter 2 figure `FIG-02-01`: `Review`
 - Diagram status for Chapter 3 figures `FIG-03-01` through `FIG-03-03`: `Review`
@@ -37,6 +37,7 @@ All Chapter 6, Chapter 7 and Chapter 8 diagrams remain `Review`, not `Approved`.
 - Diagram status for Chapter 6 figures `FIG-06-01` through `FIG-06-03`: `Review`
 - Diagram status for Chapter 7 figures `FIG-07-01` through `FIG-07-06`: `Review`
 - Diagram status for Chapter 8 figures `FIG-08-01` through `FIG-08-06`: `Review`
+- Diagram status for Chapter 9 figures `FIG-09-01` through `FIG-09-04`: `Review`
 
 ## Pending non-critical issues
 
@@ -53,6 +54,8 @@ Chapter 9, **Decision Modelling and DMN**, is the current chapter and is `Ready 
 
 Chapter 9 now includes four rendered figures, `FIG-09-01` through `FIG-09-04`, all at `Review`. The figures use PlantUML teaching sources rather than semantic `.dmn` XML, per `DEC-015`, because current Camunda documentation describes DMN 1.3 modelling and no local DMN modeller CLI validated DMN 1.5 semantic files in this environment.
 
+Final author-review corrections are applied for FEEL list literals, `FIG-09-02` stock checking, direct `FIG-09-03` information requirements and `FIG-09-04` cross-boundary arrow labels. Chapter 9 remains `Ready for Author Approval`, not `Approved`.
+
 ## Next exact action
 
-Await author review of Chapter 9. Do not begin Chapter 10 until the author instructs it.
+Await author verification of the final Chapter 9 corrections. Do not begin Chapter 10 until the author instructs it.

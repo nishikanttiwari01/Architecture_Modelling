@@ -12,7 +12,6 @@ rectangle "Account Status\n<<Input Data>>" as AccountStatus #FFFFFF
 rectangle "Screening Result\n<<Input Data>>" as ScreeningResult #FFFFFF
 rectangle "Payment Cut-Off Status\n<<Input Data>>" as CutoffStatus #FFFFFF
 
-rectangle "Information\nrequirements" as InfoReq #FFFFFF
 rectangle "Payment Routing Rules\n<<Business Knowledge Model>>" as RoutingRules #EAF6E8
 rectangle "Payments Operations Policy\n<<Knowledge Source>>" as PaymentsPolicy #FFF4D6
 rectangle "Financial Crime Screening Policy\n<<Knowledge Source>>" as ScreeningPolicy #FFF4D6
@@ -22,19 +21,17 @@ rectangle "Determine Payment Route\n<<Decision>>\n\nResult: Proceed, Repair,\nMa
 PaymentInstruction -down[hidden]-> AccountStatus
 AccountStatus -down[hidden]-> ScreeningResult
 ScreeningResult -down[hidden]-> CutoffStatus
-CutoffStatus -right[hidden]-> InfoReq
-InfoReq -right[hidden]-> PaymentRoute
+CutoffStatus -right[hidden]-> PaymentRoute
 PaymentsPolicy -down[hidden]-> ScreeningPolicy
 ScreeningPolicy -down[hidden]-> RoutingRules
 
-PaymentInstruction --> InfoReq
-AccountStatus --> InfoReq
-ScreeningResult --> InfoReq
-CutoffStatus --> InfoReq
-InfoReq -right-> PaymentRoute : info req
+PaymentInstruction --> PaymentRoute : info req
+AccountStatus --> PaymentRoute : info req
+ScreeningResult --> PaymentRoute : info req
+CutoffStatus --> PaymentRoute : info req
 RoutingRules -right-> PaymentRoute : knowledge req
 PaymentsPolicy -right-> RoutingRules : authority req
-ScreeningPolicy -right-> RoutingRules : authority req
+ScreeningPolicy -right-> PaymentRoute : authority req
 
 legend bottom
 DMN-style decision requirements teaching view.

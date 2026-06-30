@@ -31,11 +31,11 @@ Branches must show clear yes/no direction and outcomes.
 
 ## Main flow or structure
 
-Start by checking whether the product is restricted, then destination allowance, then stock availability. End in one of three product eligibility outcomes.
+Start by checking whether the product is restricted. If it is restricted, check destination allowance first, then stock availability. If it is not restricted, check stock availability directly. End in one of three product eligibility outcomes.
 
 ## Alternative and exception flows
 
-Out-of-stock or disallowed destination paths end in Not eligible or restricted delivery, depending on branch.
+Out-of-stock or disallowed destination paths end in Not eligible. A restricted product is eligible with restricted delivery only when the destination is allowed and the product is in stock.
 
 ## Scope
 
@@ -56,6 +56,7 @@ Use explicit branch labels, readable text and surrounding prose that explains th
 ## Review criteria
 
 - The figure is not described as a formal DMN DRD.
+- Stock availability is checked for both restricted and unrestricted products.
 - Branch labels are readable.
 - Outcomes are visually distinct.
 - The diagram status remains `Review`.

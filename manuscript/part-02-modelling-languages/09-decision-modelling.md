@@ -159,9 +159,11 @@ The square bracket means the boundary is included. The round bracket means it is
 Lists describe a set of allowed values:
 
 ```text
-("Domestic", "International")
-("Clear", "Possible match", "Blocked")
+["Domestic", "International"]
+["Clear", "Possible match", "Blocked"]
 ```
+
+A FEEL list literal uses square brackets to create a list value, while comma-separated alternatives in a decision-table input entry are unary tests that match any one of the listed alternatives.
 
 Strings are text values, usually written in quotation marks:
 
@@ -232,11 +234,11 @@ A decision tree is a general decision-modelling technique. It is not a formal DM
 
 ![FIG-09-02. Online Store Product Eligibility Decision Tree](../../diagrams/exported/svg/FIG-09-02-online-store-product-eligibility-decision-tree.svg)
 
-Figure FIG-09-02. Online Store Product Eligibility Decision Tree. The tree shows a general decision-modelling technique for product eligibility. It is not a formal DMN DRD element.
+Figure FIG-09-02. Online Store Product Eligibility Decision Tree. The tree checks stock for both restricted and unrestricted products, while restricted products also require destination eligibility. It is a general decision-modelling technique, not a formal DMN DRD element.
 
 Read the figure from the top. The tree first checks whether the product is restricted, then whether the destination is allowed, then stock status. It returns one of three outcomes: eligible, eligible with restricted delivery, or not eligible. The figure deliberately excludes pricing, fulfilment allocation, carrier rules and returns policy.
 
-Accessibility text: A branching decision tree starts with restricted product status, checks destination and stock, and ends in eligible, eligible with restricted delivery or not eligible outcomes.
+Accessibility text: A branching decision tree starts with restricted product status. Restricted products check destination allowance and stock before returning eligible with restricted delivery or not eligible. Unrestricted products check stock and return eligible or not eligible.
 
 For a beginner, the main benefit of a decision tree is readability. It can show the story of the decision. The main risk is that a tree can hide duplicated or inconsistent logic when it grows large. If several branches repeat the same condition, a decision table or DMN model may be easier to govern.
 
@@ -320,7 +322,7 @@ Figure FIG-09-04. BPMN and DMN Responsibility Split. BPMN owns process order and
 
 Read the figure from left to right. The BPMN side captures the payment instruction, calls a named decision and branches on the result. The DMN side receives inputs, applies payment routing rules and returns the route. The figure deliberately excludes API binding, engine configuration, queueing, retries and detailed payment repair workflow.
 
-Accessibility text: A two-lane responsibility split shows BPMN process tasks on one side and DMN decision logic on the other. A Business Rule Task invokes a DMN decision and then branches on the returned route.
+Accessibility text: A two-area responsibility split shows BPMN process tasks and DMN decision logic separately. A Business Rule Task invokes a DMN decision and then branches on the returned route.
 
 This separation keeps both models readable. The BPMN model shows who does the work and what happens next. The DMN model shows how the decision result is derived. Reviewers can inspect process ownership separately from decision logic.
 

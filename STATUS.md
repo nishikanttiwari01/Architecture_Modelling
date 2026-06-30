@@ -27,7 +27,7 @@
 | 06 | BPMN: Business Process Model and Notation | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; diagrams remain Review |
 | 07 | ArchiMate | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; diagrams remain Review |
 | 08 | Data Modelling | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; six figures completed; final DFD notation correction verified; diagrams remain Review pending final page-layout review |
-| 09 | Decision Modelling and DMN | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Ready for author review; four Chapter 9 figures completed and remain Review |
+| 09 | Decision Modelling and DMN | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Ready for author verification after final FEEL and diagram corrections; four Chapter 9 figures completed and remain Review |
 | 10 | Domain and Event Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 11 | Infrastructure and Deployment Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 12 | Security Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |

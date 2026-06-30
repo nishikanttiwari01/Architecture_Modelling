@@ -27,8 +27,8 @@ PlantUML teaching illustration using separate BPMN and DMN responsibility areas.
 
 ## Required relationships
 
-- BPMN task invokes the DMN decision.
-- DMN decision returns a route result.
+- BPMN task invokes the DMN decision with the label `invoke decision, platform-specific`.
+- DMN decision returns a route result with the label `payment route result`.
 - BPMN gateway branches on the result.
 
 ## Main flow or structure
