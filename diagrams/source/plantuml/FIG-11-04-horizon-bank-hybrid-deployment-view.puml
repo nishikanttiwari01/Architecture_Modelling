@@ -1,0 +1,46 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+left to right direction
+title FIG-11-04. Horizon Bank Hybrid Deployment View
+
+skinparam rectangle {
+  BorderColor #333333
+  BackgroundColor #F7F9FB
+}
+skinparam component {
+  BorderColor #333333
+  BackgroundColor #FFFFFF
+}
+
+rectangle "Customer and Channel Edge" as ChannelBoundary {
+  component "Horizon Digital\nChannels" as Channels
+}
+
+rectangle "Cloud Platform Boundary\nTarget payment platforms" as CloudBoundary {
+  component "Payments\nPlatform" as Payments
+  component "Financial Crime\nPlatform" as FinancialCrime
+  queue "Event Platform" as EventPlatform
+  database "Enterprise Data\nPlatform" as DataPlatform
+}
+
+rectangle "Controlled Integration Boundary\nPolicy, routing and protocol mediation" as IntegrationBoundary {
+  component "Enterprise Integration\nPlatform" as Integration
+}
+
+rectangle "Retained Core-Banking Boundary\nNot shown as cloud-native" as CoreBoundary {
+  database "Core Deposit\nSystem" as CoreDeposit
+}
+
+Channels --> Payments : payment API call
+Payments --> FinancialCrime : screening request
+Payments --> Integration : posting request
+Integration --> CoreDeposit : controlled core call
+Payments --> EventPlatform : publish payment events
+EventPlatform --> DataPlatform : selected events
+
+legend bottom
+Boundaries show placement and control points.
+This view does not show detailed payment-process sequence or BIAN Service Domain mapping.
+endlegend
+@enduml

@@ -4,6 +4,14 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-30
 
+### Completed Chapter 11 Infrastructure and Deployment Modelling
+
+- Created PlantUML sources, SVG exports and PNG previews for `FIG-11-01` through `FIG-11-05`.
+- Inserted the five Chapter 11 figures into the manuscript with captions, reading guidance and accessibility text.
+- Moved Chapter 11, **Infrastructure and Deployment Modelling**, to `Ready for Author Approval`.
+- Moved `FIG-11-01` through `FIG-11-05` to `Review`, not `Approved`.
+- Added the Chapter 11 quality gate and recorded visual review notes for the rendered infrastructure figures.
+
 ### Completed Chapter 11 Infrastructure and Deployment Modelling research and draft
 
 - Expanded Chapter 11, **Infrastructure and Deployment Modelling**, from scaffold to a complete first prose draft.

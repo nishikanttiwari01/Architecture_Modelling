@@ -1,0 +1,52 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+left to right direction
+title FIG-11-02. Online Store Network Topology View
+
+skinparam rectangle {
+  BorderColor #333333
+  BackgroundColor #F7F9FB
+}
+skinparam cloud {
+  BorderColor #333333
+  BackgroundColor #FFFFFF
+}
+
+cloud "Internet\nCustomer and provider traffic" as Internet
+
+rectangle "Edge Zone\nPublic entry boundary" as EdgeZone {
+  rectangle "Load Balancer" as LoadBalancer
+  rectangle "Web Application\nFirewall" as Waf
+}
+
+rectangle "Application Zone\nPrivate application runtime" as AppZone {
+  rectangle "Web/API Runtime" as AppRuntime
+  rectangle "Worker Runtime" as WorkerRuntime
+}
+
+rectangle "Data Zone\nRestricted data access" as DataZone {
+  database "Order Database" as OrderDatabase
+}
+
+rectangle "Operations Access Path\nControlled support route" as OpsPath {
+  rectangle "Deployment and\nMonitoring Tools" as OpsTools
+}
+
+cloud "Payment Provider\nSystem" as PaymentProvider
+cloud "Delivery Partner\nSystem" as DeliveryPartner
+
+Internet --> Waf : customer HTTPS
+Waf --> LoadBalancer : inspected HTTPS
+LoadBalancer --> AppRuntime : route application traffic
+AppRuntime --> OrderDatabase : controlled DB connection
+AppRuntime --> PaymentProvider : controlled outbound API
+WorkerRuntime --> DeliveryPartner : controlled outbound API
+OpsTools --> AppRuntime : admin and support access
+OpsTools --> OrderDatabase : controlled operational access
+
+legend bottom
+This topology shows zones and allowed paths.
+It is not a firewall rule list or a business-process diagram.
+endlegend
+@enduml

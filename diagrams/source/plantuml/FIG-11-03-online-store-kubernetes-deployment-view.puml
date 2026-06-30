@@ -1,0 +1,64 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+left to right direction
+title FIG-11-03. Online Store Kubernetes Deployment View
+
+skinparam rectangle {
+  BorderColor #333333
+  BackgroundColor #F7F9FB
+}
+skinparam component {
+  BorderColor #333333
+  BackgroundColor #FFFFFF
+}
+
+cloud "Internet" as Internet
+
+node "Kubernetes Cluster\n<<cluster>>" as Cluster {
+  rectangle "Namespace: online-store-prod\n<<Namespace>>" as Namespace {
+    rectangle "Store Ingress\n<<Ingress>>" as Ingress
+
+    rectangle "Web Service\n<<Service>>" as WebService
+    rectangle "API Service\n<<Service>>" as ApiService
+
+    rectangle "Web Deployment\n<<Deployment>>" as WebDeployment {
+      component "web Pod 1\n<<Pod>>" as WebPod1
+      component "web Pod 2\n<<Pod>>" as WebPod2
+    }
+
+    rectangle "API Deployment\n<<Deployment>>" as ApiDeployment {
+      component "api Pod 1\n<<Pod>>" as ApiPod1
+      component "api Pod 2\n<<Pod>>" as ApiPod2
+    }
+
+    rectangle "Worker Deployment\n<<Deployment>>" as WorkerDeployment {
+      component "worker Pod 1\n<<Pod>>" as WorkerPod1
+      component "worker Pod 2\n<<Pod>>" as WorkerPod2
+    }
+  }
+}
+
+database "Managed Order\nDatabase\noutside cluster" as OrderDatabase
+cloud "Payment Provider\nSystem" as PaymentProvider
+cloud "Delivery Partner\nSystem" as DeliveryPartner
+
+Internet --> Ingress : HTTPS
+Ingress --> WebService : route web traffic
+Ingress --> ApiService : route API traffic
+WebService --> WebPod1 : selects Pods
+WebService --> WebPod2 : selects Pods
+ApiService --> ApiPod1 : selects Pods
+ApiService --> ApiPod2 : selects Pods
+ApiPod1 --> OrderDatabase : read/write orders
+ApiPod2 --> OrderDatabase : read/write orders
+ApiPod1 --> PaymentProvider : authorise payment
+ApiPod2 --> PaymentProvider : authorise payment
+WorkerDeployment --> DeliveryPartner : fulfilment requests
+
+legend bottom
+Deployment manages desired Pod replicas.
+Service exposes stable access to selected Pods.
+The managed database and provider systems are outside the cluster.
+endlegend
+@enduml

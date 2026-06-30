@@ -29,7 +29,7 @@
 | 08 | Data Modelling | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; six figures completed; final DFD notation correction verified; diagrams remain Review pending final page-layout review |
 | 09 | Decision Modelling and DMN | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; four figures completed; diagrams remain Review pending final book-page layout review, particularly FIG-09-03 |
 | 10 | Domain and Event Modelling | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; diagrams remain Review pending final book-page layout review |
-| 11 | Infrastructure and Deployment Modelling | Diagramming | 100 | 100 | 20 | 0 | 100 | Author review of diagram specifications before source creation |
+| 11 | Infrastructure and Deployment Modelling | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review |
 | 12 | Security Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 13 | Other Useful Modelling Approaches | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 14 | Modelling Business Strategy and Capabilities | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -107,6 +107,6 @@
 
 ## Current recommended next task
 
-Chapter 10, **Domain and Event Modelling**, is `Approved` by the author with final quality score 9.1. `FIG-10-01` through `FIG-10-04` have specifications, PlantUML sources, SVG exports and PNG previews, and remain at `Review`. Chapter 11, **Infrastructure and Deployment Modelling**, is the current chapter and is `Diagramming`; primary source research, first full prose draft, source notes and `FIG-11-01` through `FIG-11-05` specifications are complete, with diagram source creation deferred until author approval of the specifications. Chapters 6, 7, 8, 9 and 10 are `Approved`; all diagrams remain at `Review` until the final page-layout pass, particularly `FIG-09-03` and the wider Chapter 10 event figures.
+Chapter 10, **Domain and Event Modelling**, is `Approved` by the author with final quality score 9.1. `FIG-10-01` through `FIG-10-04` have specifications, PlantUML sources, SVG exports and PNG previews, and remain at `Review`. Chapter 11, **Infrastructure and Deployment Modelling**, is `Ready for Author Approval`; source research, prose, source notes, glossary updates, `FIG-11-01` through `FIG-11-05` specifications, PlantUML sources, SVG exports, PNG previews, visual review and quality-gate review are complete. Chapters 6, 7, 8, 9 and 10 are `Approved`; all diagrams remain at `Review` until the final page-layout pass, particularly `FIG-09-03`, the wider Chapter 10 event figures and the wider Chapter 11 infrastructure figures.
 
 Last updated: 2026-06-30

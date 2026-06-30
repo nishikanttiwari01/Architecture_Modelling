@@ -1,0 +1,48 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+left to right direction
+title FIG-11-01. Online Store UML Deployment View
+
+skinparam node {
+  BackgroundColor #F7F9FB
+  BorderColor #333333
+}
+skinparam artifact {
+  BackgroundColor #FFFFFF
+  BorderColor #333333
+}
+
+node "Customer Browser\nor Mobile Client\n<<device>>" as Client
+node "Edge Endpoint\n<<load balancer / gateway>>" as Edge
+
+node "Online Store Production\n<<deployment environment>>" as Production {
+  node "Application Runtime\n<<execution environment>>" as AppRuntime {
+    artifact "Web Application\nartefact" as WebApp
+    artifact "Online Store API\nartefact" as ApiApp
+  }
+
+  node "Worker Runtime\n<<execution environment>>" as WorkerRuntime {
+    artifact "Fulfilment Worker\nartefact" as Worker
+  }
+
+  database "Order Database\n<<managed data service>>" as OrderDb
+}
+
+node "Payment Provider System\n<<external system>>" as PaymentProvider
+node "Delivery Partner System\n<<external system>>" as DeliveryPartner
+
+Client --> Edge : HTTPS
+Edge --> WebApp : route web traffic
+Edge --> ApiApp : route API traffic
+ApiApp --> OrderDb : read/write order data
+ApiApp --> PaymentProvider : authorise payment
+ApiApp --> Worker : enqueue fulfilment work
+Worker --> DeliveryPartner : send fulfilment request
+
+legend bottom
+UML nodes show runtime environments or devices.
+Artefacts show deployed software responsibilities.
+External provider systems sit outside the Online Store boundary.
+endlegend
+@enduml

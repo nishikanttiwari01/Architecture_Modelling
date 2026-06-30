@@ -1,0 +1,66 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+left to right direction
+title FIG-11-05. Horizon Bank Payment Resilience View
+
+skinparam rectangle {
+  BorderColor #333333
+  BackgroundColor #F7F9FB
+}
+skinparam component {
+  BorderColor #333333
+  BackgroundColor #FFFFFF
+}
+skinparam ArrowThickness 1.3
+
+actor "Retail Customer" as Customer
+component "Horizon Digital\nChannels" as Channels
+
+rectangle "Primary Production Region\nNormal service path" as Primary {
+  component "Payments Platform\nactive runtime" as PrimaryPayments
+  database "Payment Records\nprimary store" as PrimaryStore
+  queue "Event Platform\nprimary" as PrimaryEvents
+  component "Telemetry Collector\nprimary" as PrimaryTelemetry
+}
+
+rectangle "Secondary Recovery Region\nWarm standby" as Secondary {
+  component "Payments Platform\nstandby runtime" as SecondaryPayments
+  database "Payment Records\nreplica store" as SecondaryStore
+  queue "Event Platform\nreplica" as SecondaryEvents
+  component "Telemetry Collector\nsecondary" as SecondaryTelemetry
+}
+
+database "Core Deposit System\nretained core dependency" as CoreDeposit
+component "Observability and\nAlerting Platform" as Observability
+actor "Operations and\nIncident Response" as Ops
+
+Customer --> Channels : submit payment
+Channels --> PrimaryPayments : normal payment traffic
+PrimaryPayments --> PrimaryStore : record payment status
+PrimaryPayments --> PrimaryEvents : publish payment events
+PrimaryPayments --> CoreDeposit : posting dependency
+
+PrimaryStore -[#666666,dashed]-> SecondaryStore : data replication\nRPO objective
+PrimaryEvents -[#666666,dashed]-> SecondaryEvents : event replication
+Channels -[#666666,dashed]-> SecondaryPayments : failover route\nRTO objective
+SecondaryPayments -[#666666,dashed]-> SecondaryStore : recovered status access
+SecondaryPayments -[#666666,dashed]-> SecondaryEvents : publish after failover
+SecondaryPayments -[#666666,dashed]-> CoreDeposit : dependency still required
+
+PrimaryTelemetry --> Observability : traces, metrics, logs
+SecondaryTelemetry --> Observability : recovery telemetry
+Observability --> Ops : alerts and runbook links
+Ops --> SecondaryPayments : declare and manage failover
+
+note bottom of Primary
+RTO and RPO are modelled objectives.
+They are not guarantees without tested operations.
+end note
+
+legend bottom
+Solid arrows show normal production traffic.
+Dashed arrows show replication or recovery paths.
+Core Deposit System remains an external dependency during recovery.
+endlegend
+@enduml

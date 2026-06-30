@@ -2,7 +2,7 @@
 title: "Infrastructure and Deployment Modelling"
 chapter: 11
 part: "part-02-modelling-languages"
-status: "Diagramming"
+status: "Ready for Author Approval"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-30"
 ---
@@ -30,11 +30,11 @@ By the end of this chapter, the reader should be able to:
 
 ## Required models and artefacts
 
-- FIG-11-01: Online Store UML Deployment View, specification created, source and export deferred pending author approval of the specification.
-- FIG-11-02: Online Store Network Topology View, specification created, source and export deferred pending author approval of the specification.
-- FIG-11-03: Online Store Kubernetes Deployment View, specification created, source and export deferred pending author approval of the specification.
-- FIG-11-04: Horizon Bank Hybrid Deployment View, specification created, source and export deferred pending author approval of the specification.
-- FIG-11-05: Horizon Bank Payment Resilience View, specification created, source and export deferred pending author approval of the specification.
+- FIG-11-01: Online Store UML Deployment View, specification created, PlantUML source created and rendered for review.
+- FIG-11-02: Online Store Network Topology View, specification created, PlantUML source created and rendered for review.
+- FIG-11-03: Online Store Kubernetes Deployment View, specification created, PlantUML source created and rendered for review.
+- FIG-11-04: Horizon Bank Hybrid Deployment View, specification created, PlantUML source created and rendered for review.
+- FIG-11-05: Horizon Bank Payment Resilience View, specification created, PlantUML source created and rendered for review.
 
 ## Worked examples
 
@@ -53,21 +53,6 @@ By the end of this chapter, the reader should be able to:
 - `[AWS-WA-RELIABILITY-2026]` supports cloud reliability concerns used as practical guidance, without making the chapter AWS-specific.
 - `[NIST-SP-800-34R1]` supports Recovery Time Objective (RTO), Recovery Point Objective (RPO) and contingency-planning terminology.
 - `[OPENTELEMETRY-DOCS-2026]` supports observability terminology for traces, metrics, logs, instrumentation, collection and export.
-
-## Planned chapter structure
-
-- Infrastructure versus deployment views
-- UML and C4 deployment diagrams
-- Network topology
-- Cloud architecture
-- Kubernetes deployment
-- Environment views
-- Availability and resilience
-- Disaster recovery
-- Observability architecture
-- Deployment versus infrastructure diagrams
-- Common mistakes
-- Chapter cheat sheet
 
 ## Infrastructure versus deployment views
 
@@ -105,7 +90,15 @@ For the Simple Online Store, a first deployment view might show:
 | Payment Provider System | External payment dependency. | Shows outbound integration. |
 | Delivery Partner System | External fulfilment dependency. | Shows outbound integration. |
 
-The planned FIG-11-01 specification uses this example as a UML deployment teaching view. The source and rendered figure are deferred until the author approves the specification.
+FIG-11-01 uses this example as a UML deployment teaching view. It shows runtime placement and important runtime dependencies. It does not show process sequence, database structure or Kubernetes object detail.
+
+![FIG-11-01. Online Store UML Deployment View](../../diagrams/exported/svg/FIG-11-01-online-store-uml-deployment-view.svg)
+
+Figure FIG-11-01. Online Store UML Deployment View. The diagram separates customer device, edge endpoint, application runtime, worker runtime, managed data service and external provider systems. It uses UML deployment-style nodes and artefacts to show where software responsibilities run.
+
+Read the figure from left to right. Customer traffic enters through the edge endpoint. The edge routes web and API traffic to the application runtime. The API reads and writes order data, calls the payment provider and queues work for the fulfilment worker, which sends requests to the delivery partner.
+
+Accessibility text: A UML deployment teaching diagram shows a customer browser or mobile client connected to an edge endpoint, then to an Online Store production environment. Inside production are an application runtime with web and API artefacts, a worker runtime with a fulfilment worker artefact, and an order database. The API connects to the order database and payment provider. The worker connects to the delivery partner system.
 
 The point is not to show every process step. A deployment view should not explain how the order is placed, authorised, packed and shipped. Chapter 6 uses Business Process Model and Notation (BPMN) for process flow. Chapter 10 uses event flows for event-driven collaboration. This chapter asks where runtime parts sit and which runtime dependencies matter.
 
@@ -127,32 +120,17 @@ For the Simple Online Store, a useful beginner network topology might show:
 
 The diagram should label traffic direction. Customer traffic enters through the edge zone. The edge zone routes traffic to the application zone. The application zone connects to the data zone through a controlled path. Outbound calls to the Payment Provider System and Delivery Partner System should be explicit.
 
-Do not turn a beginner topology into a firewall rule inventory. If the purpose is to review firewall rules, a table may be better. If the purpose is to show trust boundaries and attack paths, Chapter 12 will introduce security modelling. FIG-11-02 is specified as a topology teaching view, not a full security design.
+Do not turn a beginner topology into a firewall rule inventory. If the purpose is to review firewall rules, a table may be better. If the purpose is to show trust boundaries and attack paths, Chapter 12 will introduce security modelling. FIG-11-02 is a topology teaching view, not a full security design.
 
 Network topology is also a place where physical and logical language can become confused. A "zone" on a teaching diagram may represent a logical security or routing boundary. A cloud provider subnet, route table, virtual network and security group are implementation details. Include them only when the audience needs that level.
 
-## Cloud architecture
+![FIG-11-02. Online Store Network Topology View](../../diagrams/exported/svg/FIG-11-02-online-store-network-topology-view.svg)
 
-A cloud architecture view answers: **which cloud services, deployment model and managed platform responsibilities shape the solution?**
+Figure FIG-11-02. Online Store Network Topology View. The diagram shows zones and allowed traffic paths rather than software responsibilities or process steps. It separates customer traffic, controlled outbound provider calls and operations access.
 
-The National Institute of Standards and Technology (NIST) definition of cloud computing describes cloud through essential characteristics, service models and deployment models such as public, private, community and hybrid cloud [NIST-SP-800-145]. For this book, the most useful beginner lesson is that "cloud" is not one box. It can mean different levels of managed responsibility, different deployment models and different resilience assumptions.
+Read the figure by following boundary crossings. Customer HTTPS traffic enters from the internet through the edge zone. The edge routes inspected traffic to the application zone. The application zone reaches the data zone through a controlled database path and reaches external providers through controlled outbound paths. Operations access is shown as a separate route.
 
-A cloud view can show:
-
-- Regions and availability zones.
-- Managed compute or container platforms.
-- Managed databases and storage.
-- Load balancing and edge services.
-- Identity, secrets and configuration services.
-- Event, queue or streaming platforms.
-- Observability and logging services.
-- Links to retained data-centre systems.
-
-Keep the view vendor-neutral when the decision is conceptual. Use provider-specific names only when they are part of the architecture decision. For example, "managed relational database" is enough when teaching deployment concepts. A real design may need a specific cloud database service, replication mode and support contract.
-
-Horizon Bank is a good example of why cloud architecture should not hide the rest of the estate. A Payments Platform might run on a cloud platform, while the Core Deposit System remains in a retained core-banking environment. The Enterprise Integration Platform may sit between them during transition. The Event Platform and Enterprise Data Platform may be cloud-hosted target capabilities. FIG-11-04 is specified to show that hybrid placement at a high level.
-
-Cloud reliability guidance, such as the AWS Well-Architected Reliability Pillar, usefully reminds architects to consider foundations, workload architecture, change management and failure management [AWS-WA-RELIABILITY-2026]. In a vendor-neutral beginner chapter, treat that as practical guidance rather than a prescription to use one provider. The model should expose assumptions about zones, capacity, dependencies, monitoring and recovery.
+Accessibility text: A network topology diagram shows internet traffic entering an edge zone with a web application firewall and load balancer. Traffic then reaches an application zone containing web/API and worker runtimes. The application zone connects to a restricted data zone containing the order database, and to payment provider and delivery partner systems through controlled outbound paths. Deployment and monitoring tools use a separate operations access path.
 
 ## Kubernetes deployment
 
@@ -174,9 +152,48 @@ For the Simple Online Store, a useful Kubernetes view might show:
 | Pod | Running replica of the workload. | Pods are replaceable and should not be treated as permanent servers. |
 | Managed database | Order database outside the cluster. | Not everything must run inside Kubernetes. |
 
-FIG-11-03 is specified to show this mapping. It deliberately excludes YAML, autoscaling policy, service mesh detail and security policy. Those topics are important, but a first architecture view should teach the relationship between Kubernetes objects before adding operational complexity.
+FIG-11-03 shows this mapping. It deliberately excludes YAML, autoscaling policy, service mesh detail and security policy. Those topics are important, but a first architecture view should teach the relationship between Kubernetes objects before adding operational complexity.
+
+![FIG-11-03. Online Store Kubernetes Deployment View](../../diagrams/exported/svg/FIG-11-03-online-store-kubernetes-deployment-view.svg)
+
+Figure FIG-11-03. Online Store Kubernetes Deployment View. The diagram shows a Kubernetes cluster and production namespace containing Ingress, Services, Deployments and Pods. It keeps the managed database and provider systems outside the cluster boundary.
+
+Read the figure by following Kubernetes responsibility. Ingress receives HTTPS traffic and routes it to Services. Services provide stable access to Pods. Deployments manage the desired Pod replicas. API Pods connect to the managed order database and payment provider. Worker Pods support fulfilment requests to the delivery partner.
+
+Accessibility text: A Kubernetes deployment teaching diagram shows an internet client reaching a Kubernetes cluster. Inside the cluster is the `online-store-prod` namespace, containing Store Ingress, Web Service, API Service, Web Deployment with two web Pods, API Deployment with two API Pods and Worker Deployment with two worker Pods. The managed order database, payment provider and delivery partner systems are outside the cluster.
 
 Kubernetes diagrams are easy to overdraw. If the audience is reviewing capacity, show replicas, autoscaling boundaries and resource constraints. If the audience is reviewing application ownership, a C4 container view may be clearer. If the audience is reviewing security, show trust boundaries and identity flows. The notation should follow the question.
+
+## Cloud architecture
+
+A cloud architecture view answers: **which cloud services, deployment model and managed platform responsibilities shape the solution?**
+
+The National Institute of Standards and Technology (NIST) definition of cloud computing describes cloud through essential characteristics, service models and deployment models such as public, private, community and hybrid cloud [NIST-SP-800-145]. For this book, the most useful beginner lesson is that "cloud" is not one box. It can mean different levels of managed responsibility, different deployment models and different resilience assumptions.
+
+A cloud view can show:
+
+- Regions and availability zones.
+- Managed compute or container platforms.
+- Managed databases and storage.
+- Load balancing and edge services.
+- Identity, secrets and configuration services.
+- Event, queue or streaming platforms.
+- Observability and logging services.
+- Links to retained data-centre systems.
+
+Keep the view vendor-neutral when the decision is conceptual. Use provider-specific names only when they are part of the architecture decision. For example, "managed relational database" is enough when teaching deployment concepts. A real design may need a specific cloud database service, replication mode and support contract.
+
+Horizon Bank is a good example of why cloud architecture should not hide the rest of the estate. A Payments Platform might run on a cloud platform, while the Core Deposit System remains in a retained core-banking environment. The Enterprise Integration Platform may sit between them during transition. The Event Platform and Enterprise Data Platform may be cloud-hosted target capabilities. FIG-11-04 shows that hybrid placement at a high level.
+
+![FIG-11-04. Horizon Bank Hybrid Deployment View](../../diagrams/exported/svg/FIG-11-04-horizon-bank-hybrid-deployment-view.svg)
+
+Figure FIG-11-04. Horizon Bank Hybrid Deployment View. The diagram separates customer channels, cloud-hosted platforms, controlled integration and retained core banking. It shows deployment placement and integration control points, not detailed payment-process sequence.
+
+Read the figure by starting at Horizon Digital Channels. Channels call the Payments Platform in the cloud platform boundary. The Payments Platform calls Financial Crime Platform, publishes events to Event Platform, and uses Enterprise Integration Platform to reach Core Deposit System in the retained core-banking boundary. Event Platform supplies selected events to the Enterprise Data Platform.
+
+Accessibility text: A hybrid deployment view shows Horizon Digital Channels at the channel edge. The cloud platform boundary contains Payments Platform, Financial Crime Platform, Event Platform and Enterprise Data Platform. A controlled integration boundary contains Enterprise Integration Platform. A retained core-banking boundary contains Core Deposit System. Arrows show the payment API call, screening request, posting request, controlled core call and selected event flow.
+
+Cloud reliability guidance, such as the AWS Well-Architected Reliability Pillar, usefully reminds architects to consider foundations, workload architecture, change management and failure management [AWS-WA-RELIABILITY-2026]. In a vendor-neutral beginner chapter, treat that as practical guidance rather than a prescription to use one provider. The model should expose assumptions about zones, capacity, dependencies, monitoring and recovery.
 
 ## Environment views
 
@@ -241,7 +258,15 @@ A disaster recovery model should show:
 | Ownership | Who declares, runs and closes the recovery process? |
 | Testing | How is the recovery plan validated? |
 
-FIG-11-05 is specified as a Horizon Bank payment resilience view. It will show primary and secondary placement, replication, observability, operations ownership, RTO and RPO labels, and the Core Deposit System dependency. It will not claim a regulatory requirement or a guaranteed recovery time.
+FIG-11-05 is a Horizon Bank payment resilience view. It shows primary and secondary placement, replication, observability, operations ownership, Recovery Time Objective (RTO) and Recovery Point Objective (RPO) labels, and the Core Deposit System dependency. It does not claim a regulatory requirement or a guaranteed recovery time.
+
+![FIG-11-05. Horizon Bank Payment Resilience View](../../diagrams/exported/svg/FIG-11-05-horizon-bank-payment-resilience-view.svg)
+
+Figure FIG-11-05. Horizon Bank Payment Resilience View. The diagram separates normal payment traffic from replication and recovery paths. RTO and RPO are shown as modelled objectives, and the retained Core Deposit System remains visible as a dependency during recovery.
+
+Read the solid arrows as the normal path. The customer submits through Horizon Digital Channels to the active Payments Platform, which records payment status, publishes payment events and depends on Core Deposit System for posting. Read the dashed arrows as replication or recovery paths. Payment records and event data replicate to the secondary region, and customer traffic may be failed over to the standby runtime. Observability feeds alerts to operations and incident response.
+
+Accessibility text: A resilience view shows a retail customer and Horizon Digital Channels connected to a primary production region with active Payments Platform, primary payment records, primary Event Platform and telemetry collection. A secondary recovery region contains standby Payments Platform, replica payment records, replica Event Platform and secondary telemetry. Dashed arrows show failover, data replication and event replication. Observability and alerting connect to operations and incident response. Core Deposit System is shown as a retained core dependency.
 
 For beginners, the important lesson is that disaster recovery is a model of behaviour and responsibility, not just a second set of infrastructure. If nobody knows when to fail over, who approves it, how data is reconciled and how customers are informed, the diagram is incomplete.
 
@@ -372,8 +397,8 @@ Suggested answer:
 - [ ] The simple and banking examples are consistent with repository example files.
 - [ ] Comparisons do not imply that one notation is universally superior.
 - [ ] Common mistakes are concrete and actionable.
-- [ ] Required sources and diagram specifications are registered.
-- [ ] Diagram source creation remains deferred until author approval of the Chapter 11 diagram specifications.
+- [ ] Required sources, diagram specifications, sources and exports are registered.
+- [ ] Diagram sources and SVG or PNG exports exist for `FIG-11-01` through `FIG-11-05`.
 - [ ] Terminology, link and word-count checks pass.
 
 ## References and further reading
@@ -387,10 +412,3 @@ Chapter source notes are maintained in the repository under `research/infrastruc
 - `[KUBERNETES-DOCS-2026]`: Kubernetes official documentation for core concepts.
 - `[AWS-WA-RELIABILITY-2026]`: AWS Well-Architected Framework, Reliability Pillar.
 - `[OPENTELEMETRY-DOCS-2026]`: OpenTelemetry official documentation.
-
-## Drafting notes
-
-- Target length met for a first full draft.
-- Figure specifications exist for FIG-11-01 through FIG-11-05.
-- Diagram source and SVG exports are intentionally deferred until author approval of the specifications.
-- Do not mark this chapter `Approved` without explicit author approval.

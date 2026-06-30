@@ -16,11 +16,12 @@ Chapter 10, **Domain and Event Modelling**, is approved by the author with final
 
 All Chapter 6, Chapter 7, Chapter 8, Chapter 9 and Chapter 10 diagrams remain `Review`, not `Approved`. Final book-page layout review remains pending for diagrams, particularly `FIG-09-03` and the wider Chapter 10 event figures.
 
-Chapter 11, **Infrastructure and Deployment Modelling**, is now the current chapter and is `Diagramming`. Primary source notes, the first full prose draft and `FIG-11-01` through `FIG-11-05` diagram specifications are complete. Diagram source and exports are deferred until author approval of the specifications.
+Chapter 11, **Infrastructure and Deployment Modelling**, is `Ready for Author Approval`. Primary source notes, prose, glossary updates, source-register entries, `FIG-11-01` through `FIG-11-05` diagram specifications, PlantUML sources, SVG exports, PNG previews, manuscript figure references and the Chapter 11 quality gate are complete.
 
 ## Git reference
 
 - Chapter 10 approval commit: `40e88d2`
+- Chapter 11 draft commit: `b6f2042`
 - Branch: `main`
 - Remote: `origin/main`
 
@@ -36,7 +37,7 @@ Chapter 11, **Infrastructure and Deployment Modelling**, is now the current chap
 - Chapter 8 status: `Approved`
 - Chapter 9 status: `Approved`
 - Chapter 10 status: `Approved`
-- Chapter 11 status: `Diagramming`
+- Chapter 11 status: `Ready for Author Approval`
 - Diagram status for Chapter 1 figure `FIG-01-01`: `Review`
 - Diagram status for Chapter 2 figure `FIG-02-01`: `Review`
 - Diagram status for Chapter 3 figures `FIG-03-01` through `FIG-03-03`: `Review`
@@ -47,12 +48,12 @@ Chapter 11, **Infrastructure and Deployment Modelling**, is now the current chap
 - Diagram status for Chapter 8 figures `FIG-08-01` through `FIG-08-06`: `Review`
 - Diagram status for Chapter 9 figures `FIG-09-01` through `FIG-09-04`: `Review`
 - Diagram status for Chapter 10 figures `FIG-10-01` through `FIG-10-04`: `Review`
-- Diagram status for Chapter 11 figures `FIG-11-01` through `FIG-11-05`: `Drafting`
+- Diagram status for Chapter 11 figures `FIG-11-01` through `FIG-11-05`: `Review`
 
 ## Pending non-critical issues
 
 - Chapter 1 awaits author review.
-- Chapter 1 through Chapter 10 diagrams remain `Review`; no diagram is marked `Approved`.
+- Chapter 1 through Chapter 11 diagrams remain `Review`; no diagram is marked `Approved`.
 - The full ArchiMate 4 specification should be reviewed by a licensed human reviewer under the applicable Open Group licence before final publication source scoring is raised.
 - The Chapter 4 sequence, component and deployment diagrams are wider than the simpler figures and should be checked again during final page-layout production.
 - Chapter 6 BPMN XML files were manually opened in Camunda Desktop Modeler 5.48.0 without visible repair or parsing warnings. SVG/PNG exports have been regenerated and visually inspected.
@@ -60,8 +61,8 @@ Chapter 11, **Infrastructure and Deployment Modelling**, is now the current chap
 
 ## Next chapter
 
-Chapter 11, **Infrastructure and Deployment Modelling**, is the current chapter. Source-backed drafting is complete and the next workflow gate is author approval of the five diagram specifications before Codex creates diagram source.
+Chapter 12, **Security Modelling**, is the next planned chapter after author review of Chapter 11.
 
 ## Next exact action
 
-Review and approve, or request changes to, the Chapter 11 diagram specifications for `FIG-11-01` through `FIG-11-05`. After approval, create PlantUML sources, render SVG exports and PNG previews, validate the diagram register and insert the rendered figures into Chapter 11.
+Author review of Chapter 11, **Infrastructure and Deployment Modelling**. If the author approves it, update `STATUS.md`, `CHANGELOG.md` and `RESUME.md` to mark Chapter 11 `Approved` while keeping diagrams at `Review`.
