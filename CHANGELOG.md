@@ -4,6 +4,13 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-30
 
+### Approved Chapter 8 Data Modelling
+
+- Recorded author approval for Chapter 8, **Data Modelling**, with final quality score 9.1.
+- Confirmed six Chapter 8 figures are completed and remain at `Review` pending final page-layout review.
+- Confirmed the final DFD notation correction for `FIG-08-04` is verified.
+- Set Chapter 9, **Decision Modelling and DMN**, as the current next chapter.
+
 ### Corrected Chapter 8 DFD notation
 
 - Updated `FIG-08-04` so payment authorisation and shipment data are shown as labelled directional arrows, not separate data-flow boxes.

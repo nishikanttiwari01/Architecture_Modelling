@@ -26,8 +26,8 @@
 | 05 | The C4 Model | Approved | 100 | 100 | 100 | 100 | 100 | Prototype reference |
 | 06 | BPMN: Business Process Model and Notation | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; diagrams remain Review |
 | 07 | ArchiMate | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; diagrams remain Review |
-| 08 | Data Modelling | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review of revised Chapter 8 manuscript, six rendered figures and CH-08-quality-gate.md; diagrams remain Review |
-| 09 | Decision Modelling and DMN | Planned | 0 | 0 | 0 | 0 | 0 | — |
+| 08 | Data Modelling | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; six figures completed; final DFD notation correction verified; diagrams remain Review pending final page-layout review |
+| 09 | Decision Modelling and DMN | Planned | 0 | 0 | 0 | 0 | 0 | Current next chapter; begin research and drafting workflow |
 | 10 | Domain and Event Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 11 | Infrastructure and Deployment Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 12 | Security Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -107,6 +107,6 @@
 
 ## Current recommended next task
 
-Author review of the revised Chapter 8 manuscript, six rendered Chapter 8 figures and `CH-08-quality-gate.md`. Chapter 9 begins only after Chapter 8 is approved. Chapters 6 and 7 are `Approved`; all diagrams remain at `Review` until the final page-layout pass.
+Begin Chapter 9, **Decision Modelling and DMN**, with current official DMN research before drafting. Chapters 6, 7 and 8 are `Approved`; all diagrams remain at `Review` until the final page-layout pass.
 
 Last updated: 2026-06-30

@@ -2,7 +2,7 @@
 title: "Data Modelling"
 chapter: 8
 part: "part-02-modelling-languages"
-status: "Ready for Author Approval"
+status: "Approved"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-30"
 ---

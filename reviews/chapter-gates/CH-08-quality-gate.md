@@ -5,8 +5,9 @@
 - **Chapter:** 8, Data Modelling
 - **Review date:** 2026-06-30
 - **Reviewer:** Codex
-- **Status recommendation:** Ready for Author Approval
-- **Current gate:** Chapter 8 has been revised after final technical review. It now includes six rendered teaching figures, corrected DFD flow notation, corrected payment lineage, a payment instruction lifecycle view, updated source and diagram tracking, glossary additions and register updates.
+- **Status recommendation:** Approved
+- **Current gate:** Chapter 8 has been approved by the author. It includes six rendered teaching figures, corrected DFD flow notation, corrected payment lineage, a payment instruction lifecycle view, updated source and diagram tracking, glossary additions and register updates.
+- **Final quality score:** 9.1
 - **Diagram status:** `FIG-08-01` through `FIG-08-06` remain `Review`, not `Approved`.
 
 ## Quality scores
@@ -25,7 +26,7 @@
 | Consistency with rest of book | 9.2 | Keeps data modelling distinct from BPMN, C4, ArchiMate, deployment and process views. |
 | Writing and editorial quality | 9.1 | Uses British English, short paragraphs, original tables, actionable mistakes and no reader-facing draft scaffolding. |
 
-**Average score:** 9.14
+**Average score:** 9.1
 
 Minimum category score: 9.0.
 
@@ -34,10 +35,11 @@ Minimum category score: 9.0.
 | Requirement | Result | Evidence |
 |---|---|---|
 | Required sections complete | Pass | Chapter 8 includes purpose, outcomes, prerequisites, artefacts, examples, source requirements, main sections, checklist and references. |
-| Repository tracking files agree | Pass | Chapter 8 is `Ready for Author Approval`; Chapters 6 and 7 are `Approved`; Chapter 8 has six registered figures at `Review`. |
+| Repository tracking files agree | Pass | Chapter 8 is `Approved`; Chapters 6 and 7 are `Approved`; Chapter 8 has six registered figures at `Review`. |
 | Source notes added and registered | Pass | `research/data/` contains five Chapter 8 source notes, and `SOURCE_REGISTER.md` records all five source keys. |
 | Diagrams registered | Pass | `DIAGRAM_REGISTER.md` includes `FIG-08-01` through `FIG-08-06` at `Review` and records Chapter 8 specification, source, SVG and PNG paths. |
 | Diagrams rendered | Pass | SVG and PNG outputs exist for all six Chapter 8 PlantUML figures. |
+| Six figures completed | Pass | `FIG-08-01` through `FIG-08-06` have specifications, PlantUML source, SVG exports and PNG previews. |
 | FIG-08-04 DFD notation corrected | Pass | Payment authorisation request/result and shipment request/confirmation are direct labels on directional arrows, not rectangular data-flow nodes. |
 | FIG-08-05 lineage corrected | Pass | Payment instruction, screening result, posting result and consolidated status all trace to the Payment data product. |
 | FIG-08-06 lifecycle added | Pass | Lifecycle view covers Captured, Validated, Screened, Posted, Distributed, Curated, Retained and Archived or Disposed. |
@@ -60,10 +62,9 @@ Minimum category score: 9.0.
 
 ## Open issues
 
-- The author must review Chapter 8 and decide whether to approve it.
 - All Chapter 8 diagrams remain at `Review` until the final page-layout pass.
-- Chapter 9 must not begin until Chapter 8 is approved.
+- Final page-layout review remains pending for Chapter 8 diagrams.
 
 ## Gate decision
 
-Chapter 8 is `Ready for Author Approval`. The revised gate passes the required average score, no category is below 8.5, repository tracking agrees, all six diagrams render, all sources and figures are registered, and final validations pass.
+Chapter 8 is `Approved` by the author. The final quality score is 9.1, no category is below 8.5, repository tracking agrees, all six diagrams render, all sources and figures are registered, the final DFD notation correction is verified, and final validations pass. Chapter 8 diagrams remain at `Review` until final page-layout review.
