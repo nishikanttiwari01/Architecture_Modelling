@@ -4,6 +4,15 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-30
 
+### Completed Chapter 10 Domain and Event Modelling draft
+
+- Expanded Chapter 10, **Domain and Event Modelling**, from scaffold to a complete prose draft.
+- Covered domain models, DDD vocabulary, subdomains, bounded contexts, context maps, aggregates, entities, value objects, domain events, EventStorming, event-driven architecture diagrams and event catalogues.
+- Added four Chapter 10 diagram specifications and registered `FIG-10-01` through `FIG-10-04`.
+- Kept diagram source and export creation deferred pending author approval of the Chapter 10 diagram specifications.
+- Added an interim Chapter 10 quality gate documenting the diagram-source blocker.
+- Moved Chapter 10 to `Under Review` with research and draft coverage complete, and with diagram source creation blocked pending author approval of specifications.
+
 ### Approved Chapter 9 Decision Modelling and DMN
 
 - Recorded author approval for Chapter 9, **Decision Modelling and DMN**, with final quality score 9.1.

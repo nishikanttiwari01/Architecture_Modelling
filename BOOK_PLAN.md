@@ -451,23 +451,24 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
+  - Why domain and event modelling matter
   - Domain models
   - Domain-Driven Design vocabulary
   - Subdomains and bounded contexts
   - Context maps
   - Aggregates, entities and value objects
   - Domain events
-  - Event storming
+  - EventStorming
   - Commands, events, policies and read models
   - Event-driven architecture diagrams
   - Event catalogues
+  - How domain and event modelling compare with nearby techniques
   - Common mistakes
   - Chapter cheat sheet
   - Key takeaways
   - Practical exercise
   - Review checklist
-  - Drafting notes
+  - References and further reading
 
 #### 11. Infrastructure and Deployment Modelling
 
