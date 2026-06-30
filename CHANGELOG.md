@@ -4,6 +4,14 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-30
 
+### Completed Chapter 11 Infrastructure and Deployment Modelling research and draft
+
+- Expanded Chapter 11, **Infrastructure and Deployment Modelling**, from scaffold to a complete first prose draft.
+- Added primary source notes for NIST cloud terminology, NIST contingency planning, Kubernetes concepts, AWS Well-Architected reliability guidance and OpenTelemetry observability concepts.
+- Registered Chapter 11 source keys in `SOURCE_REGISTER.md` and added infrastructure, deployment, Kubernetes, resilience and observability terms to `GLOSSARY.md`.
+- Added and registered Chapter 11 diagram specifications for `FIG-11-01` through `FIG-11-05`.
+- Moved Chapter 11 to `Diagramming`, with diagram source and export creation deferred pending author approval of the specifications.
+
 ### Approved Chapter 10 Domain and Event Modelling
 
 - Recorded author approval for Chapter 10, **Domain and Event Modelling**, with final quality score 9.1.

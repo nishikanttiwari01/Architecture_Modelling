@@ -122,6 +122,22 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Decision Service (DMN) | A DMN element that can expose one or more decisions for use. | Mention as an optional beginner concept; do not imply every decision needs a service boundary. |
 | Semantic repository tool | A modelling tool that stores reusable model concepts and relationships rather than only drawing shapes. | Useful when governance, reuse, reporting and impact analysis matter. |
 | Diagrams as code | A diagramming approach where editable diagram source is stored as text and rendered into publication formats. | Good for reproducibility and version control; not automatically a governed model repository. |
+| Deployment diagram | A model or view that shows where software runs and how runtime elements are placed on infrastructure or execution environments. | Distinguish logical deployment from detailed physical infrastructure. |
+| Node (UML) | A computational resource or execution environment that can host deployed artefacts. | Do not confuse a UML node with a Kubernetes node unless the diagram is deliberately mapping between the two meanings. |
+| Runtime environment | The execution setting in which software runs, such as a virtual machine, container platform, database platform or managed cloud service. | State whether the model is logical, platform-specific or physical. |
+| Network topology | A view of network segments, connectivity, traffic paths and boundaries. | Use for connectivity and routing concerns, not application responsibility. |
+| Cloud deployment model | A way of placing cloud services, such as public, private or hybrid cloud. | Use NIST terminology where a formal cloud definition is needed. |
+| Kubernetes Deployment | A Kubernetes workload object that manages desired state and replica updates for Pods. | Do not use the word deployment casually when a Kubernetes object is meant. |
+| Kubernetes Service | A Kubernetes abstraction that exposes a stable network endpoint for a set of Pods. | Distinguish it from a business service, application service or C4 container. |
+| Availability | The ability of a system or service to be usable when needed. | Express expected availability in terms the audience can review, such as service hours, dependency assumptions and recovery behaviour. |
+| Resilience | The ability to absorb, recover from or adapt to disruption while continuing to provide acceptable service. | Model failure modes and recovery paths, not only duplicate components. |
+| Disaster recovery | The planned restoration of service after a serious disruption. | Include recovery objectives, responsibilities and failback, not only standby infrastructure. |
+| Recovery Time Objective (RTO) | The target maximum time to restore a service after disruption. | Define at first use in each chapter and avoid promising an RTO without supporting design and operations. |
+| Recovery Point Objective (RPO) | The target maximum acceptable data loss measured as time. | Link to data replication, backup, restore and reconciliation design. |
+| Observability | The ability to understand system behaviour from telemetry such as traces, metrics and logs. | Do not reduce it to dashboards; include instrumentation, collection, processing and ownership. |
+| Trace | Telemetry that follows one request or transaction through multiple components. | Useful for runtime flow and dependency diagnosis. |
+| Metric | Numeric telemetry measured over time. | Useful for service health, capacity, saturation and service-level monitoring. |
+| Log | A timestamped event or message emitted by software or infrastructure. | Useful for investigation, but it needs retention, privacy and correlation rules. |
 
 ## Terms requiring future decision
 

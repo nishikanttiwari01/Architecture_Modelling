@@ -16,11 +16,11 @@ Chapter 10, **Domain and Event Modelling**, is approved by the author with final
 
 All Chapter 6, Chapter 7, Chapter 8, Chapter 9 and Chapter 10 diagrams remain `Review`, not `Approved`. Final book-page layout review remains pending for diagrams, particularly `FIG-09-03` and the wider Chapter 10 event figures.
 
-Chapter 11, **Infrastructure and Deployment Modelling**, is now the current chapter and is `Researching`.
+Chapter 11, **Infrastructure and Deployment Modelling**, is now the current chapter and is `Diagramming`. Primary source notes, the first full prose draft and `FIG-11-01` through `FIG-11-05` diagram specifications are complete. Diagram source and exports are deferred until author approval of the specifications.
 
 ## Git reference
 
-- Chapter 9 approval commit: `b90b2b7`
+- Chapter 10 approval commit: `40e88d2`
 - Branch: `main`
 - Remote: `origin/main`
 
@@ -36,7 +36,7 @@ Chapter 11, **Infrastructure and Deployment Modelling**, is now the current chap
 - Chapter 8 status: `Approved`
 - Chapter 9 status: `Approved`
 - Chapter 10 status: `Approved`
-- Chapter 11 status: `Researching`
+- Chapter 11 status: `Diagramming`
 - Diagram status for Chapter 1 figure `FIG-01-01`: `Review`
 - Diagram status for Chapter 2 figure `FIG-02-01`: `Review`
 - Diagram status for Chapter 3 figures `FIG-03-01` through `FIG-03-03`: `Review`
@@ -47,6 +47,7 @@ Chapter 11, **Infrastructure and Deployment Modelling**, is now the current chap
 - Diagram status for Chapter 8 figures `FIG-08-01` through `FIG-08-06`: `Review`
 - Diagram status for Chapter 9 figures `FIG-09-01` through `FIG-09-04`: `Review`
 - Diagram status for Chapter 10 figures `FIG-10-01` through `FIG-10-04`: `Review`
+- Diagram status for Chapter 11 figures `FIG-11-01` through `FIG-11-05`: `Drafting`
 
 ## Pending non-critical issues
 
@@ -59,12 +60,8 @@ Chapter 11, **Infrastructure and Deployment Modelling**, is now the current chap
 
 ## Next chapter
 
-Chapter 11, **Infrastructure and Deployment Modelling**, is the current chapter. Begin by collecting and verifying primary sources before drafting.
-
-Chapter 9 now includes four rendered figures, `FIG-09-01` through `FIG-09-04`, all at `Review`. The figures use PlantUML teaching sources rather than semantic `.dmn` XML, per `DEC-015`, because current Camunda documentation describes DMN 1.3 modelling and no local DMN modeller CLI validated DMN 1.5 semantic files in this environment.
-
-Final author-review corrections are applied for FEEL list literals, `FIG-09-02` stock checking, direct `FIG-09-03` information requirements and `FIG-09-04` cross-boundary arrow labels. Chapter 9 is now `Approved`.
+Chapter 11, **Infrastructure and Deployment Modelling**, is the current chapter. Source-backed drafting is complete and the next workflow gate is author approval of the five diagram specifications before Codex creates diagram source.
 
 ## Next exact action
 
-Begin Chapter 11 primary source research for infrastructure and deployment modelling. Do not draft Chapter 11 prose until the source notes and outline are ready.
+Review and approve, or request changes to, the Chapter 11 diagram specifications for `FIG-11-01` through `FIG-11-05`. After approval, create PlantUML sources, render SVG exports and PNG previews, validate the diagram register and insert the rendered figures into Chapter 11.
