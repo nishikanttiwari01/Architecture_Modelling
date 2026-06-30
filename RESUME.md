@@ -12,9 +12,9 @@ Chapter 8, **Data Modelling**, is approved by the author. Final quality score: 9
 
 Chapter 9, **Decision Modelling and DMN**, is approved by the author. Final quality score: 9.1. It includes four completed figures, `FIG-09-01` through `FIG-09-04`, plus `CH-09-quality-gate.md`.
 
-Chapter 10, **Domain and Event Modelling**, has a complete prose draft and is in `Under Review`. It includes source-backed coverage of domain models, DDD vocabulary, subdomains, bounded contexts, context maps, aggregates, entities, value objects, domain events, EventStorming, event-driven architecture diagrams and event catalogues. Diagram specifications exist for `FIG-10-01` through `FIG-10-04`; source and exports are deferred pending author approval of those specifications. An interim quality gate exists at `reviews/chapter-gates/CH-10-quality-gate.md`.
+Chapter 10, **Domain and Event Modelling**, is `Ready for Author Approval` with final quality score 9.1. It includes source-backed coverage of domain models, strategic DDD, tactical DDD, subdomain types, bounded contexts, context maps, aggregates, aggregate roots, repositories, domain services, domain events, EventStorming, runtime event guidance, Event Sourcing, CQRS, practical tooling and event catalogues. `FIG-10-01` through `FIG-10-04` have specifications, PlantUML sources, SVG exports and PNG previews. The Chapter 10 quality gate is `reviews/chapter-gates/CH-10-quality-gate.md`.
 
-All Chapter 6, Chapter 7, Chapter 8 and Chapter 9 diagrams remain `Review`, not `Approved`. Final book-page layout review remains pending for diagrams, particularly `FIG-09-03`.
+All Chapter 6, Chapter 7, Chapter 8, Chapter 9 and Chapter 10 diagrams remain `Review`, not `Approved`. Final book-page layout review remains pending for diagrams, particularly `FIG-09-03` and the wider Chapter 10 event figures.
 
 ## Git reference
 
@@ -33,7 +33,7 @@ All Chapter 6, Chapter 7, Chapter 8 and Chapter 9 diagrams remain `Review`, not 
 - Chapter 7 status: `Approved`
 - Chapter 8 status: `Approved`
 - Chapter 9 status: `Approved`
-- Chapter 10 status: `Under Review`
+- Chapter 10 status: `Ready for Author Approval`
 - Diagram status for Chapter 1 figure `FIG-01-01`: `Review`
 - Diagram status for Chapter 2 figure `FIG-02-01`: `Review`
 - Diagram status for Chapter 3 figures `FIG-03-01` through `FIG-03-03`: `Review`
@@ -43,12 +43,12 @@ All Chapter 6, Chapter 7, Chapter 8 and Chapter 9 diagrams remain `Review`, not 
 - Diagram status for Chapter 7 figures `FIG-07-01` through `FIG-07-06`: `Review`
 - Diagram status for Chapter 8 figures `FIG-08-01` through `FIG-08-06`: `Review`
 - Diagram status for Chapter 9 figures `FIG-09-01` through `FIG-09-04`: `Review`
-- Diagram status for Chapter 10 figures `FIG-10-01` through `FIG-10-04`: `Planned`, with specifications awaiting author approval
+- Diagram status for Chapter 10 figures `FIG-10-01` through `FIG-10-04`: `Review`
 
 ## Pending non-critical issues
 
 - Chapter 1 awaits author review.
-- Chapter 1 through Chapter 9 diagrams remain `Review`; no diagram is marked `Approved`.
+- Chapter 1 through Chapter 10 diagrams remain `Review`; no diagram is marked `Approved`.
 - The full ArchiMate 4 specification should be reviewed by a licensed human reviewer under the applicable Open Group licence before final publication source scoring is raised.
 - The Chapter 4 sequence, component and deployment diagrams are wider than the simpler figures and should be checked again during final page-layout production.
 - Chapter 6 BPMN XML files were manually opened in Camunda Desktop Modeler 5.48.0 without visible repair or parsing warnings. SVG/PNG exports have been regenerated and visually inspected.
@@ -56,7 +56,7 @@ All Chapter 6, Chapter 7, Chapter 8 and Chapter 9 diagrams remain `Review`, not 
 
 ## Next chapter
 
-Chapter 10, **Domain and Event Modelling**, is the current chapter and is `Under Review`. The prose draft is complete and primary source notes are recorded for Domain-Driven Design, EventStorming, CloudEvents and AsyncAPI.
+Chapter 10, **Domain and Event Modelling**, awaits author review. Do not begin Chapter 11 until the author has reviewed Chapter 10.
 
 Chapter 9 now includes four rendered figures, `FIG-09-01` through `FIG-09-04`, all at `Review`. The figures use PlantUML teaching sources rather than semantic `.dmn` XML, per `DEC-015`, because current Camunda documentation describes DMN 1.3 modelling and no local DMN modeller CLI validated DMN 1.5 semantic files in this environment.
 
@@ -64,4 +64,4 @@ Final author-review corrections are applied for FEEL list literals, `FIG-09-02` 
 
 ## Next exact action
 
-Review and approve, or revise, the Chapter 10 diagram specifications for `FIG-10-01` through `FIG-10-04`. After author approval, create editable diagram source, render SVG exports, inspect the outputs and update the diagram register.
+Author review of Chapter 10. After author approval or requested revisions, update `STATUS.md`, `CHANGELOG.md` and any affected chapter or diagram files.

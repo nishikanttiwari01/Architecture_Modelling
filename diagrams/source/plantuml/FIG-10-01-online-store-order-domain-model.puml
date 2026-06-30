@@ -1,0 +1,45 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+left to right direction
+title FIG-10-01. Online Store Order Domain Model
+
+skinparam linetype ortho
+skinparam nodesep 55
+skinparam ranksep 45
+skinparam class {
+  BorderColor #333333
+  BackgroundColor #F7F9FB
+}
+
+package "Ordering bounded context\n<<Owned model boundary>>" as Ordering #F7F9FB {
+  class "Customer\n<<Entity reference>>" as Customer #FFFFFF
+  class "Basket\n<<Aggregate root>>" as Basket #EAF6E8
+  class "Basket Item\n<<Entity>>" as BasketItem #FFFFFF
+  class "Order\n<<Aggregate root>>" as Order #EAF6E8
+  class "Order Line\n<<Entity>>" as OrderLine #FFFFFF
+  class "Product Snapshot\n<<Value Object>>" as ProductSnapshot #FFF4D6
+  class "Delivery Address\n<<Value Object>>" as DeliveryAddress #FFF4D6
+}
+
+class "Payment Attempt\n<<External reference>>\nowned by Payment" as PaymentAttempt #F2F5F7
+class "Shipment\n<<External reference>>\nowned by Fulfilment" as Shipment #F2F5F7
+
+Customer "1" --> "0..*" Basket : owns
+Basket "1" *-- "1..*" BasketItem : contains
+BasketItem "1" --> "1" ProductSnapshot : selects
+
+Customer "1" --> "0..*" Order : places
+Order "1" *-- "1..*" OrderLine : contains
+OrderLine "1" --> "1" ProductSnapshot : records sale facts
+Order "1" *-- "1" DeliveryAddress : delivers to
+
+Order "1" ..> "0..*" PaymentAttempt : references only
+Order "1" ..> "0..*" Shipment : references only
+
+note bottom
+  Conceptual domain model for Ordering only.
+  Payment Attempt and Shipment are external references, not owned concepts.
+  It is not a database schema, API contract or process flow.
+end note
+@enduml

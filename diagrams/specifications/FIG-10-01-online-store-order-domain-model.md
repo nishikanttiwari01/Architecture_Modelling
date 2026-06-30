@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Show the main business concepts in the Simple Online Store order domain before database, API or class design.
+Show the main concepts inside the Ordering bounded context without making Catalogue, Payment or Fulfilment concepts look internally owned by Ordering.
 
 ## Audience
 
@@ -10,7 +10,7 @@ Beginners, analysts, software architects and developers.
 
 ## Question answered
 
-Which order-domain concepts matter, and how do they relate at a conceptual level?
+Which concepts does the Ordering bounded context own, and which neighbouring concepts are only references?
 
 ## Notation
 
@@ -18,48 +18,54 @@ Conceptual domain model using PlantUML class-style boxes without implementation 
 
 ## Required elements
 
+- Ordering bounded context
 - Customer
 - Basket
+- Basket Item
 - Order
 - Order Line
-- Product
-- Payment
-- Shipment
+- Product Snapshot or Product Reference
+- Delivery Address as a value object
+- Payment Attempt as externally owned reference
+- Shipment as externally owned reference
 
 ## Required relationships
 
-- Customer places Order.
-- Customer owns Basket.
-- Basket contains Product selections.
+- Customer owns zero or more Baskets.
+- Basket contains one or more Basket Items.
+- Basket Item refers to Product Snapshot or Product Reference.
+- Customer places zero or more Orders.
 - Order contains one or more Order Lines.
-- Order Line refers to Product.
-- Order has Payment.
-- Order may have one or more Shipments.
+- Order Line uses Product Snapshot or Product Reference.
+- Order has one Delivery Address value object.
+- Order may relate to zero or more Payment Attempts as external references.
+- Order may relate to zero or more Shipments as external references.
 
 ## Main flow or structure
 
-The diagram should place Customer and Basket on the left, Order in the centre, Product above or near Order Line, and Payment and Shipment on the right to suggest the order lifecycle without turning the diagram into a process flow.
+Keep Customer, Basket, Basket Item, Order, Order Line, Product Snapshot and Delivery Address inside a visible Ordering bounded-context boundary. Place Payment Attempt and Shipment outside that boundary and label them as externally owned references.
 
 ## Alternative and exception flows
 
-Show optional multiple shipments for one order. Do not model returns or refunds in this figure.
+Show optional Payment Attempt and Shipment references with `0..*` cardinality. Do not model payment authorisation, settlement, shipment dispatch or returns.
 
 ## Scope
 
-Conceptual order-domain model for the Simple Online Store example.
+Conceptual domain model for the Simple Online Store Ordering bounded context.
 
 ## Exclusions
 
+- Catalogue-owned product master data.
+- Payment processing internals.
+- Fulfilment and delivery internals.
 - Database tables, keys and columns.
 - API resources and endpoints.
 - UML operations or implementation methods.
-- Payment-provider internal model.
-- Delivery-partner internal model.
 - Returns and refund handling.
 
 ## Accessibility requirements
 
-Use plain labels, readable font sizes and relationship labels. Do not rely on colour to distinguish relationship meaning.
+Use plain labels, readable font sizes, visible cardinalities and relationship labels. Do not rely on colour to distinguish internal ownership from external references.
 
 ## Source references
 
@@ -69,7 +75,8 @@ Use plain labels, readable font sizes and relationship labels. Do not rely on co
 ## Review criteria
 
 - The figure reads as a conceptual domain model, not a physical data model.
-- All terms match the Simple Online Store example.
-- Relationship direction and labels are understandable to a beginner.
-- No implementation attributes, table names or transport details appear.
+- Ordering ownership is visually clear.
+- Payment Attempt and Shipment are outside the Ordering boundary or absent from the internal model.
+- Basket to Basket Item and Order to Order Line cardinalities are one or more.
+- Order to Payment Attempt and Order to Shipment cardinalities are zero or more.
 - The model agrees with Chapter 10 prose.

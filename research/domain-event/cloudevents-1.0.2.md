@@ -13,6 +13,8 @@
 ## Supported claims
 
 - Claim: CloudEvents is a specification for describing event data in a common way across services, platforms and transports.
+- Claim: In CloudEvents 1.0.2, the required context attributes are `id`, `source`, `specversion` and `type`; `time` is optional.
+- Claim: CloudEvents standardises event envelope and context metadata, not the business meaning of a domain-event payload.
 - Intended chapter(s): Chapter 10 and later event architecture chapters
 - Normative or interpretive: Normative for CloudEvents envelope terminology and version-sensitive claims.
 
@@ -20,7 +22,7 @@
 
 The CloudEvents project describes CloudEvents as a specification for event data portability across services and platforms. The project site records CloudEvents 1.0.2 as the current stable release noted on the site, with compatibility to the existing v1.0 specification.
 
-For Chapter 10, use CloudEvents to explain why event envelope metadata is different from the business meaning of the event payload. It should not be used to imply that all domain events must use CloudEvents.
+For Chapter 10, use CloudEvents to explain why event envelope and context metadata are different from the business meaning of the event payload. The required 1.0.2 context attributes are `id`, `source`, `specversion` and `type`; `time` is optional. Do not imply that all domain events must use CloudEvents.
 
 ## Terminology and version notes
 

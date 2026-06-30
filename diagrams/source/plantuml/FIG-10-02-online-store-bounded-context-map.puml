@@ -1,0 +1,50 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+top to bottom direction
+title FIG-10-02. Online Store Bounded Context Map
+
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 70
+
+rectangle "Catalogue Context\n<<Upstream>>\nProduct, price,\navailability" as Catalogue #EAF6E8
+rectangle "Ordering Context\n<<Downstream of Catalogue>>\nBasket, order,\norder line" as Ordering #FFFFFF
+rectangle "Payment Context\n<<Supplier to Ordering>>\nPayment attempt,\nauthorisation" as Payment #F7F9FB
+rectangle "Fulfilment Context\n<<Supplier to Ordering>>\nShipment,\ndelivery status" as Fulfilment #F7F9FB
+rectangle "Support Context\n<<Downstream>>\nReturn, refund request,\ncase" as Support #FFFFFF
+
+rectangle "Payment Provider System\n<<External system>>" as PayProvider #F2F5F7
+rectangle "Delivery Partner System\n<<External system>>" as DeliveryPartner #F2F5F7
+rectangle "Payment Provider ACL\n<<Anti-Corruption Layer>>" as PayACL #FFF4D6
+rectangle "Delivery Partner ACL\n<<Anti-Corruption Layer>>" as DeliveryACL #FFF4D6
+
+Catalogue -down-> Ordering : R1
+
+Ordering -left-> Payment : R2
+Payment -right-> Ordering : R3
+
+Ordering -right-> Fulfilment : R4
+Fulfilment -left-> Ordering : R5
+
+Support -up-> Ordering : R6
+Support -up-> Fulfilment : R7
+Support ..> Support : R8
+
+Payment -down-> PayACL : ACL
+PayACL -down-> PayProvider : translate
+Fulfilment -down-> DeliveryACL : ACL
+DeliveryACL -down-> DeliveryPartner : translate
+
+legend bottom
+Context map, not deployment view.
+R1 Catalogue upstream -> Ordering downstream: Open Host Service + Published Language.
+R2 Ordering -> Payment: Customer/Supplier payment authorisation.
+R3 Payment -> Ordering: Published Language, PaymentAuthorised.
+R4 Ordering -> Fulfilment: Customer/Supplier fulfilment request.
+R5 Fulfilment -> Ordering: Published Language, shipment status.
+R6/R7 Support is Conformist to selected order and shipment status terms.
+R8 Support uses Separate Ways for internal case handling.
+ACL means Anti-Corruption Layer and marks translation boundaries to external systems.
+endlegend
+@enduml

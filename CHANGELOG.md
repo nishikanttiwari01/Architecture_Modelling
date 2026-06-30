@@ -13,6 +13,17 @@ All notable repository and manuscript changes are recorded here. This is a proje
 - Added an interim Chapter 10 quality gate documenting the diagram-source blocker.
 - Moved Chapter 10 to `Under Review` with research and draft coverage complete, and with diagram source creation blocked pending author approval of specifications.
 
+### Completed Chapter 10 final revision and diagram set
+
+- Corrected Chapter 10 to distinguish strategic DDD and tactical DDD, including core, supporting and generic subdomains, aggregate roots, repositories and domain services.
+- Strengthened context-map guidance with upstream/downstream, Customer/Supplier, Conformist, Anti-Corruption Layer, Open Host Service, Published Language and Separate Ways.
+- Corrected CloudEvents guidance so only `id`, `source`, `specversion` and `type` are listed as required attributes in CloudEvents 1.0.2, with `time` optional.
+- Added runtime event guidance for delivery, duplicates, idempotency, ordering, correlation, causation, retries, dead letters, replay safety, schema compatibility, eventual consistency and privacy.
+- Distinguished event-driven architecture from Event Sourcing and CQRS.
+- Added practical tooling guidance and a `PaymentPosted` event-catalogue entry.
+- Updated all four Chapter 10 diagram specifications, created PlantUML sources, rendered SVG exports and PNG previews, and inserted all four figures into the chapter.
+- Moved `FIG-10-01` through `FIG-10-04` to `Review` and moved Chapter 10 to `Ready for Author Approval` with final quality score 9.1.
+
 ### Approved Chapter 9 Decision Modelling and DMN
 
 - Recorded author approval for Chapter 9, **Decision Modelling and DMN**, with final quality score 9.1.

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Show selected Horizon Bank payment events moving between systems and consumers in an event-driven architecture view.
+Show selected Horizon Bank payment commands, synchronous requests, responses and published events while keeping event ownership clear.
 
 ## Audience
 
@@ -10,11 +10,11 @@ Solution architects, integration architects, developers, data architects and ope
 
 ## Question answered
 
-Which systems produce and consume payment events for a simplified outgoing payment scenario?
+Which systems issue commands or requests, which systems respond, which systems publish events and how does the Event Platform distribute those events?
 
 ## Notation
 
-Event-flow architecture diagram using PlantUML component or sequence-style notation. The diagram should emphasise producers, event platform and consumers rather than human task sequence.
+Event-flow architecture diagram using PlantUML sequence-style notation. Use visibly different arrow styles and labels for commands or synchronous requests, responses and published domain or integration events.
 
 ## Required elements
 
@@ -24,31 +24,41 @@ Event-flow architecture diagram using PlantUML component or sequence-style notat
 - Core Deposit System
 - Event Platform
 - Enterprise Data Platform
-- Operations monitoring or payment status view
+- Operations payment status view
+- Fraud Investigation capability or case handling responsibility
+- `SubmitPaymentInstruction`
 - `PaymentInstructionReceived`
-- `ScreeningResultReceived`
+- `RequestPaymentScreening`
+- `PaymentScreeningCompleted`
+- `PostPayment`
 - `PaymentPosted`
-- `PaymentRejected`
 - `PaymentRepairRequested`
+- `PaymentRejected`
+- `OpenFraudCase`
 - `FraudCaseOpened`
 
 ## Required relationships
 
-- Horizon Digital Channels submits payment instruction to Payments Platform.
-- Payments Platform publishes `PaymentInstructionReceived`.
-- Payments Platform requests screening from Financial Crime Platform.
-- Financial Crime Platform returns screening result and may lead to `FraudCaseOpened`.
-- Payments Platform posts allowed payments to Core Deposit System.
-- Payments Platform publishes posting, rejection or repair events to Event Platform.
-- Enterprise Data Platform and operations status view consume selected events.
+- Horizon Digital Channels sends `SubmitPaymentInstruction` to Payments Platform.
+- Payments Platform publishes `PaymentInstructionReceived` to Event Platform.
+- Payments Platform sends `RequestPaymentScreening` to Financial Crime Platform.
+- Financial Crime Platform returns a screening response to Payments Platform.
+- Financial Crime Platform publishes `PaymentScreeningCompleted` to Event Platform.
+- Payments Platform applies routing policy after screening.
+- Payments Platform sends `PostPayment` to Core Deposit System for allowed payments.
+- Core Deposit System returns a posting response to Payments Platform.
+- Payments Platform publishes `PaymentPosted`, `PaymentRepairRequested` or `PaymentRejected` to Event Platform.
+- Payments Platform sends `OpenFraudCase` to the fraud investigation responsibility when required.
+- The fraud investigation responsibility publishes `FraudCaseOpened` to Event Platform.
+- Event Platform distributes events to Enterprise Data Platform and Operations payment status view.
 
 ## Main flow or structure
 
-Place event producers on the left or top, the Event Platform centrally, and consumers on the right or bottom. Label event names on arrows. Keep command/request arrows visually distinct from event publication arrows.
+Use left-to-right sequence lifelines. Label commands or synchronous requests, responses and published events explicitly. Show Event Platform as an intermediary that distributes events, not as the owner of event meaning.
 
 ## Alternative and exception flows
 
-Show repair, rejection and fraud-case events as alternate outcomes. Avoid modelling detailed retry, timeout and dead-letter handling in this beginner figure.
+Show posted, repair, rejected and fraud-case outcomes. Avoid detailed retry, timeout and dead-letter handling in the figure; cover those runtime topics in prose.
 
 ## Scope
 
@@ -64,7 +74,7 @@ Simplified outgoing payment event flow for Horizon Bank.
 
 ## Accessibility requirements
 
-Use labelled arrows and a legend if different arrow styles are used. Ensure the event names remain readable at book-page width.
+Use labelled arrows and a legend for arrow styles. Ensure event names remain readable at book-page width. Colour must not be the only way to tell commands, responses and events apart.
 
 ## Source references
 
@@ -75,9 +85,10 @@ Use labelled arrows and a legend if different arrow styles are used. Ensure the 
 
 ## Review criteria
 
-- The figure distinguishes commands or requests from published events.
-- Event names are past tense.
-- The Event Platform is not shown as the owner of event meaning.
+- Commands or synchronous requests, responses and published events cannot be confused.
+- Every published event originates from its owning producer.
+- The Event Platform is an intermediary, not the owner of event meaning.
+- `PaymentScreeningCompleted` is used consistently as the payment-screening event.
 - Producers and consumers are visible.
 - The diagram does not mix deployment topology with the event-flow concern.
 - The model agrees with Chapter 10 prose and Horizon Bank system names.

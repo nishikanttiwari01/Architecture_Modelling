@@ -1,0 +1,70 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+top to bottom direction
+title FIG-10-03. Horizon Bank Payment EventStorming Board
+
+skinparam linetype ortho
+skinparam nodesep 70
+skinparam ranksep 45
+
+rectangle "Retail Customer\n<<Actor>>" as Customer #FFFFFF
+rectangle "Horizon Digital\nChannels\n<<System>>" as Channels #F2F5F7
+rectangle "Payments Platform\n<<System>>" as Payments #F2F5F7
+rectangle "Financial Crime\nPlatform\n<<System>>" as FinCrime #F2F5F7
+rectangle "Core Deposit\nSystem\n<<System>>" as Core #F2F5F7
+rectangle "Operations Analyst\n<<Actor>>" as Ops #FFFFFF
+rectangle "Fraud Investigator\n<<Actor>>" as Fraud #FFFFFF
+
+rectangle "SubmitPayment\nInstruction\n<<Command>>" as Submit #DDEEFF
+rectangle "PaymentInstruction\nReceived\n<<Event>>" as Received #FFE0B2
+rectangle "ValidatePayment\nInstruction\n<<Command>>" as Validate #DDEEFF
+rectangle "PaymentInstruction\nValidated\n<<Event>>" as Validated #FFE0B2
+rectangle "PaymentInstruction\nRejected\n<<Event>>" as ValidationRejected #FFE0B2
+rectangle "RequestPayment\nScreening\n<<Command>>" as RequestScreening #DDEEFF
+rectangle "PaymentScreening\nCompleted\n<<Event>>" as ScreeningCompleted #FFE0B2
+rectangle "Payment routing\npolicy\n<<Policy>>" as RoutingPolicy #EAF6E8
+
+rectangle "PostPayment\n<<Command>>" as PostPayment #DDEEFF
+rectangle "RequestPayment\nRepair\n<<Command>>" as RequestRepair #DDEEFF
+rectangle "RejectPayment\n<<Command>>" as RejectPayment #DDEEFF
+rectangle "OpenFraudCase\n<<Command>>" as OpenFraud #DDEEFF
+
+rectangle "PaymentPosted\n<<Event>>" as Posted #FFE0B2
+rectangle "PaymentRepair\nRequested\n<<Event>>" as RepairRequested #FFE0B2
+rectangle "PaymentRejected\n<<Event>>" as PaymentRejected #FFE0B2
+rectangle "FraudCase\nOpened\n<<Event>>" as FraudOpened #FFE0B2
+rectangle "Open question:\nwho owns repair SLA?\n<<Question>>" as Question #FFF8DC
+
+Customer -down-> Channels : initiates
+Channels -down-> Submit
+Submit -down-> Received : produces
+Received -down-> Validate
+Validate -down-> Validated : valid
+Validate -right-> ValidationRejected : invalid
+Validated -down-> RequestScreening
+RequestScreening -down-> ScreeningCompleted : produces
+ScreeningCompleted -down-> RoutingPolicy : triggers
+
+RoutingPolicy -down-> PostPayment : route post
+RoutingPolicy -left-> RequestRepair : route repair
+RoutingPolicy -right-> RejectPayment : route reject
+RoutingPolicy -down-> OpenFraud : route fraud case
+
+PostPayment -down-> Posted : produces
+RequestRepair -down-> RepairRequested : produces
+RejectPayment -down-> PaymentRejected : produces
+OpenFraud -down-> FraudOpened : produces
+
+Payments .. Validate : owns validation
+FinCrime .. RequestScreening : performs screening
+Core .. PostPayment : posts payment
+Ops .. RequestRepair : handles repair
+Fraud .. OpenFraud : investigates
+Question .. RepairRequested
+
+legend bottom
+Blue boxes are commands. Orange boxes are events. Green is a policy.
+The board is a discovery view, not BPMN and not a runtime deployment view.
+endlegend
+@enduml

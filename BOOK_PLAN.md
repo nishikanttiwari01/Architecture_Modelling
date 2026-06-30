@@ -443,7 +443,7 @@ The subsection structure below records the approved 63-chapter plan currently re
 #### 10. Domain and Event Modelling
 
 - Manuscript file: `manuscript/part-02-modelling-languages/10-domain-event-modelling.md`
-- Scope: Cover domain model, Domain-Driven Design concepts, bounded contexts, entities, value objects, aggregates, commands, events, event storming, context maps, event-driven architecture diagrams and event catalogues.
+- Scope: Cover domain model, strategic and tactical Domain-Driven Design concepts, bounded contexts, subdomain types, entities, value objects, aggregates, aggregate roots, repositories, domain services, commands, events, EventStorming, context maps, event-driven architecture diagrams, runtime event concerns, Event Sourcing, CQRS, modelling tools and event catalogues.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -454,14 +454,17 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Why domain and event modelling matter
   - Domain models
   - Domain-Driven Design vocabulary
-  - Subdomains and bounded contexts
+  - Strategic DDD: subdomains, language and boundaries
   - Context maps
-  - Aggregates, entities and value objects
+  - Tactical DDD: aggregates, entities and value objects
   - Domain events
   - EventStorming
   - Commands, events, policies and read models
   - Event-driven architecture diagrams
+  - Runtime guidance for event-driven systems
+  - Event-driven architecture, Event Sourcing and CQRS
   - Event catalogues
+  - How to create domain and event models in practice
   - How domain and event modelling compare with nearby techniques
   - Common mistakes
   - Chapter cheat sheet

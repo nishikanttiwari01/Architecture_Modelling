@@ -28,7 +28,7 @@
 | 07 | ArchiMate | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; diagrams remain Review |
 | 08 | Data Modelling | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; six figures completed; final DFD notation correction verified; diagrams remain Review pending final page-layout review |
 | 09 | Decision Modelling and DMN | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; four figures completed; diagrams remain Review pending final book-page layout review, particularly FIG-09-03 |
-| 10 | Domain and Event Modelling | Under Review | 100 | 100 | 25 | 35 | 100 | Review draft and approve diagram specifications before source creation |
+| 10 | Domain and Event Modelling | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; diagrams remain Review |
 | 11 | Infrastructure and Deployment Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 12 | Security Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 13 | Other Useful Modelling Approaches | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -107,6 +107,6 @@
 
 ## Current recommended next task
 
-Chapter 10, **Domain and Event Modelling**, is the current chapter and is `Under Review`. The prose draft is complete, primary sources are recorded, and `FIG-10-01` through `FIG-10-04` have specifications awaiting author approval before diagram source creation. Chapter 9, **Decision Modelling and DMN**, is `Approved` by the author with final quality score 9.1. Chapters 6, 7, 8 and 9 are `Approved`; all diagrams remain at `Review` until the final page-layout pass, particularly `FIG-09-03`.
+Chapter 10, **Domain and Event Modelling**, is `Ready for Author Approval` with final quality score 9.1. `FIG-10-01` through `FIG-10-04` have specifications, PlantUML sources, SVG exports and PNG previews, and remain at `Review`. Do not begin Chapter 11 until the author has reviewed Chapter 10. Chapter 9, **Decision Modelling and DMN**, is `Approved` by the author with final quality score 9.1. Chapters 6, 7, 8 and 9 are `Approved`; all diagrams remain at `Review` until the final page-layout pass, particularly `FIG-09-03`.
 
 Last updated: 2026-06-30

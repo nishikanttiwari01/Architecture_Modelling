@@ -1,0 +1,58 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+title FIG-10-04. Horizon Bank Payment Event Flow
+
+skinparam sequence {
+  ArrowColor #333333
+  LifeLineBorderColor #666666
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #333333
+  ParticipantBackgroundColor #F7F9FB
+}
+skinparam maxMessageSize 90
+
+participant "Horizon Digital\nChannels" as Channels
+participant "Payments\nPlatform" as Payments
+participant "Financial Crime\nPlatform" as FinCrime
+participant "Core Deposit\nSystem" as Core
+participant "Fraud Investigation" as Fraud
+queue "Event Platform\n<<Intermediary>>" as EventPlatform
+participant "Enterprise Data\nPlatform" as DataPlatform
+participant "Operations Payment\nStatus View" as StatusView
+
+Channels -> Payments : [command]\nSubmitPaymentInstruction
+Payments -[#2E7D32]> EventPlatform : [published event]\nPaymentInstructionReceived
+EventPlatform -[#2E7D32]> DataPlatform : distribute event
+EventPlatform -[#2E7D32]> StatusView : distribute event
+
+Payments -> FinCrime : [sync request]\nRequestPaymentScreening
+FinCrime --> Payments : [response]\nscreening outcome
+FinCrime -[#2E7D32]> EventPlatform : [published event]\nPaymentScreeningCompleted
+EventPlatform -[#2E7D32]> DataPlatform : distribute event
+EventPlatform -[#2E7D32]> StatusView : distribute event
+
+alt route = post
+  Payments -> Core : [command]\nPostPayment
+  Core --> Payments : [response]\nposting accepted
+  Payments -[#2E7D32]> EventPlatform : [published event]\nPaymentPosted
+else route = repair
+  Payments -[#2E7D32]> EventPlatform : [published event]\nPaymentRepairRequested
+else route = reject
+  Payments -[#2E7D32]> EventPlatform : [published event]\nPaymentRejected
+else route = fraud case
+  Payments -> Fraud : [command]\nOpenFraudCase
+  Fraud --> Payments : [response]\ncase opened
+  Fraud -[#2E7D32]> EventPlatform : [published event]\nFraudCaseOpened
+end
+
+EventPlatform -[#2E7D32]> DataPlatform : distribute selected outcome events
+EventPlatform -[#2E7D32]> StatusView : distribute selected outcome events
+
+legend bottom
+Solid black arrows are commands or synchronous requests.
+Dashed arrows are responses.
+Green labelled arrows are published domain or integration events.
+Event Platform distributes events but does not own their business meaning.
+endlegend
+@enduml

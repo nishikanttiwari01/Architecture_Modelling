@@ -4,60 +4,74 @@
 
 - **Chapter:** 10, Domain and Event Modelling
 - **Manuscript:** `manuscript/part-02-modelling-languages/10-domain-event-modelling.md`
-- **Status:** Under Review
-- **Current gate:** Chapter 10 has complete prose, source notes, registered source keys, diagram specifications and diagram-register entries. Diagram source and exports are deferred until author approval of `FIG-10-01` through `FIG-10-04` specifications.
-- **Interim quality score:** 8.5
-- **Diagram status:** `FIG-10-01` through `FIG-10-04` are `Planned`, not `Review` or `Approved`.
+- **Status:** Ready for Author Approval
+- **Current gate:** Chapter 10 has complete prose, source notes, registered source keys, corrected diagram specifications, PlantUML sources, SVG exports, PNG previews, glossary updates, register updates and repository checks.
+- **Final quality score:** 9.1
+- **Diagram status:** `FIG-10-01` through `FIG-10-04` remain `Review`, not `Approved`.
 
 ## Scorecard
 
 | Category | Score | Evidence |
 |---|---:|---|
-| Scope coverage | 9.0 | Covers domain models, DDD vocabulary, subdomains, bounded contexts, context maps, aggregates, entities, value objects, domain events, EventStorming, commands, events, policies, read models, event-driven architecture diagrams and event catalogues. |
-| Technical accuracy | 8.8 | Uses `[DDD-REFERENCE-2015]`, `[EVENTSTORMING-BRANDOLINI-2026]`, `[CNCF-CLOUDEVENTS-1.0.2]` and `[ASYNCAPI-3.1.0]`; distinguishes DDD and EventStorming from standards-body notations. |
-| Beginner comprehension | 8.8 | Uses plain-language explanations, Simple Online Store and Horizon Bank examples, comparison tables, a practical exercise and command-versus-event naming guidance. |
-| Educational flow | 8.7 | Moves from purpose and domain meaning to DDD terms, boundaries, events, event discovery, event architecture and governance. |
-| Diagram readiness | 7.0 | Four diagram specifications exist and are registered, but no source files or rendered exports may be created until author approval of specifications. |
-| Source and copyright discipline | 8.9 | Uses paraphrased source guidance and original planned diagrams; no standards text or external diagrams are copied. |
-| Repository tracking | 8.8 | `BOOK_PLAN.md`, `STATUS.md`, `RESUME.md`, `CHANGELOG.md`, `DIAGRAM_REGISTER.md` and this gate file are updated. |
+| Scope coverage | 9.2 | Covers domain models, strategic DDD, tactical DDD, subdomain types, context maps, aggregates, aggregate roots, repositories, domain services, domain events, EventStorming, event-driven architecture, runtime guidance, Event Sourcing, CQRS, tooling and event catalogues. |
+| Technical accuracy | 9.1 | Uses `[DDD-REFERENCE-2015]`, `[EVENTSTORMING-BRANDOLINI-2026]`, `[CNCF-CLOUDEVENTS-1.0.2]`, `[ASYNCAPI-3.1.0]` and `[DOMAIN-EVENT-TOOL-GUIDANCE-2026]`; corrects CloudEvents required attributes and replaces the earlier screening event name with `PaymentScreeningCompleted`. |
+| Beginner comprehension | 9.0 | Uses Simple Online Store and Horizon Bank examples, clear command-event distinctions, reading guidance, accessibility text, comparison tables and a practical exercise. |
+| Educational flow | 9.0 | Moves from domain meaning to strategic DDD, tactical DDD, events, discovery, event flow, runtime concerns, catalogue governance, tooling and review checks. |
+| Diagram quality | 9.0 | Four figures render to SVG and PNG, avoid clipped text, use labelled direction, distinguish commands and events, and keep ownership boundaries visible. Wider event figures remain marked for final page-layout review. |
+| Source and copyright discipline | 9.2 | Uses official or primary sources, paraphrases source material and uses original teaching diagrams. |
+| Repository tracking | 9.2 | `BOOK_PLAN.md`, `STATUS.md`, `RESUME.md`, `CHANGELOG.md`, `SOURCE_REGISTER.md`, `DIAGRAM_REGISTER.md`, `GLOSSARY.md` and this gate file are updated. |
 
-Average score: 8.5
+Average score: 9.1
 
-Diagram readiness is below final approval level because the repository's specification-first gate intentionally prevents source creation until author approval.
+No category is below 8.5.
 
 ## Required gate checks
 
 | Check | Result | Evidence |
 |---|---|---|
 | Required sections complete | Pass | Chapter includes purpose, outcomes, prerequisites, artefacts, examples, source requirements, main sections, checklist and references. |
-| DDD source basis present | Pass | Chapter uses `[DDD-REFERENCE-2015]` and states that DDD is not a standards-body notation. |
-| EventStorming source basis present | Pass | Chapter uses `[EVENTSTORMING-BRANDOLINI-2026]` and treats EventStorming as a collaborative method rather than formal notation. |
-| CloudEvents scope correct | Pass | Chapter uses CloudEvents for envelope metadata and avoids implying that it defines business event meaning. |
-| AsyncAPI scope correct | Pass | Chapter uses AsyncAPI for message-driven API contracts and distinguishes it from discovery methods. |
-| Bounded context caution present | Pass | Chapter states that a bounded context is not automatically a microservice, database, team or deployment unit. |
-| Command and event distinction present | Pass | Chapter distinguishes imperative command names from past-tense event names. |
-| Event catalogue governance present | Pass | Chapter records ownership, producer, consumers, schema, classification, retention and compatibility concerns. |
-| Diagram specifications created | Pass | Specifications exist for `FIG-10-01` through `FIG-10-04`. |
-| Diagram register updated | Pass | `DIAGRAM_REGISTER.md` includes the four Chapter 10 planned figures and asset details. |
-| Diagram source created | Deferred | Source creation awaits author approval of the specifications. |
-| Diagram exports created | Deferred | SVG and PNG exports await source creation. |
+| Strategic DDD coverage | Pass | Chapter covers subdomains, bounded contexts, ubiquitous language and context maps. |
+| Tactical DDD coverage | Pass | Chapter covers entities, value objects, aggregates, aggregate roots, repositories, domain services and domain events. |
+| Subdomain types present | Pass | Core, supporting and generic subdomains are explained. |
+| Context-map guidance strengthened | Pass | Upstream/downstream, Customer/Supplier, Conformist, Anti-Corruption Layer, Open Host Service, Published Language and Separate Ways are covered. |
+| FIG-10-01 corrected | Pass | Figure stays within Ordering, includes Basket Item, Order Line, Product Snapshot, Delivery Address and external Payment Attempt and Shipment references with required cardinalities. |
+| FIG-10-02 corrected | Pass | Figure shows relationship direction, translation boundaries and context-map pattern legend without implying microservice mapping. |
+| FIG-10-03 corrected | Pass | Figure uses the requested command-event-policy chain and `PaymentScreeningCompleted`. |
+| FIG-10-04 corrected | Pass | Figure distinguishes commands or synchronous requests, responses and published events; Event Platform is an intermediary, not owner. |
+| Old screening event name removed | Pass | Search confirms the old event name no longer appears in manuscript, specifications or diagram source. |
+| Runtime guidance present | Pass | Chapter covers at-least-once delivery, duplicates, idempotent consumers, ordering, correlation, causation, retries, dead letters, replay safety, schema compatibility, eventual consistency and privacy. |
+| Event-driven architecture versus Event Sourcing and CQRS | Pass | Chapter distinguishes the three techniques. |
+| CloudEvents correction present | Pass | Chapter states that `id`, `source`, `specversion` and `type` are required in CloudEvents 1.0.2 and `time` is optional. |
+| Tool guidance present | Pass | Chapter covers Context Mapper, Miro or physical boards, PlantUML, diagrams.net, AsyncAPI Studio, AsyncAPI CLI and EventCatalog. |
+| `PaymentPosted` event-catalogue entry present | Pass | Entry includes ownership, meaning, producer, consumers, version, CloudEvents type, classification, retention, replay, compatibility, correlation, causation, ordering and support owner. |
+| Diagrams registered | Pass | `DIAGRAM_REGISTER.md` includes `FIG-10-01` through `FIG-10-04` at `Review`. |
+| Diagrams rendered | Pass | SVG and PNG outputs exist for all four Chapter 10 figures. |
+| Diagram visual review | Pass | PNG previews inspected for clipping, overlapping labels, causal direction, command/event distinction, ownership boundaries, colour dependence and page-width readability. |
 
 ## Figure review notes
 
-`FIG-10-01` is specified as a conceptual domain model for the Simple Online Store order domain. It must avoid database and implementation detail.
+`FIG-10-01` stays within the Ordering bounded context. Payment Attempt and Shipment are external references. Basket to Basket Item and Order to Order Line are one or more; Order to Payment Attempt and Shipment are zero or more.
 
-`FIG-10-02` is specified as a context map for the Simple Online Store. It must not imply that one bounded context equals one microservice.
+`FIG-10-02` uses short relationship IDs on arrows and a legend to prevent label overlap. Relationship direction, upstream/downstream dependency and translation boundaries are explicit.
 
-`FIG-10-03` is specified as an EventStorming-style teaching illustration for Horizon Bank payment handling. It must use original content and avoid presenting workshop conventions as a formal standard.
+`FIG-10-03` uses commands, events and policy labels. `PaymentScreeningCompleted` is the screening event. The board is an original teaching synthesis, not BPMN or a copied workshop board.
 
-`FIG-10-04` is specified as an event-flow architecture view for Horizon Bank payments. It must distinguish commands or requests from published events and must not turn into a deployment topology.
+`FIG-10-04` uses sequence-style arrow labels to distinguish commands or synchronous requests, responses and published events. Events originate from owning producers, and the Event Platform distributes events without owning their meaning.
+
+## Render and visual validation record
+
+| Figure ID | SVG export | PNG preview | Visual result |
+|---|---|---|---|
+| `FIG-10-01` | Present | Present | Pass, clear Ordering boundary and external references. |
+| `FIG-10-02` | Present | Present | Pass, no label overlap after relationship-ID layout correction. |
+| `FIG-10-03` | Present | Present | Pass, command/event/policy distinction is readable. |
+| `FIG-10-04` | Present | Present | Pass, arrow types and event ownership are readable. |
 
 ## Remaining risks
 
-- Author approval of the Chapter 10 diagram specifications is required before diagram source files can be created.
-- The final chapter score cannot reach the Chapter 5 prototype target until figures are rendered, visually reviewed and integrated into the chapter.
-- Event-driven architecture examples should be rechecked during later integration chapters to avoid duplication or contradiction.
+- Final book-page layout review remains pending for all Chapter 10 diagrams, especially wider event-oriented figures.
+- Later integration and BIAN event chapters should reuse the Chapter 10 command/event vocabulary consistently.
 
 ## Gate decision
 
-Chapter 10 is suitable to remain at `Under Review`. The prose draft and diagram specifications are complete, but the chapter is not ready for author approval until the four diagram specifications are approved, source files and exports are created, visual review is completed and repository checks pass after those assets are added.
+Chapter 10 is `Ready for Author Approval`. The final quality score is 9.1, no category is below 8.5, all four figures render to SVG and PNG, source versions are recorded, the requested review corrections are implemented and repository checks pass.

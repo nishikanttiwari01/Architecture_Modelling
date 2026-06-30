@@ -54,8 +54,13 @@ This file controls terminology across the manuscript. Add a term when it first b
 | API | An application programming interface that exposes defined operations or resources. | An API is an interface, not the implementation itself. |
 | Domain model | A model of the concepts, rules and language used in a business or problem domain. | Do not reduce it to a database schema or class diagram too early. |
 | Domain-Driven Design (DDD) | An approach to software and architecture design that keeps the model close to the business domain and its language. | Treat DDD as a design approach, not a standards-body notation. |
+| Strategic Domain-Driven Design | DDD guidance focused on subdomains, bounded contexts, ubiquitous language and relationships between contexts. | Use for architecture boundaries, ownership and language differences. |
+| Tactical Domain-Driven Design | DDD guidance focused on entities, value objects, aggregates, aggregate roots, repositories, domain services and domain events inside a bounded context. | Use after the bounded context is clear; do not apply patterns as boilerplate. |
 | Ubiquitous language | The shared language used by domain experts and delivery teams within a bounded context. | It is context-specific; the same word may have different meanings in different contexts. |
 | Subdomain | A part of the wider business domain with its own problem area and business importance. | Distinguish core, supporting and generic concerns where useful. |
+| Core subdomain | A subdomain that creates distinctive business advantage or carries high strategic value. | Do not label every important function as core. |
+| Supporting subdomain | A business-specific subdomain that is necessary but not the main differentiator. | Custom design may be justified, but keep investment proportionate. |
+| Generic subdomain | A common subdomain that many organisations need and can often standardise, buy or outsource. | Avoid unnecessary custom design. |
 | Event | A record that something of business or technical significance happened. | Use past-tense names for facts, such as `PaymentAuthorised`. |
 | Command | A request for a system or domain to perform an action. | A command may be rejected; an event records an occurrence. |
 | Domain event | An event that records something meaningful in the domain, using business language. | Do not confuse it with every technical message emitted by a system. |
@@ -64,7 +69,20 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Event catalogue | A managed inventory of event definitions, owners, schemas and consumers. | Useful for governance; it should not be only a message-broker topic list. |
 | Entity | A domain or data object distinguished by identity over time. | Do not confuse with every database table. |
 | Value object | A domain object defined by its values rather than an enduring identity. | Common in domain-driven design. |
+| Aggregate | A consistency boundary around related domain objects. | It is not automatically a database table, API resource or microservice. |
+| Aggregate root | The object through which outside code accesses and changes an aggregate. | Do not bypass it when enforcing aggregate rules. |
+| Repository (DDD) | A domain-facing way to retrieve and store aggregates without exposing storage detail. | Do not treat every data-access class as a DDD repository. |
+| Domain service | Domain behaviour that does not naturally belong to one entity or value object. | Use sparingly; avoid empty entities with all behaviour in services. |
 | Bounded context | A boundary within which a domain model and its language are consistent. | It is a design boundary, not automatically a deployment unit. |
+| Upstream context | A context whose model, API or event language influences another context. | State who is downstream and what language or contract is consumed. |
+| Downstream context | A context that consumes, conforms to or translates another context's model. | Identify where translation or dependency risk exists. |
+| Anti-Corruption Layer | A translation boundary that protects one model from another model's language or assumptions. | Useful around legacy systems, vendor systems and mismatched external models. |
+| Open Host Service | A stable service exposed by an upstream context for other contexts to use. | Pair with a clear published language where shared meaning matters. |
+| Published Language | A shared integration language or contract used between contexts. | Keep it versioned and governed. |
+| Event Sourcing | A design approach where state changes are stored as an ordered event history and current state is rebuilt from those events. | Do not assume every event-driven architecture uses Event Sourcing. |
+| Command Query Responsibility Segregation (CQRS) | A design approach that separates write models from read models. | It can be used with or without Event Sourcing. |
+| CloudEvents | A specification for common event envelope and context metadata across services, platforms and transports. | It standardises metadata such as `id`, `source`, `specversion` and `type`, not the business meaning of the payload. |
+| Idempotent consumer | An event consumer that can process the same event more than once without applying the business effect twice. | Important when delivery is at least once or retries are possible. |
 | Service Domain (BIAN) | A logical, discrete banking capability partition defined by BIAN. | Do not map automatically to one microservice. |
 | Business Scenario (BIAN) | A representation of Service Domain interactions in response to a business event or objective. | Complement with BPMN when human and process detail is needed. |
 | Semantic API (BIAN) | An API specification aligned to BIAN service semantics. | Adaptation and governance are still required. |
