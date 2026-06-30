@@ -131,6 +131,17 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Consequences:** Chapter status and diagram status are tracked separately. Codex may render and validate diagrams, but it must not mark diagrams `Approved`.
 - **Related chapters/files:** Chapters 6, 7 and 8, `DIAGRAM_REGISTER.md`, `STATUS.md`.
 
+## DEC-015: Use PlantUML teaching figures for Chapter 9 DMN concepts
+
+- **Status:** Approved
+- **Date:** 2026-06-30
+- **Decision:** Use PlantUML as the editable source for Chapter 9 publication figures, including the decision table, decision tree, DMN-style DRD and BPMN/DMN responsibility split.
+- **Context:** Chapter 9 uses OMG DMN 1.5 as the normative formal baseline. Current Camunda documentation describes DMN 1.3 modelling, and no local DMN modeller CLI is available in this environment to validate semantic `.dmn` files against DMN 1.5. The author requested SVG/PNG publication outputs and accurate version recording.
+- **Alternatives considered:** Generate semantic `.dmn` files without local modeller validation; use Camunda-oriented DMN 1.3 XML while presenting DMN 1.5 as the chapter baseline; defer all figures until a semantic DMN modeller is available.
+- **Reason:** PlantUML provides repeatable editable source and rendered SVG/PNG outputs without implying semantic DMN XML conformance. The chapter can still teach formal DMN concepts while explicitly stating that the figures are original teaching illustrations, not executable `.dmn` models.
+- **Consequences:** Chapter 9 diagrams are publication teaching views. If the book later needs executable or repository-grade DMN assets, a DMN-aware modeller and explicit tool/version validation should be added before creating `.dmn` source files.
+- **Related chapters/files:** Chapter 9, `diagrams/source/plantuml/FIG-09-*`, `research/dmn/camunda-dmn-1.3-docs-2026.md`, `research/dmn/trisotech-dmn-docs-2026.md`.
+
 ## Decision template
 
 ```markdown

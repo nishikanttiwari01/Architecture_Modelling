@@ -1,0 +1,28 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+title FIG-09-02. Online Store Product Eligibility Decision Tree
+
+skinparam defaultFontSize 15
+
+start
+if (Restricted product?) then (yes)
+  if (Destination allowed\nfor restricted item?) then (yes)
+    :Eligible with\nrestricted delivery;
+  else (no)
+    :Not eligible;
+  endif
+else (no)
+  if (In stock?) then (yes)
+    :Eligible;
+  else (no)
+    :Not eligible;
+  endif
+endif
+stop
+
+legend bottom
+  General decision-modelling tree.
+  This is not a formal DMN Decision Requirements Diagram element.
+endlegend
+@enduml

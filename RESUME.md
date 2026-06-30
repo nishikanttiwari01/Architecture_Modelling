@@ -49,8 +49,10 @@ All Chapter 6, Chapter 7 and Chapter 8 diagrams remain `Review`, not `Approved`.
 
 ## Next chapter
 
-Chapter 9, **Decision Modelling and DMN**, is the current chapter. Current formal DMN source has been verified as OMG DMN 1.5, with DMN 1.7 beta noted as informational rather than the formal compliance baseline. Chapter 9 now has a first prose draft and remains in `Drafting`.
+Chapter 9, **Decision Modelling and DMN**, is the current chapter and is `Ready for Author Approval`. Current formal DMN source has been verified as OMG DMN 1.5, with DMN 1.7 beta noted as informational rather than the formal compliance baseline.
+
+Chapter 9 now includes four rendered figures, `FIG-09-01` through `FIG-09-04`, all at `Review`. The figures use PlantUML teaching sources rather than semantic `.dmn` XML, per `DEC-015`, because current Camunda documentation describes DMN 1.3 modelling and no local DMN modeller CLI validated DMN 1.5 semantic files in this environment.
 
 ## Next exact action
 
-Continue Chapter 9 drafting. Prepare decision-table, decision-tree and DMN DRD diagram specifications before creating any diagram source, and broaden source/review coverage before moving toward diagramming or review.
+Await author review of Chapter 9. Do not begin Chapter 10 until the author instructs it.

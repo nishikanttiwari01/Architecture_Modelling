@@ -1,0 +1,19 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+title FIG-09-01. Online Store Delivery Decision Table
+
+skinparam defaultFontSize 15
+
+legend center
+|= U |= Order value |= All items in stock? |= Destination |= Delivery decision |
+| 1 | >= 50 | Yes | Domestic | Free standard delivery |
+| 2 | < 50 | Yes | Domestic | Paid standard delivery |
+| 3 | - | No | - | Stock exception review |
+| 4 | - | Yes | International | Obtain international delivery quote |
+
+DMN-style teaching table.
+Hit policy U means Unique. The dash means any value.
+The rules are non-overlapping within this simplified delivery example.
+endlegend
+@enduml

@@ -4,6 +4,15 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-30
 
+### Completed Chapter 9 Decision Modelling and DMN
+
+- Completed Chapter 9, **Decision Modelling and DMN**, and moved it to `Ready for Author Approval`.
+- Added formal DMN 1.5 coverage for decision requirements, decision logic, FEEL, decision-table structure, hit policies, quality checks, DRD relationships, BPMN/DMN integration and decision governance.
+- Added official Camunda and Trisotech DMN tool source notes and registered them.
+- Added four Chapter 9 diagram specifications, PlantUML sources, SVG exports and PNG previews.
+- Recorded the Chapter 9 diagram-source decision in `DEC-015`.
+- Created the Chapter 9 quality gate with an average score above 9.0 and no category below 8.5.
+
 ### Began Chapter 9 Decision Modelling draft
 
 - Expanded Chapter 9, **Decision Modelling and DMN**, from scaffold to a first prose draft.

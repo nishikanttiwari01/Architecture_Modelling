@@ -83,6 +83,17 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Decision Model and Notation (DMN) | An Object Management Group standard for modelling repeatable business decisions, decision requirements and decision logic. | Use the current formal OMG DMN source for normative terminology; distinguish decision logic from process flow. |
 | Decision table | A tabular decision model that maps input conditions to outputs according to stated rules and a hit policy. | Useful for explainable rules; do not hide complex process sequence inside it. |
 | Decision Requirements Diagram (DRD) | A DMN diagram that shows decisions, input data, knowledge sources and business knowledge models and how they depend on each other. | Use for decision dependencies, not for BPMN task sequence. |
+| Decision Requirements Graph (DRG) | The underlying network of DMN decision requirements relationships in a decision model. | A DRD is a diagram view over selected DRG content. |
+| Decision logic | The expression, table or model that derives a decision result from inputs and rules. | Keep separate from the downstream process action. |
+| Decision result | The output produced by a decision. | A result such as `Manual Review` is not the same as the human review process that follows. |
+| Policy | A governing statement or constraint approved by an authority. | Distinguish from the specific business rules derived from it. |
+| Business rule | A specific condition or rule derived from policy or operating practice. | Use in decision logic when it is stable enough to model. |
+| Hit policy | A DMN decision-table indicator that states how matching rules are handled. | Do not leave implicit when more than one rule may match. |
+| Friendly Enough Expression Language (FEEL) | The expression language used by DMN for decision logic. | Handle missing or null inputs deliberately. |
+| Input Data (DMN) | A DMN element representing information supplied to a decision. | Use business-level input names before implementation column names. |
+| Business Knowledge Model (DMN) | A reusable DMN element for decision logic or functions. | Useful when shared rules need governance. |
+| Knowledge Source (DMN) | A DMN element representing an authority for decisions or knowledge models. | Use for policy, rulebook, regulatory or governance authority. |
+| Decision Service (DMN) | A DMN element that can expose one or more decisions for use. | Mention as an optional beginner concept; do not imply every decision needs a service boundary. |
 | Semantic repository tool | A modelling tool that stores reusable model concepts and relationships rather than only drawing shapes. | Useful when governance, reuse, reporting and impact analysis matter. |
 | Diagrams as code | A diagramming approach where editable diagram source is stored as text and rendered into publication formats. | Good for reproducibility and version control; not automatically a governed model repository. |
 

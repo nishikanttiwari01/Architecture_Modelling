@@ -1,0 +1,35 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+left to right direction
+title FIG-09-04. BPMN and DMN Responsibility Split
+
+skinparam linetype ortho
+skinparam nodesep 90
+skinparam ranksep 70
+
+package "BPMN process responsibility" as BPMN #F7F9FB {
+  rectangle "Capture payment\ninstruction\n<<Process task>>" as Capture #FFFFFF
+  rectangle "Determine Payment Route\n<<Business Rule Task>>" as RuleTask #EAF6E8
+  rectangle "Route result?\n<<Gateway>>" as Gateway #FFFFFF
+}
+
+package "DMN decision responsibility" as DMN #F2F5F7 {
+  rectangle "Payment inputs\namount, currency,\naccount status,\nscreening result,\ncut-off status" as Inputs #FFFFFF
+  rectangle "Payment Routing Rules\n<<Decision logic>>" as Logic #EAF6E8
+  rectangle "Determine Payment Route\n<<Decision>>" as Decision #DDEEFF
+}
+
+Capture --> RuleTask
+RuleTask --> Decision
+Inputs --> Decision
+Logic --> Decision
+Decision --> RuleTask
+RuleTask --> Gateway
+
+legend bottom
+BPMN shows process order, responsibility and branching after the result.
+DMN shows repeatable decision logic and returns a named route result.
+The technical binding from a BPMN Business Rule Task to a DMN decision is vendor-specific.
+endlegend
+@enduml

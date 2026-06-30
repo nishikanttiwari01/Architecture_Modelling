@@ -14,12 +14,15 @@
 
 - Claim: Decision Model and Notation is the OMG standard for modelling repeatable business decisions, decision requirements, decision logic and related expressions.
 - Claim: The current formal OMG DMN version for Chapter 9 is DMN 1.5. OMG also lists DMN 1.7 beta material, but beta material is informational and should not be treated as the formal compliance baseline.
+- Claim: DMN distinguishes decision requirements from decision logic, and includes concepts such as Decision, Input Data, Business Knowledge Model, Knowledge Source, Decision Service, Decision Requirements Graph and Decision Requirements Diagram.
+- Claim: DMN decision tables include hit policies, input and output clauses, input expressions, unary tests, output values, rules and annotations.
+- Claim: FEEL is the expression language used by DMN and supports beginner-visible constructs such as comparisons, ranges, lists, strings and dates.
 - Intended chapter(s): Chapter 9
 - Normative or interpretive: Normative for DMN terminology and notation; interpretive for beginner architecture guidance.
 
 ## Relevant summary
 
-The OMG DMN 1.5 specification is the current formal source for Chapter 9. It supports the chapter's definitions of Decision Model and Notation (DMN), decision requirements, decision tables, input data, decisions, business knowledge models and decision services. The chapter should use this source for normative DMN terminology, while explaining the concepts in beginner language and using original examples.
+The OMG DMN 1.5 specification is the current formal source for Chapter 9. It supports the chapter's definitions of Decision Model and Notation (DMN), decision requirements, decision tables, input data, decisions, business knowledge models, knowledge sources, decision services, hit policies and FEEL. The chapter should use this source for normative DMN terminology, while explaining the concepts in beginner language and using original examples.
 
 ## Terminology and version notes
 
