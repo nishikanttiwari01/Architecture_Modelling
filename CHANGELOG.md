@@ -4,6 +4,13 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-30
 
+### Approved Chapter 9 Decision Modelling and DMN
+
+- Recorded author approval for Chapter 9, **Decision Modelling and DMN**, with final quality score 9.1.
+- Confirmed `FIG-09-01` through `FIG-09-04` remain at `Review`, not `Approved`.
+- Recorded that final book-page layout review remains pending for Chapter 9 diagrams, particularly `FIG-09-03`.
+- Set Chapter 10, **Domain and Event Modelling**, as the current chapter.
+
 ### Corrected Chapter 9 final review findings
 
 - Corrected FEEL list literal examples to use square brackets and clarified the difference from decision-table unary-test alternatives.

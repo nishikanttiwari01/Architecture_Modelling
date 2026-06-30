@@ -4,7 +4,7 @@
 
 - **Chapter:** 9, Decision Modelling and DMN
 - **Manuscript:** `manuscript/part-02-modelling-languages/09-decision-modelling.md`
-- **Status:** Ready for Author Approval
+- **Status:** Approved
 - **Current gate:** Chapter 9 has complete prose, source notes, diagram specifications, PlantUML sources, SVG exports, PNG previews, glossary updates, register updates and repository checks.
 - **Final quality score:** 9.1
 - **Diagram status:** `FIG-09-01` through `FIG-09-04` remain `Review`, not `Approved`.
@@ -73,9 +73,9 @@ No category is below 8.5.
 
 ## Remaining risks
 
-- Final page-layout review remains pending for all Chapter 9 diagrams.
+- Final book-page layout review remains pending for all Chapter 9 diagrams, particularly `FIG-09-03`.
 - If executable or repository-grade DMN assets are needed later, create semantic `.dmn` files in a DMN-aware modeller and record tool version, DMN file version, warnings and FEEL parse results.
 
 ## Gate decision
 
-Chapter 9 is `Ready for Author Approval`. The final quality score is 9.1, no category is below 8.5, all required figures render, source versions are recorded, decision-table gaps and overlaps are checked, and repository checks pass. Chapter 9 diagrams remain at `Review`.
+Chapter 9 is `Approved` by the author. The final quality score is 9.1, no category is below 8.5, all required figures render, source versions are recorded, decision-table gaps and overlaps are checked, and repository checks pass. Chapter 9 diagrams remain at `Review`.

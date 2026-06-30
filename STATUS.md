@@ -27,8 +27,8 @@
 | 06 | BPMN: Business Process Model and Notation | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; diagrams remain Review |
 | 07 | ArchiMate | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; diagrams remain Review |
 | 08 | Data Modelling | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; six figures completed; final DFD notation correction verified; diagrams remain Review pending final page-layout review |
-| 09 | Decision Modelling and DMN | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Ready for author verification after final FEEL and diagram corrections; four Chapter 9 figures completed and remain Review |
-| 10 | Domain and Event Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
+| 09 | Decision Modelling and DMN | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; four figures completed; diagrams remain Review pending final book-page layout review, particularly FIG-09-03 |
+| 10 | Domain and Event Modelling | Planned | 0 | 0 | 0 | 0 | 0 | Current chapter; begin research |
 | 11 | Infrastructure and Deployment Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 12 | Security Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 13 | Other Useful Modelling Approaches | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -107,6 +107,6 @@
 
 ## Current recommended next task
 
-Chapter 9, **Decision Modelling and DMN**, is `Ready for Author Approval`. Do not begin Chapter 10 until the author instructs it. Chapters 6, 7 and 8 are `Approved`; all diagrams remain at `Review` until the final page-layout pass.
+Chapter 10, **Domain and Event Modelling**, is the current chapter. Chapter 9, **Decision Modelling and DMN**, is `Approved` by the author with final quality score 9.1. Chapters 6, 7, 8 and 9 are `Approved`; all diagrams remain at `Review` until the final page-layout pass, particularly `FIG-09-03`.
 
 Last updated: 2026-06-30

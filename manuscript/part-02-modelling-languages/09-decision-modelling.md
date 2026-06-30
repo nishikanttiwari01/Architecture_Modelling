@@ -2,7 +2,7 @@
 title: "Decision Modelling and DMN"
 chapter: 9
 part: "part-02-modelling-languages"
-status: "Ready for Author Approval"
+status: "Approved"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-30"
 ---
