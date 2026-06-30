@@ -4,6 +4,12 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-30
 
+### Began Chapter 9 Decision Modelling draft
+
+- Expanded Chapter 9, **Decision Modelling and DMN**, from scaffold to a first prose draft.
+- Rechecked official OMG DMN pages and kept DMN 1.5 as the formal standard source, with later beta material treated as informational.
+- Moved Chapter 9 status to `Drafting`; diagram specifications remain pending and no Chapter 9 diagram source was created.
+
 ### Approved Chapter 8 Data Modelling
 
 - Recorded author approval for Chapter 8, **Data Modelling**, with final quality score 9.1.

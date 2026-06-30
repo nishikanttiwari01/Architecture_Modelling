@@ -27,7 +27,7 @@
 | 06 | BPMN: Business Process Model and Notation | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; diagrams remain Review |
 | 07 | ArchiMate | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; diagrams remain Review |
 | 08 | Data Modelling | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; six figures completed; final DFD notation correction verified; diagrams remain Review pending final page-layout review |
-| 09 | Decision Modelling and DMN | Researching | 20 | 0 | 0 | 0 | 20 | Current official DMN source verified; continue Chapter 9 research, source notes and outline refinement before drafting |
+| 09 | Decision Modelling and DMN | Drafting | 40 | 70 | 0 | 0 | 40 | First prose draft created from current formal OMG DMN 1.5 source; prepare diagram specifications and broaden review sources before diagramming |
 | 10 | Domain and Event Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 11 | Infrastructure and Deployment Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 12 | Security Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -107,6 +107,6 @@
 
 ## Current recommended next task
 
-Continue Chapter 9, **Decision Modelling and DMN**, research using current official DMN sources before drafting. Chapters 6, 7 and 8 are `Approved`; all diagrams remain at `Review` until the final page-layout pass.
+Continue Chapter 9, **Decision Modelling and DMN**, from first draft. Prepare decision-table, decision-tree and DMN DRD diagram specifications before creating any diagram source. Chapters 6, 7 and 8 are `Approved`; all diagrams remain at `Review` until the final page-layout pass.
 
 Last updated: 2026-06-30

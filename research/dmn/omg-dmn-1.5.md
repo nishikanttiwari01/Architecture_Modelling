@@ -25,6 +25,8 @@ The OMG DMN 1.5 specification is the current formal source for Chapter 9. It sup
 
 OMG's DMN specification inventory currently also lists DMN 1.7 beta material. The beta page states that beta specifications are intended for information only and that the formal published version should be followed for compliance. Chapter 9 should therefore cite DMN 1.5 as the formal version and may mention the beta only as a version-awareness note if useful.
 
+Rechecked on 2026-06-30 against official OMG specification pages. The OMG DMN inventory page identifies DMN 1.7 beta material, while the DMN 1.5 page identifies the formal August 2024 release. Chapter 9 therefore continues to use DMN 1.5 as the formal source for normative terminology and notation.
+
 ## Copyright or reuse notes
 
 Do not reproduce OMG specification text, metamodels, tables or diagrams verbatim. Use paraphrased explanations and original teaching diagrams.
