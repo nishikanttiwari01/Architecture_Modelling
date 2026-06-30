@@ -4,6 +4,14 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-30
 
+### Approved Chapter 10 Domain and Event Modelling
+
+- Recorded author approval for Chapter 10, **Domain and Event Modelling**, with final quality score 9.1.
+- Corrected `FIG-10-04` so the Core Deposit System response is labelled `posting confirmed`, then rerendered the SVG and PNG outputs.
+- Updated the `PaymentPosted` event-catalogue entry with the approved business meaning and trigger.
+- Confirmed `FIG-10-01` through `FIG-10-04` remain at `Review`, not `Approved`.
+- Set Chapter 11, **Infrastructure and Deployment Modelling**, as the current chapter and moved it to `Researching`.
+
 ### Completed Chapter 10 Domain and Event Modelling draft
 
 - Expanded Chapter 10, **Domain and Event Modelling**, from scaffold to a complete prose draft.

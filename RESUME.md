@@ -12,9 +12,11 @@ Chapter 8, **Data Modelling**, is approved by the author. Final quality score: 9
 
 Chapter 9, **Decision Modelling and DMN**, is approved by the author. Final quality score: 9.1. It includes four completed figures, `FIG-09-01` through `FIG-09-04`, plus `CH-09-quality-gate.md`.
 
-Chapter 10, **Domain and Event Modelling**, is `Ready for Author Approval` with final quality score 9.1. It includes source-backed coverage of domain models, strategic DDD, tactical DDD, subdomain types, bounded contexts, context maps, aggregates, aggregate roots, repositories, domain services, domain events, EventStorming, runtime event guidance, Event Sourcing, CQRS, practical tooling and event catalogues. `FIG-10-01` through `FIG-10-04` have specifications, PlantUML sources, SVG exports and PNG previews. The Chapter 10 quality gate is `reviews/chapter-gates/CH-10-quality-gate.md`.
+Chapter 10, **Domain and Event Modelling**, is approved by the author with final quality score 9.1. It includes source-backed coverage of domain models, strategic DDD, tactical DDD, subdomain types, bounded contexts, context maps, aggregates, aggregate roots, repositories, domain services, domain events, EventStorming, runtime event guidance, Event Sourcing, CQRS, practical tooling and event catalogues. `FIG-10-01` through `FIG-10-04` have specifications, PlantUML sources, SVG exports and PNG previews. The Chapter 10 quality gate is `reviews/chapter-gates/CH-10-quality-gate.md`.
 
 All Chapter 6, Chapter 7, Chapter 8, Chapter 9 and Chapter 10 diagrams remain `Review`, not `Approved`. Final book-page layout review remains pending for diagrams, particularly `FIG-09-03` and the wider Chapter 10 event figures.
+
+Chapter 11, **Infrastructure and Deployment Modelling**, is now the current chapter and is `Researching`.
 
 ## Git reference
 
@@ -33,7 +35,8 @@ All Chapter 6, Chapter 7, Chapter 8, Chapter 9 and Chapter 10 diagrams remain `R
 - Chapter 7 status: `Approved`
 - Chapter 8 status: `Approved`
 - Chapter 9 status: `Approved`
-- Chapter 10 status: `Ready for Author Approval`
+- Chapter 10 status: `Approved`
+- Chapter 11 status: `Researching`
 - Diagram status for Chapter 1 figure `FIG-01-01`: `Review`
 - Diagram status for Chapter 2 figure `FIG-02-01`: `Review`
 - Diagram status for Chapter 3 figures `FIG-03-01` through `FIG-03-03`: `Review`
@@ -56,7 +59,7 @@ All Chapter 6, Chapter 7, Chapter 8, Chapter 9 and Chapter 10 diagrams remain `R
 
 ## Next chapter
 
-Chapter 10, **Domain and Event Modelling**, awaits author review. Do not begin Chapter 11 until the author has reviewed Chapter 10.
+Chapter 11, **Infrastructure and Deployment Modelling**, is the current chapter. Begin by collecting and verifying primary sources before drafting.
 
 Chapter 9 now includes four rendered figures, `FIG-09-01` through `FIG-09-04`, all at `Review`. The figures use PlantUML teaching sources rather than semantic `.dmn` XML, per `DEC-015`, because current Camunda documentation describes DMN 1.3 modelling and no local DMN modeller CLI validated DMN 1.5 semantic files in this environment.
 
@@ -64,4 +67,4 @@ Final author-review corrections are applied for FEEL list literals, `FIG-09-02` 
 
 ## Next exact action
 
-Author review of Chapter 10. After author approval or requested revisions, update `STATUS.md`, `CHANGELOG.md` and any affected chapter or diagram files.
+Begin Chapter 11 primary source research for infrastructure and deployment modelling. Do not draft Chapter 11 prose until the source notes and outline are ready.

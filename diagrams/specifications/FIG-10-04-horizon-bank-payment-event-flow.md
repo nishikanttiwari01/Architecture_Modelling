@@ -46,7 +46,7 @@ Event-flow architecture diagram using PlantUML sequence-style notation. Use visi
 - Financial Crime Platform publishes `PaymentScreeningCompleted` to Event Platform.
 - Payments Platform applies routing policy after screening.
 - Payments Platform sends `PostPayment` to Core Deposit System for allowed payments.
-- Core Deposit System returns a posting response to Payments Platform.
+- Core Deposit System returns posting confirmation to Payments Platform.
 - Payments Platform publishes `PaymentPosted`, `PaymentRepairRequested` or `PaymentRejected` to Event Platform.
 - Payments Platform sends `OpenFraudCase` to the fraud investigation responsibility when required.
 - The fraud investigation responsibility publishes `FraudCaseOpened` to Event Platform.

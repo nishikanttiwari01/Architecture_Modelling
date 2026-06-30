@@ -4,8 +4,8 @@
 
 - **Chapter:** 10, Domain and Event Modelling
 - **Manuscript:** `manuscript/part-02-modelling-languages/10-domain-event-modelling.md`
-- **Status:** Ready for Author Approval
-- **Current gate:** Chapter 10 has complete prose, source notes, registered source keys, corrected diagram specifications, PlantUML sources, SVG exports, PNG previews, glossary updates, register updates and repository checks.
+- **Status:** Approved
+- **Current gate:** Chapter 10 has complete prose, source notes, registered source keys, corrected diagram specifications, PlantUML sources, SVG exports, PNG previews, glossary updates, register updates, repository checks and author approval.
 - **Final quality score:** 9.1
 - **Diagram status:** `FIG-10-01` through `FIG-10-04` remain `Review`, not `Approved`.
 
@@ -43,7 +43,7 @@ No category is below 8.5.
 | Event-driven architecture versus Event Sourcing and CQRS | Pass | Chapter distinguishes the three techniques. |
 | CloudEvents correction present | Pass | Chapter states that `id`, `source`, `specversion` and `type` are required in CloudEvents 1.0.2 and `time` is optional. |
 | Tool guidance present | Pass | Chapter covers Context Mapper, Miro or physical boards, PlantUML, diagrams.net, AsyncAPI Studio, AsyncAPI CLI and EventCatalog. |
-| `PaymentPosted` event-catalogue entry present | Pass | Entry includes ownership, meaning, producer, consumers, version, CloudEvents type, classification, retention, replay, compatibility, correlation, causation, ordering and support owner. |
+| `PaymentPosted` event-catalogue entry present | Pass | Entry includes ownership, business meaning, trigger, producer, consumers, version, CloudEvents type, classification, retention, replay, compatibility, correlation, causation, ordering and support owner. |
 | Diagrams registered | Pass | `DIAGRAM_REGISTER.md` includes `FIG-10-01` through `FIG-10-04` at `Review`. |
 | Diagrams rendered | Pass | SVG and PNG outputs exist for all four Chapter 10 figures. |
 | Diagram visual review | Pass | PNG previews inspected for clipping, overlapping labels, causal direction, command/event distinction, ownership boundaries, colour dependence and page-width readability. |
@@ -56,7 +56,7 @@ No category is below 8.5.
 
 `FIG-10-03` uses commands, events and policy labels. `PaymentScreeningCompleted` is the screening event. The board is an original teaching synthesis, not BPMN or a copied workshop board.
 
-`FIG-10-04` uses sequence-style arrow labels to distinguish commands or synchronous requests, responses and published events. Events originate from owning producers, and the Event Platform distributes events without owning their meaning.
+`FIG-10-04` uses sequence-style arrow labels to distinguish commands or synchronous requests, responses and published events. The Core Deposit System response is labelled as posting confirmed. Events originate from owning producers, and the Event Platform distributes events without owning their meaning.
 
 ## Render and visual validation record
 
@@ -74,4 +74,4 @@ No category is below 8.5.
 
 ## Gate decision
 
-Chapter 10 is `Ready for Author Approval`. The final quality score is 9.1, no category is below 8.5, all four figures render to SVG and PNG, source versions are recorded, the requested review corrections are implemented and repository checks pass.
+Chapter 10 is `Approved` by the author. The final quality score is 9.1, no category is below 8.5, all four figures render to SVG and PNG, source versions are recorded, the requested review corrections are implemented and repository checks pass. `FIG-10-01` through `FIG-10-04` remain at `Review`.

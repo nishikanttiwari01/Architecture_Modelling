@@ -2,7 +2,7 @@
 title: "Domain and Event Modelling"
 chapter: 10
 part: "part-02-modelling-languages"
-status: "Ready for Author Approval"
+status: "Approved"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-30"
 ---
@@ -371,7 +371,8 @@ CloudEvents can help standardise envelope metadata. AsyncAPI can help document m
 |---|---|
 | Event name | `PaymentPosted` |
 | Ownership | Payments bounded context |
-| Business meaning | A payment instruction has been accepted for posting and the Core Deposit System has confirmed posting or accepted posting responsibility. |
+| Business meaning | The Core Deposit System has successfully posted the payment instruction and returned posting confirmation to the Payments Platform. |
+| Trigger | Successful posting confirmation received from the Core Deposit System. |
 | Producer | Payments Platform |
 | Consumers | Enterprise Data Platform, Operations payment status view, customer notification service where authorised |
 | Version | `1.0.0` |

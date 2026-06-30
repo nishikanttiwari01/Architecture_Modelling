@@ -34,7 +34,7 @@ EventPlatform -[#2E7D32]> StatusView : distribute event
 
 alt route = post
   Payments -> Core : [command]\nPostPayment
-  Core --> Payments : [response]\nposting accepted
+  Core --> Payments : [response]\nposting confirmed
   Payments -[#2E7D32]> EventPlatform : [published event]\nPaymentPosted
 else route = repair
   Payments -[#2E7D32]> EventPlatform : [published event]\nPaymentRepairRequested

@@ -2,9 +2,9 @@
 title: "Infrastructure and Deployment Modelling"
 chapter: 11
 part: "part-02-modelling-languages"
-status: "Planned"
+status: "Researching"
 author: "Nishikant Tiwari"
-last_updated: "2026-06-28"
+last_updated: "2026-06-30"
 ---
 
 # 11. Infrastructure and Deployment Modelling
