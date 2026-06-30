@@ -1,0 +1,33 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+top to bottom direction
+title FIG-08-06. Horizon Bank payment instruction data lifecycle
+
+skinparam linetype ortho
+skinparam nodesep 45
+skinparam ranksep 45
+
+rectangle "Captured\nSystem: Horizon Digital Channels\nAuthoritative input: customer submission" as Captured #EAF6E8
+rectangle "Validated\nSystem: Payments Platform\nAuthoritative status: validation result" as Validated #EAF6E8
+rectangle "Screened\nSystem: Financial Crime Platform\nAuthoritative input: screening result" as Screened #FFF4D6
+rectangle "Posted\nSystem: Core Deposit System\nAuthoritative input: posting result" as Posted #FFF4D6
+rectangle "Distributed\nSystem: Event Platform\nAuthoritative event: consolidated payment status" as Distributed #F1E8FA
+rectangle "Curated\nSystem: Enterprise Data Platform\nOwner: data product team" as Curated #F2F5F7
+rectangle "Retained\nOwner: records policy\nRetention and audit obligations" as Retained #FFFFFF
+rectangle "Archived or Disposed\nOwner: records policy\nArchive or defensible disposal" as Archived #FFFFFF
+
+Captured --> Validated
+Validated --> Screened
+Screened --> Posted
+Posted --> Distributed
+Distributed --> Curated
+Curated --> Retained
+Retained --> Archived
+
+note bottom
+  Data lifecycle view.
+  It shows state, responsible system or owner, and where authoritative status is established.
+  It excludes detailed repair workflow, payment scheme rules and physical archive design.
+end note
+@enduml

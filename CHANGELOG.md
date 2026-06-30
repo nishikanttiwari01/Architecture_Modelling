@@ -4,6 +4,14 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-30
 
+### Revised Chapter 8 data flow, lineage and lifecycle modelling
+
+- Corrected `FIG-08-04` to show explicit directional payment authorisation and shipment data flows.
+- Corrected `FIG-08-05` so screening result and posting result feed the consolidated payment status event and remain traceable to the Payment data product.
+- Clarified `FIG-08-03` as a relational order implementation model rather than a fully DBMS-specific physical model.
+- Added `FIG-08-06`, Horizon Bank payment instruction data lifecycle, with specification, PlantUML source, SVG export and PNG preview.
+- Updated Chapter 8 prose, captions, diagram register, glossary, status, resume state and quality gate.
+
 ### Completed Chapter 8 Data Modelling draft
 
 - Drafted Chapter 8, **Data Modelling**, using the Chapter 5 production pattern.

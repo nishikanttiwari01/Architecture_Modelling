@@ -1,8 +1,8 @@
-# FIG-08-03 Online Store physical order schema
+# FIG-08-03 Online Store relational order implementation model
 
 ## Purpose
 
-Show how a physical data model adds implementation choices.
+Show how a logical ERD can be translated into a relational implementation model.
 
 ## Audience
 
@@ -10,11 +10,11 @@ Architects, developers, database designers and reviewers.
 
 ## Question answered
 
-How might the order part of the logical model be implemented in a relational database while preserving business meaning?
+How might the placed-order part of the logical model be implemented relationally while preserving business meaning?
 
 ## Notation
 
-PlantUML class-style physical schema view.
+PlantUML class-style relational implementation view.
 
 ## Required elements
 
@@ -35,7 +35,7 @@ PlantUML class-style physical schema view.
 
 ## Main flow or structure
 
-Show table names, selected column names, primary keys, foreign keys and a small note about indexes or constraints.
+Show table names, selected column names, primary keys, foreign keys and a small note about implementation constraints.
 
 ## Alternative and exception flows
 
@@ -43,11 +43,11 @@ No behavioural exception flow is required. Optional payment and shipment rows sh
 
 ## Scope
 
-Simple Online Store relational implementation example for teaching physical modelling.
+Placed-order scope for the Simple Online Store. Basket is deliberately excluded because this view begins after an order has been placed.
 
 ## Exclusions
 
-No complete production schema, data migration design, security roles, partitioning strategy or vendor-specific syntax.
+No complete production schema, data migration design, security roles, partitioning strategy, storage parameters or PostgreSQL-specific syntax.
 
 ## Accessibility requirements
 
@@ -60,7 +60,7 @@ Use readable labels and avoid relying on colour. Keep the diagram compact enough
 
 ## Review criteria
 
-- Physical naming and columns are visibly different from the logical ERD.
+- Relational table naming and columns are visibly different from the logical ERD.
 - Keys and foreign keys are clear.
-- The diagram does not pretend to be a complete production schema.
+- The diagram does not pretend to be a complete DBMS-specific physical schema.
 - It has no clipped text or overlapping labels.

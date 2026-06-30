@@ -30,8 +30,10 @@ Informal data flow diagram in PlantUML.
 
 - Customer sends basket and delivery details to Capture order
 - Capture order writes order data
-- Authorise payment exchanges payment request and response with Payment Provider System
-- Create shipment request sends shipment request to Delivery Partner System
+- Authorise payment sends a payment authorisation request to Payment Provider System
+- Payment Provider System returns a payment authorisation result to Authorise payment
+- Create shipment request sends a shipment request to Delivery Partner System
+- Delivery Partner System returns shipment confirmation and tracking data to Create shipment request
 
 ## Main flow or structure
 
@@ -39,7 +41,7 @@ Show movement and transformation of data. Distinguish processes, external entiti
 
 ## Alternative and exception flows
 
-Show payment declined as a labelled data response, but do not model the full exception process.
+Show payment declined as a possible payment authorisation result, but do not model the full exception process.
 
 ## Scope
 

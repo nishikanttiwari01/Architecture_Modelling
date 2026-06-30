@@ -8,13 +8,13 @@ The Chapter 7 revision added the ArchiMate 4 source note, preserved the ArchiMat
 
 Chapter 7 PlantUML source files, SVG exports and PNG review previews exist for `FIG-07-01` through `FIG-07-06`. `FIG-07-01`, `FIG-07-02`, `FIG-07-05` and `FIG-07-06` were rerendered after diagram-polish changes.
 
-Chapter 8, **Data Modelling**, is fully drafted and `Under Review`. It includes five figures, `FIG-08-01` through `FIG-08-05`, plus `CH-08-quality-gate.md`.
+Chapter 8, **Data Modelling**, is fully drafted and ready for author review after revision. It includes six figures, `FIG-08-01` through `FIG-08-06`, plus `CH-08-quality-gate.md`.
 
 All Chapter 6 and Chapter 7 diagrams remain `Review`, not `Approved`.
 
 ## Current Git commit
 
-- Latest pushed content commit before this RESUME-only alignment: `b0c0998`
+- Latest pushed commit before this Chapter 8 revision: `540a738`
 - Branch: `main`
 - Remote: `origin/main`
 
@@ -27,7 +27,7 @@ All Chapter 6 and Chapter 7 diagrams remain `Review`, not `Approved`.
 - Chapter 5 status: `Approved`
 - Chapter 6 status: `Approved`
 - Chapter 7 status: `Approved`
-- Chapter 8 status: `Under Review`
+- Chapter 8 status: `Ready for Author Approval`
 - Diagram status for Chapter 1 figure `FIG-01-01`: `Review`
 - Diagram status for Chapter 2 figure `FIG-02-01`: `Review`
 - Diagram status for Chapter 3 figures `FIG-03-01` through `FIG-03-03`: `Review`
@@ -35,12 +35,12 @@ All Chapter 6 and Chapter 7 diagrams remain `Review`, not `Approved`.
 - Diagram status for Chapter 5 figures `FIG-05-01` through `FIG-05-08`: `Review`
 - Diagram status for Chapter 6 figures `FIG-06-01` through `FIG-06-03`: `Review`
 - Diagram status for Chapter 7 figures `FIG-07-01` through `FIG-07-06`: `Review`
-- Diagram status for Chapter 8 figures `FIG-08-01` through `FIG-08-05`: `Review`
+- Diagram status for Chapter 8 figures `FIG-08-01` through `FIG-08-06`: `Review`
 
 ## Pending non-critical issues
 
 - Chapter 1 awaits author review.
-- Chapter 8 awaits author review of the manuscript, five figures and quality gate.
+- Chapter 8 awaits author review of the manuscript, six figures and quality gate.
 - Chapter 1 through Chapter 8 diagrams remain `Review`; no diagram is marked `Approved`.
 - The full ArchiMate 4 specification should be reviewed by a licensed human reviewer under the applicable Open Group licence before final publication source scoring is raised.
 - The Chapter 4 sequence, component and deployment diagrams are wider than the simpler figures and should be checked again during final page-layout production.
@@ -49,8 +49,8 @@ All Chapter 6 and Chapter 7 diagrams remain `Review`, not `Approved`.
 
 ## Next chapter
 
-Chapter 8 is already drafted and under review.
+Chapter 9 is the next chapter only after Chapter 8 is approved.
 
 ## Next exact action
 
-Review Chapter 8 manuscript, five figures and CH-08-quality-gate.md.
+Review Chapter 8 manuscript, six figures and CH-08-quality-gate.md.

@@ -26,7 +26,7 @@
 | 05 | The C4 Model | Approved | 100 | 100 | 100 | 100 | 100 | Prototype reference |
 | 06 | BPMN: Business Process Model and Notation | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; diagrams remain Review |
 | 07 | ArchiMate | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; diagrams remain Review |
-| 08 | Data Modelling | Under Review | 100 | 100 | 100 | 95 | 100 | Review Chapter 8 draft and five rendered data modelling figures; diagrams remain Review |
+| 08 | Data Modelling | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review of revised Chapter 8 manuscript, six rendered figures and CH-08-quality-gate.md; diagrams remain Review |
 | 09 | Decision Modelling and DMN | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 10 | Domain and Event Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 11 | Infrastructure and Deployment Modelling | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -107,6 +107,6 @@
 
 ## Current recommended next task
 
-Review Chapter 8 Data Modelling draft and the five rendered Chapter 8 teaching figures. Chapters 6 and 7 are `Approved`; all diagrams remain at `Review` until the final page-layout pass.
+Author review of the revised Chapter 8 manuscript, six rendered Chapter 8 figures and `CH-08-quality-gate.md`. Chapter 9 begins only after Chapter 8 is approved. Chapters 6 and 7 are `Approved`; all diagrams remain at `Review` until the final page-layout pass.
 
 Last updated: 2026-06-30

@@ -76,6 +76,8 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Optionality | A rule that describes whether a relationship must exist. | Important for lifecycle timing, incomplete data and exception cases. |
 | Data flow diagram (DFD) | A diagram that shows data movement and transformation between external entities, processes and data stores. | Do not use as a database schema or BPMN process model. |
 | Data lineage | Traceability of data from origin through movement and transformation to use. | Distinguish from a general data-flow diagram. |
+| Data lifecycle | The sequence of states and governance responsibilities data passes through from capture to retention, archive or disposal. | Use for ownership, authoritative status, retention and disposal concerns, not detailed process sequence. |
+| Authoritative status | The status value treated as the trusted source for a particular purpose at a particular point in the lifecycle. | State which system or owner establishes it; do not assume one system is authoritative for every status. |
 | Canonical data model | A shared model that defines common meaning for data exchanged or interpreted across several systems or domains. | Useful for shared meaning, but it should not become too broad to change. |
 | Local data model | A model used within one application, system or bounded area for its internal responsibilities. | Keep mapped to shared terms where cross-system meaning matters. |
 | Semantic repository tool | A modelling tool that stores reusable model concepts and relationships rather than only drawing shapes. | Useful when governance, reuse, reporting and impact analysis matter. |

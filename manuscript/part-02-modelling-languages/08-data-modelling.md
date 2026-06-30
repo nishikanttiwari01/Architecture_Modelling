@@ -2,7 +2,7 @@
 title: "Data Modelling"
 chapter: 8
 part: "part-02-modelling-languages"
-status: "Under Review"
+status: "Ready for Author Approval"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-30"
 ---
@@ -33,9 +33,10 @@ By the end of this chapter, the reader should be able to:
 
 - FIG-08-01: Online Store conceptual data model, specification created, source created and rendered for review.
 - FIG-08-02: Online Store logical ERD, specification created, source created and rendered for review.
-- FIG-08-03: Online Store physical order schema, specification created, source created and rendered for review.
+- FIG-08-03: Online Store relational order implementation model, specification created, source created and rendered for review.
 - FIG-08-04: Online Store order data flow, specification created, source created and rendered for review.
 - FIG-08-05: Horizon Bank payment data lineage, specification created, source created and rendered for review.
+- FIG-08-06: Horizon Bank payment instruction data lifecycle, specification created, source created and rendered for review.
 
 ## Worked examples
 
@@ -87,6 +88,8 @@ The classic entity-relationship approach introduced the idea of modelling entiti
 
 Figure FIG-08-01. Online Store conceptual data model. The model names the business information concepts and relationships, but it deliberately avoids database tables, keys, data types and process sequence.
 
+Basket appears here because a conceptual model can show the wider business vocabulary around ordering. The later logical and relational examples deliberately narrow their scope to placed orders, so Basket is left out once the order has been placed.
+
 In Horizon Bank, a conceptual model might include Party, Customer, Account, Payment Instruction, Product, Agreement and Screening Case. That is not yet a schema. It is a shared conversation about meaning.
 
 ## Logical data model
@@ -103,6 +106,8 @@ Logical models are useful when analysts, architects and developers need a shared
 
 Figure FIG-08-02. Online Store logical ERD. The diagram adds selected attributes, keys, cardinality and optionality. It is more precise than the conceptual model but still avoids physical database choices.
 
+The Online Store logical ERD starts after an order has been placed. It therefore focuses on Order, Order Line, Product, Payment and Shipment rather than Basket. A separate basket model could be useful for shopping-session behaviour, but it would answer a different question.
+
 For Horizon Bank, a logical model may show that a Party can play several roles, such as Retail Customer, Corporate Customer or Beneficial Owner. It may show that an Account is held under an Agreement and that a Payment Instruction has debtor, creditor, amount, currency, status and requested execution date. That model helps prevent each application from inventing a different local meaning for the same banking facts.
 
 ## Physical data model
@@ -113,9 +118,11 @@ It adds choices that matter to implementation: table or collection names, column
 
 The relational model is important because it separated a logical view of data from physical storage dependence [CODD-RELATIONAL-1970]. A beginner does not need to learn relational theory in depth to benefit from the lesson. The lesson is this: do not treat every business concept as if it is already a table, and do not treat every table as if it explains the full business meaning.
 
-![FIG-08-03. Online Store physical order schema](../../diagrams/exported/svg/FIG-08-03-online-store-physical-order-schema.svg)
+![FIG-08-03. Online Store relational order implementation model](../../diagrams/exported/svg/FIG-08-03-online-store-physical-order-schema.svg)
 
-Figure FIG-08-03. Online Store physical order schema. The view adds physical table names, columns, data types, primary keys, foreign keys and constraints. It is a teaching schema, not a complete production database design.
+Figure FIG-08-03. Online Store relational order implementation model. The view adds table names, columns, generic data types, primary keys, foreign keys and constraints for placed orders. It is not yet a fully database-management-system-specific physical model.
+
+The figure uses relational implementation detail, but it deliberately avoids PostgreSQL-specific storage parameters, partitioning syntax, indexing strategy and operational tuning. Basket is excluded for the same reason it is excluded from the logical ERD: this example has narrowed to placed orders.
 
 Physical models are useful for database design, performance review, security review and implementation planning. They are less useful for early business alignment because the implementation detail can distract from the meaning. Use them when the reader needs to make or review implementation decisions.
 
@@ -161,9 +168,9 @@ A DFD is different from an ERD. An ERD shows the structure of data. A DFD shows 
 
 ![FIG-08-04. Online Store order data flow](../../diagrams/exported/svg/FIG-08-04-online-store-order-data-flow.svg)
 
-Figure FIG-08-04. Online Store order data flow. The diagram shows data movement between the Customer, Online Store processes, Order data store and external systems. It is not a database schema, BPMN process or deployment view.
+Figure FIG-08-04. Online Store order data flow. The diagram shows directional data movement between the Customer, Online Store processes, Order data store and external systems. Payment authorisation request and result are separate flows, and shipment request and confirmation are separate flows. It is not a database schema, BPMN process or deployment view.
 
-DFDs are useful when integration and responsibility are unclear. If payment details move from the Online Store to the Payment Provider System, the data flow label should say what moves. If shipment data moves to the Delivery Partner System, the diagram should not hide the hand-off behind a generic arrow called "calls".
+DFDs are useful when integration and responsibility are unclear. If payment details move from the Online Store to the Payment Provider System, the data flow label should say whether the data is a payment authorisation request or an authorisation result. If shipment data moves to or from the Delivery Partner System, the diagram should distinguish the shipment request from shipment confirmation and tracking data.
 
 Use DFDs for data movement and transformation. Do not use them to define database tables. Do not use them to replace BPMN when the real question is business process sequence, waiting, exceptions and ownership.
 
@@ -177,9 +184,9 @@ The W3C PROV data model is a useful formal source for provenance concepts. It de
 
 ![FIG-08-05. Horizon Bank payment data lineage](../../diagrams/exported/svg/FIG-08-05-horizon-bank-payment-lineage.svg)
 
-Figure FIG-08-05. Horizon Bank payment data lineage. The view follows payment information from digital capture through screening, posting, event distribution and curated data consumption. It does not replace the BPMN payment repair process or a warehouse schema.
+Figure FIG-08-05. Horizon Bank payment data lineage. The view follows payment information from digital capture through screening, posting, consolidation, event distribution and curated data consumption. Screening result and posting result become explicit inputs to the consolidated payment status event. It does not replace the BPMN payment repair process or a warehouse schema.
 
-For Horizon Bank, lineage matters because payment data may feed customer notifications, financial crime monitoring, operational dashboards, regulatory reporting and reconciliation. If the same payment has different statuses in different systems, lineage helps the team find which system is authoritative for each status and how updates travel.
+For Horizon Bank, lineage matters because payment data may feed customer notifications, financial crime monitoring, operational dashboards, regulatory reporting and reconciliation. If the same payment has different statuses in different systems, lineage helps the team find which system is authoritative for each status and how updates travel. In this example, the final Payment data product can be traced back to the original payment instruction, the screening result, the posting result and the consolidated payment status event.
 
 ## Data lifecycle
 
@@ -196,6 +203,11 @@ For a payment instruction, the lifecycle might include:
 5. Published through the Event Platform.
 6. Curated in the Enterprise Data Platform.
 7. Retained according to policy.
+8. Archived or disposed according to policy.
+
+![FIG-08-06. Horizon Bank payment instruction data lifecycle](../../diagrams/exported/svg/FIG-08-06-horizon-bank-payment-instruction-data-lifecycle.svg)
+
+Figure FIG-08-06. Horizon Bank payment instruction data lifecycle. The view shows lifecycle states, responsible systems or owners, and where authoritative status is established. It excludes detailed payment repair workflow, payment scheme rules and physical archive design.
 
 Lifecycle modelling is useful for ownership, retention, privacy, audit and operational support. It should answer practical questions: who may update the data, which system is authoritative at each state, which controls apply and when may the data be archived or deleted?
 
@@ -252,7 +264,7 @@ The seventh mistake is ignoring ownership. Data that nobody owns becomes difficu
 | Physical model | How is data implemented? | Tables, columns, types, constraints and indexes | Do not mistake implementation for business meaning |
 | DFD | Where does data move and transform? | External entities, processes, stores and flows | Do not use it as an ERD or BPMN model |
 | Lineage view | Where did data originate and where is it used? | Source, transformation, responsible system and consumer | Do not stop at a source-to-report arrow |
-| Lifecycle view | What states and governance apply over time? | Create, validate, use, update, retain and dispose | Do not model every process step |
+| Lifecycle view | What states and governance apply over time? | Capture, validate, screen, post, distribute, curate, retain and archive or dispose | Do not model every process step |
 | Canonical model | What shared meaning should be reused? | Enterprise terms and shared message concepts | Do not make it too broad to change |
 | Local model | What structure fits one application or bounded area? | System-specific entities and constraints | Do not let local meanings drift unmanaged |
 
