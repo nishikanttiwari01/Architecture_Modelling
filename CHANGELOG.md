@@ -11,6 +11,12 @@ All notable repository and manuscript changes are recorded here. This is a proje
 - Confirmed the final DFD notation correction for `FIG-08-04` is verified.
 - Set Chapter 9, **Decision Modelling and DMN**, as the current next chapter.
 
+### Began Chapter 9 Decision Modelling research
+
+- Verified the current formal OMG DMN source as DMN 1.5 before drafting.
+- Added the `[OMG-DMN-1.5]` source note and source-register entry.
+- Moved Chapter 9 to `Researching`.
+
 ### Corrected Chapter 8 DFD notation
 
 - Updated `FIG-08-04` so payment authorisation and shipment data are shown as labelled directional arrows, not separate data-flow boxes.

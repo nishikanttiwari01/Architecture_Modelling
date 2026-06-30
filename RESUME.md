@@ -28,7 +28,7 @@ All Chapter 6, Chapter 7 and Chapter 8 diagrams remain `Review`, not `Approved`.
 - Chapter 6 status: `Approved`
 - Chapter 7 status: `Approved`
 - Chapter 8 status: `Approved`
-- Chapter 9 status: `Planned`
+- Chapter 9 status: `Researching`
 - Diagram status for Chapter 1 figure `FIG-01-01`: `Review`
 - Diagram status for Chapter 2 figure `FIG-02-01`: `Review`
 - Diagram status for Chapter 3 figures `FIG-03-01` through `FIG-03-03`: `Review`
@@ -49,8 +49,8 @@ All Chapter 6, Chapter 7 and Chapter 8 diagrams remain `Review`, not `Approved`.
 
 ## Next chapter
 
-Chapter 9, **Decision Modelling and DMN**, is the current next chapter.
+Chapter 9, **Decision Modelling and DMN**, is the current chapter. Current formal DMN source has been verified as OMG DMN 1.5, with DMN 1.7 beta noted as informational rather than the formal compliance baseline.
 
 ## Next exact action
 
-Begin Chapter 9 research using current official DMN sources before drafting.
+Continue Chapter 9 research, source notes and outline refinement before drafting.

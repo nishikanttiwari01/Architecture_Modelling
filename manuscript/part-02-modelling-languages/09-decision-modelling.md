@@ -2,9 +2,9 @@
 title: "Decision Modelling and DMN"
 chapter: 9
 part: "part-02-modelling-languages"
-status: "Planned"
+status: "Researching"
 author: "Nishikant Tiwari"
-last_updated: "2026-06-28"
+last_updated: "2026-06-30"
 ---
 
 # 9. Decision Modelling and DMN
@@ -41,10 +41,10 @@ By the end of this chapter, the reader should be able to:
 
 ## Source requirements
 
-- Identify official or primary sources for normative terminology.
-- Record framework or standard versions where relevant.
-- Create source notes under the matching `research/` directory.
-- Distinguish official definitions from the author’s practical recommendations.
+- `[OMG-DMN-1.5]` is the current formal Object Management Group source for Decision Model and Notation (DMN) terminology and notation.
+- OMG currently lists later beta material, but beta material is informational and not the formal compliance baseline for this chapter.
+- Chapter guidance must distinguish official DMN terminology from the author's practical beginner recommendations.
+- Diagrams and examples must be original teaching material and must not reproduce OMG specification diagrams.
 
 ## Planned chapter structure
 

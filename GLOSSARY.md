@@ -80,6 +80,9 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Authoritative status | The status value treated as the trusted source for a particular purpose at a particular point in the lifecycle. | State which system or owner establishes it; do not assume one system is authoritative for every status. |
 | Canonical data model | A shared model that defines common meaning for data exchanged or interpreted across several systems or domains. | Useful for shared meaning, but it should not become too broad to change. |
 | Local data model | A model used within one application, system or bounded area for its internal responsibilities. | Keep mapped to shared terms where cross-system meaning matters. |
+| Decision Model and Notation (DMN) | An Object Management Group standard for modelling repeatable business decisions, decision requirements and decision logic. | Use the current formal OMG DMN source for normative terminology; distinguish decision logic from process flow. |
+| Decision table | A tabular decision model that maps input conditions to outputs according to stated rules and a hit policy. | Useful for explainable rules; do not hide complex process sequence inside it. |
+| Decision Requirements Diagram (DRD) | A DMN diagram that shows decisions, input data, knowledge sources and business knowledge models and how they depend on each other. | Use for decision dependencies, not for BPMN task sequence. |
 | Semantic repository tool | A modelling tool that stores reusable model concepts and relationships rather than only drawing shapes. | Useful when governance, reuse, reporting and impact analysis matter. |
 | Diagrams as code | A diagramming approach where editable diagram source is stored as text and rendered into publication formats. | Good for reproducibility and version control; not automatically a governed model repository. |
 
