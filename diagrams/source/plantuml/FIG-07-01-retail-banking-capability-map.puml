@@ -23,7 +23,6 @@ package "Retail Banking\n<<Capability>>\n\nNesting shows composition\nfrom paren
 rectangle "Consolidate\ncustomer identity\n<<Course of Action>>" as course #F7E8D0
 rectangle "Reduced duplicate\ncustomer capture\n<<Outcome>>" as outcome #EAF6E8
 
-fincrime -right-> customer : serving
 course -right-> outcome : influence
 
 legend right
@@ -31,6 +30,6 @@ legend right
   Tan = Course of Action
   Green = Outcome
   Nesting = composition from Retail Banking to child capabilities.
-  Arrows are labelled with relationship type.
+  Arrow is labelled with relationship type.
 endlegend
 @enduml

@@ -29,7 +29,7 @@ Relationship types and directions:
 
 - Composition from Retail Banking capability to each child capability.
 - Influence from Consolidate customer identity course of action to Reduced duplicate customer capture outcome, if those optional elements are included.
-- Serving may be used only if Financial Crime Management is explicitly shown as providing support to another capability. If used, direction must run from Financial Crime Management to the served capability.
+- Do not use Serving between Financial Crime Management and Customer Management unless a later licensed ArchiMate 4 relationship review confirms that relationship for this example.
 
 ## Reusable model concepts
 
@@ -75,5 +75,6 @@ The author authorised source creation from the corrected specification on 2026-0
 - Capabilities read as abilities, not activities.
 - The map does not imply detailed process sequence.
 - Relationship meaning is clear from labels, legend and caption.
+- No unverified Serving relationship is shown between capabilities.
 - All included element types are valid for ArchiMate 4.
 - Terminology matches `GLOSSARY.md` and Chapter 7.

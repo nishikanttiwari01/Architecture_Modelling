@@ -65,7 +65,7 @@ Use ArchiMate 4 notation. The diagram may use horizontal bands labelled Strategy
 
 ## Main flow or structure
 
-Arrange the view in horizontal bands: strategy at the top, business below it, application in the middle and technology at the bottom. Keep the application realisation chain visually traceable and keep relationship crossings low.
+Split the view into two labelled panels: business-to-application traceability and application-to-technology traceability. Use full relationship labels on arrows. If a concept is repeated across panels, label it as reused and explain that it is the same model concept.
 
 ## Alternative and exception flows
 
@@ -98,4 +98,5 @@ The author authorised source creation from the corrected specification on 2026-0
 - The application realisation chain is explicit.
 - Relationship directions match Chapter 7 prose.
 - Application component names match the Horizon Bank example files.
+- Full relationship labels are readable at book-page width.
 - The figure does not become a mixed BPMN process or C4 deployment diagram.

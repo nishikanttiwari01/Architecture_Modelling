@@ -36,6 +36,7 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Sequence flow | A BPMN arrow showing the order of work inside one process. | Do not draw it across pool boundaries. |
 | Message flow | A BPMN arrow showing communication between separate BPMN participants. | Use across pools, not for internal task order. |
 | Gateway | A BPMN decision, merge, split or synchronisation point. | Label outgoing conditions when a branch is not self-evident. |
+| Semantic BPMN modeller | A BPMN-aware tool that stores process elements and relationships as BPMN model content, often in BPMN XML. | Prefer for interoperable BPMN source, validation and execution-oriented semantics. |
 | Business service | An externally visible unit of business behaviour that provides value. | Clarify the consumer. |
 | Application service | Behaviour exposed by an application to support users or other applications. | Distinguish from an application component. |
 | Application component | A modular, replaceable and encapsulated part of an application architecture. | ArchiMate and UML use related but not identical concepts. |
@@ -66,6 +67,8 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Architecture Decision Record (ADR) | A concise record of an important architecture decision, context and consequences. | Use stable identifiers and retain superseded records. |
 | Trust boundary | A boundary across which the level or basis of trust changes. | Make it explicit in security diagrams. |
 | Data lineage | Traceability of data from origin through movement and transformation to use. | Distinguish from a general data-flow diagram. |
+| Semantic repository tool | A modelling tool that stores reusable model concepts and relationships rather than only drawing shapes. | Useful when governance, reuse, reporting and impact analysis matter. |
+| Diagrams as code | A diagramming approach where editable diagram source is stored as text and rendered into publication formats. | Good for reproducibility and version control; not automatically a governed model repository. |
 
 ## Terms requiring future decision
 

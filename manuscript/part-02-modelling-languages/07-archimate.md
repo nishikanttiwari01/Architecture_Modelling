@@ -4,7 +4,7 @@ chapter: 7
 part: "part-02-modelling-languages"
 status: "Under Review"
 author: "Nishikant Tiwari"
-last_updated: "2026-06-29"
+last_updated: "2026-06-30"
 ---
 
 # 7. ArchiMate
@@ -46,8 +46,9 @@ By the end of this chapter, the reader should be able to:
 
 - `[OPEN-GROUP-ARCHIMATE-4]` supports the current ArchiMate 4 version, terminology and public release changes.
 - `[OPEN-GROUP-ARCHIMATE-3.2]` remains a historical source note only and is not the current normative source for this chapter.
+- `[ARCHIMATE-TOOL-GUIDANCE-2026]` supports practical ArchiMate modelling tool guidance.
 - Chapter guidance is the author's practical interpretation for beginner architecture work.
-- Diagrams are planned as original teaching examples and must not reproduce The Open Group specification diagrams.
+- Diagrams are original teaching examples and must not reproduce The Open Group specification diagrams.
 
 ## What ArchiMate is
 
@@ -70,6 +71,42 @@ A practical way to remember the distinction is this: TOGAF helps structure the w
 An organisation can use ArchiMate without adopting the full TOGAF method. It can also use TOGAF and choose other notations for some work products. The two are compatible, but one does not force the other.
 
 For beginners, the important point is to choose ArchiMate because it answers a question. Do not draw ArchiMate symbols only because a governance template asks for an enterprise architecture model. A useful ArchiMate view still needs a title, purpose, audience, scope, legend and clear exclusions.
+
+## How to create ArchiMate models in practice
+
+ArchiMate work can be created in semantic repository tools, general drawing tools or diagrams-as-code tools. These categories are not interchangeable.
+
+A **semantic repository tool** stores model concepts and relationships as reusable objects. The same Customer Onboarding capability or Party and Customer Platform can appear in several views without becoming unrelated copies. This matters when the organisation needs governance, impact analysis, viewpoint management, collaboration, reporting or integration with wider architecture repositories.
+
+A **general drawing tool** is useful for quick communication and publication illustrations. It may let the modeller draw ArchiMate-like boxes and arrows, but it does not necessarily maintain a governed model repository or enforce current ArchiMate relationship rules.
+
+A **diagrams-as-code tool** stores diagram source in text. This is useful for reproducibility, version control and review. It is not the same as a governed ArchiMate repository unless the tool also maintains semantic model objects and repository rules.
+
+Free or low-cost options include:
+
+| Tool | Practical use | Caution |
+|---|---|---|
+| Archi | Independent open-source desktop ArchiMate modelling tool. It is not owned by The Open Group. Archi 5.9 currently supports ArchiMate 3.2, not ArchiMate 4 [ARCHIMATE-TOOL-GUIDANCE-2026]. | Good for learning and lightweight repositories, but do not present its current notation support as ArchiMate 4. |
+| ADOIT Community Edition | Free entry point into BOC Group's ADOIT modelling environment. | Check edition limits before using it as a team repository. |
+| Visual Paradigm Online Free | Browser-based diagramming and modelling entry point. | Useful for simple diagrams; confirm export, repository and notation needs before relying on it for governance. |
+| diagrams.net | General drawing tool for fast illustrations and informal views. | Does not replace a semantic ArchiMate repository. |
+| PlantUML | Text-based reproducible diagram source. | Useful for teaching views and version control, but not a full governed ArchiMate repository. |
+
+Paid enterprise options include:
+
+| Tool | Practical use | Caution |
+|---|---|---|
+| Visual Paradigm Enterprise | Broad modelling suite covering enterprise, software and process views. | Choose conventions carefully so ArchiMate, UML, BPMN and other views do not blur together. |
+| Bizzdesign Horizzon | Enterprise architecture management and repository platform. | Most useful when repository governance, collaboration and analysis justify the platform. |
+| Sparx Enterprise Architect | Broad modelling repository used for many architecture and software modelling notations. | Breadth can create inconsistency unless modelling profiles and repository rules are governed. |
+| Avolution ABACUS | Enterprise architecture and analysis platform. | Best suited to organisations needing portfolio analysis and governed architecture data. |
+| ADOIT | Enterprise architecture suite from BOC Group. | More than a drawing tool; evaluate repository, reporting and collaboration needs. |
+| OrbusInfinity | Enterprise architecture platform focused on architecture management and transformation. | Tool value depends on repository adoption and integration with governance processes. |
+| MEGA HOPEX | Enterprise architecture and governance platform. | Suited to larger repository and governance needs, not a quick one-off drawing task. |
+
+Do not claim ArchiMate 4 certification for any tool unless the tool's current official product information or The Open Group certification register confirms it. Tool certification and notation support can change, so final publication review should recheck current records.
+
+The PlantUML figures in this book are reproducible teaching views. They help the reader see the relationships, and they allow the repository to regenerate SVG and PNG outputs. They are not a governed ArchiMate repository. A real enterprise architecture practice still needs modelling conventions, concept reuse rules, repository ownership and review discipline.
 
 ## Models, views and reuse
 
@@ -212,7 +249,7 @@ FIG-07-02 pulls strategy, business, application and technology concepts into one
 
 ![FIG-07-02. Horizon Bank layered architecture view](../../diagrams/exported/svg/FIG-07-02-horizon-bank-layered-architecture-view.svg)
 
-Figure FIG-07-02. Horizon Bank layered architecture view. The view uses a compact legend for relationship types and shows domain labels on each element so the reader can trace the concern across strategy, business, application and technology domains.
+Figure FIG-07-02. Horizon Bank layered architecture view. The view splits business-to-application and application-to-technology traceability into two panels, uses full relationship labels and marks the repeated Party and Customer Platform as the same reused model concept.
 
 FIG-07-04 then focuses only on the technology support. Runtime Hosting Function, Database Management Function, Messaging Function and API Gateway Function are Functions in the Technology domain. The managed database capability is shown as a Service in the Technology domain unless the model needs to expose the node and system software that provide it.
 
@@ -244,7 +281,7 @@ Avoid vague goal labels. A goal such as "be digital" is too vague. A goal such a
 
 ![FIG-07-05. Horizon Bank motivation view](../../diagrams/exported/svg/FIG-07-05-horizon-bank-motivation-view.svg)
 
-Figure FIG-07-05. Horizon Bank motivation view. The view uses Influence from Requirements to Goals rather than Realisation, so it shows how requirements shape goals without claiming that a requirement fulfils a goal as an implementation result.
+Figure FIG-07-05. Horizon Bank motivation view. The view separates the trusted customer data thread from the faster reusable onboarding thread. Requirements influence goals; Realisation is deliberately not used between requirements and goals.
 
 ## Implementation and migration elements
 
@@ -260,7 +297,7 @@ This view helps keep transformation realistic. It shows that enterprise architec
 
 ![FIG-07-06. Horizon Bank implementation and migration view](../../diagrams/exported/svg/FIG-07-06-horizon-bank-implementation-migration-view.svg)
 
-Figure FIG-07-06. Horizon Bank implementation and migration view. Plateaus are ordered by layout, not by Triggering relationships. Events, Work Packages, Deliverables and labelled associations explain movement from Current State to Transition State and Target State.
+Figure FIG-07-06. Horizon Bank implementation and migration view. Plateaus are ordered by layout, not by Triggering relationships. The event, work packages, deliverables and direct relationship labels explain movement from Current State to Transition State and Target State.
 
 ## Core relationships
 
@@ -308,11 +345,11 @@ ArchiMate and C4 can both show systems and relationships, but they serve differe
 
 C4 is strongest for software architecture communication. It helps teams explain a software system, its containers, components, dynamic interactions and deployment. It is compact and familiar to developers.
 
-ArchiMate is stronger when the view must connect strategy, business services, application services, technology services, motivation and migration. It supports enterprise architecture traceability across domains.
+ArchiMate is stronger when the view must connect strategy, Services in the Business domain, Services in the Application domain, Services in the Technology domain, motivation and migration. It supports enterprise architecture traceability across domains.
 
 For the Simple Online Store, a C4 container view is usually the better first diagram when the team wants to understand the web application, API, database and external payment provider. ArchiMate becomes useful when the store is part of a wider enterprise transformation involving capabilities, operating model, applications, fulfilment facilities and migration states.
 
-For Horizon Bank, both may be needed. ArchiMate can show how Customer Onboarding capability, business services, application services and platforms fit into the target enterprise architecture. C4 can then zoom into the Customer Onboarding Platform and explain its containers and components.
+For Horizon Bank, both may be needed. ArchiMate can show how Customer Onboarding capability, Services in the Business domain, Services in the Application domain and platforms fit into the target enterprise architecture. C4 can then zoom into the Customer Onboarding Platform and explain its containers and components.
 
 ## ArchiMate versus BPMN
 
@@ -402,3 +439,4 @@ Chapter source notes are maintained in the repository under `research/archimate/
 
 - `[OPEN-GROUP-ARCHIMATE-4]`: The Open Group ArchiMate 4 Specification, current normative source.
 - `[OPEN-GROUP-ARCHIMATE-3.2]`: The Open Group ArchiMate 3.2 Specification, retained as a historical source note.
+- `[ARCHIMATE-TOOL-GUIDANCE-2026]`: Official ArchiMate tool source note for practical repository, drawing-tool and diagrams-as-code guidance.

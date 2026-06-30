@@ -20,7 +20,7 @@ ArchiMate 4 elements:
 
 - Plateaus: Current State, Transition State, Target State
 - Work packages: Introduce Customer Onboarding Platform, Introduce Party and Customer Platform, Integrate retained Core Deposit System
-- Deliverables: Reusable onboarding service, Customer profile service, Core system adapter
+- Deliverables: Reusable onboarding service, Customer profile service, Retained core integration
 - Outcome: Reduced duplicate customer capture
 - Event: Transition release completed
 - Application components: Customer Onboarding Platform, Party and Customer Platform, Core Deposit System
@@ -30,7 +30,7 @@ ArchiMate 4 elements:
 Relationship types and directions:
 
 - Do not use Triggering directly between Plateaus merely to show time order.
-- Use left-to-right layout, labelled associations, Events, Work Packages and Deliverables to explain movement from Current State to Transition State to Target State.
+- Use layout, labelled associations, Events, Work Packages and Deliverables to explain movement from Current State to Transition State to Target State.
 - Realisation from each work package to its deliverable.
 - Influence from deliverables to Reduced duplicate customer capture outcome.
 - Association or aggregation from plateaus to the application components present in that state, if shown.
@@ -49,7 +49,7 @@ Use ArchiMate 4 implementation and migration notation. The legend must identify 
 
 ## Main flow or structure
 
-Arrange plateaus from left to right: Current State, Transition State, Target State. Place work packages and deliverables between the relevant plateaus and use Events such as Transition release completed to mark movement.
+Arrange plateau summaries in progression order and keep work-package-to-deliverable chains separate from the plateau summaries. Use direct labels rather than A1 to A6 shorthand. Use Events such as Transition release completed to mark movement.
 
 ## Alternative and exception flows
 
@@ -83,3 +83,4 @@ The author authorised source creation from the corrected specification on 2026-0
 - Retained legacy limits are visible in labels or prose without using the removed Constraint element.
 - The removed Gap element is not used.
 - The view aligns with the motivation and layered views.
+- Relationship labels use readable words rather than unexplained codes.

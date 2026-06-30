@@ -50,7 +50,7 @@ Use ArchiMate 4 motivation notation. The legend must identify Stakeholder, Drive
 
 ## Main flow or structure
 
-Arrange stakeholders and drivers on the left, assessments in the middle, and goals, outcomes, principles and requirements on the right. Keep the cause-and-effect reading direction visible.
+Arrange the view as two separated motivation threads: trusted customer data, and faster reusable onboarding. Keep each thread readable and state in the legend that Stakeholder-to-Driver arrows are associations and the other arrows are influence relationships.
 
 ## Alternative and exception flows
 
@@ -84,3 +84,4 @@ The author authorised source creation from the corrected specification on 2026-0
 - The view does not become a slogan map.
 - Removed elements such as Constraint are not used as current ArchiMate 4 notation.
 - Requirements trace to Chapter 7 application and migration examples.
+- The two motivation threads are visually separated and readable.

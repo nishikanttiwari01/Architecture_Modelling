@@ -109,6 +109,17 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Consequences:** The renderer supports only the simple BPMN subset used by these teaching examples. Camunda Modeler validation remains required before Chapter 6 can return to `Ready for Author Approval`.
 - **Related chapters/files:** Chapter 6, `diagrams/source/bpmn/FIG-06-*.bpmn`, `diagrams/exported/svg/FIG-06-*.svg`, `diagrams/exported/png/FIG-06-*.png`, `reviews/chapter-gates/CH-06-quality-gate.md`.
 
+## DEC-013: Distinguish semantic repositories, drawing tools and diagrams as code
+
+- **Status:** Approved
+- **Date:** 2026-06-30
+- **Decision:** Tool guidance in Chapters 6 and 7 will distinguish semantic modelling or repository tools from general drawing tools and diagrams-as-code tools.
+- **Context:** The book uses `.bpmn` files as semantic BPMN source and PlantUML as reproducible source for ArchiMate teaching views. Readers also need practical tool guidance without assuming that drawing shapes, storing text source and maintaining a governed architecture repository are the same activity.
+- **Alternatives considered:** Present all tools in one list; recommend only the tools used by the repository; defer tooling guidance to Chapter 61.
+- **Reason:** Beginners need to understand why tool choice affects interoperability, validation, model reuse and governance.
+- **Consequences:** Chapter 6 recommends Camunda Desktop Modeler when BPMN XML interoperability and execution semantics matter. Chapter 7 states that the book's PlantUML figures are reproducible teaching views, not a governed ArchiMate repository.
+- **Related chapters/files:** Chapter 6, Chapter 7, Chapter 61, `SOURCE_REGISTER.md`, `research/bpmn/bpmn-tool-guidance-2026-06-30.md`, `research/archimate/archimate-tool-guidance-2026-06-30.md`.
+
 ## Decision template
 
 ```markdown

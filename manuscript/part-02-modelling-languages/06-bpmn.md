@@ -2,9 +2,9 @@
 title: "BPMN: Business Process Model and Notation"
 chapter: 6
 part: "part-02-modelling-languages"
-status: "Approved"
+status: "Under Review"
 author: "Nishikant Tiwari"
-last_updated: "2026-06-29"
+last_updated: "2026-06-30"
 ---
 
 # 6. BPMN: Business Process Model and Notation
@@ -43,6 +43,7 @@ By the end of this chapter, the reader should be able to:
 ## Source requirements
 
 - `[OMG-BPMN]` supports BPMN 2.0.2 terminology and notation.
+- `[BPMN-TOOL-GUIDANCE-2026]` supports practical BPMN modelling tool guidance.
 - Chapter guidance is the author's practical interpretation for beginner architecture work.
 - Diagrams are original teaching examples and must not reproduce OMG specification diagrams.
 
@@ -57,6 +58,27 @@ BPMN is not a software structure notation. It does not replace a C4 container di
 BPMN is also not a guarantee of automation. A BPMN task may be manual, user-assisted, system-executed or a call to another process. The modeller must say what level of abstraction is intended. A process used for architecture discussion is usually less detailed than a workflow model used to configure an execution engine.
 
 Use BPMN when process order, responsibility, decisions, waiting, messages and exceptions matter. Do not use it merely because a team wants a flowchart that looks formal.
+
+## How to create BPMN diagrams in practice
+
+BPMN diagrams can be created in two different kinds of tools, and the difference matters.
+
+A **semantic BPMN modeller** understands BPMN elements as model objects. A start event is not just a circle. A task is not just a rounded rectangle. The tool can usually save BPMN XML, preserve BPMN Diagram Interchange layout, validate some modelling rules and exchange the model with other BPMN-aware tools. This matters when the process may be analysed, simulated, reviewed in a process repository or prepared for an execution engine.
+
+A **generic drawing tool** lets the modeller draw shapes that look like BPMN. That can be useful for workshops, teaching illustrations or quick communication, but the diagram is not necessarily a valid BPMN model. A drawing tool may not know whether a sequence flow crosses a pool boundary or whether an event-based gateway is used correctly.
+
+Useful BPMN tool options include:
+
+| Tool | Practical use | Caution |
+|---|---|---|
+| Camunda Desktop Modeler | Free desktop modelling of BPMN, Decision Model and Notation (DMN) and related Camunda artefacts. Recommended in this book when BPMN XML interoperability and execution semantics matter. | Best when the team is comfortable storing and reviewing BPMN XML files. |
+| Bizagi Modeler | Free BPMN-oriented process modelling and documentation for analysts and process teams. | Check export and collaboration needs before treating it as the repository of record. |
+| diagrams.net | General diagramming and illustration with BPMN shapes. | Suitable for illustrations, but it does not replace a semantic BPMN modeller when BPMN XML or execution semantics matter. |
+| SAP Signavio | Enterprise process modelling, collaboration and process-management tooling. | A broader paid platform; choose it for process governance, not only for drawing a single diagram. |
+| Camunda Web Modeler | Browser-based modelling and collaboration in the Camunda ecosystem. | Best when the organisation uses Camunda's platform workflow and collaboration model. |
+| Visual Paradigm | Modelling suite with BPMN support alongside other architecture and software modelling features. | Tool breadth is useful, but teams still need modelling conventions and repository discipline. |
+
+This repository stores `.bpmn` files as the editable source for Chapter 6 figures. SVG is the primary publication export because it stays sharp in PDF and web output. PNG previews are stored for quick visual inspection and review workflows. The rule is simple: edit the BPMN source, then regenerate the publication exports, rather than treating an exported image as the source of truth.
 
 ## Core BPMN ideas
 
@@ -296,3 +318,4 @@ Suggested answer:
 Chapter source notes are maintained in the repository under `research/bpmn/` and registered in `SOURCE_REGISTER.md`. Appendix H, [Glossary and Source Notes](../appendices/appendix-h-glossary-sources.md), is the intended publication location for the final source-key index once the appendix is completed.
 
 - `[OMG-BPMN]`: Object Management Group BPMN 2.0.2 specification.
+- `[BPMN-TOOL-GUIDANCE-2026]`: Official BPMN tool source note for practical modeller and drawing-tool guidance.

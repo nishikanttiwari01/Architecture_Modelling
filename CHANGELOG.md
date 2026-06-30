@@ -2,6 +2,16 @@
 
 All notable repository and manuscript changes are recorded here. This is a project history, not a replacement for Git commits.
 
+## 2026-06-30
+
+### Added practical BPMN and ArchiMate tool guidance
+
+- Added Chapter 6 guidance on semantic BPMN modellers versus generic drawing tools, including Camunda Desktop Modeler, Bizagi Modeler, diagrams.net, SAP Signavio, Camunda Web Modeler and Visual Paradigm.
+- Added Chapter 7 guidance on semantic ArchiMate repositories, general drawing tools and diagrams-as-code tools, including free and paid tool comparison tables.
+- Added official BPMN and ArchiMate tool source notes and registered `[BPMN-TOOL-GUIDANCE-2026]` and `[ARCHIMATE-TOOL-GUIDANCE-2026]`.
+- Polished `FIG-07-01`, `FIG-07-02`, `FIG-07-05` and `FIG-07-06`, then regenerated SVG exports and PNG previews.
+- Moved Chapter 6 back to `Under Review` because approved prose changed.
+
 ## 2026-06-29
 
 ### Completed Chapter 7 ArchiMate diagram set
