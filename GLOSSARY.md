@@ -66,7 +66,18 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Transition architecture | A coherent intermediate state between current and target architectures. | State its duration and purpose. |
 | Architecture Decision Record (ADR) | A concise record of an important architecture decision, context and consequences. | Use stable identifiers and retain superseded records. |
 | Trust boundary | A boundary across which the level or basis of trust changes. | Make it explicit in security diagrams. |
+| Conceptual data model | A data model that describes important business information concepts and their relationships without implementation detail. | Use before logical or physical design when meaning is still being agreed. |
+| Logical data model | A data model that defines entities, attributes, keys and relationships independently of a specific storage technology. | Do not include vendor-specific physical database choices. |
+| Physical data model | A data model that describes how data is implemented in a particular database, storage technology or platform. | Keep it traceable to conceptual and logical meaning. |
+| Entity relationship diagram (ERD) | A diagram that shows entities, attributes and relationships, often with keys, cardinality and optionality. | Distinguish from a data flow diagram. |
+| Attribute | A fact recorded about an entity. | Avoid adding attributes that do not answer the model question. |
+| Key | A value or set of values used to identify an entity instance. | State whether the key is business meaning, technical implementation or both. |
+| Cardinality | A rule that describes how many instances may participate in a relationship. | Use precise markers such as one, zero or more, or one or more. |
+| Optionality | A rule that describes whether a relationship must exist. | Important for lifecycle timing, incomplete data and exception cases. |
+| Data flow diagram (DFD) | A diagram that shows data movement and transformation between external entities, processes and data stores. | Do not use as a database schema or BPMN process model. |
 | Data lineage | Traceability of data from origin through movement and transformation to use. | Distinguish from a general data-flow diagram. |
+| Canonical data model | A shared model that defines common meaning for data exchanged or interpreted across several systems or domains. | Useful for shared meaning, but it should not become too broad to change. |
+| Local data model | A model used within one application, system or bounded area for its internal responsibilities. | Keep mapped to shared terms where cross-system meaning matters. |
 | Semantic repository tool | A modelling tool that stores reusable model concepts and relationships rather than only drawing shapes. | Useful when governance, reuse, reporting and impact analysis matter. |
 | Diagrams as code | A diagramming approach where editable diagram source is stored as text and rendered into publication formats. | Good for reproducibility and version control; not automatically a governed model repository. |
 

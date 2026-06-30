@@ -120,6 +120,17 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Consequences:** Chapter 6 recommends Camunda Desktop Modeler when BPMN XML interoperability and execution semantics matter. Chapter 7 states that the book's PlantUML figures are reproducible teaching views, not a governed ArchiMate repository.
 - **Related chapters/files:** Chapter 6, Chapter 7, Chapter 61, `SOURCE_REGISTER.md`, `research/bpmn/bpmn-tool-guidance-2026-06-30.md`, `research/archimate/archimate-tool-guidance-2026-06-30.md`.
 
+## DEC-014: Keep diagram register status at Review until final page layout
+
+- **Status:** Approved
+- **Date:** 2026-06-30
+- **Decision:** Keep all book diagrams at `Review` in `DIAGRAM_REGISTER.md` until the final page-layout pass, even when their related chapters are author-approved.
+- **Context:** The author approved Chapters 6 and 7 as chapters while instructing that diagram status should remain at `Review` until final layout.
+- **Alternatives considered:** Mark chapter diagrams `Approved` as soon as the chapter is approved; use `Exported` for rendered SVGs.
+- **Reason:** Diagram rendering, page fit, captions and accessibility need a final publication-layout inspection before diagram status is closed.
+- **Consequences:** Chapter status and diagram status are tracked separately. Codex may render and validate diagrams, but it must not mark diagrams `Approved`.
+- **Related chapters/files:** Chapters 6, 7 and 8, `DIAGRAM_REGISTER.md`, `STATUS.md`.
+
 ## Decision template
 
 ```markdown

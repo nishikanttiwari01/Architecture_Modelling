@@ -5,8 +5,8 @@
 - **Chapter:** 6, BPMN: Business Process Model and Notation
 - **Review date:** 2026-06-30
 - **Reviewer:** Codex
-- **Status recommendation:** Under Review
-- **Current gate:** Chapter 6 now includes practical tool guidance distinguishing semantic BPMN modellers from generic drawing tools. The existing BPMN XML sources, BPMNDI layout, SVG exports and PNG previews remain present and unchanged in this revision.
+- **Status recommendation:** Approved
+- **Current gate:** Chapter 6 includes practical tool guidance distinguishing semantic BPMN modellers from generic drawing tools. The author approved the chapter on 2026-06-30. The existing BPMN XML sources, BPMNDI layout, SVG exports and PNG previews remain present and unchanged in this revision.
 - **Diagram status:** `FIG-06-01` through `FIG-06-03` remain `Review`. No Chapter 6 diagram is marked `Approved`.
 
 ## Scorecard
@@ -41,4 +41,4 @@ The new tool section states that Camunda Desktop Modeler is the recommended free
 
 ## Recommendation
 
-Chapter 6 should remain `Under Review` because new prose has been added after prior author approval. The existing diagram set remains technically stable.
+Chapter 6 is `Approved` following author instruction on 2026-06-30. The existing diagram set remains technically stable, and all Chapter 6 diagrams remain at `Review` until the final page-layout pass.

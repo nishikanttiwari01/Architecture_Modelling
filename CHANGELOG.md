@@ -4,6 +4,15 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-06-30
 
+### Completed Chapter 8 Data Modelling draft
+
+- Drafted Chapter 8, **Data Modelling**, using the Chapter 5 production pattern.
+- Added five Chapter 8 diagram specifications, PlantUML sources and register entries for conceptual, logical, physical, data-flow and lineage views.
+- Added data modelling source notes for Chen, Codd, W3C PROV-DM, DAMA-DMBOK2 and DeMarco, and registered them in `SOURCE_REGISTER.md`.
+- Added data modelling glossary terms for conceptual, logical and physical models, ERDs, DFDs, keys, cardinality, optionality and canonical/local models.
+- Moved Chapters 6 and 7 to `Approved` following author instruction, while keeping all diagram entries at `Review`.
+- Recorded the decision to keep diagrams at `Review` until the final page-layout pass.
+
 ### Added practical BPMN and ArchiMate tool guidance
 
 - Added Chapter 6 guidance on semantic BPMN modellers versus generic drawing tools, including Camunda Desktop Modeler, Bizagi Modeler, diagrams.net, SAP Signavio, Camunda Web Modeler and Visual Paradigm.

@@ -1,0 +1,37 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+top to bottom direction
+title FIG-08-05. Horizon Bank payment data lineage
+
+skinparam linetype ortho
+skinparam nodesep 55
+skinparam ranksep 55
+
+rectangle "Horizon Digital Channels\n<<Originating application>>" as Digital #EAF6E8
+rectangle "Payment instruction\ncustomer, debtor, creditor, amount" as Instruction #FFFFFF
+rectangle "Payments Platform\n<<Transformation and orchestration>>" as Payments #EAF6E8
+rectangle "Financial Crime Platform\n<<Screening use>>" as FinancialCrime #FFF4D6
+rectangle "Core Deposit System\n<<Posting system>>" as Core #FFF4D6
+rectangle "Screened payment event\nscreening status and reason" as Screened #FFFFFF
+rectangle "Posting result\naccepted, rejected or pending" as Posting #FFFFFF
+rectangle "Event Platform\n<<Distribution>>" as EventPlatform #F1E8FA
+rectangle "Enterprise Data Platform\n<<Curated consumption>>" as DataPlatform #F2F5F7
+rectangle "Payment data product\nreporting and control attributes" as DataProduct #FFFFFF
+
+Digital --> Instruction : captures
+Instruction --> Payments : submits
+Payments -right-> FinancialCrime : screens
+FinancialCrime --> Screened : produces
+Payments -right-> Core : posts
+Core --> Posting : produces
+Payments --> EventPlatform : publishes status event
+EventPlatform --> DataPlatform : event stream
+DataPlatform --> DataProduct : curates
+
+note bottom
+  Lineage view.
+  It shows origin, transformation, responsibility and downstream use.
+  It is not the BPMN payment repair process or a warehouse schema.
+end note
+@enduml

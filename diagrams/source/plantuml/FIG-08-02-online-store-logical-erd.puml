@@ -1,0 +1,59 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+left to right direction
+title FIG-08-02. Online Store logical ERD
+
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+class Customer <<Entity>> {
+  customerId {key}
+  emailAddress
+  customerStatus
+}
+
+class Order <<Entity>> {
+  orderId {key}
+  orderStatus
+  placedAt
+  totalAmount
+}
+
+class "Order Line" as OrderLine <<Entity>> {
+  orderLineId {key}
+  quantity
+  unitPrice
+  lineTotal
+}
+
+class Product <<Entity>> {
+  productId {key}
+  productName
+  currentPrice
+}
+
+class Payment <<Entity>> {
+  paymentId {key}
+  paymentStatus
+  authorisedAmount
+}
+
+class Shipment <<Entity>> {
+  shipmentId {key}
+  shipmentStatus
+  trackingReference
+}
+
+Customer "1" -- "0..*" Order : places
+Order "1" *-- "1..*" OrderLine : contains
+OrderLine "*" --> "1" Product : references
+Order "1" -- "0..*" Payment : has
+Order "1" -- "0..*" Shipment : fulfilled by
+
+note bottom
+  Logical ERD.
+  It shows entities, selected attributes, keys, cardinality and optionality.
+  It avoids physical table names, data types, indexes and vendor choices.
+end note
+@enduml

@@ -1,0 +1,34 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+left to right direction
+title FIG-08-04. Online Store order data flow
+
+skinparam linetype ortho
+skinparam nodesep 90
+skinparam ranksep 70
+
+rectangle "Customer\n<<External entity>>" as Customer #FFFFFF
+rectangle "Capture order\n<<Process>>" as Capture #EAF6E8
+rectangle "Authorise payment\n<<Process>>" as PaymentProcess #EAF6E8
+rectangle "Create shipment request\n<<Process>>" as ShipmentProcess #EAF6E8
+database "Order data\n<<Data store>>" as OrderStore #F2F5F7
+rectangle "Payment Provider System\n<<External system>>" as PaymentProvider #FFF4D6
+rectangle "Delivery Partner System\n<<External system>>" as DeliveryPartner #FFF4D6
+
+Customer --> Capture : Order details
+Capture -right-> PaymentProcess : Order total
+PaymentProcess -right-> ShipmentProcess : Paid order
+
+Capture -right-> OrderStore : Order draft
+PaymentProcess -right-> PaymentProvider : Payment exchange
+PaymentProcess -right-> OrderStore : Payment status
+ShipmentProcess -right-> DeliveryPartner : Shipment exchange
+ShipmentProcess -right-> OrderStore : Shipment status
+
+note bottom
+  DFD view.
+  Arrows show data movement and transformation, not process sequence ownership,
+  database schema or software deployment.
+end note
+@enduml

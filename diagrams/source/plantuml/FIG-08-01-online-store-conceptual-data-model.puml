@@ -1,0 +1,29 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+top to bottom direction
+title FIG-08-01. Online Store conceptual data model
+
+skinparam linetype ortho
+
+rectangle "Customer\n<<Concept>>" as Customer #FFFFFF
+rectangle "Basket\n<<Concept>>" as Basket #F7F9FB
+rectangle "Product\n<<Concept>>" as Product #F7F9FB
+rectangle "Order\n<<Concept>>" as Order #F7F9FB
+rectangle "Payment\n<<Concept>>" as Payment #F7F9FB
+rectangle "Shipment\n<<Concept>>" as Shipment #F7F9FB
+
+Customer -right-> Basket : owns
+Customer -down-> Order : places
+Basket -right-> Product : contains
+Order -right-> Product : contains
+Order -down-> Payment : paid by
+Order -down-> Shipment : delivered by
+
+note bottom
+  Conceptual model only.
+  It names business information concepts and relationships.
+  It is not a database schema, API contract or process flow.
+  Returns and support cases are outside this first view.
+end note
+@enduml

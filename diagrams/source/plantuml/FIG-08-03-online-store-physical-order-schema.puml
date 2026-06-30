@@ -1,0 +1,66 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+left to right direction
+title FIG-08-03. Online Store physical order schema
+
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+class customers <<table>> {
+  customer_id uuid PK
+  email_address varchar(320) UNIQUE
+  customer_status varchar(30)
+  created_at timestamp
+}
+
+class orders <<table>> {
+  order_id uuid PK
+  customer_id uuid FK
+  order_status varchar(30)
+  placed_at timestamp
+  total_amount decimal(12,2)
+}
+
+class order_lines <<table>> {
+  order_line_id uuid PK
+  order_id uuid FK
+  product_id uuid FK
+  quantity integer
+  unit_price decimal(12,2)
+  line_total decimal(12,2)
+}
+
+class products <<table>> {
+  product_id uuid PK
+  product_name varchar(200)
+  current_price decimal(12,2)
+}
+
+class payments <<table>> {
+  payment_id uuid PK
+  order_id uuid FK
+  payment_status varchar(30)
+  authorised_amount decimal(12,2)
+  provider_reference varchar(100)
+}
+
+class shipments <<table>> {
+  shipment_id uuid PK
+  order_id uuid FK
+  shipment_status varchar(30)
+  tracking_reference varchar(100)
+}
+
+customers "1" -- "0..*" orders : customer_id
+orders "1" *-- "1..*" order_lines : order_id
+products "1" -- "0..*" order_lines : product_id
+orders "1" -- "0..*" payments : order_id
+orders "1" -- "0..*" shipments : order_id
+
+note bottom
+  Physical example.
+  It adds table names, column names, data types, key choices and constraints.
+  It is still a teaching schema, not a full production database design.
+end note
+@enduml

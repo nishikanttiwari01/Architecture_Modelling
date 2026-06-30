@@ -5,8 +5,8 @@
 - **Chapter:** 7, ArchiMate
 - **Review date:** 2026-06-30
 - **Reviewer:** Codex
-- **Status recommendation:** Under Review
-- **Current gate:** Chapter 7 now includes practical ArchiMate tool guidance, updated official tool source notes and polished rendered outputs for `FIG-07-01`, `FIG-07-02`, `FIG-07-05` and `FIG-07-06`.
+- **Status recommendation:** Approved
+- **Current gate:** Chapter 7 includes practical ArchiMate tool guidance, updated official tool source notes and polished rendered outputs for `FIG-07-01`, `FIG-07-02`, `FIG-07-05` and `FIG-07-06`. The author approved the chapter on 2026-06-30.
 - **Diagram status:** `FIG-07-01` through `FIG-07-06` remain `Review`, not `Approved`.
 
 ## Quality scores
@@ -44,10 +44,9 @@ The new section correctly states that Archi is independent and not owned by The 
 
 ## Open issues
 
-- The author must review the new Chapter 7 tool guidance and the polished rendered diagrams.
 - The full ArchiMate 4 specification should still be checked by a licensed human reviewer under the applicable Open Group licence before final publication.
-- Chapter 7 remains `Under Review` until the author completes the review and decides whether it is ready for author approval.
+- Chapter 7 diagrams remain at `Review` until the final page-layout pass.
 
 ## Gate decision
 
-Chapter 7 remains `Under Review`. The quality gate passes the numeric threshold, but no diagram is marked `Approved` and the chapter is not advanced to `Ready for Author Approval` in this task.
+Chapter 7 is `Approved` following author instruction on 2026-06-30. The quality gate passes the numeric threshold, and no diagram is marked `Approved`.
