@@ -24,7 +24,7 @@ Final page-layout review remains pending for Chapter 11 diagrams, particularly `
 
 - Chapter 10 approval commit: `40e88d2`
 - Chapter 11 completion commit: `98a793f`
-- Chapter 11 approval commit: recorded in the follow-up Chapter 12 start update after the approval commit is created.
+- Chapter 11 approval commit: `9455d71`
 - Branch: `main`
 - Remote: `origin/main`
 
@@ -41,6 +41,7 @@ Final page-layout review remains pending for Chapter 11 diagrams, particularly `
 - Chapter 9 status: `Approved`
 - Chapter 10 status: `Approved`
 - Chapter 11 status: `Approved`
+- Chapter 12 status: `Researching`
 - Diagram status for Chapter 1 figure `FIG-01-01`: `Review`
 - Diagram status for Chapter 2 figure `FIG-02-01`: `Review`
 - Diagram status for Chapter 3 figures `FIG-03-01` through `FIG-03-03`: `Review`
@@ -69,4 +70,4 @@ Chapter 12, **Security Modelling**, is the next current chapter after Chapter 11
 
 ## Next exact action
 
-Begin Chapter 12, **Security Modelling**, by confirming scope from `BOOK_PLAN.md`, collecting current primary sources and moving the chapter into the appropriate early workflow status. Keep Chapter 11 figures `FIG-11-01` through `FIG-11-06` at `Review`.
+Continue Chapter 12, **Security Modelling**, by completing source research, confirming the detailed outline and preparing diagram specifications. Keep Chapter 11 figures `FIG-11-01` through `FIG-11-06` at `Review`.

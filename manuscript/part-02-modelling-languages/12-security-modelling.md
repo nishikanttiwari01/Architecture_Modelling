@@ -2,9 +2,9 @@
 title: "Security Modelling"
 chapter: 12
 part: "part-02-modelling-languages"
-status: "Planned"
+status: "Researching"
 author: "Nishikant Tiwari"
-last_updated: "2026-06-28"
+last_updated: "2026-07-01"
 ---
 
 # 12. Security Modelling
@@ -46,6 +46,7 @@ By the end of this chapter, the reader should be able to:
 - Record framework or standard versions where relevant.
 - Create source notes under the matching `research/` directory.
 - Distinguish official definitions from the author’s practical recommendations.
+- Initial source keys: `[NIST-CSF-2.0]`, `[NIST-SP-800-207]`, `[NIST-SP-800-53R5]`, `[OWASP-THREAT-MODELLING-2026]`, `[OWASP-ASVS-5.0.0]`, `[OWASP-AUTH-CHEATSHEETS-2026]`, `[MICROSOFT-STRIDE-2026]`.
 
 ## Planned chapter structure
 
