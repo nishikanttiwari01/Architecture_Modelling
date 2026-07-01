@@ -4,6 +4,13 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-01
 
+### Approved Chapter 11 Infrastructure and Deployment Modelling
+
+- Recorded author approval for Chapter 11, **Infrastructure and Deployment Modelling**, with final quality score 9.1.
+- Kept `FIG-11-01` through `FIG-11-06` at `Review`, not `Approved`.
+- Recorded that final page-layout review remains pending, particularly for `FIG-11-03`, `FIG-11-05` and `FIG-11-06`.
+- Set Chapter 12, **Security Modelling**, as the next current chapter.
+
 ### Completed missing Chapter 11 deployment modelling revisions
 
 - Completed the remaining Chapter 11 author-review revisions and returned Chapter 11, **Infrastructure and Deployment Modelling**, to `Ready for Author Approval` with final quality score 9.1.

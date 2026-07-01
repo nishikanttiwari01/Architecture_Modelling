@@ -1,7 +1,7 @@
 # Chapter 11 Quality Gate: Infrastructure and Deployment Modelling
 
 - **Date:** 2026-07-01
-- **Chapter status:** Ready for Author Approval
+- **Chapter status:** Approved by author
 - **Diagram status:** `FIG-11-01` through `FIG-11-06` remain `Review`, not `Approved`.
 - **Gate decision:** Pass
 - **Final score:** 9.1
@@ -66,4 +66,4 @@ All six Chapter 11 figures are present and remain at `Review`.
 
 ## Decision
 
-Chapter 11 is `Ready for Author Approval`. The final quality score is 9.1, all six figures are present, all validations pass, and `FIG-11-01` through `FIG-11-06` remain at `Review`, not `Approved`.
+Chapter 11 is `Approved` by explicit author action. The final quality score is 9.1, all six figures are present, all validations pass, and `FIG-11-01` through `FIG-11-06` remain at `Review`, not `Approved`.
