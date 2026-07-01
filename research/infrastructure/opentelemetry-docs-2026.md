@@ -6,8 +6,8 @@
 - Title: OpenTelemetry documentation
 - Version: Current public documentation
 - Publication date: Current web documentation, individual pages vary
-- Access date: 2026-06-30
-- URL or identifier: https://opentelemetry.io/docs/
+- Access date: 2026-07-01
+- URL or identifier: https://opentelemetry.io/docs/; https://opentelemetry.io/docs/concepts/signals/; https://opentelemetry.io/docs/collector/
 - Source type: Official project documentation
 
 ## Supported claims
@@ -17,6 +17,10 @@
 - Normative or interpretive: Normative for OpenTelemetry terminology; interpretive for architecture modelling guidance.
 
 - Claim: Instrumentation, collection, processing and export are separate concerns in an observability architecture.
+- Intended chapter(s): Chapter 11, Chapter 20, Chapter 29, Chapter 49
+- Normative or interpretive: Normative for OpenTelemetry concepts; interpretive for diagram guidance.
+
+- Claim: The OpenTelemetry Collector receives, processes and exports telemetry data through configurable pipeline components.
 - Intended chapter(s): Chapter 11, Chapter 20, Chapter 29, Chapter 49
 - Normative or interpretive: Normative for OpenTelemetry concepts; interpretive for diagram guidance.
 

@@ -2,6 +2,29 @@
 
 All notable repository and manuscript changes are recorded here. This is a project history, not a replacement for Git commits.
 
+## 2026-07-01
+
+### Completed missing Chapter 11 deployment modelling revisions
+
+- Completed the remaining Chapter 11 author-review revisions and returned Chapter 11, **Infrastructure and Deployment Modelling**, to `Ready for Author Approval` with final quality score 9.1.
+- Corrected the prerequisites to Chapter 4 UML, Chapter 5 C4 Model and Chapter 10 Domain and Event Modelling.
+- Added a dedicated logical-versus-physical deployment section with a comparison table and Online Store worked example.
+- Updated Kubernetes guidance for Deployment, ReplicaSet, Pod, StatefulSet, Gateway API and Ingress, and rerendered `FIG-11-03`.
+- Finalised `FIG-11-05` as one warm-standby scenario with failover trigger, failback, data reconciliation, dependency readiness, backup and resilience cautions.
+- Added `FIG-11-06`, **Horizon Bank Payment Observability View**, with specification, PlantUML source, SVG export, PNG preview, manuscript reference, accessibility text and diagram-register entry.
+- Added cloud responsibility, capacity and scalability, environment, and practical infrastructure diagram tooling guidance.
+- Corrected the NIST SP 800-34 Revision 1 source note to record it as historical official NIST guidance used informatively.
+- Updated `DIAGRAM_REGISTER.md`, `SOURCE_REGISTER.md`, `GLOSSARY.md`, `DECISIONS.md`, `STATUS.md`, `RESUME.md` and the Chapter 11 quality gate. `FIG-11-01` through `FIG-11-06` remain at `Review`.
+
+### Revised Chapter 11 after author review
+
+- Returned Chapter 11, **Infrastructure and Deployment Modelling**, to `Revision Required` during corrections, then back to `Ready for Author Approval` after review findings and checks were completed.
+- Corrected Kubernetes guidance and `FIG-11-03` to show Gateway API, Gateway, HTTPRoute, Services, Deployments, ReplicaSets and Pods with accurate responsibility.
+- Added logical versus physical deployment guidance, tightened UML deployment terminology, and added cloud responsibility plus capacity and scalability guidance.
+- Updated `FIG-11-02` to remove routine direct operations-to-database access and updated `FIG-11-05` to show telemetry emission, collection, processing/export, backend and operational alerting.
+- Renamed `FIG-11-04` to **Horizon Bank Hybrid Infrastructure and Placement View** and updated the manuscript, register, specification, PlantUML source and exports.
+- Updated Kubernetes and UML source notes, `SOURCE_REGISTER.md`, `GLOSSARY.md`, Chapter 11 reviews and the Chapter 11 quality gate.
+
 ## 2026-06-30
 
 ### Completed Chapter 11 Infrastructure and Deployment Modelling

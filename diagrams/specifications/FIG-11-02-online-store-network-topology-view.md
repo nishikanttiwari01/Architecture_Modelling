@@ -33,6 +33,7 @@ Network topology teaching view, rendered with PlantUML after author acceptance o
 - Application zone connects to the data zone through a controlled database path.
 - Application zone calls external provider systems through controlled outbound paths.
 - Operations access is separate from customer traffic.
+- Operational database support is routed through a controlled administration or backup access mechanism, not shown as routine direct tool-to-database access.
 
 ## Main flow or structure
 
@@ -67,4 +68,5 @@ Use zone labels and line labels rather than relying on colour. Ensure direction 
 - Network zones are named clearly.
 - Application responsibility is not mixed with detailed process steps.
 - Traffic direction and boundary crossing are visible.
+- Routine operations tooling does not bypass the controlled data-zone path.
 - Specification must be accepted by the author before creating the PlantUML source.

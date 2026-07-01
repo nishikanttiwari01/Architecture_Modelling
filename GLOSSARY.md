@@ -123,18 +123,53 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Semantic repository tool | A modelling tool that stores reusable model concepts and relationships rather than only drawing shapes. | Useful when governance, reuse, reporting and impact analysis matter. |
 | Diagrams as code | A diagramming approach where editable diagram source is stored as text and rendered into publication formats. | Good for reproducibility and version control; not automatically a governed model repository. |
 | Deployment diagram | A model or view that shows where software runs and how runtime elements are placed on infrastructure or execution environments. | Distinguish logical deployment from detailed physical infrastructure. |
-| Node (UML) | A computational resource or execution environment that can host deployed artefacts. | Do not confuse a UML node with a Kubernetes node unless the diagram is deliberately mapping between the two meanings. |
+| Logical deployment view | A deployment view that shows runtime responsibilities and dependencies without fixing every physical implementation detail. | Do not treat it as proof of a particular region, subnet, product or node count. |
+| Physical deployment view | A deployment view that shows concrete implementation placement, such as regions, zones, node pools, networks, runtime services and managed platform choices. | Use when the audience needs implementation, operations, capacity or resilience evidence. |
+| Node (UML) | A computational resource that can host deployed artefacts, including Device and ExecutionEnvironment specialisations. | Do not confuse a UML node with a Kubernetes node unless the diagram is deliberately mapping between the two meanings. |
+| Device (UML) | A UML node representing physical or virtual hardware that can host deployed artefacts or execution environments. | Do not use it for software responsibility by itself. |
+| ExecutionEnvironment (UML) | A UML node representing a runtime environment that hosts deployed software, such as an application server, container runtime or database runtime. | Do not treat it as the same thing as a physical server. |
+| Artifact (UML) | A physical piece of implementation, such as a deployable package, executable or container image. | In prose, keep the UML term clear even where the book otherwise uses British English. |
 | Runtime environment | The execution setting in which software runs, such as a virtual machine, container platform, database platform or managed cloud service. | State whether the model is logical, platform-specific or physical. |
 | Network topology | A view of network segments, connectivity, traffic paths and boundaries. | Use for connectivity and routing concerns, not application responsibility. |
 | Cloud deployment model | A way of placing cloud services, such as public, private or hybrid cloud. | Use NIST terminology where a formal cloud definition is needed. |
-| Kubernetes Deployment | A Kubernetes workload object that manages desired state and replica updates for Pods. | Do not use the word deployment casually when a Kubernetes object is meant. |
-| Kubernetes Service | A Kubernetes abstraction that exposes a stable network endpoint for a set of Pods. | Distinguish it from a business service, application service or C4 container. |
+| Kubernetes Deployment | A Kubernetes workload object that manages declarative updates and usually manages ReplicaSets. | Do not use the word deployment casually when a Kubernetes object is meant. |
+| ReplicaSet (Kubernetes) | A Kubernetes workload object that maintains a stable set of replica Pods. | Usually let a Deployment manage ReplicaSets unless the design has a specific reason to manage them directly. |
+| StatefulSet (Kubernetes) | A Kubernetes workload object for stateful applications that need stable identity, ordered behaviour or persistent storage behaviour. | Do not use Deployment for workloads that depend on stable Pod identity without explaining the design trade-off. |
+| Pod (Kubernetes) | The basic Kubernetes runtime unit for one or more containers. | Treat Pods as replaceable runtime instances, not permanent servers. |
+| Kubernetes Service | A Kubernetes abstraction that exposes stable network access to a logical set of endpoints, usually Pods. | Distinguish it from a business service, application service or C4 container. |
+| Node (Kubernetes) | A worker machine in a Kubernetes cluster. | Do not confuse it with a UML node unless the diagram explicitly maps between notations. |
+| Namespace (Kubernetes) | A Kubernetes mechanism for grouping resources within a cluster. | Do not present a namespace as a complete security boundary by itself. |
+| Gateway API (Kubernetes) | A Kubernetes API family for extensible, role-oriented and protocol-aware traffic routing. | Show the relevant GatewayClass, Gateway and route resources when routing is the modelling concern. |
+| HTTPRoute (Kubernetes Gateway API) | A Gateway API route resource that maps HTTP requests from a Gateway listener to backend endpoints such as Services. | Use it for HTTP routing rules rather than treating Gateway as the whole route. |
+| Ingress (Kubernetes) | A Kubernetes API for exposing HTTP and HTTPS routes from outside a cluster to Services inside a cluster. | It remains generally available, but the Kubernetes project recommends Gateway API for new designs. |
+| Capacity | The amount of work a design can handle within acceptable limits. | Name assumptions and indicators rather than saying the system has enough capacity. |
+| Capacity headroom | Spare capacity kept above expected workload so the system can absorb peaks, failures or operational variation. | State the assumed peak and the reason for the reserve. |
+| Scalability | The ability to increase capacity without redesigning the whole system. | Identify bottlenecks such as databases, connection pools, shared storage and external dependencies. |
+| Autoscaling | Automatic capacity adjustment based on measured signals or declared policies. | State the scaling signal, limit and owner. |
+| Horizontal scaling | Increasing capacity by adding more instances, replicas or nodes. | Check whether shared databases, queues or external dependencies can also handle the extra load. |
+| Vertical scaling | Increasing capacity by giving an existing instance more CPU, memory, storage or input/output capacity. | Useful within limits, but it can create larger single points of failure. |
+| Resource request (Kubernetes) | A declared amount of CPU or memory a container needs for scheduling. | Do not confuse it with a maximum limit. |
+| Resource limit (Kubernetes) | A declared maximum amount of CPU or memory a container is allowed to use. | Limits can protect shared platforms, but incorrect values can cause throttling or failures. |
+| Queue depth | The amount of work waiting in a queue or event stream. | Useful as a backlog and scaling signal when latency matters. |
+| Immutable artifact | A built software artefact, such as a package or container image, that is promoted unchanged between environments. | Environment differences should come from configuration and secrets, not rebuilding the artefact. |
+| Secret | Sensitive configuration value such as a password, token or key. | Manage separately from source code and deployable artefacts. |
 | Availability | The ability of a system or service to be usable when needed. | Express expected availability in terms the audience can review, such as service hours, dependency assumptions and recovery behaviour. |
 | Resilience | The ability to absorb, recover from or adapt to disruption while continuing to provide acceptable service. | Model failure modes and recovery paths, not only duplicate components. |
 | Disaster recovery | The planned restoration of service after a serious disruption. | Include recovery objectives, responsibilities and failback, not only standby infrastructure. |
+| Warm standby | A recovery pattern where a secondary environment is prepared and partially running but needs activation before it serves live traffic. | State what is already running, what must be activated and what data may need reconciliation. |
+| Failover | The controlled movement of service from a failed or impaired environment to an alternate environment. | Identify the trigger, traffic route, dependency readiness and operational owner. |
+| Failback | The controlled return of service from a recovery environment to the normal primary environment. | Include validation and reconciliation, not only traffic switching. |
+| Data reconciliation | The comparison and correction of data after disruption, replication delay or recovery. | Needed when RPO, asynchronous replication or failed integrations may leave differences. |
+| Backup | A separate recoverable copy of data or configuration kept for restore purposes. | Replication is not a backup by itself. |
 | Recovery Time Objective (RTO) | The target maximum time to restore a service after disruption. | Define at first use in each chapter and avoid promising an RTO without supporting design and operations. |
 | Recovery Point Objective (RPO) | The target maximum acceptable data loss measured as time. | Link to data replication, backup, restore and reconciliation design. |
 | Observability | The ability to understand system behaviour from telemetry such as traces, metrics and logs. | Do not reduce it to dashboards; include instrumentation, collection, processing and ownership. |
+| OpenTelemetry Collector | A vendor-neutral telemetry component that can receive, process and export traces, metrics and logs. | Show processing and export separately when they affect privacy, routing or operations. |
+| Sensitive-data redaction | The removal or masking of sensitive values before data is stored, shared or analysed. | Apply before telemetry reaches broad observability stores when privacy or secrecy is a concern. |
+| Observability backend | A system that stores, indexes or analyses telemetry for operational use. | Avoid naming a vendor unless the diagram question requires a specific product. |
+| Dashboard | A visual operational view that presents selected measures, trends or states. | A dashboard is not a substitute for alerting, ownership or incident response. |
+| Alert routing | The routing of alerts to the team or owner expected to act on them. | Include severity, ownership and actionability in detailed operational designs. |
+| Service owner | The role accountable for the health, change and operational outcomes of a service. | Distinguish from the operations team that may monitor or respond across several services. |
 | Trace | Telemetry that follows one request or transaction through multiple components. | Useful for runtime flow and dependency diagnosis. |
 | Metric | Numeric telemetry measured over time. | Useful for service health, capacity, saturation and service-level monitoring. |
 | Log | A timestamped event or message emitted by software or infrastructure. | Useful for investigation, but it needs retention, privacy and correlation rules. |

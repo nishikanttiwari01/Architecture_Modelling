@@ -142,6 +142,41 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Consequences:** Chapter 9 diagrams are publication teaching views. If the book later needs executable or repository-grade DMN assets, a DMN-aware modeller and explicit tool/version validation should be added before creating `.dmn` source files.
 - **Related chapters/files:** Chapter 9, `diagrams/source/plantuml/FIG-09-*`, `research/dmn/camunda-dmn-1.3-docs-2026.md`, `research/dmn/trisotech-dmn-docs-2026.md`.
 
+## DEC-016: Rename Chapter 11 hybrid diagram as an infrastructure and placement view
+
+- **Status:** Approved
+- **Date:** 2026-07-01
+- **Decision:** Rename `FIG-11-04` from `Horizon Bank Hybrid Deployment View` to `Horizon Bank Hybrid Infrastructure and Placement View`.
+- **Context:** The figure separates customer channels, cloud platform, controlled integration and retained core-banking placement. It does not show deployable artifacts in the narrower UML or C4 deployment sense.
+- **Alternatives considered:** Keep the original title and explain the broader use of deployment in the caption; rename only the title without renaming files.
+- **Reason:** The revised title is more accurate for the diagram question and avoids teaching beginners that every hybrid infrastructure placement view is a deployment view.
+- **Consequences:** The manuscript reference, diagram register, specification file, PlantUML source, SVG export and PNG preview use the new name. Historical git history still contains the previous filename.
+- **Related chapters/files:** Chapter 11, `DIAGRAM_REGISTER.md`, `diagrams/specifications/FIG-11-04-horizon-bank-hybrid-infrastructure-placement-view.md`, `diagrams/source/plantuml/FIG-11-04-horizon-bank-hybrid-infrastructure-placement-view.puml`.
+
+## DEC-017: Do not create a separate Chapter 11 observability figure in this pass
+
+- **Status:** Superseded
+- **Date:** 2026-07-01
+- **Decision:** Do not add `FIG-11-06` for observability during the Chapter 11 author-review correction pass.
+- **Context:** The review requested that a dedicated observability view be considered but not created automatically. The revised prose and `FIG-11-05` now show workload, store and event-platform telemetry emission, collectors, processing/export, observability backend and operational alerting.
+- **Alternatives considered:** Add a new planned `FIG-11-06` specification only; add a full new source and export despite the instruction not to create one automatically.
+- **Reason:** The existing five-figure set remains sufficient for Chapter 11 after the resilience figure and observability prose were strengthened. A dedicated observability figure can be reconsidered in a later operations-focused chapter if the author requests it.
+- **Consequences:** No `FIG-11-06` register entry, source or export was created. Chapter 11 still teaches observability, and the broader operational architecture coverage can revisit a dedicated observability view later.
+- **Related chapters/files:** Chapter 11, `FIG-11-05`, Chapter 29, Chapter 49.
+- **Supersedes / superseded by:** Superseded by DEC-018 after the author's explicit request to create `FIG-11-06`.
+
+## DEC-018: Add a dedicated Chapter 11 payment observability view
+
+- **Status:** Approved
+- **Date:** 2026-07-01
+- **Decision:** Create `FIG-11-06`, `Horizon Bank Payment Observability View`, as a dedicated observability architecture view for Chapter 11.
+- **Context:** The author explicitly requested `FIG-11-06` and asked for it to show Horizon Digital Channels, Payments Platform, Financial Crime Platform, Enterprise Integration Platform, Event Platform, Core Deposit System, traces, metrics, logs, OpenTelemetry Collector, filtering and sensitive-data redaction, observability backends, dashboards, alert routing, Operations Team and Service Owner. The author also requested named payment indicators.
+- **Alternatives considered:** Keep observability inside `FIG-11-05`; defer observability to a later operations chapter.
+- **Reason:** A separate observability figure keeps `FIG-11-05` focused on one warm-standby resilience scenario and gives payment operations telemetry enough room to be readable.
+- **Consequences:** Chapter 11 now has six figures at `Review`. `FIG-11-05` covers warm standby, failover, failback and reconciliation. `FIG-11-06` covers observability telemetry flow and operational consumption.
+- **Related chapters/files:** Chapter 11, `FIG-11-05`, `FIG-11-06`, `DIAGRAM_REGISTER.md`, `reviews/chapter-gates/CH-11-quality-gate.md`.
+- **Supersedes / superseded by:** Supersedes DEC-017.
+
 ## Decision template
 
 ```markdown

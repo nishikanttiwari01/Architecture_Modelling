@@ -2,7 +2,7 @@
 !include ../../styles/plantuml-theme.puml
 
 left to right direction
-title FIG-11-04. Horizon Bank Hybrid Deployment View
+title FIG-11-04. Horizon Bank Hybrid Infrastructure and Placement View
 
 skinparam rectangle {
   BorderColor #333333
@@ -40,7 +40,7 @@ Payments --> EventPlatform : publish payment events
 EventPlatform --> DataPlatform : selected events
 
 legend bottom
-Boundaries show placement and control points.
+Boundaries show infrastructure placement and control points.
 This view does not show detailed payment-process sequence or BIAN Service Domain mapping.
 endlegend
 @enduml

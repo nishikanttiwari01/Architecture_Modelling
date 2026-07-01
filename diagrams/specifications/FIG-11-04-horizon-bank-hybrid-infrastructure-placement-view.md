@@ -1,4 +1,4 @@
-# FIG-11-04: Horizon Bank Hybrid Deployment View
+# FIG-11-04: Horizon Bank Hybrid Infrastructure and Placement View
 
 ## Purpose
 
@@ -14,7 +14,7 @@ Where are the main Horizon Bank payment-related systems placed across cloud, int
 
 ## Notation
 
-Hybrid infrastructure view, rendered with PlantUML after author acceptance of this specification.
+Hybrid infrastructure and placement view, rendered with PlantUML after author acceptance of this specification.
 
 ## Required elements
 
@@ -40,7 +40,7 @@ Hybrid infrastructure view, rendered with PlantUML after author acceptance of th
 
 ## Main flow or structure
 
-Use a left-to-right or top-to-bottom view that separates customer channels, cloud-hosted platforms, event/data platforms and retained core systems. Keep relationship labels short and focused on deployment/integration placement.
+Use a left-to-right or top-to-bottom view that separates customer channels, cloud-hosted platforms, event/data platforms and retained core systems. Keep relationship labels short and focused on infrastructure placement and integration control.
 
 ## Alternative and exception flows
 
@@ -48,7 +48,7 @@ None. Payment exception process detail belongs in BPMN and event-flow diagrams f
 
 ## Scope
 
-High-level Horizon Bank hybrid deployment view for outgoing payment handling.
+High-level Horizon Bank hybrid infrastructure and placement view for outgoing payment handling.
 
 ## Exclusions
 
@@ -71,5 +71,5 @@ Use boundary labels and relationship labels so the view remains understandable i
 
 - Horizon Bank system names match the example register.
 - The view does not imply that retained core systems are cloud-native.
-- Deployment placement is not confused with process sequence.
+- Infrastructure placement is not confused with process sequence.
 - Specification must be accepted by the author before creating the PlantUML source.

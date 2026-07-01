@@ -21,19 +21,20 @@ rectangle "Primary Production Region\nNormal service path" as Primary {
   component "Payments Platform\nactive runtime" as PrimaryPayments
   database "Payment Records\nprimary store" as PrimaryStore
   queue "Event Platform\nprimary" as PrimaryEvents
-  component "Telemetry Collector\nprimary" as PrimaryTelemetry
 }
 
 rectangle "Secondary Recovery Region\nWarm standby" as Secondary {
   component "Payments Platform\nstandby runtime" as SecondaryPayments
   database "Payment Records\nreplica store" as SecondaryStore
   queue "Event Platform\nreplica" as SecondaryEvents
-  component "Telemetry Collector\nsecondary" as SecondaryTelemetry
 }
 
-database "Core Deposit System\nretained core dependency" as CoreDeposit
-component "Observability and\nAlerting Platform" as Observability
-actor "Operations and\nIncident Response" as Ops
+database "Core Deposit System\nretained core dependency\nconstrains end-to-end recovery" as CoreDeposit
+database "Backup Store\nseparate recovery copy" as BackupStore
+component "Operations Team\nincident command" as Ops
+component "Failover Trigger\nincident declared" as Trigger
+component "Dependency Readiness\ncore, routes and data checked" as Readiness
+component "Data Reconciliation\nbefore failback" as Reconciliation
 
 Customer --> Channels : submit payment
 Channels --> PrimaryPayments : normal payment traffic
@@ -43,24 +44,25 @@ PrimaryPayments --> CoreDeposit : posting dependency
 
 PrimaryStore -[#666666,dashed]-> SecondaryStore : data replication\nRPO objective
 PrimaryEvents -[#666666,dashed]-> SecondaryEvents : event replication
-Channels -[#666666,dashed]-> SecondaryPayments : failover route\nRTO objective
-SecondaryPayments -[#666666,dashed]-> SecondaryStore : recovered status access
-SecondaryPayments -[#666666,dashed]-> SecondaryEvents : publish after failover
-SecondaryPayments -[#666666,dashed]-> CoreDeposit : dependency still required
+PrimaryStore -[#666666,dashed]-> BackupStore : backup copy\nseparate from replication
 
-PrimaryTelemetry --> Observability : traces, metrics, logs
-SecondaryTelemetry --> Observability : recovery telemetry
-Observability --> Ops : alerts and runbook links
-Ops --> SecondaryPayments : declare and manage failover
-
-note bottom of Primary
-RTO and RPO are modelled objectives.
-They are not guarantees without tested operations.
-end note
+Ops --> Trigger : declare incident
+Trigger --> Readiness : start recovery decision
+Readiness --> SecondaryPayments : activate standby\nRTO objective
+Channels -[#666666,dashed]-> SecondaryPayments : failover route
+SecondaryPayments --> SecondaryStore : recovered status access
+SecondaryPayments --> SecondaryEvents : publish after failover
+SecondaryPayments --> CoreDeposit : dependency must be ready
+SecondaryStore -[#666666,dashed]-> Reconciliation : reconcile changes
+Reconciliation -[#666666,dashed]-> PrimaryStore : data reconciliation
+Ops -[#666666,dashed]-> PrimaryPayments : failback after validation
 
 legend bottom
 Solid arrows show normal production traffic.
 Dashed arrows show replication or recovery paths.
+RTO and RPO are modelled objectives, not guarantees without tested operations.
 Core Deposit System remains an external dependency during recovery.
+Replication is not a backup; the backup store is a separate recovery copy.
+Redundancy alone does not prove resilience without tested failover, failback and reconciliation.
 endlegend
 @enduml

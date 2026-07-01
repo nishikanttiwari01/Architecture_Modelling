@@ -18,7 +18,7 @@
 - Create: `diagrams/source/plantuml/FIG-11-01-online-store-uml-deployment-view.puml`
 - Create: `diagrams/source/plantuml/FIG-11-02-online-store-network-topology-view.puml`
 - Create: `diagrams/source/plantuml/FIG-11-03-online-store-kubernetes-deployment-view.puml`
-- Create: `diagrams/source/plantuml/FIG-11-04-horizon-bank-hybrid-deployment-view.puml`
+- Create: `diagrams/source/plantuml/FIG-11-04-horizon-bank-hybrid-infrastructure-placement-view.puml`
 - Create: `diagrams/source/plantuml/FIG-11-05-horizon-bank-payment-resilience-view.puml`
 
 - [x] **Step 1: Write PlantUML source from each specification**
@@ -37,12 +37,12 @@ Expected: five Chapter 11 `.puml` files are listed.
 - Create: `diagrams/exported/svg/FIG-11-01-online-store-uml-deployment-view.svg`
 - Create: `diagrams/exported/svg/FIG-11-02-online-store-network-topology-view.svg`
 - Create: `diagrams/exported/svg/FIG-11-03-online-store-kubernetes-deployment-view.svg`
-- Create: `diagrams/exported/svg/FIG-11-04-horizon-bank-hybrid-deployment-view.svg`
+- Create: `diagrams/exported/svg/FIG-11-04-horizon-bank-hybrid-infrastructure-placement-view.svg`
 - Create: `diagrams/exported/svg/FIG-11-05-horizon-bank-payment-resilience-view.svg`
 - Create: `diagrams/exported/png/FIG-11-01-online-store-uml-deployment-view.png`
 - Create: `diagrams/exported/png/FIG-11-02-online-store-network-topology-view.png`
 - Create: `diagrams/exported/png/FIG-11-03-online-store-kubernetes-deployment-view.png`
-- Create: `diagrams/exported/png/FIG-11-04-horizon-bank-hybrid-deployment-view.png`
+- Create: `diagrams/exported/png/FIG-11-04-horizon-bank-hybrid-infrastructure-placement-view.png`
 - Create: `diagrams/exported/png/FIG-11-05-horizon-bank-payment-resilience-view.png`
 
 - [x] **Step 1: Render SVG assets**

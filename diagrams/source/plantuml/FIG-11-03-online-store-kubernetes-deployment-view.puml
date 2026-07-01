@@ -17,25 +17,24 @@ cloud "Internet" as Internet
 
 node "Kubernetes Cluster\n<<cluster>>" as Cluster {
   rectangle "Namespace: online-store-prod\n<<Namespace>>" as Namespace {
-    rectangle "Store Ingress\n<<Ingress>>" as Ingress
+    rectangle "GatewayClass\n<<Gateway API>>" as GatewayClass
+    rectangle "Store Gateway\n<<Gateway>>" as Gateway
+    rectangle "Store HTTPRoute\n<<HTTPRoute>>" as HttpRoute
 
     rectangle "Web Service\n<<Service>>" as WebService
     rectangle "API Service\n<<Service>>" as ApiService
 
-    rectangle "Web Deployment\n<<Deployment>>" as WebDeployment {
-      component "web Pod 1\n<<Pod>>" as WebPod1
-      component "web Pod 2\n<<Pod>>" as WebPod2
-    }
+    rectangle "Web Deployment\n<<Deployment>>" as WebDeployment
+    rectangle "Web ReplicaSet\n<<ReplicaSet>>" as WebReplicaSet
+    component "web Pods\n2 replicas\n<<Pod>>" as WebPods
 
-    rectangle "API Deployment\n<<Deployment>>" as ApiDeployment {
-      component "api Pod 1\n<<Pod>>" as ApiPod1
-      component "api Pod 2\n<<Pod>>" as ApiPod2
-    }
+    rectangle "API Deployment\n<<Deployment>>" as ApiDeployment
+    rectangle "API ReplicaSet\n<<ReplicaSet>>" as ApiReplicaSet
+    component "api Pods\n2 replicas\n<<Pod>>" as ApiPods
 
-    rectangle "Worker Deployment\n<<Deployment>>" as WorkerDeployment {
-      component "worker Pod 1\n<<Pod>>" as WorkerPod1
-      component "worker Pod 2\n<<Pod>>" as WorkerPod2
-    }
+    rectangle "Worker Deployment\n<<Deployment>>" as WorkerDeployment
+    rectangle "Worker ReplicaSet\n<<ReplicaSet>>" as WorkerReplicaSet
+    component "worker Pods\n2 replicas\n<<Pod>>" as WorkerPods
   }
 }
 
@@ -43,22 +42,29 @@ database "Managed Order\nDatabase\noutside cluster" as OrderDatabase
 cloud "Payment Provider\nSystem" as PaymentProvider
 cloud "Delivery Partner\nSystem" as DeliveryPartner
 
-Internet --> Ingress : HTTPS
-Ingress --> WebService : route web traffic
-Ingress --> ApiService : route API traffic
-WebService --> WebPod1 : selects Pods
-WebService --> WebPod2 : selects Pods
-ApiService --> ApiPod1 : selects Pods
-ApiService --> ApiPod2 : selects Pods
-ApiPod1 --> OrderDatabase : read/write orders
-ApiPod2 --> OrderDatabase : read/write orders
-ApiPod1 --> PaymentProvider : authorise payment
-ApiPod2 --> PaymentProvider : authorise payment
-WorkerDeployment --> DeliveryPartner : fulfilment requests
+Internet --> Gateway : HTTPS
+GatewayClass --> Gateway : defines controller class
+Gateway --> HttpRoute : accepts route
+HttpRoute --> WebService : route web traffic
+HttpRoute --> ApiService : route API traffic
+WebDeployment --> WebReplicaSet : manages rollout
+WebReplicaSet --> WebPods : maintains replicas
+ApiDeployment --> ApiReplicaSet : manages rollout
+ApiReplicaSet --> ApiPods : maintains replicas
+WorkerDeployment --> WorkerReplicaSet : manages rollout
+WorkerReplicaSet --> WorkerPods : maintains replicas
+WebService --> WebPods : selects Pods
+ApiService --> ApiPods : selects Pods
+ApiPods --> OrderDatabase : read/write orders
+ApiPods --> PaymentProvider : authorise payment
+WorkerPods --> DeliveryPartner : fulfilment requests
 
 legend bottom
-Deployment manages desired Pod replicas.
+Gateway API routes external HTTPS traffic through Gateway and HTTPRoute.
+Deployment manages ReplicaSets; ReplicaSets maintain Pod replicas.
 Service exposes stable access to selected Pods.
 The managed database and provider systems are outside the cluster.
+Physical node scheduling is outside this teaching view.
+StatefulSet is not shown; use it when a workload needs stable identity or persistent state behaviour.
 endlegend
 @enduml

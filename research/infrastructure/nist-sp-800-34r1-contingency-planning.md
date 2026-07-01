@@ -8,25 +8,25 @@
 - Publication date: May 2010
 - Access date: 2026-06-30
 - URL or identifier: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-34r1.pdf
-- Source type: Official government guidance
+- Source type: Historical official government guidance
 
 ## Supported claims
 
 - Claim: Disaster recovery and contingency planning should define recovery objectives, recovery priorities, roles, procedures and testing.
 - Intended chapter(s): Chapter 11, Chapter 20, Chapter 49
-- Normative or interpretive: Normative for contingency-planning terminology; interpretive for architecture modelling guidance.
+- Normative or interpretive: Historical official guidance used informatively for contingency-planning terminology; interpretive for architecture modelling guidance.
 
 - Claim: Recovery Time Objective (RTO) and Recovery Point Objective (RPO) are useful terms for expressing recovery expectations.
 - Intended chapter(s): Chapter 11, Chapter 20, Chapter 49
-- Normative or interpretive: Normative for terminology.
+- Normative or interpretive: Historical official terminology used informatively.
 
 ## Relevant summary
 
-NIST SP 800-34 Revision 1 explains contingency planning for information systems, including impact analysis, recovery strategies, plan development, testing and maintenance. Chapter 11 uses it to explain why disaster recovery diagrams should show recovery responsibilities and objectives rather than only duplicate infrastructure.
+NIST SP 800-34 Revision 1 explains contingency planning for information systems, including impact analysis, recovery strategies, plan development, testing and maintenance. Chapter 11 uses it informatively to explain why disaster recovery diagrams should show recovery responsibilities and objectives rather than only duplicate infrastructure.
 
 ## Terminology and version notes
 
-Use Recovery Time Objective and Recovery Point Objective with the acronyms RTO and RPO after first definition in each standalone chapter.
+Use Recovery Time Objective and Recovery Point Objective with the acronyms RTO and RPO after first definition in each standalone chapter. Do not describe this source as a current banking regulation or as an unqualified current normative source.
 
 ## Copyright or reuse notes
 

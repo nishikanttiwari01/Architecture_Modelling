@@ -16,7 +16,7 @@ Chapter 10, **Domain and Event Modelling**, is approved by the author with final
 
 All Chapter 6, Chapter 7, Chapter 8, Chapter 9 and Chapter 10 diagrams remain `Review`, not `Approved`. Final book-page layout review remains pending for diagrams, particularly `FIG-09-03` and the wider Chapter 10 event figures.
 
-Chapter 11, **Infrastructure and Deployment Modelling**, is `Ready for Author Approval`. Primary source notes, prose, glossary updates, source-register entries, `FIG-11-01` through `FIG-11-05` diagram specifications, PlantUML sources, SVG exports, PNG previews, manuscript figure references and the Chapter 11 quality gate are complete.
+Chapter 11, **Infrastructure and Deployment Modelling**, is `Ready for Author Approval` after the 2026-07-01 author-review correction pass and the later missing-revisions pass. Primary source notes, prose, glossary updates, source-register entries, `FIG-11-01` through `FIG-11-06` diagram specifications, PlantUML sources, SVG exports, PNG previews, manuscript figure references and the Chapter 11 quality gate are complete. The correction pass added ReplicaSet, StatefulSet, Gateway API and Ingress guidance, logical versus physical deployment guidance, cloud responsibility guidance, capacity and scalability guidance, stronger environment guidance, a warm-standby resilience scenario in `FIG-11-05`, a dedicated Horizon Bank payment observability view in `FIG-11-06`, practical infrastructure diagram tooling guidance and the renamed `FIG-11-04` infrastructure and placement view.
 
 ## Git reference
 
@@ -48,7 +48,7 @@ Chapter 11, **Infrastructure and Deployment Modelling**, is `Ready for Author Ap
 - Diagram status for Chapter 8 figures `FIG-08-01` through `FIG-08-06`: `Review`
 - Diagram status for Chapter 9 figures `FIG-09-01` through `FIG-09-04`: `Review`
 - Diagram status for Chapter 10 figures `FIG-10-01` through `FIG-10-04`: `Review`
-- Diagram status for Chapter 11 figures `FIG-11-01` through `FIG-11-05`: `Review`
+- Diagram status for Chapter 11 figures `FIG-11-01` through `FIG-11-06`: `Review`
 
 ## Pending non-critical issues
 
@@ -61,8 +61,8 @@ Chapter 11, **Infrastructure and Deployment Modelling**, is `Ready for Author Ap
 
 ## Next chapter
 
-Chapter 12, **Security Modelling**, is the next planned chapter after author review of Chapter 11.
+Chapter 12, **Security Modelling**, remains planned. Do not begin Chapter 12 until the author explicitly asks for it.
 
 ## Next exact action
 
-Author review of Chapter 11, **Infrastructure and Deployment Modelling**. If the author approves it, update `STATUS.md`, `CHANGELOG.md` and `RESUME.md` to mark Chapter 11 `Approved` while keeping diagrams at `Review`.
+Author review of Chapter 11, **Infrastructure and Deployment Modelling**. If the author approves it, update `STATUS.md`, `CHANGELOG.md` and `RESUME.md` to mark Chapter 11 `Approved` while keeping `FIG-11-01` through `FIG-11-06` at `Review`. Do not start Chapter 12 until explicitly instructed.

@@ -1,0 +1,68 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+left to right direction
+title FIG-11-06. Horizon Bank Payment Observability View
+
+skinparam rectangle {
+  BorderColor #333333
+  BackgroundColor #F7F9FB
+}
+skinparam component {
+  BorderColor #333333
+  BackgroundColor #FFFFFF
+}
+skinparam ArrowThickness 1.3
+
+rectangle "Horizon Bank Payment Systems" as Systems {
+  component "Horizon Digital\nChannels" as Channels
+  component "Payments\nPlatform" as Payments
+  component "Financial Crime\nPlatform" as FinancialCrime
+  component "Enterprise Integration\nPlatform" as Integration
+  queue "Event Platform" as EventPlatform
+  database "Core Deposit\nSystem" as CoreDeposit
+}
+
+rectangle "Telemetry Signals" as Signals {
+  component "Traces" as Traces
+  component "Metrics" as Metrics
+  component "Logs" as Logs
+}
+
+component "OpenTelemetry\nCollector" as Collector
+component "Filtering and\nSensitive-Data Redaction" as Redaction
+database "Observability\nBackends" as Backends
+rectangle "Payment Service Indicators\n\npayment submission rate\nscreening latency\nposting-confirmation delay\nfailed-payment rate\nevent backlog\ncustomer-status update lag" as Indicators
+component "Payment Operations\nDashboards" as Dashboards
+component "Alert Routing" as Alerts
+
+actor "Operations\nTeam" as Ops
+actor "Service\nOwner" as Owner
+
+Channels -[#2D6A4F,dotted]-> Traces : request flow
+Payments -[#2D6A4F,dotted]-> Traces : payment trace
+Payments -[#2D6A4F,dotted]-> Metrics : submission and failure rates
+FinancialCrime -[#2D6A4F,dotted]-> Metrics : screening timing
+Integration -[#2D6A4F,dotted]-> Logs : posting integration logs
+EventPlatform -[#2D6A4F,dotted]-> Metrics : backlog and lag
+CoreDeposit -[#2D6A4F,dotted]-> Logs : posting confirmations
+
+Traces --> Collector : telemetry
+Metrics --> Collector : telemetry
+Logs --> Collector : telemetry
+Collector --> Redaction : process and filter
+Redaction --> Backends : exported telemetry
+Backends --> Indicators : derive service indicators
+Indicators --> Dashboards : displayed
+Indicators --> Alerts : thresholds
+Dashboards --> Ops : monitor service
+Dashboards --> Owner : service health view
+Alerts --> Ops : actionable alerts
+Alerts --> Owner : service-impact alerts
+
+legend bottom
+Dotted arrows show telemetry emission from payment systems.
+Filtering and sensitive-data redaction happen before telemetry reaches shared backends.
+Dashboards support investigation; alert routing supports action.
+endlegend
+@enduml

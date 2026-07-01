@@ -31,6 +31,8 @@ rectangle "Data Zone\nRestricted data access" as DataZone {
 
 rectangle "Operations Access Path\nControlled support route" as OpsPath {
   rectangle "Deployment and\nMonitoring Tools" as OpsTools
+  rectangle "Administration Gateway\nrestricted and audited" as AdminGateway
+  rectangle "Backup and DBA\nAccess Point" as BackupDbaAccess
 }
 
 cloud "Payment Provider\nSystem" as PaymentProvider
@@ -43,10 +45,13 @@ AppRuntime --> OrderDatabase : controlled DB connection
 AppRuntime --> PaymentProvider : controlled outbound API
 WorkerRuntime --> DeliveryPartner : controlled outbound API
 OpsTools --> AppRuntime : admin and support access
-OpsTools --> OrderDatabase : controlled operational access
+OpsTools --> AdminGateway : authenticated support route
+AdminGateway --> BackupDbaAccess : audited data operations
+BackupDbaAccess --> OrderDatabase : restricted backup or DBA access
 
 legend bottom
 This topology shows zones and allowed paths.
+Routine operations do not bypass the controlled data-zone access path.
 It is not a firewall rule list or a business-process diagram.
 endlegend
 @enduml

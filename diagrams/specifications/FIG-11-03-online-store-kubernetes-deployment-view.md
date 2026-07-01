@@ -10,7 +10,7 @@ Developers, platform engineers and operations teams.
 
 ## Question answered
 
-How do the Online Store web, API and worker workloads map to Kubernetes Deployments, Services, Pods and supporting storage?
+How do the Online Store web, API and worker workloads map to Kubernetes Gateway API, Services, Deployments, ReplicaSets, Pods and supporting storage?
 
 ## Notation
 
@@ -20,24 +20,29 @@ Kubernetes deployment teaching view, rendered with PlantUML after author accepta
 
 - Kubernetes cluster boundary.
 - Production namespace.
-- Ingress.
+- GatewayClass, Gateway and HTTPRoute for public HTTPS routing.
+- Optional note that Ingress is common for existing clusters but not the preferred new teaching example.
 - Web Deployment and web Pods.
 - API Deployment and API Pods.
 - Worker Deployment and worker Pods.
+- ReplicaSets managed by Deployments.
 - Kubernetes Services for stable access where appropriate.
 - Managed database outside the cluster.
 - External Payment Provider System and Delivery Partner System.
+- Visible note that StatefulSet is not shown because the Online Store workloads in this figure are replaceable stateless examples.
 
 ## Required relationships
 
-- Ingress routes external HTTPS traffic to a web or API Service.
-- Service selects Pods managed by a Deployment.
+- Gateway and HTTPRoute route external HTTPS traffic to a web or API Service.
+- Deployment manages a ReplicaSet.
+- ReplicaSet maintains Pod replicas.
+- Service selects matching Pods.
 - API Pods connect to the managed database and external provider systems.
 - Worker Pods handle asynchronous fulfilment or notification work.
 
 ## Main flow or structure
 
-Show Kubernetes control abstractions and workload replicas in a compact layout. Use labels that distinguish Deployment, Pod and Service.
+Show Kubernetes control abstractions and workload replicas in a compact layout. Use labels that distinguish Gateway API resources, Deployment, ReplicaSet, Pod and Service.
 
 ## Alternative and exception flows
 
@@ -51,8 +56,10 @@ Conceptual Kubernetes deployment for the Simple Online Store.
 
 - No YAML manifest.
 - No detailed container images, resource limits or autoscaling policy.
+- No physical node scheduling, unless a later figure specifically asks that question.
 - No Kubernetes security policy.
 - No service mesh detail.
+- No StatefulSet. Use StatefulSet when the workload needs stable identity or persistent state behaviour.
 
 ## Accessibility requirements
 
@@ -65,7 +72,9 @@ Use explicit text labels for each Kubernetes object type. Avoid small nested tex
 
 ## Review criteria
 
-- Deployment, Pod and Service are not used interchangeably.
+- Deployment, ReplicaSet, Pod, Service and Gateway API resources are not used interchangeably.
+- Deployment manages ReplicaSets, and ReplicaSets maintain Pod replicas.
+- StatefulSet is excluded visibly and for the correct reason.
 - Cluster and namespace boundaries are explicit.
 - External managed database and provider systems are clearly outside the cluster.
 - Specification must be accepted by the author before creating the PlantUML source.
