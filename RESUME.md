@@ -20,6 +20,8 @@ Chapter 11, **Infrastructure and Deployment Modelling**, is approved by the auth
 
 Final page-layout review remains pending for Chapter 11 diagrams, particularly `FIG-11-03`, `FIG-11-05` and `FIG-11-06`. All Chapter 11 figures remain `Review`, not `Approved`.
 
+Chapter 12, **Security Modelling**, has a complete first prose draft and five diagram specifications: `FIG-12-01` Online Store Trust Boundary View, `FIG-12-02` Online Store Customer Authentication Sequence, `FIG-12-03` Horizon Bank Payment Authorisation Matrix, `FIG-12-04` Horizon Bank Payment Threat-Model DFD and `FIG-12-05` Horizon Bank Payment Attack Tree. Diagram source and exports remain deferred pending author approval of the specifications.
+
 ## Git reference
 
 - Chapter 10 approval commit: `40e88d2`
@@ -41,7 +43,7 @@ Final page-layout review remains pending for Chapter 11 diagrams, particularly `
 - Chapter 9 status: `Approved`
 - Chapter 10 status: `Approved`
 - Chapter 11 status: `Approved`
-- Chapter 12 status: `Researching`
+- Chapter 12 status: `Diagramming`
 - Diagram status for Chapter 1 figure `FIG-01-01`: `Review`
 - Diagram status for Chapter 2 figure `FIG-02-01`: `Review`
 - Diagram status for Chapter 3 figures `FIG-03-01` through `FIG-03-03`: `Review`
@@ -53,6 +55,7 @@ Final page-layout review remains pending for Chapter 11 diagrams, particularly `
 - Diagram status for Chapter 9 figures `FIG-09-01` through `FIG-09-04`: `Review`
 - Diagram status for Chapter 10 figures `FIG-10-01` through `FIG-10-04`: `Review`
 - Diagram status for Chapter 11 figures `FIG-11-01` through `FIG-11-06`: `Review`
+- Diagram status for Chapter 12 figures `FIG-12-01` through `FIG-12-05`: `Planned`
 
 ## Pending non-critical issues
 
@@ -66,8 +69,8 @@ Final page-layout review remains pending for Chapter 11 diagrams, particularly `
 
 ## Next chapter
 
-Chapter 12, **Security Modelling**, is the next current chapter after Chapter 11 approval.
+Chapter 12, **Security Modelling**, is the current chapter after Chapter 11 approval.
 
 ## Next exact action
 
-Continue Chapter 12, **Security Modelling**, by completing source research, confirming the detailed outline and preparing diagram specifications. Keep Chapter 11 figures `FIG-11-01` through `FIG-11-06` at `Review`.
+Review the Chapter 12 first draft and approve or revise the `FIG-12-01` through `FIG-12-05` diagram specifications before Codex creates source and exports. Keep Chapter 11 figures `FIG-11-01` through `FIG-11-06` at `Review`.

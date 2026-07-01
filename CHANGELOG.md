@@ -4,6 +4,15 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-01
 
+### Drafted Chapter 12 Security Modelling
+
+- Expanded Chapter 12, **Security Modelling**, from scaffold to a complete first prose draft.
+- Covered security viewpoints, trust boundaries, authentication flows, authorisation models, threat modelling, STRIDE, attack trees, threat-model DFDs, security control mapping, privacy and data classification.
+- Added five Chapter 12 diagram specifications and registered `FIG-12-01` through `FIG-12-05`.
+- Kept Chapter 12 diagram source and exports deferred pending author approval of the specifications.
+- Added Chapter 12 glossary terms for authentication, authorisation, threats, controls, STRIDE, attack trees, policy decision and enforcement points, and data classification.
+- Moved Chapter 12 to `Diagramming`.
+
 ### Approved Chapter 11 Infrastructure and Deployment Modelling
 
 - Recorded author approval for Chapter 11, **Infrastructure and Deployment Modelling**, with final quality score 9.1.

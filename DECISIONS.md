@@ -177,6 +177,18 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapter 11, `FIG-11-05`, `FIG-11-06`, `DIAGRAM_REGISTER.md`, `reviews/chapter-gates/CH-11-quality-gate.md`.
 - **Supersedes / superseded by:** Supersedes DEC-017.
 
+## DEC-019: Use five specification-first security teaching figures for Chapter 12
+
+- **Status:** Approved
+- **Date:** 2026-07-01
+- **Decision:** Use five planned Chapter 12 teaching figures: Online Store trust boundary view, Online Store customer authentication sequence, Horizon Bank payment authorisation matrix, Horizon Bank payment threat-model DFD and Horizon Bank payment attack tree.
+- **Context:** Chapter 12 needs to teach security modelling through focused views without combining trust boundaries, identity, access control, threats, controls and data sensitivity into one unreadable diagram.
+- **Alternatives considered:** Create one large security architecture diagram; defer all diagrams until Chapter 21; create diagram source immediately from draft specifications.
+- **Reason:** Focused security figures match the chapter's teaching sequence and repository diagram rules. Source creation must wait for author approval of the specifications.
+- **Consequences:** `FIG-12-01` through `FIG-12-05` are registered as `Planned`, with specifications under `diagrams/specifications/`. Source and exports remain pending author approval.
+- **Related chapters/files:** Chapter 12, `DIAGRAM_REGISTER.md`, `diagrams/specifications/FIG-12-*`.
+- **Supersedes / superseded by:** None.
+
 ## Decision template
 
 ```markdown

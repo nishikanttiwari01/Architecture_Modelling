@@ -53,6 +53,11 @@ Add a row before creating a new figure. Do not reuse an ID.
 | FIG-11-04 | 11 | Horizon Bank Hybrid Infrastructure and Placement View | Show simplified infrastructure placement across digital channels, cloud platform, event platform and retained core systems | Solution architects, platform teams, operations and risk reviewers | Hybrid infrastructure and placement view | diagrams/source/plantuml/FIG-11-04-horizon-bank-hybrid-infrastructure-placement-view.puml | diagrams/exported/svg/FIG-11-04-horizon-bank-hybrid-infrastructure-placement-view.svg | Review | Codex |
 | FIG-11-05 | 11 | Horizon Bank Payment Resilience View | Show one warm-standby payment recovery scenario with failover trigger, failback, data reconciliation, dependency readiness and recovery objectives | Platform architects, operations, resilience and risk reviewers | Resilience view | diagrams/source/plantuml/FIG-11-05-horizon-bank-payment-resilience-view.puml | diagrams/exported/svg/FIG-11-05-horizon-bank-payment-resilience-view.svg | Review | Codex |
 | FIG-11-06 | 11 | Horizon Bank Payment Observability View | Show how payment telemetry flows through collection, filtering, redaction, observability backends, dashboards and alert routing | Operations, service owners, platform teams and risk reviewers | Observability architecture view | diagrams/source/plantuml/FIG-11-06-horizon-bank-payment-observability-view.puml | diagrams/exported/svg/FIG-11-06-horizon-bank-payment-observability-view.svg | Review | Codex |
+| FIG-12-01 | 12 | Online Store Trust Boundary View | Show the main trust contexts for customer login and checkout | Beginners, solution architects, security reviewers and platform teams | Conceptual security architecture view | Pending author approval | Pending author approval | Planned | Codex |
+| FIG-12-02 | 12 | Online Store Customer Authentication Sequence | Show how customer identity is established before account or order access | Beginners, developers, identity teams, testers and security reviewers | UML sequence | Pending author approval | Pending author approval | Planned | Codex |
+| FIG-12-03 | 12 | Horizon Bank Payment Authorisation Matrix | Show who or what may perform selected payment actions and under which conditions | Product owners, architects, developers, operations, compliance reviewers and auditors | Authorisation matrix | Pending author approval | Pending author approval | Planned | Codex |
+| FIG-12-04 | 12 | Horizon Bank Payment Threat-Model DFD | Show payment data movement, trust boundaries and threat-review points | Security reviewers, solution architects, integration architects, developers, operations and risk reviewers | Threat-model DFD | Pending author approval | Pending author approval | Planned | Codex |
+| FIG-12-05 | 12 | Horizon Bank Payment Attack Tree | Show alternative paths to unauthorised outgoing payment submission | Security teams, architects, risk reviewers, developers and operations teams | Attack tree | Pending author approval | Pending author approval | Planned | Codex |
 | FIG-31-01 | 31 | BIAN reference-to-implementation path | Separate BIAN reference concepts from bank implementation | Architects and bankers | Conceptual | Pending | Pending | Planned | — |
 
 ## Chapter 8 figure asset details
@@ -94,6 +99,16 @@ Add a row before creating a new figure. Do not reuse an ID.
 | `FIG-11-04` | `diagrams/specifications/FIG-11-04-horizon-bank-hybrid-infrastructure-placement-view.md` | `diagrams/source/plantuml/FIG-11-04-horizon-bank-hybrid-infrastructure-placement-view.puml` | `diagrams/exported/svg/FIG-11-04-horizon-bank-hybrid-infrastructure-placement-view.svg` | `diagrams/exported/png/FIG-11-04-horizon-bank-hybrid-infrastructure-placement-view.png` |
 | `FIG-11-05` | `diagrams/specifications/FIG-11-05-horizon-bank-payment-resilience-view.md` | `diagrams/source/plantuml/FIG-11-05-horizon-bank-payment-resilience-view.puml` | `diagrams/exported/svg/FIG-11-05-horizon-bank-payment-resilience-view.svg` | `diagrams/exported/png/FIG-11-05-horizon-bank-payment-resilience-view.png` |
 | `FIG-11-06` | `diagrams/specifications/FIG-11-06-horizon-bank-payment-observability-view.md` | `diagrams/source/plantuml/FIG-11-06-horizon-bank-payment-observability-view.puml` | `diagrams/exported/svg/FIG-11-06-horizon-bank-payment-observability-view.svg` | `diagrams/exported/png/FIG-11-06-horizon-bank-payment-observability-view.png` |
+
+## Chapter 12 figure asset details
+
+| Figure ID | Specification | Source | SVG export | PNG preview |
+|---|---|---|---|---|
+| `FIG-12-01` | `diagrams/specifications/FIG-12-01-online-store-trust-boundary-view.md` | Pending author approval | Pending author approval | Pending author approval |
+| `FIG-12-02` | `diagrams/specifications/FIG-12-02-online-store-customer-authentication-sequence.md` | Pending author approval | Pending author approval | Pending author approval |
+| `FIG-12-03` | `diagrams/specifications/FIG-12-03-horizon-bank-payment-authorisation-matrix.md` | Pending author approval | Pending author approval | Pending author approval |
+| `FIG-12-04` | `diagrams/specifications/FIG-12-04-horizon-bank-payment-threat-model-dfd.md` | Pending author approval | Pending author approval | Pending author approval |
+| `FIG-12-05` | `diagrams/specifications/FIG-12-05-horizon-bank-payment-attack-tree.md` | Pending author approval | Pending author approval | Pending author approval |
 
 ## Status values
 

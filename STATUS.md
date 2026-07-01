@@ -30,7 +30,7 @@
 | 09 | Decision Modelling and DMN | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; four figures completed; diagrams remain Review pending final book-page layout review, particularly FIG-09-03 |
 | 10 | Domain and Event Modelling | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; diagrams remain Review pending final book-page layout review |
 | 11 | Infrastructure and Deployment Modelling | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; six figures completed; diagrams remain Review pending final page-layout review, particularly FIG-11-03, FIG-11-05 and FIG-11-06 |
-| 12 | Security Modelling | Researching | 10 | 0 | 0 | 0 | 10 | Current chapter; collect primary security modelling sources and confirm detailed outline |
+| 12 | Security Modelling | Diagramming | 100 | 100 | 20 | 0 | 100 | Review first draft and approve diagram specifications before creating source/export files |
 | 13 | Other Useful Modelling Approaches | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 14 | Modelling Business Strategy and Capabilities | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 15 | Modelling Business Processes | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -107,6 +107,6 @@
 
 ## Current recommended next task
 
-Chapter 11, **Infrastructure and Deployment Modelling**, is `Approved` by the author with final quality score 9.1. `FIG-11-01` through `FIG-11-06` have specifications, PlantUML sources, SVG exports and PNG previews, and remain at `Review`. Final page-layout review remains pending, particularly for `FIG-11-03`, `FIG-11-05` and `FIG-11-06`. Chapter 12, **Security Modelling**, is now the current chapter and is in `Researching`.
+Chapter 12, **Security Modelling**, is now the current chapter and is in `Diagramming`. The first prose draft and `FIG-12-01` through `FIG-12-05` specifications are complete. Diagram source and exports are deferred pending author approval of the specifications. Chapter 11, **Infrastructure and Deployment Modelling**, remains `Approved`; `FIG-11-01` through `FIG-11-06` remain at `Review` pending final page-layout review.
 
 Last updated: 2026-07-01

@@ -173,6 +173,17 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Trace | Telemetry that follows one request or transaction through multiple components. | Useful for runtime flow and dependency diagnosis. |
 | Metric | Numeric telemetry measured over time. | Useful for service health, capacity, saturation and service-level monitoring. |
 | Log | A timestamped event or message emitted by software or infrastructure. | Useful for investigation, but it needs retention, privacy and correlation rules. |
+| Authentication | The act of establishing or proving the identity of a user, system, service or device. | Distinguish from authorisation, which decides what the authenticated subject may do. |
+| Authorisation | The decision about whether a subject may perform an action on a resource under stated conditions. | Use British spelling in prose; preserve source titles such as OWASP Authorization Cheat Sheet when citing them. |
+| Threat | A potential cause of harm to an asset, system, process or organisation. | Link threats to assets, flows, boundaries and mitigations rather than listing them abstractly. |
+| Vulnerability | A weakness that could be exploited by a threat. | Do not use as a synonym for every risk or missing control. |
+| Security control | A safeguard or countermeasure that reduces likelihood, impact or exposure. | Record the control intent, location, owner and evidence where practical. |
+| Threat model | A structured representation of assets, flows, trust boundaries, threats, mitigations and open questions. | It is not the same as penetration testing or a list of security products. |
+| STRIDE | A threat-category mnemonic covering Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service and Elevation of Privilege. | Use as a review prompt, not as a complete security architecture by itself. |
+| Attack tree | A tree-shaped model that shows alternative or combined paths to a harmful goal. | Keep branches concrete enough to review and avoid exploit instructions. |
+| Policy decision point | The place or component that evaluates policy and decides whether an action should be allowed. | Distinguish from the place that enforces the decision. |
+| Policy enforcement point | The place or component that applies an access decision at a boundary or service. | Make enforcement visible when the security question is about authorisation. |
+| Data classification | The labelling of data according to sensitivity, handling needs or organisational policy. | Do not use colour as the only classification indicator. |
 
 ## Terms requiring future decision
 
