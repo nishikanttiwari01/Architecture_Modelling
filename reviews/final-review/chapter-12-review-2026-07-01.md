@@ -48,6 +48,6 @@ Focused follow-up correction: `FIG-12-04` now shows the Operations Analyst recei
 
 Updated remaining work:
 
-- Final author approval remains pending.
 - Final page-layout approval remains pending.
-- Do not mark Chapter 12 or any Chapter 12 figure `Approved` until the author explicitly approves them.
+- The author approved Chapter 12 on 2026-07-02.
+- Keep Chapter 12 figures at `Review`, not `Approved`, until final page-layout review.

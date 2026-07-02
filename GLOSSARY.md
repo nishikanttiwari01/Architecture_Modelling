@@ -191,6 +191,13 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Policy enforcement point | The place or component that applies an access decision at a boundary or service. | Make enforcement visible when the security question is about authorisation. |
 | Data classification | The labelling of data according to sensitivity, handling needs or organisational policy. | Do not use colour as the only classification indicator. |
 | Privacy modelling | Modelling data processing, purpose, access, sharing, retention and minimisation concerns that may create privacy risk. | Do not reduce privacy review to data classification alone. |
+| Systems Modeling Language (SysML) | An OMG general-purpose modelling language for systems engineering and model-based systems engineering. | Use for requirements, structure, behaviour, analysis and verification traceability when that rigour is needed; do not use it merely to make a simple software diagram look formal. |
+| Requirement traceability | The relationship between a requirement and the design, implementation or verification evidence that addresses it. | Keep the link reviewable; do not claim a requirement is satisfied without evidence. |
+| Application landscape | A view of the major applications or software systems in an estate and their high-level relationships. | Use for estate understanding and rationalisation, not detailed process flow or interface catalogues. |
+| Integration landscape | A view of how systems exchange information through APIs, events, files, messages, adapters or integration platforms. | Label the integration style where it matters; avoid vague "integrates with" arrows. |
+| Architecture roadmap | A model of intended architecture change across current, transition and target states. | Treat it as an assumption-based planning view unless governance makes it a delivery commitment. |
+| Heat map | A view that overlays a rating such as risk, maturity, cost, pain or priority onto a stable structure. | State the scoring basis, date, owner and meaning of ratings; do not rely on colour alone. |
+| Wardley map | A strategic map that relates user need, value-chain components, dependencies and component evolution. | Treat component positions as assumptions for discussion, not objective facts. |
 
 ## Terms requiring future decision
 

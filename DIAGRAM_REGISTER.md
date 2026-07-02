@@ -57,6 +57,12 @@ Add a row before creating a new figure. Do not reuse an ID.
 | FIG-12-02 | 12 | Online Store Customer Authentication Sequence | Show how customer identity is established before account or order access | Beginners, developers, identity teams, testers and security reviewers | UML sequence | diagrams/source/plantuml/FIG-12-02-online-store-customer-authentication-sequence.puml | diagrams/exported/svg/FIG-12-02-online-store-customer-authentication-sequence.svg | Review | Codex |
 | FIG-12-04 | 12 | Horizon Bank Payment Threat-Model DFD | Show payment data movement, trust boundaries and threat-review points | Security reviewers, solution architects, integration architects, developers, operations and risk reviewers | Threat-model DFD | diagrams/source/plantuml/FIG-12-04-horizon-bank-payment-threat-model-dfd.puml | diagrams/exported/svg/FIG-12-04-horizon-bank-payment-threat-model-dfd.svg | Review | Codex |
 | FIG-12-05 | 12 | Horizon Bank Payment Attack Tree | Show alternative and combined attack paths that could cause an unauthorised or prohibited outgoing payment to be released | Security teams, architects, risk reviewers, developers and operations teams | Attack tree | diagrams/source/plantuml/FIG-12-05-horizon-bank-payment-attack-tree.puml | diagrams/exported/svg/FIG-12-05-horizon-bank-payment-attack-tree.svg | Review | Codex |
+| FIG-13-01 | 13 | Online Store SysML Requirement Trace | Show how selected checkout and support requirements trace to design responses and verification evidence | Beginners, analysts, architects and testers | SysML-style requirement trace teaching view | Pending author-approved specification | Pending | Planned | Codex |
+| FIG-13-02 | 13 | Horizon Bank Customer Onboarding Value Stream | Show major value stages and enabling capabilities for customer onboarding | Business architects, enterprise architects, product owners and sponsors | Value stream | Pending author-approved specification | Pending | Planned | Codex |
+| FIG-13-03 | 13 | Horizon Bank Application Landscape Map | Show selected Horizon Bank systems and high-level relationships for a mixed current and target estate | Enterprise architects, solution architects and application owners | Application landscape | Pending author-approved specification | Pending | Planned | Codex |
+| FIG-13-04 | 13 | Horizon Bank Platform Evolution Roadmap | Show current, transition and target architecture states for platform-mediated APIs and governed events | Transformation leads, enterprise architects, platform teams and sponsors | Architecture roadmap | Pending author-approved specification | Pending | Planned | Codex |
+| FIG-13-05 | 13 | Horizon Bank Capability Heat Map | Show investment, risk or maturity attention areas over stable business capabilities | Business architects, portfolio teams, risk reviewers and sponsors | Capability heat map | Pending author-approved specification | Pending | Planned | Codex |
+| FIG-13-06 | 13 | Horizon Bank Payment Modernisation Wardley Map | Show user need, payment-modernisation components, dependencies and assumed component evolution | Strategy, product, enterprise architecture and platform leaders | Wardley map | Pending author-approved specification | Pending | Planned | Codex |
 | FIG-31-01 | 31 | BIAN reference-to-implementation path | Separate BIAN reference concepts from bank implementation | Architects and bankers | Conceptual | Pending | Pending | Planned | — |
 
 ## Chapter 8 figure asset details
@@ -107,6 +113,17 @@ Add a row before creating a new figure. Do not reuse an ID.
 | `FIG-12-02` | `diagrams/specifications/FIG-12-02-online-store-customer-authentication-sequence.md` | `diagrams/source/plantuml/FIG-12-02-online-store-customer-authentication-sequence.puml` | `diagrams/exported/svg/FIG-12-02-online-store-customer-authentication-sequence.svg` | `diagrams/exported/png/FIG-12-02-online-store-customer-authentication-sequence.png` |
 | `FIG-12-04` | `diagrams/specifications/FIG-12-04-horizon-bank-payment-threat-model-dfd.md` | `diagrams/source/plantuml/FIG-12-04-horizon-bank-payment-threat-model-dfd.puml` | `diagrams/exported/svg/FIG-12-04-horizon-bank-payment-threat-model-dfd.svg` | `diagrams/exported/png/FIG-12-04-horizon-bank-payment-threat-model-dfd.png` |
 | `FIG-12-05` | `diagrams/specifications/FIG-12-05-horizon-bank-payment-attack-tree.md` | `diagrams/source/plantuml/FIG-12-05-horizon-bank-payment-attack-tree.puml` | `diagrams/exported/svg/FIG-12-05-horizon-bank-payment-attack-tree.svg` | `diagrams/exported/png/FIG-12-05-horizon-bank-payment-attack-tree.png` |
+
+## Chapter 13 figure asset details
+
+| Figure ID | Specification | Source | SVG export | PNG preview |
+|---|---|---|---|---|
+| `FIG-13-01` | `diagrams/specifications/FIG-13-01-online-store-sysml-requirement-trace.md` | Pending author-approved specification | Pending | Pending |
+| `FIG-13-02` | `diagrams/specifications/FIG-13-02-horizon-bank-customer-onboarding-value-stream.md` | Pending author-approved specification | Pending | Pending |
+| `FIG-13-03` | `diagrams/specifications/FIG-13-03-horizon-bank-application-landscape-map.md` | Pending author-approved specification | Pending | Pending |
+| `FIG-13-04` | `diagrams/specifications/FIG-13-04-horizon-bank-platform-evolution-roadmap.md` | Pending author-approved specification | Pending | Pending |
+| `FIG-13-05` | `diagrams/specifications/FIG-13-05-horizon-bank-capability-heat-map.md` | Pending author-approved specification | Pending | Pending |
+| `FIG-13-06` | `diagrams/specifications/FIG-13-06-horizon-bank-payment-modernisation-wardley-map.md` | Pending author-approved specification | Pending | Pending |
 
 ## Status values
 

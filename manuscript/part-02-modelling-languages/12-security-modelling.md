@@ -2,7 +2,7 @@
 title: "Security Modelling"
 chapter: 12
 part: "part-02-modelling-languages"
-status: "Diagramming"
+status: "Approved"
 author: "Nishikant Tiwari"
 last_updated: "2026-07-02"
 ---
@@ -57,23 +57,6 @@ By the end of this chapter, the reader should be able to:
 - `[OWASP-AUTH-CHEATSHEETS-2026]` supports authentication, session-management and authorisation review concerns.
 - `[MICROSOFT-STRIDE-2026]` supports the six STRIDE threat categories.
 - `[SCHNEIER-ATTACK-TREES-1999]` supports attack-tree roots, branches and AND/OR path semantics.
-
-## Planned chapter structure
-
-1. Explain why security modelling needs focused views.
-2. Establish the security-modelling foundation: assets, objectives, assumptions, threats, controls, evidence and residual risk.
-3. Introduce security viewpoints and map each viewpoint to the review question it answers.
-4. Demonstrate trust boundaries and authentication with the Simple Online Store.
-5. Demonstrate access authorisation, threat modelling, attack trees, DFDs, controls and data handling with Horizon Bank.
-6. Compare security modelling with nearby architecture approaches.
-7. Close with common mistakes, a cheat sheet, key takeaways and a practical exercise.
-
-## Drafting notes
-
-- Chapter 12 is currently in `Diagramming`.
-- `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05` have PlantUML source, SVG exports and PNG previews, and remain at `Review`.
-- `FIG-12-03` is retired and must not be reused. The payment access matrix is `TABLE-12-01`.
-- Final author and page-layout review remain open before any move to `Ready for Author Approval`.
 
 ## Why security needs its own models
 

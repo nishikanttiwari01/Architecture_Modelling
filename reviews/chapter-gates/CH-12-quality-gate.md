@@ -9,14 +9,16 @@
 
 ## Gate decision
 
-Interim gate only. Chapter 12 is not yet recommended for author approval because final author and page-layout review of the rendered figures remains open.
+Chapter 12 is `Approved` by explicit author instruction on 2026-07-02.
 
-Recommended current status: `Diagramming`
+Final quality score: `9.1 / 10`
 
-Recommended quality score: `8.9 / 10`
+Diagram status: `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05` remain `Review`, not `Approved`, pending final book-page layout review.
 
 ## Completed since the review pass
 
+- Recorded author approval of Chapter 12.
+- Removed reader-facing `Planned chapter structure` and `Drafting notes` sections from the approved manuscript.
 - Accepted `DEC-020`, retaining `TABLE-12-01` as a manuscript table and leaving retired `FIG-12-03` unused.
 - Created PlantUML source for `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05`.
 - Rendered SVG exports and PNG previews for all four active Chapter 12 figures.
@@ -54,7 +56,6 @@ Rendering verification:
 
 ## Remaining work and risks
 
-- Final author review is still required before Chapter 12 can move beyond `Diagramming`.
 - The four Chapter 12 figures remain `Review`, not `Approved`.
 - Final page-layout review should check the wider figures, especially `FIG-12-01` and `FIG-12-04`, at intended book-page width.
 - No new sources were required for diagram production.

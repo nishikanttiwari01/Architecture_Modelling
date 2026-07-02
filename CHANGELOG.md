@@ -4,6 +4,21 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-02
 
+### Approved Chapter 12 Security Modelling
+
+- Recorded author approval for Chapter 12, **Security Modelling**, with final quality score 9.1.
+- Kept `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05` at `Review`, not `Approved`.
+- Removed reader-facing draft scaffolding from the approved Chapter 12 manuscript.
+- Set Chapter 13, **Other Useful Modelling Approaches**, as the next chapter.
+
+### Drafted Chapter 13 Other Useful Modelling Approaches
+
+- Expanded Chapter 13 from scaffold to a complete first draft covering SysML, capability maps, value streams, application landscapes, integration landscapes, roadmaps, heat maps, Wardley maps and ADRs.
+- Added source notes for OMG SysML 2.0, official Wardley Maps material and Nygard's ADR article.
+- Registered `FIG-13-01` through `FIG-13-06` and created diagram specifications only; source and exports remain deferred pending author approval.
+- Added Chapter 13 glossary terms and source-register entries.
+- Moved Chapter 13 to `Diagramming`.
+
 ### Applied focused Chapter 12 FIG-12-04 repair-presentation correction
 
 - Updated `FIG-12-04` so the Authorised Operations Interface presents the assigned repair case and permitted payment context to the Operations Analyst before the analyst submits a controlled repair action through the same interface.
