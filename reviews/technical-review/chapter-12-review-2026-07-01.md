@@ -48,7 +48,7 @@ Applied the final Chapter 12 diagram correction pass from `f1109116fc8ac8adf5e9a
 - `FIG-12-01` no longer treats the incoming public request as authenticated. The edge receives a public request and sends a filtered and routed request to the application runtime.
 - `FIG-12-01` keeps authentication-result validation, session validation, input validation, authorisation and business-rule enforcement inside the application runtime.
 - `FIG-12-04` now uses Digital Channel Access Context with the approved bank-controlled boundary basis.
-- `FIG-12-04` now shows repair work item and permitted payment context presented through an authorised operations interface, and screening case plus permitted customer context presented to the Compliance Officer.
+- `FIG-12-04` now shows repair work item and permitted payment context sent from Payments Platform to the authorised operations interface, assigned repair case and permitted payment context presented from that interface to the Operations Analyst, and controlled repair action submitted back through the same interface.
 - `FIG-12-04` now completes the `T12-06` exposure path from Event Platform to Approved Event Consumer.
 - `FIG-12-05` now represents `T12-08` as a structural AND branch with two visible child conditions.
 

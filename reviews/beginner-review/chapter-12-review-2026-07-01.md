@@ -36,7 +36,7 @@ The figures include captions, accessibility text and limitation statements in th
 The final correction pass improves beginner interpretation:
 
 - `FIG-12-01` avoids implying that reaching the public edge means the request is authenticated.
-- `FIG-12-04` makes privileged-user information presentation visible, so readers can see why access control and audit apply to repair and screening work.
+- `FIG-12-04` makes privileged-user information presentation visible, including the Operations Analyst receiving the assigned repair case and permitted payment context through the authorised operations interface before submitting a controlled repair action.
 - `FIG-12-04` shows the Approved Event Consumer path, so `T12-06` is easier to understand as event-data exposure rather than payment release.
 - `FIG-12-05` shows `T12-08` as an AND branch, so readers do not have to infer combined conditions from text inside one box.
 

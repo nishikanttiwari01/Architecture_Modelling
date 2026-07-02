@@ -44,6 +44,8 @@ Updated remaining work:
 
 The final diagram correction pass has been applied to `FIG-12-01`, `FIG-12-04` and `FIG-12-05`, with corresponding manuscript, specification, register and review evidence updates.
 
+Focused follow-up correction: `FIG-12-04` now shows the Operations Analyst receiving the assigned repair case and permitted payment context through the authorised operations interface before submitting the controlled repair action through that same interface.
+
 Updated remaining work:
 
 - Final author approval remains pending.

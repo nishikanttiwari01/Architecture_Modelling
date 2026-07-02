@@ -63,6 +63,7 @@ FinancialCrime --> Compliance : screening case and permitted\ncustomer context
 Compliance --> FinancialCrime : screening case action\n[T12-05]
 
 Payments --> OpsInterface : repair work item and permitted\npayment context
+OpsInterface --> Ops : assigned repair case and permitted\npayment context
 Ops --> OpsInterface : controlled repair action through\nauthorised operations interface\n[T12-04, T12-08]
 OpsInterface --> Payments : authorised repair request
 

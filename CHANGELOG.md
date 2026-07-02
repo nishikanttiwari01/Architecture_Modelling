@@ -4,6 +4,11 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-02
 
+### Applied focused Chapter 12 FIG-12-04 repair-presentation correction
+
+- Updated `FIG-12-04` so the Authorised Operations Interface presents the assigned repair case and permitted payment context to the Operations Analyst before the analyst submits a controlled repair action through the same interface.
+- Regenerated the `FIG-12-04` SVG and PNG exports and updated Chapter 12 review evidence. Chapter 12 remains `Diagramming`; all active Chapter 12 figures remain `Review`.
+
 ### Applied final Chapter 12 diagram correction pass
 
 - Corrected `FIG-12-01` so the public-network entry is not described as authenticated and application validation responsibilities remain inside the application runtime.

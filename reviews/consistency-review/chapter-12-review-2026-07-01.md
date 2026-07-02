@@ -47,4 +47,5 @@ Repository tracking remains consistent after the final diagram correction pass:
 - `TABLE-12-01` remains a manuscript table and retired `FIG-12-03` remains unused.
 - `DEC-020` remains `Accepted`.
 - `FIG-12-04` remains a PlantUML source diagram.
+- The `FIG-12-04` Operations Analyst flow now includes both assigned repair case presentation from the authorised operations interface and controlled repair action back to that interface.
 - Chapter 13 remains `Planned` and was not started.
