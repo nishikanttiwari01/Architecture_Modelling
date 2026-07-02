@@ -34,13 +34,13 @@ SysML-style requirement trace teaching view. Use simple labelled boxes and relat
 ## Required relationships
 
 - Each requirement must connect to at least one design response with `addressed by`.
-- Each design response must connect to at least one verification case with `verified by`.
-- Each verification case must connect to evidence with `evidenced by`.
+- Each requirement must connect directly to at least one verification case with `verified by`.
+- Each verification case must connect to verification evidence with `evidenced by`.
 - No relationship label should imply proof beyond the evidence shown.
 
 ## Main flow or structure
 
-Arrange requirements on the left, design responses in the centre, verification cases to the right of design responses and evidence on the far right. Keep the direction left to right.
+Arrange requirements on the left, design responses in the centre, verification cases to the right of design responses and evidence on the far right. Keep the direction left to right: Requirement | Design response | Verification case | Evidence. A requirement may have two outgoing relationships, `addressed by` and `verified by`.
 
 ## Alternative and exception flows
 

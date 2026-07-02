@@ -20,11 +20,21 @@ Wardley map teaching view.
 
 - User: Retail Customer.
 - User need: make a reliable outgoing payment.
-- Components: Digital payment experience, Payment orchestration, Financial crime screening service, Fraud decisioning service, Event distribution, Customer and account data access, Compute service, Storage service, Network service.
+- Components: Digital payment experience, Payment orchestration, Financial crime screening service, Fraud decisioning service, Payment-status event distribution, Customer and account data access, Compute service, Storage service, Network service.
 - Evolution axis labels: Genesis, Custom-built, Product or rental, Commodity or utility.
 - Dependency links from user need down through visible and supporting components.
 - Note that positions are assumptions for discussion.
-- Component assumptions table matching the manuscript.
+- Component assumptions table with these columns: Component, Depends on, Visibility, Assumed evolution stage, Rationale, Confidence or open question.
+- Teaching assumptions:
+  - Digital payment experience depends on Payment orchestration; visibility High; evolution Custom-built; rationale is that customer-visible experience may differentiate the bank; confidence Medium, with an open question about standard products.
+  - Payment orchestration depends on screening, fraud decisioning, customer and account data access, payment-status event distribution and platform utilities; visibility Medium to high; evolution Custom-built; rationale is bank-specific payment sequencing and controls; confidence Medium.
+  - Financial crime screening service depends on customer and account data access and platform utilities; visibility Medium; evolution Product or rental; rationale is that specialist products exist while bank policy and integration remain specific; confidence Medium.
+  - Fraud decisioning service depends on customer and account data access and platform utilities; visibility Medium; evolution Product or rental; rationale is that mature products exist with bank-specific models and rules; confidence Medium.
+  - Payment-status event distribution depends on compute, storage and network services; visibility Low to medium; evolution Product or rental; rationale is that event-platform products are mature while governance remains organisation-specific; confidence Medium.
+  - Customer and account data access depends on retained banking systems and platform utilities; visibility Low to medium; evolution Custom-built; rationale is that access is shaped by the bank's domain models, controls and legacy estate; confidence Medium.
+  - Compute service has Low visibility and Commodity or utility evolution; rationale is standard infrastructure capability; confidence High.
+  - Storage service has Low visibility and Commodity or utility evolution; rationale is standard infrastructure capability; confidence High.
+  - Network service has Low visibility and Commodity or utility evolution; rationale is standard connectivity capability; confidence High.
 
 ## Required relationships
 

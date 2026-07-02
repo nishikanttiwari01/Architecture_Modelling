@@ -90,6 +90,20 @@ This chapter groups the approaches into four useful types:
 | Estate and change views | Application landscapes, integration landscapes and roadmaps | Understand systems, information exchange and architecture evolution. |
 | Decision and strategy views | Heat maps, Wardley maps and ADRs | Expose attention areas, strategic assumptions and decision rationale. |
 
+The approaches also differ in formality. Some are standards-body modelling languages, some are architecture viewpoints that can use several notations, and some are practitioner techniques.
+
+| Approach | Classification | Notation status | Typical audience |
+|---|---|---|---|
+| SysML | Formal Object Management Group (OMG) modelling language | Defined modelling language | Systems engineers, analysts, architects and verification teams |
+| Capability maps | Formal concepts when modelled through a language such as ArchiMate, but frequently presented through organisation-specific views | Formal or local, depending on the notation used | Business architects, sponsors and portfolio teams |
+| Value streams | Formal business architecture concept, often shown through simplified local views | Formal concept with varied visual presentation | Business architects, product owners and sponsors |
+| Application landscapes | Architecture viewpoint with varying notation | Usually local, C4 or ArchiMate-style depending on purpose | Enterprise architects, solution architects and application owners |
+| Integration landscapes | Architecture viewpoint with varying notation | Usually local, sometimes supported by C4, UML, ArchiMate or data-flow views | Integration architects, solution architects and operations teams |
+| Architecture roadmaps | Formal or informal depending on the notation used | ArchiMate implementation and migration view, timeline, table or local roadmap | Transformation leads, enterprise architects and sponsors |
+| Heat maps | Organisation-specific visual overlay and scoring convention | Local convention; scoring basis must be stated | Business architects, portfolio teams, risk reviewers and sponsors |
+| Wardley maps | Practitioner-origin strategy technique | Practitioner notation with common conventions | Strategy, product and architecture leaders |
+| ADRs | Practitioner-origin textual decision-record technique | Textual record, not a diagram notation | Architects, maintainers and governance reviewers |
+
 The danger is treating every useful drawing as a formal notation. A heat map is useful, but its colours are only meaningful if the scoring basis is written down. A roadmap is useful, but it is not a delivery contract unless governance makes it one. A Wardley map is useful for strategy discussion, but it records assumptions about user need, dependency and evolution. The same discipline from Chapter 3 still applies: read the title, purpose, audience, scope, notation, legend, assumptions and omissions before trusting the model.
 
 ## SysML
@@ -108,7 +122,7 @@ For the Simple Online Store, a SysML-style requirement trace might show:
 | REQ-OS-02 | The customer shall receive an order confirmation after the order is accepted. | Order service creates an order record and triggers web or email confirmation. | Verify accepted-order confirmation. | Functional test result and message-log sample. |
 | REQ-OS-03 | Support users shall view order status without seeing full payment details. | Support interface shows order state and masked payment status only. | Verify support-role access to masked payment information. | Access-control test result and support-role review. |
 
-FIG-13-01 is planned as a small teaching view of this pattern. It should not introduce the full SysML language. The purpose is to show why requirement, design, verification case and evidence links matter. In the figure, relationship labels should use neutral wording such as `addressed by` and `verified by`, because traceability supports review rather than proving correctness.
+FIG-13-01 is planned as a small teaching view of this pattern. It should not introduce the full SysML language. The purpose is to show why requirement, design, verification case and evidence links matter. In the figure, each requirement may have two outgoing relationships: `addressed by` to a design response, and `verified by` to a verification case. The verification case then points to evidence with `evidenced by`. This avoids implying that the design response itself is what the verification case formally verifies.
 
 Use SysML when traceability across requirements, engineered parts, interfaces, behaviour, analysis and verification is important. Do not use it merely because a diagram has requirements on it. A plain table may be enough for simple software work.
 
@@ -168,14 +182,14 @@ An application landscape may show that two systems are related. An integration l
 
 For Horizon Bank, an integration landscape might show these selected exchanges:
 
-| Exchange | Integration style | Review concern |
-|---|---|---|
-| Horizon Digital Channels to Payments Platform | Synchronous API | Customer-facing payment initiation latency and error handling. |
-| Payments Platform to Financial Crime Platform | Synchronous screening request, with operational case follow-up outside this view | Screening decision traceability and timeout behaviour. |
-| Payments Platform to Enterprise Integration Platform | Adapter-mediated service call | Ownership of adapters and operational monitoring. |
-| Enterprise Integration Platform to Core Deposit System | Retained core adapter or batch-safe service boundary | Legacy coexistence and reconciliation. |
-| Payments Platform to Event Platform | Asynchronous event publication | Governed payment-status event schema and replay rules. |
-| Event Platform to Enterprise Data Platform | Event subscription or replicated data feed | Reporting freshness, data lineage and consumer access. |
+| Source | Destination | Information exchanged | Integration style | Direction | Contract or ownership concern |
+|---|---|---|---|---|---|
+| Horizon Digital Channels | Payments Platform | Payment instruction and payment status request | Synchronous API | Channel to platform request and platform response | Channel and payments contract ownership |
+| Payments Platform | Financial Crime Platform | Payment-screening request and result | Synchronous request and response | Payments request, financial-crime response | Timeout and screening-decision ownership |
+| Payments Platform | Enterprise Integration Platform | Account-posting instruction | Adapter-mediated service call | Payments platform invokes integration service | Adapter ownership and monitoring |
+| Enterprise Integration Platform | Core Deposit System | Posting request, posting result and reconciliation reference | Retained-core adapter | Integration platform mediates core request and response | Legacy contract and reconciliation ownership |
+| Payments Platform | Event Platform | Governed payment-status event | Asynchronous publication | Payments platform publishes event | Event-schema ownership and replay policy |
+| Event Platform | Enterprise Data Platform | Governed payment-status subscription | Asynchronous event subscription | Data platform subscribes to governed event | Lineage, retention and consumer-access ownership |
 
 This view is especially useful when the problem is point-to-point complexity, duplicated interfaces or unclear ownership. It is less useful when the question is business value, user experience or detailed process sequence.
 
@@ -239,20 +253,25 @@ For Horizon Bank payment modernisation, a simplified Wardley map might include:
 | Payment orchestration | Core capability for the bank | Build or modernise deliberately |
 | Financial crime screening service | Regulatory screening capability | Specialist service maturity may change build-versus-buy options |
 | Fraud decisioning service | Risk decisioning capability | Product maturity and bank-specific rules may need separate treatment |
-| Event distribution | Shared integration capability | Standardise governance and reuse |
+| Payment-status event distribution | Shared integration capability | Standardise governance and reuse |
 | Customer and account data access | Data dependency for payment execution | Visibility is lower than customer experience, but reliability matters |
 | Compute service | Supporting platform capability | Treat as commodity where possible |
 | Storage service | Supporting platform capability | Treat as commodity where possible |
 | Network service | Supporting platform capability | Treat as commodity where possible |
 
-The dependency lines on a Wardley map show value-chain dependency, not API direction, data lineage or implementation sequence. For the Horizon Bank example, the assumed chain is: customer need depends on the digital payment experience; that experience depends on payment orchestration; payment orchestration depends on screening, fraud decisioning, customer and account data access, event distribution and commodity platform services. These positions are assumptions for discussion, not facts about a real bank.
+The dependency lines on a Wardley map show value-chain dependency, not API direction, data lineage or implementation sequence. For the Horizon Bank example, the assumed chain is: customer need depends on the digital payment experience; that experience depends on payment orchestration; payment orchestration depends on screening, fraud decisioning, customer and account data access, payment-status event distribution and commodity platform services. These positions are illustrative positions for discussion, not factual assessments of a real bank.
 
-| Assumption | Why it matters |
-|---|---|
-| Retail customers value reliability and clear payment status. | Anchors the map in user need rather than internal systems. |
-| Payment orchestration remains a differentiating design concern during modernisation. | Keeps the map from treating all payment capability as commodity too early. |
-| Screening and fraud decisioning have different evolution paths. | Avoids collapsing regulatory screening and fraud risk decisions into one component. |
-| Compute service, storage service and network service are utility-like for this discussion. | Keeps the strategic debate on payment capability rather than infrastructure ownership. |
+| Component | Depends on | Visibility | Assumed evolution stage | Rationale | Confidence or open question |
+|---|---|---|---|---|---|
+| Digital payment experience | Payment orchestration | High | Custom-built | Customer-visible experience may differentiate the bank. | Medium; challenge whether parts are becoming standard products. |
+| Payment orchestration | Screening, fraud decisioning, customer and account data access, payment-status event distribution and platform utilities | Medium to high | Custom-built | Bank-specific payment sequencing and controls remain important. | Medium. |
+| Financial crime screening service | Customer and account data access and platform utilities | Medium | Product or rental | Specialist products exist, while bank policy and integration remain specific. | Medium. |
+| Fraud decisioning service | Customer and account data access and platform utilities | Medium | Product or rental | Mature products exist, with bank-specific models and rules. | Medium. |
+| Payment-status event distribution | Compute, storage and network services | Low to medium | Product or rental | Event-platform products are mature, while governance remains organisation-specific. | Medium. |
+| Customer and account data access | Retained banking systems and platform utilities | Low to medium | Custom-built | Access is shaped by the bank's domain models, controls and legacy estate. | Medium. |
+| Compute service | Platform utility dependencies | Low | Commodity or utility | Standard infrastructure capability. | High. |
+| Storage service | Platform utility dependencies | Low | Commodity or utility | Standard infrastructure capability. | High. |
+| Network service | Platform utility dependencies | Low | Commodity or utility | Standard connectivity capability. | High. |
 
 FIG-13-06 is planned as a payment modernisation Wardley map. It should be labelled as a strategic discussion map, not as a factual inventory.
 
@@ -351,7 +370,7 @@ Horizon Bank is planning a payment modernisation initiative. The bank wants to i
 
 Choose the right model for each question:
 
-1. Which model should show the customer need, payment experience, orchestration, screening, event distribution and commodity platform components against an evolution axis?
+1. Which model should show the customer need, payment experience, orchestration, screening, payment-status event distribution and commodity platform components against an evolution axis?
 2. Which model should show the current Core Deposit System, Payments Platform, Financial Crime Platform, Enterprise Integration Platform and Event Platform relationships?
 3. Which model should show whether Payment Screening, Event Governance and Data Governance have high risk or low maturity?
 4. Which model should show the transition from point-to-point integration to platform-mediated APIs and governed events over time?

@@ -55,7 +55,9 @@ Text labels must state rating values. Colour must not be the only meaning carrie
 ## Source references
 
 - `[OPEN-GROUP-ARCHIMATE-4]`
-- `examples/horizon-bank/README.md`
+- `[AUTHOR-HEAT-MAP-CONVENTIONS-2026]`
+- `[OPEN-GROUP-BIZARCH-GUIDES-2022]`
+- `examples/horizon-bank/capabilities.md`
 
 ## Review criteria
 

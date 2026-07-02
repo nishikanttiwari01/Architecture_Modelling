@@ -12,6 +12,7 @@ All notable repository and manuscript changes are recorded here. This is a proje
 - Added official Open Group business architecture guide source notes and a repository-local heat-map scoring convention note.
 - Revised `FIG-13-01` through `FIG-13-06` specifications only; no Chapter 13 diagram source or exports were created, and all six figures remain `Planned`.
 - Added Chapter 13 review records and an interim quality gate.
+- Applied a focused follow-up correction to classify each Chapter 13 approach by formality, fix `FIG-13-01` verification semantics, complete the integration landscape table, make `FIG-13-03` relationships precise, correct `FIG-13-05` source references and define `FIG-13-06` Wardley component positions.
 
 ### Approved Chapter 12 Security Modelling
 

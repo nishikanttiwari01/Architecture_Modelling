@@ -31,15 +31,20 @@ Application landscape map. C4 System Landscape or simple PlantUML boxes may be u
 
 ## Required relationships
 
-- Horizon Digital Channels connects to Customer Onboarding Platform and Payments Platform.
-- Customer Onboarding Platform connects to Party and Customer Platform, Product Catalogue and Financial Crime Platform.
-- Payments Platform connects to Financial Crime Platform, Enterprise Integration Platform and Event Platform.
-- Enterprise Integration Platform connects to Core Deposit System.
-- Event Platform and selected operational systems feed Enterprise Data Platform.
+- Horizon Digital Channels to Customer Onboarding Platform: submits onboarding applications.
+- Horizon Digital Channels to Payments Platform: initiates payments and obtains payment status.
+- Customer Onboarding Platform to Party and Customer Platform: establishes party and customer records.
+- Customer Onboarding Platform to Product Catalogue: reads product and eligibility definitions.
+- Customer Onboarding Platform to Financial Crime Platform: requests onboarding screening.
+- Payments Platform to Financial Crime Platform: requests payment screening.
+- Payments Platform to Enterprise Integration Platform: invokes retained-core integration services.
+- Enterprise Integration Platform to Core Deposit System: mediates posting and account-access requests.
+- Payments Platform to Event Platform: publishes governed payment-status events.
+- Event Platform to Enterprise Data Platform: supplies governed events for data use.
 
 ## Main flow or structure
 
-Group systems by channel, product or orchestration platforms, control platforms, integration or event platforms, retained core and data platform. Use the lifecycle markers from `examples/horizon-bank/system-landscape.md`: `Target`, `Mixed`, `Legacy retained initially` and `Transitional`.
+Group systems by channel, product or orchestration platforms, control platforms, integration or event platforms, retained core and data platform. Every displayed system must show exactly one lifecycle marker from `examples/horizon-bank/system-landscape.md`: `Target`, `Mixed`, `Transitional` or `Legacy retained initially`. Include a visible lifecycle legend using those four values.
 
 ## Alternative and exception flows
 
