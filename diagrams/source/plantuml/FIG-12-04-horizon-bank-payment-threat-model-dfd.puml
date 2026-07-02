@@ -21,29 +21,36 @@ skinparam queue {
   BackgroundColor #F2F5F7
 }
 
-actor "Retail\nCustomer" as Customer
-actor "Operations\nAnalyst" as Ops
-actor "Compliance\nOfficer" as Compliance
+rectangle "Retail\nCustomer" as Customer
+rectangle "Operations\nAnalyst" as Ops
+rectangle "Compliance\nOfficer" as Compliance
+rectangle "Approved Event\nConsumer" as EventConsumer
 
-rectangle "Customer Access Context\nboundary basis:\ncustomer device and\nsession presentation" as CustomerContext {
+rectangle "Digital Channel Access Context" as DigitalChannelContext {
+  rectangle "boundary basis:\ninternet-facing session termination\nand channel access controls" as DigitalChannelBasis
   component "Horizon Digital\nChannels" as Channels
 }
 
-rectangle "Payment Platform Responsibility\nboundary basis:\npayment orchestration policy" as PaymentContext {
+rectangle "Payment Platform Responsibility" as PaymentContext {
+  rectangle "boundary basis:\npayment orchestration policy" as PaymentBasis
+  component "Authorised Operations\nInterface" as OpsInterface
   component "Payments\nPlatform" as Payments
   database "Payment\nRecord Store" as PaymentStore
   database "Audit Log" as AuditLog
 }
 
-rectangle "Financial-Crime Responsibility\nboundary basis:\npolicy authority" as FinancialCrimeContext {
+rectangle "Financial-Crime Responsibility" as FinancialCrimeContext {
+  rectangle "boundary basis:\npolicy authority" as FinancialCrimeBasis
   component "Financial Crime\nPlatform" as FinancialCrime
 }
 
-rectangle "Retained Core Responsibility\nboundary basis:\ncore account posting" as CoreContext {
+rectangle "Retained Core Responsibility" as CoreContext {
+  rectangle "boundary basis:\ncore account posting" as CoreBasis
   database "Core Deposit\nSystem" as Core
 }
 
-rectangle "Event Distribution Context\nboundary basis:\nevent governance and\nconsumer access" as EventContext {
+rectangle "Event Distribution Context" as EventContext {
+  rectangle "boundary basis:\nevent governance and\nconsumer access" as EventBasis
   queue "Event Platform" as EventPlatform
 }
 
@@ -52,9 +59,12 @@ Channels --> Payments : payment instruction,\nvalidated subject context\nand ent
 
 Payments --> FinancialCrime : screening request
 FinancialCrime --> Payments : screening result\n[T12-05]
+FinancialCrime --> Compliance : screening case and permitted\ncustomer context
 Compliance --> FinancialCrime : screening case action\n[T12-05]
 
-Ops --> Payments : controlled repair action\n[T12-04, T12-08]
+Payments --> OpsInterface : repair work item and permitted\npayment context
+Ops --> OpsInterface : controlled repair action through\nauthorised operations interface\n[T12-04, T12-08]
+OpsInterface --> Payments : authorised repair request
 
 Payments --> Core : posting request\n[T12-03]
 Core --> Payments : posting result
@@ -62,6 +72,7 @@ Core --> Payments : posting result
 Payments --> PaymentStore : store payment record
 Payments --> AuditLog : write audit event\n[T12-04]
 Payments --> EventPlatform : payment-status event\n[T12-06]
+EventPlatform --> EventConsumer : permitted payment-status event
 
 legend bottom
 Threat IDs label review points, not proof of vulnerability.

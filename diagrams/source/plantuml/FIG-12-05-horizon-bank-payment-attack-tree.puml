@@ -21,7 +21,10 @@ rectangle "T12-02\nPayment amount or beneficiary\nis tampered with between\nchan
 rectangle "T12-03\nStolen service credential\nis used to submit\na posting request" as T1203
 rectangle "T12-05\nMisuse or compromise\nprivileged financial-crime\nrelease authority" as T1205
 rectangle "T12-07\nWeak entitlement or ownership\nvalidation permits payment\nfrom the wrong account" as T1207
-rectangle "T12-08\nOperations repair authority\nAND broken separation of duties\npermit unauthorised release" as T1208
+rectangle "T12-08\nOperations repair misuse path" as T1208
+rectangle "AND" as And1208
+rectangle "Operations repair authority\ncan modify an eligible payment" as T1208a
+rectangle "Required separation of duties\nis absent, bypassed\nor incorrectly enforced" as T1208b
 
 rectangle "Mitigation note\nstrong authentication,\nsession protection,\nstep-up triggers" as M1201 #FFF8DC
 rectangle "Mitigation note\nmessage integrity,\nrequest validation,\nimmutable audit event" as M1202 #FFF8DC
@@ -30,8 +33,6 @@ rectangle "Mitigation note\ncase assignment,\nrole check,\nexception evidence" a
 rectangle "Mitigation note\nownership check,\nentitlement validation,\ndeny by default" as M1207 #FFF8DC
 rectangle "Mitigation note\nmaker-checker rule,\nrepair-state validation,\nrelease audit" as M1208 #FFF8DC
 
-rectangle "Excluded from this attack tree\nT12-04 attribution weakness affects evidence,\nnot payment release by itself.\nT12-06 status-event data exposure does not\ndirectly achieve this root goal." as Excluded #FFFFFF
-
 Root --> OrNode
 OrNode --> T1201 : OR
 OrNode --> T1202 : OR
@@ -39,6 +40,9 @@ OrNode --> T1203 : OR
 OrNode --> T1205 : OR
 OrNode --> T1207 : OR
 OrNode --> T1208 : OR
+T1208 --> And1208
+And1208 --> T1208a
+And1208 --> T1208b
 
 T1201 ..> M1201 : mitigation
 T1202 ..> M1202 : mitigation
@@ -46,11 +50,12 @@ T1203 ..> M1203 : mitigation
 T1205 ..> M1205 : mitigation
 T1207 ..> M1207 : mitigation
 T1208 ..> M1208 : mitigation
-Root ..> Excluded : explicit exclusion
 
 legend bottom
 Solid arrows are attack-tree paths. Dotted arrows point to mitigation notes.
 OR means any listed attack path may contribute to the root goal.
-AND appears inside T12-08 because both conditions are needed for that path.
+The T12-08 AND node means both child conditions are required for that path.
+Excluded threats: T12-04 concerns attribution and evidence. T12-06 concerns excessive event-data exposure.
+Neither directly achieves this attack tree's root goal.
 endlegend
 @enduml

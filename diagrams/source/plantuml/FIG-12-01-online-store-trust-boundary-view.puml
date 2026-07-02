@@ -26,7 +26,9 @@ rectangle "Online Store Edge\nboundary basis:\npublic entry policy and\nnetwork 
 
 rectangle "Online Store Application Runtime" as AppRuntime {
   rectangle "boundary basis:\nexecution environment and\napplication policy" as RuntimeBasis
+  component "Application Entry" as AppEntry
   component "Online Store\nWeb/API Runtime" as StoreRuntime
+  rectangle "application responsibilities:\nauthentication-result validation\nsession validation\ninput validation\nauthorisation\nbusiness-rule enforcement" as AppResponsibilities
   component "Controlled Support\nInterface" as SupportInterface
 }
 
@@ -40,9 +42,10 @@ cloud "Delivery Partner\nSystem\nboundary basis:\nseparate organisation" as Deli
 actor "Customer Support\nAgent" as SupportAgent
 
 Customer --> PublicNetwork : login, account\nand checkout traffic
-PublicNetwork --> EdgeEndpoint : authenticated interaction\nstarts at public entry
-EdgeEndpoint --> StoreRuntime
-StoreRuntime --> StoreRuntime : application validation\nand access checks
+PublicNetwork --> EdgeEndpoint : public request enters\ncontrolled edge
+EdgeEndpoint --> AppEntry : filtered and\nrouted request
+AppEntry --> StoreRuntime : application request
+StoreRuntime --> AppResponsibilities : performs
 StoreRuntime --> DataStore : read and write\norder and payment data
 StoreRuntime --> IdentityService : delegate identity\nestablishment
 IdentityService --> StoreRuntime : authentication result

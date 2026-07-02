@@ -32,9 +32,10 @@ Conceptual security architecture view using labelled boundaries, actors, systems
 
 ## Required relationships
 
-- Customer device sends login, account and checkout traffic to the Online Store edge.
-- Edge endpoint filters, routes and forwards application traffic to the application runtime. Do not label this as complete validation.
-- Application runtime performs application validation and access checks before protected business actions.
+- Customer device sends login, account and checkout traffic through the public network.
+- Public network traffic enters the Online Store edge as a public request entering a controlled edge, not as an authenticated interaction.
+- Edge endpoint filters, routes and forwards a filtered and routed request to the application runtime. Do not label this as complete validation.
+- Application runtime performs authentication-result validation, session validation, input validation, authorisation and business-rule enforcement before protected business actions.
 - Application runtime reads and writes order and payment data.
 - Application runtime delegates customer identity establishment to the Identity Service.
 - Application runtime sends payment-provider transaction requests to the Payment Provider System.

@@ -24,17 +24,19 @@ Attack tree. PlantUML mind map or tree layout is the intended source approach af
 - Branch T12-03: stolen service credential is used to submit a posting request.
 - Branch T12-05: prohibited payment is released outside financial-crime policy authority.
 - Branch T12-07: weak entitlement or ownership validation permits payment from the wrong account.
-- Branch T12-08: operations repair authority combined with broken separation of duties permits unauthorised release.
+- Branch T12-08: operations repair misuse path with an explicit AND node.
+- T12-08 child condition: operations repair authority can modify an eligible payment.
+- T12-08 child condition: required separation of duties is absent, bypassed or incorrectly enforced.
 - Mitigation prompts shown as notes or linked annotations, not as ordinary attack branches.
 
 ## Required relationships
 
 - Branches are alternative paths to the root goal unless explicitly marked as combined steps.
-- Where a path requires two conditions together, label the relationship as AND.
+- Where a path requires two conditions together, label the relationship as AND and connect both child conditions visibly to the AND node.
 - Where paths are alternatives, label the relationship as OR.
 - Each main branch connects to a threat ID used in the manuscript control map and `FIG-12-04`.
 - Each branch uses exactly one unique threat ID and maps to exactly one corresponding control-map row.
-- Each mitigation prompt connects to architecture or control review, such as stronger authentication, ownership check, message integrity, service identity control, maker-checker rule, privileged-access review, event data minimisation or audit alerting.
+- Each mitigation prompt connects to architecture or control review, such as stronger authentication, ownership check, message integrity, service identity control, maker-checker rule or privileged-access review.
 
 ## Main flow or structure
 
@@ -55,8 +57,9 @@ Horizon Bank outgoing retail payment attack-path teaching example.
 - Vulnerability scoring.
 - Quantitative attack probability or cost analysis.
 - Complete control catalogue.
-- T12-04, because weak attribution may weaken evidence but does not by itself cause payment release.
-- T12-06, because payment-status event data exposure does not directly achieve the stated root goal.
+- T12-04, because attribution and evidence weakness does not by itself cause payment release.
+- T12-06, because excessive payment-status event data exposure does not directly achieve the stated root goal.
+- Exclusion wording should appear in a standalone note or legend, not as a connected attack branch.
 
 ## Accessibility requirements
 
@@ -74,6 +77,7 @@ Use text labels for AND and OR semantics. Do not encode branch status only by co
 - The root harmful goal is concrete.
 - Branches are specific enough to review.
 - AND and OR semantics are visible in text.
+- T12-08 is represented as a structural AND branch with two visible child conditions.
 - Mitigation prompts are not confused with attack branches.
 - The diagram does not provide exploit instructions.
 - Threat IDs connect to the manuscript control map and `FIG-12-04`.

@@ -30,3 +30,14 @@ The rendered figures support the beginner sequence in the chapter:
 - `FIG-12-04` shows data movement and threat-review points without turning the DFD into a BPMN process.
 
 The figures include captions, accessibility text and limitation statements in the manuscript. They remain `Review`, not `Approved`.
+
+## Final diagram-correction update, 2026-07-02
+
+The final correction pass improves beginner interpretation:
+
+- `FIG-12-01` avoids implying that reaching the public edge means the request is authenticated.
+- `FIG-12-04` makes privileged-user information presentation visible, so readers can see why access control and audit apply to repair and screening work.
+- `FIG-12-04` shows the Approved Event Consumer path, so `T12-06` is easier to understand as event-data exposure rather than payment release.
+- `FIG-12-05` shows `T12-08` as an AND branch, so readers do not have to infer combined conditions from text inside one box.
+
+Final author and page-layout review remain open.

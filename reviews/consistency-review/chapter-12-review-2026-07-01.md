@@ -37,3 +37,14 @@ Repository tracking now records:
 - PNG previews under `diagrams/exported/png/`
 
 No Chapter 13 work was started.
+
+## Final diagram-correction update, 2026-07-02
+
+Repository tracking remains consistent after the final diagram correction pass:
+
+- Chapter 12 status remains `Diagramming`.
+- `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05` remain `Review`.
+- `TABLE-12-01` remains a manuscript table and retired `FIG-12-03` remains unused.
+- `DEC-020` remains `Accepted`.
+- `FIG-12-04` remains a PlantUML source diagram.
+- Chapter 13 remains `Planned` and was not started.

@@ -39,3 +39,13 @@ Updated remaining work:
 - Complete final author and page-layout review for Chapter 12.
 - Keep `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05` at `Review` until the author approves them.
 - Run the repository quality gates after diagram integration and before any final author-approval recommendation.
+
+## Final diagram-correction update, 2026-07-02
+
+The final diagram correction pass has been applied to `FIG-12-01`, `FIG-12-04` and `FIG-12-05`, with corresponding manuscript, specification, register and review evidence updates.
+
+Updated remaining work:
+
+- Final author approval remains pending.
+- Final page-layout approval remains pending.
+- Do not mark Chapter 12 or any Chapter 12 figure `Approved` until the author explicitly approves them.

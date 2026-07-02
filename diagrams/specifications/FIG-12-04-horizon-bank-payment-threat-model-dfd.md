@@ -21,14 +21,17 @@ Threat-model Data Flow Diagram with external entities, processes, data stores, l
 - Retail Customer as external entity.
 - Operations Analyst as external entity to the Payments Platform scope.
 - Compliance Officer as external entity to the Payments Platform scope.
+- A generic authorised event consumer external entity used only to complete the T12-06 event-exposure path.
 - Horizon Digital Channels as process.
 - Payments Platform as process.
+- Authorised Operations Interface as a process inside the payment-platform responsibility boundary.
 - Financial Crime Platform as process.
 - Core Deposit System as retained system outside the Payments Platform modelling scope.
 - Event Platform as shared event-distribution process outside the Payments Platform modelling scope.
 - Payment record store.
 - Audit log.
-- Trust boundaries for customer access, digital-channel responsibility, payment-platform responsibility, retained-core responsibility, event distribution and data custody. Each boundary must state its basis.
+- Trust boundaries for Digital Channel Access Context, payment-platform responsibility, retained-core responsibility, financial-crime responsibility and event distribution. Each boundary must state its basis.
+- The Digital Channel Access Context boundary basis is internet-facing session termination and channel access controls. It is a bank-controlled channel boundary, not the customer-controlled device context.
 
 ## Required relationships
 
@@ -36,13 +39,17 @@ Threat-model Data Flow Diagram with external entities, processes, data stores, l
 - Horizon Digital Channels sends payment instruction, validated subject context and entitlement context to Payments Platform.
 - Payments Platform sends screening request to Financial Crime Platform.
 - Financial Crime Platform returns screening result.
+- Financial Crime Platform presents screening case and permitted customer context to the Compliance Officer.
 - Compliance Officer reviews or records screening case action through the Financial Crime Platform.
-- Operations Analyst submits repair action through a controlled operations path to the Payments Platform.
+- Payments Platform presents repair work item and permitted payment context through the authorised operations interface.
+- Operations Analyst submits controlled repair action through the authorised operations interface.
+- Authorised Operations Interface sends the authorised repair request to the Payments Platform.
 - Payments Platform sends posting request to Core Deposit System.
 - Core Deposit System returns posting result.
 - Payments Platform stores payment record.
 - Payments Platform writes audit event.
 - Payments Platform publishes payment status event to Event Platform.
+- Event Platform sends permitted payment-status event data to the generic authorised event consumer.
 
 Authentication and session validation are outside the detailed scope of this DFD and are represented separately by the Chapter 12 authentication modelling guidance. Do not add a full Identity Service flow unless the author later approves expanding the DFD scope.
 
@@ -61,7 +68,7 @@ Use the following threat IDs so the figure can connect to the manuscript control
 
 ## Main flow or structure
 
-Arrange the DFD so payment data movement is readable from customer submission through screening, posting, event publication and audit storage. Label every flow with the data item, not only the protocol. Keep business-process sequence detail out of the DFD unless it is needed to explain data movement.
+Arrange the DFD so payment data movement is readable from customer instruction through screening, posting, event publication and audit storage. Label every flow with the data item, not only the protocol. Keep business-process sequence detail out of the DFD unless it is needed to explain data movement.
 
 ## Alternative and exception flows
 
@@ -69,7 +76,7 @@ Show rejected screening or failed posting only if the diagram remains readable. 
 
 ## Scope
 
-Threat-modelling view for outgoing retail payment submission, screening, posting, status publication and audit capture.
+Threat-modelling view for outgoing retail payment instruction, screening, posting, status publication, privileged-user presentation and audit capture.
 
 ## Exclusions
 

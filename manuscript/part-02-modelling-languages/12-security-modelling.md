@@ -155,7 +155,7 @@ The diagram should label important crossings. Customer login crosses from custom
 
 **Figure FIG-12-01. Online Store Trust Boundary View.** This view separates the customer device, public network, Online Store edge, application runtime, restricted data-custody area and external provider systems so reviewers can see where the basis for trust changes.
 
-Accessibility text: The figure shows customer login and checkout traffic entering through the public network and Online Store edge before reaching the Online Store Web/API Runtime. The runtime delegates identity establishment to an Identity Service, sends payment-provider and fulfilment requests to external organisations, reads and writes order and payment data in a restricted data-custody area, and receives support actions only through a controlled support interface.
+Accessibility text: The figure shows customer login and checkout traffic crossing the public network as a public request entering a controlled Online Store edge, then as a filtered and routed request to the application runtime. The Online Store Web/API Runtime performs authentication-result validation, session validation, input validation, authorisation and business-rule enforcement. It delegates identity establishment to an Identity Service, sends payment-provider and fulfilment requests to external organisations, reads and writes order and payment data in a restricted data-custody area, and receives support actions only through a controlled support interface.
 
 Limitation: This is a trust-boundary teaching view. It does not list every network control, firewall rule, certificate, token claim or provider contract.
 
@@ -262,7 +262,7 @@ An attack tree answers: **what alternative or combined paths could lead to one h
 
 The root of an attack tree is the attacker's goal, such as "cause an unauthorised or prohibited outgoing payment to be released". Branches show ways the goal could be reached. Some branches are alternatives. Others require several steps together. Attack-tree notation commonly uses OR to show alternative paths and AND to show steps that must all be true [SCHNEIER-ATTACK-TREES-1999].
 
-For Horizon Bank, an attack tree for unauthorised or prohibited payment release should include only threats that can causally contribute to that root goal:
+For Horizon Bank, an attack tree for unauthorised or prohibited payment release should include only threats that can causally contribute to that root goal. OR branches represent alternative ways to reach the root goal. The T12-08 branch is different because both child conditions are required for that path: repair authority must be able to modify an eligible payment, and required separation of duties must be absent, bypassed or incorrectly enforced.
 
 - T12-01: use a stolen or replayed customer session to create a payment.
 - T12-02: tamper with the payment amount or beneficiary between Horizon Digital Channels and the Payments Platform.
@@ -275,9 +275,9 @@ Attack trees are most useful when the team can compare paths and decide where co
 
 ![FIG-12-05. Horizon Bank Payment Attack Tree](../../diagrams/exported/svg/FIG-12-05-horizon-bank-payment-attack-tree.svg)
 
-**Figure FIG-12-05. Horizon Bank Payment Attack Tree.** This attack tree keeps the root goal narrow: causing an unauthorised or prohibited outgoing payment to be released. The included branches are alternative causal paths to that goal.
+**Figure FIG-12-05. Horizon Bank Payment Attack Tree.** This attack tree keeps the root goal narrow: causing an unauthorised or prohibited outgoing payment to be released. Most included branches are alternative causal paths to that goal, while T12-08 is a combined path that requires both child conditions below its AND node.
 
-Accessibility text: The root goal connects to an OR node for alternative attack paths. The included branches are stolen or replayed customer session, payment amount or beneficiary tampering, stolen service credential, misuse or compromise of financial-crime release authority, weak entitlement or ownership validation, and operations repair authority combined with broken separation of duties. Mitigation notes point to controls such as strong authentication, message integrity, state validation, case assignment, entitlement validation and maker-checker rules. T12-04 and T12-06 are explicitly excluded because they do not directly achieve the root goal.
+Accessibility text: The root goal connects to an OR node for alternative attack paths. The included branches are stolen or replayed customer session, payment amount or beneficiary tampering, stolen service credential, misuse or compromise of financial-crime release authority, weak entitlement or ownership validation, and an operations repair misuse path. The operations repair misuse path connects to an AND node with two required child conditions: operations repair authority can modify an eligible payment, and required separation of duties is absent, bypassed or incorrectly enforced. Mitigation notes point to controls such as strong authentication, message integrity, state validation, case assignment, entitlement validation and maker-checker rules. T12-04 and T12-06 remain valid threats but are outside this attack tree because they do not directly achieve the root goal.
 
 Limitation: This attack tree is a review model, not an exploit guide and not a full risk register. It deliberately omits threats that matter elsewhere but do not causally release the payment.
 
@@ -300,15 +300,17 @@ For Horizon Bank payment submission, a threat-model DFD might show:
 
 The flows should be labelled with the data that moves, not only with verbs. "Payment instruction", "session reference", "validated subject context", "entitlement context", "screening request", "screening result", "posting request", "posting result", "payment status event" and "audit event" are reviewable labels. A vague arrow labelled "secure API" does not tell a reviewer what is at risk.
 
-For `FIG-12-04`, the customer-to-channel flow should be labelled "payment instruction and session reference". The channel-to-payments flow should be labelled "payment instruction, validated subject context and entitlement context". The Retail Customer does not supply trusted identity context directly. Authentication and session validation are outside the detailed scope of this DFD and are represented by the authentication modelling guidance earlier in the chapter.
+For `FIG-12-04`, the customer-to-channel flow should be labelled "payment instruction and session reference". The channel-to-payments flow should be labelled "payment instruction, validated subject context and entitlement context". The Retail Customer does not supply trusted identity context or entitlement context directly. The Digital Channel Access Context represents the bank-controlled channel boundary where internet-facing session termination and channel access controls apply. Authentication and session validation are outside the detailed scope of this DFD and are represented by the authentication modelling guidance earlier in the chapter.
+
+The same DFD should show that operational users receive sensitive information, not only that they submit actions. A repair work item and permitted payment context are presented through an authorised operations interface. A screening case and permitted customer context are presented to the Compliance Officer through the Financial Crime Platform. Those presentation flows need access control and audit because they expose payment or customer information to privileged users. Event consumers should receive only permitted and minimised payment-status event data.
 
 ![FIG-12-04. Horizon Bank Payment Threat-Model DFD](../../diagrams/exported/svg/FIG-12-04-horizon-bank-payment-threat-model-dfd.svg)
 
-**Figure FIG-12-04. Horizon Bank Payment Threat-Model DFD.** This DFD shows payment data movement, trust boundaries and threat-review points for Horizon Bank outgoing retail payment submission.
+**Figure FIG-12-04. Horizon Bank Payment Threat-Model DFD.** This DFD shows payment data movement, trust boundaries and threat-review points for Horizon Bank outgoing retail payment handling, including privileged-user presentation and event-consumer exposure.
 
-Accessibility text: The retail customer sends a payment instruction and session reference to Horizon Digital Channels. The channels send the payment instruction, validated subject context and entitlement context to the Payments Platform. The Payments Platform stores payment records, writes audit events, sends screening requests to the Financial Crime Platform, sends posting requests to the Core Deposit System and publishes payment-status events through the Event Platform. Operations and compliance actors reach only the relevant repair or case actions. Threat IDs T12-01 through T12-08 label review points on specific flows.
+Accessibility text: The retail customer sends a payment instruction and session reference to Horizon Digital Channels inside the Digital Channel Access Context. Bank-controlled channel services validate subject context and entitlement context before sending them with the payment instruction to the Payments Platform. The Payments Platform stores payment records, writes audit events, sends screening requests to the Financial Crime Platform, sends posting requests to the Core Deposit System and publishes payment-status events through the Event Platform. The Event Platform sends a permitted payment-status event to an Approved Event Consumer outside the event-distribution boundary. The Payments Platform presents repair work items and permitted payment context through an authorised operations interface for the Operations Analyst, and the Financial Crime Platform presents screening case and permitted customer context to the Compliance Officer. Threat IDs T12-01 through T12-08 label review points on specific flows.
 
-Limitation: This DFD is not a BPMN process model and it does not expand the full authentication protocol. It shows data flows, boundaries and review points at architecture level.
+Limitation: This DFD is not a BPMN process model, a complete identity architecture or a full event-governance design. It shows data flows, boundaries and review points at architecture level.
 
 ## Security control mapping
 

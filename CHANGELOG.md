@@ -4,6 +4,13 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-02
 
+### Applied final Chapter 12 diagram correction pass
+
+- Corrected `FIG-12-01` so the public-network entry is not described as authenticated and application validation responsibilities remain inside the application runtime.
+- Refined `FIG-12-04` routing and semantics, including the Digital Channel Access Context, privileged-user presentation flows and the Approved Event Consumer path for `T12-06`.
+- Corrected `FIG-12-05` so `T12-08` uses a structural AND node and excluded `T12-04` and `T12-06` appear only in the legend.
+- Updated Chapter 12 manuscript text, specifications, register and review evidence while keeping Chapter 12 in `Diagramming` and all Chapter 12 diagrams in `Review`.
+
 ### Produced Chapter 12 security diagrams
 
 - Recorded author acceptance of `DEC-020`, keeping `TABLE-12-01` as a manuscript table and leaving retired `FIG-12-03` unused.
