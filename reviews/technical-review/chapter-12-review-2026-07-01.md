@@ -19,6 +19,10 @@
 | CH12-TECH-05 | Major | Control mapping named controls but did not provide enough traceability to owners, evidence and residual risk. | Add a worked Horizon Bank control map with threat IDs linked to the DFD and attack tree. | Resolved in revised chapter. |
 | CH12-TECH-06 | Major | Privacy was treated mainly as classification. | Add privacy modelling guidance for purpose, sharing, access, retention, telemetry and analytics. | Resolved with NIST Privacy Framework source note. |
 | CH12-TECH-07 | Major | Attack-tree explanation lacked an explicit source for root, branch and AND/OR semantics. | Add a source note and cite attack-tree semantics. | Resolved with `SCHNEIER-ATTACK-TREES-1999`. |
+| CH12-TECH-08 | Major | `FIG-12-05` reused `T12-02` for weak entitlement and tampering, so one ID represented two distinct threat scenarios. | Assign each distinct threat scenario one unique ID and add missing control-map rows for `T12-07` and `T12-08`. | Resolved in manuscript, `FIG-12-04` and `FIG-12-05`. |
+| CH12-TECH-09 | Major | `FIG-12-05` included `T12-06`, although payment-status data exposure does not directly release a payment. | Remove non-causal `T12-06` from the attack tree while keeping it in the DFD and control map. | Resolved in manuscript and `FIG-12-05`. |
+| CH12-TECH-10 | Major | `FIG-12-05` included `T12-04`, although weak attribution weakens evidence but does not by itself release a payment. | Keep `T12-04` in the DFD and control map, but exclude it from the attack tree. | Resolved in manuscript and `FIG-12-05`. |
+| CH12-TECH-11 | Major | The DFD wording implied the Retail Customer supplies trusted identity context. | Change the customer-to-channel flow to session reference and the channel-to-payments flow to validated subject and entitlement context. | Resolved in manuscript and `FIG-12-04`. |
 
 ## Technical conclusion
 

@@ -2,6 +2,17 @@
 
 All notable repository and manuscript changes are recorded here. This is a project history, not a replacement for Git commits.
 
+## 2026-07-02
+
+### Corrected Chapter 12 threat traceability
+
+- Corrected Chapter 12 threat IDs so each distinct scenario has one unique ID from `T12-01` through `T12-08`.
+- Added `T12-07` and `T12-08` to the Horizon Bank control map and `FIG-12-04` threat labels.
+- Removed non-causal `T12-04` and `T12-06` branches from the `FIG-12-05` attack-tree specification while keeping them in the DFD and control map.
+- Registered the Horizon Bank `Customer Support Agent` actor.
+- Corrected identity-context flow wording so the Retail Customer supplies a session reference, while Horizon Digital Channels supplies validated subject and entitlement context to the Payments Platform.
+- Recorded that `TABLE-12-01` remains provisional pending author approval of `DEC-020`.
+
 ## 2026-07-01
 
 ### Revised Chapter 12 after security modelling review

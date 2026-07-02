@@ -18,7 +18,11 @@
 | Terminology | Access authorisation, business approval and payment-provider authorisation needed separation. | Update chapter and glossary. | Resolved. |
 | Privacy and security wording | Data classification was too narrow for privacy review. | Add privacy modelling table covering purpose, storage, access, retention, logs and analytics. | Resolved. |
 | Copyright and attribution | Standards and guidance must be paraphrased, not copied. | Use source-key citations and source notes; do not reproduce standard tables. | Resolved. |
-| Copy-editing | Draft contained wording that could confuse authorisation types and boundary meaning. | Revise prose and run terminology and em-dash searches. | Pending verification. |
+| Threat traceability | Duplicate and mismatched threat IDs made the DFD, attack tree and control map inconsistent. | Give each distinct threat scenario one unique ID and align `T12-01` through `T12-08`. | Resolved. |
+| Attack-tree causality | The attack tree included `T12-04` and `T12-06`, which do not directly cause the stated payment-release goal. | Keep `T12-04` and `T12-06` in DFD/control mapping only, outside `FIG-12-05`. | Resolved. |
+| Example consistency | `Customer Support Agent` was used in Chapter 12 before being registered as a Horizon Bank role. | Add the role to `examples/horizon-bank/actors.md`. | Resolved. |
+| Privacy and security wording | The DFD wording implied trusted identity context came directly from the Retail Customer. | Use session reference from customer to channel, then validated subject and entitlement context from channel to Payments Platform. | Resolved. |
+| Copy-editing | Draft contained wording that could confuse authorisation types, boundary meaning and identity-context source. | Revise prose and run terminology and em-dash searches. | Resolved. |
 
 ## Remaining work
 

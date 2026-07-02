@@ -32,8 +32,8 @@ Threat-model Data Flow Diagram with external entities, processes, data stores, l
 
 ## Required relationships
 
-- Retail Customer sends payment instruction and customer identity context to Horizon Digital Channels.
-- Horizon Digital Channels sends payment instruction and identity context to Payments Platform.
+- Retail Customer sends payment instruction and session reference to Horizon Digital Channels.
+- Horizon Digital Channels sends payment instruction, validated subject context and entitlement context to Payments Platform.
 - Payments Platform sends screening request to Financial Crime Platform.
 - Financial Crime Platform returns screening result.
 - Compliance Officer reviews or records screening case action through the Financial Crime Platform.
@@ -44,16 +44,20 @@ Threat-model Data Flow Diagram with external entities, processes, data stores, l
 - Payments Platform writes audit event.
 - Payments Platform publishes payment status event to Event Platform.
 
+Authentication and session validation are outside the detailed scope of this DFD and are represented separately by the Chapter 12 authentication modelling guidance. Do not add a full Identity Service flow unless the author later approves expanding the DFD scope.
+
 ## Threat review labels
 
 Use the following threat IDs so the figure can connect to the manuscript control map:
 
-- T12-01: stolen or replayed customer session creates payment.
-- T12-02: payment details changed between channel and platform.
-- T12-03: service credential misused for posting request.
-- T12-04: sensitive repair or release action cannot be attributed.
-- T12-05: prohibited payment released outside policy authority.
-- T12-06: payment status event exposes excessive customer or account data.
+- T12-01: stolen or replayed customer session creates a payment.
+- T12-02: payment amount or beneficiary is tampered with between channel and platform.
+- T12-03: stolen service credential is used to submit a posting request.
+- T12-04: sensitive staff repair or release action cannot be attributed.
+- T12-05: prohibited payment is released outside financial-crime policy authority.
+- T12-06: payment-status event exposes excessive customer or account data.
+- T12-07: weak entitlement or ownership validation permits payment from the wrong account.
+- T12-08: operations repair authority combined with broken separation of duties permits unauthorised release.
 
 ## Main flow or structure
 

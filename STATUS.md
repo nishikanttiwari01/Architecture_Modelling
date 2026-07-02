@@ -107,6 +107,6 @@
 
 ## Current recommended next task
 
-Chapter 12, **Security Modelling**, is now the current chapter and is in `Revision Required` after the review pass. The revised manuscript keeps `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05` as specification-first figures with source and exports deferred pending author approval. The former `FIG-12-03` access matrix is retired and replaced by manuscript table `TABLE-12-01`. Chapter 11, **Infrastructure and Deployment Modelling**, remains `Approved`; `FIG-11-01` through `FIG-11-06` remain at `Review` pending final page-layout review.
+Chapter 12, **Security Modelling**, is now the current chapter and remains in `Revision Required` after the focused correction pass. The revised manuscript keeps `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05` as specification-first figures with source and exports deferred pending author approval. The former `FIG-12-03` access matrix is retired and provisionally replaced by manuscript table `TABLE-12-01` pending author approval of `DEC-020`. Chapter 11, **Infrastructure and Deployment Modelling**, remains `Approved`; `FIG-11-01` through `FIG-11-06` remain at `Review` pending final page-layout review.
 
-Last updated: 2026-07-01
+Last updated: 2026-07-02

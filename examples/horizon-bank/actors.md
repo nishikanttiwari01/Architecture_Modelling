@@ -8,6 +8,7 @@
 | Operations Analyst | Business role | Handles operational processing and exceptions |
 | Compliance Officer | Business role | Reviews KYC, sanctions and AML concerns |
 | Credit Officer | Business role | Reviews and approves credit decisions |
+| Customer Support Agent | Business role | Handles customer enquiries and views limited customer and payment information for an active support case. |
 | Fraud Investigator | Business role | Investigates suspected fraud cases |
 | Product Manager | Business role | Owns product proposition and lifecycle |
 | Platform Engineer | Technology role | Operates shared technology platforms |

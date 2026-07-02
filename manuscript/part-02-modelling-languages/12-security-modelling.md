@@ -4,7 +4,7 @@ chapter: 12
 part: "part-02-modelling-languages"
 status: "Revision Required"
 author: "Nishikant Tiwari"
-last_updated: "2026-07-01"
+last_updated: "2026-07-02"
 ---
 
 # 12. Security Modelling
@@ -229,16 +229,16 @@ An attack tree answers: **what alternative or combined paths could lead to one h
 
 The root of an attack tree is the attacker's goal, such as "cause an unauthorised or prohibited outgoing payment to be released". Branches show ways the goal could be reached. Some branches are alternatives. Others require several steps together. Attack-tree notation commonly uses OR to show alternative paths and AND to show steps that must all be true [SCHNEIER-ATTACK-TREES-1999].
 
-For Horizon Bank, an attack tree for unauthorised or prohibited payment release might include:
+For Horizon Bank, an attack tree for unauthorised or prohibited payment release should include only threats that can causally contribute to that root goal:
 
-- Use a stolen customer session to create a payment from an entitled account.
-- Abuse a weak entitlement check to create a payment from an account the customer should not control.
-- Tamper with payment details between Horizon Digital Channels and the Payments Platform.
-- Use a stolen service credential to submit a posting request.
-- Exploit an operations repair path and a weak separation-of-duties rule.
-- Misuse a privileged financial-crime release function.
+- T12-01: use a stolen or replayed customer session to create a payment.
+- T12-02: tamper with the payment amount or beneficiary between Horizon Digital Channels and the Payments Platform.
+- T12-03: use a stolen service credential to submit a posting request.
+- T12-05: release a prohibited payment outside financial-crime policy authority.
+- T12-07: exploit weak entitlement or ownership validation to create a payment from the wrong account.
+- T12-08: combine operations repair authority with broken separation of duties to release a payment.
 
-Attack trees are most useful when the team can compare paths and decide where controls matter most. They are less useful when every branch is vague, such as "hack the bank". A good branch names a concrete path that can be reviewed against architecture and operations, without giving exploit instructions.
+Attack trees are most useful when the team can compare paths and decide where controls matter most. They are less useful when every branch is vague, such as "hack the bank". A good branch names a concrete path that can be reviewed against architecture and operations, without giving exploit instructions. T12-04, weak attribution for sensitive staff action, belongs in the control map but does not by itself release a payment. T12-06, payment-status event data exposure, belongs in the DFD and control map but is outside this attack tree because it does not directly achieve the stated root goal.
 
 ## Threat-model Data Flow Diagrams
 
@@ -257,7 +257,9 @@ For Horizon Bank payment submission, a threat-model DFD might show:
 - Payment record store and audit log as data stores.
 - Boundaries around customer access, digital-channel responsibility, payment-platform responsibility, retained-core responsibility, event distribution and data custody.
 
-The flows should be labelled with the data that moves, not only with verbs. "Payment instruction", "customer identity context", "screening request", "screening result", "posting request", "posting result", "payment status event" and "audit event" are reviewable labels. A vague arrow labelled "secure API" does not tell a reviewer what is at risk.
+The flows should be labelled with the data that moves, not only with verbs. "Payment instruction", "session reference", "validated subject context", "entitlement context", "screening request", "screening result", "posting request", "posting result", "payment status event" and "audit event" are reviewable labels. A vague arrow labelled "secure API" does not tell a reviewer what is at risk.
+
+For `FIG-12-04`, the customer-to-channel flow should be labelled "payment instruction and session reference". The channel-to-payments flow should be labelled "payment instruction, validated subject context and entitlement context". The Retail Customer does not supply trusted identity context directly. Authentication and session validation are outside the detailed scope of this DFD and are represented by the authentication modelling guidance earlier in the chapter.
 
 ## Security control mapping
 
@@ -267,12 +269,14 @@ NIST Cybersecurity Framework 2.0 provides high-level cybersecurity risk-manageme
 
 | Threat ID | Asset | Objective | Threat scenario | Control intent | Enforcement location | Owner | Evidence | Residual risk or open question |
 |---|---|---|---|---|---|---|---|---|
-| T12-01 | Customer account | Only the entitled customer can create a payment from the account | Stolen or replayed customer session creates a payment | Strong authentication, session protection, ownership check and anomaly monitoring | Identity Service, Horizon Digital Channels, Payments Platform | Identity team and digital-channel owner | Authentication configuration, access tests, audit events | How is step-up triggered for unusual payments? |
-| T12-02 | Payment instruction | Payment details cannot be changed silently | Amount or beneficiary is changed between channel and platform | Message integrity, request validation, immutable audit event | Channel-to-payment interface and payment record store | Payments Platform owner | Contract tests, integrity checks, audit log sample | Which fields are signed or otherwise integrity protected? |
-| T12-03 | Posting request | Only approved payments are posted | Service credential is misused to submit posting requests | Service identity, explicit policy check, state validation and monitoring | Payments Platform boundary to Core Deposit System | Payments Platform owner and core integration owner | Service identity policy, state transition tests, alert rule | How are service credentials rotated and revoked? |
-| T12-04 | Audit trail | Sensitive actions are attributable | Staff user denies repair or release action | Individual identity, reason code, tamper-resistant audit event | Operations support interface and audit log | Operations owner | Audit-event sample, access review record | How long are audit records retained? |
-| T12-05 | Financial-crime decision | Prohibited payment is not released by mistake | Screening alert is released outside policy authority | Case assignment, role check, separation rule and evidence capture | Financial Crime Platform | Compliance operations owner | Case workflow record, access test, exception report | Which exceptional release path needs senior approval? |
-| T12-06 | Payment status event | Consumers see only intended status data | Event exposes customer or account details too broadly | Data minimisation, event schema review and consumer access control | Event Platform and event schema governance | Event platform owner and data owner | Event schema, consumer access list, log sample | Which analytics consumers receive derived data? |
+| T12-01 | Customer session | Only a valid current customer session can initiate a payment request | Stolen or replayed customer session creates a payment | Strong authentication, session protection, replay resistance, step-up triggers and anomaly monitoring | Identity Service and Horizon Digital Channels | Identity team and digital-channel owner | Authentication configuration, session tests, audit events | How is step-up triggered for unusual payments? |
+| T12-02 | Payment instruction | Payment amount and beneficiary cannot be changed silently | Payment amount or beneficiary is tampered with between channel and platform | Message integrity, request validation, immutable audit event | Channel-to-payment interface and payment record store | Payments Platform owner | Contract tests, integrity checks, audit log sample | Which fields are signed or otherwise integrity protected? |
+| T12-03 | Posting request | Only approved payments are posted | Stolen service credential is used to submit a posting request | Service identity, explicit policy check, state validation and monitoring | Payments Platform boundary to Core Deposit System | Payments Platform owner and core integration owner | Service identity policy, state transition tests, alert rule | How are service credentials rotated and revoked? |
+| T12-04 | Audit trail | Sensitive staff repair or release actions are attributable | Sensitive staff repair or release action cannot be attributed | Individual identity, reason code, tamper-resistant audit event | Operations support interface and audit log | Operations owner | Audit-event sample, access review record | How long are audit records retained? |
+| T12-05 | Financial-crime decision | Prohibited payment is not released outside policy authority | Prohibited payment is released outside financial-crime policy authority | Case assignment, role check, separation rule and evidence capture | Financial Crime Platform | Compliance operations owner | Case workflow record, access test, exception report | Which exceptional release path needs senior approval? |
+| T12-06 | Payment status event | Consumers see only intended status data | Payment-status event exposes excessive customer or account data | Data minimisation, event schema review and consumer access control | Event Platform and event schema governance | Event platform owner and data owner | Event schema, consumer access list, log sample | Which analytics consumers receive derived data? |
+| T12-07 | Customer account entitlement | Only an entitled subject can create a payment from the account | Weak entitlement or ownership validation permits payment from the wrong account | Account ownership check, entitlement context validation and deny-by-default access decision | Horizon Digital Channels and Payments Platform | Digital-channel owner and payments owner | Entitlement tests, policy configuration, rejected-access audit sample | Which delegated-access cases need explicit modelling? |
+| T12-08 | Operations repair authority | Repair authority cannot be used to release a payment without separation of duties | Operations repair authority combined with broken separation of duties permits unauthorised release | Maker-checker rule, role separation, repair-state validation and release audit | Operations support interface and Payments Platform | Operations owner and payments owner | Separation-of-duties test, workflow configuration, repair audit sample | How are emergency repairs approved and reviewed? |
 
 Avoid mapping controls only by name. A table that says "access control exists" does not explain who makes the decision, where it is enforced or how a reviewer can verify it.
 
@@ -288,7 +292,7 @@ Architecture models often show systems before they show the sensitivity of the d
 
 | Data item | Classification example | Purpose | Source and destination | Stored where | Authorised access | Retention or disposal concern | Privacy or security concern |
 |---|---|---|---|---|---|---|---|
-| Customer identity context | Confidential | Link request to authenticated customer | Identity Service to Horizon Digital Channels and Payments Platform | Session store or request context | Customer-facing services and policy checks | Session expiry and trace retention | Do not persist more identity attributes than needed |
+| Validated subject context | Confidential | Link request to authenticated customer | Horizon Digital Channels to Payments Platform after session validation | Session store or request context | Customer-facing services and policy checks | Session expiry and trace retention | Do not persist more identity attributes than needed |
 | Account reference | Restricted | Identify source account | Horizon Digital Channels to Payments Platform and Core Deposit System | Payment record store | Customer, payments service and limited support roles | Payment record retention policy | Mask in logs and customer-support views where possible |
 | Payment amount and beneficiary | Restricted | Create and post payment | Customer to Payments Platform, Financial Crime Platform and Core Deposit System | Payment record store and audit log | Customer, payments service, assigned support and compliance roles | Payment and audit retention policy | Do not expose full details in broad events |
 | Screening result | Restricted | Decide whether payment can proceed | Financial Crime Platform to Payments Platform | Case store, payment record or audit record | Compliance roles and payment decision logic | Financial-crime record retention policy | Avoid broad operational visibility |

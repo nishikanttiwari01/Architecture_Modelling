@@ -16,7 +16,10 @@
 | CH12-CON-04 | Minor | Chapter 12 source register lacked a stable privacy source and attack-tree source. | Add source notes and register entries. | Resolved. |
 | CH12-CON-05 | Minor | Glossary did not distinguish access authorisation, business approval and payment-provider authorisation. | Add or revise glossary terms. | Resolved. |
 | CH12-CON-06 | Major | Diagram specification references needed to avoid implying author approval or created source files. | Keep four specifications at planned status and source/export pending author approval. | Resolved. |
+| CH12-CON-07 | Major | `Customer Support Agent` appeared in `TABLE-12-01` and the exercise, but the Horizon Bank actor model did not register that role. | Add the Horizon Bank Customer Support Agent to `examples/horizon-bank/actors.md`. | Resolved. |
+| CH12-CON-08 | Major | Threat IDs did not align across manuscript control map, `FIG-12-04` and `FIG-12-05`. | Align `T12-01` through `T12-08` across manuscript, DFD spec and attack-tree spec. | Resolved. |
+| CH12-CON-09 | Minor | `DEC-020` reclassification is implemented but not author-approved. | Keep `DEC-020` as `Proposed` and record the table implementation as provisional. | Resolved. |
 
 ## Consistency conclusion
 
-Repository tracking now matches the revised Chapter 12 scope. `FIG-12-03` is intentionally absent from the active diagram register and its retired state is recorded in the decision log. No Chapter 13 work was started.
+Repository tracking now matches the revised Chapter 12 scope. `FIG-12-03` is intentionally absent from the active diagram register and its retired state is recorded in the decision log as provisional pending author approval of `DEC-020`. No Chapter 13 work was started.
