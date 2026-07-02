@@ -39,7 +39,7 @@ Application landscape map. C4 System Landscape or simple PlantUML boxes may be u
 
 ## Main flow or structure
 
-Group systems by channel, product or orchestration platforms, control platforms, integration or event platforms, retained core and data platform. Mark mixed or retained legacy where relevant.
+Group systems by channel, product or orchestration platforms, control platforms, integration or event platforms, retained core and data platform. Use the lifecycle markers from `examples/horizon-bank/system-landscape.md`: `Target`, `Mixed`, `Legacy retained initially` and `Transitional`.
 
 ## Alternative and exception flows
 
@@ -72,3 +72,4 @@ Use labelled relationship arrows. Do not rely on icon meaning alone.
 - The view is readable at book-page width.
 - Relationship labels are high level but not vague.
 - Current, target and legacy-retained meanings are not hidden.
+- A note explains the limitation of a mixed-state landscape and does not imply all target systems already exist.

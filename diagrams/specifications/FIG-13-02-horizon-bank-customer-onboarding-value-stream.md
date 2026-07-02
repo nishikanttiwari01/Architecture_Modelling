@@ -19,7 +19,7 @@ Value stream teaching view with stages and capability references. This is not BP
 ## Required elements
 
 - Triggering stakeholder: Retail Customer.
-- Value stages: Express need, Capture information, Verify and assess, Open relationship, Activate service.
+- Value stages: Need understood, Application established, Identity and eligibility confirmed, Banking relationship established, Services ready to use.
 - Enabling capabilities: Digital Servicing, Customer Onboarding, Document Capture, Identity Verification, Financial Crime Screening, Risk Assessment, Party Management, Account Opening, Product Management, Notification Management, Account Servicing.
 
 ## Required relationships
@@ -30,7 +30,7 @@ Value stream teaching view with stages and capability references. This is not BP
 
 ## Main flow or structure
 
-Use a horizontal value stream with five stages. Place enabling capabilities below the relevant stages.
+Use a horizontal value stream with five stakeholder-value outcome stages. Place enabling capabilities below the relevant stages.
 
 ## Alternative and exception flows
 
@@ -43,6 +43,8 @@ Beginner business architecture explanation for Chapter 13.
 ## Exclusions
 
 - Detailed BPMN task sequence.
+- Lean value stream mapping waste-analysis notation.
+- Customer-journey touchpoint and emotion mapping.
 - KYC and AML regulatory detail.
 - System integration detail.
 
@@ -56,6 +58,6 @@ Use text labels for every stage and capability. If colour is used, it must not b
 
 ## Review criteria
 
-- Stages describe value progression, not internal process tasks.
+- Stages describe stakeholder value progression, not internal process tasks, systems or regulatory workflow.
 - Capability names are stable and reusable.
 - The figure does not conflict with later Chapter 14 business strategy coverage.

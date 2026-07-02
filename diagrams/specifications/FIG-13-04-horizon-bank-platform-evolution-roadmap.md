@@ -19,10 +19,11 @@ Architecture roadmap. A simple timeline or ArchiMate-style implementation and mi
 ## Required elements
 
 - Current state: retained core and point-to-point integration.
-- Transition 1: Payments Platform uses Enterprise Integration Platform adapters.
-- Transition 2: Event Platform publishes governed payment-status events.
-- Target state: modular payments, customer and data platforms with governed reuse.
-- Dependencies: adapter ownership, service-level monitoring, event schema governance, consumer access control, legacy coexistence.
+- Near-term transition: Payments Platform uses Enterprise Integration Platform adapters.
+- Later transition: Event Platform publishes governed payment-status events.
+- Target direction: modular payments, customer and data platforms with governed reuse.
+- Dependencies, risks, assumptions, decisions and exit evidence for each state.
+- Required details: adapter ownership, service-level monitoring, event schema governance, consumer access control, replay policy, legacy coexistence.
 
 ## Required relationships
 
@@ -32,7 +33,7 @@ Architecture roadmap. A simple timeline or ArchiMate-style implementation and mi
 
 ## Main flow or structure
 
-Use a left-to-right roadmap with four architecture states. Put dependencies or risks below each state.
+Use a left-to-right roadmap with four named architecture states: `Current`, `Near-term transition`, `Later transition` and `Target direction`. Put dependencies, risks, assumptions, decisions and exit evidence below the relevant state.
 
 ## Alternative and exception flows
 
@@ -60,5 +61,5 @@ Use labels for state and dependency meaning. Do not use colour alone to show mat
 ## Review criteria
 
 - Roadmap states are architecture states, not task lists.
-- Dependencies and risks are explicit.
+- Dependencies, risks, assumptions, decisions and exit evidence are explicit.
 - The figure does not promise delivery dates or completion.

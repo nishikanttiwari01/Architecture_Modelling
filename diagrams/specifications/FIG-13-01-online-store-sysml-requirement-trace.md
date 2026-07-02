@@ -1,8 +1,8 @@
-# FIG-13-01: Online Store SysML Requirement Trace
+# FIG-13-01: Online Store SysML-style Requirement Traceability View
 
 ## Purpose
 
-Show a small SysML-style teaching view that connects selected Online Store requirements to design responses and verification evidence.
+Show a small SysML-style teaching view that connects selected Online Store requirements to design responses, verification cases and verification evidence.
 
 ## Audience
 
@@ -10,7 +10,7 @@ Beginners, analysts, architects and testers.
 
 ## Question answered
 
-Which requirements are addressed by which design elements, and what evidence verifies them?
+Which requirements are addressed by which design responses, and what verification cases and evidence support review?
 
 ## Notation
 
@@ -18,23 +18,29 @@ SysML-style requirement trace teaching view. Use simple labelled boxes and relat
 
 ## Required elements
 
-- Requirement: protect customer payment details.
-- Requirement: provide order confirmation.
-- Requirement: support can view order status without full payment details.
+- Requirement `REQ-OS-01`: checkout shall not store full customer card details in the Online Store.
+- Requirement `REQ-OS-02`: customer shall receive an order confirmation after the order is accepted.
+- Requirement `REQ-OS-03`: support users shall view order status without seeing full payment details.
 - Design element: Payment Provider System delegation.
 - Design element: order record and confirmation behaviour.
 - Design element: masked support view.
-- Verification evidence: security test, functional test, access-control test.
+- Verification case: checkout card-data storage boundary.
+- Verification case: accepted-order confirmation.
+- Verification case: support-role masked payment information.
+- Verification evidence: security test result and provider integration review.
+- Verification evidence: functional test result and message-log sample.
+- Verification evidence: access-control test result and support-role review.
 
 ## Required relationships
 
-- Each requirement must connect to at least one design response.
-- Each design response must connect to at least one verification evidence item.
-- Relationship labels should use simple verbs such as `satisfied by` and `verified by`.
+- Each requirement must connect to at least one design response with `addressed by`.
+- Each design response must connect to at least one verification case with `verified by`.
+- Each verification case must connect to evidence with `evidenced by`.
+- No relationship label should imply proof beyond the evidence shown.
 
 ## Main flow or structure
 
-Arrange requirements on the left, design responses in the centre and verification evidence on the right. Keep the direction left to right.
+Arrange requirements on the left, design responses in the centre, verification cases to the right of design responses and evidence on the far right. Keep the direction left to right.
 
 ## Alternative and exception flows
 
@@ -62,6 +68,6 @@ Do not rely on colour alone. Use clear labels, relationship text and sufficient 
 ## Review criteria
 
 - The view is understandable without prior SysML expertise.
-- Requirements, design responses and verification evidence are visually distinct.
+- Requirements, design responses, verification cases and verification evidence are visually distinct.
 - No relationship implies proof beyond the named verification evidence.
 - Terminology matches the Simple Online Store example.

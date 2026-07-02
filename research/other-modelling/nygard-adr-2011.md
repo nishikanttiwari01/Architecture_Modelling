@@ -30,6 +30,8 @@ Nygard's 2011 article frames ADRs as small, maintainable records for decisions t
 
 For Chapter 13, ADRs should be taught as a textual modelling companion rather than a visual notation. They explain why a model or design choice was made, what alternatives were considered and what consequences reviewers should remember later.
 
+The original lightweight pattern emphasises status, context, decision and consequences. Recording alternatives considered is useful and common in later local variants, including the Chapter 13 Horizon Bank teaching example, but it should not be attributed as a mandatory field in Nygard's original pattern.
+
 ## Terminology and version notes
 
 Use source key `[NYGARD-ADR-2011]`.

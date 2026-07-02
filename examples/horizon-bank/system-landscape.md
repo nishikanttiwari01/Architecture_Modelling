@@ -2,7 +2,16 @@
 
 These names are placeholders and must remain consistent unless a decision changes them.
 
-| System | Responsibility | Current or target |
+Lifecycle markers used in Chapter 13:
+
+| Lifecycle marker | Meaning |
+|---|---|
+| Target | Directional target system or platform for teaching examples. |
+| Mixed | Contains current and target responsibilities, or is being modernised while still operating. |
+| Legacy retained initially | Current retained system that remains in scope during transition. |
+| Transitional | Intermediate platform or mechanism used while the architecture moves towards the target direction. |
+
+| System | Responsibility | Lifecycle marker |
 |---|---|---|
 | Horizon Digital Channels | Web and mobile customer experiences | Target |
 | Customer Onboarding Platform | Application capture and onboarding orchestration | Target |

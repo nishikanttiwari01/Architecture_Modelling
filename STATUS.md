@@ -31,7 +31,7 @@
 | 10 | Domain and Event Modelling | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; diagrams remain Review pending final book-page layout review |
 | 11 | Infrastructure and Deployment Modelling | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; six figures completed; diagrams remain Review pending final page-layout review, particularly FIG-11-03, FIG-11-05 and FIG-11-06 |
 | 12 | Security Modelling | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; four active figures completed; diagrams remain Review pending final page-layout review, particularly FIG-12-01 and FIG-12-04 |
-| 13 | Other Useful Modelling Approaches | Diagramming | 100 | 100 | 25 | 0 | 100 | Author review of six Chapter 13 figure specifications before diagram source creation |
+| 13 | Other Useful Modelling Approaches | Revision Required | 100 | 100 | 25 | 50 | 100 | Author review of revised Chapter 13 manuscript and six figure specifications before diagram source creation |
 | 14 | Modelling Business Strategy and Capabilities | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 15 | Modelling Business Processes | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 16 | Modelling Software Structure | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -107,6 +107,6 @@
 
 ## Current recommended next task
 
-Chapter 12, **Security Modelling**, is approved by the author with final quality score 9.1. PlantUML source, SVG exports and PNG previews exist for `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05`; all four figures remain at `Review` pending final page-layout review, particularly wider figures `FIG-12-01` and `FIG-12-04`. The former `FIG-12-03` access matrix is retired and replaced by manuscript table `TABLE-12-01`. Chapter 13, **Other Useful Modelling Approaches**, is now in `Diagramming` with a complete first draft, source notes and six figure specifications. Diagram source creation is deferred until author approval of `FIG-13-01` through `FIG-13-06` specifications.
+Chapter 12, **Security Modelling**, is approved by the author with final quality score 9.1. PlantUML source, SVG exports and PNG previews exist for `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05`; all four figures remain at `Review` pending final page-layout review, particularly wider figures `FIG-12-01` and `FIG-12-04`. The former `FIG-12-03` access matrix is retired and replaced by manuscript table `TABLE-12-01`. Chapter 13, **Other Useful Modelling Approaches**, is now in `Revision Required` after review-driven corrections to the manuscript, source notes and six figure specifications. Diagram source creation remains deferred until author approval of `FIG-13-01` through `FIG-13-06` specifications.
 
 Last updated: 2026-07-02

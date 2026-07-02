@@ -2,7 +2,7 @@
 title: "Other Useful Modelling Approaches"
 chapter: 13
 part: "part-02-modelling-languages"
-status: "Diagramming"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-07-02"
 ---
@@ -35,7 +35,7 @@ By the end of this chapter, the reader should be able to:
 
 ## Required models and artefacts
 
-- FIG-13-01: Online Store SysML Requirement Trace, specification created, source deferred pending author approval.
+- FIG-13-01: Online Store SysML-style Requirement Traceability View, specification created, source deferred pending author approval.
 - FIG-13-02: Horizon Bank Customer Onboarding Value Stream, specification created, source deferred pending author approval.
 - FIG-13-03: Horizon Bank Application Landscape Map, specification created, source deferred pending author approval.
 - FIG-13-04: Horizon Bank Platform Evolution Roadmap, specification created, source deferred pending author approval.
@@ -54,9 +54,11 @@ By the end of this chapter, the reader should be able to:
 
 - `[OMG-SYSML-2.0]` supports current SysML version, purpose and systems-modelling scope.
 - `[OPEN-GROUP-ARCHIMATE-4]` supports formal enterprise architecture concepts used when explaining capabilities, value streams, implementation and migration views.
+- `[OPEN-GROUP-BIZARCH-GUIDES-2022]` supports public official guide metadata for business capability and value-stream modelling.
 - `[C4-OFFICIAL]` supports system landscape framing where the landscape concern is software-system relationships.
 - `[WARDLEY-MAPS-OFFICIAL-2026]` supports Wardley map provenance, purpose and licence notes.
 - `[NYGARD-ADR-2011]` supports lightweight ADR practice and decision-log structure.
+- `[AUTHOR-HEAT-MAP-CONVENTIONS-2026]` records the local Chapter 13 heat-map scoring and legend convention.
 
 ## Planned chapter structure
 
@@ -68,7 +70,7 @@ By the end of this chapter, the reader should be able to:
 
 ## Drafting notes
 
-- Chapter 13 is currently in `Diagramming`.
+- Chapter 13 is currently in `Revision Required` while review findings are being resolved.
 - `FIG-13-01` through `FIG-13-06` are registered and have specifications.
 - Do not create diagram source or exports until the author approves the corresponding specifications.
 - Keep Chapter 14 deeper business-strategy coverage in mind. Chapter 13 should introduce capability, value stream and heat-map approaches without taking over Chapter 14's role.
@@ -77,7 +79,16 @@ By the end of this chapter, the reader should be able to:
 
 The previous chapters introduced major modelling languages and approaches: Unified Modeling Language (UML), C4, Business Process Model and Notation (BPMN), ArchiMate, data modelling, Decision Model and Notation (DMN), domain and event modelling, infrastructure modelling and security modelling. Those techniques cover many architecture questions, but real architecture work often needs smaller specialised views.
 
-A specialised model answers a focused question. It might show which requirement is satisfied by which design element, which capabilities need investment, which systems exist in a landscape, which changes happen over time, where risk is concentrated, or why a decision was made. These models are often practical and lightweight. Some are based on standards. Some are practitioner techniques. Some are local conventions used by one organisation.
+A specialised model answers a focused question. It might show which requirement is addressed by which design element, which capabilities need investment, which systems exist in a landscape, which changes happen over time, where risk is concentrated, or why a decision was made. These models are often practical and lightweight. Some are based on standards. Some are practitioner techniques. Some are local conventions used by one organisation.
+
+This chapter groups the approaches into four useful types:
+
+| Type | Approaches in this chapter | Main use |
+|---|---|---|
+| Traceability views | SysML-style requirement traceability | Connect requirements, design responses, verification cases and evidence. |
+| Business architecture views | Capability maps and value streams | Discuss stable business abilities and stakeholder value. |
+| Estate and change views | Application landscapes, integration landscapes and roadmaps | Understand systems, information exchange and architecture evolution. |
+| Decision and strategy views | Heat maps, Wardley maps and ADRs | Expose attention areas, strategic assumptions and decision rationale. |
 
 The danger is treating every useful drawing as a formal notation. A heat map is useful, but its colours are only meaningful if the scoring basis is written down. A roadmap is useful, but it is not a delivery contract unless governance makes it one. A Wardley map is useful for strategy discussion, but it records assumptions about user need, dependency and evolution. The same discipline from Chapter 3 still applies: read the title, purpose, audience, scope, notation, legend, assumptions and omissions before trusting the model.
 
@@ -87,17 +98,17 @@ SysML answers: **how do requirements, system structure, behaviour and verificati
 
 SysML is an Object Management Group (OMG) language for modelling systems. OMG SysML 2.0 is the current formal version checked for this chapter. The public OMG specification page describes SysML as a general-purpose modelling language for systems and model-based systems engineering, with support for requirements, structure, behaviour, analysis cases and verification cases [OMG-SYSML-2.0].
 
-For a beginner architect, the most accessible SysML idea is requirement traceability. A requirement should not float by itself. It should be related to the design elements that satisfy it, the test or verification evidence that checks it, and any higher-level objective it supports.
+For a beginner architect, the most accessible SysML idea is requirement traceability. A requirement should not float by itself. It should be related to the design responses that address it, the verification cases that check it, the evidence produced by those checks, and any higher-level objective it supports. A traceability link is not proof by itself. It is a navigable claim that reviewers can inspect.
 
 For the Simple Online Store, a SysML-style requirement trace might show:
 
-| Requirement | Design response | Verification evidence |
-|---|---|---|
-| Checkout must protect customer payment details | Online Store uses a Payment Provider System and does not store full card details | Security test result and provider integration review |
-| Customer must receive order confirmation | Order service creates an order record and sends confirmation through the web or email channel | Functional test and message log sample |
-| Support must view order status without viewing full payment details | Support interface shows masked payment status and order state | Access-control test and support-role review |
+| Requirement ID | Testable requirement | Design response | Verification case | Evidence |
+|---|---|---|---|---|
+| REQ-OS-01 | Checkout shall not store full customer card details in the Online Store. | Payment details are delegated to the Payment Provider System; the Online Store stores only payment status and provider reference. | Verify card-data storage boundary during checkout. | Security test result and provider integration review. |
+| REQ-OS-02 | The customer shall receive an order confirmation after the order is accepted. | Order service creates an order record and triggers web or email confirmation. | Verify accepted-order confirmation. | Functional test result and message-log sample. |
+| REQ-OS-03 | Support users shall view order status without seeing full payment details. | Support interface shows order state and masked payment status only. | Verify support-role access to masked payment information. | Access-control test result and support-role review. |
 
-FIG-13-01 is planned as a small teaching view of this pattern. It should not introduce the full SysML language. The purpose is to show why requirement, design and verification links matter.
+FIG-13-01 is planned as a small teaching view of this pattern. It should not introduce the full SysML language. The purpose is to show why requirement, design, verification case and evidence links matter. In the figure, relationship labels should use neutral wording such as `addressed by` and `verified by`, because traceability supports review rather than proving correctness.
 
 Use SysML when traceability across requirements, engineered parts, interfaces, behaviour, analysis and verification is important. Do not use it merely because a diagram has requirements on it. A plain table may be enough for simple software work.
 
@@ -105,11 +116,13 @@ Use SysML when traceability across requirements, engineered parts, interfaces, b
 
 A capability map answers: **what abilities does the organisation need, independent of the current process or application structure?**
 
-A capability is an ability an organisation has or needs in order to achieve an outcome. A capability map groups these abilities so leaders and architects can discuss investment, ownership, gaps and duplication without starting from the current organisation chart or application estate.
+A capability is an ability an organisation has or needs in order to achieve an outcome. A capability map groups these abilities so leaders and architects can discuss investment, ownership, gaps and duplication without starting from the current organisation chart or application estate. The Open Group's public guide metadata for business capabilities describes capability maps as a way to support business planning and align business architecture viewpoints [OPEN-GROUP-BIZARCH-GUIDES-2022].
 
 In Horizon Bank, capabilities might include Customer Onboarding, Party Management, Product Management, Payment Initiation, Payment Screening, Account Servicing, Fraud Management, Data Governance and Digital Servicing. A capability map does not show the process sequence for onboarding a customer. It shows what the bank must be able to do.
 
-Capability maps are often used with heat maps. The capability map gives stable business structure. The heat map overlays a judgement such as current pain, investment priority, strategic importance, risk, maturity or application duplication.
+The controlled illustrative Horizon Bank capability catalogue is maintained in `examples/horizon-bank/capabilities.md`. The names are teaching examples, not an authoritative bank taxonomy. They are capabilities, not process steps, organisation units, applications or BIAN Service Domains.
+
+Capability maps are often used with heat maps. The capability map gives stable business structure. The heat map overlays one explicit judgement at a time, such as operational pain, strategic value, delivery exposure, maturity or application duplication.
 
 Do not call every activity a capability. "Check documents" is likely a process step. "Customer Onboarding" or "Identity Verification" is more likely to be a capability. The distinction matters because capabilities are used for planning and ownership, while process steps are used for flow and operational detail.
 
@@ -119,21 +132,21 @@ Chapter 14 will go deeper into business strategy and capability modelling. This 
 
 A value stream answers: **how does value move from a triggering stakeholder need to an outcome?**
 
-A value stream is not the same as a detailed process model. It shows major stages of value creation from the perspective of a stakeholder. A BPMN process asks how work is performed in detail. A value stream asks what value is progressively achieved.
+A value stream is not the same as a detailed process model. It shows major stages of value creation from the perspective of a stakeholder. A BPMN process asks how work is performed in detail. A value stream asks what value is progressively achieved. The Open Group's public value-stream guide metadata describes value streams as a core business architecture element and as something that can be mapped to other business architecture components [OPEN-GROUP-BIZARCH-GUIDES-2022].
 
 For Horizon Bank customer onboarding, a value stream might use stages such as:
 
-| Stage | Value produced | Example enabling capabilities |
+| Stage | Stakeholder value produced | Example enabling capabilities |
 |---|---|---|
-| Express need | Customer states intent to become a bank customer | Digital Servicing, Relationship Management |
-| Capture information | Bank collects identity, contact and product information | Customer Onboarding, Document Capture |
-| Verify and assess | Bank checks identity, eligibility and risk | Identity Verification, Financial Crime Screening, Risk Assessment |
-| Open relationship | Bank creates customer and product records | Party Management, Account Opening, Product Management |
-| Activate service | Customer can use selected channels and products | Digital Servicing, Notification Management, Account Servicing |
+| Need understood | The prospective customer has made the banking need clear enough for the bank to respond. | Digital Servicing, Relationship Management |
+| Application established | The bank has enough structured application information to proceed. | Customer Onboarding, Document Capture |
+| Identity and eligibility confirmed | The customer can be assessed against identity, eligibility and financial-crime expectations. | Identity Verification, Financial Crime Screening, Risk Assessment |
+| Banking relationship established | Customer and product records exist in the bank's authoritative systems. | Party Management, Account Opening, Product Management |
+| Services ready to use | The customer can use the selected channels and products. | Digital Servicing, Notification Management, Account Servicing |
 
 FIG-13-02 is planned as a Horizon Bank customer onboarding value stream. It should show value stages, stakeholder perspective and enabling capabilities, not BPMN tasks.
 
-Use a value stream when the discussion is about end-to-end value, capability alignment or strategic change. Do not use it to replace the process model when exceptions, roles, sequence flows, message flows, timers or hand-offs matter.
+Use a value stream when the discussion is about end-to-end value, capability alignment or strategic change. Do not use it to replace the process model when exceptions, roles, sequence flows, message flows, timers or hand-offs matter. Do not confuse this business architecture use of value streams with Lean value stream mapping, which is aimed at analysing operational flow, waste and improvement in a production or service-delivery stream. Do not confuse it with a customer journey map either. A customer journey map usually emphasises touchpoints, emotion and experience. A business architecture value stream emphasises value stages and enabling capabilities.
 
 ## Application landscapes
 
@@ -141,7 +154,7 @@ An application landscape answers: **which applications or software systems exist
 
 Application landscapes are common in enterprise architecture because teams need to see more than one system at a time. A C4 System Landscape diagram is one structured way to show software systems and their relationships [C4-OFFICIAL]. ArchiMate application views can also show application components, services and relationships when enterprise architecture traceability matters [OPEN-GROUP-ARCHIMATE-4].
 
-For Horizon Bank, an application landscape might show Horizon Digital Channels, Customer Onboarding Platform, Party and Customer Platform, Product Catalogue, Payments Platform, Financial Crime Platform, Core Deposit System, Enterprise Integration Platform, Event Platform and Enterprise Data Platform. The landscape should state whether it is current, target or mixed. It should also show only the relationships needed for the review question.
+For Horizon Bank, an application landscape might show Horizon Digital Channels, Customer Onboarding Platform, Party and Customer Platform, Product Catalogue, Payments Platform, Financial Crime Platform, Core Deposit System, Enterprise Integration Platform, Event Platform and Enterprise Data Platform. The controlled system list in `examples/horizon-bank/system-landscape.md` uses lifecycle markers: `Target`, `Mixed`, `Legacy retained initially` and `Transitional`. A mixed-state landscape must explain which parts already exist, which are being retained, and which are directionally target. It should also show only the relationships needed for the review question.
 
 FIG-13-03 is planned as a Horizon Bank application landscape map. It should use stable system names from `examples/horizon-bank/system-landscape.md`.
 
@@ -153,11 +166,20 @@ An integration landscape answers: **how do systems exchange information, and whi
 
 An application landscape may show that two systems are related. An integration landscape adds how they communicate. It may show application programming interfaces (APIs), event topics, file transfers, message queues, adapters, gateways and integration platforms.
 
-For Horizon Bank, an integration landscape might show that Horizon Digital Channels call Payments Platform APIs, Payments Platform uses Enterprise Integration Platform adapters to reach the Core Deposit System, Financial Crime Platform receives screening requests, Event Platform distributes payment-status events, and Enterprise Data Platform consumes selected events for reporting.
+For Horizon Bank, an integration landscape might show these selected exchanges:
+
+| Exchange | Integration style | Review concern |
+|---|---|---|
+| Horizon Digital Channels to Payments Platform | Synchronous API | Customer-facing payment initiation latency and error handling. |
+| Payments Platform to Financial Crime Platform | Synchronous screening request, with operational case follow-up outside this view | Screening decision traceability and timeout behaviour. |
+| Payments Platform to Enterprise Integration Platform | Adapter-mediated service call | Ownership of adapters and operational monitoring. |
+| Enterprise Integration Platform to Core Deposit System | Retained core adapter or batch-safe service boundary | Legacy coexistence and reconciliation. |
+| Payments Platform to Event Platform | Asynchronous event publication | Governed payment-status event schema and replay rules. |
+| Event Platform to Enterprise Data Platform | Event subscription or replicated data feed | Reporting freshness, data lineage and consumer access. |
 
 This view is especially useful when the problem is point-to-point complexity, duplicated interfaces or unclear ownership. It is less useful when the question is business value, user experience or detailed process sequence.
 
-Keep integration landscapes honest. Label the integration style where it matters: synchronous API, asynchronous event, managed file transfer, replicated data, manual upload or operational report. An arrow labelled "integrates with" is often too vague for review.
+Keep integration landscapes honest. Label the integration style where it matters: synchronous API, asynchronous event, managed file transfer, replicated data, manual upload or operational report. An unlabelled relationship between two systems is often too vague for review.
 
 ## Architecture roadmaps
 
@@ -170,13 +192,13 @@ For Horizon Bank platform evolution, a roadmap might show:
 | Horizon | Architecture change | Dependency or risk |
 |---|---|---|
 | Current | Core Deposit System and point-to-point integration remain dominant | High reconciliation effort |
-| Transition 1 | Payments Platform uses Enterprise Integration Platform adapters | Adapter ownership and service-level monitoring needed |
-| Transition 2 | Event Platform publishes governed payment-status events | Event schema governance and consumer access needed |
-| Target | Modular payments, customer and data platforms support governed reuse | Legacy coexistence still managed deliberately |
+| Near-term transition | Payments Platform uses Enterprise Integration Platform adapters | Adapter ownership, service-level monitoring and operating model decision needed |
+| Later transition | Event Platform publishes governed payment-status events | Event schema governance, consumer access control and replay policy needed |
+| Target direction | Modular payments, customer and data platforms support governed reuse | Legacy coexistence remains explicit until exit evidence is accepted |
 
 FIG-13-04 is planned as a simple platform evolution roadmap. It should show architecture states and dependencies, not a project plan with every delivery task.
 
-A roadmap is not a promise by itself. It records an intended sequence under known assumptions. If funding, regulation, vendor constraints or operational risk change, the roadmap should be reviewed.
+A roadmap is not a promise by itself. It records an intended sequence under known assumptions. A useful roadmap states dependencies, risks, assumptions, decision points and exit evidence for each state. If funding, regulation, vendor constraints or operational risk change, the roadmap should be reviewed.
 
 ## Heat maps
 
@@ -184,11 +206,21 @@ A heat map answers: **where is attention needed most?**
 
 Heat maps overlay a rating onto a stable structure such as capabilities, applications, processes, data domains or technology platforms. The rating may represent risk, cost, maturity, business value, technical debt, regulatory exposure, operational pain or investment priority.
 
-For Horizon Bank, a capability heat map might mark Payment Screening as high regulatory importance, Core Account Servicing as high legacy dependency, Digital Servicing as high strategic value, and Data Governance as high cross-bank dependency. The map becomes useful only when the scoring basis is explicit.
+For Horizon Bank, a capability heat map might score the same capability across separate dimensions:
+
+| Capability | Current pain | Strategic importance | Delivery risk | Basis |
+|---|---|---|---|---|
+| Payment Screening | H | H | M | Regulatory scrutiny and screening traceability need attention. |
+| Account Servicing | M | H | H | Legacy dependency affects change sequencing. |
+| Digital Servicing | H | H | M | Customer experience is strategically visible. |
+| Data Governance | M | H | H | Cross-bank data quality and access rules affect many initiatives. |
+| Event Governance | M | M | H | Reuse depends on schema ownership and consumer controls. |
+
+Use `H`, `M` and `L` labels even when colour is also used. The map becomes useful only when the scoring basis is explicit. The figure should record date, owner and version, and should state that the scores are illustrative.
 
 FIG-13-05 is planned as a capability heat map. It should use labels and a legend so colour is not the only carrier of meaning.
 
-Common heat-map mistakes are easy to spot. The model may use red, amber and green without saying what they mean. It may mix several scoring dimensions into one colour. It may imply false precision from subjective workshop votes. It may hide disagreement by averaging scores. A good heat map says who scored it, what criteria they used, when it was scored and what action the rating should trigger.
+Common heat-map mistakes are easy to spot. The model may use red, amber and green without saying what they mean. It may mix several scoring dimensions into one colour. It may imply false precision from subjective workshop votes. It may hide disagreement by averaging scores. A good heat map says who scored it, what criteria they used, when it was scored, which version is being viewed and what action the rating should trigger.
 
 ## Wardley maps
 
@@ -205,9 +237,22 @@ For Horizon Bank payment modernisation, a simplified Wardley map might include:
 | Retail Customer payment need | Anchor for the map | Stable need, but expectations evolve |
 | Digital payment experience | Visible customer value | Differentiation may matter |
 | Payment orchestration | Core capability for the bank | Build or modernise deliberately |
-| Screening and fraud checks | Regulatory and risk capability | Specialist platforms may mature |
+| Financial crime screening service | Regulatory screening capability | Specialist service maturity may change build-versus-buy options |
+| Fraud decisioning service | Risk decisioning capability | Product maturity and bank-specific rules may need separate treatment |
 | Event distribution | Shared integration capability | Standardise governance and reuse |
-| Compute, storage and network | Supporting platform | Treat as commodity where possible |
+| Customer and account data access | Data dependency for payment execution | Visibility is lower than customer experience, but reliability matters |
+| Compute service | Supporting platform capability | Treat as commodity where possible |
+| Storage service | Supporting platform capability | Treat as commodity where possible |
+| Network service | Supporting platform capability | Treat as commodity where possible |
+
+The dependency lines on a Wardley map show value-chain dependency, not API direction, data lineage or implementation sequence. For the Horizon Bank example, the assumed chain is: customer need depends on the digital payment experience; that experience depends on payment orchestration; payment orchestration depends on screening, fraud decisioning, customer and account data access, event distribution and commodity platform services. These positions are assumptions for discussion, not facts about a real bank.
+
+| Assumption | Why it matters |
+|---|---|
+| Retail customers value reliability and clear payment status. | Anchors the map in user need rather than internal systems. |
+| Payment orchestration remains a differentiating design concern during modernisation. | Keeps the map from treating all payment capability as commodity too early. |
+| Screening and fraud decisioning have different evolution paths. | Avoids collapsing regulatory screening and fraud risk decisions into one component. |
+| Compute service, storage service and network service are utility-like for this discussion. | Keeps the strategic debate on payment capability rather than infrastructure ownership. |
 
 FIG-13-06 is planned as a payment modernisation Wardley map. It should be labelled as a strategic discussion map, not as a factual inventory.
 
@@ -219,7 +264,21 @@ An Architecture Decision Record answers: **what decision was made, why was it ma
 
 An ADR is a small text record rather than a diagram. Michael Nygard's 2011 article popularised a lightweight pattern: keep records for architecturally significant decisions, number them, record their status, describe context, state the decision and record consequences [NYGARD-ADR-2011].
 
-This repository uses `DECISIONS.md` in the same spirit. For example, the decision not to map BIAN Service Domains automatically to microservices matters because it shapes later design, examples and review criteria. If that decision were hidden in a conversation, future readers would not know why the book keeps making that distinction.
+This repository uses `DECISIONS.md` in the same spirit. It keeps a central decision log rather than one ADR file per decision, because the book is still small enough for one indexed log to work. A software team may prefer one ADR per file so each decision can be linked, reviewed and superseded independently. Both patterns can be valid if the records are stable, searchable and retained.
+
+An original Horizon Bank ADR might look like this:
+
+| Field | Example content |
+|---|---|
+| ID | ADR-HB-001 |
+| Title | Modernise payments incrementally through platform-mediated integration |
+| Status | Proposed for teaching example |
+| Context | Horizon Bank needs better payment status visibility, stronger screening traceability and reduced point-to-point integration, while the Core Deposit System remains operationally critical. |
+| Decision | Use a Payments Platform with Enterprise Integration Platform adapters first, then publish governed payment-status events through the Event Platform. Do not replace all payment and core systems in one step. |
+| Consequences | The bank must fund adapter ownership, monitoring, event-schema governance and legacy reconciliation during the transition. The approach reduces migration shock but extends coexistence work. |
+| Alternatives considered | Big-bang core replacement; continue point-to-point integration; event-first migration without adapter governance. |
+
+Nygard's original lightweight pattern emphasises status, context, decision and consequences. An `Alternatives considered` field is a useful local extension, but it should not be presented as mandatory in the original pattern [NYGARD-ADR-2011].
 
 ADRs are useful when a diagram shows what the architecture is, but not why it became that way. A roadmap can show a transition path. An ADR can explain why the team chose incremental migration rather than a big-bang replacement. A security model can show a controlled support interface. An ADR can explain why privileged support access must be separate from customer traffic.
 
@@ -229,17 +288,17 @@ Do not write an ADR for every small preference. Record decisions that are signif
 
 Use a specialised approach when the question would be awkward or misleading in the main notation.
 
-| Question | Better specialised approach | Why |
-|---|---|---|
-| Which requirement is satisfied and verified? | SysML-style requirement trace | Shows requirement, design and verification links |
-| Which business abilities need attention? | Capability map or heat map | Separates business ability from process and application detail |
-| How does value progress for a stakeholder? | Value stream | Shows value stages before detailed process |
-| Which systems exist in the estate? | Application landscape | Gives a wider estate view |
-| How do systems exchange information? | Integration landscape | Adds integration mechanisms and ownership |
-| How do we move from current to target? | Roadmap | Shows transition states and dependencies |
-| Where is risk, cost or maturity weak? | Heat map | Overlays a rating on a stable structure |
-| What strategic choices follow from user need and evolution? | Wardley map | Relates value chain to component evolution |
-| Why did we choose this architecture? | ADR | Captures rationale and consequences |
+| Question | Better specialised approach | Main audience | Why |
+|---|---|---|---|
+| Which requirement is addressed and verified? | SysML-style requirement trace | Analysts, architects and testers | Shows requirement, design response, verification case and evidence links. |
+| Which business abilities need attention? | Capability map or heat map | Business architects, sponsors and portfolio teams | Separates business ability from process and application detail. |
+| How does value progress for a stakeholder? | Value stream | Business architects, product owners and sponsors | Shows value stages before detailed process. |
+| Which systems exist in the estate? | Application landscape | Enterprise architects, solution architects and application owners | Gives a wider estate view. |
+| How do systems exchange information? | Integration landscape | Integration architects, solution architects and operations teams | Adds integration mechanisms and ownership. |
+| How do we move from current to target? | Roadmap | Transformation leads, enterprise architects and sponsors | Shows transition states and dependencies. |
+| Where is risk, cost or maturity weak? | Heat map | Portfolio teams, risk reviewers and sponsors | Overlays explicit ratings on a stable structure. |
+| What strategic choices follow from user need and evolution? | Wardley map | Strategy, product and architecture leaders | Relates value-chain dependency to component evolution. |
+| Why did we choose this architecture? | ADR | Architects, maintainers and governance reviewers | Captures rationale and consequences. |
 
 The safest pattern is to use the smallest model that answers the question. Add another view only when it removes confusion or supports a real decision.
 
@@ -269,7 +328,7 @@ The eighth mistake is deleting superseded decisions. A replaced decision is ofte
 | Capability map | What abilities does the organisation need? | Strategy, ownership and investment discussion | Calling process tasks capabilities |
 | Value stream | How is value achieved for a stakeholder? | End-to-end value and capability alignment | Turning it into BPMN detail |
 | Application landscape | Which systems exist and relate? | Estate understanding and rationalisation | Showing every interface and process step |
-| Integration landscape | How is information exchanged? | API, event, adapter and integration ownership review | Vague "integrates with" arrows |
+| Integration landscape | How is information exchanged? | API, event, adapter and integration ownership review | Vague unlabelled relationship arrows |
 | Roadmap | How do we move through transition states? | Sequencing architecture change | Treating assumptions as delivery promises |
 | Heat map | Where is attention needed? | Risk, maturity, cost or investment prioritisation | Hidden scoring and colour-only meaning |
 | Wardley map | What strategic options follow from user need and evolution? | Strategy and situational awareness | Treating assumptions as objective facts |
@@ -297,7 +356,7 @@ Choose the right model for each question:
 3. Which model should show whether Payment Screening, Event Governance and Data Governance have high risk or low maturity?
 4. Which model should show the transition from point-to-point integration to platform-mediated APIs and governed events over time?
 5. Which model should explain why the bank chose incremental migration rather than replacing all payment systems at once?
-6. Which model should show whether a checkout security requirement is satisfied by design and verified by a test?
+6. Which model should show whether a checkout security requirement is addressed by design and verified by a test?
 7. Which model should show the end-to-end value stages for onboarding a new customer?
 
 Suggested answer:
@@ -329,6 +388,8 @@ Chapter source notes are maintained in the repository under `research/other-mode
 
 - `[OMG-SYSML-2.0]`: Object Management Group, SysML, version 2.0.
 - `[OPEN-GROUP-ARCHIMATE-4]`: The Open Group, ArchiMate 4 Specification.
+- `[OPEN-GROUP-BIZARCH-GUIDES-2022]`: The Open Group, TOGAF Series Guides for Business Capabilities and Value Streams.
+- `[AUTHOR-HEAT-MAP-CONVENTIONS-2026]`: Repository-local Chapter 13 heat-map scoring and legend convention.
 - `[C4-OFFICIAL]`: Official C4 model documentation.
 - `[WARDLEY-MAPS-OFFICIAL-2026]`: Simon Wardley / SWARDLEYMAPS LTD, official Wardley Maps site and book resources.
 - `[NYGARD-ADR-2011]`: Michael Nygard, Documenting Architecture Decisions.

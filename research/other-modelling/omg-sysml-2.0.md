@@ -30,11 +30,15 @@ The OMG specification page identifies SysML 2.0 as a formal version of the OMG S
 
 For Chapter 13, the important teaching point is that SysML is useful when requirements, system structure, behaviour and verification need traceability across a system-of-systems or engineered product context. The chapter should not present SysML as a replacement for the simpler UML, C4, BPMN, ArchiMate, data or security views already taught in Part II.
 
+Chapter 13 uses a simplified SysML-style requirement traceability view, not a complete SysML 2.0 notation tutorial. It should distinguish a requirement from a design response, a verification case and produced evidence. Traceability links support review and navigation. They do not prove that the requirement is met without the relevant verification evidence.
+
 ## Terminology and version notes
 
 Use source key `[OMG-SYSML-2.0]`.
 
 SysML 2.0 supersedes earlier SysML 1.x versions. If the chapter mentions the commonly recognised "requirement diagram" pattern, it should explain it as a beginner entry point and avoid implying that all SysML 2.0 notation is identical to SysML 1.x diagram practice.
+
+Use neutral relationship wording such as `addressed by` and `verified by` in beginner examples unless a formal SysML relationship is being taught explicitly.
 
 ## Copyright or reuse notes
 

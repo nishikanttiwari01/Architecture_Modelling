@@ -30,6 +30,14 @@ The official Wardley Maps site identifies itself as the official home of Wardley
 
 For Chapter 13, the useful beginner framing is that a Wardley map is not a process flow, capability hierarchy or system landscape. It is a strategy map anchored in user need. It places components in a value chain and relates them to an evolution axis so teams can discuss whether to invent, build, buy, standardise, outsource or retire parts of the landscape.
 
+The chapter should use the common Wardley-map vocabulary carefully:
+
+- The user need anchors the map.
+- The vertical axis represents visibility or value-chain position from visible user need towards less visible supporting components.
+- Dependency lines represent value-chain dependency, not necessarily API calls, data flows or implementation sequence.
+- The horizontal axis represents evolution from Genesis to Custom-built, Product or rental, and Commodity or utility.
+- Component positions are assumptions for discussion and should be open to challenge.
+
 ## Terminology and version notes
 
 Use source key `[WARDLEY-MAPS-OFFICIAL-2026]`.

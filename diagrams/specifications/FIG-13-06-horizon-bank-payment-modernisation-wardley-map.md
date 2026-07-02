@@ -20,15 +20,16 @@ Wardley map teaching view.
 
 - User: Retail Customer.
 - User need: make a reliable outgoing payment.
-- Components: Digital payment experience, Payment orchestration, Screening and fraud checks, Event distribution, Customer and account data, Compute, storage and network.
+- Components: Digital payment experience, Payment orchestration, Financial crime screening service, Fraud decisioning service, Event distribution, Customer and account data access, Compute service, Storage service, Network service.
 - Evolution axis labels: Genesis, Custom-built, Product or rental, Commodity or utility.
 - Dependency links from user need down through visible and supporting components.
 - Note that positions are assumptions for discussion.
+- Component assumptions table matching the manuscript.
 
 ## Required relationships
 
 - User need must anchor the top of the map.
-- Components must connect through dependency lines.
+- Components must connect through value-chain dependency lines, not data-flow or integration arrows.
 - Components must be positioned on the evolution axis.
 
 ## Main flow or structure

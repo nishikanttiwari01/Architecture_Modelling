@@ -4,6 +4,15 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-02
 
+### Revised Chapter 13 after review
+
+- Moved Chapter 13, **Other Useful Modelling Approaches**, to `Revision Required` while applying review findings.
+- Corrected SysML-style traceability, value-stream stages, capability-map guidance, integration landscape wording, roadmap states, heat-map scoring, Wardley-map components and ADR guidance.
+- Added controlled Horizon Bank capability and system lifecycle records.
+- Added official Open Group business architecture guide source notes and a repository-local heat-map scoring convention note.
+- Revised `FIG-13-01` through `FIG-13-06` specifications only; no Chapter 13 diagram source or exports were created, and all six figures remain `Planned`.
+- Added Chapter 13 review records and an interim quality gate.
+
 ### Approved Chapter 12 Security Modelling
 
 - Recorded author approval for Chapter 12, **Security Modelling**, with final quality score 9.1.
