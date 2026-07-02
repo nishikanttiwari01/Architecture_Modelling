@@ -27,3 +27,16 @@
 ## Technical conclusion
 
 The main technical findings have been applied, but Chapter 12 should remain `Revision Required` until author review confirms the revised prose and the four remaining figure specifications. No diagram source or export was created.
+
+## Diagram-production update, 2026-07-02
+
+The author approved `DEC-020` and the four remaining Chapter 12 figure specifications. PlantUML source, SVG exports and PNG previews were created for `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05`.
+
+Technical follow-up checks:
+
+- `FIG-12-01` labels trust-boundary basis, shows the Identity Service as an external supporting security service and keeps support access behind a controlled interface.
+- `FIG-12-02` separates credential handling, authentication-result validation, session creation and later access authorisation.
+- `FIG-12-04` uses "payment instruction and session reference" from Retail Customer to Horizon Digital Channels, then "payment instruction, validated subject context and entitlement context" from Horizon Digital Channels to Payments Platform.
+- `FIG-12-05` excludes non-causal `T12-04` and `T12-06` from the payment-release attack tree while retaining those threats in the DFD and control map.
+
+Chapter 12 can move from `Revision Required` to `Diagramming`. The figures remain `Review`, not `Approved`.

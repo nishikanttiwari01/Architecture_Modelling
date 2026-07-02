@@ -20,7 +20,7 @@ Chapter 11, **Infrastructure and Deployment Modelling**, is approved by the auth
 
 Final page-layout review remains pending for Chapter 11 diagrams, particularly `FIG-11-03`, `FIG-11-05` and `FIG-11-06`. All Chapter 11 figures remain `Review`, not `Approved`.
 
-Chapter 12, **Security Modelling**, is in `Revision Required` after the review and focused correction passes. The revised manuscript adds the missing security-modelling foundation, access authorisation terminology, control mapping, residual risk and privacy modelling. The focused correction gives each threat scenario a unique ID from `T12-01` through `T12-08`, keeps non-causal `T12-04` and `T12-06` out of the attack tree, registers the Horizon Bank Customer Support Agent, and corrects identity-context flow wording. It has four remaining diagram specifications: `FIG-12-01` Online Store Trust Boundary View, `FIG-12-02` Online Store Customer Authentication Sequence, `FIG-12-04` Horizon Bank Payment Threat-Model DFD and `FIG-12-05` Horizon Bank Payment Attack Tree. The former `FIG-12-03` matrix is retired and provisionally replaced by manuscript table `TABLE-12-01` pending author approval of `DEC-020`. Diagram source and exports remain deferred pending author approval of the specifications.
+Chapter 12, **Security Modelling**, is in `Diagramming` after the review, focused correction and diagram-production passes. The revised manuscript adds the missing security-modelling foundation, access authorisation terminology, control mapping, residual risk and privacy modelling. The focused correction gives each threat scenario a unique ID from `T12-01` through `T12-08`, keeps non-causal `T12-04` and `T12-06` out of the attack tree, registers the Horizon Bank Customer Support Agent, and corrects identity-context flow wording. `DEC-020` is accepted, so the former `FIG-12-03` matrix is retired and replaced by manuscript table `TABLE-12-01`. PlantUML source, SVG exports and PNG previews exist for `FIG-12-01` Online Store Trust Boundary View, `FIG-12-02` Online Store Customer Authentication Sequence, `FIG-12-04` Horizon Bank Payment Threat-Model DFD and `FIG-12-05` Horizon Bank Payment Attack Tree. All four figures remain `Review`, not `Approved`.
 
 ## Git reference
 
@@ -43,7 +43,7 @@ Chapter 12, **Security Modelling**, is in `Revision Required` after the review a
 - Chapter 9 status: `Approved`
 - Chapter 10 status: `Approved`
 - Chapter 11 status: `Approved`
-- Chapter 12 status: `Revision Required`
+- Chapter 12 status: `Diagramming`
 - Diagram status for Chapter 1 figure `FIG-01-01`: `Review`
 - Diagram status for Chapter 2 figure `FIG-02-01`: `Review`
 - Diagram status for Chapter 3 figures `FIG-03-01` through `FIG-03-03`: `Review`
@@ -55,7 +55,7 @@ Chapter 12, **Security Modelling**, is in `Revision Required` after the review a
 - Diagram status for Chapter 9 figures `FIG-09-01` through `FIG-09-04`: `Review`
 - Diagram status for Chapter 10 figures `FIG-10-01` through `FIG-10-04`: `Review`
 - Diagram status for Chapter 11 figures `FIG-11-01` through `FIG-11-06`: `Review`
-- Diagram status for Chapter 12 figures `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05`: `Planned`
+- Diagram status for Chapter 12 figures `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05`: `Review`
 
 ## Pending non-critical issues
 
@@ -73,4 +73,4 @@ Chapter 12, **Security Modelling**, is the current chapter after Chapter 11 appr
 
 ## Next exact action
 
-Review the Chapter 12 revision records and revised manuscript, then author-review the `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05` specifications before Codex creates any source or exports. Keep Chapter 11 figures `FIG-11-01` through `FIG-11-06` at `Review`.
+Complete final Chapter 12 quality-gate review after the rendered figures are checked in book layout. Keep Chapter 12 figures `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05` at `Review` until author and page-layout review. Keep Chapter 11 figures `FIG-11-01` through `FIG-11-06` at `Review`.

@@ -19,3 +19,14 @@
 ## Beginner conclusion
 
 The revised chapter now follows a clearer learning path: purpose, foundation, viewpoints, boundary, identity, access, threats, controls and privacy. It remains in review because the author still needs to confirm whether the level of banking-security depth is right for Chapter 12.
+
+## Diagram-production update, 2026-07-02
+
+The rendered figures support the beginner sequence in the chapter:
+
+- `FIG-12-01` shows trust-boundary changes before detailed identity and threat modelling.
+- `FIG-12-02` makes the difference between authentication, session handling and access authorisation visible.
+- `FIG-12-05` narrows the attack tree to one harmful goal and explains why some related threats are excluded.
+- `FIG-12-04` shows data movement and threat-review points without turning the DFD into a BPMN process.
+
+The figures include captions, accessibility text and limitation statements in the manuscript. They remain `Review`, not `Approved`.

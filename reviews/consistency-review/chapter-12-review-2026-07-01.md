@@ -23,3 +23,17 @@
 ## Consistency conclusion
 
 Repository tracking now matches the revised Chapter 12 scope. `FIG-12-03` is intentionally absent from the active diagram register and its retired state is recorded in the decision log as provisional pending author approval of `DEC-020`. No Chapter 13 work was started.
+
+## Diagram-production update, 2026-07-02
+
+The author approved `DEC-020`, so the `FIG-12-03` retirement and `TABLE-12-01` replacement are no longer provisional. `DEC-020` is now `Accepted`.
+
+Repository tracking now records:
+
+- Chapter 12 status: `Diagramming`
+- `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05` status: `Review`
+- PlantUML source under `diagrams/source/plantuml/`
+- SVG exports under `diagrams/exported/svg/`
+- PNG previews under `diagrams/exported/png/`
+
+No Chapter 13 work was started.

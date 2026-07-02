@@ -4,6 +4,13 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-02
 
+### Produced Chapter 12 security diagrams
+
+- Recorded author acceptance of `DEC-020`, keeping `TABLE-12-01` as a manuscript table and leaving retired `FIG-12-03` unused.
+- Created PlantUML source, SVG exports and PNG previews for `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05`.
+- Added Chapter 12 figure references, captions, accessibility text and limitation statements to the manuscript.
+- Moved the four Chapter 12 figures to `Review`, not `Approved`, and moved Chapter 12 to `Diagramming`.
+
 ### Corrected Chapter 12 threat traceability
 
 - Corrected Chapter 12 threat IDs so each distinct scenario has one unique ID from `T12-01` through `T12-08`.
@@ -11,7 +18,7 @@ All notable repository and manuscript changes are recorded here. This is a proje
 - Removed non-causal `T12-04` and `T12-06` branches from the `FIG-12-05` attack-tree specification while keeping them in the DFD and control map.
 - Registered the Horizon Bank `Customer Support Agent` actor.
 - Corrected identity-context flow wording so the Retail Customer supplies a session reference, while Horizon Digital Channels supplies validated subject and entitlement context to the Payments Platform.
-- Recorded that `TABLE-12-01` remains provisional pending author approval of `DEC-020`.
+- Recorded that `TABLE-12-01` remained provisional pending author approval of `DEC-020`.
 
 ## 2026-07-01
 

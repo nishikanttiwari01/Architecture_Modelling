@@ -1,0 +1,56 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+title FIG-12-02. Online Store Customer Authentication Sequence
+
+actor "Customer" as Customer
+participant "Browser or\nMobile App" as Client
+participant "Online Store\nWeb/API Runtime" as Store
+participant "Identity Service\nexternal supporting\nsecurity service" as Identity
+database "Application\nSession Store" as SessionStore
+participant "Access\nDecision" as AccessDecision
+
+Customer -> Client : Request protected\nfunction
+Client -> Store : Protected function request
+activate Store
+Store --> Client : Redirect or delegate\nto Identity Service
+deactivate Store
+
+Customer -> Identity : Authenticate directly\nwith credentials
+activate Identity
+Identity --> Store : Authentication result
+deactivate Identity
+
+activate Store
+Store -> Store : Validate authentication\nresult
+Store -> SessionStore : Establish application\nsession
+SessionStore --> Store : Session reference
+Store --> Client : Application session\navailable
+deactivate Store
+
+Customer -> Client : Request protected\naction
+Client -> Store : Protected action\nwith session reference
+activate Store
+Store -> AccessDecision : Authorise subject,\naction and resource
+activate AccessDecision
+
+alt access permitted
+  AccessDecision --> Store : Permit
+  Store --> Client : Perform protected action
+  Client --> Customer : Show permitted result
+else access rejected
+  AccessDecision --> Store : Reject
+  Store --> Client : Reject protected action
+  Client --> Customer : Show rejection
+end
+
+deactivate AccessDecision
+deactivate Store
+
+note over Customer,AccessDecision
+Credentials go to the Identity Service.
+The authentication result is validated by the Online Store.
+The application session is not the same as complete access authorisation.
+Full OAuth, OpenID Connect and SAML protocol messages are out of scope.
+end note
+@enduml

@@ -1,0 +1,71 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+left to right direction
+title FIG-12-04. Horizon Bank Payment Threat-Model DFD
+
+skinparam rectangle {
+  BorderColor #333333
+  BackgroundColor #F7F9FB
+}
+skinparam component {
+  BorderColor #333333
+  BackgroundColor #FFFFFF
+}
+skinparam database {
+  BorderColor #333333
+  BackgroundColor #F2F5F7
+}
+skinparam queue {
+  BorderColor #333333
+  BackgroundColor #F2F5F7
+}
+
+actor "Retail\nCustomer" as Customer
+actor "Operations\nAnalyst" as Ops
+actor "Compliance\nOfficer" as Compliance
+
+rectangle "Customer Access Context\nboundary basis:\ncustomer device and\nsession presentation" as CustomerContext {
+  component "Horizon Digital\nChannels" as Channels
+}
+
+rectangle "Payment Platform Responsibility\nboundary basis:\npayment orchestration policy" as PaymentContext {
+  component "Payments\nPlatform" as Payments
+  database "Payment\nRecord Store" as PaymentStore
+  database "Audit Log" as AuditLog
+}
+
+rectangle "Financial-Crime Responsibility\nboundary basis:\npolicy authority" as FinancialCrimeContext {
+  component "Financial Crime\nPlatform" as FinancialCrime
+}
+
+rectangle "Retained Core Responsibility\nboundary basis:\ncore account posting" as CoreContext {
+  database "Core Deposit\nSystem" as Core
+}
+
+rectangle "Event Distribution Context\nboundary basis:\nevent governance and\nconsumer access" as EventContext {
+  queue "Event Platform" as EventPlatform
+}
+
+Customer --> Channels : payment instruction\nand session reference\n[T12-01]
+Channels --> Payments : payment instruction,\nvalidated subject context\nand entitlement context\n[T12-02, T12-07]
+
+Payments --> FinancialCrime : screening request
+FinancialCrime --> Payments : screening result\n[T12-05]
+Compliance --> FinancialCrime : screening case action\n[T12-05]
+
+Ops --> Payments : controlled repair action\n[T12-04, T12-08]
+
+Payments --> Core : posting request\n[T12-03]
+Core --> Payments : posting result
+
+Payments --> PaymentStore : store payment record
+Payments --> AuditLog : write audit event\n[T12-04]
+Payments --> EventPlatform : payment-status event\n[T12-06]
+
+legend bottom
+Threat IDs label review points, not proof of vulnerability.
+Authentication and session validation are represented in the authentication model, not as a full Identity Service flow here.
+DFD elements are external entities, processes, stores and data flows, not BPMN process steps.
+endlegend
+@enduml

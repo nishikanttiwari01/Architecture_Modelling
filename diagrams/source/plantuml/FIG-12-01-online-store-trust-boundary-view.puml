@@ -1,0 +1,59 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+left to right direction
+title FIG-12-01. Online Store Trust Boundary View
+
+skinparam rectangle {
+  BorderColor #333333
+  BackgroundColor #F7F9FB
+}
+skinparam cloud {
+  BorderColor #333333
+  BackgroundColor #FFFFFF
+}
+skinparam database {
+  BorderColor #333333
+  BackgroundColor #F2F5F7
+}
+
+actor "Customer\nDevice" as Customer
+cloud "Public Network\nboundary basis:\nnetwork enforcement and\nOnline Store administrative control" as PublicNetwork
+
+rectangle "Online Store Edge\nboundary basis:\npublic entry policy and\nnetwork enforcement" as Edge {
+  component "Edge Endpoint\nfilters and routes" as EdgeEndpoint
+}
+
+rectangle "Online Store Application Runtime" as AppRuntime {
+  rectangle "boundary basis:\nexecution environment and\napplication policy" as RuntimeBasis
+  component "Online Store\nWeb/API Runtime" as StoreRuntime
+  component "Controlled Support\nInterface" as SupportInterface
+}
+
+rectangle "Restricted Data-Custody Area\nboundary basis:\ndata custody and\naccess policy" as DataArea {
+  database "Order and Payment\nData Store" as DataStore
+}
+
+cloud "Identity Service\nexternal supporting\nsecurity service\nboundary basis:\nidentity authority" as IdentityService
+cloud "Payment Provider\nSystem\nboundary basis:\nseparate organisation" as PaymentProvider
+cloud "Delivery Partner\nSystem\nboundary basis:\nseparate organisation" as DeliveryPartner
+actor "Customer Support\nAgent" as SupportAgent
+
+Customer --> PublicNetwork : login, account\nand checkout traffic
+PublicNetwork --> EdgeEndpoint : authenticated interaction\nstarts at public entry
+EdgeEndpoint --> StoreRuntime
+StoreRuntime --> StoreRuntime : application validation\nand access checks
+StoreRuntime --> DataStore : read and write\norder and payment data
+StoreRuntime --> IdentityService : delegate identity\nestablishment
+IdentityService --> StoreRuntime : authentication result
+StoreRuntime --> PaymentProvider : payment-provider\ntransaction request
+StoreRuntime --> DeliveryPartner : fulfilment request
+SupportAgent --> SupportInterface : authorised\nsupport action
+SupportInterface --> StoreRuntime : audited\nadministrative access
+
+legend bottom
+Each container label states the basis for the boundary.
+No area is labelled as inherently trusted.
+Support access reaches production functions through a controlled interface, not by direct database access.
+endlegend
+@enduml

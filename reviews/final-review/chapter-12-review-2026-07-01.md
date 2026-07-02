@@ -29,3 +29,13 @@
 - Author review is required for the revised Chapter 12 prose and four remaining figure specifications.
 - Diagram source and exports must not be created until the author approves the relevant specifications.
 - A passing chapter quality gate must not be created until the review cycle is complete.
+
+## Diagram-production update, 2026-07-02
+
+The author approved `DEC-020` and the four remaining figure specifications. Diagram source and exports have now been created for `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05`.
+
+Updated remaining work:
+
+- Complete final author and page-layout review for Chapter 12.
+- Keep `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05` at `Review` until the author approves them.
+- Run the repository quality gates after diagram integration and before any final author-approval recommendation.
