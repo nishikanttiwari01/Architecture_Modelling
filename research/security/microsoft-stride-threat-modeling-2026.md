@@ -5,7 +5,7 @@
 - Organisation or author: Microsoft
 - Title: Microsoft Threat Modeling Tool threats
 - Version: Current public documentation
-- Publication date: Current web documentation
+- Publication date: Last updated 2022-08-25
 - Access date: 2026-07-01
 - URL or identifier: https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats
 - Source type: Official vendor documentation

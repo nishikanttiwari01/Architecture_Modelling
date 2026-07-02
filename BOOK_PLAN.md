@@ -505,7 +505,7 @@ The subsection structure below records the approved 63-chapter plan currently re
 #### 12. Security Modelling
 
 - Manuscript file: `manuscript/part-02-modelling-languages/12-security-modelling.md`
-- Scope: Cover security viewpoints, trust boundaries, authentication flows, authorisation models, threat modelling, STRIDE, attack trees, threat-model data-flow diagrams, security control mapping, privacy and data classification.
+- Scope: Cover security viewpoints, security modelling foundations, trust boundaries, authentication flows, access authorisation models, threat modelling, STRIDE, attack trees, threat-model data-flow diagrams, security control mapping, privacy modelling and data classification.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -513,24 +513,25 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
+  - Why security needs its own models
+  - The security modelling foundation
+  - Depth boundary for this chapter
   - Security viewpoints
   - Trust-boundary diagrams
   - Authentication flows
-  - Authorisation models
+  - Access authorisation models
   - Threat modelling
   - STRIDE
   - Attack trees
   - Threat-model Data Flow Diagrams
   - Security control mapping
-  - Privacy and data classification
+  - Privacy modelling and data classification
   - Security modelling versus nearby approaches
   - Common mistakes
   - Chapter cheat sheet
   - Key takeaways
   - Practical exercise
   - Review checklist
-  - Drafting notes
   - References and further reading
 
 #### 13. Other Useful Modelling Approaches

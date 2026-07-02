@@ -4,6 +4,15 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-01
 
+### Revised Chapter 12 after security modelling review
+
+- Moved Chapter 12, **Security Modelling**, to `Revision Required` while applying review findings.
+- Rewrote the chapter to add a security-modelling foundation, explicit depth boundary, access authorisation terminology, control traceability, residual risk and privacy modelling.
+- Retired planned figure `FIG-12-03` and replaced it with manuscript table `TABLE-12-01`.
+- Revised `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05` specifications without creating diagram source or exports.
+- Added NIST Privacy Framework 1.0 and Schneier attack-tree source notes and updated Chapter 12 source/version records.
+- Added Chapter 12 technical, beginner, consistency and final review records.
+
 ### Drafted Chapter 12 Security Modelling
 
 - Expanded Chapter 12, **Security Modelling**, from scaffold to a complete first prose draft.

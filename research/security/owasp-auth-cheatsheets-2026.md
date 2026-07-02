@@ -3,11 +3,11 @@
 ## Bibliographic details
 
 - Organisation or author: OWASP Foundation
-- Title: Authentication and Authorization Cheat Sheets
+- Title: Authentication, Session Management and Authorization Cheat Sheets
 - Version: Current public documentation
 - Publication date: Current web documentation
 - Access date: 2026-07-01
-- URL or identifier: https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html; https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html
+- URL or identifier: https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html; https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html; https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html
 - Source type: Official OWASP guidance
 
 ## Supported claims
@@ -20,9 +20,13 @@
 - Intended chapter(s): Chapter 12, Chapter 21, Chapter 48
 - Normative or interpretive: Official OWASP guidance; interpretive for architecture modelling.
 
+- Claim: Authentication flows should distinguish authentication results, application sessions and later protected requests, while leaving detailed session expiry, renewal and revocation design to implementation-level material unless that is the modelling purpose.
+- Intended chapter(s): Chapter 12, Chapter 21, Chapter 48
+- Normative or interpretive: Official OWASP guidance; interpretive for architecture modelling.
+
 ## Relevant summary
 
-OWASP authentication and authorisation cheat sheets provide practical guidance for access-control design and review. Chapter 12 will use them to distinguish authentication sequences, authorisation matrices and access-control review questions.
+OWASP authentication, session-management and authorisation cheat sheets provide practical guidance for identity, session and access-control design and review. Chapter 12 uses them to distinguish authentication sequences, application sessions, access-control matrices and access-control review questions.
 
 ## Terminology and version notes
 

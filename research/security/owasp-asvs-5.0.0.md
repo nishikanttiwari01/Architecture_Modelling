@@ -5,7 +5,7 @@
 - Organisation or author: OWASP Foundation
 - Title: Application Security Verification Standard
 - Version: 5.0.0
-- Publication date: 2025
+- Publication date: 30 May 2025
 - Access date: 2026-07-01
 - URL or identifier: https://owasp.org/www-project-application-security-verification-standard/
 - Source type: Official OWASP standard
@@ -22,7 +22,7 @@
 
 ## Relevant summary
 
-OWASP ASVS provides application security verification requirements. Chapter 12 will use it to ground authentication, authorisation and control-review guidance without copying requirement tables.
+OWASP ASVS provides application security verification requirements. Chapter 12 uses version 5.0.0 to ground authentication, authorisation and control-review guidance without copying requirement tables.
 
 ## Terminology and version notes
 

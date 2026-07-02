@@ -100,7 +100,7 @@ Use the format below for all material decisions. Do not delete superseded decisi
 
 ## DEC-012: Render Chapter 6 BPMN teaching figures from BPMNDI
 
-- **Status:** Proposed
+- **Status:** Approved
 - **Date:** 2026-06-29
 - **Decision:** Use `scripts/render-bpmn-diagrams.py` to render the Chapter 6 BPMN teaching figures from the BPMN XML and BPMN Diagram Interchange coordinates.
 - **Context:** Chapter 6 revisions require the XML source, SVG export and PNG preview to represent the same BPMN model. Camunda Modeler is the preferred manual BPMN tool, but it is not available in this environment.
@@ -179,7 +179,7 @@ Use the format below for all material decisions. Do not delete superseded decisi
 
 ## DEC-019: Use five specification-first security teaching figures for Chapter 12
 
-- **Status:** Approved
+- **Status:** Superseded
 - **Date:** 2026-07-01
 - **Decision:** Use five planned Chapter 12 teaching figures: Online Store trust boundary view, Online Store customer authentication sequence, Horizon Bank payment authorisation matrix, Horizon Bank payment threat-model DFD and Horizon Bank payment attack tree.
 - **Context:** Chapter 12 needs to teach security modelling through focused views without combining trust boundaries, identity, access control, threats, controls and data sensitivity into one unreadable diagram.
@@ -187,7 +187,19 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Reason:** Focused security figures match the chapter's teaching sequence and repository diagram rules. Source creation must wait for author approval of the specifications.
 - **Consequences:** `FIG-12-01` through `FIG-12-05` are registered as `Planned`, with specifications under `diagrams/specifications/`. Source and exports remain pending author approval.
 - **Related chapters/files:** Chapter 12, `DIAGRAM_REGISTER.md`, `diagrams/specifications/FIG-12-*`.
-- **Supersedes / superseded by:** None.
+- **Supersedes / superseded by:** Superseded by DEC-020.
+
+## DEC-020: Reclassify the Chapter 12 payment access matrix as a manuscript table
+
+- **Status:** Proposed
+- **Date:** 2026-07-01
+- **Decision:** Retire planned figure `FIG-12-03`, do not reuse that figure ID, and present the Horizon Bank payment action access-control matrix as manuscript table `TABLE-12-01`.
+- **Context:** The Chapter 12 review found that the former payment authorisation matrix is semantically tabular and should not be tracked as a required diagram or require an SVG/PNG output. The repository has a diagram register, but no separate table register.
+- **Alternatives considered:** Keep the matrix as `FIG-12-03`; create an SVG-only table; invent a table register during this revision.
+- **Reason:** Treating the matrix as a manuscript table keeps the artefact type honest and avoids unnecessary diagram production. Avoiding a new table register keeps the change scoped to the Chapter 12 review.
+- **Consequences:** Chapter 12 now has four planned figure specifications: `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05`. The retired `FIG-12-03` ID remains unused and must not be reassigned. `TABLE-12-01` is tracked in the manuscript text rather than `DIAGRAM_REGISTER.md`.
+- **Related chapters/files:** Chapter 12, `DIAGRAM_REGISTER.md`, `diagrams/specifications/`, `STATUS.md`.
+- **Supersedes / superseded by:** Supersedes DEC-019 for the Chapter 12 figure set.
 
 ## Decision template
 

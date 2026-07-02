@@ -30,7 +30,7 @@
 | 09 | Decision Modelling and DMN | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; four figures completed; diagrams remain Review pending final book-page layout review, particularly FIG-09-03 |
 | 10 | Domain and Event Modelling | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; diagrams remain Review pending final book-page layout review |
 | 11 | Infrastructure and Deployment Modelling | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; six figures completed; diagrams remain Review pending final page-layout review, particularly FIG-11-03, FIG-11-05 and FIG-11-06 |
-| 12 | Security Modelling | Diagramming | 100 | 100 | 20 | 0 | 100 | Review first draft and approve diagram specifications before creating source/export files |
+| 12 | Security Modelling | Revision Required | 100 | 100 | 20 | 60 | 100 | Review revision records and author-review revised Chapter 12 plus four remaining diagram specifications |
 | 13 | Other Useful Modelling Approaches | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 14 | Modelling Business Strategy and Capabilities | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 15 | Modelling Business Processes | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -107,6 +107,6 @@
 
 ## Current recommended next task
 
-Chapter 12, **Security Modelling**, is now the current chapter and is in `Diagramming`. The first prose draft and `FIG-12-01` through `FIG-12-05` specifications are complete. Diagram source and exports are deferred pending author approval of the specifications. Chapter 11, **Infrastructure and Deployment Modelling**, remains `Approved`; `FIG-11-01` through `FIG-11-06` remain at `Review` pending final page-layout review.
+Chapter 12, **Security Modelling**, is now the current chapter and is in `Revision Required` after the review pass. The revised manuscript keeps `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05` as specification-first figures with source and exports deferred pending author approval. The former `FIG-12-03` access matrix is retired and replaced by manuscript table `TABLE-12-01`. Chapter 11, **Infrastructure and Deployment Modelling**, remains `Approved`; `FIG-11-01` through `FIG-11-06` remain at `Review` pending final page-layout review.
 
 Last updated: 2026-07-01

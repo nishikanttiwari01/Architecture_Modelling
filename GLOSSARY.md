@@ -91,7 +91,7 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Target state | The intended future architecture. | Also called to-be architecture. |
 | Transition architecture | A coherent intermediate state between current and target architectures. | State its duration and purpose. |
 | Architecture Decision Record (ADR) | A concise record of an important architecture decision, context and consequences. | Use stable identifiers and retain superseded records. |
-| Trust boundary | A boundary across which the level or basis of trust changes. | Make it explicit in security diagrams. |
+| Trust boundary | A boundary across which the basis for trust changes, such as administrative authority, identity authority, security policy, data custody, execution environment, network enforcement or organisational responsibility. | Do not use external, internal and trusted as synonyms. Make the boundary basis explicit in security diagrams. |
 | Conceptual data model | A data model that describes important business information concepts and their relationships without implementation detail. | Use before logical or physical design when meaning is still being agreed. |
 | Logical data model | A data model that defines entities, attributes, keys and relationships independently of a specific storage technology. | Do not include vendor-specific physical database choices. |
 | Physical data model | A data model that describes how data is implemented in a particular database, storage technology or platform. | Keep it traceable to conceptual and logical meaning. |
@@ -174,16 +174,23 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Metric | Numeric telemetry measured over time. | Useful for service health, capacity, saturation and service-level monitoring. |
 | Log | A timestamped event or message emitted by software or infrastructure. | Useful for investigation, but it needs retention, privacy and correlation rules. |
 | Authentication | The act of establishing or proving the identity of a user, system, service or device. | Distinguish from authorisation, which decides what the authenticated subject may do. |
-| Authorisation | The decision about whether a subject may perform an action on a resource under stated conditions. | Use British spelling in prose; preserve source titles such as OWASP Authorization Cheat Sheet when citing them. |
+| Authorisation | The decision about whether a subject may perform an action on a resource under stated conditions. | Use British spelling in prose; preserve source titles such as OWASP Authorization Cheat Sheet when citing them. When ambiguity is possible, use access authorisation. |
+| Access authorisation | A security permission decision about whether a user, service or device may perform an action on a resource under stated conditions. | Distinguish from business approval and payment-provider authorisation. |
+| Business approval | A business decision or policy approval that allows an activity to proceed. | Do not treat it as the same thing as access authorisation, even when both are required. |
+| Payment-provider authorisation | A transaction-level authorisation from a payment provider, payment network or similar external payment party. | Use only when the payment-provider decision is meant, not for general access control. |
+| Security objective | A stated security property or outcome that the model is trying to protect. | Link it to an asset and threat scenario where possible. |
+| Threat scenario | A concrete way a threat could cause harm to an asset or objective. | Keep it reviewable without turning it into exploit instructions. |
 | Threat | A potential cause of harm to an asset, system, process or organisation. | Link threats to assets, flows, boundaries and mitigations rather than listing them abstractly. |
 | Vulnerability | A weakness that could be exploited by a threat. | Do not use as a synonym for every risk or missing control. |
 | Security control | A safeguard or countermeasure that reduces likelihood, impact or exposure. | Record the control intent, location, owner and evidence where practical. |
+| Residual risk | Risk that remains after selected controls are applied. | Record as an open question or accepted exposure where it matters. |
 | Threat model | A structured representation of assets, flows, trust boundaries, threats, mitigations and open questions. | It is not the same as penetration testing or a list of security products. |
 | STRIDE | A threat-category mnemonic covering Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service and Elevation of Privilege. | Use as a review prompt, not as a complete security architecture by itself. |
 | Attack tree | A tree-shaped model that shows alternative or combined paths to a harmful goal. | Keep branches concrete enough to review and avoid exploit instructions. |
 | Policy decision point | The place or component that evaluates policy and decides whether an action should be allowed. | Distinguish from the place that enforces the decision. |
 | Policy enforcement point | The place or component that applies an access decision at a boundary or service. | Make enforcement visible when the security question is about authorisation. |
 | Data classification | The labelling of data according to sensitivity, handling needs or organisational policy. | Do not use colour as the only classification indicator. |
+| Privacy modelling | Modelling data processing, purpose, access, sharing, retention and minimisation concerns that may create privacy risk. | Do not reduce privacy review to data classification alone. |
 
 ## Terms requiring future decision
 

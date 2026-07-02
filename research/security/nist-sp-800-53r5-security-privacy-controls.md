@@ -7,7 +7,7 @@
 - Version: Revision 5, update 1
 - Publication date: September 2020, includes updates as of December 10, 2020; release 5.2.0 noted 2025
 - Access date: 2026-07-01
-- URL or identifier: https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final
+- URL or identifier: https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final
 - Source type: Official government guidance
 
 ## Supported claims
@@ -26,7 +26,7 @@ NIST SP 800-53 Revision 5 provides a broad catalogue of security and privacy con
 
 ## Terminology and version notes
 
-Record the source as Revision 5, update 1. Do not describe it as a universal regulation or as automatically applicable to all organisations.
+Record the source as Revision 5, update 1. NIST notes a 2025 Release 5.2.0 supplemental minor release on the publication page; do not treat that supplemental release as a new manuscript baseline unless the relevant supplemental material is used. Do not describe SP 800-53 as a universal regulation or as automatically applicable to all organisations.
 
 ## Copyright or reuse notes
 
