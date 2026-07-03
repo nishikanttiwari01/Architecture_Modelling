@@ -74,6 +74,21 @@ Interim average: `8.5/10`.
 
 Gate decision: open. Keep Chapter 13 at `Diagramming` and all six figures at `Review` until the author reviews the rendered figures and either approves them or records revisions. Do not mark Chapter 13 or any figure `Approved`.
 
+## Focused correction pass, 2026-07-03
+
+This pass did not change figure content or redesign figures. It corrected one placement issue and hardened the diagram workflow. The gate remains open.
+
+- **FIG-13-02 trigger label:** the `triggers` label was repositioned to sit clearly above the single Retail Customer to Need understood connector, touching no box, heading or boundary. The connector count is exactly one and its arrowhead is visible. SVG and PNG were regenerated and visually inspected. The `FIG-13-02` specification now lists `examples/horizon-bank/capabilities.md` as a controlled source reference.
+- **Renderer syntax check:** CI now runs `python -m compileall -q scripts`, which covers `render-drawio-diagrams.py` and any future script without a hard-coded list.
+- **Dependency:** the Pillow dependency is declared and pinned in `requirements-diagrams.txt` and installed in CI before rendering.
+- **Workflow invocation:** `scripts/render-all-diagrams.ps1` invokes the Draw.io renderer and fails when it fails; CI runs the complete render script.
+- **Stale-export detection:** CI runs `git diff --exit-code -- diagrams/exported/svg diagrams/exported/png` after rendering; CI does not auto-commit regenerated exports.
+- **Font portability:** the renderer selects a font deterministically (Arial preferred, DejaVu Sans fallback), reports the selection and fails loudly if none is available. Windows Arial output is unchanged, so exports remain byte-stable.
+- **Governance:** `DEC-021` is now `Proposed`, not `Approved`. Native Draw.io graphical-open and export-fidelity comparison remain pending. The previews are reproducible teaching exports, not verified native Draw.io exports.
+- **Ownership:** the Owner of `FIG-13-01` through `FIG-13-06` was set to `Claude`.
+
+Open items unchanged by this pass: native Draw.io graphical-open and export-fidelity review; final 6 by 9 book-page layout review; author approval of Chapter 13 and the six figures. Chapter 13 remains `Diagramming`; all six figures remain `Review`; nothing is `Approved`.
+
 ## History
 
 The prior interim gate (2026-07-02) recorded an interim average of `8.2/10` with diagram readiness blocked because the figure specifications were unapproved and no diagram source or exports existed. That block is now cleared: the author approved the specifications for production, and the sources and exports exist and are in `Review`.

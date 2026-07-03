@@ -11,7 +11,15 @@ optional arrowheads and labels.
 The Draw.io file remains the single editable source of truth. The SVG and PNG
 are generated from it, not hand drawn or screenshotted. This mirrors the
 BPMN render-from-source approach recorded in DEC-012 and is recorded for
-Draw.io in DEC-021.
+Draw.io in DEC-021 (Proposed: the previews are reproducible teaching exports,
+not verified native Draw.io exports).
+
+Dependency: Pillow. Install it reproducibly with
+    python -m pip install -r requirements-diagrams.txt
+Font selection is deterministic and cross-platform: Arial is preferred (so the
+Windows-rendered reference exports stay byte-stable) with DejaVu Sans as an
+explicit fallback. The selected family is reported on stdout, and the renderer
+fails with a clear message if no supported font is available.
 """
 
 from __future__ import annotations
@@ -28,23 +36,102 @@ ROOT = Path(__file__).resolve().parents[1]
 SVG_DIR = ROOT / "diagrams/exported/svg"
 PNG_DIR = ROOT / "diagrams/exported/png"
 
-FONT_REGULAR = "C:/Windows/Fonts/arial.ttf"
-FONT_BOLD = "C:/Windows/Fonts/arialbd.ttf"
-FONT_ITALIC = "C:/Windows/Fonts/ariali.ttf"
-
 MARGIN = 20
 PNG_SCALE = 2  # supersample for a crisp preview
 
+# Deterministic cross-platform font selection. Arial is preferred so that the
+# reference exports rendered on Windows stay byte-stable; DejaVu Sans is the
+# explicit fallback on Linux and other environments. The renderer reports which
+# family it selected and fails loudly if none is available rather than silently
+# switching to an unknown platform-dependent font.
+FONT_FAMILIES: list[tuple[str, str, str, str]] = [
+    (
+        "Arial",
+        "C:/Windows/Fonts/arial.ttf",
+        "C:/Windows/Fonts/arialbd.ttf",
+        "C:/Windows/Fonts/ariali.ttf",
+    ),
+    (
+        "DejaVu Sans",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Oblique.ttf",
+    ),
+    (
+        "DejaVu Sans (Fedora/RHEL)",
+        "/usr/share/fonts/dejavu/DejaVuSans.ttf",
+        "/usr/share/fonts/dejavu/DejaVuSans-Bold.ttf",
+        "/usr/share/fonts/dejavu/DejaVuSans-Oblique.ttf",
+    ),
+    (
+        "DejaVu Sans (Arch)",
+        "/usr/share/fonts/TTF/DejaVuSans.ttf",
+        "/usr/share/fonts/TTF/DejaVuSans-Bold.ttf",
+        "/usr/share/fonts/TTF/DejaVuSans-Oblique.ttf",
+    ),
+    (
+        "Arial (macOS)",
+        "/Library/Fonts/Arial.ttf",
+        "/Library/Fonts/Arial Bold.ttf",
+        "/Library/Fonts/Arial Italic.ttf",
+    ),
+]
+
 _FONT_CACHE: dict[tuple[str, int], ImageFont.FreeTypeFont] = {}
+_RESOLVED_FONTS: dict[str, str] | None = None
+
+
+def _loadable(path: str) -> bool:
+    try:
+        ImageFont.truetype(path, 12)
+        return True
+    except OSError:
+        return False
+
+
+def resolve_fonts() -> dict[str, str]:
+    """Pick the first available font family and report the selection.
+
+    Returns a mapping with 'regular', 'bold' and 'italic' TrueType paths. A
+    missing bold or italic variant falls back to the family's regular file.
+    Raises SystemExit with a clear message when no supported font is found.
+    """
+    for name, regular, bold, italic in FONT_FAMILIES:
+        if regular and _loadable(regular):
+            resolved = {
+                "family": name,
+                "regular": regular,
+                "bold": bold if bold and _loadable(bold) else regular,
+                "italic": italic if italic and _loadable(italic) else regular,
+            }
+            print(
+                f"render-drawio-diagrams: using font family '{name}' "
+                f"(regular={resolved['regular']})"
+            )
+            return resolved
+    tried = ", ".join(family[0] for family in FONT_FAMILIES)
+    raise SystemExit(
+        "render-drawio-diagrams: no supported font was found. "
+        f"Tried: {tried}. Install Arial or DejaVu Sans "
+        "(for example the 'fonts-dejavu' package) and retry."
+    )
+
+
+def _fonts() -> dict[str, str]:
+    global _RESOLVED_FONTS
+    if _RESOLVED_FONTS is None:
+        _RESOLVED_FONTS = resolve_fonts()
+    return _RESOLVED_FONTS
 
 
 def get_font(bold: bool, italic: bool, size: int) -> ImageFont.FreeTypeFont:
+    fonts = _fonts()
     if bold:
-        path = FONT_BOLD
+        path = fonts["bold"]
     elif italic:
-        path = FONT_ITALIC
+        path = fonts["italic"]
     else:
-        path = FONT_REGULAR
+        path = fonts["regular"]
     key = (path, size)
     if key not in _FONT_CACHE:
         _FONT_CACHE[key] = ImageFont.truetype(path, size)

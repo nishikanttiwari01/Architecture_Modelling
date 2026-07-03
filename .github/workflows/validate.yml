@@ -19,9 +19,13 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Install diagram dependencies
+        shell: pwsh
+        run: python -m pip install -r requirements-diagrams.txt
+
       - name: Compile scripts
         shell: pwsh
-        run: python -m py_compile scripts/build-book.py scripts/check-links.py scripts/check-structure.py scripts/check-terminology.py scripts/word-count.py scripts/validate-diagrams.py scripts/check-diagram-register.py
+        run: python -m compileall -q scripts
 
       - name: Check repository structure
         shell: pwsh
@@ -51,6 +55,10 @@ jobs:
         shell: pwsh
         run: python scripts/word-count.py
 
-      - name: Render diagrams when tools are available
+      - name: Render all diagrams
         shell: pwsh
         run: powershell -ExecutionPolicy Bypass -File ./scripts/render-all-diagrams.ps1
+
+      - name: Check exports match sources
+        shell: pwsh
+        run: git diff --exit-code -- diagrams/exported/svg diagrams/exported/png

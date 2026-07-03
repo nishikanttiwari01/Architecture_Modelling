@@ -9,7 +9,8 @@ All scripts use only standard tools unless noted.
 - `validate-diagrams.py`: validates diagram folders, templates, style files and source conventions.
 - `render-plantuml.ps1`: renders PlantUML `.puml` files to SVG when PlantUML tooling is available.
 - `render-mermaid.ps1`: renders Mermaid `.mmd` files to SVG when Mermaid CLI tooling is available.
-- `render-all-diagrams.ps1`: runs the available diagram renderers.
+- `render-drawio-diagrams.py`: renders the Draw.io `.drawio` figures to SVG and PNG from their editable mxGraph source (see `DEC-021`). Requires Pillow.
+- `render-all-diagrams.ps1`: runs the available diagram renderers, including the Draw.io renderer; it fails if the Draw.io renderer fails.
 - `build-book.ps1`: combines the manuscript in order and can optionally call Pandoc to create DOCX.
 
 Run from the repository root:
@@ -55,4 +56,14 @@ Windows PowerShell wrapper for `build-book.py`. With `-UsePandoc`, it also creat
 
 ## Diagram scripts
 
-The rendering scripts do not download third-party tools. They use installed tools when available and skip rendering otherwise, unless `-Required` is passed.
+The PlantUML and Mermaid rendering scripts do not download third-party tools. They use installed tools when available and skip rendering otherwise, unless `-Required` is passed.
+
+### Draw.io renderer dependency
+
+`render-drawio-diagrams.py` uses Pillow. Install it reproducibly before rendering:
+
+```powershell
+python -m pip install -r requirements-diagrams.txt
+```
+
+The renderer reads the editable `.drawio` mxGraph source and writes the SVG export and PNG preview. It selects a font deterministically: Arial is preferred (so the Windows-rendered reference exports stay byte-stable), with DejaVu Sans as the fallback on Linux and other environments. The selected font family is reported on stdout, and the renderer fails with a clear message if no supported font is available. Because layout depends on font metrics, byte-identical exports assume the pinned Pillow version and a matching Arial (or the DejaVu fallback). The Draw.io previews are reproducible teaching exports, not verified native Draw.io exports; a native Draw.io graphical-open and export-fidelity comparison is still pending (`DEC-021`, Proposed).

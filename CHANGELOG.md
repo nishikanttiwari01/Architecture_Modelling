@@ -4,6 +4,18 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-03
 
+### Applied focused Chapter 13 diagram workflow corrections
+
+- Corrected the `FIG-13-02` trigger-label placement so the `triggers` label sits clearly above the single Retail Customer to Need understood connector and touches no box, heading or boundary; regenerated its SVG and PNG and visually inspected them.
+- Added `examples/horizon-bank/capabilities.md` as a controlled source reference in the `FIG-13-02` specification.
+- Integrated the Draw.io renderer into the reproducible workflow: `.github/workflows/validate.yml` now syntax-checks all scripts with `python -m compileall -q scripts`, installs the pinned dependency, runs the complete render script and checks for stale exports.
+- Declared the Pillow dependency in `requirements-diagrams.txt` (pinned) and documented it in `scripts/README.md` and the renderer docstring.
+- `scripts/render-all-diagrams.ps1` now invokes `render-drawio-diagrams.py` and fails when it fails (exit code not suppressed).
+- Added deterministic cross-platform font selection to `render-drawio-diagrams.py` (Arial preferred, DejaVu Sans fallback); it reports the selected font and fails loudly if none is available. Windows Arial output is unchanged, so the exports stay byte-stable.
+- Changed `DEC-021` status from `Approved` to `Proposed`: the author approved Draw.io as the source type but not the custom renderer as the final export mechanism; native Draw.io graphical-open and export-fidelity review remain pending, and the previews must not be described as verified native Draw.io exports.
+- Changed the Owner of `FIG-13-01` through `FIG-13-06` from `Codex` to `Claude` in `DIAGRAM_REGISTER.md`.
+- Chapter 13 remains `Diagramming`; all six figures remain `Review`; nothing was marked `Approved`; Chapter 14 was not started.
+
 ### Produced Chapter 13 modelling approach diagrams
 
 - Moved Chapter 13, **Other Useful Modelling Approaches**, from `Revision Required` to `Diagramming` after the author approved the revised `FIG-13-01` through `FIG-13-06` specifications for production.

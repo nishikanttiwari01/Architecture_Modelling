@@ -22,3 +22,9 @@ Open consistency issue: `FIG-13-01` through `FIG-13-06` remained at `Planned` un
 The figures are now produced and recorded as `Review`. Figure titles match across the manuscript, specifications, sources, exports and `DIAGRAM_REGISTER.md`. All displayed Horizon Bank system, capability and lifecycle names match their controlled definitions in `examples/horizon-bank/`.
 
 - CH13-CON-09 (new): The `FIG-13-02` specification listed enabling capabilities but omitted `Relationship Management`, which the manuscript value-stream table uses in the `Need understood` stage. Both are controlled capabilities in `examples/horizon-bank/capabilities.md`. The figure follows the manuscript (the reader-facing worked example), and the `FIG-13-02` specification was aligned by adding `Relationship Management` to its enabling-capabilities list. No uncontrolled name was introduced. Severity: Low. Status: Resolved.
+
+## Focused correction pass, 2026-07-03
+
+- CH13-CON-10 (new): The `FIG-13-02` `triggers` label overlapped the Retail Customer box and the first stage. The label was repositioned above the single trigger connector, touching no box, heading or boundary. The connector count remains exactly one. Severity: Low. Status: Resolved.
+- The `FIG-13-02` specification now lists `examples/horizon-bank/capabilities.md` as a controlled source reference, consistent with the figure's use of controlled capability names.
+- The Owner of `FIG-13-01` through `FIG-13-06` was changed from `Codex` to `Claude` in `DIAGRAM_REGISTER.md`; earlier figures are unchanged. Titles, IDs, source paths, export paths and `Review` status are retained.

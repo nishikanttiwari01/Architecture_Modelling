@@ -1,0 +1,10 @@
+# Python dependencies for the repository diagram renderers.
+#
+# scripts/render-drawio-diagrams.py uses Pillow to rasterise the PNG previews
+# and to measure text for layout. The version is pinned so that the committed
+# SVG and PNG exports stay reproducible and the CI stale-export check
+# (git diff --exit-code on diagrams/exported) is meaningful.
+#
+# Install with:
+#   python -m pip install -r requirements-diagrams.txt
+Pillow==12.2.0

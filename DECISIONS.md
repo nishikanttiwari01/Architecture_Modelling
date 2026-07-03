@@ -203,14 +203,22 @@ Use the format below for all material decisions. Do not delete superseded decisi
 
 ## DEC-021: Render Chapter 13 Draw.io teaching figures from the editable mxGraph source
 
-- **Status:** Approved
+- **Status:** Proposed
 - **Date:** 2026-07-03
-- **Decision:** Use `scripts/render-drawio-diagrams.py` to render the Chapter 13 Draw.io figures (`FIG-13-02` through `FIG-13-06`) to SVG and PNG directly from the editable `.drawio` mxGraph geometry, styles and text.
-- **Context:** The author approved a Draw.io tooling decision for `FIG-13-02` through `FIG-13-06`. No Draw.io desktop CLI is installed in this environment, and the repository had no existing Draw.io export mechanism, so a repeatable renderer was required to produce SVG and PNG from the editable source without embedding screenshots.
+- **Decision:** Use `scripts/render-drawio-diagrams.py` to produce reproducible SVG and PNG previews for the Chapter 13 Draw.io figures (`FIG-13-02` through `FIG-13-06`) directly from the editable `.drawio` mxGraph geometry, styles and text. This proposes the custom repository renderer as the Draw.io export mechanism; it is not yet the author-approved final mechanism.
+- **Context:** The author approved Draw.io as the editable source type for `FIG-13-02` through `FIG-13-06`, but did not explicitly approve the custom repository renderer as the final Draw.io export mechanism. No Draw.io desktop CLI is installed in this environment, and the repository had no existing Draw.io export mechanism, so a repeatable renderer was written to produce previews from the editable source without embedding screenshots.
 - **Alternatives considered:** Install and drive the Draw.io desktop CLI headlessly; hand-maintain SVG files; defer all Draw.io exports until a Draw.io CLI is available.
-- **Reason:** Rendering from the mxGraph source keeps the `.drawio` file as the single editable source of truth and produces exports that correspond to that source. This mirrors the BPMN render-from-source approach recorded in `DEC-012`.
-- **Consequences:** The renderer supports only the shape subset used by these teaching figures (rectangles, rounded rectangles, ellipses, plain text, straight and orthogonal connectors with optional arrowheads and labels). The `.drawio` files remain fully editable in Draw.io. A Draw.io graphical review of layout and export fidelity is still recommended before the figures are marked `Approved`, in the same spirit as the Camunda note in `DEC-012`.
-- **Related chapters/files:** Chapter 13, `scripts/render-drawio-diagrams.py`, `diagrams/source/drawio/FIG-13-*.drawio`, `diagrams/exported/svg/FIG-13-*.svg`, `diagrams/exported/png/FIG-13-*.png`, `reviews/chapter-gates/CH-13-quality-gate.md`.
+- **Reason:** Rendering from the mxGraph source keeps the `.drawio` file as the single editable source of truth and produces previews that correspond to that source. This mirrors the BPMN render-from-source approach recorded in `DEC-012`.
+- **Clarifications:**
+  - The editable `.drawio` mxGraph source remains authoritative.
+  - The custom renderer produces reproducible SVG and PNG previews from the editable geometry.
+  - It supports only the subset of mxGraph shapes and styles used by the Chapter 13 figures (rectangles, rounded rectangles, ellipses, plain text, straight and orthogonal connectors with optional arrowheads and labels).
+  - Native Draw.io graphical opening and export-fidelity comparison remain pending.
+  - The previews must not be described as verified native Draw.io exports.
+  - This decision may move to `Approved` only after explicit author approval of the renderer as the final Draw.io export mechanism.
+- **Consequences:** The `.drawio` files remain fully editable in Draw.io. The renderer depends on Pillow (declared in `requirements-diagrams.txt`) and selects a font deterministically (Arial preferred, DejaVu Sans fallback), reporting the selection and failing loudly if none is available. A native Draw.io graphical review of layout and export fidelity is still required before the figures are marked `Approved`, in the same spirit as the Camunda note in `DEC-012`.
+- **Related chapters/files:** Chapter 13, `scripts/render-drawio-diagrams.py`, `requirements-diagrams.txt`, `.github/workflows/validate.yml`, `scripts/render-all-diagrams.ps1`, `diagrams/source/drawio/FIG-13-*.drawio`, `diagrams/exported/svg/FIG-13-*.svg`, `diagrams/exported/png/FIG-13-*.png`, `reviews/chapter-gates/CH-13-quality-gate.md`.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
 ## Decision template
 

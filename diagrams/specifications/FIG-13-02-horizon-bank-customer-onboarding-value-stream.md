@@ -55,6 +55,7 @@ Use text labels for every stage and capability. If colour is used, it must not b
 ## Source references
 
 - `[OPEN-GROUP-ARCHIMATE-4]`
+- `examples/horizon-bank/capabilities.md`
 
 ## Review criteria
 

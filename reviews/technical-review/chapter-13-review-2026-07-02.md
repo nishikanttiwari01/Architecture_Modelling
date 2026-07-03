@@ -31,3 +31,13 @@ The author approved the revised specifications for production. Diagram sources a
 - CH13-TECH-06 and CH13-TECH-11 separated Wardley components and defined positions are realised in `FIG-13-06`.
 
 Remaining technical item: a Draw.io graphical open and export-fidelity confirmation for the five Draw.io figures is recommended before author approval.
+
+## Focused correction pass, 2026-07-03
+
+Workflow hardening was applied without changing figure content:
+
+- `scripts/render-drawio-diagrams.py` is now syntax-checked in CI via `python -m compileall -q scripts` (no hard-coded script list).
+- Its Pillow dependency is declared and pinned in `requirements-diagrams.txt` and installed in CI before rendering.
+- `scripts/render-all-diagrams.ps1` invokes the renderer and propagates its non-zero exit code; CI runs the complete render script and then checks for stale exports with `git diff --exit-code -- diagrams/exported/svg diagrams/exported/png`.
+- The renderer now selects a font deterministically (Arial preferred, DejaVu Sans fallback), reports the selection and fails loudly if none is available; Windows Arial output is unchanged.
+- `DEC-021` is now `Proposed`; native Draw.io graphical-open and export-fidelity review remain the open technical item.

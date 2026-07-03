@@ -23,3 +23,7 @@ The author approved the revised specifications for production. Diagram sources, 
 Recommended status now: `Diagramming`.
 
 Recommended score now: no passing score. Revised interim assessment is `8.5/10`. Chapter 13 and its figures remain blocked from `Approved` pending author review, a Draw.io graphical review of the five Draw.io figures, and final book-page layout review.
+
+## Focused correction pass, 2026-07-03
+
+A focused correction pass fixed the `FIG-13-02` trigger-label placement and hardened the diagram workflow (renderer syntax-checked via `compileall`, Pillow pinned in `requirements-diagrams.txt` and installed in CI, renderer invoked by the complete render script with failure propagation, CI stale-export check, deterministic cross-platform font selection). `DEC-021` is now `Proposed`. This pass did not redraft the chapter or redesign figures. Recommended status remains `Diagramming`; no passing score; native Draw.io graphical-open and export-fidelity review and final 6 by 9 page-layout review remain open. Nothing is marked `Approved`.
