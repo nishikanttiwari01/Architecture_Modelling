@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="740" viewBox="0 0 1160 740" role="img" aria-labelledby="ttl dsc">
+  <title id="ttl">FIG-13-04. Horizon Bank Platform Evolution Roadmap</title>
+  <desc id="dsc">FIG-13-04. Horizon Bank Platform Evolution Roadmap</desc>
+  <rect x="0" y="0" width="1160" height="740" fill="#FFFFFF"/>
+  <text x="580.0" y="32.6" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#111827">FIG-13-04. Horizon Bank Platform Evolution Roadmap</text>
+  <text x="580.0" y="58.2" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-style="italic" fill="#111827">Architecture states, not a project-task list. The target is a direction under stated assumptions.</text>
+  <rect x="20.0" y="90.0" width="270.0" height="40.0" rx="8" ry="8" fill="#1D2939" stroke="#1D2939" stroke-width="1"/>
+  <text x="155.0" y="114.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">Current</text>
+  <rect x="20.0" y="140.0" width="270.0" height="96.0" rx="8" ry="8" fill="#EAF2FB" stroke="#175CD3" stroke-width="1"/>
+  <text x="26.0" y="157.0" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Core Deposit System (Legacy retained initially) and</text>
+  <text x="26.0" y="171.3" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">point-to-point integration remain dominant.</text>
+  <rect x="20.0" y="244.0" width="270.0" height="58.0" rx="8" ry="8" fill="#F7F9FB" stroke="#475467" stroke-width="1"/>
+  <text x="26.0" y="260.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Dependency: Core Deposit System availability and</text>
+  <text x="26.0" y="273.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">direct interfaces.</text>
+  <rect x="20.0" y="310.0" width="270.0" height="58.0" rx="8" ry="8" fill="#FEF3F2" stroke="#B42318" stroke-width="1"/>
+  <text x="26.0" y="326.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Risk: high reconciliation effort and fragile point-to-point</text>
+  <text x="26.0" y="339.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">links.</text>
+  <rect x="20.0" y="376.0" width="270.0" height="58.0" rx="8" ry="8" fill="#F7F9FB" stroke="#475467" stroke-width="1"/>
+  <text x="26.0" y="392.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Assumption: Core Deposit System remains operationally</text>
+  <text x="26.0" y="405.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">critical.</text>
+  <rect x="20.0" y="442.0" width="270.0" height="58.0" rx="8" ry="8" fill="#FFF8DC" stroke="#8A6D3B" stroke-width="1"/>
+  <text x="26.0" y="458.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Decision point: agree modernisation approach before</text>
+  <text x="26.0" y="471.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">adding new direct links.</text>
+  <rect x="20.0" y="508.0" width="270.0" height="58.0" rx="8" ry="8" fill="#ECFDF3" stroke="#027A48" stroke-width="1"/>
+  <text x="26.0" y="524.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Exit evidence: current interfaces and reconciliation</text>
+  <text x="26.0" y="537.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">effort documented.</text>
+  <rect x="300.0" y="90.0" width="270.0" height="40.0" rx="8" ry="8" fill="#1D2939" stroke="#1D2939" stroke-width="1"/>
+  <text x="435.0" y="114.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">Near-term transition</text>
+  <rect x="300.0" y="140.0" width="270.0" height="96.0" rx="8" ry="8" fill="#EAF2FB" stroke="#175CD3" stroke-width="1"/>
+  <text x="306.0" y="157.0" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Payments Platform uses Enterprise Integration</text>
+  <text x="306.0" y="171.3" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Platform (Transitional) adapters instead of new direct</text>
+  <text x="306.0" y="185.6" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">core links.</text>
+  <rect x="300.0" y="244.0" width="270.0" height="58.0" rx="8" ry="8" fill="#F7F9FB" stroke="#475467" stroke-width="1"/>
+  <text x="306.0" y="260.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Dependency: Enterprise Integration Platform adapter</text>
+  <text x="306.0" y="273.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">capability and adapter ownership.</text>
+  <rect x="300.0" y="310.0" width="270.0" height="58.0" rx="8" ry="8" fill="#FEF3F2" stroke="#B42318" stroke-width="1"/>
+  <text x="306.0" y="326.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Risk: unclear adapter ownership and insufficient</text>
+  <text x="306.0" y="339.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">service-level monitoring.</text>
+  <rect x="300.0" y="376.0" width="270.0" height="58.0" rx="8" ry="8" fill="#F7F9FB" stroke="#475467" stroke-width="1"/>
+  <text x="306.0" y="392.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Assumption: adapters mediate posting and</text>
+  <text x="306.0" y="405.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">account-access requests reliably.</text>
+  <rect x="300.0" y="442.0" width="270.0" height="58.0" rx="8" ry="8" fill="#FFF8DC" stroke="#8A6D3B" stroke-width="1"/>
+  <text x="306.0" y="458.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Decision point: confirm adapter ownership and</text>
+  <text x="306.0" y="471.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">operating model.</text>
+  <rect x="300.0" y="508.0" width="270.0" height="58.0" rx="8" ry="8" fill="#ECFDF3" stroke="#027A48" stroke-width="1"/>
+  <text x="306.0" y="524.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Exit evidence: adapters in use with agreed service-level</text>
+  <text x="306.0" y="537.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">monitoring and assigned ownership.</text>
+  <rect x="580.0" y="90.0" width="270.0" height="40.0" rx="8" ry="8" fill="#1D2939" stroke="#1D2939" stroke-width="1"/>
+  <text x="715.0" y="114.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">Later transition</text>
+  <rect x="580.0" y="140.0" width="270.0" height="96.0" rx="8" ry="8" fill="#EAF2FB" stroke="#175CD3" stroke-width="1"/>
+  <text x="586.0" y="157.0" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Event Platform (Target) publishes governed</text>
+  <text x="586.0" y="171.3" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">payment-status events for approved consumers.</text>
+  <rect x="580.0" y="244.0" width="270.0" height="58.0" rx="8" ry="8" fill="#F7F9FB" stroke="#475467" stroke-width="1"/>
+  <text x="586.0" y="260.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Dependency: Event Platform and Event Governance</text>
+  <text x="586.0" y="273.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">capability.</text>
+  <rect x="580.0" y="310.0" width="270.0" height="58.0" rx="8" ry="8" fill="#FEF3F2" stroke="#B42318" stroke-width="1"/>
+  <text x="586.0" y="326.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Risk: weak event-schema governance, uncontrolled</text>
+  <text x="586.0" y="339.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">consumer access, missing replay policy.</text>
+  <rect x="580.0" y="376.0" width="270.0" height="58.0" rx="8" ry="8" fill="#F7F9FB" stroke="#475467" stroke-width="1"/>
+  <text x="586.0" y="392.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Assumption: governed events can replace some</text>
+  <text x="586.0" y="405.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">point-to-point status queries.</text>
+  <rect x="580.0" y="442.0" width="270.0" height="58.0" rx="8" ry="8" fill="#FFF8DC" stroke="#8A6D3B" stroke-width="1"/>
+  <text x="586.0" y="458.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Decision point: approve event-schema governance,</text>
+  <text x="586.0" y="471.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">consumer access control and replay policy.</text>
+  <rect x="580.0" y="508.0" width="270.0" height="58.0" rx="8" ry="8" fill="#ECFDF3" stroke="#027A48" stroke-width="1"/>
+  <text x="586.0" y="524.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Exit evidence: governed events consumed under</text>
+  <text x="586.0" y="537.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">access control with a defined replay policy.</text>
+  <rect x="860.0" y="90.0" width="270.0" height="40.0" rx="8" ry="8" fill="#1D2939" stroke="#1D2939" stroke-width="1"/>
+  <text x="995.0" y="114.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">Target direction</text>
+  <rect x="860.0" y="140.0" width="270.0" height="96.0" rx="8" ry="8" fill="#EAF2FB" stroke="#175CD3" stroke-width="1"/>
+  <text x="866.0" y="157.0" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Modular payments, customer and data platforms</text>
+  <text x="866.0" y="171.3" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">support governed reuse; Core Deposit System</text>
+  <text x="866.0" y="185.6" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">retained until exit evidence is accepted.</text>
+  <rect x="860.0" y="244.0" width="270.0" height="58.0" rx="8" ry="8" fill="#F7F9FB" stroke="#475467" stroke-width="1"/>
+  <text x="866.0" y="260.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Dependency: sustained platform investment and</text>
+  <text x="866.0" y="273.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">retained-core coexistence.</text>
+  <rect x="860.0" y="310.0" width="270.0" height="58.0" rx="8" ry="8" fill="#FEF3F2" stroke="#B42318" stroke-width="1"/>
+  <text x="866.0" y="326.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Risk: assuming legacy retires before exit evidence is</text>
+  <text x="866.0" y="339.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">accepted.</text>
+  <rect x="860.0" y="376.0" width="270.0" height="58.0" rx="8" ry="8" fill="#F7F9FB" stroke="#475467" stroke-width="1"/>
+  <text x="866.0" y="392.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Assumption: direction holds under current strategy; not</text>
+  <text x="866.0" y="405.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">a guaranteed final implementation.</text>
+  <rect x="860.0" y="442.0" width="270.0" height="58.0" rx="8" ry="8" fill="#FFF8DC" stroke="#8A6D3B" stroke-width="1"/>
+  <text x="866.0" y="458.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Decision point: review direction if funding, regulation,</text>
+  <text x="866.0" y="471.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">vendor or risk assumptions change.</text>
+  <rect x="860.0" y="508.0" width="270.0" height="58.0" rx="8" ry="8" fill="#ECFDF3" stroke="#027A48" stroke-width="1"/>
+  <text x="866.0" y="524.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">Exit evidence: legacy coexistence removed only when</text>
+  <text x="866.0" y="537.0" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#111827">documented exit conditions are met.</text>
+  <rect x="20.0" y="660.0" width="1120.0" height="60.0" rx="8" ry="8" fill="#FFF8DC" stroke="#8A6D3B" stroke-width="1"/>
+  <text x="26.0" y="677.0" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Note: This roadmap shows architecture configurations and their dependencies, risks, assumptions, decision points and exit evidence. It deliberately shows no delivery dates, budgets, programme commitments, staffing or vendor</text>
+  <text x="26.0" y="691.3" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">decisions. Deliberate legacy coexistence is explicit. The target is a direction under the stated assumptions, not a guaranteed final implementation.</text>
+  <path d="M290.0 110.0 L300.0 110.0" fill="none" stroke="#475467" stroke-width="1.2"/>
+  <polygon points="300.0,110.0 291.0,114.3 291.0,105.7" fill="#475467"/>
+  <rect x="258.5" y="101.5" width="73.0" height="17.0" rx="3" ry="3" fill="#FFFFFF" stroke="#B0B7C3" stroke-width="0.8"/>
+  <text x="295.0" y="112.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1D2939">progresses to</text>
+  <path d="M570.0 110.0 L580.0 110.0" fill="none" stroke="#475467" stroke-width="1.2"/>
+  <polygon points="580.0,110.0 571.0,114.3 571.0,105.7" fill="#475467"/>
+  <rect x="538.5" y="101.5" width="73.0" height="17.0" rx="3" ry="3" fill="#FFFFFF" stroke="#B0B7C3" stroke-width="0.8"/>
+  <text x="575.0" y="112.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1D2939">progresses to</text>
+  <path d="M850.0 110.0 L860.0 110.0" fill="none" stroke="#475467" stroke-width="1.2"/>
+  <polygon points="860.0,110.0 851.0,114.3 851.0,105.7" fill="#475467"/>
+  <rect x="818.5" y="101.5" width="73.0" height="17.0" rx="3" ry="3" fill="#FFFFFF" stroke="#B0B7C3" stroke-width="0.8"/>
+  <text x="855.0" y="112.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1D2939">progresses to</text>
+</svg>

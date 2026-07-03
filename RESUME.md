@@ -22,7 +22,9 @@ Final page-layout review remains pending for Chapter 11 diagrams, particularly `
 
 Chapter 12, **Security Modelling**, is approved by the author with final quality score 9.1. The revised manuscript adds the missing security-modelling foundation, access authorisation terminology, control mapping, residual risk and privacy modelling. The focused correction gives each threat scenario a unique ID from `T12-01` through `T12-08`, keeps non-causal `T12-04` and `T12-06` out of the attack tree, registers the Horizon Bank Customer Support Agent, and corrects identity-context flow wording. `DEC-020` is accepted, so the former `FIG-12-03` matrix is retired and replaced by manuscript table `TABLE-12-01`. PlantUML source, SVG exports and PNG previews exist for `FIG-12-01` Online Store Trust Boundary View, `FIG-12-02` Online Store Customer Authentication Sequence, `FIG-12-04` Horizon Bank Payment Threat-Model DFD and `FIG-12-05` Horizon Bank Payment Attack Tree. The final diagram-correction pass removed the false authenticated-at-edge implication from `FIG-12-01`, refined `FIG-12-04` routing and sensitive-information presentation flows, completed the `T12-06` event-consumer exposure path, and made `FIG-12-05` T12-08 a structural AND branch. A focused follow-up correction to `FIG-12-04` now shows the Operations Analyst receiving the assigned repair case and permitted payment context through the authorised operations interface before submitting a controlled repair action. All four figures remain `Review`, not `Approved`.
 
-Chapter 13, **Other Useful Modelling Approaches**, is in `Revision Required` after review-driven corrections. The revised draft covers SysML-style requirement traceability, capability maps, value streams, application landscapes, integration landscapes, architecture roadmaps, heat maps, Wardley maps and ADRs. The review pass added controlled Horizon Bank capability and system lifecycle examples, official Open Group business architecture guide source notes, a local heat-map scoring convention note, an original Horizon Bank ADR example, and revised specifications for `FIG-13-01` through `FIG-13-06`. A focused follow-up correction added formal-versus-practitioner classification, corrected `FIG-13-01` so requirements connect directly to verification cases with `verified by`, completed the Horizon Bank integration table, made `FIG-13-03` relationship labels precise, corrected `FIG-13-05` source references and defined `FIG-13-06` Wardley component positions. The figures remain registered as `Planned`; no Chapter 13 diagram source or exports have been created because the specifications still need author approval.
+Chapter 13, **Other Useful Modelling Approaches**, is in `Diagramming`. The manuscript covers SysML-style requirement traceability, capability maps, value streams, application landscapes, integration landscapes, architecture roadmaps, heat maps, Wardley maps and ADRs. Earlier review passes added controlled Horizon Bank capability and system lifecycle examples, official Open Group business architecture guide source notes, a local heat-map scoring convention note, an original Horizon Bank ADR example, formal-versus-practitioner classification, and the revised `FIG-13-01` through `FIG-13-06` specifications.
+
+The author then approved the revised specifications for production, and the six figures have now been produced and recorded as `Review`. `FIG-13-01` (Online Store SysML-style Requirement Traceability View) uses PlantUML. `FIG-13-02` Customer Onboarding Value Stream, `FIG-13-03` Application Landscape Map, `FIG-13-04` Platform Evolution Roadmap, `FIG-13-05` Capability Heat Map and `FIG-13-06` Payment Modernisation Wardley Map use Draw.io. The Draw.io figures are exported to SVG and PNG from the editable `.drawio` source by `scripts/render-drawio-diagrams.py` (`DEC-021`), because no Draw.io desktop CLI is available in this environment. Each figure has one editable source, one SVG export and one PNG preview, is embedded in the manuscript with a caption, accessibility text and a limitation note, and was visually inspected. The `FIG-13-02` specification was aligned with the manuscript by adding the controlled capability `Relationship Management`. No Chapter 13 figure is `Approved`. A Draw.io graphical review of the five Draw.io figures and final book-page layout review remain pending.
 
 ## Git reference
 
@@ -46,7 +48,7 @@ Chapter 13, **Other Useful Modelling Approaches**, is in `Revision Required` aft
 - Chapter 10 status: `Approved`
 - Chapter 11 status: `Approved`
 - Chapter 12 status: `Approved`
-- Chapter 13 status: `Revision Required`
+- Chapter 13 status: `Diagramming`
 - Diagram status for Chapter 1 figure `FIG-01-01`: `Review`
 - Diagram status for Chapter 2 figure `FIG-02-01`: `Review`
 - Diagram status for Chapter 3 figures `FIG-03-01` through `FIG-03-03`: `Review`
@@ -59,7 +61,7 @@ Chapter 13, **Other Useful Modelling Approaches**, is in `Revision Required` aft
 - Diagram status for Chapter 10 figures `FIG-10-01` through `FIG-10-04`: `Review`
 - Diagram status for Chapter 11 figures `FIG-11-01` through `FIG-11-06`: `Review`
 - Diagram status for Chapter 12 figures `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05`: `Review`
-- Diagram status for Chapter 13 figures `FIG-13-01` through `FIG-13-06`: `Planned`
+- Diagram status for Chapter 13 figures `FIG-13-01` through `FIG-13-06`: `Review`
 
 ## Pending non-critical issues
 
@@ -73,8 +75,8 @@ Chapter 13, **Other Useful Modelling Approaches**, is in `Revision Required` aft
 
 ## Next chapter
 
-Chapter 13, **Other Useful Modelling Approaches**, is the current chapter after Chapter 12 approval and is awaiting author review of the revised manuscript and figure specifications.
+Chapter 13, **Other Useful Modelling Approaches**, is the current chapter and is in `Diagramming` with all six figures produced and at `Review`. Chapter 14, **Modelling Business Strategy and Capabilities**, has not started and remains `Planned`.
 
 ## Next exact action
 
-Request author review of the revised Chapter 13 manuscript and `FIG-13-01` through `FIG-13-06` specifications before creating any diagram source. Keep Chapter 12 figures `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05` at `Review` until final page-layout review. Keep Chapter 11 figures `FIG-11-01` through `FIG-11-06` at `Review`.
+Request author review of the six rendered Chapter 13 figures (`FIG-13-01` through `FIG-13-06`, all at `Review`), including a Draw.io graphical review of the five Draw.io figures and a final book-page layout check of the wider figures `FIG-13-01` and `FIG-13-03`. Do not mark Chapter 13 or any figure `Approved`; only the author may do that. Do not begin Chapter 14. Keep Chapter 12 figures `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05` at `Review` until final page-layout review. Keep Chapter 11 figures `FIG-11-01` through `FIG-11-06` at `Review`.

@@ -20,7 +20,7 @@ Value stream teaching view with stages and capability references. This is not BP
 
 - Triggering stakeholder: Retail Customer.
 - Value stages: Need understood, Application established, Identity and eligibility confirmed, Banking relationship established, Services ready to use.
-- Enabling capabilities: Digital Servicing, Customer Onboarding, Document Capture, Identity Verification, Financial Crime Screening, Risk Assessment, Party Management, Account Opening, Product Management, Notification Management, Account Servicing.
+- Enabling capabilities: Digital Servicing, Relationship Management, Customer Onboarding, Document Capture, Identity Verification, Financial Crime Screening, Risk Assessment, Party Management, Account Opening, Product Management, Notification Management, Account Servicing.
 
 ## Required relationships
 

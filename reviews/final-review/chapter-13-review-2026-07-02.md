@@ -12,6 +12,14 @@ Focused correction baseline: `4e5b90d7fbf355ae9ade5772fbc40e9218c3513b`
 | CH13-FIN-04 | Medium | Tracking files | Changelog and resume needed concise continuation state. | Update `CHANGELOG.md` and `RESUME.md`. | Resolved. |
 | CH13-FIN-05 | High | Focused specification correction | Review found incorrect SysML verification relationship, missing formality classification, incomplete integration columns, vague application-landscape relationships, incomplete heat-map source references and missing Wardley component positions. | Correct the manuscript and affected specifications, then keep the interim gate non-passing until author approval and diagram assets exist. | Resolved in manuscript, specifications and review records; quality gate remains interim and non-passing. |
 
-Recommended status: `Revision Required`.
+Recommended status at 2026-07-02: `Revision Required`.
 
-Recommended score: no passing score. Interim assessment is `8.2/10`, blocked from author-approval readiness by unapproved figure specifications and absent diagram assets.
+Recommended score at 2026-07-02: no passing score. Interim assessment is `8.2/10`, blocked from author-approval readiness by unapproved figure specifications and absent diagram assets.
+
+## Diagram production update, 2026-07-03
+
+The author approved the revised specifications for production. Diagram sources, SVG exports and PNG previews now exist for `FIG-13-01` through `FIG-13-06`, and the figures are recorded as `Review`. `FIG-13-01` uses PlantUML; `FIG-13-02` through `FIG-13-06` use Draw.io exported by `scripts/render-drawio-diagrams.py` (`DEC-021`). The quality gate (`reviews/chapter-gates/CH-13-quality-gate.md`) is updated and remains open.
+
+Recommended status now: `Diagramming`.
+
+Recommended score now: no passing score. Revised interim assessment is `8.5/10`. Chapter 13 and its figures remain blocked from `Approved` pending author review, a Draw.io graphical review of the five Draw.io figures, and final book-page layout review.

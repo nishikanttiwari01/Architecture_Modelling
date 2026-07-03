@@ -2,6 +2,20 @@
 
 All notable repository and manuscript changes are recorded here. This is a project history, not a replacement for Git commits.
 
+## 2026-07-03
+
+### Produced Chapter 13 modelling approach diagrams
+
+- Moved Chapter 13, **Other Useful Modelling Approaches**, from `Revision Required` to `Diagramming` after the author approved the revised `FIG-13-01` through `FIG-13-06` specifications for production.
+- Created `FIG-13-01` Online Store SysML-style Requirement Traceability View as a PlantUML source with SVG and PNG exports.
+- Created `FIG-13-02` through `FIG-13-06` (customer onboarding value stream, application landscape map, platform evolution roadmap, capability heat map and payment modernisation Wardley map) as editable Draw.io sources with SVG and PNG exports.
+- Added `scripts/render-drawio-diagrams.py` to render the Draw.io figures to SVG and PNG from the editable mxGraph source, recorded as `DEC-021`, because no Draw.io desktop CLI is available in this environment.
+- Embedded the six figures in the Chapter 13 manuscript with captions, accessibility text and limitation notes, and updated the required-artefacts and drafting notes.
+- Set `FIG-13-01` through `FIG-13-06` to `Review` in `DIAGRAM_REGISTER.md` with real source and export paths. No figure is `Approved`.
+- Aligned the `FIG-13-02` specification with the manuscript by adding the controlled capability `Relationship Management`; recorded the finding in the consistency review.
+- Updated the Chapter 13 technical, beginner, consistency and final review records and the interim quality gate, which remains open for author review.
+- Chapter 14 was not started.
+
 ## 2026-07-02
 
 ### Revised Chapter 13 after review

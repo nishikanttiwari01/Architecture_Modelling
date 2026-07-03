@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="768" viewBox="0 0 800 768" role="img" aria-labelledby="ttl dsc">
+  <title id="ttl">FIG-13-05. Horizon Bank Capability Heat Map</title>
+  <desc id="dsc">FIG-13-05. Horizon Bank Capability Heat Map</desc>
+  <rect x="0" y="0" width="800" height="768" fill="#FFFFFF"/>
+  <text x="400.0" y="32.6" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#111827">FIG-13-05. Horizon Bank Capability Heat Map</text>
+  <text x="400.0" y="58.2" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-style="italic" fill="#111827">Illustrative teaching view. Three separate dimensions; no composite score.</text>
+  <rect x="20.0" y="90.0" width="250.0" height="30.0" rx="0" ry="0" fill="#1D2939" stroke="#1D2939" stroke-width="1"/>
+  <text x="145.0" y="108.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF">Capability</text>
+  <rect x="270.0" y="90.0" width="150.0" height="30.0" rx="0" ry="0" fill="#1D2939" stroke="#1D2939" stroke-width="1"/>
+  <text x="345.0" y="108.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF">Current pain</text>
+  <rect x="420.0" y="90.0" width="150.0" height="30.0" rx="0" ry="0" fill="#1D2939" stroke="#1D2939" stroke-width="1"/>
+  <text x="495.0" y="108.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF">Strategic importance</text>
+  <rect x="570.0" y="90.0" width="150.0" height="30.0" rx="0" ry="0" fill="#1D2939" stroke="#1D2939" stroke-width="1"/>
+  <text x="645.0" y="108.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF">Delivery risk</text>
+  <rect x="20.0" y="120.0" width="700.0" height="24.0" rx="0" ry="0" fill="#D0D5DD" stroke="#475467" stroke-width="1"/>
+  <text x="26.0" y="135.8" text-anchor="start" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#111827">Customer and servicing</text>
+  <rect x="20.0" y="144.0" width="250.0" height="30.0" rx="0" ry="0" fill="#F2F4F7" stroke="#475467" stroke-width="1"/>
+  <text x="26.0" y="162.8" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Digital Servicing</text>
+  <rect x="270.0" y="144.0" width="150.0" height="30.0" rx="0" ry="0" fill="#E69138" stroke="#7A4B12" stroke-width="1"/>
+  <text x="345.0" y="162.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#111827">High</text>
+  <rect x="420.0" y="144.0" width="150.0" height="30.0" rx="0" ry="0" fill="#E69138" stroke="#7A4B12" stroke-width="1"/>
+  <text x="495.0" y="162.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#111827">High</text>
+  <rect x="570.0" y="144.0" width="150.0" height="30.0" rx="0" ry="0" fill="#F6C384" stroke="#7A4B12" stroke-width="1"/>
+  <text x="645.0" y="162.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">Medium</text>
+  <rect x="20.0" y="174.0" width="250.0" height="30.0" rx="0" ry="0" fill="#F2F4F7" stroke="#475467" stroke-width="1"/>
+  <text x="26.0" y="192.8" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Customer Onboarding</text>
+  <rect x="270.0" y="174.0" width="150.0" height="30.0" rx="0" ry="0" fill="#F6C384" stroke="#7A4B12" stroke-width="1"/>
+  <text x="345.0" y="192.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">Medium</text>
+  <rect x="420.0" y="174.0" width="150.0" height="30.0" rx="0" ry="0" fill="#E69138" stroke="#7A4B12" stroke-width="1"/>
+  <text x="495.0" y="192.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#111827">High</text>
+  <rect x="570.0" y="174.0" width="150.0" height="30.0" rx="0" ry="0" fill="#F6C384" stroke="#7A4B12" stroke-width="1"/>
+  <text x="645.0" y="192.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">Medium</text>
+  <rect x="20.0" y="204.0" width="250.0" height="30.0" rx="0" ry="0" fill="#F2F4F7" stroke="#475467" stroke-width="1"/>
+  <text x="26.0" y="222.8" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Account Servicing</text>
+  <rect x="270.0" y="204.0" width="150.0" height="30.0" rx="0" ry="0" fill="#F6C384" stroke="#7A4B12" stroke-width="1"/>
+  <text x="345.0" y="222.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">Medium</text>
+  <rect x="420.0" y="204.0" width="150.0" height="30.0" rx="0" ry="0" fill="#E69138" stroke="#7A4B12" stroke-width="1"/>
+  <text x="495.0" y="222.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#111827">High</text>
+  <rect x="570.0" y="204.0" width="150.0" height="30.0" rx="0" ry="0" fill="#E69138" stroke="#7A4B12" stroke-width="1"/>
+  <text x="645.0" y="222.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#111827">High</text>
+  <rect x="20.0" y="234.0" width="700.0" height="24.0" rx="0" ry="0" fill="#D0D5DD" stroke="#475467" stroke-width="1"/>
+  <text x="26.0" y="249.8" text-anchor="start" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#111827">Party and product</text>
+  <rect x="20.0" y="258.0" width="250.0" height="30.0" rx="0" ry="0" fill="#F2F4F7" stroke="#475467" stroke-width="1"/>
+  <text x="26.0" y="276.9" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Party Management</text>
+  <rect x="270.0" y="258.0" width="150.0" height="30.0" rx="0" ry="0" fill="#FCE8CF" stroke="#7A4B12" stroke-width="1"/>
+  <text x="345.0" y="276.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">Low</text>
+  <rect x="420.0" y="258.0" width="150.0" height="30.0" rx="0" ry="0" fill="#F6C384" stroke="#7A4B12" stroke-width="1"/>
+  <text x="495.0" y="276.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">Medium</text>
+  <rect x="570.0" y="258.0" width="150.0" height="30.0" rx="0" ry="0" fill="#F6C384" stroke="#7A4B12" stroke-width="1"/>
+  <text x="645.0" y="276.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">Medium</text>
+  <rect x="20.0" y="288.0" width="250.0" height="30.0" rx="0" ry="0" fill="#F2F4F7" stroke="#475467" stroke-width="1"/>
+  <text x="26.0" y="306.9" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Product Management</text>
+  <rect x="270.0" y="288.0" width="150.0" height="30.0" rx="0" ry="0" fill="#FCE8CF" stroke="#7A4B12" stroke-width="1"/>
+  <text x="345.0" y="306.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">Low</text>
+  <rect x="420.0" y="288.0" width="150.0" height="30.0" rx="0" ry="0" fill="#F6C384" stroke="#7A4B12" stroke-width="1"/>
+  <text x="495.0" y="306.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">Medium</text>
+  <rect x="570.0" y="288.0" width="150.0" height="30.0" rx="0" ry="0" fill="#FCE8CF" stroke="#7A4B12" stroke-width="1"/>
+  <text x="645.0" y="306.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">Low</text>
+  <rect x="20.0" y="318.0" width="700.0" height="24.0" rx="0" ry="0" fill="#D0D5DD" stroke="#475467" stroke-width="1"/>
+  <text x="26.0" y="333.9" text-anchor="start" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#111827">Payments and financial crime</text>
+  <rect x="20.0" y="342.0" width="250.0" height="30.0" rx="0" ry="0" fill="#F2F4F7" stroke="#475467" stroke-width="1"/>
+  <text x="26.0" y="360.9" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Payment Initiation</text>
+  <rect x="270.0" y="342.0" width="150.0" height="30.0" rx="0" ry="0" fill="#F6C384" stroke="#7A4B12" stroke-width="1"/>
+  <text x="345.0" y="360.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">Medium</text>
+  <rect x="420.0" y="342.0" width="150.0" height="30.0" rx="0" ry="0" fill="#E69138" stroke="#7A4B12" stroke-width="1"/>
+  <text x="495.0" y="360.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#111827">High</text>
+  <rect x="570.0" y="342.0" width="150.0" height="30.0" rx="0" ry="0" fill="#F6C384" stroke="#7A4B12" stroke-width="1"/>
+  <text x="645.0" y="360.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">Medium</text>
+  <rect x="20.0" y="372.0" width="250.0" height="30.0" rx="0" ry="0" fill="#F2F4F7" stroke="#475467" stroke-width="1"/>
+  <text x="26.0" y="390.9" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Payment Screening</text>
+  <rect x="270.0" y="372.0" width="150.0" height="30.0" rx="0" ry="0" fill="#E69138" stroke="#7A4B12" stroke-width="1"/>
+  <text x="345.0" y="390.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#111827">High</text>
+  <rect x="420.0" y="372.0" width="150.0" height="30.0" rx="0" ry="0" fill="#E69138" stroke="#7A4B12" stroke-width="1"/>
+  <text x="495.0" y="390.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#111827">High</text>
+  <rect x="570.0" y="372.0" width="150.0" height="30.0" rx="0" ry="0" fill="#F6C384" stroke="#7A4B12" stroke-width="1"/>
+  <text x="645.0" y="390.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">Medium</text>
+  <rect x="20.0" y="402.0" width="250.0" height="30.0" rx="0" ry="0" fill="#F2F4F7" stroke="#475467" stroke-width="1"/>
+  <text x="26.0" y="420.9" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Fraud Management</text>
+  <rect x="270.0" y="402.0" width="150.0" height="30.0" rx="0" ry="0" fill="#F6C384" stroke="#7A4B12" stroke-width="1"/>
+  <text x="345.0" y="420.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">Medium</text>
+  <rect x="420.0" y="402.0" width="150.0" height="30.0" rx="0" ry="0" fill="#E69138" stroke="#7A4B12" stroke-width="1"/>
+  <text x="495.0" y="420.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#111827">High</text>
+  <rect x="570.0" y="402.0" width="150.0" height="30.0" rx="0" ry="0" fill="#E69138" stroke="#7A4B12" stroke-width="1"/>
+  <text x="645.0" y="420.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#111827">High</text>
+  <rect x="20.0" y="432.0" width="700.0" height="24.0" rx="0" ry="0" fill="#D0D5DD" stroke="#475467" stroke-width="1"/>
+  <text x="26.0" y="447.9" text-anchor="start" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#111827">Governance</text>
+  <rect x="20.0" y="456.0" width="250.0" height="30.0" rx="0" ry="0" fill="#F2F4F7" stroke="#475467" stroke-width="1"/>
+  <text x="26.0" y="474.9" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Data Governance</text>
+  <rect x="270.0" y="456.0" width="150.0" height="30.0" rx="0" ry="0" fill="#F6C384" stroke="#7A4B12" stroke-width="1"/>
+  <text x="345.0" y="474.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">Medium</text>
+  <rect x="420.0" y="456.0" width="150.0" height="30.0" rx="0" ry="0" fill="#E69138" stroke="#7A4B12" stroke-width="1"/>
+  <text x="495.0" y="474.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#111827">High</text>
+  <rect x="570.0" y="456.0" width="150.0" height="30.0" rx="0" ry="0" fill="#E69138" stroke="#7A4B12" stroke-width="1"/>
+  <text x="645.0" y="474.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#111827">High</text>
+  <rect x="20.0" y="486.0" width="250.0" height="30.0" rx="0" ry="0" fill="#F2F4F7" stroke="#475467" stroke-width="1"/>
+  <text x="26.0" y="504.9" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Event Governance</text>
+  <rect x="270.0" y="486.0" width="150.0" height="30.0" rx="0" ry="0" fill="#F6C384" stroke="#7A4B12" stroke-width="1"/>
+  <text x="345.0" y="504.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">Medium</text>
+  <rect x="420.0" y="486.0" width="150.0" height="30.0" rx="0" ry="0" fill="#F6C384" stroke="#7A4B12" stroke-width="1"/>
+  <text x="495.0" y="504.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">Medium</text>
+  <rect x="570.0" y="486.0" width="150.0" height="30.0" rx="0" ry="0" fill="#E69138" stroke="#7A4B12" stroke-width="1"/>
+  <text x="645.0" y="504.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#111827">High</text>
+  <rect x="20.0" y="528.0" width="700.0" height="118.0" rx="8" ry="8" fill="#FFFFFF" stroke="#666666" stroke-width="1"/>
+  <text x="26.0" y="545.0" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Scoring definitions (illustrative):</text>
+  <text x="26.0" y="559.3" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Current pain: High = frequent operational problems or high manual effort today; Medium = occasional problems or moderate effort; Low =</text>
+  <text x="26.0" y="573.6" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">mostly stable.</text>
+  <text x="26.0" y="587.9" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Strategic importance: High = strongly linked to strategy or differentiation; Medium = supports strategy indirectly; Low = limited strategic</text>
+  <text x="26.0" y="602.2" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">influence.</text>
+  <text x="26.0" y="616.5" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Delivery risk: High = complex change with legacy or governance dependencies; Medium = moderate complexity; Low = well understood, low</text>
+  <text x="26.0" y="630.8" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">dependency.</text>
+  <rect x="20.0" y="656.0" width="700.0" height="92.0" rx="8" ry="8" fill="#FFF8DC" stroke="#8A6D3B" stroke-width="1"/>
+  <text x="26.0" y="673.0" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Legend: rating shown as text (High, Medium, Low) and shading; darker shading = higher rating. Colour supports the text; meaning is readable</text>
+  <text x="26.0" y="687.3" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">in greyscale. No composite score is calculated. Dimensions are kept separate.</text>
+  <text x="26.0" y="701.6" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">Assessment date: 2026-07-02. Owner: illustrative Horizon Bank architecture workshop group. Version: 1.0.</text>
+  <text x="26.0" y="715.9" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#111827">The values are illustrative teaching figures, not a factual assessment of a real bank. Capability names: examples/horizon-bank/capabilities.md.</text>
+</svg>

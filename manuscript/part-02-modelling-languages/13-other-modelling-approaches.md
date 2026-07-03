@@ -2,9 +2,9 @@
 title: "Other Useful Modelling Approaches"
 chapter: 13
 part: "part-02-modelling-languages"
-status: "Revision Required"
+status: "Diagramming"
 author: "Nishikant Tiwari"
-last_updated: "2026-07-02"
+last_updated: "2026-07-03"
 ---
 
 # 13. Other Useful Modelling Approaches
@@ -35,12 +35,12 @@ By the end of this chapter, the reader should be able to:
 
 ## Required models and artefacts
 
-- FIG-13-01: Online Store SysML-style Requirement Traceability View, specification created, source deferred pending author approval.
-- FIG-13-02: Horizon Bank Customer Onboarding Value Stream, specification created, source deferred pending author approval.
-- FIG-13-03: Horizon Bank Application Landscape Map, specification created, source deferred pending author approval.
-- FIG-13-04: Horizon Bank Platform Evolution Roadmap, specification created, source deferred pending author approval.
-- FIG-13-05: Horizon Bank Capability Heat Map, specification created, source deferred pending author approval.
-- FIG-13-06: Horizon Bank Payment Modernisation Wardley Map, specification created, source deferred pending author approval.
+- FIG-13-01: Online Store SysML-style Requirement Traceability View (PlantUML source), SVG export and PNG preview created for review.
+- FIG-13-02: Horizon Bank Customer Onboarding Value Stream (Draw.io source), SVG export and PNG preview created for review.
+- FIG-13-03: Horizon Bank Application Landscape Map (Draw.io source), SVG export and PNG preview created for review.
+- FIG-13-04: Horizon Bank Platform Evolution Roadmap (Draw.io source), SVG export and PNG preview created for review.
+- FIG-13-05: Horizon Bank Capability Heat Map (Draw.io source), SVG export and PNG preview created for review.
+- FIG-13-06: Horizon Bank Payment Modernisation Wardley Map (Draw.io source), SVG export and PNG preview created for review.
 
 ## Worked examples
 
@@ -70,9 +70,9 @@ By the end of this chapter, the reader should be able to:
 
 ## Drafting notes
 
-- Chapter 13 is currently in `Revision Required` while review findings are being resolved.
-- `FIG-13-01` through `FIG-13-06` are registered and have specifications.
-- Do not create diagram source or exports until the author approves the corresponding specifications.
+- Chapter 13 is in `Diagramming`. The author approved the revised `FIG-13-01` through `FIG-13-06` specifications for diagram production.
+- `FIG-13-01` through `FIG-13-06` now have editable sources, SVG exports and PNG previews and are recorded as `Review`, not `Approved`.
+- `FIG-13-01` uses PlantUML. `FIG-13-02` through `FIG-13-06` use Draw.io, exported by `scripts/render-drawio-diagrams.py` (see `DEC-021`). A draw.io graphical review is still recommended before the figures are marked `Approved`.
 - Keep Chapter 14 deeper business-strategy coverage in mind. Chapter 13 should introduce capability, value stream and heat-map approaches without taking over Chapter 14's role.
 
 ## Why this chapter exists
@@ -122,7 +122,13 @@ For the Simple Online Store, a SysML-style requirement trace might show:
 | REQ-OS-02 | The customer shall receive an order confirmation after the order is accepted. | Order service creates an order record and triggers web or email confirmation. | Verify accepted-order confirmation. | Functional test result and message-log sample. |
 | REQ-OS-03 | Support users shall view order status without seeing full payment details. | Support interface shows order state and masked payment status only. | Verify support-role access to masked payment information. | Access-control test result and support-role review. |
 
-FIG-13-01 is planned as a small teaching view of this pattern. It should not introduce the full SysML language. The purpose is to show why requirement, design, verification case and evidence links matter. In the figure, each requirement may have two outgoing relationships: `addressed by` to a design response, and `verified by` to a verification case. The verification case then points to evidence with `evidenced by`. This avoids implying that the design response itself is what the verification case formally verifies.
+FIG-13-01 is a small teaching view of this pattern. It does not introduce the full SysML language. The purpose is to show why requirement, design, verification case and evidence links matter. In the figure, each requirement may have two outgoing relationships: `addressed by` to a design response, and `verified by` to a verification case. The verification case then points to evidence with `evidenced by`. This avoids implying that the design response itself is what the verification case formally verifies.
+
+![FIG-13-01. Online Store SysML-style Requirement Traceability View](../../diagrams/exported/svg/FIG-13-01-online-store-sysml-requirement-trace.svg)
+
+**Figure FIG-13-01. Online Store SysML-style Requirement Traceability View.** This simplified, non-normative teaching view connects each Online Store requirement to a design response with `addressed by`, and separately to a verification case with `verified by`, and connects each verification case to its evidence with `evidenced by`. Limitation: a trace is a navigable claim for review. It does not prove that the requirement is satisfied, that the implementation is correct, or that verification passed, and it does not show the full SysML metamodel.
+
+Accessibility text: Three requirements, REQ-OS-01, REQ-OS-02 and REQ-OS-03, appear on the left. Each requirement links rightwards to a design response labelled `addressed by`, and separately to a verification case labelled `verified by`. Each verification case links to a verification-evidence box labelled `evidenced by`. The columns run left to right as requirement, design response, verification case and evidence.
 
 Use SysML when traceability across requirements, engineered parts, interfaces, behaviour, analysis and verification is important. Do not use it merely because a diagram has requirements on it. A plain table may be enough for simple software work.
 
@@ -158,7 +164,13 @@ For Horizon Bank customer onboarding, a value stream might use stages such as:
 | Banking relationship established | Customer and product records exist in the bank's authoritative systems. | Party Management, Account Opening, Product Management |
 | Services ready to use | The customer can use the selected channels and products. | Digital Servicing, Notification Management, Account Servicing |
 
-FIG-13-02 is planned as a Horizon Bank customer onboarding value stream. It should show value stages, stakeholder perspective and enabling capabilities, not BPMN tasks.
+FIG-13-02 is a Horizon Bank customer onboarding value stream. It shows value stages, stakeholder perspective and enabling capabilities, not BPMN tasks.
+
+![FIG-13-02. Horizon Bank Customer Onboarding Value Stream](../../diagrams/exported/svg/FIG-13-02-horizon-bank-customer-onboarding-value-stream.svg)
+
+**Figure FIG-13-02. Horizon Bank Customer Onboarding Value Stream.** The Retail Customer triggers five stakeholder-value stages that progress left to right towards a usable banking relationship, with the controlled enabling capabilities shown beneath each stage. Limitation: each stage is an outcome, not an internal activity. This is not a BPMN process, a customer journey map or a Lean value stream map. Use BPMN for detailed onboarding exceptions, roles, sequence and hand-offs.
+
+Accessibility text: The Retail Customer triggers the value stream. Five stages progress left to right: Need understood, enabled by Digital Servicing and Relationship Management; Application established, enabled by Customer Onboarding and Document Capture; Identity and eligibility confirmed, enabled by Identity Verification, Financial Crime Screening and Risk Assessment; Banking relationship established, enabled by Party Management, Account Opening and Product Management; and Services ready to use, enabled by Digital Servicing, Notification Management and Account Servicing. The final outcome is that the new customer can use the selected Horizon Bank channels and products.
 
 Use a value stream when the discussion is about end-to-end value, capability alignment or strategic change. Do not use it to replace the process model when exceptions, roles, sequence flows, message flows, timers or hand-offs matter. Do not confuse this business architecture use of value streams with Lean value stream mapping, which is aimed at analysing operational flow, waste and improvement in a production or service-delivery stream. Do not confuse it with a customer journey map either. A customer journey map usually emphasises touchpoints, emotion and experience. A business architecture value stream emphasises value stages and enabling capabilities.
 
@@ -170,7 +182,13 @@ Application landscapes are common in enterprise architecture because teams need 
 
 For Horizon Bank, an application landscape might show Horizon Digital Channels, Customer Onboarding Platform, Party and Customer Platform, Product Catalogue, Payments Platform, Financial Crime Platform, Core Deposit System, Enterprise Integration Platform, Event Platform and Enterprise Data Platform. The controlled system list in `examples/horizon-bank/system-landscape.md` uses lifecycle markers: `Target`, `Mixed`, `Legacy retained initially` and `Transitional`. A mixed-state landscape must explain which parts already exist, which are being retained, and which are directionally target. It should also show only the relationships needed for the review question.
 
-FIG-13-03 is planned as a Horizon Bank application landscape map. It should use stable system names from `examples/horizon-bank/system-landscape.md`.
+FIG-13-03 is a Horizon Bank application landscape map. It uses stable system names from `examples/horizon-bank/system-landscape.md`.
+
+![FIG-13-03. Horizon Bank Application Landscape Map](../../diagrams/exported/svg/FIG-13-03-horizon-bank-application-landscape-map.svg)
+
+**Figure FIG-13-03. Horizon Bank Application Landscape Map.** This deliberately mixed-state landscape shows selected Horizon Bank systems, each carrying exactly one lifecycle marker, with high-level labelled relationships. Limitation: the view does not imply that every target system exists fully today, and detailed interface mechanisms belong in an integration view or interface catalogue rather than in this landscape.
+
+Accessibility text: Horizon Digital Channels (Target) submits onboarding applications to the Customer Onboarding Platform (Target) and initiates payments and obtains payment status from the Payments Platform (Target). The Customer Onboarding Platform establishes party and customer records in the Party and Customer Platform (Target), reads product and eligibility definitions from the Product Catalogue (Target) and requests onboarding screening from the Financial Crime Platform (Mixed). The Payments Platform requests payment screening from the Financial Crime Platform, invokes retained-core integration services on the Enterprise Integration Platform (Transitional) and publishes governed payment-status events to the Event Platform (Target). The Enterprise Integration Platform mediates posting and account-access requests with the Core Deposit System (Legacy retained initially). The Event Platform supplies governed events for data use to the Enterprise Data Platform (Target). A legend explains the four lifecycle markers by both border style and text.
 
 Do not use an application landscape to show every interface, database table, batch job and business process step. If every arrow becomes important, the diagram probably needs to be split into an integration view, process view or sequence view.
 
@@ -210,7 +228,13 @@ For Horizon Bank platform evolution, a roadmap might show:
 | Later transition | Event Platform publishes governed payment-status events | Event schema governance, consumer access control and replay policy needed |
 | Target direction | Modular payments, customer and data platforms support governed reuse | Legacy coexistence remains explicit until exit evidence is accepted |
 
-FIG-13-04 is planned as a simple platform evolution roadmap. It should show architecture states and dependencies, not a project plan with every delivery task.
+FIG-13-04 is a simple platform evolution roadmap. It shows architecture states and dependencies, not a project plan with every delivery task.
+
+![FIG-13-04. Horizon Bank Platform Evolution Roadmap](../../diagrams/exported/svg/FIG-13-04-horizon-bank-platform-evolution-roadmap.svg)
+
+**Figure FIG-13-04. Horizon Bank Platform Evolution Roadmap.** Four named architecture states progress from Current to Target direction, each described by its configuration, dependency, risk, assumption, decision point and exit evidence. Limitation: the target is a direction under the stated assumptions, not a guaranteed final implementation. The figure deliberately shows no delivery dates, budgets, programme commitments, staffing or vendor decisions, and deliberate legacy coexistence remains explicit.
+
+Accessibility text: The roadmap has four states left to right. Current: Core Deposit System and point-to-point integration remain dominant. Near-term transition: the Payments Platform uses Enterprise Integration Platform adapters instead of new direct core links. Later transition: the Event Platform publishes governed payment-status events for approved consumers. Target direction: modular payments, customer and data platforms support governed reuse while the Core Deposit System is retained until exit evidence is accepted. Each state lists its dependency, risk, assumption, decision point and exit evidence beneath its header.
 
 A roadmap is not a promise by itself. It records an intended sequence under known assumptions. A useful roadmap states dependencies, risks, assumptions, decision points and exit evidence for each state. If funding, regulation, vendor constraints or operational risk change, the roadmap should be reviewed.
 
@@ -232,7 +256,13 @@ For Horizon Bank, a capability heat map might score the same capability across s
 
 Use `H`, `M` and `L` labels even when colour is also used. The map becomes useful only when the scoring basis is explicit. The figure should record date, owner and version, and should state that the scores are illustrative.
 
-FIG-13-05 is planned as a capability heat map. It should use labels and a legend so colour is not the only carrier of meaning.
+FIG-13-05 is a capability heat map. It uses labels and a legend so colour is not the only carrier of meaning.
+
+![FIG-13-05. Horizon Bank Capability Heat Map](../../diagrams/exported/svg/FIG-13-05-horizon-bank-capability-heat-map.svg)
+
+**Figure FIG-13-05. Horizon Bank Capability Heat Map.** This illustrative teaching view rates controlled Horizon Bank capabilities across three separate dimensions, Current pain, Strategic importance and Delivery risk, using visible High, Medium and Low text supported by greyscale-safe shading. Limitation: the values are illustrative, not a factual assessment of a real bank, no composite score is calculated, and the scoring basis, date, owner and version are stated on the figure.
+
+Accessibility text: The heat map is a grid. The first column lists capabilities grouped into Customer and servicing, Party and product, Payments and financial crime, and Governance. The remaining three columns give a separate rating of Current pain, Strategic importance and Delivery risk. Every rated cell shows the words High, Medium or Low, with darker shading for higher ratings so the meaning survives in greyscale. A legend states the scoring definitions, assessment date, owner and version, and confirms that no composite score is used.
 
 Common heat-map mistakes are easy to spot. The model may use red, amber and green without saying what they mean. It may mix several scoring dimensions into one colour. It may imply false precision from subjective workshop votes. It may hide disagreement by averaging scores. A good heat map says who scored it, what criteria they used, when it was scored, which version is being viewed and what action the rating should trigger.
 
@@ -273,7 +303,13 @@ The dependency lines on a Wardley map show value-chain dependency, not API direc
 | Storage service | Platform utility dependencies | Low | Commodity or utility | Standard infrastructure capability. | High. |
 | Network service | Platform utility dependencies | Low | Commodity or utility | Standard connectivity capability. | High. |
 
-FIG-13-06 is planned as a payment modernisation Wardley map. It should be labelled as a strategic discussion map, not as a factual inventory.
+FIG-13-06 is a payment modernisation Wardley map. It is labelled as a strategic discussion map, not as a factual inventory.
+
+![FIG-13-06. Horizon Bank Payment Modernisation Wardley Map](../../diagrams/exported/svg/FIG-13-06-horizon-bank-payment-modernisation-wardley-map.svg)
+
+**Figure FIG-13-06. Horizon Bank Payment Modernisation Wardley Map.** Anchored in the Retail Customer need to make a reliable outgoing payment, the map places payment-modernisation components by visibility, from user-facing at the top to supporting at the bottom, and by assumed evolution from Genesis to Commodity or utility, with value-chain dependency lines. Limitation: component positions are assumptions for discussion and should be challenged; the dependency lines are value-chain dependencies, not API direction, event flow, process sequence, data movement or implementation timing.
+
+Accessibility text: The user, Retail Customer, and the user need, make a reliable outgoing payment, anchor the top left. Below them, the Digital payment experience and Payment orchestration sit in the Custom-built band with high visibility. Financial crime screening service and Fraud decisioning service sit in the Product or rental band at medium visibility. Customer and account data access sits in the Custom-built band at lower visibility. Payment-status event distribution sits in the Product or rental band. Compute service, Storage service and Network service sit in the Commodity or utility band at the lowest visibility. Plain lines show value-chain dependencies from the user need down through the components, and a note states that the positions are assumptions for discussion.
 
 Wardley maps are powerful because they expose assumptions. They are risky when teams treat the position of every component as objective truth. The map should invite challenge: Who is the user? What is the need? Which components really create value? Which dependencies are missing? Which components are becoming commodities? Which parts deserve innovation investment?
 
@@ -398,7 +434,7 @@ Suggested answer:
 - [ ] Comparisons do not imply that one notation is universally superior.
 - [ ] Common mistakes are concrete and actionable.
 - [ ] Required source notes and diagram specifications are registered.
-- [ ] No diagram source is created until the author approves the corresponding specification.
+- [ ] Diagram sources and SVG/PNG exports exist for `FIG-13-01` through `FIG-13-06`, produced only after author approval of the specifications, and the figures remain in `Review` pending author and page-layout review.
 - [ ] Terminology, link and word-count checks pass.
 
 ## References and further reading

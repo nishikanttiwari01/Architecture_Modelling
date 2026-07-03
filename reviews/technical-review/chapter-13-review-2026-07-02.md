@@ -18,4 +18,16 @@ Focused correction baseline: `4e5b90d7fbf355ae9ade5772fbc40e9218c3513b`
 | CH13-TECH-10 | Medium | `FIG-13-03` required relationships | Application-landscape relationships used generic `connects to` wording. | Replace generic relationships with precise landscape-level labels and require one visible lifecycle marker per system. | Resolved in `FIG-13-03` specification. |
 | CH13-TECH-11 | Medium | `FIG-13-06` component positioning | Wardley component positions were not defined for every component. | Add explicit component positioning assumptions with visibility, evolution stage, rationale and confidence or open question. | Resolved in manuscript and `FIG-13-06` specification. |
 
-Open technical issue: diagram source and exports are intentionally not created until author approval of `FIG-13-01` through `FIG-13-06` specifications.
+Open technical issue: diagram source and exports were intentionally not created until author approval of `FIG-13-01` through `FIG-13-06` specifications.
+
+## Diagram production update, 2026-07-03
+
+The author approved the revised specifications for production. Diagram sources and exports now exist and are recorded as `Review`.
+
+- CH13-TECH-08 verification semantics are realised in `FIG-13-01`: requirement to design response uses `addressed by`, requirement to verification case uses `verified by`, and verification case to evidence uses `evidenced by`. There is no design response to verification case relationship.
+- CH13-TECH-10 precise application-landscape relationship labels and one lifecycle marker per system are realised in `FIG-13-03`.
+- CH13-TECH-04 named roadmap states with dependency, risk, assumption, decision and exit evidence are realised in `FIG-13-04`.
+- CH13-TECH-05 separated heat-map dimensions with no composite score are realised in `FIG-13-05`.
+- CH13-TECH-06 and CH13-TECH-11 separated Wardley components and defined positions are realised in `FIG-13-06`.
+
+Remaining technical item: a Draw.io graphical open and export-fidelity confirmation for the five Draw.io figures is recommended before author approval.

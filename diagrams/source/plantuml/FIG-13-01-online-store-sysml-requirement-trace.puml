@@ -1,0 +1,75 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+
+left to right direction
+title FIG-13-01. Online Store SysML-style Requirement Traceability View\nSimplified, non-normative teaching view
+
+skinparam rectangleRoundCorner 8
+skinparam rectangle<<Requirement>> {
+  BorderColor #175CD3
+  BackgroundColor #EEF4FF
+}
+skinparam rectangle<<Design>> {
+  BorderColor #175CD3
+  BackgroundColor #F7F9FB
+}
+skinparam rectangle<<Verification>> {
+  BorderColor #B54708
+  BackgroundColor #FFF7E6
+}
+skinparam rectangle<<Evidence>> {
+  BorderColor #027A48
+  BackgroundColor #ECFDF3
+}
+
+' Column 1: Requirements
+rectangle "REQ-OS-01\n----\nCheckout shall not store full\ncustomer card details in the\nOnline Store." <<Requirement>> as R1
+rectangle "REQ-OS-02\n----\nThe customer shall receive an\norder confirmation after the\norder is accepted." <<Requirement>> as R2
+rectangle "REQ-OS-03\n----\nSupport users shall view order\nstatus without seeing full\npayment details." <<Requirement>> as R3
+
+' Column 2: Design responses
+rectangle "Payment Provider System\ndelegation: the Online Store\nstores only payment status and\nprovider reference." <<Design>> as D1
+rectangle "Order record and confirmation:\nthe order service creates the\norder record and triggers web\nor email confirmation." <<Design>> as D2
+rectangle "Masked support view: the\nsupport interface shows order\nstate and masked payment\nstatus only." <<Design>> as D3
+
+' Column 3: Verification cases
+rectangle "Verify card-data storage\nboundary during checkout." <<Verification>> as V1
+rectangle "Verify accepted-order\nconfirmation." <<Verification>> as V2
+rectangle "Verify support-role access to\nmasked payment information." <<Verification>> as V3
+
+' Column 4: Verification evidence
+rectangle "Security test result and\nprovider integration review." <<Evidence>> as E1
+rectangle "Functional test result and\nmessage-log sample." <<Evidence>> as E2
+rectangle "Access-control test result and\nsupport-role review." <<Evidence>> as E3
+
+' Requirement addressed by design response
+R1 --> D1 : addressed by
+R2 --> D2 : addressed by
+R3 --> D3 : addressed by
+
+' Requirement verified by verification case (direct, not via design response)
+R1 --> V1 : verified by
+R2 --> V2 : verified by
+R3 --> V3 : verified by
+
+' Verification case evidenced by verification evidence
+V1 --> E1 : evidenced by
+V2 --> E2 : evidenced by
+V3 --> E3 : evidenced by
+
+' Hidden ordering keeps columns left to right:
+' Requirement | Design response | Verification case | Evidence
+D1 -[hidden]-> V1
+D2 -[hidden]-> V2
+D3 -[hidden]-> V3
+
+legend bottom
+Element types (shown as stereotypes): Requirement, Design (design response), Verification (verification case), Evidence.
+Left to right: Requirement | Design response | Verification case | Evidence.
+addressed by connects a requirement to its design response. verified by connects a requirement
+directly to its verification case. evidenced by connects a verification case to its evidence.
+A trace is a navigable claim for review. It does not prove that the requirement is satisfied,
+that the implementation is correct, or that verification passed.
+endlegend
+
+@enduml

@@ -14,4 +14,8 @@ Focused correction baseline: `4e5b90d7fbf355ae9ade5772fbc40e9218c3513b`
 | CH13-BEG-06 | Medium | Chapter introduction | Existing grouping did not classify approaches by standards status, practitioner origin or local convention. | Add a concise approach-classification table with classification, notation status and typical audience. | Resolved in manuscript. |
 | CH13-BEG-07 | Medium | Wardley map section | Component positions were discussed as assumptions but not concrete enough for beginners to challenge. | Add a positioning table for every component, including visibility, evolution stage, rationale and confidence or open question. | Resolved in manuscript. |
 
-Open beginner issue: readers cannot inspect completed Chapter 13 diagrams yet because diagram assets are deferred pending author approval of specifications.
+Open beginner issue: readers could not inspect completed Chapter 13 diagrams while diagram assets were deferred pending author approval of specifications.
+
+## Diagram production update, 2026-07-03
+
+The six figures now exist and are embedded in the manuscript with plain-language captions, accessibility text and a limitation note for each. Each figure keeps colour-independent meaning (stereotype text, lifecycle marker text, High/Medium/Low words and axis labels), which supports beginner readability. The figures are at `Review`.

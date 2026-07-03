@@ -201,6 +201,17 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapter 12, `DIAGRAM_REGISTER.md`, `diagrams/specifications/`, `STATUS.md`.
 - **Supersedes / superseded by:** Supersedes DEC-019 for the Chapter 12 figure set.
 
+## DEC-021: Render Chapter 13 Draw.io teaching figures from the editable mxGraph source
+
+- **Status:** Approved
+- **Date:** 2026-07-03
+- **Decision:** Use `scripts/render-drawio-diagrams.py` to render the Chapter 13 Draw.io figures (`FIG-13-02` through `FIG-13-06`) to SVG and PNG directly from the editable `.drawio` mxGraph geometry, styles and text.
+- **Context:** The author approved a Draw.io tooling decision for `FIG-13-02` through `FIG-13-06`. No Draw.io desktop CLI is installed in this environment, and the repository had no existing Draw.io export mechanism, so a repeatable renderer was required to produce SVG and PNG from the editable source without embedding screenshots.
+- **Alternatives considered:** Install and drive the Draw.io desktop CLI headlessly; hand-maintain SVG files; defer all Draw.io exports until a Draw.io CLI is available.
+- **Reason:** Rendering from the mxGraph source keeps the `.drawio` file as the single editable source of truth and produces exports that correspond to that source. This mirrors the BPMN render-from-source approach recorded in `DEC-012`.
+- **Consequences:** The renderer supports only the shape subset used by these teaching figures (rectangles, rounded rectangles, ellipses, plain text, straight and orthogonal connectors with optional arrowheads and labels). The `.drawio` files remain fully editable in Draw.io. A Draw.io graphical review of layout and export fidelity is still recommended before the figures are marked `Approved`, in the same spirit as the Camunda note in `DEC-012`.
+- **Related chapters/files:** Chapter 13, `scripts/render-drawio-diagrams.py`, `diagrams/source/drawio/FIG-13-*.drawio`, `diagrams/exported/svg/FIG-13-*.svg`, `diagrams/exported/png/FIG-13-*.png`, `reviews/chapter-gates/CH-13-quality-gate.md`.
+
 ## Decision template
 
 ```markdown

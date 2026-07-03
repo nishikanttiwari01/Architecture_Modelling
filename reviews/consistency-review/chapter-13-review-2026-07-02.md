@@ -15,4 +15,10 @@ Focused correction baseline: `4e5b90d7fbf355ae9ade5772fbc40e9218c3513b`
 | CH13-CON-07 | Medium | `FIG-13-05` source references | Heat-map specification still referenced `examples/horizon-bank/README.md` for controlled capability names. | Replace the generic README reference with the heat-map convention source, Open Group business architecture source and capability catalogue. | Resolved in `FIG-13-05` specification. |
 | CH13-CON-08 | Medium | Manuscript and `FIG-13-06` specification | Wardley component name varied between event distribution and payment-status event distribution. | Use `Payment-status event distribution` consistently and define positions for all components. | Resolved in manuscript and specification. |
 
-Open consistency issue: `FIG-13-01` through `FIG-13-06` remain at `Planned` until author-approved specifications allow diagram source creation.
+Open consistency issue: `FIG-13-01` through `FIG-13-06` remained at `Planned` until author-approved specifications allowed diagram source creation.
+
+## Diagram production update, 2026-07-03
+
+The figures are now produced and recorded as `Review`. Figure titles match across the manuscript, specifications, sources, exports and `DIAGRAM_REGISTER.md`. All displayed Horizon Bank system, capability and lifecycle names match their controlled definitions in `examples/horizon-bank/`.
+
+- CH13-CON-09 (new): The `FIG-13-02` specification listed enabling capabilities but omitted `Relationship Management`, which the manuscript value-stream table uses in the `Need understood` stage. Both are controlled capabilities in `examples/horizon-bank/capabilities.md`. The figure follows the manuscript (the reader-facing worked example), and the `FIG-13-02` specification was aligned by adding `Relationship Management` to its enabling-capabilities list. No uncontrolled name was introduced. Severity: Low. Status: Resolved.
