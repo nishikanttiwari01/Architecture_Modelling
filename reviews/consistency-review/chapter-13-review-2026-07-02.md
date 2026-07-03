@@ -28,3 +28,7 @@ The figures are now produced and recorded as `Review`. Figure titles match acros
 - CH13-CON-10 (new): The `FIG-13-02` `triggers` label overlapped the Retail Customer box and the first stage. The label was repositioned above the single trigger connector, touching no box, heading or boundary. The connector count remains exactly one. Severity: Low. Status: Resolved.
 - The `FIG-13-02` specification now lists `examples/horizon-bank/capabilities.md` as a controlled source reference, consistent with the figure's use of controlled capability names.
 - The Owner of `FIG-13-01` through `FIG-13-06` was changed from `Codex` to `Claude` in `DIAGRAM_REGISTER.md`; earlier figures are unchanged. Titles, IDs, source paths, export paths and `Review` status are retained.
+
+## Final review closure, 2026-07-03
+
+All consistency findings (CH13-CON-01 through CH13-CON-10) are confirmed resolved. Figure titles match across the manuscript, specifications, sources, exports and `DIAGRAM_REGISTER.md`; every displayed Horizon Bank name matches its controlled definition. On moving to a production status, the reader-facing `Planned chapter structure` and `Drafting notes` sections were removed, consistent with `DEC-010` and with Chapters 1, 11 and 12. Terminology and example consistency: Pass.

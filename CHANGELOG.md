@@ -4,6 +4,16 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-03
 
+### Completed Chapter 13 final review
+
+- Completed the final technical, content, diagram and quality-gate review of Chapter 13, **Other Useful Modelling Approaches**, against commit `bd6dc47`.
+- Confirmed all recorded technical, beginner and consistency findings resolved; performed a human visual and page-fit inspection of all six figures.
+- Verified figure titles and controlled Horizon Bank and Online Store names match across the manuscript, specifications, sources, exports and `DIAGRAM_REGISTER.md`.
+- Removed the reader-facing `Planned chapter structure` and `Drafting notes` sections on moving to a production status, consistent with `DEC-010` and with Chapters 1, 11 and 12; no reviewed prose was rewritten.
+- Updated the Chapter 13 review records and the quality gate with a recalculated score of 9.0 and a recommendation.
+- Moved Chapter 13 from `Diagramming` to `Ready for Author Approval`. `FIG-13-01` through `FIG-13-06` remain `Review`. `DEC-021` remains `Proposed`. Nothing was marked `Approved`. Chapter 14 was not started.
+- Open author decisions: author approval; native Draw.io graphical-open and export-fidelity comparison (`DEC-021`); final book-page layout placement of the wider landscape figures (`DEC-014`).
+
 ### Applied focused Chapter 13 diagram workflow corrections
 
 - Corrected the `FIG-13-02` trigger-label placement so the `triggers` label sits clearly above the single Retail Customer to Need understood connector and touches no box, heading or boundary; regenerated its SVG and PNG and visually inspected them.

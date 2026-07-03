@@ -1,6 +1,6 @@
 # Chapter 13 Quality Gate
 
-Current status: `Diagramming`
+Current status: `Ready for Author Approval` (recommended by the final review on 2026-07-03; only the author may mark the chapter `Approved`)
 
 Reviewed baseline: `21c66d430c42eb1c1a404fcbcf2d1e827d59c455`
 
@@ -88,6 +88,55 @@ This pass did not change figure content or redesign figures. It corrected one pl
 - **Ownership:** the Owner of `FIG-13-01` through `FIG-13-06` was set to `Claude`.
 
 Open items unchanged by this pass: native Draw.io graphical-open and export-fidelity review; final 6 by 9 book-page layout review; author approval of Chapter 13 and the six figures. Chapter 13 remains `Diagramming`; all six figures remain `Review`; nothing is `Approved`.
+
+## Final review, 2026-07-03
+
+Commit reviewed: `bd6dc4706710914118a3c598b50fe863483243df`.
+
+Review records considered: technical, beginner, consistency and final Chapter 13 reviews (all `chapter-13-review-2026-07-02.md`), plus this quality gate. All recorded findings (technical CH13-TECH-01..11, beginner CH13-BEG-01..07, consistency CH13-CON-01..10, final CH13-FIN-01..05) are confirmed resolved against current repository evidence.
+
+### Source and export paths (all six)
+
+| Figure | Editable source | SVG export | PNG preview |
+|---|---|---|---|
+| FIG-13-01 | `diagrams/source/plantuml/FIG-13-01-online-store-sysml-requirement-trace.puml` | `diagrams/exported/svg/FIG-13-01-online-store-sysml-requirement-trace.svg` | `diagrams/exported/png/FIG-13-01-online-store-sysml-requirement-trace.png` |
+| FIG-13-02 | `diagrams/source/drawio/FIG-13-02-horizon-bank-customer-onboarding-value-stream.drawio` | `diagrams/exported/svg/FIG-13-02-horizon-bank-customer-onboarding-value-stream.svg` | `diagrams/exported/png/FIG-13-02-horizon-bank-customer-onboarding-value-stream.png` |
+| FIG-13-03 | `diagrams/source/drawio/FIG-13-03-horizon-bank-application-landscape-map.drawio` | `diagrams/exported/svg/FIG-13-03-horizon-bank-application-landscape-map.svg` | `diagrams/exported/png/FIG-13-03-horizon-bank-application-landscape-map.png` |
+| FIG-13-04 | `diagrams/source/drawio/FIG-13-04-horizon-bank-platform-evolution-roadmap.drawio` | `diagrams/exported/svg/FIG-13-04-horizon-bank-platform-evolution-roadmap.svg` | `diagrams/exported/png/FIG-13-04-horizon-bank-platform-evolution-roadmap.png` |
+| FIG-13-05 | `diagrams/source/drawio/FIG-13-05-horizon-bank-capability-heat-map.drawio` | `diagrams/exported/svg/FIG-13-05-horizon-bank-capability-heat-map.svg` | `diagrams/exported/png/FIG-13-05-horizon-bank-capability-heat-map.png` |
+| FIG-13-06 | `diagrams/source/drawio/FIG-13-06-horizon-bank-payment-modernisation-wardley-map.drawio` | `diagrams/exported/svg/FIG-13-06-horizon-bank-payment-modernisation-wardley-map.svg` | `diagrams/exported/png/FIG-13-06-horizon-bank-payment-modernisation-wardley-map.png` |
+
+### Automated validation results (all exit 0)
+
+`python -m compileall -q scripts`; `check-structure.py`; `check-links.py`; `check-terminology.py`; `validate-diagrams.py`; `check-diagram-register.py`; `word-count.py`; `build-book.py`; `render-all-diagrams.ps1`; `git diff --exit-code -- diagrams/exported/svg diagrams/exported/png` (exports match sources); `git diff --check` (no whitespace errors). All five `.drawio` parse as editable mxGraph; the FIG-13-01 PlantUML source renders; no duplicate editable source exists; `DEC-021` is `Proposed`; `FIG-13-01` through `FIG-13-06` list `Claude` as owner.
+
+### Human visual-review and page-fit results
+
+Each PNG was opened and inspected at book-page scale. FIG-13-01: correct four-column trace semantics, non-proof caution, no clipping. FIG-13-02: single trigger connector with the label clear of all boxes, five value-outcome stages, controlled capabilities. FIG-13-03: one lifecycle marker per system, precise labels, visible limitation. FIG-13-04: four named states with configuration, dependency, risk, assumption, decision and exit evidence, no invented delivery facts. FIG-13-05: three separate dimensions, High/Medium/Low text, greyscale-safe, no composite score. FIG-13-06: nine separate components, screening and fraud separate, compute/storage/network separate, correct evolution stages, value-chain dependency lines. Page-fit: readable at book-page width with no clipping or overlapping labels; the wider landscape figures FIG-13-01, FIG-13-03 and FIG-13-04 remain subject to the standard final book-page layout placement decision (`DEC-014`), which keeps the figures at `Review`.
+
+### Recalculated score
+
+| Category | Score | Gate result |
+|---|---:|---|
+| Purpose and reader outcomes | 9.1 | Pass |
+| Technical accuracy | 9.0 | Pass |
+| Beginner clarity | 9.0 | Pass |
+| Source support | 9.0 | Pass |
+| Example consistency | 9.1 | Pass |
+| Diagram quality and accessibility | 9.0 | Pass |
+| Review evidence | 9.0 | Pass |
+
+Final score: `9.0/10`.
+
+### Remaining author decisions
+
+- Author approval of Chapter 13 and of `FIG-13-01` through `FIG-13-06` (only the author may mark these `Approved`).
+- Native Draw.io graphical-open and export-fidelity comparison, which would allow `DEC-021` to move from `Proposed` to `Approved`.
+- Final 6 by 9 book-page layout placement of the wider landscape figures (`DEC-014`).
+
+### Gate decision
+
+All non-author findings are resolved and all automated validations pass. Recommendation: **Chapter 13: Ready for Author Approval**. `FIG-13-01` through `FIG-13-06` remain `Review`. `DEC-021` remains `Proposed`. Nothing is marked `Approved`. Chapter 14 was not started.
 
 ## History
 

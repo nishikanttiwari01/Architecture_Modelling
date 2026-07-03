@@ -23,3 +23,7 @@ The six figures now exist and are embedded in the manuscript with plain-language
 ## Focused correction pass, 2026-07-03
 
 The `FIG-13-02` `triggers` label was moved off the Retail Customer box and stage so that the trigger relationship reads clearly for a beginner. No other figure content changed.
+
+## Final review closure, 2026-07-03
+
+All beginner findings (CH13-BEG-01 through CH13-BEG-07) are confirmed resolved. Every figure has a plain-language caption, accessibility text and a limitation note, and colour-independent meaning is preserved. Beginner comprehension: Pass.

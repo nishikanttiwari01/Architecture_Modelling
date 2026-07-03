@@ -2,7 +2,7 @@
 title: "Other Useful Modelling Approaches"
 chapter: 13
 part: "part-02-modelling-languages"
-status: "Diagramming"
+status: "Ready for Author Approval"
 author: "Nishikant Tiwari"
 last_updated: "2026-07-03"
 ---
@@ -59,21 +59,6 @@ By the end of this chapter, the reader should be able to:
 - `[WARDLEY-MAPS-OFFICIAL-2026]` supports Wardley map provenance, purpose and licence notes.
 - `[NYGARD-ADR-2011]` supports lightweight ADR practice and decision-log structure.
 - `[AUTHOR-HEAT-MAP-CONVENTIONS-2026]` records the local Chapter 13 heat-map scoring and legend convention.
-
-## Planned chapter structure
-
-1. Explain why specialised models complement the main Part II modelling approaches.
-2. Introduce SysML as a systems-engineering and traceability language, with a small requirement-trace example.
-3. Introduce capability maps, value streams, landscapes, roadmaps, heat maps, Wardley maps and ADRs as focused architecture tools.
-4. Compare the approaches by the question they answer and the audience they serve.
-5. Close with common mistakes, a cheat sheet, key takeaways, practical exercise and source notes.
-
-## Drafting notes
-
-- Chapter 13 is in `Diagramming`. The author approved the revised `FIG-13-01` through `FIG-13-06` specifications for diagram production.
-- `FIG-13-01` through `FIG-13-06` now have editable sources, SVG exports and PNG previews and are recorded as `Review`, not `Approved`.
-- `FIG-13-01` uses PlantUML. `FIG-13-02` through `FIG-13-06` use Draw.io, exported by `scripts/render-drawio-diagrams.py` (see `DEC-021`). A draw.io graphical review is still recommended before the figures are marked `Approved`.
-- Keep Chapter 14 deeper business-strategy coverage in mind. Chapter 13 should introduce capability, value stream and heat-map approaches without taking over Chapter 14's role.
 
 ## Why this chapter exists
 

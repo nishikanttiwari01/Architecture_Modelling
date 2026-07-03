@@ -41,3 +41,7 @@ Workflow hardening was applied without changing figure content:
 - `scripts/render-all-diagrams.ps1` invokes the renderer and propagates its non-zero exit code; CI runs the complete render script and then checks for stale exports with `git diff --exit-code -- diagrams/exported/svg diagrams/exported/png`.
 - The renderer now selects a font deterministically (Arial preferred, DejaVu Sans fallback), reports the selection and fails loudly if none is available; Windows Arial output is unchanged.
 - `DEC-021` is now `Proposed`; native Draw.io graphical-open and export-fidelity review remain the open technical item.
+
+## Final review closure, 2026-07-03
+
+All technical findings (CH13-TECH-01 through CH13-TECH-11) are confirmed resolved against the current manuscript, specifications, sources and exports. No new technical defect was found in the final review. The only open technical item is the native Draw.io export-fidelity confirmation, which is an author/tooling decision (`DEC-021`, Proposed). Technical accuracy: Pass.

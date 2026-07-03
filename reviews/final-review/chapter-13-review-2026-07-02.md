@@ -27,3 +27,28 @@ Recommended score now: no passing score. Revised interim assessment is `8.5/10`.
 ## Focused correction pass, 2026-07-03
 
 A focused correction pass fixed the `FIG-13-02` trigger-label placement and hardened the diagram workflow (renderer syntax-checked via `compileall`, Pillow pinned in `requirements-diagrams.txt` and installed in CI, renderer invoked by the complete render script with failure propagation, CI stale-export check, deterministic cross-platform font selection). `DEC-021` is now `Proposed`. This pass did not redraft the chapter or redesign figures. Recommended status remains `Diagramming`; no passing score; native Draw.io graphical-open and export-fidelity review and final 6 by 9 page-layout review remain open. Nothing is marked `Approved`.
+
+## Final review closure, 2026-07-03
+
+Reviewed commit: `bd6dc4706710914118a3c598b50fe863483243df`.
+
+The complete final review was performed against current repository files.
+
+| Dimension | Result |
+|---|---|
+| Technical accuracy | Pass. SysML verification semantics, capability, value-stream, landscape, integration, roadmap, heat-map, Wardley and ADR content are accurate and match their sources. |
+| Beginner comprehension | Pass. Plain-language lead-ins, a family classification table and a formality classification table, plus captions and accessibility text for every figure. |
+| Educational flow | Pass. Each approach follows question, explanation, example, figure and cautions; the cheat sheet, exercise and checklist close the chapter. |
+| Terminology consistency | Pass. Figure titles match across manuscript, specifications, sources, exports and `DIAGRAM_REGISTER.md`; controlled Horizon Bank names are used exactly. |
+| Example consistency | Pass. Online Store requirements and Horizon Bank capability, system, lifecycle and Wardley names match `examples/` files. |
+| Diagram quality | Pass. Six figures with correct semantics, legends and colour-independent meaning; visually inspected. |
+| Accessibility | Pass. Each figure has accessibility text and a limitation note; colour is never the only carrier of meaning. |
+| Source and copyright | Pass. Seven source keys registered; diagrams are original; no third-party diagram or icon library is used. |
+| Copy-editing | Pass. British English, no em dashes; terminology check passes. |
+| Page-fit inspection | Pass for readability at book-page width. The wider landscape figures (`FIG-13-01`, `FIG-13-03`, `FIG-13-04`) remain subject to the standard final book-page layout placement decision (`DEC-014`), which keeps the figures at `Review`. |
+
+Manuscript correction applied in this pass: the reader-facing `Planned chapter structure` and `Drafting notes` sections were removed on moving to a production status, consistent with `DEC-010` and with Chapters 1, 11 and 12. No prose that already passed review was rewritten.
+
+All non-author findings are resolved. Remaining items are explicit author decisions: author approval of the chapter and figures; native Draw.io graphical-open and export-fidelity comparison (`DEC-021`, Proposed); and final book-page layout placement (`DEC-014`).
+
+Recommended status: `Ready for Author Approval`. Recommended score: `9.0/10`. `FIG-13-01` through `FIG-13-06` remain `Review`. Nothing is marked `Approved`. Chapter 14 was not started.

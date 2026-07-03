@@ -26,7 +26,9 @@ Chapter 13, **Other Useful Modelling Approaches**, is in `Diagramming`. The manu
 
 The author then approved the revised specifications for production, and the six figures have now been produced and recorded as `Review`. `FIG-13-01` (Online Store SysML-style Requirement Traceability View) uses PlantUML. `FIG-13-02` Customer Onboarding Value Stream, `FIG-13-03` Application Landscape Map, `FIG-13-04` Platform Evolution Roadmap, `FIG-13-05` Capability Heat Map and `FIG-13-06` Payment Modernisation Wardley Map use Draw.io. The Draw.io figures are exported to SVG and PNG from the editable `.drawio` source by `scripts/render-drawio-diagrams.py` (`DEC-021`), because no Draw.io desktop CLI is available in this environment. Each figure has one editable source, one SVG export and one PNG preview, is embedded in the manuscript with a caption, accessibility text and a limitation note, and was visually inspected. The `FIG-13-02` specification was aligned with the manuscript by adding the controlled capability `Relationship Management`. No Chapter 13 figure is `Approved`. A Draw.io graphical review of the five Draw.io figures and final book-page layout review remain pending.
 
-A focused correction pass then: fixed the `FIG-13-02` trigger-label placement (single connector, label clearly above it, touching no box) and added `examples/horizon-bank/capabilities.md` to that figure's specification; integrated `scripts/render-drawio-diagrams.py` into the reproducible workflow (compileall syntax check, pinned Pillow in `requirements-diagrams.txt`, invocation from `render-all-diagrams.ps1` with failure propagation, and a CI stale-export check `git diff --exit-code -- diagrams/exported/svg diagrams/exported/png`); added deterministic cross-platform font selection (Arial preferred, DejaVu Sans fallback, reported, fail-loud); moved `DEC-021` to `Proposed`; and set the Owner of `FIG-13-01` through `FIG-13-06` to `Claude`. Native Draw.io graphical-open and export-fidelity review and final 6 by 9 page-layout review remain open. Chapter 13 stays `Diagramming` and all six figures stay `Review`.
+A focused correction pass then: fixed the `FIG-13-02` trigger-label placement (single connector, label clearly above it, touching no box) and added `examples/horizon-bank/capabilities.md` to that figure's specification; integrated `scripts/render-drawio-diagrams.py` into the reproducible workflow (compileall syntax check, pinned Pillow in `requirements-diagrams.txt`, invocation from `render-all-diagrams.ps1` with failure propagation, and a CI stale-export check `git diff --exit-code -- diagrams/exported/svg diagrams/exported/png`); added deterministic cross-platform font selection (Arial preferred, DejaVu Sans fallback, reported, fail-loud); moved `DEC-021` to `Proposed`; and set the Owner of `FIG-13-01` through `FIG-13-06` to `Claude`.
+
+The final Chapter 13 review (2026-07-03, reviewed commit `bd6dc47`) then confirmed technical accuracy, beginner comprehension, educational flow, terminology and example consistency, diagram quality, accessibility, source and copyright, copy-editing and page-fit readability across all six figures, and removed the reader-facing draft scaffolding on moving to a production status (per `DEC-010`). All non-author findings are resolved. Chapter 13 is now `Ready for Author Approval` with final score 9.0. All six figures stay `Review`. Open author decisions: author approval of the chapter and figures; native Draw.io graphical-open and export-fidelity comparison (`DEC-021`, Proposed); and final 6 by 9 book-page layout placement of the wider landscape figures `FIG-13-01`, `FIG-13-03` and `FIG-13-04` (`DEC-014`).
 
 ## Git reference
 
@@ -50,7 +52,7 @@ A focused correction pass then: fixed the `FIG-13-02` trigger-label placement (s
 - Chapter 10 status: `Approved`
 - Chapter 11 status: `Approved`
 - Chapter 12 status: `Approved`
-- Chapter 13 status: `Diagramming`
+- Chapter 13 status: `Ready for Author Approval`
 - Diagram status for Chapter 1 figure `FIG-01-01`: `Review`
 - Diagram status for Chapter 2 figure `FIG-02-01`: `Review`
 - Diagram status for Chapter 3 figures `FIG-03-01` through `FIG-03-03`: `Review`
@@ -77,8 +79,8 @@ A focused correction pass then: fixed the `FIG-13-02` trigger-label placement (s
 
 ## Next chapter
 
-Chapter 13, **Other Useful Modelling Approaches**, is the current chapter and is in `Diagramming` with all six figures produced and at `Review`. Chapter 14, **Modelling Business Strategy and Capabilities**, has not started and remains `Planned`.
+Chapter 13, **Other Useful Modelling Approaches**, has passed final review and is `Ready for Author Approval` with all six figures at `Review`. Chapter 14, **Modelling Business Strategy and Capabilities**, has not started and remains `Planned`.
 
 ## Next exact action
 
-Request author review of the six rendered Chapter 13 figures (`FIG-13-01` through `FIG-13-06`, all at `Review`), including a Draw.io graphical review of the five Draw.io figures and a final book-page layout check of the wider figures `FIG-13-01` and `FIG-13-03`. Do not mark Chapter 13 or any figure `Approved`; only the author may do that. Do not begin Chapter 14. Keep Chapter 12 figures `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05` at `Review` until final page-layout review. Keep Chapter 11 figures `FIG-11-01` through `FIG-11-06` at `Review`.
+Author review of Chapter 13 for approval. If the author approves the chapter, they may mark it `Approved`; only the author may do that. The six figures (`FIG-13-01` through `FIG-13-06`) remain `Review` pending a native Draw.io graphical-open and export-fidelity comparison (which would allow `DEC-021` to move from `Proposed` to `Approved`) and the final 6 by 9 book-page layout placement (`DEC-014`), particularly for the wider landscape figures `FIG-13-01`, `FIG-13-03` and `FIG-13-04`. Do not begin Chapter 14. Keep Chapter 12 figures `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05` at `Review` until final page-layout review. Keep Chapter 11 figures `FIG-11-01` through `FIG-11-06` at `Review`.
