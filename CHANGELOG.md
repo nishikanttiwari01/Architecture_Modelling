@@ -4,6 +4,17 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-03
 
+### Drafted Chapter 14, Modelling Business Strategy and Capabilities
+
+- Wrote the full Chapter 14 draft, the first chapter of Part III, moving it from `Planned` to `Drafting`.
+- Framed the chapter as a selection-and-combination chapter that keeps a visible thread from strategy to funded change: driver and goal, measurable outcome, stakeholder concern, capability, value stream, investment heat map and initiative traceability.
+- Covered all planned sections: goals, drivers and outcomes (motivation model); stakeholder concerns; capability maps for planning; value streams and the value-stream-to-capability cross-map; investment heat maps; traceability to initiatives; recommended notation combinations; a selection table; a Horizon Bank worked example; common mistakes; and the chapter endings.
+- Referenced, rather than re-taught, the Chapter 7 and Chapter 13 capability-map, value-stream, heat-map and motivation figures.
+- Reused only registered sources (`[OPEN-GROUP-ARCHIMATE-4]`, `[OPEN-GROUP-BIZARCH-GUIDES-2022]`, `[ISO-42010]`) and controlled example names from `examples/horizon-bank/capabilities.md`, `examples/horizon-bank/actors.md` and `examples/simple-online-store/README.md`; no new source note was required.
+- Registered two figures in `DIAGRAM_REGISTER.md` and wrote their specifications: `FIG-14-01` Horizon Bank Strategy-to-Capability Traceability View and `FIG-14-02` Horizon Bank Onboarding Value Stream to Capability Cross-Map. Both remain `Planned` with `Pending` source and export; editable source and SVG export are deferred until the author approves the specifications, so no image embeds point to unrendered files.
+- Recorded `DEC-022` for the Chapter 14 scope boundary against Chapters 7 and 13.
+- Updated `STATUS.md` (Chapter 14 row and next-task note) and this changelog. Nothing was marked `Approved`.
+
 ### Completed Chapter 13 final review
 
 - Completed the final technical, content, diagram and quality-gate review of Chapter 13, **Other Useful Modelling Approaches**, against commit `bd6dc47`.
