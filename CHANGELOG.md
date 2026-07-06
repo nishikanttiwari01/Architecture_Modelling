@@ -2,6 +2,25 @@
 
 All notable repository and manuscript changes are recorded here. This is a project history, not a replacement for Git commits.
 
+## 2026-07-04
+
+### Revised Chapter 14 strategy and capability modelling
+
+- Reviewed Chapter 14 against baseline `7d8947dc07c7c6bd4d2a7e6d5e8513d24f2f5e4b` and moved it from `Drafting` to `Revision Required` with an interim quality-gate score of `8.2/10`.
+- Reclassified `FIG-14-01` as an ArchiMate-informed strategy traceability teaching view; its connectors are simplified teaching links, not formal ArchiMate relationship notation. Recorded the ArchiMate 4 relationship-verification limitation in `research/archimate/open-group-archimate-4.md`: the licensed specification text is out of scope for AI-assisted drafting, so formal relationship types and directions are not asserted; a licensed human reviewer must confirm them before any upgrade to a formal view.
+- Added an outcome-measure table (`OUT-14-01` to `OUT-14-04`) with metric, baseline, target, scope, time horizon, measure owner and evidence source, using clearly illustrative placeholders, and removed unqualified phrases such as "near real time" and "reduced against baseline" from the outcome claims.
+- Separated the heat map into strategic importance, current health or pain, current investment status, proposed priority, delivery constraint and final funding, with no composite score, and stated that a proposed priority is a recommendation, not proof of funding.
+- Replaced the categorical goal-to-initiative rule with nuanced guidance: a goal with no work package is a review finding that may reflect deferral, business-as-usual delivery, a policy response or a portfolio gap, not automatically an invalid goal.
+- Added the controlled `Executive Sponsor` role to `examples/horizon-bank/actors.md` and replaced `Sponsor and executive`.
+- Recorded controlled capability levelling in `examples/horizon-bank/capabilities.md`, including levels, parents, the decomposition/contribution/dependency distinction, and the Financial Crime Screening versus Payment Screening peer scoping to avoid double counting.
+- Added stable identifiers (`DRV`, `GOAL`, `OUT`, `COA`, `WP`) and one master traceability table shared by the manuscript and `FIG-14-01`.
+- Redesigned `FIG-14-02` as a genuine capability-by-stage matrix with an exact cell-by-cell dataset and strategic importance assessed against `GOAL-14-01` only; kept funding, priority, delivery risk and composite scores out of it.
+- Removed the draft-only `Planned chapter structure` and `Drafting notes` sections (permitted at the `Revision Required` production status); retained the `check-structure.py`-required `Required models and artefacts`, `Worked examples` and `Source requirements` sections with reader-facing content, matching Chapter 13.
+- Added glossary rows for Course of Action, Work Package, capability levelling and value stream to capability cross-map.
+- Created Chapter 14 technical, beginner, consistency and final review records (`chapter-14-review-2026-07-04.md`) and the interim gate `reviews/chapter-gates/CH-14-quality-gate.md`.
+- Changed `DEC-022` from `Approved` to `Proposed`, because only the author may approve a material scope decision; retained its content.
+- Updated `DIAGRAM_REGISTER.md` notation for both figures. Both figures remain `Planned` with `Pending` source and export. No diagram source or export was created. Nothing was marked `Approved`. Chapter 15 was not started.
+
 ## 2026-07-03
 
 ### Drafted Chapter 14, Modelling Business Strategy and Capabilities

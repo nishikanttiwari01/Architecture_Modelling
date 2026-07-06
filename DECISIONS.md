@@ -222,15 +222,15 @@ Use the format below for all material decisions. Do not delete superseded decisi
 
 ## DEC-022: Scope Chapter 14 as strategy-to-capability selection, not notation re-teaching
 
-- **Status:** Approved
-- **Date:** 2026-07-03
+- **Status:** Proposed (awaiting explicit author approval; recorded `Approved` in error on 2026-07-03 and corrected to `Proposed` on 2026-07-04, because only the author may approve a material scope decision)
+- **Date:** 2026-07-03 (proposed); status corrected 2026-07-04
 - **Decision:** Write Chapter 14, the first Part III chapter, as a selection-and-combination chapter that keeps a visible thread from strategy to funded change (driver, goal, measurable outcome, stakeholder concern, capability, value stream, investment heat map and initiative traceability). Reference the capability-map, value-stream, heat-map and motivation notations already taught in Chapters 7 and 13 rather than re-teaching them.
 - **Context:** Chapters 7 and 13 already introduced ArchiMate motivation views, capability maps, value streams and heat maps. Chapter 13 explicitly deferred deeper strategy and capability modelling to Chapter 14. Part III is about choosing diagrams by architecture need, so Chapter 14 must add selection, combination and traceability value without duplicating notation lessons.
 - **Alternatives considered:** Re-teach each notation from first principles in Chapter 14; make Chapter 14 a pure ArchiMate strategy-and-motivation chapter; defer all figures until later.
 - **Reason:** Referencing the existing notation chapters avoids duplication, keeps the chapter focused on the reader's real question (which model to reach for and how the models fit together), and preserves a single controlled capability vocabulary across views.
 - **Consequences:** Chapter 14 introduces two new figures that are genuinely additive: `FIG-14-01` Strategy-to-Capability Traceability View (the goal-to-initiative thread) and `FIG-14-02` Onboarding Value Stream to Capability Cross-Map (the value-stage-to-capability grid). Both remain `Planned` with `Pending` source and export until the author approves the specifications, consistent with the diagram workflow. The chapter presents each figure's content as an inline table so it reads completely before production.
 - **Related chapters/files:** Chapter 14, Chapter 7, Chapter 13, `manuscript/part-03-diagram-selection/14-business-strategy-capabilities.md`, `diagrams/specifications/FIG-14-01-horizon-bank-strategy-to-capability-traceability.md`, `diagrams/specifications/FIG-14-02-horizon-bank-onboarding-value-stream-capability-cross-map.md`, `examples/horizon-bank/capabilities.md`.
-- **Supersedes / superseded by:** Not superseded.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
 ## Decision template
 

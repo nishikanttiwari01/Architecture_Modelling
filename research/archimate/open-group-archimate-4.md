@@ -74,6 +74,21 @@ The Chapter 7 draft and specifications should avoid treating removed 3.2 element
 
 Do not copy The Open Group diagrams, metamodel tables or specification text into the manuscript. Use only short source keys in draft prose and original diagrams/specifications. Do not incorporate licensed specification content into generated text beyond public product-page metadata and paraphrased high-level release information.
 
+## Chapter 14 usage: motivation and strategy elements and relationship verification
+
+Chapter 14 and figure `FIG-14-01` use the following ArchiMate concept names as element types: `Driver`, `Goal`, `Outcome`, `Capability`, `Course of Action` and `Work Package`. These element names are treated here as widely published, public-metadata-level concept names for the motivation, strategy and implementation-and-migration areas of ArchiMate. `Constraint` is not used as a current ArchiMate 4 element, because the public release information for ArchiMate 4 lists `Constraint` among the removed elements (see the differences table above).
+
+Relationship verification note (important): the exact ArchiMate 4 relationship types, their allowed source and target element pairs, their directions, and any derived-relationship rules are defined in the licensed ArchiMate 4 specification text. Under the member licence artificial-intelligence use restriction recorded in the licence section above, that specification text has not been downloaded or incorporated into this AI-assisted drafting session. Therefore this repository cannot, within its own source policy, assert specific formal ArchiMate 4 relationship types and directions (for example, which relationship formally connects a `Driver` to a `Goal`, or a `Goal` to an `Outcome`) as verified against an approved primary source.
+
+Consequence for Chapter 14 and `FIG-14-01`:
+
+- The figure is classified as an `ArchiMate-informed strategy traceability teaching view`, not as a formal ArchiMate view.
+- Its connectors are simplified, directional teaching traceability links carrying neutral verbs (for example, `raises`, `sets`, `needs`, `guides`, `delivers`). They are explicitly not presented as formal ArchiMate relationship notation.
+- The element concept names above are used, and `Constraint` is avoided, but no formal relationship semantics are claimed.
+- A licensed human reviewer with lawful access to the ArchiMate 4 specification should confirm the exact formal relationships and directions before any future upgrade of the figure to a formal ArchiMate view. Until then, the simplified teaching-link classification stands.
+
+This treatment is consistent with `AGENTS.md` (use only public product-page metadata and paraphrased release information; do not incorporate licensed specification content) and with `SOURCE_POLICY.md` (a source must be represented accurately and only support claims it actually supports).
+
 ## Verification status
 
-Checked
+Checked. Chapter 14 relationship-semantics verification against the licensed specification text is intentionally not performed in this AI-assisted session; see the Chapter 14 usage note above.

@@ -2,6 +2,7 @@
 
 | Name | Type | Purpose |
 |---|---|---|
+| Executive Sponsor | Business role | Owns the strategic outcome, investment case and major funding or priority decisions for the change. Introduced for the Chapter 14 strategy examples. |
 | Retail Customer | External actor | Uses deposits, cards, payments and lending services |
 | Corporate Customer | External actor | Uses cash management, trade finance and corporate lending |
 | Relationship Manager | Business role | Manages customer relationships and product origination |

@@ -53,6 +53,7 @@ The final Chapter 13 review (2026-07-03, reviewed commit `bd6dc47`) then confirm
 - Chapter 11 status: `Approved`
 - Chapter 12 status: `Approved`
 - Chapter 13 status: `Ready for Author Approval`
+- Chapter 14 status: `Revision Required` (drafted, then revised; interim gate `8.2/10`)
 - Diagram status for Chapter 1 figure `FIG-01-01`: `Review`
 - Diagram status for Chapter 2 figure `FIG-02-01`: `Review`
 - Diagram status for Chapter 3 figures `FIG-03-01` through `FIG-03-03`: `Review`
@@ -79,8 +80,8 @@ The final Chapter 13 review (2026-07-03, reviewed commit `bd6dc47`) then confirm
 
 ## Next chapter
 
-Chapter 13, **Other Useful Modelling Approaches**, has passed final review and is `Ready for Author Approval` with all six figures at `Review`. Chapter 14, **Modelling Business Strategy and Capabilities**, has not started and remains `Planned`.
+Chapter 14, **Modelling Business Strategy and Capabilities**, has been drafted and then revised. It is now `Revision Required` with an interim quality-gate score of `8.2/10`. Both figures, `FIG-14-01` and `FIG-14-02`, remain `Planned` with `Pending` source and export; no diagram source or export exists. `DEC-022` is `Proposed`. Chapter 13 remains `Ready for Author Approval` with its six figures at `Review`. Chapter 15, **Modelling Business Processes**, remains `Planned` and was not started.
 
 ## Next exact action
 
-Author review of Chapter 13 for approval. If the author approves the chapter, they may mark it `Approved`; only the author may do that. The six figures (`FIG-13-01` through `FIG-13-06`) remain `Review` pending a native Draw.io graphical-open and export-fidelity comparison (which would allow `DEC-021` to move from `Proposed` to `Approved`) and the final 6 by 9 book-page layout placement (`DEC-014`), particularly for the wider landscape figures `FIG-13-01`, `FIG-13-03` and `FIG-13-04`. Do not begin Chapter 14. Keep Chapter 12 figures `FIG-12-01`, `FIG-12-02`, `FIG-12-04` and `FIG-12-05` at `Review` until final page-layout review. Keep Chapter 11 figures `FIG-11-01` through `FIG-11-06` at `Review`.
+Author review of the Chapter 14 revision. The author may approve the `FIG-14-01` and `FIG-14-02` specifications for production and accept `DEC-022`; only the author may do that. After approval, the two figures can be produced from their specifications and moved to `Review`. Two items are open by design: author approval, and formal ArchiMate 4 relationship verification by a licensed human reviewer before any upgrade of `FIG-14-01` to a formal ArchiMate view. Do not create diagram sources or exports and do not begin Chapter 15 before author approval. Chapter 13 figures `FIG-13-01` through `FIG-13-06` remain `Review` pending native Draw.io review (`DEC-021`, Proposed) and final page layout (`DEC-014`). Keep Chapter 11 and Chapter 12 figures at `Review` until final page-layout review.
