@@ -12,7 +12,9 @@ Completion evidence for Chapter 15 review and diagram workflow:
 - Commit: `4b9f068 Complete Chapter 15 review and diagram assets`
 - Purpose: added FIG-15-01, formal review records, the quality gate and status updates.
 
-Scope: `manuscript/part-03-diagram-selection/15-business-processes.md`.
+## Scope
+
+- Manuscript: `manuscript/part-03-diagram-selection/15-business-processes.md`
 
 ## Beginner Comprehension
 

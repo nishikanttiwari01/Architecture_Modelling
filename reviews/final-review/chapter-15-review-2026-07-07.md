@@ -12,10 +12,18 @@ Completion evidence for Chapter 15 review and diagram workflow:
 - Commit: `4b9f068 Complete Chapter 15 review and diagram assets`
 - Purpose: added FIG-15-01, formal review records, the quality gate and status updates.
 
-Scope: Chapter 15 manuscript and formal review records for technical accuracy,
-beginner comprehension, educational flow, terminology and cross-chapter
-consistency, diagram reuse and accessibility, source and copyright
-verification, and copy-editing.
+## Scope
+
+This final review covers:
+
+- Chapter 15 manuscript
+- Technical accuracy review
+- Beginner comprehension review
+- Educational flow review
+- Terminology and cross-chapter consistency review
+- Diagram reuse and accessibility review
+- Source and copyright verification review
+- Copy-editing review
 
 ## Consolidated Review Passes
 

@@ -12,9 +12,12 @@ Completion evidence for Chapter 15 review and diagram workflow:
 - Commit: `4b9f068 Complete Chapter 15 review and diagram assets`
 - Purpose: added FIG-15-01, formal review records, the quality gate and status updates.
 
-Scope: `manuscript/part-03-diagram-selection/15-business-processes.md`,
-registered source notes for BPMN, UML, DMN and value streams, reused figure
-entries in `DIAGRAM_REGISTER.md`, and `DEC-023`.
+## Scope
+
+- Manuscript: `manuscript/part-03-diagram-selection/15-business-processes.md`
+- Source context: registered source notes for BPMN, UML, DMN and value streams
+- Diagram context: reused figure entries in `DIAGRAM_REGISTER.md`
+- Decision context: `DEC-023`
 
 ## Review Pass
 

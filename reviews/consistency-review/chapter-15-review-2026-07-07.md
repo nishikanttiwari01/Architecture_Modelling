@@ -12,9 +12,15 @@ Completion evidence for Chapter 15 review and diagram workflow:
 - Commit: `4b9f068 Complete Chapter 15 review and diagram assets`
 - Purpose: added FIG-15-01, formal review records, the quality gate and status updates.
 
-Scope: Chapter 15 manuscript, `GLOSSARY.md`, `DIAGRAM_REGISTER.md`,
-`SOURCE_REGISTER.md`, `DECISIONS.md`, neighbouring Chapters 14 and 16, and the
-registered research notes for the source keys used by Chapter 15.
+## Scope
+
+- Chapter 15 manuscript
+- `GLOSSARY.md`
+- `DIAGRAM_REGISTER.md`
+- `SOURCE_REGISTER.md`
+- `DECISIONS.md`
+- Neighbouring Chapters 14 and 16
+- Registered research notes for the source keys used by Chapter 15
 
 ## Terminology and Cross-Chapter Consistency
 

@@ -1,9 +1,12 @@
 # Chapter 15 Quality Gate
 
-Status before task: `Drafting`
+## Status
 
-Final status after task: `Ready for Author Approval` (recommended by the
-2026-07-07 formal review; only the author may mark the chapter `Approved`)
+- Status before task: `Drafting`
+- Final status after task: `Ready for Author Approval`
+
+The final status was recommended by the 2026-07-07 formal review. Only the
+author may mark the chapter `Approved`.
 
 ## Evidence Commits
 
@@ -17,7 +20,10 @@ Completion evidence for Chapter 15 review and diagram workflow:
 - Commit: `4b9f068 Complete Chapter 15 review and diagram assets`
 - Purpose: added FIG-15-01, formal review records, the quality gate and status updates.
 
-This gate records the formal Chapter 15 review. It is not an author-approval record.
+## Gate Purpose
+
+This gate records the formal Chapter 15 review. It is not an author-approval
+record.
 
 ## Diagram Decision
 
