@@ -257,6 +257,18 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapter 16, Chapter 4, Chapter 5, `DIAGRAM_REGISTER.md`, `diagrams/specifications/FIG-16-01-choosing-the-right-software-structure-view.md`, `diagrams/source/mermaid/FIG-16-01-choosing-the-right-software-structure-view.mmd`, `diagrams/exported/svg/FIG-16-01-choosing-the-right-software-structure-view.svg`.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
+## DEC-025: Use PlantUML for the Chapter 17 interaction selection guide
+
+- **Status:** Proposed
+- **Date:** 2026-07-07
+- **Decision:** Create `FIG-17-01`, "Choosing the Right User and System Interaction View", as the required Chapter 17 selection-guide diagram. The figure uses a PlantUML mind map to help readers choose between use case diagrams, user journeys, service blueprints, wireframes or screen flows, UML sequence diagrams, C4 dynamic views, BPMN collaborations, activity diagrams, state machines and API interaction views.
+- **Context:** Chapter 17 is a Part III selection chapter. The latest author instruction requires PlantUML by default for all new diagrams and says Mermaid must not be used for new diagrams unless explicitly approved. Earlier Chapter 15 and Chapter 16 Mermaid diagrams remain unchanged.
+- **Alternatives considered:** Use Mermaid following the earlier Chapter 17 task brief; use Draw.io for manual layout; leave the selection guidance as a manuscript table only.
+- **Reason:** PlantUML satisfies the current diagram tool rule and is suitable for a compact decision guide. A manuscript table provides detailed selection guidance, while the PlantUML figure gives readers a quick first-filter path. Draw.io is not needed because the layout is readable without manual composition.
+- **Consequences:** Chapter 17 has one original registered figure with specification, PlantUML source and SVG export. `FIG-17-01` is at `Review`, not `Approved`, and Chapter 17 is `Ready for Author Approval`, not `Approved`. Any later conversion to Draw.io should happen only if author review finds the PlantUML output too cramped or unsuitable for book readability.
+- **Related chapters/files:** Chapter 17, Chapter 4, Chapter 5, Chapter 6, Chapter 15, Chapter 16, `DIAGRAM_REGISTER.md`, `diagrams/specifications/FIG-17-01-choosing-the-right-user-and-system-interaction-view.md`, `diagrams/source/plantuml/FIG-17-01-choosing-the-right-user-and-system-interaction-view.puml`, `diagrams/exported/svg/FIG-17-01-choosing-the-right-user-and-system-interaction-view.svg`.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
+
 ## Decision template
 
 ```markdown

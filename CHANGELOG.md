@@ -4,6 +4,15 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-07
 
+### Completed Chapter 17 user and system interaction modelling
+
+- Expanded Chapter 17, **Modelling User and System Interaction**, from scaffold to a complete Part III selection chapter covering use case diagrams, user journeys, service blueprints, wireframes, screen flows, UML sequence diagrams, C4 dynamic views, BPMN collaborations, activity diagrams, state machines and API interaction views.
+- Added `FIG-17-01`, "Choosing the Right User and System Interaction View", as a PlantUML decision-guide diagram, with specification, editable source and SVG export, and kept the figure at `Review`, not `Approved`.
+- Created Chapter 17 technical, beginner, consistency and final review records, plus `reviews/chapter-gates/CH-17-quality-gate.md`.
+- Updated `STATUS.md` so Chapter 17 is `Ready for Author Approval`, not `Approved`.
+- Recorded `DEC-025` as `Proposed`, noting the Chapter 17 scope and the PlantUML diagram decision.
+- Reused existing registered UML, C4 and BPMN source notes; no new source notes were added.
+
 ### Completed Chapter 16 software structure modelling
 
 - Expanded Chapter 16, **Modelling Software Structure**, from scaffold to a complete Part III selection chapter covering system landscape, system context, container, component, package, class, dependency and deployment views.

@@ -1,0 +1,63 @@
+@startmindmap
+title FIG-17-01. Choosing the Right User and System Interaction View
+
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #333333
+
+' Selection rule:
+' Start with the current interaction question.
+' Pick the first branch that matches the concern.
+' Use the chapter table for audience, timing and common mistakes.
+' The source is intentionally PlantUML, following the Chapter 17 tool rule.
+' The figure is an original teaching guide, not a copied standards diagram.
+
+* Start with the\ninteraction question
+
+** Actor and scope
+*** Actor goals and\nsystem boundary?
+**** Use case diagram
+
+** Experience and service
+*** User experience across\nsteps and channels?
+**** User journey
+*** Visible and backstage\nservice work?
+**** Service blueprint
+
+** Interface movement
+*** Screen navigation or\ninterface layout?
+**** Wireframe or\nscreen flow
+
+** Runtime message order
+*** Precise message order\nin one scenario?
+**** UML sequence diagram
+*** Collaboration across\nknown C4 elements?
+**** C4 dynamic view
+
+** Process responsibility
+*** Business hand-offs,\nwaits or exceptions?
+**** BPMN collaboration
+*** Action and decision flow\ninside one boundary?
+**** Activity diagram
+
+** Lifecycle and API
+*** Lifecycle states and\nevent-triggered changes?
+**** State machine
+*** Channel-to-service or\nservice-to-service API behaviour?
+**** API interaction view
+
+** Still unclear?
+*** Clarify actor,\nboundary and decision
+**** Do not choose notation\nuntil the question is specific
+
+' Accessibility notes:
+' - Meaning is carried by text, not colour.
+' - The mind map groups related concerns for scanning.
+' - The diagram is a first filter, not a replacement for judgement.
+' - Each branch maps a question to one suggested first view.
+' - A real change may still need several views.
+' - Those views should remain separate and purpose-led.
+
+@endmindmap

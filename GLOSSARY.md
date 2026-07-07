@@ -56,11 +56,16 @@ This file controls terminology across the manuscript. Add a term when it first b
 | System Landscape diagram | A C4 view that shows multiple software systems in a wider organisational or enterprise landscape. | Use for estate-level relationships, not detailed process flow. |
 | Actor | A person, role, organisation or system that interacts with a subject. | State which meaning is intended. |
 | Use case | A goal-oriented interaction between actors and a subject system. | Use for scope and user goals, not for internal screen or code design. |
+| User journey | A view of the steps, channels, waits and pain points a user experiences while pursuing an outcome. | Use for user experience and channel movement; do not treat it as a complete system or process design. |
+| Service blueprint | A view that connects user-visible steps with backstage work, supporting systems and responsibilities. | Useful when experience and operational support must be connected; keep detailed BPMN or API behaviour separate when needed. |
+| Wireframe | A low-detail representation of a screen or interface layout. | Use for visible interface structure and feedback, not for system architecture by itself. |
+| Screen flow | A view of how a user moves between screens or interface states. | Use for navigation and visible user flow; do not hide process, data or API ownership questions inside it. |
 | Class | A UML classifier that describes a set of objects with common features, such as attributes, operations and relationships. | Keep analysis classes separate from physical database tables unless that mapping is intentional. |
 | Lifeline | A participant in an interaction, usually shown in a UML sequence diagram. | Use for roles or system parts in one scenario; avoid turning it into an organisational chart. |
 | State | A condition in the lifecycle of an entity or system where particular behaviour or rules apply. | Use state machines for meaningful lifecycle changes, not simple linear task lists. |
 | Interface | A defined point of interaction between elements. | Label protocol and responsibility where relevant. |
 | API | An application programming interface that exposes defined operations or resources. | An API is an interface, not the implementation itself. |
+| API interaction view | A view that shows how a channel or service calls an API, including direction, request, response, error or later status behaviour. | Use when channel-to-service or service-to-service behaviour is the interaction concern; defer wider integration design to integration views. |
 | Domain model | A model of the concepts, rules and language used in a business or problem domain. | Do not reduce it to a database schema or class diagram too early. |
 | Domain-Driven Design (DDD) | An approach to software and architecture design that keeps the model close to the business domain and its language. | Treat DDD as a design approach, not a standards-body notation. |
 | Strategic Domain-Driven Design | DDD guidance focused on subdomains, bounded contexts, ubiquitous language and relationships between contexts. | Use for architecture boundaries, ownership and language differences. |
