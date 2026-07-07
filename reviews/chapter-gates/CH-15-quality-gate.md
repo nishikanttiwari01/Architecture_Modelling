@@ -5,9 +5,12 @@ Status before task: `Drafting`
 Final status after task: `Ready for Author Approval` (recommended by the
 2026-07-07 formal review; only the author may mark the chapter `Approved`)
 
-Reviewed baseline draft: `54a84e0 Refine Chapter 15 business process modelling draft`
+## Evidence Commits
 
-Completion evidence commit: `4b9f068 Complete Chapter 15 review and diagram assets`
+| Purpose | Commit |
+|---|---|
+| Reviewed baseline draft | `54a84e0 Refine Chapter 15 business process modelling draft` |
+| Completion evidence | `4b9f068 Complete Chapter 15 review and diagram assets` |
 
 This gate records the formal Chapter 15 review. It is not an author-approval record.
 

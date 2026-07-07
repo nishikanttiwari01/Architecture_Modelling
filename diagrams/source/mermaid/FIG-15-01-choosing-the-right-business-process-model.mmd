@@ -3,18 +3,21 @@ flowchart TD
     start["Start with the architecture question"]
 
     %% Question and model nodes
+    %% Landscape and value questions
     landscape["Overall process landscape?"]
     pa["Process architecture"]
 
     value["Value progression?"]
     vs["Value stream"]
 
+    %% Collaboration and flow questions
     handoffs["Participants and hand-offs?"]
     collab["BPMN collaboration"]
 
     flow["Business flow and exceptions?"]
     bpmn["BPMN process"]
 
+    %% Exception, responsibility and decision questions
     exception["Failure, wait or escalation?"]
     exview["Focused BPMN exception view"]
 
@@ -24,6 +27,7 @@ flowchart TD
     decision["Repeatable decision logic?"]
     dmn["DMN decision model"]
 
+    %% System and interaction questions
     behaviour["Internal system behaviour?"]
     activity["UML activity"]
 

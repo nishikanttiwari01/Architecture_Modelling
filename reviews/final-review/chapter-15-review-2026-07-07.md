@@ -1,8 +1,11 @@
 # Chapter 15 Final Review, 2026-07-07
 
-Reviewed baseline draft: `54a84e0 Refine Chapter 15 business process modelling draft`
+## Evidence Commits
 
-Completion evidence commit: `4b9f068 Complete Chapter 15 review and diagram assets`
+| Purpose | Commit |
+|---|---|
+| Reviewed baseline draft | `54a84e0 Refine Chapter 15 business process modelling draft` |
+| Completion evidence | `4b9f068 Complete Chapter 15 review and diagram assets` |
 
 Scope: Chapter 15 manuscript and formal review records for technical accuracy,
 beginner comprehension, educational flow, terminology and cross-chapter
