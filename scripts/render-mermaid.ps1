@@ -28,7 +28,10 @@ if ($files.Count -eq 0) {
 $mmdc = Get-Command mmdc -ErrorAction SilentlyContinue
 $npx = Get-Command npx -ErrorAction SilentlyContinue
 if (-not $mmdc -and -not $npx) {
-    if ($Required) { throw "Mermaid renderer not found. Install @mermaid-js/mermaid-cli or provide mmdc on PATH." }
+    if ($Required) {
+        throw "Mermaid renderer not found. Install @mermaid-js/mermaid-cli, provide mmdc on PATH, or install npx."
+    }
+
     Write-Host "Mermaid renderer not found, skipping render."
     exit 0
 }
@@ -41,8 +44,14 @@ foreach ($file in $files) {
     if ($mmdc) {
         & $mmdc.Source -i $file.FullName -o $outFile
     } else {
-        & $npx.Source mmdc -i $file.FullName -o $outFile
+        & $npx.Source `
+            -y `
+            -p "@mermaid-js/mermaid-cli" `
+            mmdc `
+            -i $file.FullName `
+            -o $outFile
     }
+
     if ($LASTEXITCODE -ne 0) {
         throw "Mermaid render failed for $($file.FullName)"
     }
