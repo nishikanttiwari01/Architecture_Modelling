@@ -1,8 +1,13 @@
 # Chapter 15 Final Review, 2026-07-07
 
-Reviewed commit: `54a84e0 Refine Chapter 15 business process modelling draft`
+Reviewed baseline draft: `54a84e0 Refine Chapter 15 business process modelling draft`
 
-Scope: Chapter 15 manuscript and formal review records for technical accuracy, beginner comprehension, educational flow, terminology and cross-chapter consistency, diagram reuse and accessibility, source and copyright verification, and copy-editing.
+Completion evidence commit: `4b9f068 Complete Chapter 15 review and diagram assets`
+
+Scope: Chapter 15 manuscript and formal review records for technical accuracy,
+beginner comprehension, educational flow, terminology and cross-chapter
+consistency, diagram reuse and accessibility, source and copyright
+verification, and copy-editing.
 
 ## Consolidated Review Passes
 
@@ -22,7 +27,9 @@ Scope: Chapter 15 manuscript and formal review records for technical accuracy, b
 |---|---|---|---|---|---|
 | CH15-FIN-01 | Minor | Chapter 15, draft scaffolding | The reviewed draft still had reader-facing `Planned chapter structure` and `Drafting notes` headings. | Remove draft scaffolding before moving to a production review status. | Resolved. Both headings were removed; required reader-facing metadata sections remain. |
 
-No critical or major findings were found. The final diagram decision after author direction is to include `FIG-15-01` as a compact selection guide alongside the manuscript tables and reused registered figures.
+No critical or major findings were found. The final diagram decision after
+author direction is to include `FIG-15-01` as a compact selection guide
+alongside the manuscript tables and reused registered figures.
 
 ## Automated Validation
 
@@ -39,4 +46,6 @@ The word-count report records Chapter 15 at 4,586 words.
 
 ## Recommendation
 
-All non-author findings are resolved. Recommended status: `Ready for Author Approval`, not `Approved`. `FIG-15-01` remains at `Review`, and `DEC-023` remains `Proposed`.
+All non-author findings are resolved. Recommended status: `Ready for Author
+Approval`, not `Approved`. `FIG-15-01` remains at `Review`, and `DEC-023`
+remains `Proposed`.

@@ -4,6 +4,10 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-07
 
+### Cleaned Chapter 15 review evidence formatting
+
+- Reformatted Chapter 15 review evidence metadata and FIG-15-01 Mermaid source for clearer maintenance, keeping Chapter 15 at `Ready for Author Approval`, `FIG-15-01` at `Review` and `DEC-023` at `Proposed`.
+
 ### Completed Chapter 15 formal review
 
 - Created Chapter 15 technical, beginner, consistency and final review records, plus the Chapter 15 quality gate.

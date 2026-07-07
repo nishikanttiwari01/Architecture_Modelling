@@ -33,7 +33,7 @@
 | 12 | Security Modelling | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; four active figures completed; diagrams remain Review pending final page-layout review, particularly FIG-12-01 and FIG-12-04 |
 | 13 | Other Useful Modelling Approaches | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review |
 | 14 | Modelling Business Strategy and Capabilities | Revision Required | 100 | 100 | 20 | 60 | 100 | Author review of the revision; approve `FIG-14-01` and `FIG-14-02` specifications and accept `DEC-022`, then produce figures |
-| 15 | Modelling Business Processes | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-15-01` at `Review`; `DEC-023` remains `Proposed` |
+| 15 | Modelling Business Processes | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; FIG-15-01 at Review; DEC-023 Proposed |
 | 16 | Modelling Software Structure | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 17 | Modelling User and System Interaction | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 18 | Modelling Integration and Runtime Behaviour | Planned | 0 | 0 | 0 | 0 | 0 | — |

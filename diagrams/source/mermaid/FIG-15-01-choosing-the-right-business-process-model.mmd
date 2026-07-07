@@ -1,6 +1,8 @@
 flowchart TD
+    %% Start
     start["Start with the architecture question"]
 
+    %% Question and model nodes
     landscape["Overall process landscape?"]
     pa["Process architecture"]
 
@@ -30,6 +32,7 @@ flowchart TD
 
     discuss["Clarify the modelling purpose"]
 
+    %% Decision path
     start --> landscape
     landscape -- "Choose" --> pa
     landscape -- "If not" --> value
@@ -50,6 +53,7 @@ flowchart TD
     interaction -- "Choose" --> sequence
     interaction -- "If not" --> discuss
 
+    %% Styling
     classDef question fill:#f7f7f7,stroke:#333333,stroke-width:1px,color:#111111;
     classDef model fill:#eaf4ff,stroke:#23527c,stroke-width:1px,color:#111111;
     classDef fallback fill:#fff4e6,stroke:#8a5a00,stroke-width:1px,color:#111111;

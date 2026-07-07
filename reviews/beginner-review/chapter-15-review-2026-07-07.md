@@ -1,6 +1,8 @@
 # Chapter 15 Beginner Comprehension and Educational Flow Review, 2026-07-07
 
-Reviewed commit: `54a84e0 Refine Chapter 15 business process modelling draft`
+Reviewed baseline draft: `54a84e0 Refine Chapter 15 business process modelling draft`
+
+Completion evidence commit: `4b9f068 Complete Chapter 15 review and diagram assets`
 
 Scope: `manuscript/part-03-diagram-selection/15-business-processes.md`.
 

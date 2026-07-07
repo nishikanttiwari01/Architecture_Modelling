@@ -2,15 +2,23 @@
 
 Status before task: `Drafting`
 
-Final status after task: `Ready for Author Approval` (recommended by the 2026-07-07 formal review; only the author may mark the chapter `Approved`)
+Final status after task: `Ready for Author Approval` (recommended by the
+2026-07-07 formal review; only the author may mark the chapter `Approved`)
 
-Reviewed commit: `54a84e0 Refine Chapter 15 business process modelling draft`
+Reviewed baseline draft: `54a84e0 Refine Chapter 15 business process modelling draft`
+
+Completion evidence commit: `4b9f068 Complete Chapter 15 review and diagram assets`
 
 This gate records the formal Chapter 15 review. It is not an author-approval record.
 
 ## Diagram Decision
 
-The formal review found that the split manuscript selection tables, the beginner choice point and the reused registered figures are sufficient for author review. The author later requested completion of the diagram work, so `FIG-15-01` was created as a compact selection guide. Chapter 15 diagram completion is recorded through deliberate reuse plus this one registered Chapter 15 figure.
+The formal review found that the split manuscript selection tables, the
+beginner choice point and the reused registered figures are sufficient for
+author review. The author later requested completion of the diagram work, so
+`FIG-15-01` was created as a compact selection guide. Chapter 15 diagram
+completion is recorded through deliberate reuse plus this one registered
+Chapter 15 figure.
 
 ## Review Evidence
 
@@ -75,4 +83,9 @@ Validation commands were run after the review edits. All returned exit 0:
 
 ## Gate Decision
 
-All non-author findings are resolved and validation passes. Recommendation: **Chapter 15: Ready for Author Approval**. Nothing is marked `Approved`; `FIG-15-01` remains at `Review`; `DEC-023` remains `Proposed`.
+All non-author findings are resolved and validation passes.
+
+Recommendation: **Chapter 15: Ready for Author Approval**.
+
+Nothing is marked `Approved`; `FIG-15-01` remains at `Review`; `DEC-023`
+remains `Proposed`.

@@ -1,8 +1,12 @@
 # Chapter 15 Consistency, Diagram Reuse and Source Review, 2026-07-07
 
-Reviewed commit: `54a84e0 Refine Chapter 15 business process modelling draft`
+Reviewed baseline draft: `54a84e0 Refine Chapter 15 business process modelling draft`
 
-Scope: Chapter 15 manuscript, `GLOSSARY.md`, `DIAGRAM_REGISTER.md`, `SOURCE_REGISTER.md`, `DECISIONS.md`, neighbouring Chapters 14 and 16, and the registered research notes for the source keys used by Chapter 15.
+Completion evidence commit: `4b9f068 Complete Chapter 15 review and diagram assets`
+
+Scope: Chapter 15 manuscript, `GLOSSARY.md`, `DIAGRAM_REGISTER.md`,
+`SOURCE_REGISTER.md`, `DECISIONS.md`, neighbouring Chapters 14 and 16, and the
+registered research notes for the source keys used by Chapter 15.
 
 ## Terminology and Cross-Chapter Consistency
 
@@ -27,7 +31,9 @@ Scope: Chapter 15 manuscript, `GLOSSARY.md`, `DIAGRAM_REGISTER.md`, `SOURCE_REGI
 | FIG-13-02 | Registered, `Review` | Suitable reuse for the Horizon Bank customer onboarding value stream. |
 | FIG-15-01 | Registered, `Review` | Suitable original selection guide for choosing the process-related model by question. |
 
-`FIG-15-01` was added after author direction to complete the diagram work. It remains a selection guide and does not introduce notation teaching or a new process example.
+`FIG-15-01` was added after author direction to complete the diagram work. It
+remains a selection guide and does not introduce notation teaching or a new
+process example.
 
 ## Source and Copyright Verification
 
@@ -38,7 +44,8 @@ Scope: Chapter 15 manuscript, `GLOSSARY.md`, `DIAGRAM_REGISTER.md`, `SOURCE_REGI
 | OMG-DMN-1.5 | Yes | Separation of repeatable decision logic from process flow. | Pass |
 | OPEN-GROUP-BIZARCH-GUIDES-2022 | Yes | Value stream framing reused from Chapters 13 and 14. | Pass |
 
-The chapter does not reproduce standards text, metamodels, official tables or official diagrams. It uses short source keys and original prose.
+The chapter does not reproduce standards text, metamodels, official tables or
+official diagrams. It uses short source keys and original prose.
 
 ## Findings
 
@@ -50,4 +57,6 @@ The chapter does not reproduce standards text, metamodels, official tables or of
 
 ## Recommendation
 
-Terminology, cross-chapter consistency, diagram reuse, `FIG-15-01` registration and source verification pass. Chapter 15 can proceed to author review once the quality gate and validation checks pass.
+Terminology, cross-chapter consistency, diagram reuse, `FIG-15-01`
+registration and source verification pass. Chapter 15 can proceed to author
+review once the quality gate and validation checks pass.

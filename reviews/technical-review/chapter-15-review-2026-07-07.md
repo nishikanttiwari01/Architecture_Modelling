@@ -1,12 +1,17 @@
 # Chapter 15 Technical Review, 2026-07-07
 
-Reviewed commit: `54a84e0 Refine Chapter 15 business process modelling draft`
+Reviewed baseline draft: `54a84e0 Refine Chapter 15 business process modelling draft`
 
-Scope: `manuscript/part-03-diagram-selection/15-business-processes.md`, registered source notes for BPMN, UML, DMN and value streams, reused figure entries in `DIAGRAM_REGISTER.md`, and `DEC-023`.
+Completion evidence commit: `4b9f068 Complete Chapter 15 review and diagram assets`
+
+Scope: `manuscript/part-03-diagram-selection/15-business-processes.md`,
+registered source notes for BPMN, UML, DMN and value streams, reused figure
+entries in `DIAGRAM_REGISTER.md`, and `DEC-023`.
 
 ## Review Pass
 
-Technical accuracy was reviewed against the chapter purpose, `DEC-023`, the registered source notes, and the existing figure register.
+Technical accuracy was reviewed against the chapter purpose, `DEC-023`, the
+registered source notes, and the existing figure register.
 
 | Check | Result | Evidence |
 |---|---|---|
@@ -28,4 +33,6 @@ Technical accuracy was reviewed against the chapter purpose, `DEC-023`, the regi
 
 ## Recommendation
 
-Technical accuracy passes for author review. The later author-requested `FIG-15-01` selection guide reinforces the manuscript tables without changing the chapter scope or re-teaching notation syntax.
+Technical accuracy passes for author review. The later author-requested
+`FIG-15-01` selection guide reinforces the manuscript tables without changing
+the chapter scope or re-teaching notation syntax.
