@@ -4,6 +4,15 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-07
 
+### Completed Chapter 16 software structure modelling
+
+- Expanded Chapter 16, **Modelling Software Structure**, from scaffold to a complete Part III selection chapter covering system landscape, system context, container, component, package, class, dependency and deployment views.
+- Integrated `FIG-16-01` into the chapter with the required caption and surrounding explanatory prose, while keeping the figure at `Review`, not `Approved`.
+- Created Chapter 16 technical, beginner, consistency and final review records, plus `reviews/chapter-gates/CH-16-quality-gate.md`.
+- Updated `STATUS.md` so Chapter 16 is `Ready for Author Approval`, not `Approved`.
+- Updated `DEC-024` consequences to reflect the completed chapter while keeping the decision `Proposed`.
+- Reused existing registered C4 and UML source notes; no new source notes were added.
+
 ### Created Chapter 16 selection-guide diagram
 
 - Added `FIG-16-01`, "Choosing the Right Software Structure View", as the required Chapter 16 visual guide for selecting between system landscape, system context, container, component, package, class, dependency and deployment boundary views.
