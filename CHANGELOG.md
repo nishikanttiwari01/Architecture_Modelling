@@ -10,6 +10,8 @@ All notable repository and manuscript changes are recorded here. This is a proje
   preserving wording, status and meaning.
 - Added a follow-up formatting-only correction that includes the Chapter 17 PlantUML
   source file in the committed line-break changes.
+- Rewrote the Chapter 17 manuscript, review evidence and PlantUML source files with
+  normal LF line endings and real physical Markdown or PlantUML line breaks.
 - Left Chapter 17 at `Ready for Author Approval`, `FIG-17-01` at `Review` and
   `DEC-025` at `Proposed`.
 
