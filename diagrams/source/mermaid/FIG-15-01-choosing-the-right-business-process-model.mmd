@@ -3,6 +3,7 @@ flowchart TD
     start["Start with the architecture question"]
 
     %% Question and model nodes
+
     %% Landscape and value questions
     landscape["Overall process landscape?"]
     pa["Process architecture"]
@@ -34,34 +35,48 @@ flowchart TD
     interaction["Software interaction over time?"]
     sequence["UML sequence or C4 dynamic view"]
 
+    %% Fallback node
     discuss["Clarify the modelling purpose"]
 
     %% Decision path
+
+    %% Start and landscape path
     start --> landscape
     landscape -- "Choose" --> pa
     landscape -- "If not" --> value
+
+    %% Value and collaboration path
     value -- "Choose" --> vs
     value -- "If not" --> handoffs
     handoffs -- "Choose" --> collab
     handoffs -- "If not" --> flow
+
+    %% Flow and exception path
     flow -- "Choose" --> bpmn
     flow -- "If not" --> exception
     exception -- "Choose" --> exview
     exception -- "If not" --> responsibility
+
+    %% Responsibility and decision path
     responsibility -- "Choose" --> matrix
     responsibility -- "If not" --> decision
     decision -- "Choose" --> dmn
     decision -- "If not" --> behaviour
+
+    %% System and interaction path
     behaviour -- "Choose" --> activity
     behaviour -- "If not" --> interaction
     interaction -- "Choose" --> sequence
     interaction -- "If not" --> discuss
 
     %% Styling
+
+    %% Class definitions
     classDef question fill:#f7f7f7,stroke:#333333,stroke-width:1px,color:#111111;
     classDef model fill:#eaf4ff,stroke:#23527c,stroke-width:1px,color:#111111;
     classDef fallback fill:#fff4e6,stroke:#8a5a00,stroke-width:1px,color:#111111;
 
+    %% Class assignments
     class start,landscape,value,handoffs,flow,exception,responsibility,decision,behaviour,interaction question;
     class pa,vs,collab,bpmn,exview,matrix,dmn,activity,sequence model;
     class discuss fallback;

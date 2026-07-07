@@ -2,10 +2,15 @@
 
 ## Evidence Commits
 
-| Purpose | Commit |
-|---|---|
-| Reviewed baseline draft | `54a84e0 Refine Chapter 15 business process modelling draft` |
-| Completion evidence | `4b9f068 Complete Chapter 15 review and diagram assets` |
+Baseline reviewed for content:
+
+- Commit: `54a84e0 Refine Chapter 15 business process modelling draft`
+- Purpose: reviewed Chapter 15 after the focused refinement pass.
+
+Completion evidence for Chapter 15 review and diagram workflow:
+
+- Commit: `4b9f068 Complete Chapter 15 review and diagram assets`
+- Purpose: added FIG-15-01, formal review records, the quality gate and status updates.
 
 Scope: `manuscript/part-03-diagram-selection/15-business-processes.md`,
 registered source notes for BPMN, UML, DMN and value streams, reused figure

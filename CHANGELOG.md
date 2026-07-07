@@ -7,6 +7,7 @@ All notable repository and manuscript changes are recorded here. This is a proje
 ### Cleaned Chapter 15 review evidence formatting
 
 - Properly reformatted Chapter 15 review evidence and FIG-15-01 Mermaid source with real Markdown/Mermaid line breaks, correcting the earlier hygiene attempt in `887c9fe`.
+- Rewrote the Chapter 15 evidence commit metadata as line-broken Markdown bullet sections so Git object content renders with real line breaks on GitHub.
 
 ### Completed Chapter 15 formal review
 
