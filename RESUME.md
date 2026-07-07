@@ -80,7 +80,7 @@ The final Chapter 13 review (2026-07-03, reviewed commit `bd6dc47`) then confirm
 
 ## Next chapter
 
-Chapter 14, **Modelling Business Strategy and Capabilities**, has been drafted and then revised. It is now `Revision Required` with an interim quality-gate score of `8.2/10`. Both figures, `FIG-14-01` and `FIG-14-02`, remain `Planned` with `Pending` source and export; no diagram source or export exists. `DEC-022` is `Proposed`. Chapter 13 remains `Ready for Author Approval` with its six figures at `Review`. Chapter 15, **Modelling Business Processes**, remains `Planned` and was not started.
+Chapter 14, **Modelling Business Strategy and Capabilities**, has been drafted, revised, and then given a focused specification clarity correction (2026-07-07). It is now `Revision Required` with an interim quality-gate score of `8.2/10`. The clarity correction made both figure datasets properly delimited Markdown tables: `FIG-14-01` now has an eight-column traceability table with IDs and labels plus an open-assumption column, and `FIG-14-02` has a full-header capability-by-stage matrix; each specification is declared the authoritative dataset, so no cell value is left for the diagram creator to infer. Both figures, `FIG-14-01` and `FIG-14-02`, remain `Planned` with `Pending` source and export; no diagram source or export exists. `DEC-022` is `Proposed`. Chapter 13 remains `Ready for Author Approval` with its six figures at `Review`. This correction did not modify Chapter 15.
 
 ## Next exact action
 

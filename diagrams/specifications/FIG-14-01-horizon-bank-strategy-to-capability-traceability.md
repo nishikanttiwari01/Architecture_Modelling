@@ -29,14 +29,14 @@ Every element carries the stable identifier used in the manuscript.
 
 ## Required relationships
 
-Use the exact mapping below. Each row is one traceability thread. Connectors are simplified teaching links with neutral directional verbs (for example, `raises`, `sets`, `needs`, `guides`, `delivers`); do not present them as formal ArchiMate relationships.
+Use the exact mapping below. Each row is one traceability thread. Connectors are simplified teaching links with neutral directional verbs (for example, `raises`, `sets`, `needs`, `guides`, `delivers`); do not present them as formal ArchiMate relationships. This table is the authoritative traceability dataset for FIG-14-01: the figure must reproduce these four threads exactly, including every identifier, label, capability set, course of action, work package, stakeholder owner and open assumption. No cell value may be inferred or invented at production time, and the same four rows appear in the Chapter 14 manuscript traceability table.
 
-| Driver | Goal | Outcome | Capabilities | Course of Action | Work Package | Stakeholder owner |
-|---|---|---|---|---|---|---|
-| DRV-14-01 | GOAL-14-01 | OUT-14-01 | Identity Verification, Financial Crime Screening, Risk Assessment | COA-14-01 | WP-14-01 | Executive Sponsor |
-| DRV-14-02 | GOAL-14-02 | OUT-14-02 | Financial Crime Screening, Payment Screening, Data Governance | COA-14-01 and COA-14-02 | WP-14-01 and WP-14-02 | Compliance Officer |
-| DRV-14-04 | GOAL-14-03 | OUT-14-03 | Payment Initiation, Event Governance, Notification Management | COA-14-02 | WP-14-02 | Product Manager |
-| DRV-14-03 | GOAL-14-04 | OUT-14-04 | Event Governance, Data Governance | COA-14-02 | WP-14-02 | Platform Engineer |
+| Driver ID and label | Goal ID and label | Outcome ID and label | Capabilities | Course of Action | Work Package | Stakeholder owner | Open assumption or decision |
+|---|---|---|---|---|---|---|---|
+| DRV-14-01 Customer expectation for fast account access | GOAL-14-01 Reduce time to usable banking services | OUT-14-01 Median onboarding time reduced | Identity Verification, Financial Crime Screening, Risk Assessment | COA-14-01 Streamline identity and screening within onboarding | WP-14-01 Onboarding Uplift | Executive Sponsor | Baseline and target to be established |
+| DRV-14-02 Regulatory scrutiny of financial crime | GOAL-14-02 Strengthen screening traceability | OUT-14-02 Every screening decision evidenced | Financial Crime Screening, Payment Screening, Data Governance | COA-14-01 and COA-14-02 | WP-14-01 and WP-14-02 | Compliance Officer | Evidence-retention scope to be agreed |
+| DRV-14-04 Competition from digital-first banks | GOAL-14-03 Improve payment transparency | OUT-14-03 Payment status available promptly | Payment Initiation, Event Governance, Notification Management | COA-14-02 Modernise payments through governed reuse and events | WP-14-02 Payment Modernisation | Product Manager | Latency target to be agreed |
+| DRV-14-03 Cost of legacy integration | GOAL-14-04 Reduce integration cost and fragility | OUT-14-04 Fewer point-to-point interfaces | Event Governance, Data Governance | COA-14-02 Modernise payments through governed reuse and events | WP-14-02 Payment Modernisation | Platform Engineer | Interface-count baseline to be established |
 
 Shared capabilities (for example, Financial Crime Screening in the DRV-14-01 and DRV-14-02 threads) may appear more than once as visual references only when the same capability name is shown and the caption states that repeated appearances refer to one controlled capability. GOAL-14-02 is deliberately served by both WP-14-01 and WP-14-02.
 

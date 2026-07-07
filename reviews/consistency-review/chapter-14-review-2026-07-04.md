@@ -16,3 +16,9 @@ Scope: Chapter 14 manuscript, FIG-14-01 and FIG-14-02 specifications, `examples/
 | CH14-CON-08 | Low | GLOSSARY | New reader-facing terms (Course of Action, Work Package, capability levelling, cross-map) were not in the glossary. | Add concise glossary rows consistent with existing entries. | Resolved. Glossary rows added without duplicating existing terms. |
 
 Consistency: conditional pass. Controlled names, IDs and classifications now agree across the manuscript, specifications, example files and registers.
+
+## Specification clarity correction, 2026-07-07
+
+- `FIG-14-01` and `FIG-14-02` datasets are now properly delimited Markdown tables and are each stated to be the authoritative dataset for their figure.
+- The `FIG-14-02` matrix stage-name headers were aligned between the specification and the Chapter 14 manuscript matrix (`S4 Banking relationship established`, `S5 Services ready to use`, `Strategic importance for GOAL-14-01`). The primary, supporting and importance markers are identical in both; the specification additionally records a rationale column as production detail, which the manuscript keeps in prose for page-width readability.
+- No cell value is left for the diagram creator to infer. No status changed: Chapter 14 remains `Revision Required`, both figures remain `Planned`, and `DEC-022` remains `Proposed`.

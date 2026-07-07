@@ -19,3 +19,11 @@ Scope: `manuscript/part-03-diagram-selection/14-business-strategy-capabilities.m
 Open technical item: diagram sources and exports are intentionally not created, because the FIG-14-01 and FIG-14-02 specifications are not yet author-approved. Formal ArchiMate relationship verification against the licensed specification remains open and requires a licensed human reviewer; until then the teaching-link classification stands.
 
 Technical accuracy: conditional pass, pending author approval of the specifications and the open relationship-verification item.
+
+## Specification clarity correction, 2026-07-07
+
+Focused, non-semantic correction to remove ambiguity in the two figure datasets; no finding above was reopened and no diagram was produced.
+
+- `FIG-14-01` traceability dataset is now a properly delimited Markdown table with eight columns (Driver ID and label, Goal ID and label, Outcome ID and label, Capabilities, Course of Action, Work Package, Stakeholder owner, Open assumption or decision) covering the same four threads, and is stated to be the authoritative dataset for the figure.
+- `FIG-14-02` matrix is a properly delimited Markdown table with full stage-name headers, so blank cells are unambiguous; it is stated to be the authoritative dataset.
+- No cell value is left for the diagram creator to infer. Diagram production remains deferred pending author approval of the specifications; no source or export was created.

@@ -160,7 +160,7 @@ A capability map says what the organisation can do. A value stream says how valu
 
 FIG-14-02 renders this as a matrix for the Horizon Bank onboarding journey. The rows are unique capabilities, the columns are the five value stages from the FIG-13-02 value stream, and each cell marks a primary enabler (P) or a supporting enabler (S). A blank cell means no material contribution in this teaching view. The final column rates strategic importance assessed specifically against GOAL-14-01, reduce time to usable banking services, not against every possible strategy. The level-one parent `Customer Onboarding` is represented by its level-two children rather than as a separate row, so the matrix does not double count.
 
-| Capability | S1 Need understood | S2 Application established | S3 Identity and eligibility confirmed | S4 Relationship established | S5 Services ready | Importance for GOAL-14-01 |
+| Capability | S1 Need understood | S2 Application established | S3 Identity and eligibility confirmed | S4 Banking relationship established | S5 Services ready to use | Strategic importance for GOAL-14-01 |
 |---|---|---|---|---|---|---|
 | Digital Servicing | P | | | | P | M |
 | Relationship Management | S | | | | | L |

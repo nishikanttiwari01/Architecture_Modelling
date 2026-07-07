@@ -47,3 +47,12 @@ Interim average: `8.2/10`.
 ## Gate decision
 
 Open and non-passing. Keep Chapter 14 at `Revision Required` and both figures at `Planned`. Do not create diagram sources or exports, and do not mark anything `Approved`, until the author approves the specifications. Chapter 15 was not started.
+
+## Specification clarity correction, 2026-07-07
+
+A focused, non-semantic correction made both figure datasets properly delimited Markdown tables so no cell value is left for the diagram creator to infer:
+
+- `FIG-14-01` traceability dataset is now an eight-column table (Driver, Goal and Outcome shown with ID and label, plus Capabilities, Course of Action, Work Package, Stakeholder owner and Open assumption or decision) and is declared the authoritative dataset for the figure.
+- `FIG-14-02` matrix now uses full stage-name headers, aligned with the manuscript matrix, and is declared the authoritative dataset.
+
+The gate remains interim and non-passing. No score changed. Chapter 14 remains `Revision Required`; both figures remain `Planned`; `DEC-022` remains `Proposed`; nothing is marked `Approved`; no diagram source or export was created; this correction did not modify Chapter 15.

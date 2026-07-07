@@ -30,3 +30,7 @@ All commands run at the end of the revision returned exit 0: `python -m compilea
 ## Recommendation
 
 Chapter 14 is recommended to remain `Revision Required` until the author reviews this revision, approves the FIG-14-01 and FIG-14-02 specifications for production, and accepts DEC-022. No diagram assets exist, so the quality gate stays interim and non-passing. Nothing is marked `Approved`. Chapter 15 was not started.
+
+## Specification clarity correction, 2026-07-07
+
+A focused correction made both figure datasets properly delimited Markdown tables: `FIG-14-01` now has an eight-column traceability table (IDs with labels plus an open-assumption column) and `FIG-14-02` has a full-header capability-by-stage matrix. Each specification states it is the authoritative dataset, so no cell value is left for the diagram creator to infer. This did not change any finding status or any control status. Chapter 14 remains `Revision Required`; both figures remain `Planned`; `DEC-022` remains `Proposed`; nothing is marked `Approved`; diagram production remains deferred pending author approval; this correction did not modify Chapter 15.

@@ -36,9 +36,9 @@ Render as a grid. Do not repeat a full capability list beneath every stage, and 
 
 ### Exact matrix data
 
-Strategic importance is assessed against GOAL-14-01, Reduce time to usable banking services, only.
+Strategic importance is assessed against GOAL-14-01, Reduce time to usable banking services, only. This table is the authoritative matrix dataset for FIG-14-02: every `P`, `S`, blank cell and importance rating must be reproduced exactly, and none is left for the diagram creator to infer. The `P`, `S` and importance markers match the Chapter 14 manuscript matrix.
 
-| Capability | S1 | S2 | S3 | S4 | S5 | Strategic importance (GOAL-14-01) | Rationale |
+| Capability | S1 Need understood | S2 Application established | S3 Identity and eligibility confirmed | S4 Banking relationship established | S5 Services ready to use | Strategic importance for GOAL-14-01 | Rationale |
 |---|---|---|---|---|---|---|---|
 | Digital Servicing | P | | | | P | M | Enables self-service capture and later service use |
 | Relationship Management | S | | | | | L | Helps clarify need but is not the speed bottleneck |
