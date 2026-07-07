@@ -33,7 +33,7 @@
 | 12 | Security Modelling | Approved | 100 | 100 | 100 | 100 | 100 | Approved by author; final quality score 9.1; four active figures completed; diagrams remain Review pending final page-layout review, particularly FIG-12-01 and FIG-12-04 |
 | 13 | Other Useful Modelling Approaches | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review |
 | 14 | Modelling Business Strategy and Capabilities | Revision Required | 100 | 100 | 20 | 60 | 100 | Author review of the revision; approve `FIG-14-01` and `FIG-14-02` specifications and accept `DEC-022`, then produce figures |
-| 15 | Modelling Business Processes | Drafting | 100 | 100 | 0 | 0 | 100 | Review draft, decide whether a visual Chapter 15 selection guide is required, and then run formal review passes |
+| 15 | Modelling Business Processes | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-15-01` at `Review`; `DEC-023` remains `Proposed` |
 | 16 | Modelling Software Structure | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 17 | Modelling User and System Interaction | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 18 | Modelling Integration and Runtime Behaviour | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -107,10 +107,10 @@
 
 ## Current recommended next task
 
-Chapter 15, **Modelling Business Processes**, is now `Drafting`. The draft is complete against the current scaffold and frames the chapter as process-model selection rather than BPMN re-teaching. It covers process architecture, process levels, BPMN selection, swimlanes and responsibilities, exceptions and controls, process metrics, process-to-capability traceability, a mixed notation selection table, worked Simple Online Store and Horizon Bank examples, common mistakes, key takeaways, a practical exercise, a review checklist and references. It reuses existing registered figures (`FIG-06-01`, `FIG-06-02`, `FIG-06-03`, `FIG-04-05`, `FIG-09-04` and `FIG-13-02`) and existing official source notes; no `FIG-15-*` diagram, specification, source or export was created. `DEC-023` is recorded as `Proposed`. The next action is review of the Chapter 15 draft, including whether the manuscript-table selection guide is sufficient or whether the author wants a visual selection-guide figure to be specified.
+Chapter 15, **Modelling Business Processes**, is now `Ready for Author Approval`. Formal review passes for technical accuracy, beginner comprehension, educational flow, terminology and cross-chapter consistency, diagram reuse and accessibility, source and copyright verification, and copy-editing found no unresolved critical, major or minor issues. The chapter remains a process-model selection chapter rather than a BPMN re-teaching chapter. It reuses existing registered figures (`FIG-06-01`, `FIG-06-02`, `FIG-06-03`, `FIG-04-05`, `FIG-09-04` and `FIG-13-02`) and existing official source notes. `FIG-15-01` has been registered, specified, rendered and set to `Review`. `DEC-023` remains `Proposed`. The next action is author review of Chapter 15, author review of `FIG-15-01`, and any author decision on `DEC-023`.
 
 Chapter 14, **Modelling Business Strategy and Capabilities**, remains `Revision Required` with an interim quality-gate score of `8.2/10`. `FIG-14-01` and `FIG-14-02` remain `Planned` with `Pending` source and export pending author approval of their specifications, and `DEC-022` remains `Proposed`. Nothing is marked `Approved`.
 
 Chapter 13, **Other Useful Modelling Approaches**, remains `Ready for Author Approval` with final quality score 9.0. Its six figures remain at `Review`, with explicit author decisions still open for chapter and figure approval, native Draw.io graphical-open and export-fidelity comparison (`DEC-021`), and final book-page layout placement of wider landscape figures (`DEC-014`).
 
-Last updated: 2026-07-07 (Chapter 15 drafted)
+Last updated: 2026-07-07 (Chapter 15 formal review and diagram completion)

@@ -4,6 +4,15 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-07
 
+### Completed Chapter 15 formal review
+
+- Created Chapter 15 technical, beginner, consistency and final review records, plus the Chapter 15 quality gate.
+- Confirmed the chapter remains a process-model selection chapter, with clear distinctions across value stream, process architecture, BPMN process, BPMN collaboration, focused BPMN exception view, responsibility matrix and swimlanes, UML activity, DMN, and UML sequence or C4 dynamic views.
+- Confirmed all reused figures are registered and all source keys are registered; no new sources were added.
+- Added `FIG-15-01`, "Choosing the Right Business Process Model", with registered specification, Mermaid source and SVG export.
+- Recorded the final Chapter 15 diagram decision in `DEC-023` while keeping the decision `Proposed` pending explicit author acceptance.
+- Removed draft scaffolding from the reviewed chapter and kept Chapter 15 at `Ready for Author Approval`, not `Approved`. `FIG-15-01` remains at `Review`.
+
 ### Refined Chapter 15 business process modelling draft
 
 - Added a short bridge from Chapter 14 to Chapter 15, clarifying that capabilities say what the business needs while process models show how work moves through time, roles, decisions, waits and exceptions.

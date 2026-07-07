@@ -2,7 +2,7 @@
 title: "Modelling Business Processes"
 chapter: 15
 part: "part-03-diagram-selection"
-status: "Drafting"
+status: "Ready for Author Approval"
 author: "Nishikant Tiwari"
 last_updated: "2026-07-07"
 ---
@@ -34,8 +34,9 @@ By the end of this chapter, the reader should be able to:
 
 ## Required models and artefacts
 
-This chapter uses a mixed notation selection guide as a manuscript table. It reuses existing figures rather than introducing new Chapter 15 diagram source:
+This chapter uses a mixed notation selection guide as manuscript tables and one original decision-guide figure. It also reuses existing figures from earlier chapters:
 
+- FIG-15-01: Choosing the Right Business Process Model.
 - FIG-06-01: Online Store order fulfilment BPMN process.
 - FIG-06-02: Horizon Bank customer onboarding BPMN collaboration.
 - FIG-06-03: Horizon Bank payment repair BPMN exception collaboration.
@@ -56,8 +57,6 @@ This chapter uses a mixed notation selection guide as a manuscript table. It reu
 - `[OPEN-GROUP-BIZARCH-GUIDES-2022]` supports the value-stream framing reused from Chapters 13 and 14.
 - Chapter guidance is the author's practical interpretation for beginner architecture work.
 - Existing source notes are sufficient for this draft; no new source note is required.
-
-## Planned chapter structure
 
 ## Why process modelling follows capability modelling
 
@@ -284,6 +283,12 @@ Then check the boundary of the model:
 | DMN decision table or DRD | Rules, inputs, decisions and authorities | Human task sequence |
 | UML sequence or C4 dynamic view | Runtime message order | Business responsibility and process ownership |
 
+The same choice can be read as a simple decision path in FIG-15-01. Use it as a first filter, then check the table above for audience, boundary and modelling purpose.
+
+![Figure FIG-15-01. Choosing the right business process model.](../../diagrams/exported/svg/FIG-15-01-choosing-the-right-business-process-model.svg)
+
+Figure FIG-15-01. Choosing the right business process model. It helps an architect select a process-related view based on the question being asked, not on personal notation preference.
+
 No model is universally better. The right model is the smallest one that answers the current question without misleading the audience. If the discussion moves from value stages to operational work, move from value stream to BPMN. If the discussion moves from process flow to rule logic, split out DMN. If the discussion moves from business work to software responsibilities, move to Chapter 16.
 
 ## Worked example
@@ -397,10 +402,3 @@ Chapter source notes are maintained under `research/bpmn/`, `research/uml/`, `re
 - `[OMG-UML]`: Object Management Group UML 2.5.1 specification.
 - `[OMG-DMN-1.5]`: Object Management Group DMN 1.5 formal specification.
 - `[OPEN-GROUP-BIZARCH-GUIDES-2022]`: The Open Group TOGAF Series Guides for Business Capabilities and Value Streams.
-
-## Drafting notes
-
-- Target length: 2,000 to 4,000 words unless the chapter scope justifies more.
-- Draft uses existing official source notes and reuses existing figures. No Chapter 15 diagram specification, source or export has been created.
-- Keep this file as the canonical manuscript source for the chapter.
-- Do not mark this chapter `Approved` without explicit author approval.

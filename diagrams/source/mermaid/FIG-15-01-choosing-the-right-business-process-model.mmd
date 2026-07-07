@@ -1,0 +1,59 @@
+flowchart TD
+    start["Start with the architecture question"]
+
+    landscape["Overall process landscape?"]
+    pa["Process architecture"]
+
+    value["Value progression?"]
+    vs["Value stream"]
+
+    handoffs["Participants and hand-offs?"]
+    collab["BPMN collaboration"]
+
+    flow["Business flow and exceptions?"]
+    bpmn["BPMN process"]
+
+    exception["Failure, wait or escalation?"]
+    exview["Focused BPMN exception view"]
+
+    responsibility["Responsibility ownership?"]
+    matrix["Responsibility matrix or swimlanes"]
+
+    decision["Repeatable decision logic?"]
+    dmn["DMN decision model"]
+
+    behaviour["Internal system behaviour?"]
+    activity["UML activity"]
+
+    interaction["Software interaction over time?"]
+    sequence["UML sequence or C4 dynamic view"]
+
+    discuss["Clarify the modelling purpose"]
+
+    start --> landscape
+    landscape -- "Choose" --> pa
+    landscape -- "If not" --> value
+    value -- "Choose" --> vs
+    value -- "If not" --> handoffs
+    handoffs -- "Choose" --> collab
+    handoffs -- "If not" --> flow
+    flow -- "Choose" --> bpmn
+    flow -- "If not" --> exception
+    exception -- "Choose" --> exview
+    exception -- "If not" --> responsibility
+    responsibility -- "Choose" --> matrix
+    responsibility -- "If not" --> decision
+    decision -- "Choose" --> dmn
+    decision -- "If not" --> behaviour
+    behaviour -- "Choose" --> activity
+    behaviour -- "If not" --> interaction
+    interaction -- "Choose" --> sequence
+    interaction -- "If not" --> discuss
+
+    classDef question fill:#f7f7f7,stroke:#333333,stroke-width:1px,color:#111111;
+    classDef model fill:#eaf4ff,stroke:#23527c,stroke-width:1px,color:#111111;
+    classDef fallback fill:#fff4e6,stroke:#8a5a00,stroke-width:1px,color:#111111;
+
+    class start,landscape,value,handoffs,flow,exception,responsibility,decision,behaviour,interaction question;
+    class pa,vs,collab,bpmn,exview,matrix,dmn,activity,sequence model;
+    class discuss fallback;
