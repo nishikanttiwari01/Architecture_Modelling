@@ -4,6 +4,13 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-07
 
+### Refined Chapter 15 business process modelling draft
+
+- Added a short bridge from Chapter 14 to Chapter 15, clarifying that capabilities say what the business needs while process models show how work moves through time, roles, decisions, waits and exceptions.
+- Split or tightened the wider Chapter 15 tables for process architecture, process levels, responsibility, process metrics, process-to-capability traceability and model selection.
+- Added a clear beginner choice point in the worked example for choosing value stream, BPMN collaboration, DMN, UML activity, or C4/UML sequence views.
+- Checked reused figure references against the existing diagram register and kept the chapter within `DEC-023`: no `FIG-15-*` diagram, specification, source, export or preview was created, and nothing was marked `Approved`.
+
 ### Drafted Chapter 15, Modelling Business Processes
 
 - Expanded Chapter 15 from scaffold to a complete draft and moved it from `Planned` to `Drafting`.

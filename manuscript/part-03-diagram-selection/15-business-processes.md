@@ -59,6 +59,12 @@ This chapter uses a mixed notation selection guide as a manuscript table. It reu
 
 ## Planned chapter structure
 
+## Why process modelling follows capability modelling
+
+Chapter 14 used capabilities and value streams to ask what the business needs and where value is created. Chapter 15 moves one step closer to the work itself. A capability says what the organisation needs to be able to do. A process model shows how work moves through time, across roles, through decisions, into waits, and around exceptions.
+
+That is why the two chapters sit together. Capabilities help the team choose the area worth improving. Process models help the team see how the selected work actually happens, where ownership changes, where a customer or system waits, and where a control or exception changes the path.
+
 ## Process architecture
 
 Process architecture answers: **which business processes exist, how they relate, who owns them and which processes need more detailed modelling?**
@@ -67,17 +73,25 @@ It is tempting to start by drawing the first process someone mentions. A better 
 
 For the Simple Online Store, the process landscape might include `Place order`, `Fulfil order`, `Handle return`, `Respond to customer enquiry` and `Resolve payment exception`. For Horizon Bank, it might include `Onboard customer`, `Open account`, `Initiate payment`, `Repair payment`, `Investigate fraud alert` and `Handle customer service case`.
 
-A process architecture is not the same as a capability map. A capability says what the organisation must be able to do, such as `Identity Verification` or `Payment Screening`. A process says how work happens over time, such as capture application, request screening, wait for result, review exception and notify the customer. Chapter 14 used capabilities and value streams to decide where change matters. This chapter shows how to model the operational flow once the team needs sequence, responsibility and exceptions.
+A process architecture is not the same as a capability map. A capability says what the organisation needs to be able to do, such as `Identity Verification` or `Payment Screening`. A process says how work happens over time, such as capture application, request screening, wait for result, review exception and notify the customer. Chapter 14 used capabilities and value streams to decide where change matters. This chapter shows how to model the operational flow once the team needs sequence, responsibility and exceptions.
 
 The first process-architecture question is often not "which BPMN symbols do we need?", but "which process deserves a detailed model?" Choose the process where decisions will be made: a high-risk exception path, a hand-off that causes delay, a control that must be evidenced, or a customer journey stage where ownership is unclear.
 
-At this level, a table is often better than a diagram:
+At this level, two small tables are often better than one wide diagram or one crowded table. First, name the process scope:
 
-| Process | Trigger | Outcome | Owner | Why model it now? |
-|---|---|---|---|---|
-| Handle return | Customer requests return | Return approved, rejected or escalated | Customer Support Agent | Clarify eligibility, refund and collection hand-offs |
-| Onboard customer | Retail Customer submits application | Customer relationship ready or application rejected | Relationship Manager | Connect onboarding roles, screening and exception review |
-| Repair payment | Payment posting fails | Payment resubmitted, cancelled or timed out | Operations Analyst | Make exception ownership and customer response timing visible |
+| Process | Trigger | Outcome |
+|---|---|---|
+| Handle return | Customer requests return | Return approved, rejected or escalated |
+| Onboard customer | Retail Customer submits application | Customer relationship ready or application rejected |
+| Repair payment | Payment posting fails | Payment resubmitted, cancelled or timed out |
+
+Then record ownership and the reason for modelling it now:
+
+| Process | Owner | Why model it now? |
+|---|---|---|
+| Handle return | Customer Support Agent | Clarify eligibility, refund and collection hand-offs |
+| Onboard customer | Relationship Manager | Connect onboarding roles, screening and exception review |
+| Repair payment | Operations Analyst | Make exception ownership and customer response timing visible |
 
 The process architecture gives the reader a controlled list. The detailed process model then zooms into one selected process instead of trying to cover the whole bank or store on one page.
 
@@ -87,14 +101,14 @@ Process levels answer: **how much detail should this process model show?**
 
 Beginners often mix levels without noticing. A diagram might show `Open account`, `Click submit`, `Check sanctions list`, `Create customer record` and `Send API request` as if these were equivalent activities. They are not. Some are business outcomes, some are user-interface actions, some are control checks and some are implementation steps.
 
-Use four practical levels:
+Use four practical levels. Keep each row compact, because the point is to choose a level before adding detail:
 
-| Level | Question | Typical model | Example activity |
+| Level | Main question | Typical model | Example |
 |---|---|---|---|
-| Level 0: Process landscape | Which processes exist and relate? | Process catalogue or high-level map | Customer onboarding |
-| Level 1: End-to-end process | What major stages and outcomes occur? | Value stream or high-level BPMN | Application received to services ready |
-| Level 2: Operational process | Who does what, in what order, with what exceptions? | BPMN process or collaboration | Request screening and review possible match |
-| Level 3: Procedure or automation detail | Which fields, screens, service calls or engine steps occur? | Procedure, workflow design or technical sequence | Validate mandatory fields and call screening API |
+| Level 0: Landscape | Which processes exist? | Catalogue or high-level map | Customer onboarding |
+| Level 1: End to end | What major stages and outcomes occur? | Value stream or high-level BPMN | Application received to services ready |
+| Level 2: Operational | Who does what, in what order, with what exceptions? | BPMN process or collaboration | Request screening and review possible match |
+| Level 3: Procedure or automation | Which fields, screens, service calls or engine steps occur? | Procedure, workflow design or technical sequence | Validate mandatory fields and call screening API |
 
 Architecture work usually lives around levels 1 and 2. Level 0 helps select the scope. Level 3 becomes useful when implementation, workflow configuration, test design or operational procedure is the actual question. Do not force level 3 detail into a chapter whose audience is trying to understand process ownership and architecture implications.
 
@@ -104,7 +118,7 @@ For Horizon Bank onboarding, FIG-13-02 shows value stages. It does not show task
 
 BPMN selection answers: **when is BPMN the right model for the process question?**
 
-Business Process Model and Notation (BPMN) is the strongest choice in this chapter when the reader needs to see process order, participants, responsibility, events, gateways, messages and exceptions [OMG-BPMN]. It is especially useful when the process crosses organisational or system boundaries and when the exception path matters as much as the happy path.
+Business Process Model and Notation (BPMN) is often the right choice in this chapter when the reader needs to see process order, participants, responsibility, events, gateways, messages and exceptions [OMG-BPMN]. It is especially useful when the process crosses organisational or system boundaries and when the exception path matters as much as the happy path.
 
 Use a BPMN process diagram when the work stays inside one process owner or participant. FIG-06-01 does this for Online Store order fulfilment. It shows the main order fulfilment flow inside the Online Store, with stock availability and fulfilment outcomes. It deliberately avoids payment-provider internals, delivery-provider internals and software component design.
 
@@ -112,7 +126,7 @@ Use a BPMN collaboration diagram when multiple participants exchange messages. F
 
 Use a focused BPMN exception view when the problem is waiting, timeout, escalation, repair or rejection. FIG-06-03 shows payment repair after posting failure. The event-based gateway matters because it records that the process waits for whichever event happens first: customer correction or timeout.
 
-BPMN is not the best choice for every flow. A UML activity diagram may be enough when the flow is internal system logic. A value stream is better when the question is how stakeholder value progresses before operational detail is known. A DMN decision table is better when the question is the repeatable logic behind a decision result. A C4 dynamic diagram or UML sequence diagram is better when the question is message order between software parts.
+BPMN is not the right choice for every flow. A UML activity diagram may be enough when the flow is internal system logic. A value stream is more suitable when the question is how stakeholder value progresses before operational detail is known. A DMN decision table is more suitable when the question is the repeatable logic behind a decision result. A C4 dynamic diagram or UML sequence diagram is more suitable when the question is message order between software parts.
 
 The selection rule is simple: use BPMN when the process behaviour itself is the subject, not when the process is merely background context for a software, data, deployment or decision model.
 
@@ -138,14 +152,21 @@ Do not create a lane for every job title or application by habit. A lane should 
 
 For Horizon Bank onboarding, lanes might separate Digital Channels, Onboarding Operations and Compliance inside the Horizon Bank pool, with Financial Crime Platform shown as a separate pool. This distinction is important: a lane inside Horizon Bank means Horizon Bank owns the flow. A separate pool means the participant has its own behaviour and communicates by messages.
 
-When a responsibility view is needed but BPMN notation is too heavy for the audience, a simple responsibility matrix may be better. For example:
+When a responsibility view is needed but BPMN notation is too heavy for the audience, a simple responsibility matrix may be enough. To keep the table readable on a manuscript page, separate the accountable role from other involvement:
 
-| Process activity | Retail Customer | Relationship Manager | Operations Analyst | Compliance Officer |
-|---|---|---|---|---|
-| Submit application | Performs | Informed | | |
-| Validate application completeness | | Accountable | Supports | |
-| Review possible screening match | | Informed | Supports | Accountable |
-| Notify outcome | Receives | Accountable | Supports | Informed |
+| Process activity | Accountable or performing role |
+|---|---|
+| Submit application | Retail Customer performs |
+| Validate application completeness | Relationship Manager accountable |
+| Review possible screening match | Compliance Officer accountable |
+| Notify outcome | Relationship Manager accountable |
+
+| Process activity | Other involvement |
+|---|---|
+| Submit application | Relationship Manager informed |
+| Validate application completeness | Operations Analyst supports |
+| Review possible screening match | Operations Analyst supports; Relationship Manager informed |
+| Notify outcome | Retail Customer receives; Operations Analyst supports; Compliance Officer informed |
 
 This table is not a BPMN diagram. It is a responsibility view. Use it when ownership is the question and sequence is secondary.
 
@@ -157,16 +178,16 @@ The normal path is rarely enough for architecture review. A process model that s
 
 For beginner process modelling, show at least the important exception paths:
 
-| Exception type | Process modelling question | Example |
+| Exception type | Question to answer | Example |
 |---|---|---|
-| Missing information | How does the process request and wait for correction? | Customer must provide identity evidence |
+| Missing information | How does the process request and wait for correction? | Customer needs to provide identity evidence |
 | Business rejection | How is the negative outcome recorded and communicated? | Return request outside policy |
 | Control exception | Who reviews a risk or compliance concern? | Possible financial-crime screening match |
 | Technical failure | What business process starts when automation fails? | Payment posting failure creates repair case |
 | Timeout | What happens when a response does not arrive in time? | Customer correction deadline reached |
 | Escalation | When does another role or process intervene? | Compliance Officer reviews unresolved match |
 
-BPMN has useful notation for these cases, including boundary events, intermediate events, event-based gateways, escalations and alternative end events [OMG-BPMN]. The chapter does not need to re-teach every symbol from Chapter 6. The selection point is this: choose BPMN when these exception behaviours must be visible and reviewable.
+BPMN has useful notation for these cases, including boundary events, intermediate events, event-based gateways, escalations and alternative end events [OMG-BPMN]. The chapter does not need to re-teach every symbol from Chapter 6. The selection point is this: choose BPMN when these exception behaviours need to be visible and reviewable.
 
 Controls should be modelled with care. A control is not just another box labelled "check". The model should say what is controlled, who performs or owns it, what evidence is produced and what happens if the control fails. For Horizon Bank screening, the process should show the screening request, the received result, the review of a possible match and the outcome. A separate decision model or control table can hold the detailed rule logic and evidence requirements.
 
@@ -178,15 +199,20 @@ Process metrics answer: **how will the organisation know whether the process is 
 
 A process diagram explains flow. It does not automatically explain performance. Metrics make the model useful for improvement, but only if they are tied to the process question. Avoid attaching every possible measure to the diagram. Pick the few measures that reveal whether the process outcome, customer experience, risk control or operational health is acceptable.
 
-Useful process metrics include:
+Useful process metrics include flow and efficiency measures:
 
-| Metric type | Question | Example |
+| Metric type | Review question | Example |
 |---|---|---|
 | Cycle time | How long does the process take end to end? | Median time from application submitted to services ready |
 | Waiting time | Where does work sit idle? | Time waiting for customer correction |
-| Rework | How often must work be corrected or repeated? | Percentage of returns needing extra evidence |
+| Rework | How often is work corrected or repeated? | Percentage of returns needing extra evidence |
 | Exception rate | How often does the process leave the normal path? | Percentage of payments entering repair |
 | Straight-through processing | How often does the process complete without manual intervention? | Percentage of clear onboarding cases completed without operations review |
+
+Other measures focus on control and outcome quality:
+
+| Metric type | Review question | Example |
+|---|---|---|
 | Control evidence | Can required reviews be evidenced? | Percentage of screening decisions with retained evidence |
 | Outcome quality | Did the process produce the intended result? | Percentage of orders dispatched correctly first time |
 
@@ -204,15 +230,25 @@ Capabilities and processes are different, but they should not drift apart. A cap
 
 This traceability matters because process changes often lead to architecture changes. If a process waits for screening results, the architecture may need a status event, a case record, an integration contract and evidence retention. If a process relies on party data, the architecture may need a trusted party record. If a process has many payment repair cases, the architecture may need better validation, routing decisions or operational tooling.
 
-For Horizon Bank onboarding:
+For Horizon Bank onboarding, first map process segments to capabilities:
 
-| Process segment | Capabilities used | Architecture questions raised |
-|---|---|---|
-| Capture application | Digital Servicing, Document Capture | Which channel captures evidence, and where is it retained? |
-| Verify identity and eligibility | Identity Verification, Risk Assessment | Which data and decision inputs are required before proceeding? |
-| Screen customer | Financial Crime Screening | How are requests, results, possible matches and evidence retained? |
-| Establish relationship | Party Management, Account Opening | Which systems create party, customer and account records? |
-| Notify and enable service | Notification Management, Account Servicing | Which status events and customer messages are needed? |
+| Process segment | Capabilities used |
+|---|---|
+| Capture application | Digital Servicing, Document Capture |
+| Verify identity and eligibility | Identity Verification, Risk Assessment |
+| Screen customer | Financial Crime Screening |
+| Establish relationship | Party Management, Account Opening |
+| Notify and enable service | Notification Management, Account Servicing |
+
+Then use the same segments to ask architecture questions:
+
+| Process segment | Architecture question raised |
+|---|---|
+| Capture application | Which channel captures evidence, and where is it retained? |
+| Verify identity and eligibility | Which data and decision inputs are required before proceeding? |
+| Screen customer | How are requests, results, possible matches and evidence retained? |
+| Establish relationship | Which systems create party, customer and account records? |
+| Notify and enable service | Which status events and customer messages are needed? |
 
 The process model should not pretend that a capability is a step. `Financial Crime Screening` is a capability. `Request screening`, `Receive screening result` and `Review possible match` are process activities or events. Keeping that distinction protects the Chapter 14 capability work and makes Chapter 16 software structure easier to connect later.
 
@@ -220,17 +256,33 @@ The process model should not pretend that a capability is a step. `Financial Cri
 
 The selection table answers: **which model should a beginner reach for when the process question changes?**
 
-| Question | Best first model | Main audience | Use it for | Avoid using it for |
-|---|---|---|---|---|
-| Which major processes exist? | Process catalogue or process architecture table | Sponsors, process owners and architects | Scope selection and ownership | Detailed task sequence |
-| How does stakeholder value progress? | Value stream | Business architects, product owners and sponsors | Value stages and capability alignment | Roles, timers, message flows and exceptions |
-| What is the ordered business flow inside one owner? | BPMN process diagram | Analysts, process owners and architects | Activities, gateways, events and outcomes | Software component structure |
-| Which participants exchange messages? | BPMN collaboration diagram | Analysts, architects and control reviewers | Cross-boundary hand-offs and ownership | Internal application design |
-| What happens when the normal path fails? | Focused BPMN exception view | Operations, risk, compliance and architects | Repair, timeout, escalation and rejection paths | Full procedure manuals |
-| Who is responsible for each activity? | BPMN lanes or responsibility matrix | Process owners and operating teams | Hand-offs and accountability | Detailed timing or system internals |
-| What compact flow happens inside a system or service? | UML activity diagram | Architects, developers and testers | Algorithm-like or system-level behaviour | Multi-participant business collaboration |
-| What repeatable decision logic chooses an outcome? | DMN decision table or DRD | Business, risk, compliance and technology teams | Rules, inputs, decisions and authorities | Human task sequence |
-| Which software parts interact during one scenario? | UML sequence or C4 dynamic view | Architects, developers and testers | Runtime message order | Business responsibility and process ownership |
+Start by matching the question to a model and audience:
+
+| Question | First model to try | Main audience |
+|---|---|---|
+| Which major processes exist? | Process catalogue or process architecture table | Sponsors, process owners and architects |
+| How does stakeholder value progress? | Value stream | Business architects, product owners and sponsors |
+| What is the ordered business flow inside one owner? | BPMN process diagram | Analysts, process owners and architects |
+| Which participants exchange messages? | BPMN collaboration diagram | Analysts, architects and control reviewers |
+| What happens when the normal path fails? | Focused BPMN exception view | Operations, risk, compliance and architects |
+| Who is responsible for each activity? | BPMN lanes or responsibility matrix | Process owners and operating teams |
+| What compact flow happens inside a system or service? | UML activity diagram | Architects, developers and testers |
+| What repeatable decision logic chooses an outcome? | DMN decision table or DRD | Business, risk, compliance and technology teams |
+| Which software parts interact during one scenario? | UML sequence or C4 dynamic view | Architects, developers and testers |
+
+Then check the boundary of the model:
+
+| Model | Use it for | Avoid using it for |
+|---|---|---|
+| Process catalogue or process architecture table | Scope selection and ownership | Detailed task sequence |
+| Value stream | Value stages and capability alignment | Roles, timers, message flows and exceptions |
+| BPMN process diagram | Activities, gateways, events and outcomes | Software component structure |
+| BPMN collaboration diagram | Cross-boundary hand-offs and ownership | Internal application design |
+| Focused BPMN exception view | Repair, timeout, escalation and rejection paths | Full procedure manuals |
+| BPMN lanes or responsibility matrix | Hand-offs and accountability | Detailed timing or system internals |
+| UML activity diagram | Algorithm-like or system-level behaviour | Multi-participant business collaboration |
+| DMN decision table or DRD | Rules, inputs, decisions and authorities | Human task sequence |
+| UML sequence or C4 dynamic view | Runtime message order | Business responsibility and process ownership |
 
 No model is universally better. The right model is the smallest one that answers the current question without misleading the audience. If the discussion moves from value stages to operational work, move from value stream to BPMN. If the discussion moves from process flow to rule logic, split out DMN. If the discussion moves from business work to software responsibilities, move to Chapter 16.
 
@@ -239,6 +291,16 @@ No model is universally better. The right model is the smallest one that answers
 The Simple Online Store return process starts with a customer request. The first architecture question is modest: which model helps the team agree the flow without turning it into software design?
 
 A process architecture table names `Handle return` as the selected process. A value stream might be too high level if the problem is eligibility, refund and collection hand-offs. A BPMN collaboration is a good fit if the store needs to show messages between Customer, Online Store, Payment Provider System and Delivery Partner System. A responsibility matrix may be enough if the only argument is whether Customer Support Agent or Fulfilment owns the eligibility exception. A UML activity diagram could be enough if the team is only explaining eligibility logic inside the Online Store.
+
+Here is the beginner choice point. Choose the model by the question, not by the modeller's favourite notation:
+
+| If the question is... | Choose... |
+|---|---|
+| How does value progress from need to outcome? | Value stream |
+| Which participants exchange work, messages and responsibility? | BPMN collaboration |
+| Which repeatable business decision produces an outcome? | DMN decision table or DRD |
+| How does internal system behaviour flow? | UML activity diagram |
+| Which software parts interact during one scenario? | C4 dynamic view or UML sequence diagram |
 
 A first BPMN collaboration for returns might include these steps in prose before drawing:
 
@@ -284,7 +346,7 @@ The eighth mistake is breaking traceability between process activities and capab
 - Start with the process question before choosing BPMN, UML activity, value stream, DMN or a responsibility view.
 - A process architecture names and scopes the processes before one detailed flow is drawn.
 - Value streams show stakeholder value stages; BPMN shows operational process behaviour.
-- BPMN is strongest when order, participants, messages, events, gateways, exceptions and hand-offs matter.
+- BPMN is useful when order, participants, messages, events, gateways, exceptions and hand-offs matter.
 - UML activity diagrams are useful for compact internal behaviour, especially inside one system or service.
 - Swimlanes and lanes should clarify responsibility, not reproduce every role or application.
 - Important exception, timeout, repair, rejection and escalation paths should be shown or explicitly excluded.
