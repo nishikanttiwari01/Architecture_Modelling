@@ -34,13 +34,18 @@
 
 ## Review Pass Summary
 
-- Technical accuracy: Pass. UML, C4 and BPMN claims are source-backed and kept at selection level.
+- Technical accuracy: Pass. UML, C4 and BPMN claims are source-backed and kept at selection
+  level.
 - Beginner comprehension: Pass. The chapter introduces practical questions before formal terms.
-- Educational flow: Pass. The chapter moves from question to view choice, examples, mistakes, exercise and checklist.
+- Educational flow: Pass. The chapter moves from question to view choice, examples, mistakes,
+  exercise and checklist.
 - Terminology consistency: Pass. Controlled Online Store and Horizon Bank names are used.
-- Diagram quality: Pass for author review. FIG-17-01 is an original PlantUML selection guide and is tracked at `Review`.
-- Source and copyright: Pass. Existing source notes are reused and no official diagrams or long text are copied.
-- Copy-editing: Pass. The chapter uses short paragraphs, British English and no intentional em dashes.
+- Diagram quality: Pass for author review. FIG-17-01 is an original PlantUML selection guide
+  and is tracked at `Review`.
+- Source and copyright: Pass. Existing source notes are reused and no official diagrams or long
+  text are copied.
+- Copy-editing: Pass. The chapter uses short paragraphs, British English and no intentional em
+  dashes.
 
 ## Quality Gate Recommendation
 

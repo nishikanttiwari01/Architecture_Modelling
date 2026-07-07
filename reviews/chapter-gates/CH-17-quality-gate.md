@@ -21,7 +21,8 @@
 - Manuscript scaffold replaced with a complete Chapter 17 manuscript.
 - Opening bridge from Chapter 16 is present.
 - The chapter is framed as a Part III selection chapter.
-- The chapter distinguishes user experience, business process, software runtime collaboration and lifecycle state.
+- The chapter distinguishes user experience, business process, software runtime collaboration
+  and lifecycle state.
 - The chapter covers use case diagrams.
 - The chapter covers user journeys and service blueprints.
 - The chapter covers wireframes and screen flows.
@@ -31,7 +32,8 @@
 - The chapter covers API interaction views without starting Chapter 18.
 - The chapter includes Simple Online Store and Horizon Bank worked examples.
 - The chapter includes common mistakes.
-- The chapter includes review checklist, key takeaways, practical exercise and suggested answer.
+- The chapter includes review checklist, key takeaways, practical exercise and suggested
+  answer.
 - The chapter includes references and source notes section.
 
 ## Source notes checked
@@ -53,13 +55,17 @@
 - Figure remains not Approved.
 - Diagram purpose: selection guide for user and system interaction views.
 - Diagram notation: PlantUML decision guide.
-- PNG preview: not required by repository convention because SVG is the publication output and Chapter 15 and Chapter 16 selection guides also use SVG only.
+- PNG preview: not required by repository convention because SVG is the publication output and
+  Chapter 15 and Chapter 16 selection guides also use SVG only.
 
 ## FIG-17-01 asset locations
 
-- Specification: `diagrams/specifications/FIG-17-01-choosing-the-right-user-and-system-interaction-view.md`.
-- Editable source: `diagrams/source/plantuml/FIG-17-01-choosing-the-right-user-and-system-interaction-view.puml`.
-- SVG export: `diagrams/exported/svg/FIG-17-01-choosing-the-right-user-and-system-interaction-view.svg`.
+- Specification:
+  `diagrams/specifications/FIG-17-01-choosing-the-right-user-and-system-interaction-view.md`.
+- Editable source:
+  `diagrams/source/plantuml/FIG-17-01-choosing-the-right-user-and-system-interaction-view.puml`.
+- SVG export:
+  `diagrams/exported/svg/FIG-17-01-choosing-the-right-user-and-system-interaction-view.svg`.
 - Diagram register: `DIAGRAM_REGISTER.md`.
 - Chapter reference: `manuscript/part-03-diagram-selection/17-user-system-interaction.md`.
 
@@ -97,7 +103,8 @@
 ## Open issues
 
 - Author approval remains pending.
-- Final book-page layout inspection of FIG-17-01 remains pending under the general diagram `Review` convention.
+- Final book-page layout inspection of FIG-17-01 remains pending under the general diagram
+  `Review` convention.
 - Author may choose to accept, revise or reject `DEC-025`.
 
 ## Quality score

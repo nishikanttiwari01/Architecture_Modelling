@@ -2,6 +2,13 @@
 
 All notable repository and manuscript changes are recorded here. This is a project history, not a replacement for Git commits.
 
+## 2026-07-08
+
+### Normalised Chapter 17 formatting
+
+- Hard-wrapped Chapter 17 prose and review evidence Markdown for readability while preserving wording, status and meaning.
+- Left Chapter 17 at `Ready for Author Approval`, `FIG-17-01` at `Review` and `DEC-025` at `Proposed`.
+
 ## 2026-07-07
 
 ### Completed Chapter 17 user and system interaction modelling

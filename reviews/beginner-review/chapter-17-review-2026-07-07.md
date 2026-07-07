@@ -34,7 +34,8 @@
 
 - The chapter starts with plain-language interaction questions before introducing formal terms.
 - Each major view states the question it answers.
-- User experience, business process, software runtime collaboration and lifecycle state are separated in beginner-friendly language.
+- User experience, business process, software runtime collaboration and lifecycle state are
+  separated in beginner-friendly language.
 - The chapter avoids re-teaching UML, C4 and BPMN from scratch.
 - The selection table gives practical audience and timing guidance.
 - FIG-17-01 acts as a first filter and does not replace the fuller table.
@@ -43,7 +44,8 @@
 
 - The Simple Online Store example remains deliberately small and uses controlled names.
 - The Horizon Bank example uses controlled roles and systems.
-- The examples show why the same feature may need different interaction views for different questions.
+- The examples show why the same feature may need different interaction views for different
+  questions.
 - The exercise asks the reader to choose views, not merely recall terms.
 
 ## Accessibility and Readability Checks
@@ -55,4 +57,5 @@
 
 ## Recommendation
 
-The chapter is suitable for author review. Remaining work is author judgement, final page-layout inspection and any decision on DEC-025.
+The chapter is suitable for author review. Remaining work is author judgement, final page-layout
+inspection and any decision on DEC-025.

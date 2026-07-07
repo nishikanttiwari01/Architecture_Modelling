@@ -35,10 +35,13 @@
 - UML use case, sequence, activity and state machine references are grounded in `[OMG-UML]`.
 - C4 dynamic view references are grounded in `[C4-OFFICIAL]`.
 - BPMN collaboration references are grounded in `[OMG-BPMN]`.
-- The chapter does not claim that user journeys, service blueprints, wireframes or screen flows are formal UML, C4 or BPMN notation.
-- The chapter keeps API interaction guidance at selection level and defers wider integration detail to Chapter 18.
+- The chapter does not claim that user journeys, service blueprints, wireframes or screen flows
+  are formal UML, C4 or BPMN notation.
+- The chapter keeps API interaction guidance at selection level and defers wider integration
+  detail to Chapter 18.
 - The chapter avoids saying any one notation is universally best.
-- The chapter does not equate process participants, C4 containers, components, services or deployment units.
+- The chapter does not equate process participants, C4 containers, components, services or
+  deployment units.
 
 ## Diagram Review Notes
 
@@ -55,4 +58,5 @@
 
 ## Recommendation
 
-Move Chapter 17 to `Ready for Author Approval`. Do not mark the chapter, FIG-17-01 or DEC-025 as approved.
+Move Chapter 17 to `Ready for Author Approval`. Do not mark the chapter, FIG-17-01 or DEC-025 as
+approved.

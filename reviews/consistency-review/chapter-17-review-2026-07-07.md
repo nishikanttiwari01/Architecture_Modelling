@@ -35,7 +35,8 @@
 - UML terminology aligns with Chapter 4.
 - C4 dynamic view language aligns with Chapter 5.
 - BPMN collaboration language aligns with Chapter 6 and Chapter 15.
-- Chapter 17 does not start Chapter 18 integration detail, but it points readers there for deeper API and event behaviour.
+- Chapter 17 does not start Chapter 18 integration detail, but it points readers there for
+  deeper API and event behaviour.
 - Chapter 16 was not edited.
 - Chapter 18 was read for continuity but not started.
 
