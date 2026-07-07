@@ -232,6 +232,18 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapter 14, Chapter 7, Chapter 13, `manuscript/part-03-diagram-selection/14-business-strategy-capabilities.md`, `diagrams/specifications/FIG-14-01-horizon-bank-strategy-to-capability-traceability.md`, `diagrams/specifications/FIG-14-02-horizon-bank-onboarding-value-stream-capability-cross-map.md`, `examples/horizon-bank/capabilities.md`.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
+## DEC-023: Scope Chapter 15 as process model selection, not BPMN re-teaching
+
+- **Status:** Proposed
+- **Date:** 2026-07-07
+- **Decision:** Write Chapter 15, Modelling Business Processes, as a selection-and-combination chapter that helps readers choose between value streams, process architecture tables, BPMN process diagrams, BPMN collaboration diagrams, focused exception views, responsibility views, UML activity diagrams and DMN decision models. Reuse Chapter 6 BPMN, Chapter 4 UML activity, Chapter 9 DMN and Chapter 13 value-stream material instead of re-teaching those notations from first principles.
+- **Context:** Part III is about choosing diagrams by architecture need. Chapter 6 already teaches BPMN notation, Chapter 4 already introduces UML activity diagrams, Chapter 9 separates DMN decision logic from BPMN process flow, and Chapters 13 and 14 already distinguish value streams and capabilities from process detail.
+- **Alternatives considered:** Re-teach BPMN in full inside Chapter 15; create a new Chapter 15 diagram set immediately; treat the mixed notation selection guide as a new figure rather than a manuscript table.
+- **Reason:** Reusing approved or drafted earlier material keeps Chapter 15 focused on the reader's real decision: which model answers the current process question, at what level of detail, and with what audience. A manuscript table is sufficient for the mixed notation selection guide in this draft and avoids creating diagram source without an approved specification.
+- **Consequences:** Chapter 15 has no new `FIG-15-*` entries, diagram specifications, source files or exports in this draft. It reuses existing registered figures and source notes. If the author later wants a visual Chapter 15 selection guide, a diagram specification must be created and approved before source production.
+- **Related chapters/files:** Chapter 15, Chapter 4, Chapter 6, Chapter 9, Chapter 13, Chapter 14, `DIAGRAM_REGISTER.md`, `research/bpmn/omg-bpmn-2.0.2.md`, `research/uml/omg-uml-2.5.1.md`, `research/dmn/omg-dmn-1.5.md`, `research/other-modelling/open-group-business-architecture-guides-2022.md`.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
+
 ## Decision template
 
 ```markdown

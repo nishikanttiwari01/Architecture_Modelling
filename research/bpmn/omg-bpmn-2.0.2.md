@@ -6,7 +6,7 @@
 - Title: Business Process Model and Notation
 - Version: 2.0.2
 - Publication date: January 2014
-- Access date: 2026-06-29
+- Access date: 2026-07-07
 - URL or identifier: https://www.omg.org/spec/BPMN/2.0.2/
 - Source type: Official specification
 
@@ -30,4 +30,4 @@ Do not copy official diagrams, tables or long passages from the specification. U
 
 ## Verification status
 
-Checked
+Checked. Rechecked against the official OMG BPMN 2.0.2 specification page on 2026-07-07 while drafting Chapter 15.

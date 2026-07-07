@@ -6,7 +6,7 @@
 - Title: Unified Modeling Language specification
 - Version: 2.5.1
 - Publication date: December 2017
-- Access date: 2026-06-29
+- Access date: 2026-07-07
 - URL or identifier: https://www.omg.org/spec/UML/2.5.1/
 - Source type: Official specification
 
@@ -38,4 +38,4 @@ Do not copy OMG specification diagrams, tables or extended definitions into the 
 
 ## Verification status
 
-Checked
+Checked. Rechecked against the official OMG UML 2.5.1 specification page on 2026-07-07 while drafting Chapter 15.

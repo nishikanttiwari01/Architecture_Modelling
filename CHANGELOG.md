@@ -2,6 +2,17 @@
 
 All notable repository and manuscript changes are recorded here. This is a project history, not a replacement for Git commits.
 
+## 2026-07-07
+
+### Drafted Chapter 15, Modelling Business Processes
+
+- Expanded Chapter 15 from scaffold to a complete draft and moved it from `Planned` to `Drafting`.
+- Framed the chapter as a Part III selection-and-combination chapter, not a re-teaching of BPMN: process architecture, process levels, BPMN process and collaboration selection, swimlanes and responsibility views, exceptions and controls, process metrics, process-to-capability traceability, model selection, worked examples, common mistakes, key takeaways, exercise, checklist and references.
+- Reused existing registered figures (`FIG-06-01`, `FIG-06-02`, `FIG-06-03`, `FIG-04-05`, `FIG-09-04` and `FIG-13-02`) and existing source notes (`[OMG-BPMN]`, `[OMG-UML]`, `[OMG-DMN-1.5]` and `[OPEN-GROUP-BIZARCH-GUIDES-2022]`).
+- Added glossary terms for process architecture, process level, swimlane, process metric and straight-through processing.
+- Recorded `DEC-023` as `Proposed`, making the Chapter 15 scope boundary explicit and deferring any visual Chapter 15 selection guide until a specification is requested and approved.
+- Updated `STATUS.md`. No `FIG-15-*` entry, diagram specification, source or export was created. Nothing was marked `Approved`.
+
 ## 2026-07-04
 
 ### Revised Chapter 14 strategy and capability modelling

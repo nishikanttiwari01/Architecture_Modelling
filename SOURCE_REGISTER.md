@@ -4,8 +4,8 @@ Register sources that support several chapters, major definitions or version-sen
 
 | Source key | Organisation / author | Title | Version | Publication date | Access date | Primary topics | Note file | Status |
 |---|---|---|---|---|---|---|---|---|
-| OMG-UML | Object Management Group | Unified Modeling Language specification | 2.5.1 | December 2017 | 2026-06-29 | UML terminology and diagram taxonomy | research/uml/omg-uml-2.5.1.md | Recorded |
-| OMG-BPMN | Object Management Group | Business Process Model and Notation specification | 2.0.2 | January 2014 | 2026-06-29 | BPMN terminology and notation | research/bpmn/omg-bpmn-2.0.2.md | Recorded |
+| OMG-UML | Object Management Group | Unified Modeling Language specification | 2.5.1 | December 2017 | 2026-07-07 | UML terminology and diagram taxonomy | research/uml/omg-uml-2.5.1.md | Recorded |
+| OMG-BPMN | Object Management Group | Business Process Model and Notation specification | 2.0.2 | January 2014 | 2026-07-07 | BPMN terminology and notation | research/bpmn/omg-bpmn-2.0.2.md | Recorded |
 | BPMN-TOOL-GUIDANCE-2026 | Camunda, Bizagi, diagrams.net, SAP, Visual Paradigm | Official BPMN modelling tool product and documentation pages | Current public product documentation | Various | 2026-06-30 | BPMN modelling tools, semantic modeller versus drawing-tool guidance | research/bpmn/bpmn-tool-guidance-2026-06-30.md | Recorded |
 | OMG-DMN-1.5 | Object Management Group | Decision Model and Notation specification | 1.5, formal version | August 2024 | 2026-06-30 | DMN terminology, decision requirements, decision logic and decision tables | research/dmn/omg-dmn-1.5.md | Recorded |
 | CAMUNDA-DMN-1.3-DOCS-2026 | Camunda | DMN modelling documentation | Current public documentation, DMN 1.3 modelling guidance | Current web documentation | 2026-06-30 | Camunda DMN tooling guidance and DMN 1.3 version caution | research/dmn/camunda-dmn-1.3-docs-2026.md | Recorded |
