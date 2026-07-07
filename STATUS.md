@@ -34,7 +34,7 @@
 | 13 | Other Useful Modelling Approaches | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review |
 | 14 | Modelling Business Strategy and Capabilities | Revision Required | 100 | 100 | 20 | 60 | 100 | Author review of the revision; approve `FIG-14-01` and `FIG-14-02` specifications and accept `DEC-022`, then produce figures |
 | 15 | Modelling Business Processes | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; FIG-15-01 at Review; DEC-023 Proposed |
-| 16 | Modelling Software Structure | Planned | 0 | 0 | 0 | 0 | 0 | — |
+| 16 | Modelling Software Structure | Planned | 0 | 0 | 100 | 0 | 100 | Draft Chapter 16 around the completed FIG-16-01 selection guide |
 | 17 | Modelling User and System Interaction | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 18 | Modelling Integration and Runtime Behaviour | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 19 | Modelling Data Architecture | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -107,10 +107,12 @@
 
 ## Current recommended next task
 
-Chapter 15, **Modelling Business Processes**, is now `Ready for Author Approval`. Formal review passes for technical accuracy, beginner comprehension, educational flow, terminology and cross-chapter consistency, diagram reuse and accessibility, source and copyright verification, and copy-editing found no unresolved critical, major or minor issues. The chapter remains a process-model selection chapter rather than a BPMN re-teaching chapter. It reuses existing registered figures (`FIG-06-01`, `FIG-06-02`, `FIG-06-03`, `FIG-04-05`, `FIG-09-04` and `FIG-13-02`) and existing official source notes. `FIG-15-01` has been registered, specified, rendered and set to `Review`. `DEC-023` remains `Proposed`. The next action is author review of Chapter 15, author review of `FIG-15-01`, and any author decision on `DEC-023`.
+Chapter 16, **Modelling Software Structure**, remains `Planned`, with `FIG-16-01` registered, specified, rendered and set to `Review` after author direction to create the required selection-guide diagram. The next action is drafting the chapter around the completed software-structure selection guide, reusing the existing C4 and UML source notes.
+
+Chapter 15, **Modelling Business Processes**, remains `Ready for Author Approval`. Formal review passes for technical accuracy, beginner comprehension, educational flow, terminology and cross-chapter consistency, diagram reuse and accessibility, source and copyright verification, and copy-editing found no unresolved critical, major or minor issues. The chapter remains a process-model selection chapter rather than a BPMN re-teaching chapter. It reuses existing registered figures (`FIG-06-01`, `FIG-06-02`, `FIG-06-03`, `FIG-04-05`, `FIG-09-04` and `FIG-13-02`) and existing official source notes. `FIG-15-01` has been registered, specified, rendered and set to `Review`. `DEC-023` remains `Proposed`. The next action is author review of Chapter 15, author review of `FIG-15-01`, and any author decision on `DEC-023`.
 
 Chapter 14, **Modelling Business Strategy and Capabilities**, remains `Revision Required` with an interim quality-gate score of `8.2/10`. `FIG-14-01` and `FIG-14-02` remain `Planned` with `Pending` source and export pending author approval of their specifications, and `DEC-022` remains `Proposed`. Nothing is marked `Approved`.
 
 Chapter 13, **Other Useful Modelling Approaches**, remains `Ready for Author Approval` with final quality score 9.0. Its six figures remain at `Review`, with explicit author decisions still open for chapter and figure approval, native Draw.io graphical-open and export-fidelity comparison (`DEC-021`), and final book-page layout placement of wider landscape figures (`DEC-014`).
 
-Last updated: 2026-07-07 (Chapter 15 formal review and diagram completion)
+Last updated: 2026-07-07 (Chapter 16 FIG-16-01 selection-guide diagram completion)

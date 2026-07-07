@@ -245,6 +245,18 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapter 15, Chapter 4, Chapter 6, Chapter 9, Chapter 13, Chapter 14, `DIAGRAM_REGISTER.md`, `research/bpmn/omg-bpmn-2.0.2.md`, `research/uml/omg-uml-2.5.1.md`, `research/dmn/omg-dmn-1.5.md`, `research/other-modelling/open-group-business-architecture-guides-2022.md`.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
+## DEC-024: Add a required Chapter 16 software-structure selection guide
+
+- **Status:** Proposed
+- **Date:** 2026-07-07
+- **Decision:** Create `FIG-16-01`, "Choosing the Right Software Structure View", as the required Chapter 16 selection-guide diagram. The figure uses a Mermaid decision path to help readers choose between system landscape, system context, container, component, package, class, dependency and deployment boundary views based on the architecture question.
+- **Context:** Chapter 16 is a Part III selection chapter. The author explicitly requested `FIG-16-01` as a required selection-guide diagram and instructed that the diagram should not be deferred merely because a table exists.
+- **Alternatives considered:** Leave the selection guidance as a manuscript table only; defer the diagram until the full Chapter 16 draft; use Draw.io for manual layout.
+- **Reason:** A compact visual decision path is genuinely additive for a selection chapter. Mermaid is sufficient because the figure is a simple flowchart and follows the successful Chapter 15 selection-guide pattern.
+- **Consequences:** Chapter 16 now has one original registered figure with specification, Mermaid source and SVG export. The chapter still needs full drafting and review before it can move beyond `Planned`. `FIG-16-01` is at `Review`, not `Approved`.
+- **Related chapters/files:** Chapter 16, Chapter 4, Chapter 5, `DIAGRAM_REGISTER.md`, `diagrams/specifications/FIG-16-01-choosing-the-right-software-structure-view.md`, `diagrams/source/mermaid/FIG-16-01-choosing-the-right-software-structure-view.mmd`, `diagrams/exported/svg/FIG-16-01-choosing-the-right-software-structure-view.svg`.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
+
 ## Decision template
 
 ```markdown

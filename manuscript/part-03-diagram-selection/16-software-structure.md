@@ -29,7 +29,8 @@ By the end of this chapter, the reader should be able to:
 
 ## Required models and artefacts
 
-- Mixed notation selection guide
+- FIG-16-01: Choosing the Right Software Structure View.
+- Mixed notation selection table, to be drafted with the chapter.
 
 ## Worked examples
 
@@ -38,10 +39,9 @@ By the end of this chapter, the reader should be able to:
 
 ## Source requirements
 
-- Identify official or primary sources for normative terminology.
-- Record framework or standard versions where relevant.
-- Create source notes under the matching `research/` directory.
-- Distinguish official definitions from the author’s practical recommendations.
+- `[C4-OFFICIAL]` supports the C4 software-structure hierarchy and the system landscape, system context, container, component and code-level framing reused from Chapter 5.
+- `[OMG-UML]` supports Unified Modeling Language (UML) package, class and component terminology reused from Chapter 4.
+- Chapter guidance should distinguish official terminology from the author's practical recommendations for choosing views.
 
 ## Planned chapter structure
 
@@ -75,7 +75,13 @@ By the end of this chapter, the reader should be able to:
 
 ## Selection table
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+The selection table will answer: **which software-structure view should a beginner reach for when the architecture question changes?**
+
+The same choice can be read as a simple decision path in FIG-16-01. Use it as a first filter, then check the chapter table for audience, boundary and modelling purpose.
+
+![Figure FIG-16-01. Choosing the right software structure view.](../../diagrams/exported/svg/FIG-16-01-choosing-the-right-software-structure-view.svg)
+
+Figure FIG-16-01. Choosing the right software structure view. It helps an architect select a structural view based on the boundary, audience and level of detail needed.
 
 ## Worked example
 

@@ -1,0 +1,78 @@
+flowchart TD
+    %% Start
+    start["Start with the architecture question"]
+
+    %% Question and view nodes
+
+    landscape["Many systems in the estate?"]
+    landscapeView["System landscape"]
+
+    context["One system boundary and neighbours?"]
+    contextView["System context"]
+
+    containers["Runnable parts or data stores inside the system?"]
+    containerView["Container view"]
+
+    components["Internal parts inside one container?"]
+    componentView["Component view"]
+
+    packages["Code modules or packages?"]
+    packageView["Package view"]
+
+    classes["Important types or domain objects?"]
+    classView["Class view"]
+
+    dependencies["Coupling, layering or ownership risk?"]
+    dependencyView["Dependency view"]
+
+    runtime["Runtime placement or infrastructure?"]
+    deploymentView["Deployment view"]
+
+    discuss["Clarify the modelling purpose"]
+
+    %% Decision path
+
+    start --> landscape
+    landscape -- "Choose" --> landscapeView
+    landscape -- "If not" --> context
+
+    context -- "Choose" --> contextView
+    context -- "If not" --> containers
+
+    containers -- "Choose" --> containerView
+    containers -- "If not" --> components
+
+    components -- "Choose" --> componentView
+    components -- "If not" --> packages
+
+    packages -- "Choose" --> packageView
+    packages -- "If not" --> classes
+
+    classes -- "Choose" --> classView
+    classes -- "If not" --> dependencies
+
+    dependencies -- "Choose" --> dependencyView
+    dependencies -- "If not" --> runtime
+
+    runtime -- "Choose" --> deploymentView
+    runtime -- "If not" --> discuss
+
+    %% Styling
+
+    classDef question fill:#f7f7f7,stroke:#333333,stroke-width:1px,color:#111111;
+    classDef view fill:#eaf4ff,stroke:#23527c,stroke-width:1px,color:#111111;
+    classDef boundary fill:#eef8ed,stroke:#2f6b2f,stroke-width:1px,color:#111111;
+    classDef fallback fill:#fff4e6,stroke:#8a5a00,stroke-width:1px,color:#111111;
+
+    class start question;
+    class landscape,context question;
+    class containers,components question;
+    class packages,classes question;
+    class dependencies,runtime question;
+
+    class landscapeView,contextView view;
+    class containerView,componentView view;
+    class packageView,classView,dependencyView view;
+
+    class deploymentView boundary;
+    class discuss fallback;

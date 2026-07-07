@@ -4,6 +4,14 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-07
 
+### Created Chapter 16 selection-guide diagram
+
+- Added `FIG-16-01`, "Choosing the Right Software Structure View", as the required Chapter 16 visual guide for selecting between system landscape, system context, container, component, package, class, dependency and deployment boundary views.
+- Created the diagram specification, Mermaid source and SVG export, and registered the figure at `Review`, not `Approved`.
+- Added the figure reference and caption to the Chapter 16 selection section while keeping the chapter itself at `Planned`.
+- Reused existing registered C4 and UML source notes; no new source notes were added.
+- Recorded the diagram decision in `DEC-024` and updated `STATUS.md`.
+
 ### Cleaned Chapter 15 review evidence formatting
 
 - Properly reformatted Chapter 15 review evidence and FIG-15-01 Mermaid source with real Markdown/Mermaid line breaks, correcting the earlier hygiene attempt in `887c9fe`.
