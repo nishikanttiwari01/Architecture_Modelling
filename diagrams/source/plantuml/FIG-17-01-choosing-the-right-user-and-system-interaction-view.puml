@@ -17,39 +17,61 @@ skinparam ArrowColor #333333
 * Start with the\ninteraction question
 
 ** Actor and scope
+
 *** Actor goals and\nsystem boundary?
+
 **** Use case diagram
 
 ** Experience and service
+
 *** User experience across\nsteps and channels?
+
 **** User journey
+
 *** Visible and backstage\nservice work?
+
 **** Service blueprint
 
 ** Interface movement
+
 *** Screen navigation or\ninterface layout?
+
 **** Wireframe or\nscreen flow
 
 ** Runtime message order
+
 *** Precise message order\nin one scenario?
+
 **** UML sequence diagram
+
 *** Collaboration across\nknown C4 elements?
+
 **** C4 dynamic view
 
 ** Process responsibility
+
 *** Business hand-offs,\nwaits or exceptions?
+
 **** BPMN collaboration
+
 *** Action and decision flow\ninside one boundary?
+
 **** Activity diagram
 
 ** Lifecycle and API
+
 *** Lifecycle states and\nevent-triggered changes?
+
 **** State machine
+
 *** Channel-to-service or\nservice-to-service API behaviour?
+
 **** API interaction view
 
 ** Still unclear?
+
 *** Clarify actor,\nboundary and decision
+
 **** Do not choose notation\nuntil the question is specific
 
 ' Accessibility notes:

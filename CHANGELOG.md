@@ -6,8 +6,12 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ### Normalised Chapter 17 formatting
 
-- Hard-wrapped Chapter 17 prose and review evidence Markdown for readability while preserving wording, status and meaning.
-- Left Chapter 17 at `Ready for Author Approval`, `FIG-17-01` at `Review` and `DEC-025` at `Proposed`.
+- Hard-wrapped Chapter 17 prose and review evidence Markdown for readability while
+  preserving wording, status and meaning.
+- Added a follow-up formatting-only correction that includes the Chapter 17 PlantUML
+  source file in the committed line-break changes.
+- Left Chapter 17 at `Ready for Author Approval`, `FIG-17-01` at `Review` and
+  `DEC-025` at `Proposed`.
 
 ## 2026-07-07
 
