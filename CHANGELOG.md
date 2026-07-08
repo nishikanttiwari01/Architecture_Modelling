@@ -4,6 +4,16 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-08
 
+### Completed Chapter 18 integration and runtime behaviour modelling
+
+- Expanded Chapter 18, **Modelling Integration and Runtime Behaviour**, from scaffold to a complete Part III selection chapter covering integration context views, API interaction views, message-flow views, UML sequence diagrams, C4 dynamic diagrams, event-flow views, queue and asynchronous processing views, error and retry views, interface catalogues and data-flow boundaries.
+- Added `FIG-18-01`, "Choosing the Right Integration and Runtime Behaviour View", to the diagram register and created its specification, with source/export deferred pending author approval.
+- Created `reviews/chapter-gates/CH-18-quality-gate.md`.
+- Updated `STATUS.md` so Chapter 18 is `Ready for Author Approval`, not `Approved`.
+- Recorded `DEC-026` as `Proposed`, noting the Chapter 18 scope and the deferred PlantUML selection-guide decision.
+- Added glossary terms for integration context views, synchronous and asynchronous interaction, interface catalogues, idempotency and dead-letter queues.
+- Reused existing registered UML, C4, BPMN, CloudEvents and AsyncAPI source notes; no new source notes were added.
+
 ### Normalised Chapter 17 formatting
 
 - Hard-wrapped Chapter 17 prose and review evidence Markdown for readability while

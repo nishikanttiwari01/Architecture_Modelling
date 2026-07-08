@@ -269,6 +269,18 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapter 17, Chapter 4, Chapter 5, Chapter 6, Chapter 15, Chapter 16, `DIAGRAM_REGISTER.md`, `diagrams/specifications/FIG-17-01-choosing-the-right-user-and-system-interaction-view.md`, `diagrams/source/plantuml/FIG-17-01-choosing-the-right-user-and-system-interaction-view.puml`, `diagrams/exported/svg/FIG-17-01-choosing-the-right-user-and-system-interaction-view.svg`.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
+## DEC-026: Scope Chapter 18 as integration and runtime view selection
+
+- **Status:** Proposed
+- **Date:** 2026-07-08
+- **Decision:** Write Chapter 18, Modelling Integration and Runtime Behaviour, as a selection-and-combination chapter that helps readers choose between integration context views, API interaction views, message-flow views, UML sequence diagrams, C4 dynamic diagrams, event-flow views, queue and asynchronous processing views, error and retry views, interface catalogues and data-flow views. Reuse Chapter 4 UML, Chapter 5 C4, Chapter 6 BPMN, Chapter 10 domain-event and Chapter 17 interaction material rather than re-teaching those notations from first principles.
+- **Context:** Part III is about choosing diagrams by architecture need. Chapter 17 intentionally stops before full integration design. Chapter 19 will cover data architecture, so Chapter 18 needs to connect runtime information exchange to data-flow concerns without taking over the data chapter.
+- **Alternatives considered:** Re-teach sequence diagrams, C4 dynamic diagrams, BPMN message flows, CloudEvents and AsyncAPI in full inside Chapter 18; create a full diagram set immediately; leave the required mixed notation selection guide only as manuscript prose.
+- **Reason:** Reusing established notation chapters keeps Chapter 18 focused on the reader's decision: which view answers the current integration question, at what runtime boundary, and for which audience. A pending `FIG-18-01` selection guide is useful, but source and export must wait for author approval of the specification under the repository diagram workflow.
+- **Consequences:** Chapter 18 has one original registered figure specification, `FIG-18-01`, with source and export deferred pending author approval. The chapter includes a complete manuscript selection table and worked examples so it remains readable before the figure is produced. Any further Chapter 18 figure requires separate author direction and the normal diagram workflow.
+- **Related chapters/files:** Chapter 18, Chapter 4, Chapter 5, Chapter 6, Chapter 10, Chapter 17, Chapter 19, `DIAGRAM_REGISTER.md`, `diagrams/specifications/FIG-18-01-choosing-the-right-integration-runtime-behaviour-view.md`, `research/uml/omg-uml-2.5.1.md`, `research/c4/c4-model-official.md`, `research/bpmn/omg-bpmn-2.0.2.md`, `research/domain-event/cloudevents-1.0.2.md`, `research/domain-event/asyncapi-3.1.0.md`.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
+
 ## Decision template
 
 ```markdown

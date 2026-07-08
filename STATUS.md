@@ -36,7 +36,7 @@
 | 15 | Modelling Business Processes | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; FIG-15-01 at Review; DEC-023 Proposed |
 | 16 | Modelling Software Structure | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; FIG-16-01 at Review; DEC-024 Proposed |
 | 17 | Modelling User and System Interaction | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; FIG-17-01 at Review; DEC-025 Proposed |
-| 18 | Modelling Integration and Runtime Behaviour | Planned | 0 | 0 | 0 | 0 | 0 | — |
+| 18 | Modelling Integration and Runtime Behaviour | Ready for Author Approval | 100 | 100 | 20 | 100 | 100 | Author review; approve `FIG-18-01` specification and accept `DEC-026`, then produce figure |
 | 19 | Modelling Data Architecture | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 20 | Modelling Infrastructure and Deployment | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 21 | Modelling Security Architecture | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -107,6 +107,8 @@
 
 ## Current recommended next task
 
+Chapter 18, **Modelling Integration and Runtime Behaviour**, is `Ready for Author Approval`. The chapter has been fully drafted as a Part III selection chapter for choosing between integration context views, API interaction views, message-flow views, UML sequence diagrams, C4 dynamic diagrams, event-flow views, queue and asynchronous processing views, error and retry views, interface catalogues and data-flow views. `FIG-18-01` is registered and specified, with source/export deferred pending author approval of the specification. `DEC-026` remains `Proposed`. The next action is author review of Chapter 18, author review of the `FIG-18-01` specification, and any author decision on `DEC-026`.
+
 Chapter 17, **Modelling User and System Interaction**, is `Ready for Author Approval`. The chapter has been fully drafted as a Part III selection chapter for choosing between use case diagrams, user journeys, service blueprints, wireframes, screen flows, UML sequence diagrams, C4 dynamic views, BPMN collaborations, activity diagrams, state machines and API interaction views. `FIG-17-01` is registered, specified, rendered and integrated in the chapter at `Review`, not `Approved`. `DEC-025` remains `Proposed`. The next action is author review of Chapter 17, author review of `FIG-17-01`, and any author decision on `DEC-025`.
 
 Chapter 16, **Modelling Software Structure**, remains `Ready for Author Approval`. The chapter has been fully drafted as a Part III selection chapter for choosing between system landscape, system context, container, component, package, class, dependency and deployment views. `FIG-16-01` is registered, specified, rendered and integrated in the chapter at `Review`, not `Approved`. `DEC-024` remains `Proposed`. The next action is author review of Chapter 16, author review of `FIG-16-01`, and any author decision on `DEC-024`.
@@ -117,4 +119,4 @@ Chapter 14, **Modelling Business Strategy and Capabilities**, remains `Revision 
 
 Chapter 13, **Other Useful Modelling Approaches**, remains `Ready for Author Approval` with final quality score 9.0. Its six figures remain at `Review`, with explicit author decisions still open for chapter and figure approval, native Draw.io graphical-open and export-fidelity comparison (`DEC-021`), and final book-page layout placement of wider landscape figures (`DEC-014`).
 
-Last updated: 2026-07-07 (Chapter 17 ready for author approval)
+Last updated: 2026-07-08 (Chapter 18 ready for author approval)
