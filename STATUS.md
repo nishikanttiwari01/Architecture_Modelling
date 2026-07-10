@@ -39,7 +39,7 @@
 | 18 | Modelling Integration and Runtime Behaviour | Ready for Author Approval | 100 | 100 | 20 | 100 | 100 | Author review; approve `FIG-18-01` specification and accept `DEC-026`, then produce figure |
 | 19 | Modelling Data Architecture | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-19-01` at Review; accept or revise `DEC-027` |
 | 20 | Modelling Infrastructure and Deployment | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-20-01` at Review; accept or revise `DEC-028` |
-| 21 | Modelling Security Architecture | Planned | 0 | 0 | 0 | 0 | 0 | — |
+| 21 | Modelling Security Architecture | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-21-01` at Review; accept or revise `DEC-029` |
 | 22 | Modelling Transformation and Migration | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 23 | Modelling Decisions and Business Rules | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 24 | Discovery and Problem Definition | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -134,4 +134,4 @@ Chapter 14, **Modelling Business Strategy and Capabilities**, remains `Revision 
 
 Chapter 13, **Other Useful Modelling Approaches**, remains `Ready for Author Approval` with final quality score 9.0. Its six figures remain at `Review`, with explicit author decisions still open for chapter and figure approval, native Draw.io graphical-open and export-fidelity comparison (`DEC-021`), and final book-page layout placement of wider landscape figures (`DEC-014`).
 
-Last updated: 2026-07-11 (Chapter 20 review evidence and acronym corrections)
+Last updated: 2026-07-11 (Chapter 21 completed with figure and review evidence)

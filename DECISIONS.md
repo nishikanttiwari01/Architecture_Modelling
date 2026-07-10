@@ -305,6 +305,18 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapters 11, 19, 20 and 21, `DIAGRAM_REGISTER.md`, `diagrams/specifications/FIG-20-01-choosing-the-right-infrastructure-deployment-view.md`, `research/infrastructure/`.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
+## DEC-029: Scope Chapter 21 as security architecture view selection
+
+- **Status:** Proposed
+- **Date:** 2026-07-11
+- **Decision:** Write Chapter 21 as a selection-and-combination chapter for security context, trust boundaries, authentication, access authorisation, threat models, control maps, privacy views, audit and monitoring. Reuse Chapter 12 foundations and create one PlantUML selection guide, `FIG-21-01`.
+- **Context:** Part III helps readers choose diagrams by architecture need. Chapter 12 already teaches security-modelling techniques. Chapter 20 covers infrastructure placement and Chapter 22 covers transformation, so Chapter 21 must expose protection assumptions and review evidence without absorbing those concerns.
+- **Alternatives considered:** Re-teach Chapter 12; use only a table; combine all security concerns in one diagram; model security products before assets and threats.
+- **Reason:** A focused selection chapter moves beginners from a security question to a suitable view and companion evidence. The table carries detailed guidance while the original labelled figure provides a compact first filter.
+- **Consequences:** The author authorised specification and figure production on 2026-07-11. `FIG-21-01` has PlantUML source plus SVG and PNG exports and remains at `Review`, not `Approved`. Existing registered Chapter 12 security sources are reused.
+- **Related chapters/files:** Chapters 12, 20, 21 and 22, `DIAGRAM_REGISTER.md`, `diagrams/specifications/FIG-21-01-choosing-the-right-security-architecture-view.md`, `research/security/`.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
+
 ## Decision template
 
 ```markdown

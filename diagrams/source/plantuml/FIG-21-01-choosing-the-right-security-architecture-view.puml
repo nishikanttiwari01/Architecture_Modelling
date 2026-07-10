@@ -1,0 +1,34 @@
+@startuml
+title FIG-21-01. Choosing the Right Security Architecture View
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #333333
+skinparam rectangle {
+  BackgroundColor #F5F7FA
+  BorderColor #333333
+  FontColor #111111
+  RoundCorner 10
+}
+left to right direction
+rectangle "Start with the\nsecurity question" as Start #DCEAF7
+rectangle "Security context" as Context
+rectangle "Trust-boundary view" as Trust
+rectangle "Authentication sequence" as Authn
+rectangle "Access-authorisation model" as Authz
+rectangle "Threat-model DFD\nor attack tree" as Threat
+rectangle "Security-control map" as Control
+rectangle "Privacy data-flow\nor lifecycle view" as Privacy
+rectangle "Audit and monitoring view" as Monitor
+rectangle "Clarify asset, audience,\nboundary and decision" as Clarify #FFF2CC
+Start --> Context : What is in scope\nand valuable?
+Start --> Trust : Where does\ntrust change?
+Start --> Authn : How is identity\nestablished?
+Start --> Authz : Who may perform\nwhich action?
+Start --> Threat : How could an asset\nbe harmed?
+Start --> Control : Which controls\naddress the risk?
+Start --> Privacy : How is personal\ndata handled?
+Start --> Monitor : What must be detected\nand acted upon?
+Start --> Clarify : Still unclear?
+@enduml

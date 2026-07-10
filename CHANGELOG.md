@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-07-11
+
+### Completed Chapter 21 security architecture
+
+- Drafted Chapter 21 as a beginner-first security-view selection chapter with Horizon Bank worked example and a distinct Online Store exercise.
+- Added, rendered and visually reviewed `FIG-21-01` in PlantUML, SVG and PNG; registered it at `Review`.
+- Reused the verified Chapter 12 security research and recorded `DEC-029` as proposed.
+- Added four review passes and the Chapter 21 quality gate.
+
 All notable repository and manuscript changes are recorded here. This is a project history, not a replacement for Git commits.
 
 ## 2026-07-11
