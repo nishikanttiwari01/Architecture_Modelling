@@ -45,6 +45,8 @@
 - The Simple Online Store uses controlled actors, systems and information concepts.
 - Horizon Bank uses the controlled system landscape and established payment example.
 - The examples demonstrate why one concern needs several linked, focused views.
+- The explicit worked example states its question, audience, scope, primary lineage
+  view, complementary views, exclusions and review questions.
 - The exercise requires selection and review, not only term recall.
 
 ## Accessibility and Readability Checks

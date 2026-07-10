@@ -39,6 +39,8 @@ until author approval of the diagram specification.
 - [x] Required diagram is registered and deferred with a policy reason.
 - [x] Terminology aligns with the glossary and example files.
 - [x] Simple Online Store and Horizon Bank examples are consistent.
+- [x] The worked example states its question, audience, scope, primary and complementary
+  views, exclusions and review questions.
 - [x] Common mistakes are concrete and actionable.
 - [x] Practical exercise includes a suggested answer and review criteria.
 - [x] Open author-only dependencies are documented.

@@ -38,7 +38,7 @@
 - Beginner comprehension: Pass. Each view follows a question-first explanation and is
   demonstrated with controlled examples.
 - Educational flow: Pass. The chapter moves from question to view selection,
-  combination, mistakes, exercise and checklist.
+  a framed worked example, mistakes, exercise and checklist.
 - Terminology consistency: Pass. Chapter 8 and glossary terms are reused consistently.
 - Diagram quality: Deferred. FIG-19-01 is fully specified and registered, but source and
   export await author approval.

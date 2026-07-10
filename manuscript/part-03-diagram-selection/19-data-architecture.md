@@ -41,9 +41,9 @@ selection table:
 - FIG-19-01: Choosing the Right Data Architecture View.
 - Data architecture view selection table.
 
-`FIG-19-01` is specified and registered, but source and SVG export are deferred until
-the author approves the diagram specification, as required by the repository diagram
-workflow.
+`FIG-19-01` is specified and registered, but source and Scalable Vector Graphics (SVG)
+export are deferred until the author approves the diagram specification, as required by
+the repository diagram workflow.
 
 ## Worked examples
 
@@ -295,33 +295,60 @@ The planned `FIG-19-01` will provide a compact visual route through these choice
 its specification is author-approved. The table remains the fuller selection aid and
 makes the chapter complete while production of the figure is deferred.
 
-## Combining views without mixing concerns
+## Worked example
 
-A small, linked set is usually more useful than one crowded picture. Use the same
-controlled names and identifiers across views, but let each view answer its own question.
+Horizon Bank wants to improve confidence in payment-status reporting. The architecture
+question is: **how should the bank model payment-status meaning, movement, derivation and
+accountability so that reporting and operational teams can trust the result?**
 
-For an Online Store order change, a suitable minimum set might be:
+The audience includes payment operations, data owners and stewards, solution and data
+architects, reporting teams, risk reviewers and the application teams responsible for
+the participating systems. The scope begins when Horizon Digital Channels captures a
+Payment Instruction and ends when the Enterprise Data Platform publishes the governed
+payment reporting data product. It includes the Payments Platform, Financial Crime
+Platform, Core Deposit System and Event Platform. It does not cover every payment type,
+customer journey or downstream report.
 
-1. a conceptual view for Customer, Order, Payment and Shipment meaning;
-2. a logical ERD for Order, Order Line and Payment structure;
-3. a DFD for movement among Online Store, Payment Provider System and Delivery Partner
-   System; and
-4. a short ownership table for definitions, authoritative stores and quality rules.
+The primary view is a lineage view. It traces the reported payment status back through
+the consolidated status event, posting result, screening result and original Payment
+Instruction. This view contributes the origin, important transformations, quality
+controls, responsible systems and downstream use needed to test whether a reported
+status is explainable.
 
-For Horizon Bank payment reporting, the set might be:
+The lineage view needs complementary views:
 
-1. a conceptual view for Party, Account and Payment Instruction;
-2. a logical model for payment structure and roles;
-3. a DFD for movement among Horizon Digital Channels, Payments Platform, Financial Crime
-   Platform, Core Deposit System, Event Platform and Enterprise Data Platform;
-4. lineage from instruction, screening and posting to the reporting data product; and
-5. an ownership and lifecycle matrix for status definitions, quality, retention and
-   escalation.
+1. A conceptual information view defines Party, Account and Payment Instruction in
+   business language so that participants agree what the traced data means.
+2. A logical ERD defines selected payment attributes, debtor and creditor roles,
+   identifiers, cardinalities and optionalities without choosing a database product.
+3. A DFD shows payment-status movement and material stores across Horizon Digital
+   Channels, Payments Platform, Financial Crime Platform, Core Deposit System, Event
+   Platform and Enterprise Data Platform.
+4. An ownership and lifecycle matrix records the status definition owner, steward,
+   authoritative source at each stage, quality rule, escalation route and approved
+   retention reference.
 
-Cross-reference models through stable concept names, data-product identifiers, interface
-identifiers or catalogue entries. Do not draw physical tables, process gateways,
-deployment nodes and governance roles on the same sheet unless a clearly stated review
-question genuinely requires that combination.
+Together, these views answer related questions without mixing notation. Cross-reference
+them through stable concept names, status definitions, data-product identifiers and
+interface or event identifiers.
+
+Deliberately omit physical table and index design, detailed application programming
+interface payloads, Business Process Model and Notation (BPMN) gateways, message retry
+timing, network zones and jurisdiction-specific retention periods. Those details belong
+in physical data, integration, process, deployment or approved policy artefacts when a
+separate decision requires them.
+
+Review the set by asking:
+
+- Can each reported status be traced to its source facts and transformations?
+- Is the authoritative source clear at each lifecycle stage?
+- Do the conceptual and logical views use the same controlled meanings as the lineage
+  and DFD?
+- Are the owner, steward, quality rule and escalation route explicit?
+- Are material copies and intermediate stores included without adding unrelated
+  infrastructure detail?
+- Can each view be understood by its intended audience without relying on another view
+  to explain its notation?
 
 ## Common mistakes
 

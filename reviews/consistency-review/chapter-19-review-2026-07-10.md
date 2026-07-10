@@ -39,6 +39,8 @@
 - The chapter uses `Simple Online Store` and the controlled Horizon Bank system names.
 - Payment Instruction, Party, Account and reporting examples remain consistent with
   existing chapters and example files.
+- The singular `Worked example` heading matches the approved BOOK_PLAN structure and the
+  established Part III chapter pattern.
 
 ## Repository Consistency Checks
 

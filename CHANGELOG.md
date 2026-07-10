@@ -18,6 +18,8 @@ All notable repository and manuscript changes are recorded here. This is a proje
 - Recorded `DEC-027` as `Proposed` and added controlled glossary terms for data
   ownership, stewardship, catalogues, master, reference and transaction data.
 - Reused five registered data-modelling source notes; no new source was required.
+- Added the explicit Horizon Bank payment-status worked example required by the approved
+  Chapter 19 structure and defined SVG at first use.
 
 ## 2026-07-08
 
