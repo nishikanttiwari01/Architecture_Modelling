@@ -293,6 +293,18 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapter 8, Chapter 18, Chapter 19, Chapter 20, `DIAGRAM_REGISTER.md`, `diagrams/specifications/FIG-19-01-choosing-the-right-data-architecture-view.md`, `research/data/`.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
+## DEC-028: Scope Chapter 20 as infrastructure and deployment view selection
+
+- **Status:** Proposed
+- **Date:** 2026-07-10
+- **Decision:** Write Chapter 20 as a selection-and-combination chapter for runtime deployment, network topology, cloud architecture, Kubernetes deployment, environment comparison, availability, recovery, ownership and observability views. Reuse Chapter 11 foundations and specify one PlantUML selection guide, `FIG-20-01`.
+- **Context:** Chapter 11 already teaches the terminology. Chapter 19 covers data architecture and Chapter 21 covers security, so Chapter 20 must expose placement and operational evidence without absorbing data structures, process flows or threat modelling.
+- **Alternatives considered:** Re-teach Chapter 11; use only a table; create source before specification approval; combine every concern in one diagram.
+- **Reason:** A selection chapter moves beginners from an operational question to a suitable view and necessary companions. Deferring source follows diagram policy.
+- **Consequences:** The author authorised figure production. The registered figure has PlantUML source and SVG export at `Review`, not `Approved`. Existing official research is reused.
+- **Related chapters/files:** Chapters 11, 19, 20 and 21, `DIAGRAM_REGISTER.md`, `diagrams/specifications/FIG-20-01-choosing-the-right-infrastructure-deployment-view.md`, `research/infrastructure/`.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
+
 ## Decision template
 
 ```markdown

@@ -4,6 +4,17 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-10
 
+### Completed Chapter 20 infrastructure and deployment modelling
+
+- Expanded Chapter 20 into a complete selection chapter for runtime placement, network
+  topology, cloud services, Kubernetes, environments, availability, recovery and
+  operational ownership.
+- Added, specified, rendered, visually reviewed and integrated `FIG-20-01`; its register
+  status is `Review`, not `Approved`.
+- Added four review records and the Chapter 20 quality gate.
+- Reused registered infrastructure sources, recorded `DEC-028` as `Proposed`, and moved
+  the chapter to `Ready for Author Approval`.
+
 ### Completed Chapter 19 data architecture modelling
 
 - Expanded Chapter 19, **Modelling Data Architecture**, from scaffold to a complete Part

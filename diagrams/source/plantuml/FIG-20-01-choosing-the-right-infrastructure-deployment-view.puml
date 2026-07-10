@@ -1,0 +1,37 @@
+@startmindmap
+title FIG-20-01. Choosing the Right Infrastructure and Deployment View
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #333333
+' Original beginner selection guide derived from Chapter 20.
+' Meaning is carried by text, not colour.
+* Start with the\noperational question
+** Runtime placement
+*** What runs where?
+**** UML or C4\ndeployment view
+** Connectivity
+*** Which zones and\ntraffic paths matter?
+**** Network topology
+** Cloud responsibility
+*** Which cloud services\nand responsibilities matter?
+**** Cloud architecture view
+** Cluster workload
+*** Which Kubernetes resources\nrun and connect workloads?
+**** Kubernetes\ndeployment view
+** Environment
+*** What is deliberately different\nbetween environments?
+**** Environment\ncomparison matrix
+** Continuity
+*** How does service continue\nthrough expected failure?
+**** Availability or\nresilience view
+*** How is service restored\nafter serious disruption?
+**** Recovery view
+** Operations
+*** Who knows, acts\nand escalates?
+**** Ownership matrix or\nobservability view
+** Still unclear?
+*** Clarify audience, boundary,\nenvironment and decision
+**** Do not choose a view\nuntil the question is specific
+@endmindmap
