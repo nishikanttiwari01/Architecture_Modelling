@@ -49,7 +49,8 @@
 - FIG-19-01 is registered with its complete specification, PlantUML source, SVG export
   and PNG review preview after author production authorisation on 2026-07-11.
 - The source implements all eight selection branches plus boundary, multi-view and
-  fallback guidance.
+  fallback guidance. Each prompt uses an explicit `yes` arrow to its recommended view
+  and a `no` arrow to the next question or fallback.
 - Rendering and visual inspection passed; the register status is `Review`, not
   `Approved`.
 

@@ -109,9 +109,13 @@ The figure is an original selection guide derived from Chapter 19. Its source co
 - **Editable source:** `diagrams/source/plantuml/FIG-19-01-choosing-the-right-data-architecture-view.puml`
 - **Publication export:** `diagrams/exported/svg/FIG-19-01-choosing-the-right-data-architecture-view.svg`
 - **Review preview:** `diagrams/exported/png/FIG-19-01-choosing-the-right-data-architecture-view.png`
-- **Rendered preview size:** 840 × 884 pixels.
-- **Visual result:** Pass for `Review`. No clipped text, overlapping labels or excessive
-  crossings were found. The hierarchy makes direction clear, contrast is sufficient,
-  terminology matches Chapter 19, and labels remain readable at intended page width.
+- **Arrowed-layout rerender:** 2026-07-11, replacing the original mind-map layout.
+- **Rendered SVG size:** 783 × 1180 pixels; the PNG review preview is 782 × 1179
+  pixels.
+- **Visual result:** Pass for `Review`. Every route uses visible arrowheads. The `yes`
+  and `no` labels make branch direction explicit. No clipped text, overlapping labels,
+  connector crossings or unreadable fonts were found. Contrast is sufficient,
+  terminology matches Chapter 19, and the portrait layout remains readable at intended
+  page width.
 - **Approval boundary:** Production and visual review do not constitute final author
   approval.

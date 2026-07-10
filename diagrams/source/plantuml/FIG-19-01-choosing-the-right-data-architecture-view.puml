@@ -1,46 +1,67 @@
-@startmindmap
+@startuml
 title FIG-19-01. Choosing the Right Data Architecture View
 !include ../../styles/plantuml-theme.puml
-skinparam defaultFontSize 15
-skinparam mindmapDiagram {
-  BackgroundColor #FFFFFF
-  LineColor #333333
+top to bottom direction
+skinparam defaultFontSize 14
+skinparam linetype ortho
+skinparam nodesep 90
+skinparam rectangle {
+  RoundCorner 12
 }
-' Selection rule:
-' Start with the current data question.
-' Choose the first branch that matches the primary concern.
-' Use separate linked views when several concerns matter.
-' The chapter table provides fuller audience and companion-view guidance.
-* Start with the\ndata question
-** Meaning and structure
-*** Which business information\nconcepts matter?
-**** Conceptual\ninformation view
-*** What precise, technology-independent\nstructure is required?
-**** Logical ERD
-*** How will the data be\nstored in a chosen technology?
-**** Physical\ndata model
-*** Which shared subjects, classifications\nor controlled values are governed?
-**** Master/reference\ndata catalogue
-** Movement and traceability
-*** Where does data move,\ntransform and rest?
-**** Data flow\ndiagram (DFD)
-*** Where did a value originate, how was\nit transformed and where is it used?
-**** Data lineage\nview
-** Governance over time
-*** Who is accountable and\nwho performs stewardship?
-**** Ownership\nmatrix
-*** What happens from creation\nthrough retention and disposal?
-**** Data lifecycle\nview
-** Before drawing
-*** State audience, boundary\nand abstraction level
-**** Keep one primary\nquestion per view
-*** More than one concern?
-**** Use separate linked views\nwith stable names and identifiers
-*** Still unclear?
-**** Clarify the data boundary\nand architecture decision
+
+rectangle "Start with the data question" as START #E8F1F8
+
+rectangle "1. Which business information\nconcepts matter?" as Q1
+rectangle "2. What precise, technology-independent\nstructure is required?" as Q2
+rectangle "3. How will the data be stored\nin a chosen technology?" as Q3
+rectangle "4. Where does data move,\ntransform and rest?" as Q4
+rectangle "5. Where did a value originate, how was\nit transformed and where is it used?" as Q5
+rectangle "6. Who is accountable and\nwho performs stewardship?" as Q6
+rectangle "7. What happens from creation\nthrough retention and disposal?" as Q7
+rectangle "8. Which shared subjects, classifications\nor controlled values are governed?" as Q8
+rectangle "Clarify the data boundary\nand architecture decision" as CLARIFY #FFF8DC
+
+rectangle "Conceptual\ninformation view" as V1 #EAF4EA
+rectangle "Logical ERD" as V2 #EAF4EA
+rectangle "Physical\ndata model" as V3 #EAF4EA
+rectangle "Data flow\ndiagram (DFD)" as V4 #EAF4EA
+rectangle "Data lineage\nview" as V5 #EAF4EA
+rectangle "Ownership\nmatrix" as V6 #EAF4EA
+rectangle "Data lifecycle\nview" as V7 #EAF4EA
+rectangle "Master/reference\ndata catalogue" as V8 #EAF4EA
+
+START -down-> Q1 : begin
+Q1 -right-> V1 : yes
+Q1 -down-> Q2 : no
+Q2 -right-> V2 : yes
+Q2 -down-> Q3 : no
+Q3 -right-> V3 : yes
+Q3 -down-> Q4 : no
+Q4 -right-> V4 : yes
+Q4 -down-> Q5 : no
+Q5 -right-> V5 : yes
+Q5 -down-> Q6 : no
+Q6 -right-> V6 : yes
+Q6 -down-> Q7 : no
+Q7 -right-> V7 : yes
+Q7 -down-> Q8 : no
+Q8 -right-> V8 : yes
+Q8 -down-> CLARIFY : no
+
+note left of START
+Before drawing:
+state audience, boundary
+and abstraction level.
+
+More than one concern?
+Use separate linked views
+with stable names and identifiers.
+end note
+
 ' Accessibility notes:
-' - Text labels carry the complete meaning; colour is not required.
-' - Hierarchy and connecting lines make direction explicit.
-' - Short line breaks keep labels readable at book-page width.
+' - Arrowheads show direction from start, through each question, to its first view.
+' - Yes/no labels make each branch explicit without relying on colour.
+' - Question numbers and text labels carry the complete meaning.
+' - Orthogonal connectors and aligned rows avoid crossings.
 ' - The figure is a first filter, not a substitute for the chapter table.
-@endmindmap
+@enduml

@@ -58,7 +58,7 @@
 - FIG-19-01 gives a readable first-filter route while the selection table retains fuller
   guidance.
 - The figure has an explanatory paragraph and meaningful caption, and its text and
-  hierarchy carry meaning without relying on colour.
+  labelled arrow sequence carries meaning without relying on colour.
 
 ## Recommendation
 

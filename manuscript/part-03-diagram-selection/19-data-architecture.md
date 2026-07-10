@@ -290,18 +290,21 @@ primary question.
 | What happens to data over time? | Lifecycle view | Create, use, share, retain, archive and dispose | Data, security, privacy and records roles | Ownership matrix |
 | Which shared values and subjects are governed? | Master/reference data catalogue | Definition, classification, source, version and consumers | Data governance and application teams | Logical model |
 
-Figure 19-01 provides a compact visual route through these choices. Start at the data
-question on the left, choose the concern that best matches the decision, then follow the
-branch to a suggested first view. The bottom branch reminds the reader to state audience,
-boundary and abstraction level, and to use separate linked views when several concerns
-apply. The hierarchy and labels carry the meaning without relying on colour.
+Figure 19-01 provides a compact visual route through these choices. Start at the top and
+follow the downward `no` arrows until a question matches the concern, then follow its
+rightward `yes` arrow to the suggested first view. The note beside the start reminds the
+reader to state audience, boundary and abstraction level, and to use separate linked
+views when several concerns apply. Arrowheads, branch labels, question numbers and text
+carry the meaning without relying on colour.
 
-![FIG-19-01. Choosing the Right Data Architecture View](../../diagrams/exported/svg/FIG-19-01-choosing-the-right-data-architecture-view.svg)
+![FIG-19-01 arrowed decision guide from eight data questions to recommended views](../../diagrams/exported/svg/FIG-19-01-choosing-the-right-data-architecture-view.svg)
 
-Figure FIG-19-01. Choosing the Right Data Architecture View. The guide maps questions
-about meaning, structure, implementation, movement, lineage, ownership, lifecycle and
-governed shared data to a suggested first view. It is a selection aid, not a replacement
-for the fuller audience, elements and companion-view guidance in the table.
+Figure FIG-19-01. Choosing the Right Data Architecture View. Follow `no` arrows down the
+eight numbered question prompts and take the first matching `yes` arrow to a recommended
+view. The guide covers meaning, structure, implementation, movement, lineage, ownership,
+lifecycle and governed shared data. If none matches, it directs the reader to clarify
+the boundary and decision. It is a selection aid, not a replacement for the fuller
+audience, elements and companion-view guidance in the table.
 
 ## Worked example
 
