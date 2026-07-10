@@ -9,4 +9,3 @@
 - Chapter 30 retains lifecycle execution, stage-gate and operational migration guidance.
 - Online Store and Horizon Bank names follow controlled example files.
 - British English is used and no em dash is present.
-

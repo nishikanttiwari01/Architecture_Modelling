@@ -22,4 +22,3 @@ The chapter's current-state baseline, gap matrix, dependency map, migration-wave
 - The chapter does not reproduce specification text or diagrams.
 - It does not claim that ArchiMate prescribes one migration method, delivery sequence or benefit measure.
 - Roadmap dates and target states are described as conditional planning information, not guaranteed commitments.
-

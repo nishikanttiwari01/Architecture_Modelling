@@ -8,4 +8,3 @@ The chapter is complete within the planned 2,000 to 4,000-word range. It contain
 The figure specification records the author's 2026-07-11 production authorisation. PlantUML source, SVG and PNG exports, visual inspection, register entry, caption and accessibility text are complete. The figure remains at `Review`. No chapter or diagram has been marked `Approved`.
 
 No unresolved editorial, technical, beginner, consistency, source or diagram finding remains. Author review of Chapter 22, `FIG-22-01` and proposed `DEC-030` remains required.
-
