@@ -38,7 +38,7 @@
 | 17 | Modelling User and System Interaction | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; FIG-17-01 at Review; DEC-025 Proposed |
 | 18 | Modelling Integration and Runtime Behaviour | Ready for Author Approval | 100 | 100 | 20 | 100 | 100 | Author review; approve `FIG-18-01` specification and accept `DEC-026`, then produce figure |
 | 19 | Modelling Data Architecture | Ready for Author Approval | 100 | 100 | 20 | 100 | 100 | Author review; approve `FIG-19-01` specification and accept `DEC-027`, then produce figure |
-| 20 | Modelling Infrastructure and Deployment | Planned | 0 | 0 | 0 | 0 | 0 | — |
+| 20 | Modelling Infrastructure and Deployment | Ready for Author Approval | 100 | 100 | 20 | 100 | 100 | Author review; approve `FIG-20-01` specification and accept `DEC-028`, then produce figure |
 | 21 | Modelling Security Architecture | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 22 | Modelling Transformation and Migration | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 23 | Modelling Decisions and Business Rules | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -107,6 +107,12 @@
 
 ## Current recommended next task
 
+Chapter 20, **Modelling Infrastructure and Deployment**, is `Ready for Author Approval`.
+It covers runtime placement, network topology, cloud services, Kubernetes, environment
+differences, availability, recovery and operational ownership. `FIG-20-01` is registered
+and specified, with source/export deferred pending author approval. `DEC-028` remains
+`Proposed`.
+
 Chapter 19, **Modelling Data Architecture**, is `Ready for Author Approval`. The chapter
 has been fully drafted as a Part III selection chapter for choosing between conceptual,
 logical and physical data views, ERDs, DFDs, lineage views, ownership matrices,
@@ -127,4 +133,4 @@ Chapter 14, **Modelling Business Strategy and Capabilities**, remains `Revision 
 
 Chapter 13, **Other Useful Modelling Approaches**, remains `Ready for Author Approval` with final quality score 9.0. Its six figures remain at `Review`, with explicit author decisions still open for chapter and figure approval, native Draw.io graphical-open and export-fidelity comparison (`DEC-021`), and final book-page layout placement of wider landscape figures (`DEC-014`).
 
-Last updated: 2026-07-10 (Chapter 19 ready for author approval)
+Last updated: 2026-07-10 (Chapter 20 ready for author approval)
