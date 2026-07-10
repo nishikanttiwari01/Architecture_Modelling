@@ -422,37 +422,36 @@ the decision.
 
 ## Practical exercise
 
-Horizon Bank wants to improve confidence in payment-status reporting. Horizon Digital
-Channels captures a Payment Instruction. The Payments Platform validates and
-orchestrates it. The Financial Crime Platform returns a screening result. The Core
-Deposit System returns a posting result. The Event Platform distributes status events,
-and the Enterprise Data Platform creates a reporting data product.
+The Simple Online Store has inconsistent product information. Product descriptions,
+prices and categories originate in catalogue administration. The Storefront and search
+facilities cache product data, ordering consumes the data when an Order is placed, and
+analytics reports on product and sales performance. Teams disagree about which value is
+authoritative after a price or category changes.
 
-Choose a view for each question:
+Prepare a short data-architecture proposal. It must:
 
-1. Which business concepts must stakeholders agree?
-2. Which attributes, roles and cardinalities define a Payment Instruction?
-3. Where does payment-status data move and where is it stored?
-4. How did one reported status derive from instruction, screening and posting data?
-5. Who owns the status definition, stewards quality and resolves discrepancies?
-6. Which lifecycle, privacy and retention facts should be recorded without inventing a
-   legal rule?
+1. state the architecture question, intended audience and scope boundary;
+2. select one primary view and justify why it answers the most important question;
+3. add only the complementary views needed to expose movement, cache copies, structure
+   or governance;
+4. identify the accountable owner for product meaning, the stewarding responsibility
+   and the authoritative source for descriptions, prices and categories;
+5. write one review question that could reveal stale or inconsistent product data; and
+6. state what the proposal deliberately omits.
 
-Suggested answer:
+There is more than one defensible selection. A strong response might make a DFD the
+primary view because the immediate concern is how product data moves from catalogue
+administration into caches, ordering and analytics. It could pair that view with a
+small ownership table recording authority and stewardship, plus a focused logical model
+if Product, Price and Category meanings or effective dates are disputed. A response
+centred on business-definition disagreement could instead justify the conceptual or
+logical model as primary and use the DFD as a companion.
 
-- Use a conceptual information view for Party, Account and Payment Instruction meaning.
-- Use a logical ERD for attributes, identifiers, roles, cardinality and optionality.
-- Use a DFD for movement and stores across the named Horizon Bank systems.
-- Use a lineage view for origin, transformations, controls and reporting use.
-- Use an ownership matrix for owner, steward, authoritative source, quality rule and
-  escalation path.
-- Use a lifecycle and governance view to record creation, use, sharing, approved
-  retention reference and disposal trigger. Mark any unverified legal requirement as an
-  open question for the appropriate legal, privacy or records specialist.
-
-Review the result by asking whether every view has one primary question, uses controlled
-system names, states its level and scope, and links to companion views without mixing
-their notation.
+Assess the proposal by looking for a clear boundary, labelled copies and flows, an
+explicit authority decision, a review question such as "Can an Order use a price older
+than the current approved effective price?", and exclusions that keep the task focused.
+Reasonable exclusions include screen design, search-ranking logic, database indexes,
+message retry timing and the complete analytics warehouse schema.
 
 ## Review checklist
 

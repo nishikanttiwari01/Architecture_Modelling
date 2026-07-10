@@ -20,6 +20,8 @@ All notable repository and manuscript changes are recorded here. This is a proje
 - Reused five registered data-modelling source notes; no new source was required.
 - Added the explicit Horizon Bank payment-status worked example required by the approved
   Chapter 19 structure and defined SVG at first use.
+- Replaced the overlapping payment-status exercise with a distinct Simple Online Store
+  product-data governance transfer task.
 
 ## 2026-07-08
 

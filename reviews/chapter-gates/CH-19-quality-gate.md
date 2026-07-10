@@ -42,5 +42,6 @@ until author approval of the diagram specification.
 - [x] The worked example states its question, audience, scope, primary and complementary
   views, exclusions and review questions.
 - [x] Common mistakes are concrete and actionable.
-- [x] Practical exercise includes a suggested answer and review criteria.
+- [x] The practical exercise uses a distinct Online Store product-data case, requires a
+  justified primary view and provides flexible assessment criteria.
 - [x] Open author-only dependencies are documented.

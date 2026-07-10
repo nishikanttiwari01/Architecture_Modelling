@@ -14,7 +14,7 @@
 - Explanations for every data architecture view.
 - Selection table and planned FIG-19-01.
 - Simple Online Store and Horizon Bank examples.
-- Exercise, suggested answer and review checklist.
+- Simple Online Store transfer exercise, assessment guidance and review checklist.
 
 ## Findings
 
@@ -47,7 +47,8 @@
 - The examples demonstrate why one concern needs several linked, focused views.
 - The explicit worked example states its question, audience, scope, primary lineage
   view, complementary views, exclusions and review questions.
-- The exercise requires selection and review, not only term recall.
+- The exercise transfers the selection method to product-data governance and allows
+  more than one justified primary-view choice rather than repeating the worked example.
 
 ## Accessibility and Readability Checks
 
