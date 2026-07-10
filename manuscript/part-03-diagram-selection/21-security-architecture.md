@@ -268,17 +268,21 @@ The audience includes the Payments Platform owner, Horizon Digital Channels team
 Financial Crime Platform owner, Compliance Officer, Operations Analyst, identity team,
 security architect, auditor and risk reviewer. The scope starts when Horizon Digital
 Channels submits a payment instruction and ends when the Payments Platform records a
-release or rejection. The Core Deposit System and Financial Crime Platform are external
-dependencies within this review boundary.
+release or rejection. Horizon Digital Channels, the Core Deposit System and the Financial
+Crime Platform sit outside the Payments Platform boundary. They remain dependencies and
+participants inside the wider review scope because their interactions affect the release
+decision.
 
 The team selects four linked views:
 
 1. A security context names the payment instruction, customer account, approval record
    and audit record as assets. It shows the main systems and organisational owners.
-2. An authentication and access-authorisation sequence shows how customer identity is
-   established, how ownership and action are checked, where policy is decided and where
-   it is enforced. It marks business approval and financial-crime screening as separate
-   decisions.
+2. An identity-context and access-authorisation sequence begins with the authenticated
+   identity context or assertion received from Horizon Digital Channels. It shows how
+   the Payments Platform validates whether that context is trusted for this interaction,
+   then uses the resulting subject identity when checking account ownership, permitted
+   action and relevant conditions. It shows where access policy is decided and enforced,
+   while keeping business approval and financial-crime screening as separate decisions.
 3. A threat-model DFD shows the instruction and status flows across channel, platform and
    external-system trust boundaries. STRIDE prompts help identify scenarios such as a
    spoofed service identity, tampered instruction, missing evidence or unavailable

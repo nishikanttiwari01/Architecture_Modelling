@@ -8,6 +8,9 @@
 - Added, rendered and visually reviewed `FIG-21-01` in PlantUML, SVG and PNG; registered it at `Review`.
 - Reused the verified Chapter 12 security research and recorded `DEC-029` as proposed.
 - Added four review passes and the Chapter 21 quality gate.
+- Corrected the payment-release example so identity establishment remains outside its
+  stated scope and the Payments Platform validates received identity context before
+  access authorisation.
 
 All notable repository and manuscript changes are recorded here. This is a project history, not a replacement for Git commits.
 

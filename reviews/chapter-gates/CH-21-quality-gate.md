@@ -7,7 +7,7 @@
 
 | Review area | Result | Notes |
 |---|---|---|
-| Technical accuracy | Pass | Registered official and primary sources support terminology and framing. |
+| Technical accuracy | Pass | Sources support terminology; identity establishment is outside the declared payment-review scope and received context is validated for access authorisation. |
 | Beginner comprehension | Pass | Plain questions precede formal detail. |
 | Educational flow | Pass | Selection leads to comparison, worked example and practice. |
 | Terminology and consistency | Pass | Aligned with Chapter 12, adjacent chapters and examples. |
@@ -23,6 +23,7 @@
 - [x] Worked example and exercise are materially distinct.
 - [x] Selection guidance, comparison and common mistakes are actionable.
 - [x] Terminology and examples are consistent.
+- [x] System boundaries and the wider review scope are distinguished.
 - [x] Author-only dependencies are documented.
 
 ## Open author decisions
