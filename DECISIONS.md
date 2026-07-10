@@ -317,6 +317,18 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapters 12, 20, 21 and 22, `DIAGRAM_REGISTER.md`, `diagrams/specifications/FIG-21-01-choosing-the-right-security-architecture-view.md`, `research/security/`.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
+## DEC-030: Scope Chapter 22 as transformation and migration view selection
+
+- **Status:** Proposed
+- **Date:** 2026-07-11
+- **Decision:** Write Chapter 22 as a selection-and-combination chapter for current, target and transition states, gap analysis, roadmaps, dependencies, migration waves, cutover, decommissioning, benefits and risks. Reuse Chapters 7 and 13 foundations and create one PlantUML selection guide, `FIG-22-01`.
+- **Context:** Part III helps readers choose diagrams by architecture need. Chapters 7 and 13 already introduce ArchiMate migration concepts and roadmaps. Chapter 30 will address lifecycle execution, so Chapter 22 must focus on choosing reviewable views without becoming a programme-management method.
+- **Alternatives considered:** Re-teach ArchiMate; make the chapter a detailed migration procedure; use only a table; combine every state, dependency and delivery concern in one diagram.
+- **Reason:** Question-led selection helps beginners choose a focused view and companion evidence. Explicit conditional language prevents targets, roadmaps and benefits from being presented as guarantees.
+- **Consequences:** The author authorised specification and figure production on 2026-07-11. `FIG-22-01` has PlantUML source plus SVG and PNG exports and remains at `Review`, not `Approved`. Existing ArchiMate research is reused with one focused interpretation note.
+- **Related chapters/files:** Chapters 7, 13, 22 and 30, `DIAGRAM_REGISTER.md`, `diagrams/specifications/FIG-22-01-choosing-the-right-transformation-migration-view.md`, `research/transformation/archimate-transformation-view-selection-2026.md`.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
+
 ## Decision template
 
 ```markdown

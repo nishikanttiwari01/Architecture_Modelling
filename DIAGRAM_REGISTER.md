@@ -72,6 +72,7 @@ Add a row before creating a new figure. Do not reuse an ID.
 | FIG-19-01 | 19 | Choosing the Right Data Architecture View | Help beginner architects choose a data architecture view for meaning, structure, implementation, movement, lineage, ownership, lifecycle or governed shared data | Beginner and practising architects, data architects, business analysts, developers, data owners, data stewards, integration teams, security and privacy reviewers, reporting teams and risk reviewers | PlantUML decision guide | diagrams/source/plantuml/FIG-19-01-choosing-the-right-data-architecture-view.puml | diagrams/exported/svg/FIG-19-01-choosing-the-right-data-architecture-view.svg | Review | Codex |
 | FIG-20-01 | 20 | Choosing the Right Infrastructure and Deployment View | Help beginner architects choose an infrastructure or deployment view for runtime placement, network paths, cloud services, Kubernetes, environments, availability, recovery or ownership | Beginner and practising architects, developers, platform and cloud teams, network and operations teams, service owners, continuity specialists and risk reviewers | PlantUML decision guide | diagrams/source/plantuml/FIG-20-01-choosing-the-right-infrastructure-deployment-view.puml | diagrams/exported/svg/FIG-20-01-choosing-the-right-infrastructure-deployment-view.svg | Review | Codex |
 | FIG-21-01 | 21 | Choosing the Right Security Architecture View | Help beginner architects choose a first security architecture view from the question they need to answer | Architects, developers, identity, security, privacy, operations, risk and audit teams | PlantUML decision guide | diagrams/source/plantuml/FIG-21-01-choosing-the-right-security-architecture-view.puml | diagrams/exported/svg/FIG-21-01-choosing-the-right-security-architecture-view.svg | Review | Codex |
+| FIG-22-01 | 22 | Choosing the Right Transformation and Migration View | Help beginner architects choose a first transformation or migration view from the question they need to answer | Architects, transformation leads, sponsors, delivery, operations, data, security, risk and service owners | PlantUML decision guide | diagrams/source/plantuml/FIG-22-01-choosing-the-right-transformation-migration-view.puml | diagrams/exported/svg/FIG-22-01-choosing-the-right-transformation-migration-view.svg | Review | Codex |
 | FIG-31-01 | 31 | BIAN reference-to-implementation path | Separate BIAN reference concepts from bank implementation | Architects and bankers | Conceptual | Pending | Pending | Planned | — |
 
 ## Chapter 8 figure asset details
@@ -139,6 +140,12 @@ Add a row before creating a new figure. Do not reuse an ID.
 | Figure ID | Specification | Source | SVG export | PNG preview |
 |---|---|---|---|---|
 | `FIG-21-01` | `diagrams/specifications/FIG-21-01-choosing-the-right-security-architecture-view.md` | `diagrams/source/plantuml/FIG-21-01-choosing-the-right-security-architecture-view.puml` | `diagrams/exported/svg/FIG-21-01-choosing-the-right-security-architecture-view.svg` | `diagrams/exported/png/FIG-21-01-choosing-the-right-security-architecture-view.png` |
+
+## Chapter 22 figure asset details
+
+| Figure ID | Specification | Source | SVG export | PNG preview |
+|---|---|---|---|---|
+| `FIG-22-01` | `diagrams/specifications/FIG-22-01-choosing-the-right-transformation-migration-view.md` | `diagrams/source/plantuml/FIG-22-01-choosing-the-right-transformation-migration-view.puml` | `diagrams/exported/svg/FIG-22-01-choosing-the-right-transformation-migration-view.svg` | `diagrams/exported/png/FIG-22-01-choosing-the-right-transformation-migration-view.png` |
 
 ## Status values
 

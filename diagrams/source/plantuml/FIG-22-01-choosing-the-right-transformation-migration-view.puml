@@ -1,0 +1,36 @@
+@startuml
+title FIG-22-01. Choosing the Right Transformation and Migration View
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #333333
+skinparam rectangle {
+  BackgroundColor #F5F7FA
+  BorderColor #333333
+  FontColor #111111
+  RoundCorner 10
+}
+left to right direction
+rectangle "Start with the\ntransformation question" as Start #DCEAF7
+rectangle "Current-state baseline" as Current
+rectangle "Target architecture" as Target
+rectangle "Gap analysis" as Gap
+rectangle "Transition architecture" as Transition
+rectangle "Dependency map" as Dependency
+rectangle "Roadmap or\nmigration-wave view" as Roadmap
+rectangle "Cutover or parallel-\noperation view" as Cutover
+rectangle "Decommission view" as Retire
+rectangle "Benefit map\nor risk view" as Benefit
+rectangle "Clarify scope, state,\naudience and decision" as Clarify #FFF2CC
+Start --> Current : What evidence describes\nthe current state?
+Start --> Target : What state is\nintended?
+Start --> Gap : What differs\nbetween states?
+Start --> Transition : Can an intermediate state\noperate coherently?
+Start --> Dependency : What constrains\nthe order?
+Start --> Roadmap : How could change be\ngrouped and sequenced?
+Start --> Cutover : How will service or\ndata responsibility move?
+Start --> Retire : What evidence permits\nretirement?
+Start --> Benefit : Which outcome or\nuncertainty matters?
+Start --> Clarify : Still unclear?
+@enduml

@@ -224,6 +224,12 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Application landscape | A view of the major applications or software systems in an estate and their high-level relationships. | Use for estate understanding and rationalisation, not detailed process flow or interface catalogues. |
 | Integration landscape | A view of how systems exchange information through APIs, events, files, messages, adapters or integration platforms. | Label the integration style where it matters; avoid vague "integrates with" arrows. |
 | Architecture roadmap | A model of intended architecture change across current, transition and target states. | Treat it as an assumption-based planning view unless governance makes it a delivery commitment. |
+| Current-state baseline | A dated, evidence-based view of the architecture relevant to a change decision. | State scope, ownership, constraints and assumptions; do not use `legacy` as a substitute for analysis. |
+| Target architecture | An intended future architecture that supports stated outcomes under recorded assumptions. | Treat it as direction for review, not a guaranteed delivery commitment. |
+| Transition architecture | A coherent intermediate architecture that can operate while change is incomplete. | Show coexistence, authority, temporary controls, support ownership and exit criteria. |
+| Migration wave | A governed grouping of users, products, data, locations or capabilities intended to move together. | Record entry, exit, evidence, support and fallback criteria; a wave is not merely a calendar period. |
+| Cutover | The controlled transfer of service, data or operational responsibility from one arrangement to another. | Show proceed or stop authority, verification, recoverable boundary and fallback where relevant. |
+| Decommissioning | The governed retirement of an architecture element and its remaining data, interface, access, support and contractual obligations. | Removing a box from a target view is not evidence that retirement is complete. |
 | Heat map | A view that overlays a rating such as risk, maturity, cost, pain or priority onto a stable structure. | State the scoring basis, date, owner and meaning of ratings; do not rely on colour alone. |
 | Wardley map | A strategic map that relates user need, value-chain components, dependencies and component evolution. | Treat component positions as assumptions for discussion, not objective facts. |
 

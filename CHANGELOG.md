@@ -2,6 +2,17 @@
 
 ## 2026-07-11
 
+### Completed Chapter 22 transformation and migration
+
+- Drafted Chapter 22 to `Ready for Author Approval` as a question-led transformation-view selection chapter.
+- Added a focused ArchiMate transformation research note and reused `[OPEN-GROUP-ARCHIMATE-4]`.
+- Recorded the author's 2026-07-11 production authorisation in the `FIG-22-01` specification before creating its PlantUML source.
+- Rendered and visually inspected the SVG and PNG exports; the figure remains at `Review`, not `Approved`.
+- Added technical, beginner, consistency, final and quality-gate review evidence.
+- Recorded proposed `DEC-030` and updated chapter and diagram tracking.
+
+## 2026-07-11
+
 ### Completed Chapter 21 security architecture
 
 - Drafted Chapter 21 as a beginner-first security-view selection chapter with Horizon Bank worked example and a distinct Online Store exercise.
