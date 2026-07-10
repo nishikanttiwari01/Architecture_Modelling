@@ -4,6 +4,7 @@
 
 - Chapter: 19, Modelling Data Architecture
 - Review date: 2026-07-10
+- Diagram follow-up date: 2026-07-11
 - Reviewer: Codex
 - Review type: Terminology, cross-chapter, diagram and source consistency
 - Outcome: Pass for author review
@@ -44,8 +45,10 @@
 
 ## Repository Consistency Checks
 
-- FIG-19-01 uses a unique figure ID and is registered before source creation.
-- The specification explicitly records pending author approval.
+- FIG-19-01 uses a unique figure ID; its specification records the 2026-07-11 author
+  production authorisation before source creation.
+- The register, specification, PlantUML source, SVG export, PNG preview and manuscript
+  reference use consistent paths and terminology.
 - DEC-027 is recorded as `Proposed`.
 - STATUS.md sets Chapter 19 to `Ready for Author Approval`, not `Approved`.
 - New glossary terms do not redefine existing controlled data-modelling terms.

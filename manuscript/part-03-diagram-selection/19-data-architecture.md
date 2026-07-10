@@ -4,7 +4,7 @@ chapter: 19
 part: "part-03-diagram-selection"
 status: "Ready for Author Approval"
 author: "Nishikant Tiwari"
-last_updated: "2026-07-10"
+last_updated: "2026-07-11"
 ---
 
 # 19. Modelling Data Architecture
@@ -41,9 +41,8 @@ selection table:
 - FIG-19-01: Choosing the Right Data Architecture View.
 - Data architecture view selection table.
 
-`FIG-19-01` is specified and registered, but source and Scalable Vector Graphics (SVG)
-export are deferred until the author approves the diagram specification, as required by
-the repository diagram workflow.
+`FIG-19-01` is specified, rendered as Scalable Vector Graphics (SVG), visually reviewed
+and registered at `Review`. The figure is not marked `Approved`.
 
 ## Worked examples
 
@@ -291,9 +290,18 @@ primary question.
 | What happens to data over time? | Lifecycle view | Create, use, share, retain, archive and dispose | Data, security, privacy and records roles | Ownership matrix |
 | Which shared values and subjects are governed? | Master/reference data catalogue | Definition, classification, source, version and consumers | Data governance and application teams | Logical model |
 
-The planned `FIG-19-01` will provide a compact visual route through these choices after
-its specification is author-approved. The table remains the fuller selection aid and
-makes the chapter complete while production of the figure is deferred.
+Figure 19-01 provides a compact visual route through these choices. Start at the data
+question on the left, choose the concern that best matches the decision, then follow the
+branch to a suggested first view. The bottom branch reminds the reader to state audience,
+boundary and abstraction level, and to use separate linked views when several concerns
+apply. The hierarchy and labels carry the meaning without relying on colour.
+
+![FIG-19-01. Choosing the Right Data Architecture View](../../diagrams/exported/svg/FIG-19-01-choosing-the-right-data-architecture-view.svg)
+
+Figure FIG-19-01. Choosing the Right Data Architecture View. The guide maps questions
+about meaning, structure, implementation, movement, lineage, ownership, lifecycle and
+governed shared data to a suggested first view. It is a selection aid, not a replacement
+for the fuller audience, elements and companion-view guidance in the table.
 
 ## Worked example
 

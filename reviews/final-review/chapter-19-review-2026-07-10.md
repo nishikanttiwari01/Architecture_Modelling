@@ -4,6 +4,7 @@
 
 - Chapter: 19, Modelling Data Architecture
 - Review date: 2026-07-10
+- Diagram follow-up date: 2026-07-11
 - Reviewer: Codex
 - Review type: Final combined review
 - Outcome: Pass for author review
@@ -41,8 +42,9 @@
   a framed banking worked example, mistakes, a distinct Online Store transfer exercise
   and checklist.
 - Terminology consistency: Pass. Chapter 8 and glossary terms are reused consistently.
-- Diagram quality: Deferred. FIG-19-01 is fully specified and registered, but source and
-  export await author approval.
+- Diagram quality: Pass for author review. FIG-19-01 was rendered to SVG with a PNG
+  preview and visually inspected for clipping, overlap, crossings, font readability,
+  direction, contrast, terminology and page-width use.
 - Source and copyright: Pass. Five existing source notes support the chapter and no
   protected text or diagram was copied.
 - Copy-editing: Pass. British English, short paragraphs and no em dashes are used.
@@ -59,5 +61,5 @@
 ## Remaining Author Decisions
 
 - Author review of Chapter 19.
-- Author approval or revision of the FIG-19-01 specification before source creation.
+- Author review of FIG-19-01 at `Review`.
 - Author decision on DEC-027.

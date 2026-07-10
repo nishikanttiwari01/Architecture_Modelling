@@ -4,6 +4,7 @@
 
 - Chapter: 19, Modelling Data Architecture
 - Review date: 2026-07-10
+- Diagram follow-up date: 2026-07-11
 - Reviewer: Codex
 - Review type: Technical accuracy
 - Outcome: Pass for author review
@@ -45,10 +46,12 @@
 
 ## Diagram Review Notes
 
-- FIG-19-01 is registered and has a complete PlantUML decision-guide specification.
-- No source or export was created because author approval of the specification is
-  pending.
-- The register status is `Planned`, not `Approved`.
+- FIG-19-01 is registered with its complete specification, PlantUML source, SVG export
+  and PNG review preview after author production authorisation on 2026-07-11.
+- The source implements all eight selection branches plus boundary, multi-view and
+  fallback guidance.
+- Rendering and visual inspection passed; the register status is `Review`, not
+  `Approved`.
 
 ## Source Review Notes
 

@@ -17,6 +17,15 @@ All notable repository and manuscript changes are recorded here. This is a proje
 - Corrected standalone first-use expansions and dated Chapter 20 review evidence to the
   2026-07-11 authorisation and figure-production review.
 
+### Produced Chapter 19 data architecture selection guide
+
+- Recorded the author's 2026-07-11 production authorisation for `FIG-19-01` without
+  marking the specification or figure `Approved`.
+- Added the PlantUML source, SVG publication export and PNG review preview for
+  `FIG-19-01`, visually inspected the render and moved it to `Review`.
+- Integrated the figure, accessible explanation and caption into Chapter 19, then
+  updated its status and review evidence.
+
 ## 2026-07-10
 
 ### Completed Chapter 19 data architecture modelling

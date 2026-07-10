@@ -1,0 +1,46 @@
+@startmindmap
+title FIG-19-01. Choosing the Right Data Architecture View
+!include ../../styles/plantuml-theme.puml
+skinparam defaultFontSize 15
+skinparam mindmapDiagram {
+  BackgroundColor #FFFFFF
+  LineColor #333333
+}
+' Selection rule:
+' Start with the current data question.
+' Choose the first branch that matches the primary concern.
+' Use separate linked views when several concerns matter.
+' The chapter table provides fuller audience and companion-view guidance.
+* Start with the\ndata question
+** Meaning and structure
+*** Which business information\nconcepts matter?
+**** Conceptual\ninformation view
+*** What precise, technology-independent\nstructure is required?
+**** Logical ERD
+*** How will the data be\nstored in a chosen technology?
+**** Physical\ndata model
+*** Which shared subjects, classifications\nor controlled values are governed?
+**** Master/reference\ndata catalogue
+** Movement and traceability
+*** Where does data move,\ntransform and rest?
+**** Data flow\ndiagram (DFD)
+*** Where did a value originate, how was\nit transformed and where is it used?
+**** Data lineage\nview
+** Governance over time
+*** Who is accountable and\nwho performs stewardship?
+**** Ownership\nmatrix
+*** What happens from creation\nthrough retention and disposal?
+**** Data lifecycle\nview
+** Before drawing
+*** State audience, boundary\nand abstraction level
+**** Keep one primary\nquestion per view
+*** More than one concern?
+**** Use separate linked views\nwith stable names and identifiers
+*** Still unclear?
+**** Clarify the data boundary\nand architecture decision
+' Accessibility notes:
+' - Text labels carry the complete meaning; colour is not required.
+' - Hierarchy and connecting lines make direction explicit.
+' - Short line breaks keep labels readable at book-page width.
+' - The figure is a first filter, not a substitute for the chapter table.
+@endmindmap

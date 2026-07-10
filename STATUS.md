@@ -37,7 +37,7 @@
 | 16 | Modelling Software Structure | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; FIG-16-01 at Review; DEC-024 Proposed |
 | 17 | Modelling User and System Interaction | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; FIG-17-01 at Review; DEC-025 Proposed |
 | 18 | Modelling Integration and Runtime Behaviour | Ready for Author Approval | 100 | 100 | 20 | 100 | 100 | Author review; approve `FIG-18-01` specification and accept `DEC-026`, then produce figure |
-| 19 | Modelling Data Architecture | Ready for Author Approval | 100 | 100 | 20 | 100 | 100 | Author review; approve `FIG-19-01` specification and accept `DEC-027`, then produce figure |
+| 19 | Modelling Data Architecture | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-19-01` at Review; accept or revise `DEC-027` |
 | 20 | Modelling Infrastructure and Deployment | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-20-01` at Review; accept or revise `DEC-028` |
 | 21 | Modelling Security Architecture | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 22 | Modelling Transformation and Migration | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -118,9 +118,9 @@ Chapter 19, **Modelling Data Architecture**, is `Ready for Author Approval`. The
 has been fully drafted as a Part III selection chapter for choosing between conceptual,
 logical and physical data views, ERDs, DFDs, lineage views, ownership matrices,
 lifecycle views and master/reference data catalogues. `FIG-19-01` is registered and
-specified, with source/export deferred pending author approval of the specification.
-`DEC-027` remains `Proposed`. The next action is author review of Chapter 19, author
-review of the `FIG-19-01` specification, and any author decision on `DEC-027`.
+specified, rendered, visually reviewed and integrated at `Review`. `DEC-027` remains
+`Proposed`. The next action is author review of Chapter 19 and `FIG-19-01`, plus any
+author decision on `DEC-027`.
 
 Chapter 18, **Modelling Integration and Runtime Behaviour**, is `Ready for Author Approval`. The chapter has been fully drafted as a Part III selection chapter for choosing between integration context views, API interaction views, message-flow views, UML sequence diagrams, C4 dynamic diagrams, event-flow views, queue and asynchronous processing views, error and retry views, interface catalogues and data-flow views. `FIG-18-01` is registered and specified, with source/export deferred pending author approval of the specification. `DEC-026` remains `Proposed`. The next action is author review of Chapter 18, author review of the `FIG-18-01` specification, and any author decision on `DEC-026`.
 

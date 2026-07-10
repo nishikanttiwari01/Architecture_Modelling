@@ -4,6 +4,7 @@
 
 - Chapter: 19, Modelling Data Architecture
 - Review date: 2026-07-10
+- Diagram follow-up date: 2026-07-11
 - Reviewer: Codex
 - Review type: Beginner comprehension and educational flow
 - Outcome: Pass for author review
@@ -54,11 +55,12 @@
 
 - Paragraphs and headings are short and informative.
 - Acronyms are defined at first use.
-- Diagram-dependent information remains available in the selection table while the
-  figure is deferred.
-- The prose does not rely on colour or a future diagram for meaning.
+- FIG-19-01 gives a readable first-filter route while the selection table retains fuller
+  guidance.
+- The figure has an explanatory paragraph and meaningful caption, and its text and
+  hierarchy carry meaning without relying on colour.
 
 ## Recommendation
 
-The chapter is suitable for author review. Remaining work is author judgement and
-approval or revision of the FIG-19-01 specification.
+The chapter and rendered figure are suitable for author review. FIG-19-01 remains at
+`Review`, not `Approved`.

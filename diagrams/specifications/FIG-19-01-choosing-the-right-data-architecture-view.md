@@ -19,7 +19,15 @@ Which data architecture view should an architect try first for the current quest
 ## Notation
 
 PlantUML decision guide using simple shapes and labelled branches. Source and export are
-deferred until author sign-off on this specification.
+authorised for production using the repository's shared PlantUML style.
+
+## Production authorisation
+
+- **Authorisation date:** 2026-07-11
+- **Authorisation:** The author explicitly instructed Codex to produce and integrate the
+  Chapter 19 diagram without waiting for a separate approval step.
+- **Status effect:** This authorises source creation and rendering. It does not grant
+  final approval; the rendered figure proceeds to `Review`.
 
 ## Required elements
 
@@ -86,7 +94,7 @@ The figure is an original selection guide derived from Chapter 19. Its source co
 
 ## Review criteria
 
-- The author has signed off this specification before diagram source is created.
+- Production authorisation is recorded before diagram source creation.
 - PlantUML source renders to SVG after sign-off.
 - The SVG exists under `diagrams/exported/svg/` after rendering.
 - The diagram register points to source and SVG paths after rendering.
@@ -94,3 +102,16 @@ The figure is an original selection guide derived from Chapter 19. Its source co
 - The figure remains readable at intended page width and passes visual inspection.
 - The register status moves only to `Review` after rendering and inspection; final
   approval remains an author-only action.
+
+## Production and visual review record
+
+- **Production date:** 2026-07-11
+- **Editable source:** `diagrams/source/plantuml/FIG-19-01-choosing-the-right-data-architecture-view.puml`
+- **Publication export:** `diagrams/exported/svg/FIG-19-01-choosing-the-right-data-architecture-view.svg`
+- **Review preview:** `diagrams/exported/png/FIG-19-01-choosing-the-right-data-architecture-view.png`
+- **Rendered preview size:** 840 × 884 pixels.
+- **Visual result:** Pass for `Review`. No clipped text, overlapping labels or excessive
+  crossings were found. The hierarchy makes direction clear, contrast is sufficient,
+  terminology matches Chapter 19, and labels remain readable at intended page width.
+- **Approval boundary:** Production and visual review do not constitute final author
+  approval.
