@@ -37,7 +37,7 @@ By the end of this chapter, the reader should be able to:
 ## Required models and artefacts
 
 - `FIG-20-01`: Choosing the Right Infrastructure and Deployment View, specification,
-  PlantUML source and SVG export completed and reviewed.
+  PlantUML source and Scalable Vector Graphics (SVG) export completed and reviewed.
 
 ## Worked examples
 
@@ -46,12 +46,16 @@ By the end of this chapter, the reader should be able to:
 
 ## Source requirements
 
-- `[OMG-UML]` supports Unified Modeling Language (UML) deployment terminology.
+- The Object Management Group (OMG) source `[OMG-UML]` supports Unified Modeling
+  Language (UML) deployment terminology.
 - `[C4-OFFICIAL]` supports C4 deployment-diagram framing.
-- `[NIST-SP-800-145]` supports formal cloud service and deployment-model terminology.
+- National Institute of Standards and Technology (NIST) Special Publication 800-145,
+  recorded as `[NIST-SP-800-145]`, supports cloud service and deployment-model
+  terminology.
 - `[KUBERNETES-DOCS-2026]` supports Kubernetes object terminology.
-- `[AWS-WA-RELIABILITY-2026]` supports practical cloud reliability concerns, used as
-  vendor-specific guidance rather than a universal standard.
+- Amazon Web Services (AWS) guidance, recorded as `[AWS-WA-RELIABILITY-2026]`, supports
+  cloud reliability concerns and is used as vendor-specific guidance rather than a
+  universal standard.
 - `[NIST-SP-800-34R1]` is historical official guidance used informatively for recovery
   terminology and planning.
 - `[OPENTELEMETRY-DOCS-2026]` supports observability terminology.
@@ -306,7 +310,8 @@ replication lag or stalled payment processing will be detected and routed. A Kub
 view is added only if workload scheduling, replica placement or routing resources affect
 the recovery decision.
 
-Deliberately omit BPMN process detail, API payload schemas, database table design,
+Deliberately omit Business Process Model and Notation (BPMN) process detail, API payload
+schemas, database table design,
 individual firewall rules and a full threat model. Those belong in linked process,
 integration, data and security artefacts. The review should ask whether every critical
 dependency is available in recovery, whether the objectives have supporting tests,

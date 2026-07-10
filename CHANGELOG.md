@@ -2,7 +2,7 @@
 
 All notable repository and manuscript changes are recorded here. This is a project history, not a replacement for Git commits.
 
-## 2026-07-10
+## 2026-07-11
 
 ### Completed Chapter 20 infrastructure and deployment modelling
 
@@ -14,6 +14,10 @@ All notable repository and manuscript changes are recorded here. This is a proje
 - Added four review records and the Chapter 20 quality gate.
 - Reused registered infrastructure sources, recorded `DEC-028` as `Proposed`, and moved
   the chapter to `Ready for Author Approval`.
+- Corrected standalone first-use expansions and dated Chapter 20 review evidence to the
+  2026-07-11 authorisation and figure-production review.
+
+## 2026-07-10
 
 ### Completed Chapter 19 data architecture modelling
 

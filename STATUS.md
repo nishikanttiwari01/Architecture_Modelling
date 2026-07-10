@@ -111,6 +111,8 @@ Chapter 20, **Modelling Infrastructure and Deployment**, is `Ready for Author Ap
 It covers runtime placement, network topology, cloud services, Kubernetes, environment
 differences, availability, recovery and operational ownership. `FIG-20-01` is specified,
 rendered, integrated and at `Review`, not `Approved`. `DEC-028` remains `Proposed`.
+Technical, beginner, consistency, final and quality-gate evidence was last reviewed on
+2026-07-11 under the Chapter 20 review paths.
 
 Chapter 19, **Modelling Data Architecture**, is `Ready for Author Approval`. The chapter
 has been fully drafted as a Part III selection chapter for choosing between conceptual,
@@ -132,4 +134,4 @@ Chapter 14, **Modelling Business Strategy and Capabilities**, remains `Revision 
 
 Chapter 13, **Other Useful Modelling Approaches**, remains `Ready for Author Approval` with final quality score 9.0. Its six figures remain at `Review`, with explicit author decisions still open for chapter and figure approval, native Draw.io graphical-open and export-fidelity comparison (`DEC-021`), and final book-page layout placement of wider landscape figures (`DEC-014`).
 
-Last updated: 2026-07-10 (Chapter 20 ready for author approval)
+Last updated: 2026-07-11 (Chapter 20 review evidence and acronym corrections)

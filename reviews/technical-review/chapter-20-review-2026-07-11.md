@@ -1,7 +1,7 @@
 # Chapter 20 Technical Review
 
 - Chapter: 20, Modelling Infrastructure and Deployment
-- Review date: 2026-07-10
+- Review date: 2026-07-11
 - Reviewer: Codex
 - Outcome: Pass for author review
 
@@ -15,6 +15,8 @@ Deployment, topology, cloud, Kubernetes, environment, availability, recovery and
 ownership questions remain distinct. Terminology aligns with registered UML, C4, NIST,
 Kubernetes and OpenTelemetry sources. RTO and RPO are objectives, AWS guidance is
 qualified as vendor-specific, and NIST SP 800-34 Revision 1 is qualified as historical.
+The standalone chapter expands SVG, NIST, AWS, BPMN, UML, API, HTTPS, IaaS, PaaS, SaaS,
+RTO and RPO at first use. C4 is a model name rather than an acronym requiring expansion.
 
 `FIG-20-01` is registered, specified, rendered and visually reviewed. Its source and SVG
 paths are registered and its status is `Review`. Move the chapter to `Ready for Author

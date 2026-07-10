@@ -1,5 +1,7 @@
 # Chapter 20 Consistency Review
 
+- Review date: 2026-07-11
+
 ## Outcome
 
 Pass for author review.

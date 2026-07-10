@@ -1,7 +1,7 @@
 # Chapter 20 Quality Gate Review
 
 - **Chapter:** 20, Modelling Infrastructure and Deployment
-- **Review date:** 2026-07-10
+- **Review date:** 2026-07-11
 - **Reviewer:** Codex
 - **Status:** Ready for Author Approval
 
