@@ -2,6 +2,23 @@
 
 All notable repository and manuscript changes are recorded here. This is a project history, not a replacement for Git commits.
 
+## 2026-07-10
+
+### Completed Chapter 19 data architecture modelling
+
+- Expanded Chapter 19, **Modelling Data Architecture**, from scaffold to a complete Part
+  III selection chapter covering conceptual, logical and physical data views, ERDs,
+  DFDs, lineage, ownership and stewardship, master and reference data, lifecycle,
+  privacy, retention and data quality.
+- Added `FIG-19-01`, "Choosing the Right Data Architecture View", to the diagram register
+  and created its specification, with source/export deferred pending author approval.
+- Created Chapter 19 technical, beginner, consistency and final review records, plus
+  `reviews/chapter-gates/CH-19-quality-gate.md`.
+- Updated `STATUS.md` so Chapter 19 is `Ready for Author Approval`, not `Approved`.
+- Recorded `DEC-027` as `Proposed` and added controlled glossary terms for data
+  ownership, stewardship, catalogues, master, reference and transaction data.
+- Reused five registered data-modelling source notes; no new source was required.
+
 ## 2026-07-08
 
 ### Completed Chapter 18 integration and runtime behaviour modelling

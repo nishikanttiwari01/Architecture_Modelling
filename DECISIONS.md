@@ -281,6 +281,18 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapter 18, Chapter 4, Chapter 5, Chapter 6, Chapter 10, Chapter 17, Chapter 19, `DIAGRAM_REGISTER.md`, `diagrams/specifications/FIG-18-01-choosing-the-right-integration-runtime-behaviour-view.md`, `research/uml/omg-uml-2.5.1.md`, `research/c4/c4-model-official.md`, `research/bpmn/omg-bpmn-2.0.2.md`, `research/domain-event/cloudevents-1.0.2.md`, `research/domain-event/asyncapi-3.1.0.md`.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
+## DEC-027: Scope Chapter 19 as data architecture view selection
+
+- **Status:** Proposed
+- **Date:** 2026-07-10
+- **Decision:** Write Chapter 19, Modelling Data Architecture, as a selection-and-combination chapter that helps readers choose between conceptual, logical and physical data views, ERDs, DFDs, lineage views, ownership matrices, lifecycle views and master/reference data catalogues. Reuse Chapter 8 data-modelling foundations rather than re-teaching each technique, and specify one original PlantUML selection guide, `FIG-19-01`.
+- **Context:** Part III helps readers choose diagrams by architecture need. Chapter 8 already explains data-modelling levels, ERDs, DFDs, lineage and lifecycle. Chapter 18 covers runtime integration, while Chapter 20 will cover infrastructure and deployment. Chapter 19 must connect structure, movement and governance without mixing those concerns or duplicating the surrounding chapters.
+- **Alternatives considered:** Re-teach Chapter 8 in full; use only a manuscript table; create diagram source before author approval; combine structure, movement, governance and infrastructure on one diagram.
+- **Reason:** A selection chapter gives beginners a clear route from question to view and shows how focused models work together. The manuscript table contains detailed guidance, while the planned figure provides a compact first filter. Deferring source and export follows the specification-first diagram policy.
+- **Consequences:** Chapter 19 has one registered figure specification with source and export pending author approval. Existing data research sources are reused. The chapter remains complete and reviewable through its table, examples, exercise and checklist. Any additional figure requires separate justification and the normal diagram workflow.
+- **Related chapters/files:** Chapter 8, Chapter 18, Chapter 19, Chapter 20, `DIAGRAM_REGISTER.md`, `diagrams/specifications/FIG-19-01-choosing-the-right-data-architecture-view.md`, `research/data/`.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
+
 ## Decision template
 
 ```markdown
