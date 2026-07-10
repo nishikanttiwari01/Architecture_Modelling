@@ -89,7 +89,7 @@ A simple matrix is often clearest:
 | `G-LEDGER` | Account posting | Core Deposit System is authoritative | Retain authority during current horizon | Retain | Core banking owner |
 | `G-OLD-ROUTE` | Legacy payment route | Used by remaining channel | Remove after traffic and reconciliation criteria pass | Remove | Migration lead |
 
-The matrix does not prove feasibility. Link important gaps to requirements, decisions, work packages, dependencies, risks and verification evidence. In ArchiMate, current, transition and target plateaus can represent relatively stable architecture states. ArchiMate 4 uses concepts including Work Package, Deliverable, Plateau and Event for implementation and migration modelling [OPEN-GROUP-ARCHIMATE-4]. This chapter uses `gap analysis` as practical comparison language rather than claiming a current ArchiMate 4 Gap element.
+The matrix does not prove feasibility. Link important gaps to requirements, decisions, work packages, dependencies, risks and verification evidence. This book uses `plateau` as a convenient label for a relatively stable current, transition or target architecture state, following the repository convention established in Chapter 7. It uses `work package` and `deliverable` as practical change-planning terms. The accessible official ArchiMate 4 release material checked for this chapter confirms that the separate Implementation Event element was replaced by the generic Event element and lists Gap among removed elements [OPEN-GROUP-ARCHIMATE-4]. It does not provide accessible public definitions for Work Package, Deliverable or Plateau, so this chapter does not attribute those definitions normatively to ArchiMate 4.
 
 ## Transition architectures
 

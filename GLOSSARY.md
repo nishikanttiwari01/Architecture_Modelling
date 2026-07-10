@@ -109,7 +109,6 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Business Object Model (BIAN) | A semantic reference model for banking information concepts. | Do not treat it as a ready-made physical database schema. |
 | Current state | The architecture as it exists now. | Also called as-is or baseline architecture. |
 | Target state | The intended future architecture. | Also called to-be architecture. |
-| Transition architecture | A coherent intermediate state between current and target architectures. | State its duration and purpose. |
 | Architecture Decision Record (ADR) | A concise record of an important architecture decision, context and consequences. | Use stable identifiers and retain superseded records. |
 | Trust boundary | A boundary across which the basis for trust changes, such as administrative authority, identity authority, security policy, data custody, execution environment, network enforcement or organisational responsibility. | Do not use external, internal and trusted as synonyms. Make the boundary basis explicit in security diagrams. |
 | Conceptual data model | A data model that describes important business information concepts and their relationships without implementation detail. | Use before logical or physical design when meaning is still being agreed. |

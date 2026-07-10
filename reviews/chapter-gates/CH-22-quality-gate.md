@@ -7,12 +7,12 @@
 
 | Review area | Result | Notes |
 |---|---|---|
-| Technical accuracy | Pass | Registered ArchiMate source supports formal terms; practical viewpoints are identified as local guidance. |
+| Technical accuracy | Pass | Official attribution is limited to accessible ArchiMate 4 release evidence; unsupported concept definitions are identified as repository and practical terminology. |
 | Beginner comprehension | Pass | Plain questions precede formal detail. |
 | Educational flow | Pass | Selection leads to worked example, mistakes and practice. |
 | Terminology and consistency | Pass | Aligned with Chapters 7, 13, 21, 23 and 30 and controlled examples. |
 | Diagram quality | Pass | SVG and PNG rendered; original PNG inspected; register status is Review. |
-| Source and copyright | Pass | Existing primary source reused through a focused note; prose and figure are original. |
+| Source and copyright | Pass | Existing official primary release material is used only for supported claims; the focused note records the public-documentation limit; prose and figure are original. |
 | Copy-editing | Pass | British English; no em dash. |
 
 ## Quality-gate checklist

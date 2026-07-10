@@ -11,6 +11,6 @@
 - Major: none.
 - Minor: none unresolved.
 
-Current, transition and target states remain distinct. Gap analysis avoids claiming a current ArchiMate 4 Gap element. Roadmap, dependency, wave, cutover, parallel-operation, decommission, benefit and risk views answer separate questions. Plans and benefits are conditional rather than guaranteed. Horizon Bank names align with controlled examples, and Chapter 30 retains lifecycle execution detail.
+Current, transition and target states remain distinct. Gap analysis avoids claiming a current ArchiMate 4 Gap element. The chapter limits its official ArchiMate 4 attribution to the accessible release evidence for generic Event and removal of Gap; Work Package, Deliverable and Plateau are explicitly repository and practical selection terminology because accessible current official definitions were not found. Roadmap, dependency, wave, cutover, parallel-operation, decommission, benefit and risk views answer separate questions. Plans and benefits are conditional rather than guaranteed. Horizon Bank names align with controlled examples, and Chapter 30 retains lifecycle execution detail.
 
 `FIG-22-01` uses labelled directional arrows. Original PNG inspection at 568 by 819 pixels found no clipping, overlap, unreadable text, excessive crossings or ambiguous direction. Dark text and lines on white or pale backgrounds provide sufficient contrast. The portrait layout is readable at normal book-page width. The figure remains `Review`, not `Approved`.

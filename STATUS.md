@@ -107,6 +107,18 @@
 
 ## Current recommended next task
 
+Chapter 22, **Modelling Transformation and Migration**, is `Ready for Author Approval`.
+It covers current, transition and target states, gaps, dependencies, roadmaps, migration
+waves, cutover, decommissioning, benefits and risks. `FIG-22-01` is specified, rendered,
+visually reviewed and integrated at `Review`, not `Approved`. `DEC-030` remains
+`Proposed`. Technical, beginner, consistency, final and quality-gate evidence was last
+reviewed on 2026-07-11. The next action is author review of Chapter 22 and `FIG-22-01`,
+plus any author decision on `DEC-030`.
+
+Chapter 21, **Modelling Security Architecture**, remains `Ready for Author Approval`.
+Its security-view selection guide, `FIG-21-01`, remains at `Review`, and `DEC-029`
+remains `Proposed`. Its review evidence was completed on 2026-07-11.
+
 Chapter 20, **Modelling Infrastructure and Deployment**, is `Ready for Author Approval`.
 It covers runtime placement, network topology, cloud services, Kubernetes, environment
 differences, availability, recovery and operational ownership. `FIG-20-01` is specified,
