@@ -1091,28 +1091,30 @@ The subsection structure below records the approved 63-chapter plan currently re
 #### 33. Defining the Full Banking Operating Model
 
 - Manuscript file: `manuscript/part-05-bian-case-study/33-full-banking-operating-model.md`
-- Scope: Establish Horizon Bank's operating model, major customer groups, channels, product families, operational capabilities and modelling boundaries.
+- Scope: Establish Horizon Bank's governed operating-model set across outcomes, value streams, capabilities, processes, BIAN reference responsibilities, organisation, roles, information, applications, technology, controls, measures and traceability.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
   - Prerequisites and dependencies
   - Required models and artefacts
-  - Worked examples
-  - Source requirements
-  - Planned chapter structure
-  - Bank vision and objectives
-  - Stakeholder model
-  - Organisation model
-  - Capability map
-  - Capability heat map
-  - Operating model choices
-  - Governance and ownership
+  - What is a banking operating model?
+  - Start with outcomes and scope
+  - The business spine: value streams, capabilities and processes
+  - Add BIAN reference responsibilities
+  - Organisation, roles and accountability
+  - Information, applications and technology
+  - Controls and measures
+  - Governance keeps the model set coherent
+  - A minimum operating-model set
+  - Traceability across the layers
+  - Worked example: establish a Horizon Bank relationship
+  - Common mistakes
   - Chapter summary
   - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
-  - Drafting notes
+  - References and further reading
 
 #### 34. Complete Bank Business Process Architecture
 

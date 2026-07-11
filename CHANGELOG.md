@@ -2,6 +2,12 @@
 
 ## 2026-07-11
 
+- Completed Chapter 33, *Defining the Full Banking Operating Model*, with a governed model set, qualified cross-layer traceability, Horizon Bank onboarding example, exercise, mistakes and review checklist.
+- Added, rendered and visually inspected `FIG-33-01` as SVG and PNG after its separate author-authorised specification checkpoint; the figure remains at `Review`.
+- Added four review passes, the Chapter 33 quality gate, operating-model glossary terms and proposed decision `DEC-041`. Reused registered official BIAN sources, so no new source note was required.
+
+## 2026-07-11
+
 - Regenerated `FIG-32-01` at native 699 by 468 pixels without post-render scaling. Confirmed 11-pixel node and relationship text, a 14-pixel title, and the corrected Payments runtime to `PaymentInstructionAccepted` direction labelled `consumes or produces`.
 - Corrected `FIG-32-01` after the 720 by 442 version failed to implement the specified three-band Horizon Bank worked thread. Recorded the author-authorised correction before regeneration, then produced a compact three-band relationship view using only the controlled relationship labels.
 - Completed Chapter 32, *How BIAN Relates to Other Modelling Techniques*, with qualified mappings, selection limits, a Horizon Bank payment trace, practical exercise and review checklist.

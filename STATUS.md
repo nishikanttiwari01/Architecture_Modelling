@@ -51,7 +51,7 @@
 | 30 | Change and Migration | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-30-01` at Review; accept or revise `DEC-038` |
 | 31 | Introduction to BIAN | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-31-01` at Review; accept or revise `DEC-039` |
 | 32 | How BIAN Relates to Other Modelling Techniques | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-32-01` at Review; accept or revise `DEC-040` |
-| 33 | Defining the Full Banking Operating Model | Planned | 0 | 0 | 0 | 0 | 0 | — |
+| 33 | Defining the Full Banking Operating Model | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-33-01` at Review; accept or revise `DEC-041` |
 | 34 | Complete Bank Business Process Architecture | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 35 | Modelling Bank Value Streams with BIAN | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 36 | Creating BIAN-Aligned Business Scenarios | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -174,4 +174,6 @@ Chapter 31, **Introduction to BIAN**, is `Ready for Author Approval`. It introdu
 
 Chapter 32, **How BIAN Relates to Other Modelling Techniques**, is `Ready for Author Approval`. It teaches qualified many-to-many mappings across ArchiMate, BPMN, C4, UML, data, DMN, domain, event and deployment models. After an author-authorised semantic and readability correction, `FIG-32-01` was regenerated natively at 699 by 468 pixels with text of at least 11 pixels and remains at `Review`, not `Approved`. `DEC-040` remains `Proposed`. Four review passes and the quality gate completed on 2026-07-11.
 
-Last updated: 2026-07-11 (Chapter 32 completed)
+Chapter 33, **Defining the Full Banking Operating Model**, is `Ready for Author Approval`. It connects outcomes, value streams, capabilities, processes, candidate BIAN responsibilities, organisation, roles, information, applications, technology, controls and measures through a governed model set. `FIG-33-01` remains at `Review`, not `Approved`. `DEC-041` remains `Proposed`. Four review passes and the quality gate completed on 2026-07-11.
+
+Last updated: 2026-07-11 (Chapter 33 completed)

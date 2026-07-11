@@ -1,0 +1,40 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+title Horizon Bank operating-model traceability (selected onboarding thread)
+top to bottom direction
+skinparam nodesep 18
+skinparam ranksep 22
+skinparam defaultFontSize 13
+skinparam rectangle {
+  RoundCorner 8
+}
+
+rectangle "CUSTOMER OUTCOME\nUsable banking relationship" as outcome #E8F1FA
+rectangle "VALUE STAGE\nIdentity and eligibility confirmed" as value #E8F1FA
+rectangle "CAPABILITIES\nCustomer Onboarding\nContributors: Identity Verification;\nFinancial Crime Screening" as capability #EAF4E2
+rectangle "PROCESS\nEstablish customer and account" as process #FFF2CC
+rectangle "REFERENCE RESPONSIBILITIES\nCandidate BIAN Service Domain responsibilities\nBIAN 14.0 logical reference" as bian #F3E8F7
+rectangle "ROLES\nProcess owner; Operations; Control owner" as roles #FCE8E6
+rectangle "INFORMATION\nParty; Identity Evidence;\nScreening Result; Account" as info #E5F5F9
+rectangle "APPLICATIONS\nCustomer Onboarding Platform; Party and Customer Platform\nFinancial Crime Platform; Core Deposit System" as apps #E8EEF7
+rectangle "TECHNOLOGY\nRuntime, integration and operational views" as tech #ECECEC
+rectangle "CONTROLS AND MEASURES\nIdentity and screening evidence\nCompletion time; straight-through processing; control failures" as evidence #FFF0E1
+
+outcome -down-> value : is realised through
+value -down-> capability : is enabled by
+capability -down-> process : is exercised by
+process -down-> bian : is informed by
+process -down-> roles : assigns work and accountability to
+process -down-> info : uses and changes
+bian -down-> apps : responsibilities are supported in part by
+info -down-> apps : is managed and used by
+apps -down-> tech : runs on
+process -down-> evidence : is constrained and measured by
+tech -down-> evidence : supplies operational evidence to
+
+note bottom
+Selected traceability view, not the complete bank.
+Mappings may be partial and many-to-many.
+A Service Domain is not a capability, process step, team, application or microservice.
+end note
+@enduml

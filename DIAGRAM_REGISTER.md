@@ -83,6 +83,7 @@ Add a row before creating a new figure. Do not reuse an ID.
 | FIG-30-01 | 30 | Horizon Bank Migration Control Thread | Show how a bounded migration wave moves from intake through readiness, cutover, fallback, reconciliation, retirement and feedback | Beginner architects, change leads, delivery teams, service and data owners, operations, risk reviewers and sponsors | PlantUML migration-flow teaching view | diagrams/source/plantuml/FIG-30-01-horizon-bank-migration-control-thread.puml | diagrams/exported/svg/FIG-30-01-horizon-bank-migration-control-thread.svg | Review | Codex |
 | FIG-31-01 | 31 | BIAN reference-to-implementation path | Separate BIAN reference concepts from bank implementation | Architects and bankers | PlantUML conceptual teaching flow | diagrams/source/plantuml/FIG-31-01-bian-reference-to-implementation-choices.puml | diagrams/exported/svg/FIG-31-01-bian-reference-to-implementation-choices.svg | Review | Codex |
 | FIG-32-01 | 32 | BIAN and multi-technique traceability view | Trace a banking change across complementary modelling questions without implying equivalence | Architects, analysts and delivery teams | PlantUML conceptual relationship view | diagrams/source/plantuml/FIG-32-01-bian-multi-technique-traceability-view.puml | diagrams/exported/svg/FIG-32-01-bian-multi-technique-traceability-view.svg | Review | Codex |
+| FIG-33-01 | 33 | Horizon Bank operating-model traceability view | Connect one onboarding outcome across the operating-model set without implying equivalence | Beginner architects, business architects and bank transformation stakeholders | PlantUML layered explanatory view | diagrams/source/plantuml/FIG-33-01-horizon-bank-operating-model-traceability.puml | diagrams/exported/svg/FIG-33-01-horizon-bank-operating-model-traceability.svg | Review | Codex |
 
 ## Chapter 8 figure asset details
 
@@ -197,6 +198,12 @@ Add a row before creating a new figure. Do not reuse an ID.
 | Figure ID | Specification | Source | SVG export | PNG preview |
 |---|---|---|---|---|
 | `FIG-32-01` | `diagrams/specifications/FIG-32-01-bian-multi-technique-traceability-view.md` | `diagrams/source/plantuml/FIG-32-01-bian-multi-technique-traceability-view.puml` | `diagrams/exported/svg/FIG-32-01-bian-multi-technique-traceability-view.svg` | `diagrams/exported/png/FIG-32-01-bian-multi-technique-traceability-view.png` |
+
+## Chapter 33 figure asset details
+
+| Figure ID | Specification | Source | SVG export | PNG preview |
+|---|---|---|---|---|
+| `FIG-33-01` | `diagrams/specifications/FIG-33-01-horizon-bank-operating-model-traceability.md` | `diagrams/source/plantuml/FIG-33-01-horizon-bank-operating-model-traceability.puml` | `diagrams/exported/svg/FIG-33-01-horizon-bank-operating-model-traceability.svg` | `diagrams/exported/png/FIG-33-01-horizon-bank-operating-model-traceability.png` |
 
 ## Status values
 

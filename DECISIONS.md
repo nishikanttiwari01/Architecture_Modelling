@@ -444,6 +444,18 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapters 31 and 32, BIAN research notes, `DIAGRAM_REGISTER.md`, and the `FIG-31-01` specification.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
+## DEC-041: Define the full-bank operating model as a governed model set
+
+- **Status:** Proposed
+- **Date:** 2026-07-11
+- **Decision:** Describe Horizon Bank's operating model through connected, question-specific models and qualified traceability rather than one universal full-bank diagram or one-to-one BIAN implementation map.
+- **Context:** Chapter 33 must cover the breadth of a full-service bank while remaining readable and preserving the distinction between outcomes, value streams, capabilities, processes, Service Domains, organisation, information and implementation.
+- **Alternatives considered:** Use one mixed-layer master diagram; adopt the BIAN Service Landscape as the target operating model; organise the model around the current organisation chart or applications.
+- **Reason:** A governed model set supports different stakeholder questions, allows many-to-many and transitional mappings, and keeps BIAN reference responsibilities distinct from Horizon Bank's local choices.
+- **Consequences:** `FIG-33-01` shows only a labelled onboarding traceability thread. Catalogues provide bank-wide coverage, while detailed views are created for priority questions. The figure remains at `Review`, not `Approved`.
+- **Related chapters/files:** Chapters 31 to 35, `GLOSSARY.md`, `DIAGRAM_REGISTER.md`, Horizon Bank examples and `FIG-33-01` assets.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
+
 ## Decision template
 
 ```markdown

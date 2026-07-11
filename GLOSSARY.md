@@ -9,6 +9,8 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Business Domain | Focused grouping within a BIAN Business Area. | Use as a navigation grouping, not an application boundary. |
 | Service Operation | Logical business service exposed by a Service Domain. | Do not equate it automatically with a physical endpoint or topic. |
 | Semantic API | Interface reference whose operations and information have consistent banking meaning. | Physical protocol and operational design remain implementation choices. |
+| Operating model | A governed set of connected models explaining how an organisation creates outcomes through capabilities, processes, responsibilities, people, information, technology, controls and measures. | Do not present one organisation chart or architecture diagram as the complete operating model. |
+| Traceability register | A governed record of qualified links between model elements, including scope, owner, version, rationale and evidence. | Prefer precise relationship verbs; do not imply unlike elements are equal. |
 | Architecture | The fundamental concepts, structures, relationships and principles that shape a system or enterprise. | Do not use as a synonym for one diagram. |
 | Model | A purposeful abstraction of part of reality. | A model may be represented by several diagrams or views. |
 | Diagram | A visual representation of selected model content. | A diagram is not automatically the complete model. |
