@@ -29,4 +29,8 @@ Start --> BPMN : What work happens before\nor after the result?
 Start --> ADR : Why was an architecture\noption chosen?
 Start --> Matrix : How do alternatives compare\nagainst explicit criteria?
 Start --> Clarify : Still unclear?
+note bottom of Start
+  When several questions apply,
+  create separate linked artefacts.
+end note
 @enduml
