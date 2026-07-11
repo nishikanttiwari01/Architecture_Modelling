@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-07-11: Complete Chapter 25 requirements analysis
+
+- Completed the requirements-analysis lifecycle chapter with a 2,000 to 4,000 word beginner treatment of requirement types, scenarios, quality attributes, traceability, prioritisation and assessment.
+- Added three primary-source notes, four review passes, a quality gate and proposed `DEC-033`.
+- Recorded the author's 2026-07-11 specification-revision and production authority for portrait `FIG-25-01`; source is recovered before regenerated exports and the figure remains at `Review`.
+- Moved Chapter 25 to `Ready for Author Approval`, not `Approved`.
+
 ## 2026-07-11: Label Chapter 24 discovery relationships
 
 - Labelled all five evidence-to-view arrows `informs` and all five view-to-synthesis arrows `contributes` in `FIG-24-01`.

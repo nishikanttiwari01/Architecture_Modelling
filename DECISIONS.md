@@ -350,6 +350,18 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapters 2, 14, 15, 24 and 25, `DIAGRAM_REGISTER.md`, and the `FIG-24-01` specification.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
+## DEC-033: Use an iterative traceability thread for Chapter 25
+
+- **Status:** Proposed
+- **Date:** 2026-07-11
+- **Decision:** Teach requirements analysis as iterative refinement from stakeholder need through functional and quality requirements, analysis models, design response, verification and evidence, supported by `FIG-25-01`.
+- **Context:** Chapter 25 bridges discovery and solution design without prescribing a waterfall. The author authorised specification revision and figure production without a separate approval pause on 2026-07-11.
+- **Alternatives considered:** Use a requirements list only; reproduce formal SysML notation; show a one-way lifecycle pipeline.
+- **Reason:** Stable identifiers and labelled trace links help beginners understand coverage, change impact and assessment while feedback links preserve iteration.
+- **Consequences:** `FIG-25-01` uses an original portrait PlantUML teaching view and remains at `Review`, not `Approved`. Detailed SysML notation remains in Chapter 13.
+- **Related chapters/files:** Chapters 13, 24, 25 and 26, `DIAGRAM_REGISTER.md`, and the `FIG-25-01` specification.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
+
 ## Decision template
 
 ```markdown
