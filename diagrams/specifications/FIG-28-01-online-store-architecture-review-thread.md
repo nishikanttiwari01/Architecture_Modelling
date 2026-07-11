@@ -4,6 +4,7 @@
 
 - Authorisation to create the specification and proceed without a separate approval pause: author instruction dated 2026-07-11.
 - This specification is the required checkpoint before diagram source production.
+- Revision history: native inspection of the first landscape render showed an excessively wide, unreadable figure. The specification was revised on 2026-07-11 to require a compact top-to-bottom layout before regeneration.
 - Maximum Codex status: Review.
 
 ## Purpose
@@ -32,7 +33,7 @@ Label preparation, questioning, assessment, outcome and follow-up relationships.
 
 ## Main flow or structure
 
-Use a compact landscape layout suitable for book-page width. Keep preparation, assessment, outcome and follow-up visually distinct. The outcome must allow proceed, proceed with conditions, or revise and return.
+Use a compact top-to-bottom layout targeting approximately 760 pixels wide and 500 pixels high for book-page readability. Arrange preparation and assessment as paired rows, then findings, outcome choices and follow-up. Keep preparation, assessment, outcome and follow-up visually distinct. The outcome must allow proceed, proceed with conditions, or revise and return.
 
 ## Alternative and exception flows
 
