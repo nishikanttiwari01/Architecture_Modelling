@@ -376,6 +376,20 @@ Use the format below for all material decisions. Do not delete superseded decisi
 
 ## Decision template
 
+## DEC-035: Use an implementation evidence thread for Chapter 27
+
+- **Status:** Proposed
+- **Date:** 2026-07-11
+- **Decision:** Teach detailed design as iterative refinement of architecture intent into responsibilities, contracts, physical data structures, controls, deployment configuration, observability and repository evidence, supported by `FIG-27-01`.
+- **Context:** Chapter 27 must bridge solution design and architecture review without prescribing a fixed delivery method or implying that implementation cannot challenge architecture.
+- **Alternatives considered:** Present code listings; prescribe one document pack; show a one-way hand-off; combine all implementation detail in one diagram.
+- **Reason:** A traceable evidence thread makes implementable artefacts, version-controlled evidence and feedback understandable to beginners while keeping code-level detail proportionate.
+- **Consequences:** The author authorised specification and figure production without a separate approval pause on 2026-07-11. `FIG-27-01` may progress only as far as `Review`, not `Approved`.
+- **Related chapters/files:** Chapters 26, 27 and 28, `DIAGRAM_REGISTER.md`, and the `FIG-27-01` specification.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
+
+## Decision template
+
 ```markdown
 ## DEC-NNN: Decision title
 
