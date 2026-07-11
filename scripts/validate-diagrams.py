@@ -51,6 +51,16 @@ SPEC_REQUIRED_HEADINGS = [
 ]
 
 FIG_ID = re.compile(r"FIG-\d{2}-\d{2}")
+APPROVED_STATUS = re.compile(
+    r"""(?imx)
+    ^\s*(?:[-*]\s*)?
+    (?:\*\*)?(?:status|maximum\s+codex\s+status)
+    \s*:(?:\*\*)?\s*[`"']?approved\b
+    |
+    ^\s*\|\s*(?:status|maximum\s+codex\s+status)\s*
+    \|\s*approved\s*\|
+    """
+)
 
 
 def main() -> int:
@@ -73,14 +83,9 @@ def main() -> int:
         for heading in SPEC_REQUIRED_HEADINGS:
             if heading not in text:
                 errors.append(f"{spec.relative_to(ROOT)}: missing heading {heading}")
-        approval_status_text = text
-        if spec.name == "FIG-29-01-online-store-operational-feedback-loop.md":
-            approval_status_text = approval_status_text.replace(
-                "`informs approved change`", "`informs change`"
-            )
-        if re.search(r"\bApproved\b", approval_status_text, re.I):
+        if APPROVED_STATUS.search(text):
             errors.append(
-                f"{spec.relative_to(ROOT)}: do not use 'Approved' in specs unless the author has explicitly approved it"
+                f"{spec.relative_to(ROOT)}: diagram status must not be set to Approved by Codex"
             )
 
     for puml in (ROOT / "diagrams/source/plantuml").rglob("*.puml"):
