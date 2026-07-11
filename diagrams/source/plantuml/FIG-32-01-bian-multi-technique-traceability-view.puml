@@ -1,41 +1,41 @@
 @startuml
 !include ../../styles/plantuml-theme.puml
-scale 740 width
 title FIG-32-01: Horizon Bank multi-technique relationship view
 top to bottom direction
+skinparam defaultFontSize 11
+skinparam ArrowFontSize 11
+skinparam packageTitleFontSize 11
 skinparam defaultTextAlignment center
-skinparam nodesep 16
-skinparam ranksep 24
+skinparam nodesep 10
+skinparam ranksep 18
 skinparam packageStyle rectangle
 
 package "BAND 1: BUSINESS AND BIAN" #F7FAFC {
-  rectangle "Business need\nImprove outgoing\nretail payments" as NEED #EAF2F8
-  rectangle "Capability\nPayment Initiation" as CAP #EAF2F8
+  rectangle "Business need\nImprove outgoing retail payments\nCapability: Payment Initiation" as CAP #EAF2F8
   rectangle "BIAN behaviour\nOutgoing customer payment\nBusiness Scenario" as SCEN #FFF2CC
   rectangle "BIAN responsibility\nCandidate payment-handling\nService Domain responsibility" as SD #FFF2CC
-  NEED -right-> CAP : frames
-  CAP -right-> SCEN : informs
+  CAP -right-> SCEN : frames
   SD -left-> SCEN : participates in
 }
 
 package "BAND 2: APPLICATION AND EXCHANGE" #F7FAFC {
   rectangle "Horizon application\nPayments Platform" as APP #E2F0D9
   rectangle "Interface / API\nOutgoing Payment API" as API #E2F0D9
-  rectangle "Data\nPayment Instruction" as DATA #EDE7F6
-  rectangle "Event\nPaymentInstructionAccepted" as EVENT #EDE7F6
+  rectangle "Data: Payment Instruction\nEvent: PaymentInstructionAccepted" as EVENT #EDE7F6
   APP -right-> API : supports
-  API -right-> DATA : consumes or produces
-  DATA -right-> EVENT : informs
+  API -right-> EVENT : consumes or produces
 }
 
 package "BAND 3: RUNTIME AND QUALIFICATION" #F7FAFC {
   rectangle "Deployment\nPayments runtime" as RUN #DDEBF7
-  rectangle "QUALIFIED MAPPING\nOne-to-many, many-to-one or transitional\nA Service Domain is not automatically a capability, process step,\napplication, microservice, interface, event, data entity or deployment unit." as NOTE #FFFFFF
+  rectangle "QUALIFIED MAPPING\nOne-to-many, many-to-one or transitional\nA Service Domain is not automatically a capability,\nprocess step, application, microservice, interface,\nevent, data entity or deployment unit." as NOTE #FFFFFF
   RUN -[hidden]right-> NOTE
 }
 
 CAP -down-> APP : realises in part
 SD -down-> API : exchanges meaning through
+SCEN -[hidden]down-> API
+SD -[hidden]down-> EVENT
 APP -down-> RUN : runs on
-EVENT -down-> RUN : consumes or produces
+RUN -up-> EVENT : consumes or produces
 @enduml

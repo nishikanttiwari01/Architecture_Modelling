@@ -172,6 +172,6 @@ lifecycle as a mandatory waterfall. `FIG-30-01` is at `Review`, not `Approved`.
 
 Chapter 31, **Introduction to BIAN**, is `Ready for Author Approval`. It introduces Service Landscape 14.0, its logical reference concepts and the choices BIAN does not prescribe. Corrected `FIG-31-01` is a 700 by 581 compact landscape at `Review`, not `Approved`. `DEC-039` remains `Proposed`. Four review passes and the quality gate completed on 2026-07-11.
 
-Chapter 32, **How BIAN Relates to Other Modelling Techniques**, is `Ready for Author Approval`. It teaches qualified many-to-many mappings across ArchiMate, BPMN, C4, UML, data, DMN, domain, event and deployment models. After an author-authorised correction, `FIG-32-01` was regenerated as a compact three-band Horizon Bank worked thread and remains at `Review`, not `Approved`. `DEC-040` remains `Proposed`. Four review passes and the quality gate completed on 2026-07-11.
+Chapter 32, **How BIAN Relates to Other Modelling Techniques**, is `Ready for Author Approval`. It teaches qualified many-to-many mappings across ArchiMate, BPMN, C4, UML, data, DMN, domain, event and deployment models. After an author-authorised semantic and readability correction, `FIG-32-01` was regenerated natively at 699 by 468 pixels with text of at least 11 pixels and remains at `Review`, not `Approved`. `DEC-040` remains `Proposed`. Four review passes and the quality gate completed on 2026-07-11.
 
 Last updated: 2026-07-11 (Chapter 32 completed)

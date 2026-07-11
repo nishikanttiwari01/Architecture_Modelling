@@ -6,8 +6,9 @@
 - Checkpoint date: 2026-07-11
 - Maximum lifecycle state after rendering: Review
 - Author-authorised correction: 2026-07-11. The prior 720 by 442 render did not implement the specified three-band landscape or name the worked Horizon Bank thread precisely enough. Replace it with an implementable three-band landscape no wider than 760 pixels. Regeneration is pending this corrected checkpoint.
-- Production result: regenerated after the corrected checkpoint as a 740 by 266 pixel three-band landscape. Native and intended-width visual inspection and validation evidence are recorded in the Chapter 32 final review and quality gate.
+- Superseded production result: the 740 by 266 pixel scaled render was rejected by the later readability and semantics correction below.
 - Author-authorised readability and semantics correction: 2026-07-11. The 740 by 266 render used post-render width scaling, leaving native text below the required publication size, and its event-to-runtime relationship pointed in the wrong semantic direction. Regeneration is pending. Produce a native layout no wider than 760 pixels with all rendered SVG node and relationship text at least 11 pixels. Do not use PlantUML `scale` or another post-render shrink operation to meet the width limit. The relationship must point from `Payments runtime` to `PaymentInstructionAccepted` and be labelled exactly `consumes or produces`.
+- Final production result: regenerated after the semantic checkpoint as a native 699 by 468 pixel three-band landscape without a `scale` directive. SVG node and relationship text is 11 pixels, with the title at 14 pixels. Native and intended-width inspection and validation evidence are recorded in the Chapter 32 final review and quality gate.
 
 ## Purpose
 

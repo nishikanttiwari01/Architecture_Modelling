@@ -13,9 +13,9 @@
 - [x] Four review passes are recorded.
 - [x] `FIG-32-01` specification was committed separately before source production.
 - [x] The prior 720 by 442 render was rejected because it did not implement the specified three-band worked thread. The author-authorised correction was recorded on 2026-07-11 before regeneration.
-- [ ] Regenerate the native three-band landscape at no more than 760 pixels wide with all SVG text and relationship labels at least 11 pixels, without post-render scaling.
-- [ ] Confirm the corrected `Payments runtime` to `PaymentInstructionAccepted` relationship labelled `consumes or produces`.
-- [ ] Inspect regenerated SVG and PNG at native and intended book-page width for readable labels, clipping, overlap, direction and colour-independent meaning.
-- [x] Fresh post-correction checks passed on 2026-07-11: structure validated 63 chapters; links validated 227 local Markdown links; terminology and basic style passed; diagram validation passed; diagram register validated 79 entries; word count completed with Chapter 32 at 3,363 words and the manuscript at 141,818 words. `git diff --check` passed.
+- [x] Regenerated the native three-band landscape at 699 by 468 pixels with 11-pixel SVG node and relationship text and a 14-pixel title, without post-render scaling.
+- [x] Confirmed the corrected `Payments runtime` to `PaymentInstructionAccepted` relationship labelled `consumes or produces`.
+- [x] Inspected regenerated SVG and PNG at native and intended book-page width: labels are readable, no clipping or overlap is present, direction is correct and meaning does not depend on colour.
+- [x] Fresh post-correction checks passed on 2026-07-11: structure validated 63 chapters; links validated 227 local Markdown links; terminology and basic style passed; diagram validation passed; diagram register validated 79 entries; word count completed with Chapter 32 at 3,387 words and the manuscript at 141,842 words. `git diff --check` passed.
 - [x] `FIG-32-01` remains at Review and `DEC-040` remains Proposed.
 - [ ] Author approval remains outstanding.

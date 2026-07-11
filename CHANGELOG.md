@@ -2,6 +2,7 @@
 
 ## 2026-07-11
 
+- Regenerated `FIG-32-01` at native 699 by 468 pixels without post-render scaling. Confirmed 11-pixel node and relationship text, a 14-pixel title, and the corrected Payments runtime to `PaymentInstructionAccepted` direction labelled `consumes or produces`.
 - Corrected `FIG-32-01` after the 720 by 442 version failed to implement the specified three-band Horizon Bank worked thread. Recorded the author-authorised correction before regeneration, then produced a compact three-band relationship view using only the controlled relationship labels.
 - Completed Chapter 32, *How BIAN Relates to Other Modelling Techniques*, with qualified mappings, selection limits, a Horizon Bank payment trace, practical exercise and review checklist.
 - Added `FIG-32-01` through a separate specification checkpoint, then rendered and inspected page-readable SVG and PNG exports at `Review`.
