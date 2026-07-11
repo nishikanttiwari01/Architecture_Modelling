@@ -23,6 +23,7 @@ R --> S : constrains
 D --> O : constrains
 S -[hidden]right-> O
 C --> E : implemented and versioned as
+R --> E : implemented and versioned as
 D --> E : implemented and versioned as
 S --> E : implemented and versioned as
 O --> E : implemented and versioned as

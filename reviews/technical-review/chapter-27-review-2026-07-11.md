@@ -9,3 +9,4 @@ Pass. Responsibilities, HTTP and event contracts, physical data, controls, deplo
 - Failure, duplicate, retry, compatibility, migration and rollback concerns are explicit.
 - Architecture is iterative and implementation evidence can reopen decisions.
 - No code-level or product-specific overload remains.
+- Responsibility design now has an explicit labelled implementation link to repository evidence, matching the other detailed-design artefacts.

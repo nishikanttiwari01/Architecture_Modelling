@@ -28,11 +28,11 @@ Show ADR-26-01 and requirements as intent; responsibility design; API and event 
 
 ## Required relationships
 
-Label refinement, implementation, verification and feedback relationships.
+Label refinement, implementation, verification and feedback relationships. Responsibility design, interface contracts, physical data design, security controls and runtime design must each connect to repository evidence.
 
 ## Main flow or structure
 
-Use a compact, top-to-bottom landscape layout targeting approximately 760 pixels wide and 497 pixels high for readable placement at book-page width. Keep detailed-design artefacts in separate labelled boxes. Repository and verification evidence must be visually distinct.
+Use a compact, top-to-bottom landscape layout targeting approximately 760 pixels wide and 410 pixels high for readable placement at book-page width. Keep detailed-design artefacts in separate labelled boxes. Repository and verification evidence must be visually distinct.
 
 ## Alternative and exception flows
 
