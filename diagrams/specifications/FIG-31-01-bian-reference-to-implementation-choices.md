@@ -5,7 +5,7 @@
 - Author instruction: create and continue without a separate approval pause
 - Checkpoint date: 2026-07-11
 - Maximum lifecycle state after rendering: Review
-- Author-authorised correction: 2026-07-11. The first render measured 1656 by 1009 pixels and did not meet the intended book-page width despite being legible. Regenerate as a compact portrait no wider than 760 pixels and preferably no taller than 950 pixels.
+- Author-authorised correction: 2026-07-11. The first render measured 1656 by 1009 pixels and did not meet the intended book-page width despite being legible. Regenerate as a compact page-width landscape no wider than 760 pixels and preferably no taller than 950 pixels.
 
 ## Purpose and question
 
@@ -37,7 +37,7 @@ Labelled informing, design-decision, evidence and feedback relationships.
 
 ## Main flow or structure
 
-Compact portrait flow. Reference concepts feed a single Horizon Bank assessment. The assessment feeds four implementation-choice groups. Every implementation choice then feeds evidence through its own explicitly labelled relationship. Evidence can revise mapping.
+Compact landscape flow. Reference concepts feed a single Horizon Bank assessment. The assessment feeds four implementation-choice groups. Every implementation choice then feeds evidence through its own explicitly labelled relationship. Evidence can revise mapping.
 
 ## Alternative and exception flows
 
@@ -61,7 +61,7 @@ High contrast, text labels and no colour-only meaning. Target no more than 760 p
 
 ## Review criteria
 
-No clipping, overlap, incorrect direction or one-to-one physical implication. Each `APP`, `API`, `DATA` and `OPS` to evidence relationship must carry a visible label. Confirm the portrait size target at native and intended book-page width.
+No clipping, overlap, incorrect direction or one-to-one physical implication. Each `APP`, `API`, `DATA` and `OPS` to evidence relationship must carry a visible label. Confirm the compact landscape size target at native and intended book-page width.
 
 ## Sources
 
