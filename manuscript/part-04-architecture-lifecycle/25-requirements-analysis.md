@@ -98,7 +98,7 @@ Figure 25-01 shows the analysis thread for the Online Store. Relationships are l
 
 ![FIG-25-01: Online Store requirements analysis traceability thread](../../diagrams/exported/svg/FIG-25-01-online-store-requirements-analysis-thread.svg)
 
-*Figure 25-01. A stakeholder need is refined into functional and quality requirements, clarified by analysis models, addressed by a design response and assessed through acceptance and verification evidence. Feedback links keep refinement iterative.*
+*Figure 25-01. A stakeholder need is refined into functional and quality requirements, clarified by analysis models, addressed by a design response and assessed through verification evidence and stakeholder validation. Feedback links keep refinement iterative.*
 
 ## Prioritisation and negotiation
 

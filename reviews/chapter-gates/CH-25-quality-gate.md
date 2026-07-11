@@ -9,7 +9,7 @@
 |---|---|---|
 | Required sections | Pass | Complete manuscript within target range |
 | Primary sources | Pass | ISO, OMG, SEI and NIST references; three new source notes |
-| Diagram | Pass for author review | Specification authorised 2026-07-11; PlantUML, SVG and PNG exist; visual inspection found no clipping, overlap or unreadable labels |
+| Diagram | Pass for author review | Specification authorised 2026-07-11; PlantUML, SVG and PNG consistently show verification evidence and stakeholder validation; visual inspection found no clipping, overlap or unreadable labels |
 | Examples and terminology | Pass | Online Store and Horizon Bank consistent with repository controls |
 | Four review passes | Pass | Technical, beginner, consistency and final reviews recorded |
 | Open issues | Pass | Only author approval remains; statuses do not exceed Review or Ready for Author Approval |

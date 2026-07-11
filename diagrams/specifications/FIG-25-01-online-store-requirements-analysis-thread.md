@@ -7,7 +7,7 @@
 
 ## Purpose
 
-Show a beginner-readable trace from stakeholder need through requirements and analysis models to design response, assessment and evidence, with feedback that makes refinement iterative. The author instruction dated 2026-07-11 authorises this specification revision and subsequent source generation without a separate approval pause.
+Show a beginner-readable trace from stakeholder need through requirements and analysis models to design response, verification evidence and stakeholder validation, with feedback that makes refinement iterative. The author instruction dated 2026-07-11 authorises this specification revision and subsequent source generation without a separate approval pause.
 
 ## Audience
 
@@ -23,7 +23,7 @@ Original PlantUML traceability teaching view.
 
 ## Required elements
 
-Stable identifiers for one need, one functional requirement, one quality requirement, a use case, conceptual model, design response, verification case and evidence.
+Stable identifiers for one need, one functional requirement, one quality requirement, a use case, conceptual model, design response, verification case, verification evidence and stakeholder validation.
 
 ## Required relationships
 
@@ -31,7 +31,7 @@ Label every relationship. Show forward trace links and feedback from evidence to
 
 ## Main flow or structure
 
-Need to requirements, analysis models, design response, verification case and evidence.
+Need to requirements, analysis models, design response, verification case, then verification evidence and stakeholder validation.
 
 ## Alternative and exception flows
 

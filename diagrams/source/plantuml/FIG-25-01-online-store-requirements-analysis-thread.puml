@@ -12,7 +12,7 @@ rectangle "Use case\nUC-25-01\nCheckout, decline\nand uncertain response" as UC 
 rectangle "Conceptual model\nBasket, Order,\nPayment Attempt" as CM #E2F0D9
 rectangle "Design response\nIdempotent order creation\nand status handling" as DR #E4DFEC
 rectangle "Verification case\nVT-25-01\nPeak and retry tests" as VT #FCE4D6
-rectangle "Evidence\nResults and stakeholder\nvalidation" as EV #FCE4D6
+rectangle "Verification evidence\nTest results and stakeholder\nvalidation" as EV #FCE4D6
 
 N -down-> FR : refined by
 N -down-> QA : measured by
