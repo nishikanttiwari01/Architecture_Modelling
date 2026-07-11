@@ -8,3 +8,5 @@ The chapter separates stakeholder, capability, process and system concerns, labe
 Figure correction: the original 1520-pixel-wide export failed the normal book-page-width criterion. The corrected portrait output is 717 by 564 pixels (SVG view 718 by 565). Its compact focused-views panel preserves each question-to-model mapping and its directional feedback loop without implying sequential use of all five views.
 
 Final semantic correction: the aggregated panel did not meet the specification's requirement for separate view nodes. The final 724 by 711 pixel PNG uses five separately labelled nodes, visible branching from evidence, five separate contributions to synthesis and a feedback loop. Inspection found no clipped or overlapping text, excessive crossings or ambiguous direction.
+
+Relationship-label correction: the final 735 by 656 pixel PNG (SVG view 735 by 657) labels every incoming branch `informs` and every outgoing branch `contributes`. The unchanged `review evidence` and uncertainty-feedback labels preserve the complete directional semantics.

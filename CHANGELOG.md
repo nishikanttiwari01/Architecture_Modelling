@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-07-11: Label Chapter 24 discovery relationships
+
+- Labelled all five evidence-to-view arrows `informs` and all five view-to-synthesis arrows `contributes` in `FIG-24-01`.
+- Rerendered and inspected the 735 by 656 pixel page-width PNG and corresponding SVG, and aligned the accessibility and review evidence.
+
 ## 2026-07-11: Restore separate Chapter 24 discovery view nodes
 
 - Replaced the aggregated `FIG-24-01` discovery panel with five separate labelled nodes and explicit evidence-to-view and view-to-synthesis arrows.

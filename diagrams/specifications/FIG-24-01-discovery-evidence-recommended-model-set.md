@@ -61,7 +61,7 @@ It is not a prescribed project method, detailed notation example, requirements m
 
 ## Production review
 
-The first exported layout was 1520 pixels wide and was not suitable for normal single-page text width. A later 717-pixel layout met page width but incorrectly aggregated the five required view nodes into one box. On 2026-07-11 it was redesigned again to preserve five separate nodes, explicit branching and separate contributions to synthesis. The final PNG is 724 by 711 pixels and the SVG view is 725 by 711. Inspection at original size, within the intended 700 to 750 pixel display width, confirmed readable text, no clipping or overlap, no excessive crossings, clear arrow direction and sufficient contrast. This correction does not constitute author approval.
+The first exported layout was 1520 pixels wide and was not suitable for normal single-page text width. A later 717-pixel layout met page width but incorrectly aggregated the five required view nodes into one box. The next separate-node version omitted relationship labels. On 2026-07-11 the figure was rerendered with `informs` on all five evidence-to-view arrows and `contributes` on all five view-to-synthesis arrows. The final PNG is 735 by 656 pixels and the SVG view is 735 by 657. Inspection at native intended width confirmed every label is readable, with no clipping, overlap or excessive crossings, clear arrow direction and sufficient contrast. This correction does not constitute author approval.
 
 ## Source references
 
