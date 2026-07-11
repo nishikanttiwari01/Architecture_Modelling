@@ -1,6 +1,6 @@
 # Chapter 26 Quality Gate
 
-- **Chapter status:** Under Review
+- **Chapter status:** Ready for Author Approval
 - **Date:** 2026-07-11
 - **Authorisation:** Author instruction permits diagram production without a separate approval pause.
 
@@ -11,6 +11,6 @@
 - [x] Chapter 27 detail is not pre-empted.
 - [x] Sources are primary and registered existing notes are reused.
 - [x] Four review passes are recorded.
-- [ ] Corrected figure specification precedes regenerated source and exports.
-- [ ] Regenerated SVG and PNG meet the 700 to 750 pixel target and pass visual inspection.
+- [x] Corrected figure specification precedes regenerated source and exports in Git history.
+- [x] Regenerated 730 by 731 pixel PNG and corresponding SVG pass native-size visual inspection.
 - [ ] Author approval remains outstanding.

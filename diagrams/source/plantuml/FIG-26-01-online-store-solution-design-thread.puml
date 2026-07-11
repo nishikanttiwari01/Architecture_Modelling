@@ -2,37 +2,46 @@
 !include ../../styles/plantuml-theme.puml
 title Online Store solution design thread
 top to bottom direction
-skinparam nodesep 22
-skinparam ranksep 30
-skinparam defaultFontSize 13
+scale 730 width
+skinparam nodesep 18
+skinparam ranksep 42
+skinparam defaultFontSize 14
 
-rectangle "Design drivers\nFR-25-01, QA-25-01\nduplicate prevention\nprovider constraint" as D #FFF2CC
-rectangle "Options\n1 Synchronous\n2 Asynchronous\n3 Hybrid" as O #DDEBF7
+rectangle "Design drivers\nFR-25-01 and QA-25-01\nDuplicate prevention\nProvider constraint" as D #FFF2CC
+rectangle "Options\n1  Synchronous\n2  Asynchronous\n3  Hybrid" as O #DDEBF7
 rectangle "ADR-26-01\nSelect hybrid response\nRecord consequences" as A #E4DFEC
 
-package "Coherent design views" #E2F0D9 {
- rectangle "Structure\nResponsibilities and\nboundaries" as S
- rectangle "Interaction\nSuccess, timeout,\nretry and recovery" as I
- rectangle "Information\nOrder and payment\nownership" as N
- rectangle "Security\nTrust boundaries\nand controls" as C
- rectangle "Deployment\nFailure domains and\noperational intent" as P
-}
+rectangle "Structure view\nResponsibilities\nand boundaries" as S #E2F0D9
+rectangle "Interaction view\nSuccess, timeout,\nretry and recovery" as I #E2F0D9
+rectangle "Information view\nOrder and payment\nownership" as N #E2F0D9
 
-rectangle "Planned evidence\nperformance and retry tests\nfault experiment\nusability validation" as E #FCE4D6
+rectangle "Security view\nTrust boundaries\nand controls" as C #E2F0D9
+rectangle "Deployment view\nFailure domains and\noperational intent" as P #E2F0D9
 
-D --> O : shapes comparison
-O --> A : decision recorded by
-A --> S : realised by
-A --> I : realised by
-A --> N : realised by
-A --> C : realised by
-A --> P : realised by
+rectangle "Planned evidence\nPerformance and retry tests\nFault experiment\nUsability validation" as E #FCE4D6
+
+D -down-> O : shapes comparison
+O -down-> A : decision recorded by
+
+A --> S : realises
+A --> I : realises
+A --> N : realises
+S -[hidden]right-> I
+I -[hidden]right-> N
+
+S -[hidden]down-> C
+N -[hidden]down-> P
+C -[hidden]right-> P
+A --> C : realises
+A --> P : realises
+
 S --> E : assessed through
 I --> E : assessed through
 N --> E : assessed through
 C --> E : assessed through
 P --> E : assessed through
-E ..> D : feedback refines
+
+E .up.> D : feedback refines
 
 legend bottom
 Solid arrows show forward trace links.

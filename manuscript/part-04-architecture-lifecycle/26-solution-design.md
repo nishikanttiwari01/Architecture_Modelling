@@ -115,11 +115,11 @@ Extend the Chapter 25 trace:
 
 Trace the decisions and high-risk drivers first. Link an ADR to the requirements it addresses, the models it changes and the evidence that could confirm or challenge it. Maintain a risk and assumption log alongside the model set. Traceability is useful when it supports coverage, rationale or change impact, not when it counts links.
 
-Figure 26-01 shows the Online Store design thread. It deliberately includes a feedback link because implementation evidence can cause the architecture or requirement to change.
+Figure 26-01 shows the Online Store design thread. Read it from the drivers at the top through options, the ADR and five separate design views to planned evidence. The dotted feedback link shows that implementation evidence can cause the architecture or requirement to change. Labels and line styles carry the meaning, so colour is not required to follow the trace.
 
 ![FIG-26-01: Online Store solution design traceability thread](../../diagrams/exported/svg/FIG-26-01-online-store-solution-design-thread.svg)
 
-*Figure 26-01. Drivers shape option assessment and an ADR, which is realised through consistent structure, interaction, information, security and deployment views. Planned evidence and feedback keep the design iterative.*
+*Figure 26-01. Drivers shape option assessment and ADR-26-01. The decision is realised through five separate structure, interaction, information, security and deployment views, which lead to planned evidence. A dotted feedback arrow keeps the design iterative.*
 
 ## Recommended model set
 

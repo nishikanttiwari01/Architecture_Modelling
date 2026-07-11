@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-07-11: Correct and regenerate Chapter 26 diagram
+
+- Added an independently auditable corrected specification checkpoint for `FIG-26-01`, then regenerated its source and exports.
+- Reworked the figure into a 730 by 731 pixel top-to-bottom layout with five separate views, labelled trace links and iterative feedback.
+- Reinspected the native PNG and restored the figure to `Review` and Chapter 26 to `Ready for Author Approval`.
+
 ## 2026-07-11: Complete Chapter 26 solution design
 
 - Completed the beginner solution-design lifecycle chapter with drivers, options, trade-offs, responsibilities, interactions, information, security, deployment, ADRs and traceability.
