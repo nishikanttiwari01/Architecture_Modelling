@@ -1,5 +1,9 @@
 # Changelog
 
+- Completed Chapter 28 on evidence-led architecture review, including review purpose, timing, types, preparation, stakeholder questions, quality attributes, findings, outcomes, exceptions and follow-up.
+- Added `FIG-28-01` through separate initial and corrected specification checkpoints, then rendered and visually inspected its SVG and PNG exports at `Review`, not `Approved`.
+- Added primary-source interpretation notes, four chapter review records, the governance decision `DEC-036`, status and diagram-register updates.
+
 - Connected Chapter 27 responsibility design explicitly to repository evidence in `FIG-27-01`, regenerated both exports, and revalidated the compact page-width layout.
 
 - Corrected Chapter 27 governance and production evidence before final figure regeneration: synchronised its master status row, expanded HTTP and BIAN at first use, corrected the official AsyncAPI 3.1.0 link, and revised the authorised figure specification from its initial portrait layout to a page-readable landscape layout.

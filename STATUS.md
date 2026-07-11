@@ -46,6 +46,7 @@
 | 25 | Requirements and Analysis | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-25-01` at Review; accept or revise `DEC-033` |
 | 26 | Solution Design | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; corrected `FIG-26-01` at Review; accept or revise `DEC-034` |
 | 27 | Detailed Design and Implementation | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; regenerated `FIG-27-01` at Review; accept or revise `DEC-035` |
+| 28 | Architecture Review | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-28-01` at Review; accept or revise `DEC-036` |
 | 28 | Architecture Review | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 29 | Operations and Support | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 30 | Change and Migration | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -157,4 +158,6 @@ states. The author-gated Chapter 14 and Chapter 18 figure work remains deferred.
 
 Chapter 27, **Detailed Design and Implementation**, is `Ready for Author Approval`. It refines solution intent into responsibilities, API and event contracts, physical data structures, implementable controls, deployment, configuration, observability, tests and repository evidence. `FIG-27-01` is specified, rendered, visually reviewed and integrated at `Review`, not `Approved`. `DEC-035` remains `Proposed`. Four review passes and the quality gate completed on 2026-07-11.
 
-Last updated: 2026-07-11 (Chapter 27 completed)
+Chapter 28, **Architecture Review**, is `Ready for Author Approval`. It presents review as an evidence-led, iterative decision practice covering preparation, stakeholder concerns, quality attributes, findings, outcomes and follow-up. `FIG-28-01` is specified, rendered, visually reviewed and integrated at `Review`, not `Approved`. `DEC-036` remains `Proposed`. Four review passes and the quality gate completed on 2026-07-11.
+
+Last updated: 2026-07-11 (Chapter 28 completed)

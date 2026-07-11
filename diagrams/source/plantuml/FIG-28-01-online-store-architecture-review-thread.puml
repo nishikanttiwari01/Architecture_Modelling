@@ -1,0 +1,39 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+title Online Store architecture review thread
+top to bottom direction
+scale 760 width
+skinparam nodesep 18
+skinparam ranksep 30
+skinparam defaultFontSize 14
+rectangle "Trigger and scope\nDecision, boundary, version\nand review criteria" as S #FFF2CC
+rectangle "Review package\nFocused views, ADRs, risks\nand test evidence" as P #DDEBF7
+rectangle "Stakeholder questions\nFunctional, data, integration, security\nperformance, resilience, operability" as Q #DDEBF7
+rectangle "Evidence assessment\nClaims, results, assumptions\nand gaps" as E #E2F0D9
+rectangle "Governed findings\nRisk | decision | action | exception\nOwner and due or review date" as F #FCE4D6
+rectangle "Review outcome" as O #E4DFEC
+rectangle "Proceed" as A #E2F0D9
+rectangle "Proceed with conditions" as C #FFF2CC
+rectangle "Revise and return" as R #F4CCCC
+rectangle "Owned follow-up\nCheck closure evidence\nand update records" as U #D9EAD3
+S --> P : prepares
+S -[hidden]right-> P
+P --> Q : frames
+Q -[hidden]right-> E
+Q --> E : tests with evidence
+E --> F : records material findings
+F --> O : informs decision
+O --> A : sufficient evidence
+O --> C : bounded conditions
+O --> R : blocking gap or risk
+A -[hidden]right-> C
+C -[hidden]right-> R
+A --> U : monitor commitments
+C --> U : close conditions
+R --> U : revise design or evidence
+U .left.> P : focused feedback and re-review
+legend bottom
+Solid arrows show review and follow-up.
+Dotted arrow shows iterative revision.
+endlegend
+@enduml

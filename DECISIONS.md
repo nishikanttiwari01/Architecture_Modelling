@@ -386,6 +386,18 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapters 26, 27 and 28, `DIAGRAM_REGISTER.md`, and the `FIG-27-01` specification.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
+## DEC-036: Use an evidence-led architecture review thread for Chapter 28
+
+- **Status:** Proposed
+- **Date:** 2026-07-11
+- **Decision:** Teach architecture review as a scoped, evidence-led and iterative assessment that connects stakeholder questions to governed findings, a proportionate outcome and owned follow-up, supported by `FIG-28-01`.
+- **Context:** Chapter 28 must receive implementation evidence from Chapter 27 and hand operational concerns to Chapter 29 without presenting review as a ceremonial approval meeting or transferring design ownership to a committee.
+- **Alternatives considered:** Prescribe one universal review board; provide a checklist only; present review as a one-time release gate; allow reviewers collectively to redesign the solution.
+- **Reason:** A visible thread helps beginners distinguish preparation, questioning, evidence assessment, risks, decisions, actions, exceptions and follow-up. Explicit feedback preserves iteration.
+- **Consequences:** The author authorised figure production without a separate approval pause on 2026-07-11. Native inspection caused a separately committed layout-specification correction before regeneration. `FIG-28-01` may progress only as far as `Review`, not `Approved`.
+- **Related chapters/files:** Chapters 27, 28 and 29, `DIAGRAM_REGISTER.md`, and the `FIG-28-01` specification.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
+
 ## Decision template
 
 ```markdown
