@@ -4,6 +4,14 @@ This file controls terminology across the manuscript. Add a term when it first b
 
 | Term | Working definition | Preferred usage / caution |
 |---|---|---|
+| Banking Industry Architecture Network (BIAN) | Industry association and name commonly used for its banking reference architecture and semantic standard. | Define the acronym at first use in each standalone chapter. |
+| Business Area | Broad grouping used to organise the BIAN Service Landscape. | Do not assume it is an organisational division. |
+| Business Domain | Focused grouping within a BIAN Business Area. | Use as a navigation grouping, not an application boundary. |
+| Service Domain | Logical, discrete banking responsibility in BIAN. | Never equate it automatically with one microservice or application. |
+| Business Scenario | Archetypal sequence of Service Domain interactions in response to a business event. | Do not present it as a mandatory bank process. |
+| Service Operation | Logical business service exposed by a Service Domain. | Do not equate it automatically with a physical endpoint or topic. |
+| Business Object Model (BOM) | BIAN conceptual model of shared business vocabulary used in exchanges. | Not a prescribed physical database schema. |
+| Semantic API | Interface reference whose operations and information have consistent banking meaning. | Physical protocol and operational design remain implementation choices. |
 | Architecture | The fundamental concepts, structures, relationships and principles that shape a system or enterprise. | Do not use as a synonym for one diagram. |
 | Model | A purposeful abstraction of part of reality. | A model may be represented by several diagrams or views. |
 | Diagram | A visual representation of selected model content. | A diagram is not automatically the complete model. |

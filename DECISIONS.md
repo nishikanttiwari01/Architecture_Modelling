@@ -422,6 +422,19 @@ Use the format below for all material decisions. Do not delete superseded decisi
 
 ## Decision template
 
+## DEC-039: Separate BIAN reference concepts from implementation choices
+
+- **Status:** Proposed
+- **Date:** 2026-07-11
+- **Decision:** Teach BIAN as a logical banking reference and semantic standard, then require an explicit Horizon Bank assessment before application, interface, data, security or deployment choices.
+- **Context:** Chapter 31 starts Part V and must prevent beginners from treating the Service Landscape as a deployable target architecture.
+- **Alternatives considered:** Copy the landscape as an application map; equate each Service Domain with one microservice; describe BIAN without an implementation bridge.
+- **Reason:** The separation preserves reusable semantics while making bank-specific ownership and evidence visible.
+- **Consequences:** `FIG-31-01` shows feedback from implementation evidence and states that a Service Domain is not automatically a microservice. The author authorised production without a separate pause on 2026-07-11. The figure remains at `Review`, not `Approved`.
+- **Related chapters/files:** Chapters 31 and 32, BIAN research notes, `DIAGRAM_REGISTER.md`, and the `FIG-31-01` specification.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
+
+
 ```markdown
 ## DEC-NNN: Decision title
 

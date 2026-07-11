@@ -81,7 +81,7 @@ Add a row before creating a new figure. Do not reuse an ID.
 | FIG-28-01 | 28 | Online Store Architecture Review Thread | Show how a scoped review uses questions and evidence to reach an outcome and owned follow-up | Beginner architects, delivery leads, engineers, specialists, operators, business representatives and reviewers | PlantUML review-flow teaching view | diagrams/source/plantuml/FIG-28-01-online-store-architecture-review-thread.puml | diagrams/exported/svg/FIG-28-01-online-store-architecture-review-thread.svg | Review | Codex |
 | FIG-29-01 | 29 | Online Store Operational Feedback Loop | Show how runtime signals and support experience lead through owned response and learning to governed architecture change | Beginner architects, service owners, engineers, operators, support, security and data practitioners | PlantUML operational-flow teaching view | diagrams/source/plantuml/FIG-29-01-online-store-operational-feedback-loop.puml | diagrams/exported/svg/FIG-29-01-online-store-operational-feedback-loop.svg | Review | Codex |
 | FIG-30-01 | 30 | Horizon Bank Migration Control Thread | Show how a bounded migration wave moves from intake through readiness, cutover, fallback, reconciliation, retirement and feedback | Beginner architects, change leads, delivery teams, service and data owners, operations, risk reviewers and sponsors | PlantUML migration-flow teaching view | diagrams/source/plantuml/FIG-30-01-horizon-bank-migration-control-thread.puml | diagrams/exported/svg/FIG-30-01-horizon-bank-migration-control-thread.svg | Review | Codex |
-| FIG-31-01 | 31 | BIAN reference-to-implementation path | Separate BIAN reference concepts from bank implementation | Architects and bankers | Conceptual | Pending | Pending | Planned | — |
+| FIG-31-01 | 31 | BIAN reference-to-implementation path | Separate BIAN reference concepts from bank implementation | Architects and bankers | PlantUML conceptual teaching flow | diagrams/source/plantuml/FIG-31-01-bian-reference-to-implementation-choices.puml | diagrams/exported/svg/FIG-31-01-bian-reference-to-implementation-choices.svg | Review | Codex |
 
 ## Chapter 8 figure asset details
 
@@ -189,7 +189,7 @@ Add a row before creating a new figure. Do not reuse an ID.
 
 | Figure ID | Specification | Source | SVG export | PNG preview |
 |---|---|---|---|---|
-| `FIG-31-01` | `diagrams/specifications/FIG-31-01-bian-reference-to-implementation-choices.md` | Pending | Pending | Pending |
+| `FIG-31-01` | `diagrams/specifications/FIG-31-01-bian-reference-to-implementation-choices.md` | `diagrams/source/plantuml/FIG-31-01-bian-reference-to-implementation-choices.puml` | `diagrams/exported/svg/FIG-31-01-bian-reference-to-implementation-choices.svg` | `diagrams/exported/png/FIG-31-01-bian-reference-to-implementation-choices.png` |
 
 ## Status values
 

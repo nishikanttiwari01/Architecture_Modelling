@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-07-11
+
+- Completed Chapter 31, *Introduction to BIAN*, using verified official BIAN sources.
+- Added and reviewed `FIG-31-01`, three BIAN source notes, four review passes, the chapter quality gate and `DEC-039`.
+
 ## 2026-07-11: Reviewed Part IV consistency
 
 - Audited Chapters 24 to 30 as one iterative lifecycle thread, including artefact flow, terminology, acronyms, examples, transitions, cross-references, figures, evidence and status records.
