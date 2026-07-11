@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-07-11: Compacted Chapter 30 migration figure
+
+- Reworked `FIG-30-01` into a `441 × 721` page-readable portrait while preserving required migration nodes, labelled decisions, fallback and feedback.
+- Regenerated SVG and PNG exports, inspected native and intended book-width rendering, and updated production and review evidence. The figure remains at `Review`.
+
 ## 2026-07-11: Completed Chapter 30, Change and Migration
 
 - Replaced the outline with beginner-first guidance on triggers, impact, transition architectures, dependencies, waves, migration patterns, data reconciliation, cutover, fallback, decommissioning, readiness, governance, benefits and post-change feedback.

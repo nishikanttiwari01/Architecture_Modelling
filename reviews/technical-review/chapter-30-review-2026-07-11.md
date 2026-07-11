@@ -10,3 +10,4 @@ Pass. The chapter distinguishes current, transition and target states; governed 
 - Data authority, difficult records, business invariants and exceptions are explicit.
 - Governance covers named authority, risk of change and delay, temporary controls and benefit evidence.
 - `FIG-30-01` agrees with the prose and remains Review.
+- The corrected `441 × 721` portrait render preserves required nodes, labelled decision directions, fallback and feedback while fitting the specification's page-readable bounds.

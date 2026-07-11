@@ -57,3 +57,11 @@ Original figure informed by The Open Group ArchiMate implementation and migratio
 ## Review criteria
 
 After this specification is committed, create and render source to SVG and PNG. Confirm dimensions, inspect the output at intended page width, and verify readable labels, correct arrows, no clipping or overlap, sufficient contrast and agreement with Chapter 30. The register may move only as far as Review.
+
+## Production review
+
+- Rendered on 2026-07-11 to SVG and a `441 × 721` pixel PNG.
+- Native-size inspection found readable node and relationship labels, correct decision directions, no clipping or overlap, sufficient contrast and no reliance on colour.
+- The compact portrait composition is within the specified 760-pixel width and preferred 950-pixel height. At intended book-page width, the vector SVG enlarges cleanly and retains readable text without introducing excessive line crossings.
+- The stop path returns to readiness, failed verification reaches the recoverable-boundary fallback, and both fallback and benefit evidence feed back to impact assessment.
+- Maximum status remains `Review` pending author action.

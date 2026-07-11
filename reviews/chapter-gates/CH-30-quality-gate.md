@@ -11,7 +11,7 @@
 - [x] Horizon Bank example and a distinct exercise are included.
 - [x] Four review passes are recorded.
 - [x] `FIG-30-01` specification was committed before source production.
-- [x] SVG and PNG were rendered and visually inspected at native size: labels and arrows are readable; no clipping or overlap was found; meaning does not depend on colour.
+- [x] SVG and `441 × 721` PNG were rendered and visually inspected at native and intended book-page width: labels and arrows are readable; no clipping or overlap was found; meaning does not depend on colour; the figure is within the 760-pixel width and preferred 950-pixel height bounds.
 - [x] `FIG-30-01` remains at Review and `DEC-038` remains Proposed.
 - [x] Fresh checks passed on 2026-07-11: structure validated 63 chapters; links validated 225 local links; terminology and basic style passed; diagram validation passed; diagram register validated 78 entries; word count completed with Chapter 30 at 2,447 words and the manuscript at 137,034 words.
 - [ ] Author approval remains outstanding.

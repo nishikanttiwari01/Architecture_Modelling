@@ -2,9 +2,9 @@
 !include ../../styles/plantuml-theme.puml
 title Horizon Bank migration control thread
 top to bottom direction
-scale 750 width
-skinparam nodesep 18
-skinparam ranksep 22
+scale 0.75
+skinparam nodesep 12
+skinparam ranksep 18
 skinparam defaultFontSize 13
 rectangle "Trigger and intake\nOutcome, scope, evidence" as Intake #DDEBF7
 rectangle "Impact and dependencies\nService, data, controls, owners" as Impact #DDEBF7
@@ -19,7 +19,7 @@ rectangle "Fallback to recoverable boundary\nRestore service, reconcile, reasses
 rectangle "Stabilise and decommission\nClose residual obligations" as Close #D9EAD3
 rectangle "Benefits and feedback\nUpdate models, risks and next wave" as Learn #D9EAD3
 Intake --> Impact : assess change
-Impact --> States : establish baseline and direction
+Impact --> States : establish baseline
 States --> Wave : define operable sequence
 Wave --> Ready : prepare and rehearse
 Ready --> Gate : submit readiness evidence
@@ -32,6 +32,17 @@ Check --> Fallback : failed check
 Fallback --> Impact : reassess assumptions
 Close --> Learn : measure outcomes
 Learn --> Impact : inform later wave
+Intake -[hidden]right-> Impact
+Impact -[hidden]right-> States
+Gate -[hidden]right-> Ready
+Ready -[hidden]right-> Wave
+Cutover -[hidden]right-> Verify
+Verify -[hidden]right-> Check
+Close -[hidden]right-> Fallback
+Fallback -[hidden]right-> Learn
+Intake -[hidden]down-> Gate
+Gate -[hidden]down-> Cutover
+Cutover -[hidden]down-> Close
 legend bottom
 Every decision arrow is labelled. A failed check returns to a defined
 recoverable boundary; the roadmap and target remain assumption-based.
