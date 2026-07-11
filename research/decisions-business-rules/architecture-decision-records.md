@@ -31,4 +31,3 @@ The chapter paraphrases the pattern and does not reproduce the article.
 ## Verification status
 
 Checked
-

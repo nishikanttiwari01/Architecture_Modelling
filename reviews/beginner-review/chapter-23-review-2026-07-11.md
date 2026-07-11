@@ -5,4 +5,3 @@
 - Plain-language distinctions precede formal terminology.
 - Every artefact states its question, strength and limitation.
 - The Online Store worked example and Horizon Bank exercise are distinct.
-

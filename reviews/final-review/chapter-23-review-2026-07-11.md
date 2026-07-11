@@ -6,4 +6,3 @@
 - British English, acronym expansion and no-em-dash requirements pass repository checks.
 - Official DMN and BPMN research is reused; the direct ADR source is recorded.
 - No unresolved technical, beginner, consistency, source or diagram findings remain.
-
