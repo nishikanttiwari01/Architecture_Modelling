@@ -148,4 +148,11 @@ Chapter 13, **Other Useful Modelling Approaches**, remains `Ready for Author App
 
 Chapter 23, **Modelling Decisions and Business Rules**, is `Ready for Author Approval`. It separates policy, rule, decision, logic, result and process action, and selects among tables, trees, DRDs, BPMN, ADRs and trade-off matrices. Its worked table declares a `Unique` hit policy and explicit unknown-input handling; the exercise supplies representative rules, governance and boundary tests. `FIG-23-01` is specified, rendered and visually reviewed at `Review`. Four review passes and the quality gate completed on 2026-07-11.
 
-Last updated: 2026-07-11 (Chapter 23 completed with figure and review evidence)
+The Part III consistency implementation pass completed on 2026-07-11. Chapters 14 to
+23, their gates and reviews, controlled examples, terminology, transitions,
+cross-references and figure conventions were checked together. The review is recorded
+in `reviews/consistency-review/part-03-review-2026-07-11.md`. The pass corrected the
+Simple Online Store naming control and did not change chapter or diagram approval
+states. The author-gated Chapter 14 and Chapter 18 figure work remains deferred.
+
+Last updated: 2026-07-11 (Part III consistency pass completed)

@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-11 - Part III consistency pass
+
+- Reviewed Chapters 14 to 23 together for selection advice, terminology, acronym use,
+  example naming, transitions, cross-references, figure conventions and status evidence.
+- Added the Part III review record under `reviews/consistency-review/`.
+- Registered recurring Simple Online Store systems and internal elements in the
+  controlled example file.
+- Preserved all chapter and diagram approval states and documented the author-gated
+  Chapter 14 and Chapter 18 figure work as deferred.
+
 ## 2026-07-11
 
 ### Completed Chapter 23 decisions and business rules

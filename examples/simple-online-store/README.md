@@ -15,6 +15,17 @@ This deliberately small example introduces modelling techniques before banking c
 - Payment Provider System
 - Delivery Partner System
 
+## Stable Online Store internal elements
+
+- Web App
+- API Application
+- Order Database
+- Notification Worker
+
+These are teaching-level internal elements of the Online Store, not separate software
+systems. Chapters may introduce more detailed components locally when the distinction is
+made explicit.
+
 ## Core capabilities and processes
 
 - Browse catalogue

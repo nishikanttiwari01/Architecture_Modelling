@@ -88,7 +88,7 @@ A system landscape answers: **what software systems exist around this solution, 
 
 This is the widest software-structure view in the chapter. It is useful when the audience needs to understand an estate, not just one system. A C4 System Landscape view can show several software systems and their high-level relationships [C4-OFFICIAL]. It is especially useful in enterprise architecture, migration planning, system ownership discussions and dependency discovery.
 
-For the Simple Online Store, a small landscape might include Online Store, Payment Provider System, Delivery Partner System, Inventory System, Email Service and Customer Support System. It does not need to show classes or database tables. It should show enough relationships to explain where ownership crosses system boundaries.
+For the Simple Online Store, a small landscape might include Online Store, Payment Provider System and Delivery Partner System. It does not need to show classes or database tables. It should show enough relationships to explain where ownership crosses system boundaries.
 
 For Horizon Bank, a payments or onboarding landscape might include Horizon Digital Channels, Customer Onboarding Platform, Party and Customer Platform, Payments Platform, Core Deposit System, Financial Crime Platform, Enterprise Integration Platform, Event Platform and Enterprise Data Platform. A landscape view helps the reader see that a channel app should not connect directly to every core system merely because the process needs data from several places.
 
@@ -100,7 +100,7 @@ A system context answers: **what is inside and outside one system boundary, and 
 
 This is often the first view for a single software system. Chapter 5 introduced the C4 System Context diagram. In this chapter, the selection point is boundary clarity. Choose a context view when the team has not yet agreed what the system of interest is, which people use it and which neighbouring systems sit outside its boundary [C4-OFFICIAL].
 
-For the Simple Online Store, the system of interest is the Online Store. Customer and Customer Support Agent are people outside it. Payment Provider System, Delivery Partner System and Inventory System are external systems. The context view deliberately excludes the Online Store web app, API, database and worker because those are internal structure.
+For the Simple Online Store, the system of interest is the Online Store. Customer and Customer Support Agent are people outside it. Payment Provider System and Delivery Partner System are external systems. The context view deliberately excludes the Online Store web app, API, database and worker because those are internal structure.
 
 For Horizon Bank, a Customer Onboarding Platform context view might show Retail Customer, Relationship Manager, Compliance Officer, Horizon Digital Channels, Party and Customer Platform, Financial Crime Platform, Document Verification Service and Notification Service. It should make clear which interactions cross the Customer Onboarding Platform boundary and which responsibilities remain outside it.
 
@@ -213,7 +213,7 @@ The table is not a ranking. A landscape is not more important than a class view,
 
 The Simple Online Store is a good place to practise the selection discipline because the software is small enough to understand without banking complexity.
 
-If the question is "what systems surround checkout?", start with a system context view. Show Customer, Customer Support Agent, Online Store, Payment Provider System, Delivery Partner System and Inventory System. This view helps the team agree that payment, delivery and inventory are outside the Online Store boundary.
+If the question is "what systems surround checkout?", start with a system context view. Show Customer, Customer Support Agent, Online Store, Payment Provider System and Delivery Partner System. This view helps the team agree that payment and delivery are outside the Online Store boundary.
 
 If the question is "what makes up the Online Store?", use a container view. A practical first structure is Web App, API Application, Order Database, Payment Adapter and Notification Worker. This view helps the team discuss where checkout, order persistence, payment integration and notifications live.
 
