@@ -82,6 +82,7 @@ Add a row before creating a new figure. Do not reuse an ID.
 | FIG-29-01 | 29 | Online Store Operational Feedback Loop | Show how runtime signals and support experience lead through owned response and learning to governed architecture change | Beginner architects, service owners, engineers, operators, support, security and data practitioners | PlantUML operational-flow teaching view | diagrams/source/plantuml/FIG-29-01-online-store-operational-feedback-loop.puml | diagrams/exported/svg/FIG-29-01-online-store-operational-feedback-loop.svg | Review | Codex |
 | FIG-30-01 | 30 | Horizon Bank Migration Control Thread | Show how a bounded migration wave moves from intake through readiness, cutover, fallback, reconciliation, retirement and feedback | Beginner architects, change leads, delivery teams, service and data owners, operations, risk reviewers and sponsors | PlantUML migration-flow teaching view | diagrams/source/plantuml/FIG-30-01-horizon-bank-migration-control-thread.puml | diagrams/exported/svg/FIG-30-01-horizon-bank-migration-control-thread.svg | Review | Codex |
 | FIG-31-01 | 31 | BIAN reference-to-implementation path | Separate BIAN reference concepts from bank implementation | Architects and bankers | PlantUML conceptual teaching flow | diagrams/source/plantuml/FIG-31-01-bian-reference-to-implementation-choices.puml | diagrams/exported/svg/FIG-31-01-bian-reference-to-implementation-choices.svg | Review | Codex |
+| FIG-32-01 | 32 | BIAN and multi-technique traceability view | Trace a banking change across complementary modelling questions without implying equivalence | Architects, analysts and delivery teams | PlantUML conceptual relationship view | diagrams/source/plantuml/FIG-32-01-bian-multi-technique-traceability-view.puml | diagrams/exported/svg/FIG-32-01-bian-multi-technique-traceability-view.svg | Planned | Codex |
 
 ## Chapter 8 figure asset details
 
@@ -190,6 +191,12 @@ Add a row before creating a new figure. Do not reuse an ID.
 | Figure ID | Specification | Source | SVG export | PNG preview |
 |---|---|---|---|---|
 | `FIG-31-01` | `diagrams/specifications/FIG-31-01-bian-reference-to-implementation-choices.md` | `diagrams/source/plantuml/FIG-31-01-bian-reference-to-implementation-choices.puml` | `diagrams/exported/svg/FIG-31-01-bian-reference-to-implementation-choices.svg` | `diagrams/exported/png/FIG-31-01-bian-reference-to-implementation-choices.png` |
+
+## Chapter 32 figure asset details
+
+| Figure ID | Specification | Source | SVG export | PNG preview |
+|---|---|---|---|---|
+| `FIG-32-01` | `diagrams/specifications/FIG-32-01-bian-multi-technique-traceability-view.md` | `diagrams/source/plantuml/FIG-32-01-bian-multi-technique-traceability-view.puml` | `diagrams/exported/svg/FIG-32-01-bian-multi-technique-traceability-view.svg` | `diagrams/exported/png/FIG-32-01-bian-multi-technique-traceability-view.png` |
 
 ## Status values
 
