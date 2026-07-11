@@ -420,8 +420,6 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapters 22, 29 and 30, `DIAGRAM_REGISTER.md`, and the `FIG-30-01` specification.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
-## Decision template
-
 ## DEC-039: Separate BIAN reference concepts from implementation choices
 
 - **Status:** Proposed
@@ -434,6 +432,7 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapters 31 and 32, BIAN research notes, `DIAGRAM_REGISTER.md`, and the `FIG-31-01` specification.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
+## Decision template
 
 ```markdown
 ## DEC-NNN: Decision title

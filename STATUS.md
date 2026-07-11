@@ -107,6 +107,8 @@
 
 ## Current recommended next task
 
+Chapter 31, **Introduction to BIAN**, is the current recommended author-review task. Its prose, sources and four reviews are complete. The initial `FIG-31-01` render was readable but measured 1656 by 1009 pixels and did not satisfy the intended compact page-width specification. An author-authorised correction was recorded on 2026-07-11; compact regeneration and fresh validation are pending. The figure remains at `Review`, never `Approved`, and `DEC-039` remains `Proposed`.
+
 Chapter 22, **Modelling Transformation and Migration**, is `Ready for Author Approval`.
 It covers current, transition and target states, gaps, dependencies, roadmaps, migration
 waves, cutover, decommissioning, benefits and risks. `FIG-22-01` is specified, rendered,

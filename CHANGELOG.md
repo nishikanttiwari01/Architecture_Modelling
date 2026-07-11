@@ -4,6 +4,7 @@
 
 - Completed Chapter 31, *Introduction to BIAN*, using verified official BIAN sources.
 - Added and reviewed `FIG-31-01`, three BIAN source notes, four review passes, the chapter quality gate and `DEC-039`.
+- Recorded an author-authorised correction after the initial 1656 by 1009 `FIG-31-01` render proved wider than the compact book-page target. Portrait regeneration and fresh checks are pending.
 
 ## 2026-07-11: Reviewed Part IV consistency
 

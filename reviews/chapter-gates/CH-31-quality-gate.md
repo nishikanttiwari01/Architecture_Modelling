@@ -11,6 +11,6 @@
 - [x] Horizon Bank example and practical exercise are included.
 - [x] Four review passes are recorded.
 - [x] `FIG-31-01` specification was committed before source production.
-- [x] SVG and 1655 by 1008 PNG were rendered and visually inspected.
+- [ ] The initial 1656 by 1009 render is being replaced because it missed the compact page-width target. Portrait regeneration, visual inspection and exact fresh six-check evidence are pending.
 - [x] `FIG-31-01` remains at Review and `DEC-039` remains Proposed.
 - [ ] Author approval remains outstanding.
