@@ -9,6 +9,8 @@
   controlled example file.
 - Preserved all chapter and diagram approval states and documented the author-gated
   Chapter 14 and Chapter 18 figure work as deferred.
+- Verification passed: structure, links, terminology, diagram validation, diagram
+  register and word-count checks, plus `git diff --check`.
 
 ## 2026-07-11
 

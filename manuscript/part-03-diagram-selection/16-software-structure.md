@@ -116,7 +116,7 @@ Use a container view when the architecture question is about major software resp
 
 For the Simple Online Store, a useful container view might include:
 
-- Web App, used by Customer and Customer Support Agent.
+- Web Application, used by Customer and Customer Support Agent.
 - API Application, which owns checkout, order and returns operations.
 - Order Database, which stores order, basket and return data.
 - Payment Adapter, if it is a separately runnable integration unit.
@@ -215,7 +215,7 @@ The Simple Online Store is a good place to practise the selection discipline bec
 
 If the question is "what systems surround checkout?", start with a system context view. Show Customer, Customer Support Agent, Online Store, Payment Provider System and Delivery Partner System. This view helps the team agree that payment and delivery are outside the Online Store boundary.
 
-If the question is "what makes up the Online Store?", use a container view. A practical first structure is Web App, API Application, Order Database, Payment Adapter and Notification Worker. This view helps the team discuss where checkout, order persistence, payment integration and notifications live.
+If the question is "what makes up the Online Store?", use a container view. A practical first structure is Web Application, API Application, Order Database, Payment Adapter and Notification Worker. This view helps the team discuss where checkout, order persistence, payment integration and notifications live.
 
 If the question is "what is inside the API Application?", use a component view. Components might include Order Service, Basket Service, Payment Adapter, Fulfilment Component and Notification Publisher. This view should show that order logic uses a payment interface or adapter rather than embedding provider-specific payment logic everywhere.
 

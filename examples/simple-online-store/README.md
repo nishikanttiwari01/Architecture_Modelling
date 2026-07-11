@@ -17,7 +17,7 @@ This deliberately small example introduces modelling techniques before banking c
 
 ## Stable Online Store internal elements
 
-- Web App
+- Web Application
 - API Application
 - Order Database
 - Notification Worker
