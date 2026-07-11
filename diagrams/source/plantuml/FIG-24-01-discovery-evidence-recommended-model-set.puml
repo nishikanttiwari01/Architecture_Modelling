@@ -1,4 +1,5 @@
 @startuml
+scale 0.9
 title FIG-24-01. Discovery Evidence and Recommended Model Set
 skinparam backgroundColor #FFFFFF
 skinparam defaultFontName Arial
@@ -15,11 +16,27 @@ top to bottom direction
 skinparam nodesep 18
 skinparam ranksep 28
 rectangle "Problem, desired outcome\nand available evidence" as Start #DCEAF7
-rectangle "Focused discovery views\n\nWho matters?  maps to  Stakeholders and concerns\nWhat surrounds scope?  maps to  Current-state context\nWhich abilities matter?  maps to  Capability assessment\nHow does work happen?  maps to  Process discovery\nWhat limits confidence or choice?  maps to  Constraints, assumptions and dependencies" as Views
+rectangle "Who matters?\nStakeholders and concerns" as Stake
+rectangle "What surrounds scope?\nCurrent-state context" as Context
+rectangle "Which abilities matter?\nCapability assessment" as Cap
+rectangle "How does work happen?\nProcess discovery" as Process
+rectangle "What limits confidence or choice?\nConstraints, assumptions and dependencies" as Limits
 rectangle "Synthesis: findings, gaps\nand candidate directions" as Synth #E2F0D9
 rectangle "Readiness decision:\nproceed, loop, narrow,\npause or stop" as Gate #FFF2CC
-Start -down-> Views : select only what the concerns require
-Views -down-> Synth : concerns, boundaries, gaps, flows and limits
+Start -down-> Stake
+Start -down-> Context
+Start -down-> Cap
+Start -down-> Process
+Start -down-> Limits
+Stake -[hidden]down-> Context
+Context -[hidden]down-> Cap
+Cap -[hidden]down-> Process
+Process -[hidden]down-> Limits
+Stake -down-> Synth
+Context -down-> Synth
+Cap -down-> Synth
+Process -down-> Synth
+Limits -down-> Synth
 Synth -down-> Gate : review evidence
 Gate -left-> Start : uncertainty remains; gather evidence
 note bottom of Gate

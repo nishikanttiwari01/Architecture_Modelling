@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-07-11: Restore separate Chapter 24 discovery view nodes
+
+- Replaced the aggregated `FIG-24-01` discovery panel with five separate labelled nodes and explicit evidence-to-view and view-to-synthesis arrows.
+- Preserved the feedback loop in a 724 by 711 pixel page-width PNG and corresponding SVG, then updated review and gate evidence.
+
 ## 2026-07-11: Correct Chapter 24 figure page fit
 
 - Replaced the 1520-pixel-wide `FIG-24-01` layout with a 717 by 564 pixel portrait PNG and corresponding SVG while preserving its model mappings and iterative feedback.
