@@ -146,6 +146,6 @@ Chapter 14, **Modelling Business Strategy and Capabilities**, remains `Revision 
 
 Chapter 13, **Other Useful Modelling Approaches**, remains `Ready for Author Approval` with final quality score 9.0. Its six figures remain at `Review`, with explicit author decisions still open for chapter and figure approval, native Draw.io graphical-open and export-fidelity comparison (`DEC-021`), and final book-page layout placement of wider landscape figures (`DEC-014`).
 
-Chapter 23, **Modelling Decisions and Business Rules**, is `Ready for Author Approval`. It separates policy, rule, decision, logic, result and process action, and selects among tables, trees, DRDs, BPMN, ADRs and trade-off matrices. `FIG-23-01` is specified, rendered and visually reviewed at `Review`. Four review passes and the quality gate completed on 2026-07-11.
+Chapter 23, **Modelling Decisions and Business Rules**, is `Ready for Author Approval`. It separates policy, rule, decision, logic, result and process action, and selects among tables, trees, DRDs, BPMN, ADRs and trade-off matrices. Its worked table declares a `Unique` hit policy and explicit unknown-input handling; the exercise supplies representative rules, governance and boundary tests. `FIG-23-01` is specified, rendered and visually reviewed at `Review`. Four review passes and the quality gate completed on 2026-07-11.
 
 Last updated: 2026-07-11 (Chapter 23 completed with figure and review evidence)

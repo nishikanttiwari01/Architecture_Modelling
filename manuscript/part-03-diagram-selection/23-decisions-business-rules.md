@@ -76,12 +76,15 @@ Rules need ownership and authority. Each important rule set should identify the 
 
 A decision table answers: **which result applies to a combination of input conditions?** It is usually the best starting point when several conditions combine and the rules should be checked systematically.
 
+This teaching table uses the DMN `Unique` hit policy: exactly one rule may match any complete or deliberately represented missing-input case. `Unknown` means that destination coverage is missing or cannot be established at decision time; it is not treated as `No`.
+
 | Rule | Destination covered? | Express capacity? | Order value | Delivery option | Reason code |
 |---|---|---|---|---|---|
 | R1 | Yes | Yes | GBP 50 or more | Express | `EXPRESS_AVAILABLE` |
 | R2 | Yes | No | Any | Standard | `NO_EXPRESS_CAPACITY` |
 | R3 | Yes | Yes | Below GBP 50 | Standard | `BELOW_EXPRESS_THRESHOLD` |
 | R4 | No | Any | Any | Manual Review | `DESTINATION_NOT_COVERED` |
+| R5 | Unknown | Any | Any | Manual Review | `DESTINATION_COVERAGE_UNKNOWN` |
 
 State how multiple matches are handled. In DMN this is the **hit policy**. Check for gaps, overlaps, contradictions and unreachable rules. Include missing or unknown inputs deliberately. A compact table is stronger than prose when reviewers need to compare combinations or derive tests. It is weaker when the logic is mainly a long ordered conversation or when human judgement cannot be reduced to stable conditions.
 
@@ -170,7 +173,7 @@ The Simple Online Store needs a consistent delivery option before checkout confi
 
 The business analyst and fulfilment owner begin with the decision table because rule combinations are the immediate review question. They add a small DRD when reviewers need to see that destination coverage comes from the delivery-coverage dataset and that the fulfilment policy governs the reusable delivery rules. They link the decision from the checkout BPMN process rather than copying thresholds into gateways.
 
-The team tests boundary values below and at GBP 50, unavailable capacity, uncovered destinations and missing coverage data. Missing coverage produces `Manual Review`; it is not silently treated as `No`. Each result includes a reason code. If the team later chooses an external decision engine, that architecture choice belongs in an ADR, not in the delivery decision table.
+The team tests boundary values below and at GBP 50, unavailable capacity, uncovered destinations and missing coverage data. Under the `Unique` hit policy, the mutually exclusive coverage values `Yes`, `No` and `Unknown`, together with the capacity and value partitions, allow only one rule to match. Missing coverage produces `Manual Review` with `DESTINATION_COVERAGE_UNKNOWN`; it is not silently treated as `No`. Each result includes a reason code. If the team later chooses an external decision engine, that architecture choice belongs in an ADR, not in the delivery decision table.
 
 ## Common mistakes
 
@@ -200,7 +203,18 @@ Horizon Bank must decide whether an outgoing payment continues automatically, go
 
 Select an artefact for each need: rule combinations; dependency on screening and account-status decisions; operational repair steps; the choice between two decision platforms; and comparison criteria for those platforms. Then sketch four representative rules and identify owner, authority, missing-input behaviour, hit policy, reason codes and two boundary tests.
 
-Suggested answer: use a decision table for routing rules, a DRD for dependencies, BPMN for repair work, an ADR for the platform choice and a trade-off matrix as supporting evidence. Keep screening logic separate if another owner governs it. Treat an unavailable screening result explicitly, probably as manual review or a controlled stop according to policy, rather than guessing `clear`. Test each result and at least one missing-input case. The exercise deliberately differs from the worked delivery example by requiring linked banking decisions and an architecture choice.
+Suggested answer: use a decision table for routing rules, a DRD for dependencies, BPMN for repair work, an ADR for the platform choice and a trade-off matrix as supporting evidence. Keep screening logic separate if another owner governs it. The payment-routing owner and policy authority must be named by the bank; this illustrative answer does not prescribe who those roles are in a particular jurisdiction.
+
+A compact excerpt from an illustrative `Unique` table could contain these four mutually exclusive representative rules. A production table would add policy-approved rules for other cut-off and account-status combinations before being considered complete:
+
+| Rule | Instruction complete? | Account status | Screening result | Cut-off status | Result | Reason code |
+|---|---|---|---|---|---|---|
+| P1 | No | Any | Any | Any | Repair | `INSTRUCTION_INCOMPLETE` |
+| P2 | Yes | Not active | Any | Any | Reject | `ACCOUNT_NOT_ACTIVE` |
+| P3 | Yes | Active | Alert or Unknown | Any | Manual Review | `SCREENING_REVIEW_REQUIRED` |
+| P4 | Yes | Active | Clear | Open | Proceed | `ROUTE_AVAILABLE` |
+
+The example deliberately treats a missing screening result as `Unknown` and sends it to manual review rather than guessing `Clear`. In a real bank, approved policy must determine that behaviour and how a closed cut-off is routed. The decision owner governs the table; the named policy or operations authority approves its constraints. Representative boundary tests include `BT-INCOMPLETE`, where a single missing mandatory instruction field produces `Repair`, and `BT-SCREENING-UNKNOWN`, where an otherwise valid instruction with no screening result produces `Manual Review`. Tests should also confirm that one and only one rule matches each represented case, that the full table has no unintended gaps and that the stated reason code is returned. The exercise differs from the worked delivery example by requiring linked banking decisions and an architecture choice.
 
 ## Review checklist
 
@@ -219,5 +233,5 @@ Suggested answer: use a decision table for routing rules, a DRD for dependencies
 ## References and further reading
 
 - `[OMG-DMN-1.5]`: OMG Decision Model and Notation 1.5 formal specification.
-- `[OMG-BPMN-2.0.2]`: OMG Business Process Model and Notation 2.0.2 formal specification.
+- `[OMG-BPMN]`: OMG Business Process Model and Notation 2.0.2 formal specification.
 - `[NYGARD-ADR-2011]`: Michael Nygard, *Documenting Architecture Decisions*.

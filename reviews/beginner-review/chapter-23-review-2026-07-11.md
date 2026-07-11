@@ -5,3 +5,4 @@
 - Plain-language distinctions precede formal terminology.
 - Every artefact states its question, strength and limitation.
 - The Online Store worked example and Horizon Bank exercise are distinct.
+- The exercise answer now demonstrates four rules, ownership, authority, missing-input behaviour, reason codes and named boundary tests without making a jurisdictional claim.

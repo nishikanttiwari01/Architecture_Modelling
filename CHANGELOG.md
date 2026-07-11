@@ -9,6 +9,7 @@
 - Recorded the author's 2026-07-11 production authorisation before creating `FIG-23-01` source and exports.
 - Rendered and visually inspected SVG and PNG exports; the figure remains at `Review`, not `Approved`.
 - Added four review passes, quality-gate evidence, `DEC-031` and repository tracking updates.
+- Clarified the worked table's `Unique` hit policy and missing-input rule, expanded the exercise answer, corrected the canonical BPMN source key and recorded Chapter 23 use in reused source notes.
 
 ## 2026-07-11
 

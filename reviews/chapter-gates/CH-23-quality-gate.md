@@ -8,6 +8,7 @@
 
 - Chapter length is 2,382 words, within the 2,000 to 4,000 target.
 - Required selection content and governance distinctions are complete.
+- Worked decision logic states its `Unique` hit policy, handles unknown destination coverage explicitly and aligns explanation and tests; the exercise supplies the requested representative rule and governance evidence.
 - Technical, beginner, consistency and final reviews pass.
 - The canonical ADR source note is `research/other-modelling/nygard-adr-2011.md`; its recorded 2026-07-02 access date is preserved.
 - `FIG-23-01` specification records the author's 2026-07-11 production authorisation.

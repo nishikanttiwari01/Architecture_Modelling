@@ -65,5 +65,5 @@ This is a first filter. It does not reproduce formal notation, contain executabl
 ## Source references
 
 - OMG-DMN-1.5
-- OMG-BPMN-2.0.2
+- OMG-BPMN
 - NYGARD-ADR-2011

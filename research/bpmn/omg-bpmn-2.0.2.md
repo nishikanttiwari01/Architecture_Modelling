@@ -13,12 +13,12 @@
 ## Supported claims
 
 - Claim: Business Process Model and Notation (BPMN) is the OMG standard notation used to model business processes, collaborations and process behaviour.
-- Intended chapter(s): Chapter 6, BPMN: Business Process Model and Notation
+- Intended chapter(s): Chapters 6, 15 and 23
 - Normative or interpretive: Normative for BPMN terminology and notation; interpretive when the book explains practical architecture usage.
 
 ## Relevant summary
 
-The OMG BPMN specification is the primary source for BPMN terminology and notation. It supports Chapter 6 claims about process elements such as events, activities, gateways, sequence flows, message flows, pools, lanes, collaborations and related process-modelling constructs. Chapter 6 should paraphrase the standard and use original teaching examples rather than reproducing official specification diagrams.
+The OMG BPMN specification is the primary source for BPMN terminology and notation. It supports Chapters 6, 15 and 23 where they discuss process elements, process selection and the separation of process flow from decision logic. The chapters should paraphrase the standard and use original teaching examples rather than reproducing official specification diagrams.
 
 ## Terminology and version notes
 

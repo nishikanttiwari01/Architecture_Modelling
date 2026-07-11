@@ -13,15 +13,15 @@
 ## Supported claims
 
 - Claim: Architecture Decision Records (ADRs) are lightweight records for architecturally significant decisions and their rationale.
-- Intended chapter(s): Chapter 13; Chapter 63 repository practice.
+- Intended chapter(s): Chapters 13, 23 and 63 repository practice.
 - Normative or interpretive: Primary-origin practitioner source for the ADR format popularised by Nygard.
 
 - Claim: ADRs are usually small, numbered text records kept with the project source, with status, context, decision and consequences.
-- Intended chapter(s): Chapter 13; Chapter 63.
+- Intended chapter(s): Chapters 13, 23 and 63.
 - Normative or interpretive: Primary-origin source for the common lightweight ADR pattern.
 
 - Claim: Superseded decisions should be retained rather than deleted.
-- Intended chapter(s): Chapter 13; Chapter 63.
+- Intended chapter(s): Chapters 13, 23 and 63.
 - Normative or interpretive: Practitioner guidance consistent with this repository's decision-log practice.
 
 ## Relevant summary
