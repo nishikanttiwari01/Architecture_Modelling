@@ -7,6 +7,7 @@
 - Revision history: native inspection of the first landscape render showed an excessively wide, unreadable figure. The specification was revised on 2026-07-11 to require a compact top-to-bottom layout before regeneration.
 - Correction history: the resulting 760 by 1008 pixel portrait render was readable at native width but unnecessarily tall for a book page and did not meet the stated approximate 500 pixel target. Under the author's 2026-07-11 authorisation to correct and regenerate without a further pause, this specification now requires a compact portrait export no taller than 800 pixels. Regeneration evidence is pending until source and exports are recreated from this committed specification.
 - Outcome-layout clarification: under the same author authorisation dated 2026-07-11, the three outcome choices may use a compact vertically staggered arrangement rather than one horizontal rank. This keeps arrow labels separate, avoids crossings and preserves the page-fit and readability achieved by the compact portrait layout. Regeneration evidence is pending until the exports are recreated from this committed clarification.
+- Consistency correction: the figure must identify the carried Online Store checkout scope rather than read as a generic review flow. The trigger and scope must name `FR-25-01`, `QA-25-01` and `ADR-26-01`; the review package must include checkout evidence; and the findings must include a checkout-specific payment-timeout risk. This correction is to be committed before source and export regeneration.
 - Maximum Codex status: Review.
 
 ## Purpose
@@ -27,7 +28,7 @@ Original PlantUML review-flow teaching view.
 
 ## Required elements
 
-Show review trigger and scope; review package; stakeholder questions covering functional fit, data, integration, security, performance, resilience and operability; evidence assessment; findings classified as risk, decision, action or exception; a review outcome; owned follow-up; and feedback to the architecture or evidence.
+Show review trigger and scope for `FR-25-01`, `QA-25-01` and `ADR-26-01`; a review package containing focused views, Architecture Decision Records (ADRs), checkout tests and payment-timeout evidence; stakeholder questions covering functional fit, data, integration, security, performance, resilience and operability; evidence assessment; findings classified as risk, decision, action or exception, including the checkout payment-timeout risk; a review outcome; owned follow-up; and feedback to the architecture or evidence.
 
 ## Required relationships
 

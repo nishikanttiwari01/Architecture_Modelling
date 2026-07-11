@@ -4,6 +4,7 @@
 
 - Authorisation to create the specification and proceed without a separate approval pause: author instruction dated 2026-07-11.
 - This committed specification is the required checkpoint before diagram source production.
+- Consistency correction: architecture records provide evidence for change governance but do not themselves hold approval authority. The relationship from architecture records to governed change must be labelled `informs approved change`. This correction is to be committed before source and export regeneration.
 - Maximum Codex status: Review.
 
 ## Purpose
@@ -28,7 +29,7 @@ Show the Online Store checkout service and dependencies; customers and support; 
 
 ## Required relationships
 
-Label telemetry collection, alert routing, customer escalation, diagnosis, restoration, learning, architecture update and controlled change. Distinguish immediate service restoration from longer-term problem treatment.
+Label telemetry collection, alert routing, customer escalation, diagnosis, restoration, learning, architecture update and controlled change. Label the relationship from architecture records to governed change `informs approved change`, so that approval is not attributed to the records themselves. Distinguish immediate service restoration from longer-term problem treatment.
 
 ## Main flow or structure
 
