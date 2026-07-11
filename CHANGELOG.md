@@ -1,5 +1,6 @@
 # Changelog
 
+- Clarified that `FIG-28-01` intentionally uses compact vertically staggered outcome choices, then regenerated both exports byte-identically and re-inspected the 759 by 603 pixel page-readable result.
 - Corrected Chapter 28 governance by removing its duplicate status row, synchronising its detailed book plan and adding its standard quality-gate record.
 - Re-specified and regenerated `FIG-28-01` as a compact 759 by 603 pixel portrait figure after recording the earlier page-height mismatch; native-size inspection confirmed accessibility and page readability.
 - Completed Chapter 28 on evidence-led architecture review, including review purpose, timing, types, preparation, stakeholder questions, quality attributes, findings, outcomes, exceptions and follow-up.

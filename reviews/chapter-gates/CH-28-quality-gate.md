@@ -14,6 +14,7 @@
 - [x] `BOOK_PLAN.md`, manuscript headings and the single Chapter 28 status row agree.
 - [x] Corrected figure specification records the earlier 760 by 1008 pixel height mismatch and precedes regeneration in Git history.
 - [x] Corrected source, SVG and PNG were regenerated from the committed specification. The PNG is 759 by 603 pixels; the SVG is 759.8694 by 604.244 pixels with a 759 by 604 viewBox.
+- [x] After the committed outcome-layout clarification, source-driven regeneration reproduced the staggered SVG and PNG byte-identically. The SVG Git blob is `a32b7be941fc7af87d0e1247ee24dc7b9cf5f0a8`; the PNG Git blob is `e8858db49e3ccec6a7e7460da0f4b67f4a8f18fd`.
 - [x] Native-size inspection found readable labels, correct arrow directions, sufficient contrast, no clipping or overlap, no excessive crossings and a compact page-height footprint. Shapes, labels and arrow text preserve meaning without reliance on colour.
 - [x] Fresh post-regeneration checks passed on 2026-07-11: structure validated 63 chapters; links validated 223 local links; terminology and basic style passed; diagram validation passed; diagram register validated 76 entries; word count completed with Chapter 28 at 2,545 words and the manuscript at 133,059 words.
 - [x] `git diff --check fd67f8e` and the committed-range whitespace check passed.
