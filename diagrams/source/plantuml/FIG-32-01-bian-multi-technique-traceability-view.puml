@@ -1,42 +1,41 @@
 @startuml
 !include ../../styles/plantuml-theme.puml
-scale 720 width
-title FIG-32-01: BIAN and multi-technique traceability
+scale 740 width
+title FIG-32-01: Horizon Bank multi-technique relationship view
 top to bottom direction
 skinparam defaultTextAlignment center
-skinparam nodesep 18
-skinparam ranksep 22
+skinparam nodesep 16
+skinparam ranksep 24
+skinparam packageStyle rectangle
 
-rectangle "BUSINESS INTENT\nCapability: Payment Initiation | What ability is needed?\nScenario: outgoing payment | What outcome and collaboration?" as INTENT #EAF2F8
+package "BAND 1: BUSINESS AND BIAN" #F7FAFC {
+  rectangle "Business need\nImprove outgoing\nretail payments" as NEED #EAF2F8
+  rectangle "Capability\nPayment Initiation" as CAP #EAF2F8
+  rectangle "BIAN behaviour\nOutgoing customer payment\nBusiness Scenario" as SCEN #FFF2CC
+  rectangle "BIAN responsibility\nCandidate payment-handling\nService Domain responsibility" as SD #FFF2CC
+  NEED -right-> CAP : frames
+  CAP -right-> SCEN : informs
+  SD -left-> SCEN : participates in
+}
 
-rectangle "BIAN REFERENCE\nCandidate Service Domain | What banking responsibility?\nService Operation and BOM | What logical exchange?" as BIAN #FFF2CC
+package "BAND 2: APPLICATION AND EXCHANGE" #F7FAFC {
+  rectangle "Horizon application\nPayments Platform" as APP #E2F0D9
+  rectangle "Interface / API\nOutgoing Payment API" as API #E2F0D9
+  rectangle "Data\nPayment Instruction" as DATA #EDE7F6
+  rectangle "Event\nPaymentInstructionAccepted" as EVENT #EDE7F6
+  APP -right-> API : supports
+  API -right-> DATA : consumes or produces
+  DATA -right-> EVENT : informs
+}
 
-rectangle "BEHAVIOUR AND RULES\nBPMN process | What work, order and exceptions?\nDMN routing decision | What rules produce a result?" as BEHAV #FCE4D6
+package "BAND 3: RUNTIME AND QUALIFICATION" #F7FAFC {
+  rectangle "Deployment\nPayments runtime" as RUN #DDEBF7
+  rectangle "QUALIFIED MAPPING\nOne-to-many, many-to-one or transitional\nA Service Domain is not automatically a capability, process step,\napplication, microservice, interface, event, data entity or deployment unit." as NOTE #FFFFFF
+  RUN -[hidden]right-> NOTE
+}
 
-rectangle "SOFTWARE AND INTERACTION\nC4 applications and containers | What software supports it?\nUML sequence | What ordered messages?" as SOFTWARE #E2F0D9
-
-rectangle "INFORMATION AND EVENTS\nData models | What meaning, ownership and structure?\nEvent contract | What fact is communicated?" as INFO #EDE7F6
-
-rectangle "RUNTIME EVIDENCE\nDeployment and operations | Where does it run and how is it observed?" as RUNTIME #DDEBF7
-
-rectangle "QUALIFIED TRACEABILITY RECORD\nsource | relationship | target | scope and rationale | owner | version | evidence\nMappings may be one-to-many, many-to-one or transitional" as TRACE #FFFFFF
-
-INTENT --> BIAN : frames assessment
-BIAN --> BEHAV : informs local detail
-BEHAV --> SOFTWARE : behaviour is supported by
-SOFTWARE --> INFO : consumes, produces and persists
-INFO --> RUNTIME : contracts and software run on
-
-INTENT ..> TRACE : business links
-BIAN ..> TRACE : reference links
-BEHAV ..> TRACE : behaviour links
-SOFTWARE ..> TRACE : implementation links
-INFO ..> TRACE : semantic links
-RUNTIME --> TRACE : operational evidence
-TRACE ..> BIAN : evidence can revise mapping
-
-note bottom
-  No automatic equivalence: a Service Domain is not a capability, process step,
-  application, container, microservice, endpoint, event topic, entity or deployment unit.
-end note
+CAP -down-> APP : realises in part
+SD -down-> API : exchanges meaning through
+APP -down-> RUN : runs on
+EVENT -down-> RUN : consumes or produces
 @enduml

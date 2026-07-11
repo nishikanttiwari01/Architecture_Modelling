@@ -6,6 +6,7 @@
 - Checkpoint date: 2026-07-11
 - Maximum lifecycle state after rendering: Review
 - Author-authorised correction: 2026-07-11. The prior 720 by 442 render did not implement the specified three-band landscape or name the worked Horizon Bank thread precisely enough. Replace it with an implementable three-band landscape no wider than 760 pixels. Regeneration is pending this corrected checkpoint.
+- Production result: regenerated after the corrected checkpoint as a 740 by 266 pixel three-band landscape. Native and intended-width visual inspection and validation evidence are recorded in the Chapter 32 final review and quality gate.
 
 ## Purpose
 
