@@ -48,7 +48,7 @@
 | 27 | Detailed Design and Implementation | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; regenerated `FIG-27-01` at Review; accept or revise `DEC-035` |
 | 28 | Architecture Review | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-28-01` at Review; accept or revise `DEC-036` |
 | 29 | Operations and Support | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-29-01` at Review; accept or revise `DEC-037` |
-| 30 | Change and Migration | Planned | 0 | 0 | 0 | 0 | 0 | — |
+| 30 | Change and Migration | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-30-01` at Review; accept or revise `DEC-038` |
 | 31 | Introduction to BIAN | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 32 | How BIAN Relates to Other Modelling Techniques | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 33 | Defining the Full Banking Operating Model | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -161,4 +161,11 @@ Chapter 28, **Architecture Review**, is `Ready for Author Approval`. It presents
 
 Chapter 29, **Operations and Support**, is `Ready for Author Approval`. It connects operational readiness, ownership, observability, service objectives, response, recovery, reconciliation and support learning back to architecture change. `FIG-29-01` is specified and rendered at `Review`, not `Approved`. `DEC-037` remains `Proposed`. Four review passes and the quality gate completed on 2026-07-11.
 
-Last updated: 2026-07-11 (Chapter 29 completed)
+Chapter 30, **Change and Migration**, is `Ready for Author Approval`. It turns change
+triggers into governed transition states, waves, data migration, cutover, fallback,
+decommissioning and benefit feedback without presenting roadmaps as guarantees or the
+lifecycle as a mandatory waterfall. `FIG-30-01` is at `Review`, not `Approved`.
+`DEC-038` remains `Proposed`. Four review passes and the quality gate completed on
+2026-07-11.
+
+Last updated: 2026-07-11 (Chapter 30 completed)

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-07-11: Completed Chapter 30, Change and Migration
+
+- Replaced the outline with beginner-first guidance on triggers, impact, transition architectures, dependencies, waves, migration patterns, data reconciliation, cutover, fallback, decommissioning, readiness, governance, benefits and post-change feedback.
+- Added and visually reviewed `FIG-30-01` at `Review`, plus the source note, four review records and quality gate.
+- Recorded proposed governance decision `DEC-038` and synchronised chapter and diagram registers without marking any item `Approved`.
+
 - Completed Chapter 29 on operational readiness, ownership, observability, service objectives, response, recovery, reconciliation and support feedback.
 - Added `FIG-29-01` through a separate specification commit, then rendered SVG and PNG exports and retained the figure at Review.
 - Added primary-source notes, review records, governance decision `DEC-037`, and synchronised status, plan and registers.

@@ -1,0 +1,39 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+title Horizon Bank migration control thread
+top to bottom direction
+scale 750 width
+skinparam nodesep 18
+skinparam ranksep 22
+skinparam defaultFontSize 13
+rectangle "Trigger and intake\nOutcome, scope, evidence" as Intake #DDEBF7
+rectangle "Impact and dependencies\nService, data, controls, owners" as Impact #DDEBF7
+rectangle "Architecture states\nCurrent | transition | target" as States #E4DFEC
+rectangle "Bounded migration wave\nEntry, exit, support, fallback" as Wave #E2F0D9
+rectangle "Rehearsal and readiness\nData, operations, people, risk" as Ready #FFF2CC
+hexagon "Proceed?" as Gate #FFF2CC
+rectangle "Cutover\nTransfer bounded cohort" as Cutover #FCE4D6
+rectangle "Verify and reconcile\nService, records, control totals" as Verify #E2F0D9
+hexagon "Evidence acceptable?" as Check #FFF2CC
+rectangle "Fallback to recoverable boundary\nRestore service, reconcile, reassess" as Fallback #F4CCCC
+rectangle "Stabilise and decommission\nClose residual obligations" as Close #D9EAD3
+rectangle "Benefits and feedback\nUpdate models, risks and next wave" as Learn #D9EAD3
+Intake --> Impact : assess change
+Impact --> States : establish baseline and direction
+States --> Wave : define operable sequence
+Wave --> Ready : prepare and rehearse
+Ready --> Gate : submit readiness evidence
+Gate --> Cutover : proceed authority
+Gate --> Ready : stop and correct
+Cutover --> Verify : migrate and observe
+Verify --> Check : present evidence
+Check --> Close : acceptable
+Check --> Fallback : failed check
+Fallback --> Impact : reassess assumptions
+Close --> Learn : measure outcomes
+Learn --> Impact : inform later wave
+legend bottom
+Every decision arrow is labelled. A failed check returns to a defined
+recoverable boundary; the roadmap and target remain assumption-based.
+endlegend
+@enduml

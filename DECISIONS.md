@@ -408,6 +408,18 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapters 28, 29 and 30, `DIAGRAM_REGISTER.md`, and the `FIG-29-01` specification.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
+## DEC-038: Use a migration control thread for Chapter 30
+
+- **Status:** Proposed
+- **Date:** 2026-07-11
+- **Decision:** Use one page-readable Horizon Bank migration control thread to connect intake, architecture states, a bounded wave, readiness authority, cutover, verification, fallback, decommissioning and feedback.
+- **Context:** Chapter 22 already teaches transformation-view selection. Chapter 30 needs an execution and governance thread that makes intermediate operation, evidence and iteration visible without implying a guaranteed roadmap or mandatory waterfall.
+- **Alternatives considered:** A roadmap only; a detailed cutover sequence; a current-to-target comparison without feedback; no figure.
+- **Reason:** One governed thread makes decision authority, recoverable boundaries, residual obligations and iterative evidence visible to beginners.
+- **Consequences:** `FIG-30-01` is an original PlantUML teaching view, remains no higher than `Review`, and uses explicit labels for stop, fallback and feedback paths.
+- **Related chapters/files:** Chapters 22, 29 and 30, `DIAGRAM_REGISTER.md`, and the `FIG-30-01` specification.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
+
 ## Decision template
 
 ```markdown
