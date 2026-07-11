@@ -5,6 +5,7 @@
 - Authorisation to create the specification and proceed without a separate approval pause: author instruction dated 2026-07-11.
 - This specification is the required checkpoint before diagram source production.
 - Revision history: native inspection of the first landscape render showed an excessively wide, unreadable figure. The specification was revised on 2026-07-11 to require a compact top-to-bottom layout before regeneration.
+- Correction history: the resulting 760 by 1008 pixel portrait render was readable at native width but unnecessarily tall for a book page and did not meet the stated approximate 500 pixel target. Under the author's 2026-07-11 authorisation to correct and regenerate without a further pause, this specification now requires a compact portrait export no taller than 800 pixels. Regeneration evidence is pending until source and exports are recreated from this committed specification.
 - Maximum Codex status: Review.
 
 ## Purpose
@@ -33,7 +34,7 @@ Label preparation, questioning, assessment, outcome and follow-up relationships.
 
 ## Main flow or structure
 
-Use a compact top-to-bottom layout targeting approximately 760 pixels wide and 500 pixels high for book-page readability. Arrange preparation and assessment as paired rows, then findings, outcome choices and follow-up. Keep preparation, assessment, outcome and follow-up visually distinct. The outcome must allow proceed, proceed with conditions, or revise and return.
+Use a compact portrait layout targeting 700 to 760 pixels wide and no more than 800 pixels high for book-page readability. Arrange preparation as one row, questions and evidence assessment as a second row, then findings, horizontally aligned outcome choices and follow-up. Keep preparation, assessment, outcome and follow-up visually distinct. The outcome must allow proceed, proceed with conditions, or revise and return.
 
 ## Alternative and exception flows
 
@@ -57,4 +58,4 @@ Original figure informed by ISO/IEC/IEEE 42010:2022 architecture-description con
 
 ## Review criteria
 
-Render to SVG and PNG. Inspect at intended page width for readable labels, correct arrow directions, no clipping or overlap, adequate contrast and agreement with Chapter 28. Only then may the register move to Review.
+Regenerate SVG and PNG only after this corrected specification is committed. Confirm exact dimensions do not exceed 760 by 800 pixels. Inspect at intended page width for readable labels, correct arrow directions, no clipping or overlap, adequate contrast and agreement with Chapter 28. Only then may the register remain at or move to Review.

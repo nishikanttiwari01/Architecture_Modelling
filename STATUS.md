@@ -47,7 +47,6 @@
 | 26 | Solution Design | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; corrected `FIG-26-01` at Review; accept or revise `DEC-034` |
 | 27 | Detailed Design and Implementation | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; regenerated `FIG-27-01` at Review; accept or revise `DEC-035` |
 | 28 | Architecture Review | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-28-01` at Review; accept or revise `DEC-036` |
-| 28 | Architecture Review | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 29 | Operations and Support | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 30 | Change and Migration | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 31 | Introduction to BIAN | Planned | 0 | 0 | 0 | 0 | 0 | — |

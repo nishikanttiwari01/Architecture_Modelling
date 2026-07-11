@@ -939,7 +939,7 @@ The subsection structure below records the approved 63-chapter plan currently re
 #### 28. Architecture Review
 
 - Manuscript file: `manuscript/part-04-architecture-lifecycle/28-architecture-review.md`
-- Scope: Cover review viewpoints for functionality, security, data, integration, performance, availability, operations and compliance, plus minimum review diagram sets.
+- Scope: Explain architecture review as an evidence-led, iterative decision practice. Cover purpose, timing, review types, preparation, stakeholder concerns, quality attributes, findings, outcomes, exceptions and owned follow-up without turning review into ceremony or design-by-committee. Target 2,000 to 4,000 words.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -947,22 +947,28 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
-  - Review preparation
-  - Functional review
-  - Security review
-  - Data review
-  - Integration review
-  - Performance and resilience
-  - Operability
-  - Decision and action tracking
+  - Review for a decision, not for ceremony
+  - Choose the review type and timing
+  - Define scope and prepare the review package
+  - Ask from stakeholder concerns
+    - Functional fit
+    - Security and privacy
+    - Data
+    - Integration
+    - Performance and resilience
+    - Operability
+    - Business and governance fit
+  - Assess evidence and uncertainty
+  - Record risks, decisions, actions and exceptions
+  - Reach a proportionate outcome
   - Recommended model set
-  - Worked example
+  - Worked example: Online Store checkout
   - Stage-gate checklist
+  - Common mistakes
   - Key takeaways
   - Practical exercise
   - Review checklist
-  - Drafting notes
+  - References and further reading
 
 #### 29. Operations and Support
 
