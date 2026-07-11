@@ -15,4 +15,3 @@ The source describes refinement using stimulus, stimulus source, environment, ar
 ## Reliability and copyright
 
 Primary SEI material. No diagram or extended passage is reproduced.
-

@@ -15,4 +15,3 @@ NIST defines traceability as a discernible association among logical entities, i
 ## Reliability and copyright
 
 Primary United States government sources. No official diagram is reproduced.
-

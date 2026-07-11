@@ -56,4 +56,3 @@ Original figure informed by ISO-IEC-IEEE-29148-2018, SEI-QAS-2013 and NIST-REQ-T
 ## Review criteria
 
 Source renders to SVG and PNG in the specified portrait layout; both are visually inspected at book-page width; identifiers and relationship directions agree with Chapter 25; the register status is Review.
-

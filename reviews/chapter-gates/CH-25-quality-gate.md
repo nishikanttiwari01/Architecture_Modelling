@@ -15,4 +15,3 @@
 | Open issues | Pass | Only author approval remains; statuses do not exceed Review or Ready for Author Approval |
 
 The gate is iterative. New design evidence may return a requirement to analysis without invalidating the lifecycle approach.
-

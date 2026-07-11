@@ -16,4 +16,3 @@ The official abstract says the standard specifies requirements-engineering proce
 ## Reliability and copyright
 
 Primary publisher page. The full standard is copyrighted and was not copied into the repository.
-
