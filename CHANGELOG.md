@@ -2,6 +2,16 @@
 
 All notable repository and manuscript changes are recorded here. This is a project history, not a replacement for Git commits.
 
+## 2026-07-11
+
+### Completed Chapter 25 requirements analysis
+
+- Expanded Chapter 25 from a scaffold into a complete beginner lifecycle chapter covering requirement types, scenarios and use cases, process and information analysis, quality attributes, constraints, assumptions, traceability, prioritisation, acceptance, verification, validation and iterative stage-gate readiness.
+- Added three primary-source notes and registered them.
+- Added, rendered and visually inspected `FIG-25-01`; recorded the author's 2026-07-11 authorisation to proceed without a separate diagram approval pause and kept the figure at `Review`.
+- Added four review records, a chapter quality gate and proposed `DEC-027`.
+- Moved Chapter 25 to `Ready for Author Approval`, not `Approved`.
+
 ## 2026-07-08
 
 ### Completed Chapter 18 integration and runtime behaviour modelling

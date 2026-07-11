@@ -296,3 +296,11 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:**
 - **Supersedes / superseded by:**
 ```
+## DEC-027: Use an iterative traceability thread for Chapter 25
+
+- **Status:** Proposed
+- **Date:** 2026-07-11
+- **Decision owner:** Author
+- **Context:** Chapter 25 needs a beginner-readable lifecycle model that connects discovery evidence, requirements analysis, design and assessment without implying a one-pass waterfall. The author instructed Codex on 2026-07-11 to create the diagram without a separate approval pause.
+- **Decision:** Use `FIG-25-01` as an original PlantUML traceability teaching view. Show stable identifiers and labelled forward links from need to requirements, analysis models, design response, verification and evidence, plus feedback links for iterative refinement. Keep the figure at `Review` pending author decision.
+- **Consequences:** Readers receive one compact analysis thread; detailed SysML notation remains in Chapter 13; the source and exports are reproducible; author review at book-page width remains required.

@@ -43,7 +43,7 @@
 | 22 | Modelling Transformation and Migration | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 23 | Modelling Decisions and Business Rules | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 24 | Discovery and Problem Definition | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 25 | Requirements and Analysis | Planned | 0 | 0 | 0 | 0 | 0 | — |
+| 25 | Requirements and Analysis | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review of chapter, `FIG-25-01` and `DEC-027` |
 | 26 | Solution Design | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 27 | Detailed Design and Implementation | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 28 | Architecture Review | Planned | 0 | 0 | 0 | 0 | 0 | — |

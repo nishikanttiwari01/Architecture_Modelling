@@ -1,0 +1,35 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+title Online Store requirements analysis thread
+skinparam nodesep 24
+skinparam ranksep 35
+skinparam defaultFontSize 13
+
+rectangle "Stakeholder need\nNEED-25-01\nKnow promptly whether\nan order was accepted" as N #FFF2CC
+rectangle "Functional requirement\nFR-25-01\nCreate one order and\nreturn its reference" as FR #DDEBF7
+rectangle "Quality scenario\nQA-25-01\n95% within 2 seconds\nat forecast peak" as QA #DDEBF7
+rectangle "Use case\nUC-25-01\nCheckout, decline\nand uncertain response" as UC #E2F0D9
+rectangle "Conceptual model\nBasket, Order,\nPayment Attempt" as CM #E2F0D9
+rectangle "Design response\nIdempotent order creation\nand status handling" as DR #E4DFEC
+rectangle "Verification case\nVT-25-01\nPeak and retry tests" as VT #FCE4D6
+rectangle "Evidence\nResults and stakeholder\nvalidation" as EV #FCE4D6
+
+N -down-> FR : refined by
+N -down-> QA : measured by
+FR --> UC : clarified by
+FR --> CM : uses concepts from
+QA --> DR : drives
+UC --> DR : informs
+CM --> DR : constrains meaning of
+DR --> VT : verified by
+FR --> VT : assessed by
+QA --> VT : measured by
+VT --> EV : produces
+EV ..> FR : feedback refines
+EV ..> QA : feedback refines
+
+legend bottom
+Solid arrows show forward trace links.
+Dotted arrows show iterative learning.
+endlegend
+@enduml
