@@ -52,7 +52,7 @@ Detailed design is not a licence to change the architecture silently. If the Pay
 
 ## Specify interfaces as contracts
 
-An interface contract states what participants may send, receive and expect. For an HTTP API, include operation purpose, path and method, authentication, request and response schemas, status meanings, validation, error representation, idempotency and versioning expectations. The OpenAPI Specification provides a machine-readable description format for HTTP APIs. A contract is still incomplete if its prose and runtime behaviour disagree.
+An interface contract states what participants may send, receive and expect. For a Hypertext Transfer Protocol (HTTP) API, include operation purpose, path and method, authentication, request and response schemas, status meanings, validation, error representation, idempotency and versioning expectations. The OpenAPI Specification provides a machine-readable description format for HTTP APIs. A contract is still incomplete if its prose and runtime behaviour disagree.
 
 For `POST /checkouts`, define the customer context, basket reference and idempotency key. Distinguish accepted, declined, pending and invalid outcomes. State which fields are required, which identifiers remain stable and whether a retry returns the existing outcome. Include examples for difficult cases, but do not fill the chapter with complete payloads.
 
@@ -129,7 +129,7 @@ The physical model adds a unique scoped idempotency key and explicit attempt sta
 
 Telemetry links customer request, provider attempt and reconciliation. Tests cover simultaneous retries, delayed callbacks, provider timeout, unauthorised basket access and telemetry redaction. A fault test finds that the original retry interval creates provider bursts. The team changes configuration and records the consequential rate-control decision rather than pretending the original design was final.
 
-At Horizon Bank, a cross-border payment needs similarly linked contracts, ledger and screening data structures, segregation-of-duties controls, deployment definitions and evidence. BIAN Service Domains can clarify semantic responsibilities, but they are not automatically deployable microservices.
+At Horizon Bank, a cross-border payment needs similarly linked contracts, ledger and screening data structures, segregation-of-duties controls, deployment definitions and evidence. Banking Industry Architecture Network (BIAN) Service Domains can clarify semantic responsibilities, but they are not automatically deployable microservices.
 
 ## Stage-gate checklist
 
@@ -187,7 +187,7 @@ A strong answer keeps customer identity checks at an explicit enforcement point,
 ## References and further reading
 
 - OpenAPI Initiative, [OpenAPI Specification 3.1.1](https://spec.openapis.org/oas/v3.1.1.html), accessed 11 July 2026.
-- AsyncAPI Initiative, [AsyncAPI Specification 3.1.0](https://www.asyncapi.com/docs/reference/specification/v3.0.0), accessed 11 July 2026.
+- AsyncAPI Initiative, [AsyncAPI Specification 3.1.0](https://www.asyncapi.com/docs/reference/specification/latest), accessed 11 July 2026.
 - Kubernetes project, [Kubernetes documentation](https://kubernetes.io/docs/concepts/), accessed 11 July 2026.
 - OpenTelemetry project, [OpenTelemetry documentation](https://opentelemetry.io/docs/), accessed 11 July 2026.
 - Michael Nygard, [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions), 15 November 2011, accessed 11 July 2026.

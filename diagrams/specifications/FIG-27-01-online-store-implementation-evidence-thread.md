@@ -3,6 +3,7 @@
 ## Authorisation and status
 
 - Authorisation to proceed without a separate diagram approval pause: author instruction dated 2026-07-11.
+- Revision history: the initial authorised specification requested a portrait layout. Native rendering showed that the evidence thread is clearer as a compact landscape figure. The author authorised the revised landscape specification on 2026-07-11 before final regeneration.
 - Maximum Codex status: Review.
 
 ## Purpose
@@ -31,7 +32,7 @@ Label refinement, implementation, verification and feedback relationships.
 
 ## Main flow or structure
 
-Use a compact, top-to-bottom landscape layout targeting 700 to 800 pixels wide. Keep detailed-design artefacts in separate labelled boxes. Repository and verification evidence must be visually distinct.
+Use a compact, top-to-bottom landscape layout targeting approximately 760 pixels wide and 497 pixels high for readable placement at book-page width. Keep detailed-design artefacts in separate labelled boxes. Repository and verification evidence must be visually distinct.
 
 ## Alternative and exception flows
 

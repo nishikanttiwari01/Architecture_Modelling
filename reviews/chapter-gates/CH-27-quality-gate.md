@@ -11,6 +11,7 @@
 - [x] Chapter 28 review scope is not pre-empted.
 - [x] Primary official sources support version-sensitive contract claims.
 - [x] Four review passes are recorded under the correct Chapter 27 paths.
-- [x] Figure specification, source, exports, caption and register entry agree.
-- [x] The 760 by 496 pixel PNG and corresponding SVG pass native-size visual inspection.
+- [ ] Final regenerated figure specification, source, exports, caption and register entry agree. Confirm after regeneration.
+- [ ] Record exact SVG and PNG dimensions and native-size visual inspection after regeneration.
+- [ ] Record fresh results for all six required repository checks after final regeneration.
 - [ ] Author approval remains outstanding.

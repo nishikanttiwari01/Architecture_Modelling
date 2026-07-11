@@ -1,5 +1,7 @@
 # Changelog
 
+- Corrected Chapter 27 governance and production evidence before final figure regeneration: synchronised its master status row, expanded HTTP and BIAN at first use, corrected the official AsyncAPI 3.1.0 link, and revised the authorised figure specification from its initial portrait layout to a page-readable landscape layout.
+
 ## 2026-07-11
 
 - Completed Chapter 27 on detailed design and implementation, including contracts, physical design, controls, runtime configuration, observability, traceability and implementation feedback.
