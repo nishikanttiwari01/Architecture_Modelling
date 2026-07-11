@@ -1,0 +1,42 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+scale 720 width
+title FIG-32-01: BIAN and multi-technique traceability
+top to bottom direction
+skinparam defaultTextAlignment center
+skinparam nodesep 18
+skinparam ranksep 22
+
+rectangle "BUSINESS INTENT\nCapability: Payment Initiation | What ability is needed?\nScenario: outgoing payment | What outcome and collaboration?" as INTENT #EAF2F8
+
+rectangle "BIAN REFERENCE\nCandidate Service Domain | What banking responsibility?\nService Operation and BOM | What logical exchange?" as BIAN #FFF2CC
+
+rectangle "BEHAVIOUR AND RULES\nBPMN process | What work, order and exceptions?\nDMN routing decision | What rules produce a result?" as BEHAV #FCE4D6
+
+rectangle "SOFTWARE AND INTERACTION\nC4 applications and containers | What software supports it?\nUML sequence | What ordered messages?" as SOFTWARE #E2F0D9
+
+rectangle "INFORMATION AND EVENTS\nData models | What meaning, ownership and structure?\nEvent contract | What fact is communicated?" as INFO #EDE7F6
+
+rectangle "RUNTIME EVIDENCE\nDeployment and operations | Where does it run and how is it observed?" as RUNTIME #DDEBF7
+
+rectangle "QUALIFIED TRACEABILITY RECORD\nsource | relationship | target | scope and rationale | owner | version | evidence\nMappings may be one-to-many, many-to-one or transitional" as TRACE #FFFFFF
+
+INTENT --> BIAN : frames assessment
+BIAN --> BEHAV : informs local detail
+BEHAV --> SOFTWARE : behaviour is supported by
+SOFTWARE --> INFO : consumes, produces and persists
+INFO --> RUNTIME : contracts and software run on
+
+INTENT ..> TRACE : business links
+BIAN ..> TRACE : reference links
+BEHAV ..> TRACE : behaviour links
+SOFTWARE ..> TRACE : implementation links
+INFO ..> TRACE : semantic links
+RUNTIME --> TRACE : operational evidence
+TRACE ..> BIAN : evidence can revise mapping
+
+note bottom
+  No automatic equivalence: a Service Domain is not a capability, process step,
+  application, container, microservice, endpoint, event topic, entity or deployment unit.
+end note
+@enduml

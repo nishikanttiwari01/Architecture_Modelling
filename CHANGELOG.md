@@ -2,6 +2,9 @@
 
 ## 2026-07-11
 
+- Completed Chapter 32, *How BIAN Relates to Other Modelling Techniques*, with qualified mappings, selection limits, a Horizon Bank payment trace, practical exercise and review checklist.
+- Added `FIG-32-01` through a separate specification checkpoint, then rendered and inspected page-readable SVG and PNG exports at `Review`.
+- Added four review passes, the Chapter 32 quality gate, controlled term `Qualified mapping` and proposed decision `DEC-040`. Reused the verified official source set, so no new source was added.
 - Completed Chapter 31, *Introduction to BIAN*, using verified official BIAN sources.
 - Added and reviewed `FIG-31-01`, three BIAN source notes, four review passes, the chapter quality gate and `DEC-039`.
 - Recorded an author-authorised correction after the initial 1656 by 1009 `FIG-31-01` render proved wider than the compact book-page target. Regenerated it as a 700 by 581 compact landscape with four explicitly labelled evidence relationships, inspected it at native and intended width, and passed all six repository checks plus `git diff --check`.

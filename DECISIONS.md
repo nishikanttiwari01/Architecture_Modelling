@@ -317,6 +317,18 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapters 12, 20, 21 and 22, `DIAGRAM_REGISTER.md`, `diagrams/specifications/FIG-21-01-choosing-the-right-security-architecture-view.md`, `research/security/`.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
+## DEC-040: Relate BIAN through qualified multi-technique mappings
+
+- **Status:** Proposed
+- **Date:** 2026-07-11
+- **Decision:** Connect BIAN and complementary models through qualified, evidence-backed relationships rather than a one-to-one translation table.
+- **Context:** Chapter 32 must help beginners move from banking reference semantics to enterprise, process, software, information, decision, event and runtime models without confusing their element types.
+- **Alternatives considered:** Publish a fixed BIAN-to-notation equivalence table; merge every concern into one diagram; describe each technique independently without traceability.
+- **Reason:** Qualified mappings preserve the question, abstraction and notation of each model while supporting one-to-many, many-to-one and transitional implementation relationships.
+- **Consequences:** `FIG-32-01` uses a central traceability record and explicitly rejects automatic equivalence between a Service Domain and a capability, process step, application, microservice, interface, event, data entity or deployment unit. The figure remains at `Review`, not `Approved`.
+- **Related chapters/files:** Chapters 31 to 33, `GLOSSARY.md`, `DIAGRAM_REGISTER.md`, and the `FIG-32-01` specification.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
+
 ## DEC-030: Scope Chapter 22 as transformation and migration view selection
 
 - **Status:** Proposed

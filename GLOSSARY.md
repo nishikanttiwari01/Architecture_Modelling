@@ -112,6 +112,7 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Business Scenario (BIAN) | An archetypal representation of Service Domain interactions in response to a business event or objective. | Do not present it as a mandatory bank process; complement it with BPMN when human and process detail is needed. |
 | Semantic API (BIAN) | An API specification aligned to BIAN service semantics. | Adaptation and governance are still required. |
 | Business Object Model (BIAN) | BIAN's conceptual semantic reference model for shared banking vocabulary used in exchanges. | Do not treat it as a ready-made physical database schema. |
+| Qualified mapping | A recorded relationship between model elements that states the relationship, scope, rationale, owner, version and evidence. | Prefer precise relationships such as `supports in part`; do not use `equals` for unlike model elements. |
 | Current state | The architecture as it exists now. | Also called as-is or baseline architecture. |
 | Target state | The intended future architecture. | Also called to-be architecture. |
 | Architecture Decision Record (ADR) | A concise record of an important architecture decision, context and consequences. | Use stable identifiers and retain superseded records. |
