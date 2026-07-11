@@ -185,6 +185,12 @@ Add a row before creating a new figure. Do not reuse an ID.
 |---|---|---|---|---|
 | `FIG-30-01` | `diagrams/specifications/FIG-30-01-horizon-bank-migration-control-thread.md` | `diagrams/source/plantuml/FIG-30-01-horizon-bank-migration-control-thread.puml` | `diagrams/exported/svg/FIG-30-01-horizon-bank-migration-control-thread.svg` | `diagrams/exported/png/FIG-30-01-horizon-bank-migration-control-thread.png` |
 
+## Chapter 31 figure asset details
+
+| Figure ID | Specification | Source | SVG export | PNG preview |
+|---|---|---|---|---|
+| `FIG-31-01` | `diagrams/specifications/FIG-31-01-bian-reference-to-implementation-choices.md` | Pending | Pending | Pending |
+
 ## Status values
 
 Planned, Drafting, Review, Approved, Exported, Deprecated.
