@@ -1,5 +1,9 @@
 # Changelog
 
+- Completed Chapter 29 on operational readiness, ownership, observability, service objectives, response, recovery, reconciliation and support feedback.
+- Added `FIG-29-01` through a separate specification commit, then rendered SVG and PNG exports and retained the figure at Review.
+- Added primary-source notes, review records, governance decision `DEC-037`, and synchronised status, plan and registers.
+
 - Clarified that `FIG-28-01` intentionally uses compact vertically staggered outcome choices, then regenerated both exports byte-identically and re-inspected the 759 by 603 pixel page-readable result.
 - Corrected Chapter 28 governance by removing its duplicate status row, synchronising its detailed book plan and adding its standard quality-gate record.
 - Re-specified and regenerated `FIG-28-01` as a compact 759 by 603 pixel portrait figure after recording the earlier page-height mismatch; native-size inspection confirmed accessibility and page readability.

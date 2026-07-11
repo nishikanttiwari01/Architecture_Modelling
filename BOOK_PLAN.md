@@ -981,21 +981,26 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
-  - Operational context
-  - Monitoring and observability
-  - Incident flows
-  - Problem management
-  - Runbooks
-  - Continuity and recovery
-  - Operational metrics
-  - Recommended model set
-  - Worked example
-  - Stage-gate checklist
+  - Operations is part of architecture
+  - Establish operational readiness
+  - Make service ownership visible
+  - Observe behaviour, not merely components
+  - Use indicators and objectives carefully
+  - Design actionable alerts
+  - Write runbooks for decisions
+  - Model incidents, problems and changes separately
+  - Plan capacity and resilience
+  - Model disaster recovery and reconciliation
+  - Protect operations and support paths
+  - Close the support feedback loop
+  - Recommended operational model set
+  - Worked example: Online Store checkout
+  - Operational-readiness stage gate
+  - Common mistakes
   - Key takeaways
   - Practical exercise
   - Review checklist
-  - Drafting notes
+  - References and further reading
 
 #### 30. Change and Migration
 

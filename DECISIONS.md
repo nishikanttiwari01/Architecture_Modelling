@@ -396,6 +396,16 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Reason:** A visible thread helps beginners distinguish preparation, questioning, evidence assessment, risks, decisions, actions, exceptions and follow-up. Explicit feedback preserves iteration.
 - **Consequences:** The author authorised figure production without a separate approval pause on 2026-07-11. Native inspection caused a separately committed layout-specification correction before regeneration. `FIG-28-01` may progress only as far as `Review`, not `Approved`.
 - **Related chapters/files:** Chapters 27, 28 and 29, `DIAGRAM_REGISTER.md`, and the `FIG-28-01` specification.
+
+## DEC-037: Use an operational feedback loop for Chapter 29
+
+- **Status:** Proposed
+- **Date:** 2026-07-11
+- **Decision:** Teach operations and support as an owned feedback loop in which telemetry and customer reports drive response, restoration and learning, and material evidence can update architecture records and governed change. Support the teaching with `FIG-29-01`.
+- **Context:** Chapter 29 must connect architecture review to runtime evidence and hand change evidence to Chapter 30. A deployment or monitoring-only view would hide service ownership, customer support and architectural learning.
+- **Alternatives considered:** A detailed incident sequence; a product-specific observability architecture; a disaster-recovery topology; no figure.
+- **Consequences:** The compact figure prioritises lifecycle feedback while detailed deployment, security and recovery views remain in earlier chapters. The author authorised production without a separate approval pause on 2026-07-11. `FIG-29-01` may progress only as far as `Review`, not `Approved`.
+- **Related chapters/files:** Chapters 28, 29 and 30, `DIAGRAM_REGISTER.md`, and the `FIG-29-01` specification.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
 ## Decision template

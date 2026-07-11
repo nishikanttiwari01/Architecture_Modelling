@@ -79,6 +79,7 @@ Add a row before creating a new figure. Do not reuse an ID.
 | FIG-26-01 | 26 | Online Store Solution Design Thread | Show how drivers lead through option assessment and an ADR to coherent design views, planned evidence and iterative feedback | Beginner architects, analysts, engineers, security practitioners, operators and reviewers | PlantUML traceability teaching view | diagrams/source/plantuml/FIG-26-01-online-store-solution-design-thread.puml | diagrams/exported/svg/FIG-26-01-online-store-solution-design-thread.svg | Review | Codex |
 | FIG-27-01 | 27 | Online Store Implementation Evidence Thread | Show how solution-design intent is refined into detailed-design artefacts, repository evidence, verification and iterative feedback | Beginner architects, developers, testers, security practitioners, platform engineers, operators and reviewers | PlantUML traceability teaching view | diagrams/source/plantuml/FIG-27-01-online-store-implementation-evidence-thread.puml | diagrams/exported/svg/FIG-27-01-online-store-implementation-evidence-thread.svg | Review | Codex |
 | FIG-28-01 | 28 | Online Store Architecture Review Thread | Show how a scoped review uses questions and evidence to reach an outcome and owned follow-up | Beginner architects, delivery leads, engineers, specialists, operators, business representatives and reviewers | PlantUML review-flow teaching view | diagrams/source/plantuml/FIG-28-01-online-store-architecture-review-thread.puml | diagrams/exported/svg/FIG-28-01-online-store-architecture-review-thread.svg | Review | Codex |
+| FIG-29-01 | 29 | Online Store Operational Feedback Loop | Show how runtime signals and support experience lead through owned response and learning to governed architecture change | Beginner architects, service owners, engineers, operators, support, security and data practitioners | PlantUML operational-flow teaching view | diagrams/source/plantuml/FIG-29-01-online-store-operational-feedback-loop.puml | diagrams/exported/svg/FIG-29-01-online-store-operational-feedback-loop.svg | Review | Codex |
 | FIG-31-01 | 31 | BIAN reference-to-implementation path | Separate BIAN reference concepts from bank implementation | Architects and bankers | Conceptual | Pending | Pending | Planned | — |
 
 ## Chapter 8 figure asset details
@@ -170,6 +171,12 @@ Add a row before creating a new figure. Do not reuse an ID.
 | Figure ID | Specification | Source | SVG export | PNG preview |
 |---|---|---|---|---|
 | `FIG-28-01` | `diagrams/specifications/FIG-28-01-online-store-architecture-review-thread.md` | `diagrams/source/plantuml/FIG-28-01-online-store-architecture-review-thread.puml` | `diagrams/exported/svg/FIG-28-01-online-store-architecture-review-thread.svg` | `diagrams/exported/png/FIG-28-01-online-store-architecture-review-thread.png` |
+
+## Chapter 29 figure asset details
+
+| Figure ID | Specification | Source | SVG export | PNG preview |
+|---|---|---|---|---|
+| `FIG-29-01` | `diagrams/specifications/FIG-29-01-online-store-operational-feedback-loop.md` | `diagrams/source/plantuml/FIG-29-01-online-store-operational-feedback-loop.puml` | `diagrams/exported/svg/FIG-29-01-online-store-operational-feedback-loop.svg` | `diagrams/exported/png/FIG-29-01-online-store-operational-feedback-loop.png` |
 
 ## Status values
 

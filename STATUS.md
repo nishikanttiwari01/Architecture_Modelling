@@ -47,7 +47,7 @@
 | 26 | Solution Design | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; corrected `FIG-26-01` at Review; accept or revise `DEC-034` |
 | 27 | Detailed Design and Implementation | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; regenerated `FIG-27-01` at Review; accept or revise `DEC-035` |
 | 28 | Architecture Review | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-28-01` at Review; accept or revise `DEC-036` |
-| 29 | Operations and Support | Planned | 0 | 0 | 0 | 0 | 0 | — |
+| 29 | Operations and Support | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-29-01` at Review; accept or revise `DEC-037` |
 | 30 | Change and Migration | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 31 | Introduction to BIAN | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 32 | How BIAN Relates to Other Modelling Techniques | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -159,4 +159,6 @@ Chapter 27, **Detailed Design and Implementation**, is `Ready for Author Approva
 
 Chapter 28, **Architecture Review**, is `Ready for Author Approval`. It presents review as an evidence-led, iterative decision practice covering preparation, stakeholder concerns, quality attributes, findings, outcomes and follow-up. The corrected compact `FIG-28-01` is specified, rendered at 759 by 603 pixels in PNG, visually reviewed and integrated at `Review`, not `Approved`. `DEC-036` remains `Proposed`. Four review passes and the quality gate completed on 2026-07-11.
 
-Last updated: 2026-07-11 (Chapter 28 completed)
+Chapter 29, **Operations and Support**, is `Ready for Author Approval`. It connects operational readiness, ownership, observability, service objectives, response, recovery, reconciliation and support learning back to architecture change. `FIG-29-01` is specified and rendered at `Review`, not `Approved`. `DEC-037` remains `Proposed`. Four review passes and the quality gate completed on 2026-07-11.
+
+Last updated: 2026-07-11 (Chapter 29 completed)

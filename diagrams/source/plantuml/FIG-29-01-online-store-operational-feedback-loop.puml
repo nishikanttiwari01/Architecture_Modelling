@@ -1,0 +1,37 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+title Online Store operational feedback loop
+top to bottom direction
+scale 750 width
+skinparam nodesep 20
+skinparam ranksep 24
+skinparam defaultFontSize 14
+actor Customer
+rectangle "Checkout service\nAPI, order state and\npayment-provider dependency" as Service #DDEBF7
+rectangle "Telemetry and objectives\nTraces | metrics | logs | SLI/SLO" as Signals #E2F0D9
+rectangle "Actionable alert\nNamed owner and runbook" as Alert #FFF2CC
+rectangle "Customer support\nCase and escalation" as Support #FFF2CC
+rectangle "Owned incident response\nDiagnose, limit harm, communicate" as Response #FCE4D6
+rectangle "Restore and validate\nService and data state" as Restore #E2F0D9
+rectangle "Incident and problem learning\nEvidence, cause hypotheses, actions" as Learn #E4DFEC
+rectangle "Architecture records\nModels, risks and ADRs" as Architecture #D9EAD3
+rectangle "Governed change\nTest, deploy and measure" as Change #D9EAD3
+Customer --> Service : uses checkout
+Service --> Signals : emits redacted telemetry
+Signals --> Alert : evaluates actionable condition
+Alert --> Response : routes to service owner
+Customer --> Support : reports visible problem
+Support --> Response : escalates with case evidence
+Response --> Restore : mitigates and restores
+Restore --> Service : returns acceptable service
+Response --> Learn : preserves incident evidence
+Restore --> Learn : records validation results
+Learn --> Architecture : updates material assumptions
+Architecture --> Change : authorises bounded response
+Change --> Service : deploys and measures
+legend bottom
+Solid arrows show operational evidence, response and feedback.
+SLI = service-level indicator; SLO = service-level objective.
+ADR = Architecture Decision Record.
+endlegend
+@enduml
