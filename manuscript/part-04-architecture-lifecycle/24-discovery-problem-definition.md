@@ -144,7 +144,7 @@ There is no universal mandatory set. Choose the smallest combination that makes 
 
 Figure FIG-24-01. Discovery Evidence and Recommended Model Set. Begin with the problem and evidence, select focused views for the concerns that matter, synthesise findings, then make a governed readiness decision. New evidence can send the team around another discovery loop.
 
-Accessibility text: A left-to-right flow starts with problem and evidence, branches to stakeholder, context, capability, process, and constraint and assumption views, rejoins at synthesis, and reaches a readiness decision. A labelled feedback arrow returns from the decision to the starting evidence when uncertainty remains.
+Accessibility text: A top-to-bottom portrait flow starts with problem and evidence, connects to vertically stacked stakeholder, context, capability, process, and constraint and assumption views, rejoins at synthesis, and reaches a readiness decision. A labelled feedback arrow returns from the decision to the starting evidence when uncertainty remains.
 
 ## Worked example: Horizon Bank customer onboarding
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-07-11: Correct Chapter 24 figure page fit
+
+- Replaced the 1520-pixel-wide `FIG-24-01` layout with a 717 by 564 pixel portrait PNG and corresponding SVG while preserving its model mappings and iterative feedback.
+- Reinspected the figure at intended book width and updated its specification, reviews, gate and status evidence.
+
 ## 2026-07-11: Complete Chapter 24 discovery and problem definition
 
 - Completed the chapter, Horizon Bank worked example, Simple Online Store exercise, four reviews and quality gate.
