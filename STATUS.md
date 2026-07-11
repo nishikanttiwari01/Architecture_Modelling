@@ -42,7 +42,7 @@
 | 21 | Modelling Security Architecture | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-21-01` at Review; accept or revise `DEC-029` |
 | 22 | Modelling Transformation and Migration | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-22-01` at Review; accept or revise `DEC-030` |
 | 23 | Modelling Decisions and Business Rules | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-23-01` at Review; accept or revise `DEC-031` |
-| 24 | Discovery and Problem Definition | Planned | 0 | 0 | 0 | 0 | 0 | — |
+| 24 | Discovery and Problem Definition | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-24-01` at Review; accept or revise `DEC-032` |
 | 25 | Requirements and Analysis | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 26 | Solution Design | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 27 | Detailed Design and Implementation | Planned | 0 | 0 | 0 | 0 | 0 | — |

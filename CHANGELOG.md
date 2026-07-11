@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-07-11: Complete Chapter 24 discovery and problem definition
+
+- Completed the chapter, Horizon Bank worked example, Simple Online Store exercise, four reviews and quality gate.
+- Added `FIG-24-01` specification, PlantUML source, SVG and PNG exports under the author's 2026-07-11 production authorisation.
+
 ## 2026-07-11 - Part III consistency pass
 
 - Reviewed Chapters 14 to 23 together for selection advice, terminology, acronym use,

@@ -338,6 +338,18 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Consequences:** The author authorised specification and figure production without an approval pause on 2026-07-11. `FIG-23-01` has PlantUML source plus SVG and PNG exports and remains at `Review`, not `Approved`.
 - **Related chapters/files:** Chapters 9, 15, 23 and 24, `DIAGRAM_REGISTER.md`, and the `FIG-23-01` specification.
 
+## DEC-032: Scope Chapter 24 as iterative discovery and problem definition
+
+- **Status:** Proposed
+- **Date:** 2026-07-11
+- **Decision:** Teach discovery as evidence-led, iterative learning using focused stakeholder, context, capability, process and uncertainty artefacts, supported by `FIG-24-01` and a readiness decision.
+- **Context:** Part IV describes a lifecycle without prescribing one mandatory linear method. Chapter 24 establishes traceable evidence before Chapter 25 develops requirements.
+- **Alternatives considered:** Prescribe one fixed method; use one comprehensive diagram; begin from a requested technology.
+- **Reason:** Focused models keep concerns reviewable and allow new evidence to reopen framing.
+- **Consequences:** The author authorised specification and figure production without an approval pause on 2026-07-11. `FIG-24-01` has PlantUML source plus SVG and PNG exports and remains at `Review`, not `Approved`.
+- **Related chapters/files:** Chapters 2, 14, 15, 24 and 25, `DIAGRAM_REGISTER.md`, and the `FIG-24-01` specification.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
+
 ## Decision template
 
 ```markdown

@@ -1,0 +1,39 @@
+@startuml
+title FIG-24-01. Discovery Evidence and Recommended Model Set
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #333333
+skinparam rectangle {
+  BackgroundColor #F5F7FA
+  BorderColor #333333
+  FontColor #111111
+  RoundCorner 10
+}
+left to right direction
+rectangle "Problem, desired outcome\nand available evidence" as Start #DCEAF7
+rectangle "Stakeholders\nand concerns" as Stake
+rectangle "Current-state\ncontext" as Context
+rectangle "Capability\nassessment" as Cap
+rectangle "Process\ndiscovery" as Process
+rectangle "Constraints, assumptions\nand dependencies" as Limits
+rectangle "Synthesis: findings, gaps\nand candidate directions" as Synth #E2F0D9
+rectangle "Readiness decision:\nproceed, loop, narrow,\npause or stop" as Gate #FFF2CC
+Start --> Stake : Who matters?
+Start --> Context : What surrounds scope?
+Start --> Cap : Which abilities matter?
+Start --> Process : How does work happen?
+Start --> Limits : What limits confidence or choice?
+Stake --> Synth : concerns
+Context --> Synth : boundary and dependencies
+Cap --> Synth : strengths and gaps
+Process --> Synth : flow and pain points
+Limits --> Synth : uncertainty and limits
+Synth --> Gate : review evidence
+Gate -up-> Start : uncertainty remains; gather evidence
+note bottom of Gate
+  This is an iterative learning loop,
+  not one mandatory linear method.
+end note
+@enduml
