@@ -27,7 +27,7 @@ Restore --> Service : returns acceptable service
 Response --> Learn : preserves incident evidence
 Restore --> Learn : records validation results
 Learn --> Architecture : updates material assumptions
-Architecture --> Change : authorises bounded response
+Architecture --> Change : informs approved change
 Change --> Service : deploys and measures
 legend bottom
 Solid arrows show operational evidence, response and feedback.

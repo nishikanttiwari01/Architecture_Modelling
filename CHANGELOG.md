@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-07-11: Reviewed Part IV consistency
+
+- Audited Chapters 24 to 30 as one iterative lifecycle thread, including artefact flow, terminology, acronyms, examples, transitions, cross-references, figures, evidence and status records.
+- Made `FIG-28-01` explicitly carry the Online Store checkout identifiers, evidence and payment-timeout finding from Chapters 25 to 27.
+- Corrected `FIG-29-01` so architecture records `inform approved change` rather than implying that records hold change authority.
+- Committed both specification corrections before regenerating and visually reviewing the diagram assets. Both figures remain at `Review`.
+
 ## 2026-07-11: Compacted Chapter 30 migration figure
 
 - Reworked `FIG-30-01` into a `441 × 721` page-readable portrait while preserving required migration nodes, labelled decisions, fallback and feedback.

@@ -140,11 +140,11 @@ The decision authority should use explicit criteria announced in advance. A prac
 
 These are not universal standard terms. Organisations may use different labels. Whatever the labels, record scope, version, decision authority, rationale, findings and follow-up. "Approved architecture" should not imply that every future change is safe or that implementation automatically conforms.
 
-Figure 28-01 shows the review thread. Questions lead to evidence assessment, while findings become governed records rather than disappearing into meeting notes. Follow-up can revise the architecture and return with better evidence.
+Figure 28-01 shows the checkout review thread carried from Chapters 25 to 27. Its scope names `FR-25-01`, `QA-25-01` and `ADR-26-01`; the package and findings retain the payment-timeout evidence. Questions lead to evidence assessment, while findings become governed records rather than disappearing into meeting notes. Follow-up can revise the architecture and return with better evidence.
 
 ![FIG-28-01: Online Store architecture review thread](../../diagrams/exported/svg/FIG-28-01-online-store-architecture-review-thread.svg)
 
-*Figure 28-01. This compact portrait teaching view shows a scoped review assessing stakeholder questions against evidence, recording findings and reaching a proportionate outcome. Explicit labels and shapes carry the meaning without relying on colour. Follow-up may revise the architecture and evidence; this is not a mandatory governance method.*
+*Figure 28-01. This compact portrait teaching view shows the Online Store checkout scope and evidence passing through stakeholder questions, governed findings and a proportionate outcome. Explicit labels and shapes carry the meaning without relying on colour. Follow-up may revise the architecture and evidence; this is not a mandatory governance method.*
 
 ## Recommended model set
 

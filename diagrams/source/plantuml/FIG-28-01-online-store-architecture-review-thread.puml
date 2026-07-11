@@ -6,11 +6,11 @@ scale 759 width
 skinparam nodesep 18
 skinparam ranksep 24
 skinparam defaultFontSize 14
-rectangle "Trigger and scope\nDecision, boundary, version\nand review criteria" as S #FFF2CC
-rectangle "Review package\nFocused views, ADRs, risks\nand test evidence" as P #DDEBF7
+rectangle "Checkout trigger and scope\nFR-25-01 | QA-25-01 | ADR-26-01\nBoundary, version and criteria" as S #FFF2CC
+rectangle "Checkout review package\nFocused views and ADR\nTests and payment-timeout evidence" as P #DDEBF7
 rectangle "Stakeholder questions\nFunctional, data, integration, security\nperformance, resilience, operability" as Q #DDEBF7
 rectangle "Evidence assessment\nClaims, results, assumptions\nand gaps" as E #E2F0D9
-rectangle "Governed findings\nRisk | decision | action | exception\nOwner and due or review date" as F #FCE4D6
+rectangle "Governed checkout findings\nPayment-timeout risk | decision\naction | exception | owner and date" as F #FCE4D6
 rectangle "Review outcome" as O #E4DFEC
 rectangle "Proceed" as A #E2F0D9
 rectangle "Proceed with conditions" as C #FFF2CC

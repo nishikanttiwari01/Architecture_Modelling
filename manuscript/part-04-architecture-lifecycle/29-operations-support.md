@@ -135,7 +135,7 @@ Figure 29-01 shows two paths into response: telemetry alerts and customer report
 
 ![FIG-29-01: Online Store operational feedback loop](../../diagrams/exported/svg/FIG-29-01-online-store-operational-feedback-loop.svg)
 
-*Figure 29-01. Runtime signals and customer reports reach owned response and restoration. Incident and problem learning updates architecture records, which can govern a change back into the service. The loop does not imply that every failure is detected automatically or requires redesign.*
+*Figure 29-01. Runtime signals and customer reports reach owned response and restoration. Incident and problem learning updates architecture records, which inform an approved change back into the service. The records provide evidence; change authority remains governed. The loop does not imply that every failure is detected automatically or requires redesign.*
 
 ## Recommended operational model set
 
