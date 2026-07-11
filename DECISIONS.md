@@ -329,6 +329,15 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapters 7, 13, 22 and 30, `DIAGRAM_REGISTER.md`, `diagrams/specifications/FIG-22-01-choosing-the-right-transformation-migration-view.md`, `research/transformation/archimate-transformation-view-selection-2026.md`.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
+## DEC-031: Scope Chapter 23 as decision and business-rule artefact selection
+
+- **Status:** Proposed
+- **Date:** 2026-07-11
+- **Decision:** Write Chapter 23 as a selection chapter separating policy, business rule, decision, decision logic, decision result and process action. Select among decision tables, decision trees, DMN DRDs, BPMN process views, ADRs and trade-off matrices, supported by `FIG-23-01`.
+- **Context:** Chapter 9 already teaches detailed DMN concepts. Part III needs to help beginners choose an artefact without confusing repeatable operational decisions with architecture rationale.
+- **Consequences:** The author authorised specification and figure production without an approval pause on 2026-07-11. `FIG-23-01` has PlantUML source plus SVG and PNG exports and remains at `Review`, not `Approved`.
+- **Related chapters/files:** Chapters 9, 15, 23 and 24, `DIAGRAM_REGISTER.md`, and the `FIG-23-01` specification.
+
 ## Decision template
 
 ```markdown

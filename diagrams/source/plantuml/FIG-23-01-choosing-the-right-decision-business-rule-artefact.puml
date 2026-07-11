@@ -1,0 +1,32 @@
+@startuml
+title FIG-23-01. Choosing the Right Decision and Business-Rule Artefact
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam ArrowColor #333333
+skinparam rectangle {
+  BackgroundColor #F5F7FA
+  BorderColor #333333
+  FontColor #111111
+  RoundCorner 10
+}
+left to right direction
+rectangle "Start with the\ndecision question" as Start #DCEAF7
+rectangle "Policy statement or\nKnowledge Source" as Policy
+rectangle "Decision table" as Table
+rectangle "Decision tree" as Tree
+rectangle "DMN Decision\nRequirements Diagram" as DRD
+rectangle "BPMN process view" as BPMN
+rectangle "Architecture\nDecision Record" as ADR
+rectangle "Trade-off matrix" as Matrix
+rectangle "Clarify decision,\naudience and evidence" as Clarify #FFF2CC
+Start --> Policy : What authority\nconstrains behaviour?
+Start --> Table : Which condition combinations\nproduce which result?
+Start --> Tree : Which ordered questions\nlead to a result?
+Start --> DRD : What information and knowledge\ndoes the decision require?
+Start --> BPMN : What work happens before\nor after the result?
+Start --> ADR : Why was an architecture\noption chosen?
+Start --> Matrix : How do alternatives compare\nagainst explicit criteria?
+Start --> Clarify : Still unclear?
+@enduml

@@ -73,6 +73,7 @@ Add a row before creating a new figure. Do not reuse an ID.
 | FIG-20-01 | 20 | Choosing the Right Infrastructure and Deployment View | Help beginner architects choose an infrastructure or deployment view for runtime placement, network paths, cloud services, Kubernetes, environments, availability, recovery or ownership | Beginner and practising architects, developers, platform and cloud teams, network and operations teams, service owners, continuity specialists and risk reviewers | PlantUML decision guide | diagrams/source/plantuml/FIG-20-01-choosing-the-right-infrastructure-deployment-view.puml | diagrams/exported/svg/FIG-20-01-choosing-the-right-infrastructure-deployment-view.svg | Review | Codex |
 | FIG-21-01 | 21 | Choosing the Right Security Architecture View | Help beginner architects choose a first security architecture view from the question they need to answer | Architects, developers, identity, security, privacy, operations, risk and audit teams | PlantUML decision guide | diagrams/source/plantuml/FIG-21-01-choosing-the-right-security-architecture-view.puml | diagrams/exported/svg/FIG-21-01-choosing-the-right-security-architecture-view.svg | Review | Codex |
 | FIG-22-01 | 22 | Choosing the Right Transformation and Migration View | Help beginner architects choose a first transformation or migration view from the question they need to answer | Architects, transformation leads, sponsors, delivery, operations, data, security, risk and service owners | PlantUML decision guide | diagrams/source/plantuml/FIG-22-01-choosing-the-right-transformation-migration-view.puml | diagrams/exported/svg/FIG-22-01-choosing-the-right-transformation-migration-view.svg | Review | Codex |
+| FIG-23-01 | 23 | Choosing the Right Decision and Business-Rule Artefact | Help beginner architects choose a first decision or business-rule artefact from the question they need to answer | Architects, business analysts, process designers, product and policy owners, developers, risk and operations reviewers | PlantUML decision guide | diagrams/source/plantuml/FIG-23-01-choosing-the-right-decision-business-rule-artefact.puml | diagrams/exported/svg/FIG-23-01-choosing-the-right-decision-business-rule-artefact.svg | Review | Codex |
 | FIG-31-01 | 31 | BIAN reference-to-implementation path | Separate BIAN reference concepts from bank implementation | Architects and bankers | Conceptual | Pending | Pending | Planned | — |
 
 ## Chapter 8 figure asset details
@@ -146,6 +147,12 @@ Add a row before creating a new figure. Do not reuse an ID.
 | Figure ID | Specification | Source | SVG export | PNG preview |
 |---|---|---|---|---|
 | `FIG-22-01` | `diagrams/specifications/FIG-22-01-choosing-the-right-transformation-migration-view.md` | `diagrams/source/plantuml/FIG-22-01-choosing-the-right-transformation-migration-view.puml` | `diagrams/exported/svg/FIG-22-01-choosing-the-right-transformation-migration-view.svg` | `diagrams/exported/png/FIG-22-01-choosing-the-right-transformation-migration-view.png` |
+
+## Chapter 23 figure asset details
+
+| Figure ID | Specification | Source | SVG export | PNG preview |
+|---|---|---|---|---|
+| `FIG-23-01` | `diagrams/specifications/FIG-23-01-choosing-the-right-decision-business-rule-artefact.md` | `diagrams/source/plantuml/FIG-23-01-choosing-the-right-decision-business-rule-artefact.puml` | `diagrams/exported/svg/FIG-23-01-choosing-the-right-decision-business-rule-artefact.svg` | `diagrams/exported/png/FIG-23-01-choosing-the-right-decision-business-rule-artefact.png` |
 
 ## Status values
 

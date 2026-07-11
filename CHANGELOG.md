@@ -2,6 +2,16 @@
 
 ## 2026-07-11
 
+### Completed Chapter 23 decisions and business rules
+
+- Drafted Chapter 23 to `Ready for Author Approval` as a question-led decision-artefact selection chapter.
+- Added the primary ADR source note and reused official DMN 1.5 and BPMN 2.0.2 research.
+- Recorded the author's 2026-07-11 production authorisation before creating `FIG-23-01` source and exports.
+- Rendered and visually inspected SVG and PNG exports; the figure remains at `Review`, not `Approved`.
+- Added four review passes, quality-gate evidence, `DEC-031` and repository tracking updates.
+
+## 2026-07-11
+
 ### Completed Chapter 22 transformation and migration
 
 - Drafted Chapter 22 to `Ready for Author Approval` as a question-led transformation-view selection chapter.
