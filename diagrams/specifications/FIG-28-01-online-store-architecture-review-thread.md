@@ -6,6 +6,7 @@
 - This specification is the required checkpoint before diagram source production.
 - Revision history: native inspection of the first landscape render showed an excessively wide, unreadable figure. The specification was revised on 2026-07-11 to require a compact top-to-bottom layout before regeneration.
 - Correction history: the resulting 760 by 1008 pixel portrait render was readable at native width but unnecessarily tall for a book page and did not meet the stated approximate 500 pixel target. Under the author's 2026-07-11 authorisation to correct and regenerate without a further pause, this specification now requires a compact portrait export no taller than 800 pixels. Regeneration evidence is pending until source and exports are recreated from this committed specification.
+- Outcome-layout clarification: under the same author authorisation dated 2026-07-11, the three outcome choices may use a compact vertically staggered arrangement rather than one horizontal rank. This keeps arrow labels separate, avoids crossings and preserves the page-fit and readability achieved by the compact portrait layout. Regeneration evidence is pending until the exports are recreated from this committed clarification.
 - Maximum Codex status: Review.
 
 ## Purpose
@@ -34,7 +35,7 @@ Label preparation, questioning, assessment, outcome and follow-up relationships.
 
 ## Main flow or structure
 
-Use a compact portrait layout targeting 700 to 760 pixels wide and no more than 800 pixels high for book-page readability. Arrange preparation as one row, questions and evidence assessment as a second row, then findings, horizontally aligned outcome choices and follow-up. Keep preparation, assessment, outcome and follow-up visually distinct. The outcome must allow proceed, proceed with conditions, or revise and return.
+Use a compact portrait layout targeting 700 to 760 pixels wide and no more than 800 pixels high for book-page readability. Arrange preparation as one row, questions and evidence assessment as a second row, then findings, compact vertically staggered outcome choices and follow-up. The staggering must keep labels readable and avoid excessive crossings. Keep preparation, assessment, outcome and follow-up visually distinct. The outcome must allow proceed, proceed with conditions, or revise and return.
 
 ## Alternative and exception flows
 
