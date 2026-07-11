@@ -13,4 +13,3 @@
 ## Interpretation boundary
 
 The intake fields, wave criteria, model-set recommendation, cutover decision pattern, decommissioning checklist and benefit-feedback loop are author recommendations synthesised for beginners. The worked Horizon Bank scenario is fictional.
-
