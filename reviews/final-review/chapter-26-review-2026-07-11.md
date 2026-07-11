@@ -2,6 +2,6 @@
 
 - **Reviewer:** Codex
 - **Date:** 2026-07-11
-- **Outcome:** Pass for author review
+- **Outcome:** Pending regenerated diagram validation
 
-Technical, beginner, consistency, source, copyright, diagram and copy-edit passes are complete. `FIG-26-01` is original and tracked at `Review`. The manuscript is suitable for `Ready for Author Approval`; neither chapter, figure nor `DEC-034` is Approved. Remaining work is author review.
+Technical, beginner, consistency, source, copyright and copy-edit passes are complete. The corrected `FIG-26-01` specification now has an independently auditable checkpoint. Diagram regeneration and visual validation remain pending, so the chapter is under review. Neither chapter, figure nor `DEC-034` is Approved.

@@ -44,7 +44,7 @@
 | 23 | Modelling Decisions and Business Rules | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-23-01` at Review; accept or revise `DEC-031` |
 | 24 | Discovery and Problem Definition | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; corrected page-width, separate-node, labelled `FIG-24-01` at Review; accept or revise `DEC-032` |
 | 25 | Requirements and Analysis | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-25-01` at Review; accept or revise `DEC-033` |
-| 26 | Solution Design | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-26-01` at Review; accept or revise `DEC-034` |
+| 26 | Solution Design | Under Review | 100 | 100 | 100 | 100 | 90 | Regenerate and inspect `FIG-26-01` from corrected specification; then author review |
 | 27 | Detailed Design and Implementation | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 28 | Architecture Review | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 29 | Operations and Support | Planned | 0 | 0 | 0 | 0 | 0 | — |
