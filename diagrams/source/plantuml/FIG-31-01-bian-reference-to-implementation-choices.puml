@@ -1,61 +1,43 @@
 @startuml
 !include ../../styles/plantuml-theme.puml
-title FIG-31-01: From BIAN reference concepts to implementation choices
+scale 700 width
+title FIG-31-01: BIAN reference to implementation choices
 top to bottom direction
-
 skinparam defaultTextAlignment center
+skinparam nodesep 12
+skinparam ranksep 18
 skinparam rectangle {
-  RoundCorner 12
+  RoundCorner 10
+  MinimumWidth 260
 }
 
-package "BIAN logical reference" #EAF2F8 {
-  rectangle "Service Landscape\norganises responsibilities" as SL
-  rectangle "Business Scenario\nillustrates collaboration" as BS
-  rectangle "Service Operation\ndescribes an exchange" as SO
-  rectangle "Business Object Model\ndefines shared meaning" as BOM
-  rectangle "Semantic API and event guidance" as SEM
-  SL -[hidden]down- BS
-  BS -[hidden]down- SO
-  SO -[hidden]down- BOM
-  BOM -[hidden]down- SEM
-}
+rectangle "BIAN LOGICAL REFERENCE\nService Landscape: organises responsibilities\nBusiness Scenario: illustrates collaboration\nService Operation: describes an exchange\nBusiness Object Model: defines shared meaning\nSemantic API and event guidance" as REF #EAF2F8
 
-rectangle "Horizon Bank assessment\nMap capabilities, processes, applications,\ndata, owners, gaps and overlaps" as MAP #FFF2CC
+rectangle "HORIZON BANK ASSESSMENT\nMap capabilities, processes, applications,\ndata, owners, gaps and overlaps\n\nCaution: a Service Domain is not\nautomatically a microservice" as MAP #FFF2CC
 
-package "Bank-specific implementation choices" #E2F0D9 {
-  rectangle "Application and\ncomponent boundaries" as APP
-  rectangle "API and event\ncontracts" as API
-  rectangle "Data ownership\nand physical schemas" as DATA
-  rectangle "Security, deployment\nand operations" as OPS
-  APP -[hidden]down- API
-  API -[hidden]down- DATA
-  DATA -[hidden]down- OPS
-}
+rectangle "APP\nApplication and component boundaries" as APP #E2F0D9
+rectangle "API\nAPI and event contracts" as API #E2F0D9
+rectangle "DATA\nData ownership and physical schemas" as DATA #E2F0D9
+rectangle "OPS\nSecurity, deployment and operations" as OPS #E2F0D9
+APP -[hidden]down- API
+API -[hidden]down- DATA
+DATA -[hidden]down- OPS
 
-rectangle "Implementation and operational evidence\nquality attributes, tests, telemetry and migration constraints" as EVID #FCE4D6
-note right of MAP
-  Caution
-  A Service Domain is not
-  automatically a microservice.
-end note
+rectangle "IMPLEMENTATION AND OPERATIONAL EVIDENCE\nQuality attributes, tests, telemetry\nand migration constraints" as EVID #FCE4D6
 
-SL --> MAP : informs
-BS --> MAP : tests collaboration
-SO --> MAP : clarifies exchanges
-BOM --> MAP : aligns meaning
-SEM --> MAP : guides contracts
-MAP --> APP : design decisions
-MAP --> API : design decisions
-MAP --> DATA : design decisions
-MAP --> OPS : design decisions
-APP --> EVID : produces evidence
-API --> EVID
-DATA --> EVID
-OPS --> EVID
+REF --> MAP : informs assessment
+MAP --> APP : choose boundaries
+MAP --> API : choose contracts
+MAP --> DATA : choose ownership
+MAP --> OPS : choose controls and runtime
+APP --> EVID : APP evidence
+API --> EVID : API evidence
+DATA --> EVID : DATA evidence
+OPS --> EVID : OPS evidence
 EVID ..> MAP : revise mapping when evidence disagrees
 
 legend bottom
-  Blue = BIAN reference | Yellow = bank interpretation
-  Green = physical choices | Peach = evidence and feedback
+  Blue: BIAN reference | Yellow: bank interpretation
+  Green: physical choices | Peach: evidence and feedback
 endlegend
 @enduml

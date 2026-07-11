@@ -107,7 +107,7 @@
 
 ## Current recommended next task
 
-Chapter 31, **Introduction to BIAN**, is the current recommended author-review task. Its prose, sources and four reviews are complete. The initial `FIG-31-01` render was readable but measured 1656 by 1009 pixels and did not satisfy the intended compact page-width specification. An author-authorised correction was recorded on 2026-07-11; compact regeneration and fresh validation are pending. The figure remains at `Review`, never `Approved`, and `DEC-039` remains `Proposed`.
+Chapter 31, **Introduction to BIAN**, is the current recommended author-review task. Its prose, sources and four reviews are complete. The initial 1656 by 1009 `FIG-31-01` render was replaced under the author-authorised correction recorded on 2026-07-11. The corrected 700 by 581 compact portrait passed native and intended-width inspection and fresh repository validation. The figure remains at `Review`, never `Approved`, and `DEC-039` remains `Proposed`.
 
 Chapter 22, **Modelling Transformation and Migration**, is `Ready for Author Approval`.
 It covers current, transition and target states, gaps, dependencies, roadmaps, migration
@@ -170,6 +170,6 @@ lifecycle as a mandatory waterfall. `FIG-30-01` is at `Review`, not `Approved`.
 `DEC-038` remains `Proposed`. Four review passes and the quality gate completed on
 2026-07-11.
 
-Chapter 31, **Introduction to BIAN**, is `Ready for Author Approval`. It introduces Service Landscape 14.0, its logical reference concepts and the choices BIAN does not prescribe. `FIG-31-01` is at `Review`, not `Approved`. `DEC-039` remains `Proposed`. Four review passes and the quality gate completed on 2026-07-11.
+Chapter 31, **Introduction to BIAN**, is `Ready for Author Approval`. It introduces Service Landscape 14.0, its logical reference concepts and the choices BIAN does not prescribe. Corrected `FIG-31-01` is a 700 by 581 compact portrait at `Review`, not `Approved`. `DEC-039` remains `Proposed`. Four review passes and the quality gate completed on 2026-07-11.
 
 Last updated: 2026-07-11 (Chapter 31 completed)
