@@ -167,7 +167,7 @@ Traceability is more useful than a giant diagram. Create a record for each meani
 | Owner and version | Payments architect; BIAN Service Landscape 14.0 |
 | Evidence | Scenario review, application assessment, interface contract and operational test |
 
-Avoid the relationship word `equals`. Prefer precise phrases such as `supports in part`, `participates in`, `exchanges meaning through`, `implemented by during transition` or `persists a local representation of`.
+Avoid the relationship word `equals`. Prefer precise phrases such as `realises in part`, `participates in`, `exchanges meaning through`, `supports`, `persists as` or another relationship defined for the model set.
 
 Useful traceability can follow this chain:
 
@@ -251,7 +251,7 @@ These techniques complement one another because they answer different questions.
 
 ## Practical exercise
 
-Horizon Bank plans to notify customers when an outgoing payment is rejected after screening. Create eight separate entries for capability, process, candidate Service Domain responsibility, application, interface, information, event and deployment concern. For each entry, write the question it answers. Then create five qualified relationships using `supports in part`, `participates in`, `invokes`, `publishes` or `runs on`. Add an owner and evidence source to each relationship.
+Horizon Bank plans to notify customers when an outgoing payment is rejected after screening. Create eight separate entries for capability, process, candidate Service Domain responsibility, application, interface, information, event and deployment concern. For each entry, write the question it answers. Then create five qualified relationships using `realises in part`, `participates in`, `invokes`, `consumes or produces` or `runs on`. Add an owner and evidence source to each relationship.
 
 A sound answer might use Payment Initiation and Notification Management capabilities, a BPMN rejection path, candidate payment and notification responsibilities, the Payments Platform and Horizon Digital Channels, a governed notification request, Payment Instruction and Rejection Reason concepts, a past-tense rejection event, and an operational view showing delivery monitoring. It will not claim that any Service Domain equals a process task, application, endpoint, topic or deployment unit.
 

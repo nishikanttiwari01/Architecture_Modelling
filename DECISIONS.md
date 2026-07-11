@@ -325,7 +325,7 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Context:** Chapter 32 must help beginners move from banking reference semantics to enterprise, process, software, information, decision, event and runtime models without confusing their element types.
 - **Alternatives considered:** Publish a fixed BIAN-to-notation equivalence table; merge every concern into one diagram; describe each technique independently without traceability.
 - **Reason:** Qualified mappings preserve the question, abstraction and notation of each model while supporting one-to-many, many-to-one and transitional implementation relationships.
-- **Consequences:** `FIG-32-01` uses a central traceability record and explicitly rejects automatic equivalence between a Service Domain and a capability, process step, application, microservice, interface, event, data entity or deployment unit. The figure remains at `Review`, not `Approved`.
+- **Consequences:** `FIG-32-01` uses a three-band linked trace thread and explicitly rejects automatic equivalence between a Service Domain and a capability, process step, application, microservice, interface, event, data entity or deployment unit. The figure remains at `Review`, not `Approved`.
 - **Related chapters/files:** Chapters 31 to 33, `GLOSSARY.md`, `DIAGRAM_REGISTER.md`, and the `FIG-32-01` specification.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 

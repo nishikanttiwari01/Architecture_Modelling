@@ -7,6 +7,7 @@
 - Maximum lifecycle state after rendering: Review
 - Author-authorised correction: 2026-07-11. The prior 720 by 442 render did not implement the specified three-band landscape or name the worked Horizon Bank thread precisely enough. Replace it with an implementable three-band landscape no wider than 760 pixels. Regeneration is pending this corrected checkpoint.
 - Production result: regenerated after the corrected checkpoint as a 740 by 266 pixel three-band landscape. Native and intended-width visual inspection and validation evidence are recorded in the Chapter 32 final review and quality gate.
+- Author-authorised readability and semantics correction: 2026-07-11. The 740 by 266 render used post-render width scaling, leaving native text below the required publication size, and its event-to-runtime relationship pointed in the wrong semantic direction. Regeneration is pending. Produce a native layout no wider than 760 pixels with all rendered SVG node and relationship text at least 11 pixels. Do not use PlantUML `scale` or another post-render shrink operation to meet the width limit. The relationship must point from `Payments runtime` to `PaymentInstructionAccepted` and be labelled exactly `consumes or produces`.
 
 ## Purpose
 
@@ -90,4 +91,6 @@ Use high contrast, readable text and left-to-right order within each band. Keep 
 - Every relationship label belongs to the exact allowed-label list.
 - Labels, directions and terminology agree with Chapter 32 and the controlled Horizon Bank examples.
 - SVG and PNG are no wider than 760 pixels and contain no clipping, overlap, unreadable text or excessive crossings at native and intended book-page width.
+- Native rendered SVG text, including relationship labels, is at least 11 pixels without post-render scaling.
+- `Payments runtime` points to `PaymentInstructionAccepted` with the exact label `consumes or produces`.
 - Lifecycle state after successful rendering is `Review`, never `Approved`.
