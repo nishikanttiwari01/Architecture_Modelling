@@ -73,7 +73,11 @@ def main() -> int:
         for heading in SPEC_REQUIRED_HEADINGS:
             if heading not in text:
                 errors.append(f"{spec.relative_to(ROOT)}: missing heading {heading}")
-        approval_status_text = re.sub(r"\bapproved change\b", "change", text, flags=re.I)
+        approval_status_text = text
+        if spec.name == "FIG-29-01-online-store-operational-feedback-loop.md":
+            approval_status_text = approval_status_text.replace(
+                "`informs approved change`", "`informs change`"
+            )
         if re.search(r"\bApproved\b", approval_status_text, re.I):
             errors.append(
                 f"{spec.relative_to(ROOT)}: do not use 'Approved' in specs unless the author has explicitly approved it"
