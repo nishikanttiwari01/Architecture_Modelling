@@ -7,7 +7,7 @@
 
 ## Review summary
 
-Chapter 33 provides a complete beginner operating-model chapter within its 2,000 to 4,000 word target. It uses catalogue coverage for the full bank and a selected onboarding thread for readable cross-layer traceability. `FIG-33-01` has an author-authorised specification checkpoint, PlantUML source and inspected SVG and PNG exports. It remains at `Review`.
+Chapter 33 provides a complete beginner operating-model chapter within its 2,000 to 4,000 word target. It uses catalogue coverage for the full bank and a selected onboarding thread for readable cross-layer traceability. `FIG-33-01` has an author-authorised specification checkpoint, PlantUML source and inspected native 695 by 899 pixel SVG and PNG exports. Its node and relationship text is 12 pixels, its title is 14 pixels, and no post-render scaling was used. It remains at `Review`.
 
 ## Review passes
 
@@ -17,7 +17,7 @@ Chapter 33 provides a complete beginner operating-model chapter within its 2,000
 | Beginner comprehension | Pass | Plain-language opening, comparison table and worked example support first-time readers. |
 | Consistency | Pass | Chapter 32 hand-off, Chapter 34 boundary and controlled Horizon Bank names align. |
 | Source integrity | Pass | Existing official BIAN notes support normative and version claims; recommendations are labelled. |
-| Diagram quality | Pass | PNG inspection found readable labels, correct directions, sufficient contrast and no clipping or overlap. |
+| Diagram quality | Pass | Original-resolution and intended-width inspection found readable 12-pixel labels, correct directions, sufficient contrast and no clipping or overlap. Native width is 695 pixels. |
 
 ## Quality-gate checklist
 
@@ -25,6 +25,7 @@ Chapter 33 provides a complete beginner operating-model chapter within its 2,000
 - [x] Claims requiring sources use registered official notes.
 - [x] Figure specification, source, SVG and PNG exist at `Review`.
 - [x] Four review passes are recorded.
+- [x] Final package review records exact figure dimensions and font evidence.
 - [x] Glossary, decision, diagram register, book plan, status and changelog are updated.
 - [x] No Service Domain is treated as a microservice, application or organisation unit.
 - [x] Open author work is limited to chapter and `DEC-041` review and figure approval or revision.

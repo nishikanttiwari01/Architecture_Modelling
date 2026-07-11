@@ -54,7 +54,7 @@ Detailed process sequence, interface contracts, physical infrastructure, invente
 
 ## Accessibility requirements
 
-Use light backgrounds, dark text, redundant layer labels and relationship labels. Colour must not be the only carrier of meaning. The SVG is primary and the PNG is a preview. Text must remain readable at book-page width.
+Use light backgrounds, dark text, redundant layer labels and relationship labels. Colour must not be the only carrier of meaning. The SVG is primary and the PNG is a preview. The native export must be no wider than 760 pixels, with node and relationship text at least 11 pixels. Text must remain readable at book-page width without post-render scaling.
 
 ## Source references
 
@@ -72,3 +72,7 @@ The composition and mappings are original author guidance. No BIAN artwork is co
 - Arrow direction and relationship labels agree with the chapter.
 - Controlled Horizon Bank names are used.
 - Status remains `Review`, never `Approved`.
+
+## Production review, 2026-07-11
+
+PlantUML produced native 695 by 899 pixel SVG and PNG exports without post-render scaling. SVG inspection confirms 12-pixel node and relationship text and a 14-pixel title. Original-resolution and intended-width visual review found no clipped text, overlaps or unreadable labels. Relationship directions, layer labels, qualified mappings and the caution note agree with the chapter. Status remains `Review`.

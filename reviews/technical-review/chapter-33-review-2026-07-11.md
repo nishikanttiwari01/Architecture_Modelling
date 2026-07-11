@@ -8,4 +8,4 @@ Pass. The chapter separates stakeholder outcomes, value streams, capabilities, p
 - No Service Domain is equated with a capability, process step, organisation unit, application, microservice or deployment unit.
 - Logical reference and bank-specific implementation are explicitly separated.
 - Horizon Bank capability and application names match the controlled examples.
-- `FIG-33-01` agrees with the prose and remains at Review.
+- `FIG-33-01` agrees with the prose and remains at Review. Its native 695 by 899 pixel export uses 12-pixel node and relationship text and a 14-pixel title, without post-render scaling.

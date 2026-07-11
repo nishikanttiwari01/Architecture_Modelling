@@ -161,7 +161,7 @@ This is a practical recommendation, not a BIAN-prescribed package. A small initi
 
 ![Horizon Bank operating-model traceability view](../../diagrams/exported/svg/FIG-33-01-horizon-bank-operating-model-traceability.svg)
 
-**Figure 33.1: Horizon Bank operating-model traceability view.** A page-readable thread connects customer outcome, value stage, capabilities, process, candidate BIAN responsibility, roles, information, applications, technology, controls and measures. Relationship labels prevent unlike elements from appearing equivalent.
+**Figure 33.1: Horizon Bank operating-model traceability view.** A compact, page-readable thread connects customer outcome, value stage, capabilities, process, candidate BIAN responsibility, roles, information, applications, technology, controls and measures. Relationship labels prevent unlike elements from appearing equivalent.
 
 A traceability register should give each link a source, relationship, target, scope, owner, version and evidence. Prefer phrases such as `is enabled by`, `is exercised by`, `participates in`, `is supported in part by`, `uses`, `runs on`, `is constrained by` and `is measured by`. Avoid `equals`.
 
