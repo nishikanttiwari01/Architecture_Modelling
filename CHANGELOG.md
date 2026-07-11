@@ -1,5 +1,7 @@
 # Changelog
 
+- Corrected Chapter 28 governance by removing its duplicate status row, synchronising its detailed book plan and adding its standard quality-gate record.
+- Re-specified and regenerated `FIG-28-01` as a compact 759 by 603 pixel portrait figure after recording the earlier page-height mismatch; native-size inspection confirmed accessibility and page readability.
 - Completed Chapter 28 on evidence-led architecture review, including review purpose, timing, types, preparation, stakeholder questions, quality attributes, findings, outcomes, exceptions and follow-up.
 - Added `FIG-28-01` through separate initial and corrected specification checkpoints, then rendered and visually inspected its SVG and PNG exports at `Review`, not `Approved`.
 - Added primary-source interpretation notes, four chapter review records, the governance decision `DEC-036`, status and diagram-register updates.

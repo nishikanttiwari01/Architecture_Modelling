@@ -2,9 +2,9 @@
 !include ../../styles/plantuml-theme.puml
 title Online Store architecture review thread
 top to bottom direction
-scale 760 width
+scale 759 width
 skinparam nodesep 18
-skinparam ranksep 30
+skinparam ranksep 24
 skinparam defaultFontSize 14
 rectangle "Trigger and scope\nDecision, boundary, version\nand review criteria" as S #FFF2CC
 rectangle "Review package\nFocused views, ADRs, risks\nand test evidence" as P #DDEBF7
@@ -16,18 +16,14 @@ rectangle "Proceed" as A #E2F0D9
 rectangle "Proceed with conditions" as C #FFF2CC
 rectangle "Revise and return" as R #F4CCCC
 rectangle "Owned follow-up\nCheck closure evidence\nand update records" as U #D9EAD3
-S --> P : prepares
-S -[hidden]right-> P
-P --> Q : frames
-Q -[hidden]right-> E
-Q --> E : tests with evidence
-E --> F : records material findings
+S -right-> P : prepares
+P -down-> Q : frames questions
+Q -right-> E : tests with evidence
+E -down-> F : records material findings
 F --> O : informs decision
-O --> A : sufficient evidence
-O --> C : bounded conditions
-O --> R : blocking gap or risk
-A -[hidden]right-> C
-C -[hidden]right-> R
+O -left-> A : sufficient evidence
+O -down-> C : bounded conditions
+O -right-> R : blocking gap or risk
 A --> U : monitor commitments
 C --> U : close conditions
 R --> U : revise design or evidence

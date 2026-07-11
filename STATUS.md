@@ -157,6 +157,6 @@ states. The author-gated Chapter 14 and Chapter 18 figure work remains deferred.
 
 Chapter 27, **Detailed Design and Implementation**, is `Ready for Author Approval`. It refines solution intent into responsibilities, API and event contracts, physical data structures, implementable controls, deployment, configuration, observability, tests and repository evidence. `FIG-27-01` is specified, rendered, visually reviewed and integrated at `Review`, not `Approved`. `DEC-035` remains `Proposed`. Four review passes and the quality gate completed on 2026-07-11.
 
-Chapter 28, **Architecture Review**, is `Ready for Author Approval`. It presents review as an evidence-led, iterative decision practice covering preparation, stakeholder concerns, quality attributes, findings, outcomes and follow-up. `FIG-28-01` is specified, rendered, visually reviewed and integrated at `Review`, not `Approved`. `DEC-036` remains `Proposed`. Four review passes and the quality gate completed on 2026-07-11.
+Chapter 28, **Architecture Review**, is `Ready for Author Approval`. It presents review as an evidence-led, iterative decision practice covering preparation, stakeholder concerns, quality attributes, findings, outcomes and follow-up. The corrected compact `FIG-28-01` is specified, rendered at 759 by 603 pixels in PNG, visually reviewed and integrated at `Review`, not `Approved`. `DEC-036` remains `Proposed`. Four review passes and the quality gate completed on 2026-07-11.
 
 Last updated: 2026-07-11 (Chapter 28 completed)

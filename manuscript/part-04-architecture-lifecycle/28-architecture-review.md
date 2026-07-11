@@ -144,7 +144,7 @@ Figure 28-01 shows the review thread. Questions lead to evidence assessment, whi
 
 ![FIG-28-01: Online Store architecture review thread](../../diagrams/exported/svg/FIG-28-01-online-store-architecture-review-thread.svg)
 
-*Figure 28-01. A scoped review assesses stakeholder questions against evidence, records findings and reaches a proportionate outcome. Follow-up may revise the architecture and evidence; the figure is a teaching workflow, not a mandatory governance method.*
+*Figure 28-01. This compact portrait teaching view shows a scoped review assessing stakeholder questions against evidence, recording findings and reaching a proportionate outcome. Explicit labels and shapes carry the meaning without relying on colour. Follow-up may revise the architecture and evidence; this is not a mandatory governance method.*
 
 ## Recommended model set
 
