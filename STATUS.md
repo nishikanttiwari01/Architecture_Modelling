@@ -155,4 +155,6 @@ in `reviews/consistency-review/part-03-review-2026-07-11.md`. The pass corrected
 Simple Online Store naming control and did not change chapter or diagram approval
 states. The author-gated Chapter 14 and Chapter 18 figure work remains deferred.
 
-Last updated: 2026-07-11 (Part III consistency pass completed)
+Chapter 27, **Detailed Design and Implementation**, is `Ready for Author Approval`. It refines solution intent into responsibilities, API and event contracts, physical data structures, implementable controls, deployment, configuration, observability, tests and repository evidence. `FIG-27-01` is specified, rendered, visually reviewed and integrated at `Review`, not `Approved`. `DEC-035` remains `Proposed`. Four review passes and the quality gate completed on 2026-07-11.
+
+Last updated: 2026-07-11 (Chapter 27 completed)

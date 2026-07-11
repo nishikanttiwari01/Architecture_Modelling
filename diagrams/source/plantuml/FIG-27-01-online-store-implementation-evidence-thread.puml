@@ -1,0 +1,35 @@
+@startuml
+!include ../../styles/plantuml-theme.puml
+title Online Store implementation evidence thread
+top to bottom direction
+scale 760 width
+skinparam nodesep 18
+skinparam ranksep 38
+skinparam defaultFontSize 14
+rectangle "Architecture intent\nFR-25-01 and QA-25-01\nADR-26-01 hybrid response" as I #FFF2CC
+rectangle "Responsibility design\nCheckout, adapter, store\nand reconciliation" as R #DDEBF7
+rectangle "Interface contracts\nHTTP API and event schema\nErrors and compatibility" as C #DDEBF7
+rectangle "Physical data design\nKeys, constraints, indexes\nand migrations" as D #DDEBF7
+rectangle "Security controls\nEnforcement, secrets, audit\nand redaction" as S #E2F0D9
+rectangle "Runtime design\nDeployment, configuration\nand observability" as O #E2F0D9
+rectangle "Repository evidence\nModels, ADRs, contracts,\nmanifests and tests" as E #E4DFEC
+rectangle "Verification evidence\nContract, migration, security,\nperformance and fault tests" as V #FCE4D6
+I --> R : refined into
+I --> C : refined into
+I --> D : refined into
+R -[hidden]right-> C
+C -[hidden]right-> D
+R --> S : constrains
+D --> O : constrains
+S -[hidden]right-> O
+C --> E : implemented and versioned as
+D --> E : implemented and versioned as
+S --> E : implemented and versioned as
+O --> E : implemented and versioned as
+E --> V : verified by
+V .up.> I : feedback may revise
+legend bottom
+Solid arrows show refinement and evidence links.
+Dotted arrow shows implementation learning.
+endlegend
+@enduml

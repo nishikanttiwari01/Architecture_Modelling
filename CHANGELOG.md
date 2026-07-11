@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-07-11
+
+- Completed Chapter 27 on detailed design and implementation, including contracts, physical design, controls, runtime configuration, observability, traceability and implementation feedback.
+- Added and reviewed `FIG-27-01`, an original implementation evidence thread, plus OpenAPI 3.1.1 source evidence and `DEC-035`.
+
 ## 2026-07-11: Correct and regenerate Chapter 26 diagram
 
 - Added an independently auditable corrected specification checkpoint for `FIG-26-01`, then regenerated its source and exports.

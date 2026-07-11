@@ -374,8 +374,6 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapters 25, 26 and 27, `DIAGRAM_REGISTER.md`, and the `FIG-26-01` specification.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
-## Decision template
-
 ## DEC-035: Use an implementation evidence thread for Chapter 27
 
 - **Status:** Proposed
