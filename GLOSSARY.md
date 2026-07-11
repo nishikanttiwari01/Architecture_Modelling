@@ -7,10 +7,7 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Banking Industry Architecture Network (BIAN) | Industry association and name commonly used for its banking reference architecture and semantic standard. | Define the acronym at first use in each standalone chapter. |
 | Business Area | Broad grouping used to organise the BIAN Service Landscape. | Do not assume it is an organisational division. |
 | Business Domain | Focused grouping within a BIAN Business Area. | Use as a navigation grouping, not an application boundary. |
-| Service Domain | Logical, discrete banking responsibility in BIAN. | Never equate it automatically with one microservice or application. |
-| Business Scenario | Archetypal sequence of Service Domain interactions in response to a business event. | Do not present it as a mandatory bank process. |
 | Service Operation | Logical business service exposed by a Service Domain. | Do not equate it automatically with a physical endpoint or topic. |
-| Business Object Model (BOM) | BIAN conceptual model of shared business vocabulary used in exchanges. | Not a prescribed physical database schema. |
 | Semantic API | Interface reference whose operations and information have consistent banking meaning. | Physical protocol and operational design remain implementation choices. |
 | Architecture | The fundamental concepts, structures, relationships and principles that shape a system or enterprise. | Do not use as a synonym for one diagram. |
 | Model | A purposeful abstraction of part of reality. | A model may be represented by several diagrams or views. |
@@ -111,10 +108,10 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Command Query Responsibility Segregation (CQRS) | A design approach that separates write models from read models. | It can be used with or without Event Sourcing. |
 | CloudEvents | A specification for common event envelope and context metadata across services, platforms and transports. | It standardises metadata such as `id`, `source`, `specversion` and `type`, not the business meaning of the payload. |
 | Idempotent consumer | An event consumer that can process the same event more than once without applying the business effect twice. | Important when delivery is at least once or retries are possible. |
-| Service Domain (BIAN) | A logical, discrete banking capability partition defined by BIAN. | Do not map automatically to one microservice. |
-| Business Scenario (BIAN) | A representation of Service Domain interactions in response to a business event or objective. | Complement with BPMN when human and process detail is needed. |
+| Service Domain (BIAN) | A logical, discrete banking responsibility defined by BIAN. | Do not map automatically to one microservice or application. |
+| Business Scenario (BIAN) | An archetypal representation of Service Domain interactions in response to a business event or objective. | Do not present it as a mandatory bank process; complement it with BPMN when human and process detail is needed. |
 | Semantic API (BIAN) | An API specification aligned to BIAN service semantics. | Adaptation and governance are still required. |
-| Business Object Model (BIAN) | A semantic reference model for banking information concepts. | Do not treat it as a ready-made physical database schema. |
+| Business Object Model (BIAN) | BIAN's conceptual semantic reference model for shared banking vocabulary used in exchanges. | Do not treat it as a ready-made physical database schema. |
 | Current state | The architecture as it exists now. | Also called as-is or baseline architecture. |
 | Target state | The intended future architecture. | Also called to-be architecture. |
 | Architecture Decision Record (ADR) | A concise record of an important architecture decision, context and consequences. | Use stable identifiers and retain superseded records. |
