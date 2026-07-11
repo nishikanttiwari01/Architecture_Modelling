@@ -16,6 +16,10 @@ Which decision or business-rule artefact should a modeller try first?
 
 PlantUML activity-style selection guide with explicit directional, labelled arrows. The author authorised specification creation and source/export production without an approval pause on 2026-07-11. This authorisation permits production, not approval.
 
+## Production history correction
+
+An initial draft PlantUML source and export were generated before this specification file was completed because of a workflow error on 2026-07-11. The specification was subsequently completed and reviewed against the chapter, register and repository diagram rules. The source and exports will be regenerated from this completed specification after the specification correction is committed. This record is transparent remediation of the sequence error; it does not approve the figure.
+
 ## Required elements
 
 - Start point labelled `Start with the decision question`.

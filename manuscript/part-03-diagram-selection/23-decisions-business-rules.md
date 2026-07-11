@@ -40,7 +40,7 @@ By the end of this chapter, the reader should be able to:
 
 ## Source requirements
 
-This chapter uses the Object Management Group (OMG) DMN 1.5 and BPMN 2.0.2 specifications for formal terminology. It uses Michael Nygard's original ADR article for the lightweight record pattern. Decision trees and trade-off matrices are presented as general techniques, not OMG notations. Detailed source notes are under `research/dmn/`, `research/bpmn/` and `research/decisions-business-rules/`.
+This chapter uses the Object Management Group (OMG) DMN 1.5 and BPMN 2.0.2 specifications for formal terminology. It uses Michael Nygard's original ADR article for the lightweight record pattern. Decision trees and trade-off matrices are presented as general techniques, not OMG notations. Detailed source notes are under `research/dmn/`, `research/bpmn/` and `research/other-modelling/`.
 
 ## Start with the question
 
