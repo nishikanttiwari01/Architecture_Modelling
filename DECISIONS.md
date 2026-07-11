@@ -1,4 +1,4 @@
-# Architecture and Editorial Decision Log
+﻿# Architecture and Editorial Decision Log
 
 Use the format below for all material decisions. Do not delete superseded decisions; mark their status and link the replacement.
 
@@ -360,6 +360,18 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Reason:** Stable identifiers and labelled trace links help beginners understand coverage, change impact and assessment while feedback links preserve iteration.
 - **Consequences:** `FIG-25-01` uses an original portrait PlantUML teaching view and remains at `Review`, not `Approved`. Detailed SysML notation remains in Chapter 13.
 - **Related chapters/files:** Chapters 13, 24, 25 and 26, `DIAGRAM_REGISTER.md`, and the `FIG-25-01` specification.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
+
+## DEC-034: Use a traceable multi-view solution design thread for Chapter 26
+
+- **Status:** Proposed
+- **Date:** 2026-07-11
+- **Decision:** Teach solution design as iterative movement from drivers through option assessment and an ADR into coherent structure, interaction, information, security and deployment views, supported by `FIG-26-01`.
+- **Context:** Chapter 26 must bridge requirements analysis and implementable detail without prescribing a mandatory method or committing prematurely to physical design.
+- **Alternatives considered:** Present one preferred architecture; prescribe a fixed document pack; combine every concern in one diagram; defer trade-offs until implementation.
+- **Reason:** The thread makes rationale, complementary viewpoints, planned evidence and feedback visible to beginners while preserving proportionate tailoring.
+- **Consequences:** The author authorised specification and figure production without a separate approval pause on 2026-07-11. `FIG-26-01` remains at `Review`, not `Approved`. Chapter 27 retains API contracts, event schemas, physical models and deployment manifests.
+- **Related chapters/files:** Chapters 25, 26 and 27, `DIAGRAM_REGISTER.md`, and the `FIG-26-01` specification.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
 ## Decision template

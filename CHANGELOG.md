@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-07-11: Complete Chapter 26 solution design
+
+- Completed the beginner solution-design lifecycle chapter with drivers, options, trade-offs, responsibilities, interactions, information, security, deployment, ADRs and traceability.
+- Added four review passes, a quality gate and proposed `DEC-034`.
+- Added authorised `FIG-26-01` specification and PlantUML source; the rendered figure remains at `Review`, not `Approved`.
+- Moved Chapter 26 to `Ready for Author Approval`, not `Approved`.
+
 ## 2026-07-11: Complete Chapter 25 requirements analysis
 
 - Completed the requirements-analysis lifecycle chapter with a 2,000 to 4,000 word beginner treatment of requirement types, scenarios, quality attributes, traceability, prioritisation and assessment.
