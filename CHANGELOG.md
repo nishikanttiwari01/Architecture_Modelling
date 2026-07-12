@@ -1,7 +1,7 @@
 # Changelog
 
 - Completed Chapter 35, *Modelling Bank Value Streams with BIAN*, with a value-stream definition method, full-bank portfolio, six banking examples, capability and candidate BIAN mapping guidance, governance, measures, exercise and review checklist.
-- Added, rendered and visually inspected `FIG-35-01` at native 474 by 853 pixels after its separate specification checkpoint; the figure remains at `Review`.
+- Added, rendered and visually inspected corrected `FIG-35-01` at native 690 by 814 pixels after its separate specification checkpoint; distinct row-aligned bands separate stages, capabilities and candidate BIAN analysis, and the figure remains at `Review`.
 - Added four Chapter 35 review passes, its quality gate, value-stream glossary terms and proposed decision `DEC-043`. Existing official Open Group and BIAN sources were sufficient, so no new source note was required.
 - Fixed the remaining `FIG-34-01` ownership-label overlap by placing the owner above the process with a vertical `is accountable for` relationship. Native 711 by 861 pixel output remains within the page-readability limits with 12-pixel node and 11-pixel relationship text.
 - Corrected `FIG-34-01` trace semantics so every outcome, control, measure, capability, BIAN and detail relationship originates independently at the end-to-end process. Hidden links now constrain layout only; native output is 617 by 789 pixels with 12-pixel node and 11-pixel relationship text.

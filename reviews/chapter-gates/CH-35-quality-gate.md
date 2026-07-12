@@ -9,7 +9,7 @@
 |---|---|---|
 | Required sections | Pass | Complete beginner-first manuscript within target range |
 | Primary sources | Pass | Registered official Open Group business-architecture guides and BIAN Service Landscape 14.0 |
-| Diagram | Pass for author review | Separate authorised specification checkpoint; native 474 by 853 pixel SVG and PNG use 12-pixel node and 11-pixel relationship text; visual review found no clipping or overlap |
+| Diagram | Pass for author review | Separate authorised specification checkpoint; corrected native 690 by 814 pixel SVG and PNG use 12-pixel node text; three distinct row-aligned bands, independent stage-to-outcome markers and relationship-bearing headers avoid process-sequence arrows, clipping and overlap |
 | Examples and terminology | Pass | Controlled Horizon Bank capabilities and qualified candidate BIAN mappings |
 | Four review passes | Pass | Technical, beginner, consistency and final reviews recorded |
 | Open issues | Pass | Only author review and decision acceptance remain; statuses do not exceed Review or Ready for Author Approval |

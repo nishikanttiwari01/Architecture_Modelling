@@ -5,7 +5,9 @@ skinparam backgroundColor #FFFFFF
 skinparam defaultFontName Arial
 skinparam defaultFontSize 12
 skinparam shadowing false
-skinparam ranksep 15
+skinparam ranksep 18
+skinparam nodesep 8
+skinparam linetype ortho
 skinparam ArrowColor #334155
 skinparam ArrowFontColor #1E293B
 skinparam ArrowFontSize 11
@@ -15,25 +17,69 @@ skinparam rectangle {
   RoundCorner 8
 }
 
-rectangle "STAKEHOLDER\nRetail Customer\nNeed: establish a banking relationship" as CUSTOMER #E0F2FE
+rectangle "STAKEHOLDER\nRetail Customer\nNeed: establish a banking relationship\n[seeks value through value stream]" as CUSTOMER #E0F2FE
+rectangle "VALUE STREAM\nAcquire customer relationship\n[comprises five value stages]" as STREAM #DBEAFE
 
-rectangle "STAGE 1  Need understood\nValue added: suitable direction is clear\nPrimary: Relationship Management\nSupporting: Digital Servicing\nBIAN 14.0: assess candidate Service Domains and interactions" as S1 #F8FAFC
-rectangle "STAGE 2  Application established\nValue added: intent and evidence can proceed\nPrimary: Document Capture\nSupporting: Digital Servicing\nBIAN 14.0: assess candidate Service Domains and interactions" as S2 #F8FAFC
-rectangle "STAGE 3  Identity and eligibility confirmed\nValue added: governed decision is supported\nPrimary: Identity Verification | Risk Assessment\nSupporting: Financial Crime Screening\nBIAN 14.0: assess candidate Service Domains and interactions" as S3 #FEF3C7
-rectangle "STAGE 4  Banking relationship established\nValue added: authoritative relationship records exist\nPrimary: Party Management | Account Opening\nSupporting: none in this selected view\nBIAN 14.0: assess candidate Service Domains and interactions" as S4 #F8FAFC
-rectangle "STAGE 5  Services ready to use\nValue added: agreed service can be used\nPrimary: Digital Servicing\nSupporting: Notification Management | Account Servicing\nBIAN 14.0: assess candidate Service Domains and interactions" as S5 #F8FAFC
+rectangle "VALUE-STAGE BAND\nEach stage contributes\nindependently to Outcome" as SH #E0F2FE
+rectangle "LOCAL-CAPABILITY BAND\nCapabilities enable\nthe aligned stage" as CH #E0E7FF
+rectangle "BIAN-REFERENCE BAND\nBIAN informs responsibility\nanalysis for the aligned stage" as BH #F1F5F9
+
+rectangle "1  Need understood\nSuitable direction is clear\n[contributes to Outcome]" as S1 #F8FAFC
+rectangle "2  Application established\nIntent and evidence can proceed\n[contributes to Outcome]" as S2 #F8FAFC
+rectangle "3  Identity and eligibility confirmed\nGoverned decision is supported\n[contributes to Outcome]" as S3 #FEF3C7
+rectangle "4  Banking relationship established\nAuthoritative relationship records exist\n[contributes to Outcome]" as S4 #F8FAFC
+rectangle "5  Services ready to use\nAgreed service can be used\n[contributes to Outcome]" as S5 #F8FAFC
+
+rectangle "Primary: Relationship Management\nSupporting: Digital Servicing" as C1 #E0E7FF
+rectangle "Primary: Document Capture\nSupporting: Digital Servicing" as C2 #E0E7FF
+rectangle "Primary: Identity Verification\nand Risk Assessment\nSupporting: Financial Crime Screening" as C3 #E0E7FF
+rectangle "Primary: Party Management\nand Account Opening\nSupporting: none in selected view" as C4 #E0E7FF
+rectangle "Primary: Digital Servicing\nSupporting: Notification Management\nand Account Servicing" as C5 #E0E7FF
+
+rectangle "BIAN 14.0 logical reference\nAssess candidate Service Domains\nand interactions" as B1 #F1F5F9
+rectangle "BIAN 14.0 logical reference\nAssess candidate Service Domains\nand interactions" as B2 #F1F5F9
+rectangle "BIAN 14.0 logical reference\nAssess candidate Service Domains\nand interactions" as B3 #F1F5F9
+rectangle "BIAN 14.0 logical reference\nAssess candidate Service Domains\nand interactions" as B4 #F1F5F9
+rectangle "BIAN 14.0 logical reference\nAssess candidate Service Domains\nand interactions" as B5 #F1F5F9
 
 rectangle "OUTCOME\nUsable banking relationship" as OUTCOME #DCFCE7
 
-CUSTOMER -down-> S1 : seeks value through
-S1 -down-> S2 : contributes to
-S2 -down-> S3 : contributes to
-S3 -down-> S4 : contributes to
-S4 -down-> S5 : contributes to
-S5 -down-> OUTCOME : contributes to
+CUSTOMER -[hidden]down- STREAM
+STREAM -[hidden]down- SH
+
+SH -[hidden]right- CH
+CH -[hidden]right- BH
+SH -[hidden]down- S1
+CH -[hidden]down- C1
+BH -[hidden]down- B1
+S1 -[hidden]down- S2
+S2 -[hidden]down- S3
+S3 -[hidden]down- S4
+S4 -[hidden]down- S5
+C1 -[hidden]down- C2
+C2 -[hidden]down- C3
+C3 -[hidden]down- C4
+C4 -[hidden]down- C5
+B1 -[hidden]down- B2
+B2 -[hidden]down- B3
+B3 -[hidden]down- B4
+B4 -[hidden]down- B5
+S1 -[hidden]right- C1
+S2 -[hidden]right- C2
+S3 -[hidden]right- C3
+S4 -[hidden]right- C4
+S5 -[hidden]right- C5
+C1 -[hidden]right- B1
+C2 -[hidden]right- B2
+C3 -[hidden]right- B3
+C4 -[hidden]right- B4
+C5 -[hidden]right- B5
+S5 -[hidden]down- OUTCOME
+C5 -[hidden]down- OUTCOME
+B5 -[hidden]down- OUTCOME
 
 note bottom
-  Capability contributions enable stages; they do not equal stages.
+  Row alignment expresses mapping, not process sequence.
   BIAN mappings are candidate, partial and many-to-many.
   A Service Domain is not a value stage, process step, application or microservice.
 end note
