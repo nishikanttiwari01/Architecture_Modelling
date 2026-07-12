@@ -5,6 +5,8 @@ skinparam backgroundColor #FFFFFF
 skinparam defaultFontName Arial
 skinparam defaultFontSize 12
 skinparam shadowing false
+skinparam ranksep 12
+skinparam nodesep 18
 skinparam ArrowColor #334155
 skinparam ArrowFontColor #1E293B
 skinparam ArrowFontSize 11
@@ -17,48 +19,25 @@ skinparam rectangle {
 
 rectangle "CATALOGUE LEVEL\nCustomer and party management\nProcess family" as FAMILY #E0F2FE
 rectangle "END-TO-END LEVEL\nEstablish customer relationship\nProcess" as PROCESS #DBEAFE
+rectangle "SELECTED SUBPROCESS LEVEL\n1  Capture application\n2  Verify identity and screen\n3  Resolve referral [exception path]\n4  Create party and account records\n5  Confirm usable service" as DECOMP #F8FAFC
 
-package "SELECTED SUBPROCESS LEVEL" #FFFFFF {
-  rectangle "Capture\napplication" as CAPTURE
-  rectangle "Verify identity\nand screen" as VERIFY
-  rectangle "Resolve\nreferral" as REFERRAL #FEF3C7
-  rectangle "Create party and\naccount records" as CREATE
-  rectangle "Confirm usable\nservice" as CONFIRM
-  CAPTURE -[hidden]right- VERIFY
-  VERIFY -[hidden]right- REFERRAL
-  REFERRAL -[hidden]right- CREATE
-  CREATE -[hidden]right- CONFIRM
-}
-
-rectangle "OUTCOME\nUsable banking relationship" as OUTCOME #DCFCE7
 rectangle "ACCOUNTABILITY\nOnboarding process owner" as OWNER #F3E8FF
-rectangle "CONTROLS\nIdentity evidence\nScreening evidence" as CONTROLS #FEE2E2
+rectangle "OUTCOME\nUsable banking relationship" as OUTCOME #DCFCE7
+rectangle "CONTROLS\nIdentity evidence | Screening evidence" as CONTROLS #FEE2E2
 rectangle "MEASURES\nElapsed time | Straight-through processing\nReferral rate | Control failures" as MEASURES #FEF3C7
-rectangle "CAPABILITIES EXERCISED\nCustomer Onboarding | Identity Verification\nFinancial Crime Screening | Party Management | Account Opening" as CAPS #E0E7FF
+rectangle "CAPABILITIES EXERCISED\nCustomer Onboarding | Identity Verification\nFinancial Crime Screening\nParty Management | Account Opening" as CAPS #E0E7FF
 rectangle "REFERENCE RESPONSIBILITIES\nCandidate BIAN Service Domains and interactions\nBIAN 14.0 logical reference\nCandidate, partial and many-to-many" as BIAN #F1F5F9
-rectangle "SELECTED DETAIL\nBPMN collaboration for behaviour\nand referral exception\nNot a full-bank process diagram" as BPMN #ECFDF5
+rectangle "SELECTED DETAIL\nBPMN collaboration for behaviour and referral exception\nNot a full-bank process diagram" as BPMN #ECFDF5
 
 FAMILY -down-> PROCESS : contains
-PROCESS -down-> CAPTURE : decomposes to
-PROCESS -down-> VERIFY : decomposes to
-PROCESS -down-> REFERRAL : decomposes to
-PROCESS -down-> CREATE : decomposes to
-PROCESS -down-> CONFIRM : decomposes to
-
-OWNER -[hidden]down- OUTCOME
-OUTCOME -[hidden]down- CONTROLS
-CONTROLS -[hidden]down- MEASURES
-MEASURES -[hidden]down- CAPS
-CAPS -[hidden]down- BIAN
-BIAN -[hidden]down- BPMN
-
-PROCESS -right-> OWNER : accountable role
-PROCESS -right-> OUTCOME : produces
-PROCESS -right-> CONTROLS : is constrained by
-PROCESS -right-> MEASURES : is measured by
-PROCESS -right-> CAPS : exercises
-PROCESS -right-> BIAN : is informed by
-PROCESS -right-> BPMN : details selected behaviour
+OWNER -left-> PROCESS : is accountable for
+PROCESS -down-> DECOMP : decomposes to
+DECOMP -down-> OUTCOME : produces
+OUTCOME -down-> CONTROLS : is constrained by
+CONTROLS -down-> MEASURES : is measured by
+MEASURES -down-> CAPS : exercises
+CAPS -down-> BIAN : is informed by
+BIAN -down-> BPMN : details selected behaviour
 
 note bottom
   Selected Horizon Bank onboarding excerpt.

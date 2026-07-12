@@ -54,7 +54,7 @@ Detailed BPMN notation, application components, interfaces, deployment, organisa
 
 ## Accessibility requirements
 
-Use light backgrounds, dark text, redundant headings and explicit relationship labels. Colour must not be the only carrier of meaning. SVG is the publication format and PNG is a preview. Native output should fit a portrait book page, with node and relationship text at least 11 pixels.
+Use light backgrounds, dark text, redundant headings and explicit relationship labels. Colour must not be the only carrier of meaning. SVG is the publication format and PNG is a preview. Native output must be no wider than 760 pixels and should be no taller than 950 pixels, with node and relationship text at least 11 pixels. Do not rely on post-render scaling.
 
 ## Source references
 
@@ -77,4 +77,4 @@ The decomposition, mappings and visual composition are original author guidance.
 
 ## Production review, 2026-07-12
 
-PlantUML produced native SVG and PNG exports without post-render scaling. Original-resolution visual review found no clipped text, overlaps or ambiguous arrow direction. The selected process scope, exception subprocess, labelled relationships, BIAN caution and chapter caption agree. Status remains `Review`.
+PlantUML produced native 610 by 938 pixel SVG and PNG exports without post-render scaling. SVG inspection confirms 12-pixel node text, 11-pixel relationship text and a 14-pixel title. Original-resolution and intended-page-width visual review found no clipped text, overlaps or ambiguous arrow direction. The process owner points to the process with `is accountable for`; the selected process scope, exception subprocess, other labelled relationships, BIAN caution and chapter caption agree. Status remains `Review`.

@@ -212,7 +212,7 @@ Architects may examine candidate BIAN Service Domains and interactions against t
 
 ![Horizon Bank process-architecture decomposition and traceability view](../../diagrams/exported/svg/FIG-34-01-horizon-bank-process-architecture-traceability.svg)
 
-**Figure 34.1: Horizon Bank process-architecture decomposition and traceability view.** One catalogue thread links a process family, end-to-end process and selected subprocesses to outcome, owner, controls, measures, capabilities, candidate BIAN responsibilities and a detailed BPMN pointer. Relationship labels keep decomposition separate from traceability.
+**Figure 34.1: Horizon Bank process-architecture decomposition and traceability view.** A compact, portrait thread links a process family, end-to-end process and selected subprocesses to outcome, accountable owner, controls, measures, capabilities, candidate BIAN responsibilities and a detailed BPMN pointer. The owner-to-process arrow and other relationship labels keep accountability, decomposition and traceability distinct.
 
 ## Common mistakes
 
