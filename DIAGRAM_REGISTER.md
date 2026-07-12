@@ -85,6 +85,7 @@ Add a row before creating a new figure. Do not reuse an ID.
 | FIG-32-01 | 32 | BIAN and multi-technique traceability view | Trace a banking change across complementary modelling questions without implying equivalence | Architects, analysts and delivery teams | PlantUML conceptual relationship view | diagrams/source/plantuml/FIG-32-01-bian-multi-technique-traceability-view.puml | diagrams/exported/svg/FIG-32-01-bian-multi-technique-traceability-view.svg | Review | Codex |
 | FIG-33-01 | 33 | Horizon Bank operating-model traceability view | Connect one onboarding outcome across the operating-model set without implying equivalence | Beginner architects, business architects and bank transformation stakeholders | PlantUML layered explanatory view | diagrams/source/plantuml/FIG-33-01-horizon-bank-operating-model-traceability.puml | diagrams/exported/svg/FIG-33-01-horizon-bank-operating-model-traceability.svg | Review | Codex |
 | FIG-34-01 | 34 | Horizon Bank process-architecture decomposition and traceability view | Navigate from process family through selected process detail to governance and related architecture without implying equivalence | Beginner architects, analysts, process owners and control reviewers | PlantUML explanatory view | diagrams/source/plantuml/FIG-34-01-horizon-bank-process-architecture-traceability.puml | diagrams/exported/svg/FIG-34-01-horizon-bank-process-architecture-traceability.svg | Review | Codex |
+| FIG-35-01 | 35 | Horizon Bank value-stream and BIAN responsibility cross-map | Relate customer-value stages to controlled capabilities and candidate BIAN responsibility analysis without implying equivalence | Beginner architects, business architects and transformation stakeholders | PlantUML cross-map | diagrams/source/plantuml/FIG-35-01-horizon-bank-value-stream-bian-cross-map.puml | diagrams/exported/svg/FIG-35-01-horizon-bank-value-stream-bian-cross-map.svg | Planned | Codex |
 
 ## Chapter 8 figure asset details
 
@@ -211,6 +212,12 @@ Add a row before creating a new figure. Do not reuse an ID.
 | Figure | Specification | Editable source | SVG export | PNG preview |
 |---|---|---|---|---|
 | `FIG-34-01` | `diagrams/specifications/FIG-34-01-horizon-bank-process-architecture-traceability.md` | `diagrams/source/plantuml/FIG-34-01-horizon-bank-process-architecture-traceability.puml` | `diagrams/exported/svg/FIG-34-01-horizon-bank-process-architecture-traceability.svg` | `diagrams/exported/png/FIG-34-01-horizon-bank-process-architecture-traceability.png` |
+
+## Chapter 35 figure asset details
+
+| Figure | Specification | Editable source | SVG export | PNG preview |
+|---|---|---|---|---|
+| `FIG-35-01` | `diagrams/specifications/FIG-35-01-horizon-bank-value-stream-bian-cross-map.md` | `diagrams/source/plantuml/FIG-35-01-horizon-bank-value-stream-bian-cross-map.puml` | `diagrams/exported/svg/FIG-35-01-horizon-bank-value-stream-bian-cross-map.svg` | `diagrams/exported/png/FIG-35-01-horizon-bank-value-stream-bian-cross-map.png` |
 
 ## Status values
 
