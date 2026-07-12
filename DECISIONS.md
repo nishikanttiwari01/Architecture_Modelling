@@ -468,6 +468,18 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapters 15 and 33 to 36, `GLOSSARY.md`, `DIAGRAM_REGISTER.md`, Horizon Bank examples and `FIG-34-01` assets.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
+## DEC-043: Map BIAN to value streams through a separate qualified responsibility band
+
+- **Status:** Proposed
+- **Date:** 2026-07-12
+- **Decision:** Define Horizon Bank value streams from stakeholder needs and outcomes first, map controlled capabilities to stages second, and assess candidate BIAN responsibilities in a separate versioned band.
+- **Context:** Chapter 35 must show how BIAN informs banking value analysis without turning Service Domains into value stages, process steps or implementation units.
+- **Alternatives considered:** Use Service Domains as stage names; combine value, capability, process and application content in one flow; omit BIAN until detailed solution design.
+- **Reason:** Separate qualified bands preserve the question answered by each model while making responsibility analysis traceable and reviewable.
+- **Consequences:** `FIG-35-01` uses candidate assessment cells rather than unverified Service Domain names. Mappings may be partial and many-to-many, and implementation remains a local design choice. The figure remains at `Review`, not `Approved`.
+- **Related chapters/files:** Chapters 14 and 33 to 36, `GLOSSARY.md`, `DIAGRAM_REGISTER.md`, Horizon Bank capabilities and `FIG-35-01` assets.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
+
 ## Decision template
 
 ```markdown

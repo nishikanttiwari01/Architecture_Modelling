@@ -1,0 +1,40 @@
+@startuml
+title Horizon Bank customer-acquisition value stream cross-map
+
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam ranksep 15
+skinparam ArrowColor #334155
+skinparam ArrowFontColor #1E293B
+skinparam ArrowFontSize 11
+skinparam rectangle {
+  BorderColor #334155
+  FontColor #0F172A
+  RoundCorner 8
+}
+
+rectangle "STAKEHOLDER\nRetail Customer\nNeed: establish a banking relationship" as CUSTOMER #E0F2FE
+
+rectangle "STAGE 1  Need understood\nValue added: suitable direction is clear\nPrimary: Relationship Management\nSupporting: Digital Servicing\nBIAN 14.0: assess candidate Service Domains and interactions" as S1 #F8FAFC
+rectangle "STAGE 2  Application established\nValue added: intent and evidence can proceed\nPrimary: Document Capture\nSupporting: Digital Servicing\nBIAN 14.0: assess candidate Service Domains and interactions" as S2 #F8FAFC
+rectangle "STAGE 3  Identity and eligibility confirmed\nValue added: governed decision is supported\nPrimary: Identity Verification | Risk Assessment\nSupporting: Financial Crime Screening\nBIAN 14.0: assess candidate Service Domains and interactions" as S3 #FEF3C7
+rectangle "STAGE 4  Banking relationship established\nValue added: authoritative relationship records exist\nPrimary: Party Management | Account Opening\nSupporting: none in this selected view\nBIAN 14.0: assess candidate Service Domains and interactions" as S4 #F8FAFC
+rectangle "STAGE 5  Services ready to use\nValue added: agreed service can be used\nPrimary: Digital Servicing\nSupporting: Notification Management | Account Servicing\nBIAN 14.0: assess candidate Service Domains and interactions" as S5 #F8FAFC
+
+rectangle "OUTCOME\nUsable banking relationship" as OUTCOME #DCFCE7
+
+CUSTOMER -down-> S1 : seeks value through
+S1 -down-> S2 : contributes to
+S2 -down-> S3 : contributes to
+S3 -down-> S4 : contributes to
+S4 -down-> S5 : contributes to
+S5 -down-> OUTCOME : contributes to
+
+note bottom
+  Capability contributions enable stages; they do not equal stages.
+  BIAN mappings are candidate, partial and many-to-many.
+  A Service Domain is not a value stage, process step, application or microservice.
+end note
+@enduml

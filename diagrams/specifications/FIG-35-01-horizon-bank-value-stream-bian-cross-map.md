@@ -72,3 +72,7 @@ The value stages, contribution mappings and visual composition are original teac
 - Candidate BIAN cells remain qualified and do not name unverified Service Domains.
 - The figure does not treat a Service Domain as a value stage, process step, application or microservice.
 - Final status remains `Review`, never `Approved`.
+
+## Production review, 2026-07-12
+
+PlantUML produced native 474 by 853 pixel SVG and PNG exports without post-render scaling. SVG inspection confirms 12-pixel node text, 11-pixel relationship text and a 14-pixel title. Original-resolution and intended-page-width visual review found no clipped text, overlap or ambiguous arrow direction. Stage order, capability names, contribution labels, qualified BIAN assessment cells, caution and chapter caption agree. Status remains `Review`.

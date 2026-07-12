@@ -24,6 +24,8 @@ This file controls terminology across the manuscript. Add a term when it first b
 | Concern | An interest or question that an architecture description should address for a stakeholder. | Use concrete concerns such as security, cost, resilience or usability. |
 | Capability | An ability an organisation possesses to achieve an outcome. | Avoid describing a sequence of tasks as a capability. |
 | Value stream | A sequence of value-creating stages that delivers an outcome to a stakeholder. | Distinguish from detailed process flow. |
+| Value-stream owner | The role that stewards a value stream's stakeholder outcome, definition and cross-boundary improvement. | Distinguish from process owners accountable for work and capability owners responsible for enduring abilities. |
+| Capability contribution | A qualified relationship stating that a capability enables a value-stream stage, commonly as a primary or supporting contributor. | Contribution is not capability decomposition, stage ownership or equivalence. |
 | Capability levelling | The decomposition of a capability into lower-level capabilities, recording level and parent so scope is explicit. | Do not double count a parent capability together with its children; distinguish decomposition from contribution and dependency. |
 | Value stream to capability cross-map | A matrix that maps each value-stream stage to the capabilities that enable it, often marking primary and supporting enablers. | Keep it at value-stage level; it is not a process model, customer journey map or Lean value-stream map. |
 | Business process | An ordered set of activities that produces a business outcome. | BPMN is commonly used to model it. |
