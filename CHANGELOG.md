@@ -1,5 +1,6 @@
 # Changelog
 
+- Fixed the remaining `FIG-34-01` ownership-label overlap by placing the owner above the process with a vertical `is accountable for` relationship. Native 711 by 861 pixel output remains within the page-readability limits with 12-pixel node and 11-pixel relationship text.
 - Corrected `FIG-34-01` trace semantics so every outcome, control, measure, capability, BIAN and detail relationship originates independently at the end-to-end process. Hidden links now constrain layout only; native output is 617 by 789 pixels with 12-pixel node and 11-pixel relationship text.
 - Improved `FIG-34-01` page readability by regenerating it natively at 610 by 938 pixels without post-render scaling. Confirmed 12-pixel node text, 11-pixel relationship text and the semantically directed `is accountable for` owner-to-process relationship.
 - Completed Chapter 34, *Complete Bank Business Process Architecture*, with a full-bank process catalogue, hierarchy, classifications, ownership, controls, measures, exceptions, BIAN relationship guidance, governance and worked onboarding example.

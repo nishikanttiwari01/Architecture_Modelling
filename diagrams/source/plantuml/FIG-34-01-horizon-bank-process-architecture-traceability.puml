@@ -5,8 +5,8 @@ skinparam backgroundColor #FFFFFF
 skinparam defaultFontName Arial
 skinparam defaultFontSize 12
 skinparam shadowing false
-skinparam ranksep 12
-skinparam nodesep 18
+skinparam ranksep 20
+skinparam nodesep 30
 skinparam linetype ortho
 skinparam ArrowColor #334155
 skinparam ArrowFontColor #1E293B
@@ -31,7 +31,7 @@ rectangle "REFERENCE RESPONSIBILITIES\nCandidate BIAN Service Domains and intera
 rectangle "SELECTED DETAIL\nBPMN collaboration for behaviour and referral exception\nNot a full-bank process diagram" as BPMN #ECFDF5
 
 FAMILY -down-> PROCESS : contains
-OWNER -left----> PROCESS : is accountable for
+OWNER -down-> PROCESS : is accountable for
 PROCESS -down-> DECOMP : decomposes to
 DECOMP -[hidden]down- OUTCOME
 OUTCOME -[hidden]down- CONTROLS
