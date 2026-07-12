@@ -7,6 +7,7 @@ skinparam defaultFontSize 12
 skinparam shadowing false
 skinparam ranksep 12
 skinparam nodesep 18
+skinparam linetype ortho
 skinparam ArrowColor #334155
 skinparam ArrowFontColor #1E293B
 skinparam ArrowFontSize 11
@@ -30,14 +31,21 @@ rectangle "REFERENCE RESPONSIBILITIES\nCandidate BIAN Service Domains and intera
 rectangle "SELECTED DETAIL\nBPMN collaboration for behaviour and referral exception\nNot a full-bank process diagram" as BPMN #ECFDF5
 
 FAMILY -down-> PROCESS : contains
-OWNER -left-> PROCESS : is accountable for
+OWNER -left----> PROCESS : is accountable for
 PROCESS -down-> DECOMP : decomposes to
-DECOMP -down-> OUTCOME : produces
-OUTCOME -down-> CONTROLS : is constrained by
-CONTROLS -down-> MEASURES : is measured by
-MEASURES -down-> CAPS : exercises
-CAPS -down-> BIAN : is informed by
-BIAN -down-> BPMN : details selected behaviour
+DECOMP -[hidden]down- OUTCOME
+OUTCOME -[hidden]down- CONTROLS
+CONTROLS -[hidden]down- MEASURES
+MEASURES -[hidden]down- CAPS
+CAPS -[hidden]down- BIAN
+BIAN -[hidden]down- BPMN
+
+PROCESS -down-> OUTCOME : produces
+PROCESS -down-> CONTROLS : is constrained by
+PROCESS -down-> MEASURES : is measured by
+PROCESS -down-> CAPS : exercises
+PROCESS -down-> BIAN : is informed by
+PROCESS -down-> BPMN : details selected behaviour
 
 note bottom
   Selected Horizon Bank onboarding excerpt.
