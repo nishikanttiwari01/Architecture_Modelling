@@ -52,7 +52,7 @@
 | 31 | Introduction to BIAN | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-31-01` at Review; accept or revise `DEC-039` |
 | 32 | How BIAN Relates to Other Modelling Techniques | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-32-01` at Review; accept or revise `DEC-040` |
 | 33 | Defining the Full Banking Operating Model | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-33-01` at Review; accept or revise `DEC-041` |
-| 34 | Complete Bank Business Process Architecture | Planned | 0 | 0 | 0 | 0 | 0 | — |
+| 34 | Complete Bank Business Process Architecture | Ready for Author Approval | 100 | 100 | 100 | 100 | 100 | Author review; `FIG-34-01` at Review; accept or revise `DEC-042` |
 | 35 | Modelling Bank Value Streams with BIAN | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 36 | Creating BIAN-Aligned Business Scenarios | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 37 | Practical Scenario 1: Customer Onboarding | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -176,4 +176,6 @@ Chapter 32, **How BIAN Relates to Other Modelling Techniques**, is `Ready for Au
 
 Chapter 33, **Defining the Full Banking Operating Model**, is `Ready for Author Approval`. It connects outcomes, value streams, capabilities, processes, candidate BIAN responsibilities, organisation, roles, information, applications, technology, controls and measures through a governed model set. `FIG-33-01` remains at `Review`, not `Approved`. `DEC-041` remains `Proposed`. Four review passes and the quality gate completed on 2026-07-11.
 
-Last updated: 2026-07-11 (Chapter 33 completed)
+Chapter 34, **Complete Bank Business Process Architecture**, is `Ready for Author Approval`. It establishes a full-bank process catalogue, hierarchy, classifications, ownership, controls, measures, exception handling and repository governance while keeping local processes distinct from BIAN Business Scenarios and Service Domains. `FIG-34-01` remains at `Review`, not `Approved`. `DEC-042` remains `Proposed`. Four review passes and the quality gate completed on 2026-07-12.
+
+Last updated: 2026-07-12 (Chapter 34 completed)

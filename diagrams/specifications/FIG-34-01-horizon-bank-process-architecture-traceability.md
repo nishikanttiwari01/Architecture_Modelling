@@ -74,3 +74,7 @@ The decomposition, mappings and visual composition are original author guidance.
 - The figure states its selected scope and does not imply a universal process model.
 - Service Domains are not shown as process steps, applications or microservices.
 - Final status remains `Review`, never `Approved`.
+
+## Production review, 2026-07-12
+
+PlantUML produced native SVG and PNG exports without post-render scaling. Original-resolution visual review found no clipped text, overlaps or ambiguous arrow direction. The selected process scope, exception subprocess, labelled relationships, BIAN caution and chapter caption agree. Status remains `Review`.

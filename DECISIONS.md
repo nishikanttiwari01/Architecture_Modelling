@@ -456,6 +456,18 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Related chapters/files:** Chapters 31 to 35, `GLOSSARY.md`, `DIAGRAM_REGISTER.md`, Horizon Bank examples and `FIG-33-01` assets.
 - **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
 
+## DEC-042: Govern full-bank processes through a catalogue and selected detail
+
+- **Status:** Proposed
+- **Date:** 2026-07-12
+- **Decision:** Define Horizon Bank's complete process architecture as a governed hierarchy and catalogue with selected behavioural detail, rather than one universal process diagram or a copy of BIAN reference interactions.
+- **Context:** Chapter 34 must cover every major business area while remaining useful to beginners and preserving ownership, controls, measures, exceptions and change impact.
+- **Alternatives considered:** Draw one full-bank BPMN model; organise processes only by departments; adopt BIAN Business Scenarios or Service Domains as the local process inventory.
+- **Reason:** Catalogue coverage provides enterprise navigation while focused models preserve readable sequence and exception detail. Qualified traceability relates unlike architecture elements without making them equivalent.
+- **Consequences:** `FIG-34-01` shows one onboarding decomposition and traceability thread. Service Domains are never process steps or automatic microservices. The figure remains at `Review`, not `Approved`.
+- **Related chapters/files:** Chapters 15 and 33 to 36, `GLOSSARY.md`, `DIAGRAM_REGISTER.md`, Horizon Bank examples and `FIG-34-01` assets.
+- **Supersedes / superseded by:** Not superseded. Remains `Proposed` pending explicit author approval.
+
 ## Decision template
 
 ```markdown

@@ -1,5 +1,9 @@
 # Changelog
 
+- Completed Chapter 34, *Complete Bank Business Process Architecture*, with a full-bank process catalogue, hierarchy, classifications, ownership, controls, measures, exceptions, BIAN relationship guidance, governance and worked onboarding example.
+- Added, rendered and visually inspected `FIG-34-01` after its separate 2026-07-12 specification checkpoint; the figure remains at `Review`.
+- Added official BIAN portal research and source registration, four review passes, the Chapter 34 quality gate, process-governance glossary terms and proposed decision `DEC-042`.
+
 ## 2026-07-11
 
 - Improved `FIG-33-01` page readability by regenerating it natively at 695 by 899 pixels without post-render scaling. Confirmed 12-pixel node and relationship text and a 14-pixel title at intended book-page width.

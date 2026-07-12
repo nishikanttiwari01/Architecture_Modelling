@@ -1,0 +1,67 @@
+@startuml
+title Horizon Bank process-architecture decomposition and traceability
+
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam ArrowColor #334155
+skinparam ArrowFontColor #1E293B
+skinparam ArrowFontSize 11
+skinparam rectangle {
+  BackgroundColor #F8FAFC
+  BorderColor #334155
+  FontColor #0F172A
+  RoundCorner 8
+}
+
+rectangle "CATALOGUE LEVEL\nCustomer and party management\nProcess family" as FAMILY #E0F2FE
+rectangle "END-TO-END LEVEL\nEstablish customer relationship\nProcess" as PROCESS #DBEAFE
+
+package "SELECTED SUBPROCESS LEVEL" #FFFFFF {
+  rectangle "Capture\napplication" as CAPTURE
+  rectangle "Verify identity\nand screen" as VERIFY
+  rectangle "Resolve\nreferral" as REFERRAL #FEF3C7
+  rectangle "Create party and\naccount records" as CREATE
+  rectangle "Confirm usable\nservice" as CONFIRM
+  CAPTURE -[hidden]right- VERIFY
+  VERIFY -[hidden]right- REFERRAL
+  REFERRAL -[hidden]right- CREATE
+  CREATE -[hidden]right- CONFIRM
+}
+
+rectangle "OUTCOME\nUsable banking relationship" as OUTCOME #DCFCE7
+rectangle "ACCOUNTABILITY\nOnboarding process owner" as OWNER #F3E8FF
+rectangle "CONTROLS\nIdentity evidence\nScreening evidence" as CONTROLS #FEE2E2
+rectangle "MEASURES\nElapsed time | Straight-through processing\nReferral rate | Control failures" as MEASURES #FEF3C7
+rectangle "CAPABILITIES EXERCISED\nCustomer Onboarding | Identity Verification\nFinancial Crime Screening | Party Management | Account Opening" as CAPS #E0E7FF
+rectangle "REFERENCE RESPONSIBILITIES\nCandidate BIAN Service Domains and interactions\nBIAN 14.0 logical reference\nCandidate, partial and many-to-many" as BIAN #F1F5F9
+rectangle "SELECTED DETAIL\nBPMN collaboration for behaviour\nand referral exception\nNot a full-bank process diagram" as BPMN #ECFDF5
+
+FAMILY -down-> PROCESS : contains
+PROCESS -down-> CAPTURE : decomposes to
+PROCESS -down-> VERIFY : decomposes to
+PROCESS -down-> REFERRAL : decomposes to
+PROCESS -down-> CREATE : decomposes to
+PROCESS -down-> CONFIRM : decomposes to
+
+OWNER -[hidden]down- OUTCOME
+OUTCOME -[hidden]down- CONTROLS
+CONTROLS -[hidden]down- MEASURES
+MEASURES -[hidden]down- CAPS
+CAPS -[hidden]down- BIAN
+BIAN -[hidden]down- BPMN
+
+PROCESS -right-> OWNER : accountable role
+PROCESS -right-> OUTCOME : produces
+PROCESS -right-> CONTROLS : is constrained by
+PROCESS -right-> MEASURES : is measured by
+PROCESS -right-> CAPS : exercises
+PROCESS -right-> BIAN : is informed by
+PROCESS -right-> BPMN : details selected behaviour
+
+note bottom
+  Selected Horizon Bank onboarding excerpt.
+  Process, capability, BIAN responsibility and implementation are not equivalent.
+end note
+@enduml
