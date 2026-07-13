@@ -27,6 +27,14 @@ jobs:
         shell: pwsh
         run: python -m compileall -q scripts
 
+      - name: Test Horizon Bank catalogue validation
+        shell: pwsh
+        run: python -m unittest scripts.test_validate_horizon_bank
+
+      - name: Validate Horizon Bank catalogues
+        shell: pwsh
+        run: python scripts/validate_horizon_bank.py
+
       - name: Check repository structure
         shell: pwsh
         run: python scripts/check-structure.py

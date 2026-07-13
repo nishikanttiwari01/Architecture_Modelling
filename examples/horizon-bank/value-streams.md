@@ -2,7 +2,7 @@
 
 `HB-VS-03` covers deposits and non-credit account agreements. `HB-VS-05` covers the complete credit lifecycle from need through repayment, restructuring or recovery. Credit products must not use `HB-VS-03` merely because a loan is sometimes called a facility.
 
-| ID | Name | Definition | Trigger | Outcome | Owner | Scope | Status | Relationships | Source Type | Gap |
+| ID | Name | Definition | Trigger | Outcome | Owner | Organisational Scope | Record Status | Relationships | Source Type | Gap |
 |---|---|---|---|---|---|---|---|---|---|---|
 | HB-VS-01 | Establish and Manage Relationship | Establish, maintain and exit a governed customer relationship | Customer or bank interest | Relationship established, serviced or exited | Customer Director | Group | Current | HB-PRD-02; HB-PRD-05; HB-PRD-06 | Author model | Detailed stages open |
 | HB-VS-02 | Design and Manage Product | Govern a product from need through retirement | Identified need | Product launched, changed and retired | Product Director | Group | Current | HB-PRD-01; HB-PRD-04; HB-PRD-07; HB-PRD-08; HB-PRD-09; HB-PRD-10 | Author model | Portfolio decisions open |
@@ -13,3 +13,4 @@
 | HB-VS-07 | Manage Financial Position | Manage funding, liquidity, market position, ALM and capital | Position or forecast changes | Position remains within governed decisions | Treasurer | Group | Current | HB-BL-04 | Author model | Measures open |
 | HB-VS-08 | Resolve Exception | Investigate and resolve alerts, failures, disputes and complaints | Alert, failure, dispute or complaint | Resolved case with evidence | Operations Director | Group | Current | HB-VS-01; HB-VS-03; HB-VS-04; HB-VS-05; HB-VS-06 | Author model | Case taxonomy open |
 | HB-VS-09 | Record, Reconcile and Report | Record financial consequences, reconcile and report | Business or accounting event | Approved report and retained evidence | Chief Financial Officer | Group | Current | HB-VS-03; HB-VS-04; HB-VS-05; HB-VS-06; HB-VS-07 | Author model | Reporting scope open |
+| HB-VS-10 | Provide and Manage Trade Finance | Manage a trade-finance instrument from request through expiry or closure | Product or instrument request | Instrument issued, serviced, settled and closed with contingent exposure resolved | Trade Finance Director | Group and country | Current | HB-PRD-09; HB-VS-04; HB-PROC-06 | Author model | Covers eligibility, limits, issuance, amendments, documents, discrepancies, financing, claims and closure |

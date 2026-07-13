@@ -1,6 +1,6 @@
 # Horizon Bank Organisation and Role Catalogue
 
-| ID | Name | Definition | Type | Owner | Scope | Status | Relationships | Source Type | Gap |
+| ID | Name | Definition | Type | Owner | Organisational Scope | Record Status | Relationships | Source Type | Gap |
 |---|---|---|---|---|---|---|---|---|---|
 | HB-ORG-01 | Group Board | Governing body accountable for group direction and oversight | Governing body | Chair | Group | Current | HB-BANK-01 | Author model | Committee model open |
 | HB-ORG-02 | Product and Business Management | Owns segments, products and commercial outcomes | Organisation unit | Group Chief Executive | Group and country | Current | HB-BL-01; HB-BL-02; HB-BL-03; HB-BL-04 | Author model | Country decomposition open |

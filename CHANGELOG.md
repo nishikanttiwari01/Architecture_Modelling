@@ -4,6 +4,14 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-13
 
+### Corrected semantic mappings and hardened Phase 1 governance
+
+- Corrected business-line mappings, decomposed the cards family into issuing, acquiring and processing products, and added an explicit end-to-end Trade Finance value stream and supporting traceability records.
+- Replaced overloaded governance fields with separate controlled dimensions and expanded the coverage matrix to the required machine-checkable schema, using `Pending` for genuine Phase 1 gaps.
+- Hardened catalogue validation for table schemas, prefixes, typed and explicit references, controlled values and product hierarchy integrity.
+- Split validator coverage into granular regression tests and wired both tests and live catalogue validation into continuous integration.
+- Left Chapters 37 to 56 and all Part V statuses unchanged.
+
 ### Corrected the Phase 1 checkpoint and expanded governed taxonomy
 
 - Corrected shifted Chapter 39 to 43 next actions and clarified the Part V status note.

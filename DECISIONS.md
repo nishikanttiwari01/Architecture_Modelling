@@ -328,3 +328,14 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Consequences:** Deposit products map to `HB-VS-03`; credit products map to `HB-VS-05`. Transaction execution remains in `HB-VS-04`. Cross-stream relationships must use full stable IDs.
 - **Related chapters/files:** Chapters 33, 38, 39 and 40; `examples/horizon-bank/products.md`; `examples/horizon-bank/value-streams.md`.
 - **Supersedes / superseded by:** Supersedes the overlapping value-stream wording introduced in commit `adb2440`.
+
+## DEC-030: Separate card products and establish a trade-finance lifecycle
+
+- **Status:** Proposed
+- **Date:** 2026-07-13
+- **Decision owner:** Author
+- **Context:** The Phase 1 checkpoint treated cards as one product and mapped Trade Finance to deposit/account acquisition, obscuring owners, customers and lifecycle boundaries.
+- **Decision:** Retain `HB-PRD-08 Cards and Merchant Services` as the Level 1 family. Define `HB-PRD-11 Card Issuing`, `HB-PRD-12 Merchant Acquiring` and `HB-PRD-13 Card Processing Services` as distinct Level 2 records with separate owners and segment applicability. Define `HB-VS-10 Provide and Manage Trade Finance` for the complete instrument lifecycle and relate it to transaction execution through `HB-VS-04`; do not relate Trade Finance to `HB-VS-03`.
+- **Consequences:** Retail Banking explicitly offers card issuing. Business and Corporate Banking offers card issuing, merchant acquiring and Trade Finance. Trade Finance coverage uses explicit process, data, accounting, control, BIAN and scenario records. Shared card processing has no customer-segment applicability.
+- **Related chapters/files:** Chapters 33, 41, 42 and 43; `examples/horizon-bank/business-lines.md`; `products.md`; `value-streams.md`; `coverage-matrix.csv`.
+- **Supersedes / superseded by:** Not superseded.

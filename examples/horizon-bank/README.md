@@ -33,9 +33,10 @@ Horizon Bank is the fictional full-service bank used throughout the handbook. Co
 - Reuse exact IDs and names from the catalogues.
 - Use only values defined in `controlled-vocabularies.md`.
 - Record relationships with explicit IDs, never prose ranges.
+- Keep record status, architecture state, source, confidence, verification, ownership, organisational, legal-entity, jurisdiction and customer-segment dimensions separate.
 - Treat source type `Author model` as a fictional teaching decision, not an industry fact.
 - Do not start domain drafting until the Phase 1 catalogue set and coverage matrix form a coherent validated baseline.
 
 ## Phase 1 gaps
 
-Business domains, stable-ID capabilities, Level 1 and Level 2 processes, the complete organisation model, applications, interfaces, external networks, attribute-level authority, complete accounting and control coverage, technology platforms, non-functional requirements, verified BIAN 14.0 mappings and full-bank coverage remain to be completed.
+Business domains, stable-ID capabilities, the complete Level 1 and Level 2 process hierarchy, the complete organisation model, applications, interfaces, external networks, attribute-level authority, reconciliation, complete accounting and control coverage, technology and resilience classifications, verified BIAN 14.0 mappings and full-bank scenario coverage remain to be completed. `Pending` in the coverage matrix identifies these governed Phase 1 gaps.
