@@ -1,13 +1,13 @@
 ---
-title: "BIAN Governance Model"
+title: "Deployment, Security, Resilience, Observability and Operations"
 chapter: 52
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 52. BIAN Governance Model
+# 52. Deployment, Security, Resilience, Observability and Operations
 
 ## Chapter purpose
 

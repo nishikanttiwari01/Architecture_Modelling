@@ -50,26 +50,26 @@
 - [34. Full Bank Application and Integration Landscape](../part-05-bian-case-study/34-bank-business-process-architecture.md)
 - [35. Enterprise Information and Data Architecture](../part-05-bian-case-study/35-bank-value-streams.md)
 - [36. Technology, Security, Resilience and Operating Architecture](../part-05-bian-case-study/36-bian-business-scenarios.md)
-- [37. Practical Scenario 1: Customer Onboarding](../part-05-bian-case-study/37-customer-onboarding-scenario.md)
-- [38. Practical Scenario 2: Open a Current Account](../part-05-bian-case-study/38-current-account-opening-scenario.md)
-- [39. Practical Scenario 3: Execute a Cross-Border Payment](../part-05-bian-case-study/39-cross-border-payment-scenario.md)
-- [40. Practical Scenario 4: Consumer Loan Origination](../part-05-bian-case-study/40-consumer-loan-origination-scenario.md)
-- [41. Practical Scenario 5: Card Fraud Investigation](../part-05-bian-case-study/41-card-fraud-investigation-scenario.md)
-- [42. Practical Scenario 6: Corporate Cash Management](../part-05-bian-case-study/42-corporate-cash-management-scenario.md)
-- [43. Mapping BIAN to Applications](../part-05-bian-case-study/43-mapping-bian-to-applications.md)
-- [44. Designing BIAN-Aligned Software Services](../part-05-bian-case-study/44-bian-aligned-software-services.md)
-- [45. Implementing BIAN Semantic APIs](../part-05-bian-case-study/45-bian-semantic-apis.md)
-- [46. Implementing BIAN with Events](../part-05-bian-case-study/46-bian-events.md)
-- [47. BIAN Information and Data Architecture](../part-05-bian-case-study/47-bian-data-architecture.md)
-- [48. BIAN Security and Control Architecture](../part-05-bian-case-study/48-bian-security-control-architecture.md)
-- [49. BIAN Deployment and Operational Architecture](../part-05-bian-case-study/49-bian-deployment-operations.md)
-- [50. Migrating from Legacy Architecture to BIAN](../part-05-bian-case-study/50-legacy-to-bian-migration.md)
-- [51. BIAN Adoption Roadmap](../part-05-bian-case-study/51-bian-adoption-roadmap.md)
-- [52. BIAN Governance Model](../part-05-bian-case-study/52-bian-governance.md)
-- [53. Measuring BIAN Implementation Success](../part-05-bian-case-study/53-bian-success-measures.md)
-- [54. Common BIAN Implementation Mistakes](../part-05-bian-case-study/54-bian-common-mistakes.md)
-- [55. BIAN Implementation Review Checklist](../part-05-bian-case-study/55-bian-review-checklist.md)
-- [56. BIAN Quick Reference](../part-05-bian-case-study/56-bian-quick-reference.md)
+- [37. Customer, Party, CRM, Sales, Onboarding, KYC and Customer Servicing](../part-05-bian-case-study/37-customer-onboarding-scenario.md)
+- [38. Deposits, Accounts, Term Deposits, Interest, Fees, Statements and Correspondence](../part-05-bian-case-study/38-current-account-opening-scenario.md)
+- [39. Lending and Credit: Consumer, Mortgage, SME and Corporate](../part-05-bian-case-study/39-cross-border-payment-scenario.md)
+- [40. Collateral, Limits, Exposure, Collections, Recovery and the Credit-Risk Lifecycle](../part-05-bian-case-study/40-consumer-loan-origination-scenario.md)
+- [41. Payments, Clearing, Settlement, Correspondent Banking and Foreign Exchange](../part-05-bian-case-study/41-card-fraud-investigation-scenario.md)
+- [42. Cards and Merchant Acquiring](../part-05-bian-case-study/42-corporate-cash-management-scenario.md)
+- [43. Corporate Banking, Cash Management and Trade Finance](../part-05-bian-case-study/43-mapping-bian-to-applications.md)
+- [44. Wealth, Investments, Securities, Custody and Asset Servicing](../part-05-bian-case-study/44-bian-aligned-software-services.md)
+- [45. Treasury, Markets, Funding, Liquidity, ALM and Capital](../part-05-bian-case-study/45-bian-semantic-apis.md)
+- [46. Finance, Accounting, General Ledger, Reconciliation, Tax and Reporting](../part-05-bian-case-study/46-bian-events.md)
+- [47. Risk, Compliance, Financial Crime, Fraud, Audit and Legal](../part-05-bian-case-study/47-bian-data-architecture.md)
+- [48. Channels, Communications, Documents, Workflow, Case Management and Shared Services](../part-05-bian-case-study/48-bian-security-control-architecture.md)
+- [49. BIAN Mapping Method and Full-Stack Traceability](../part-05-bian-case-study/49-bian-deployment-operations.md)
+- [50. BIAN-Aligned Application, Software-Service and Team Boundaries](../part-05-bian-case-study/50-legacy-to-bian-migration.md)
+- [51. APIs, Events, Commands, Batch, Files, Workflow and External Networks](../part-05-bian-case-study/51-bian-adoption-roadmap.md)
+- [52. Deployment, Security, Resilience, Observability and Operations](../part-05-bian-case-study/52-bian-governance.md)
+- [53. Legacy Modernisation, Data Migration and Transition Architecture](../part-05-bian-case-study/53-bian-success-measures.md)
+- [54. Governance, Ownership and the Architecture Repository](../part-05-bian-case-study/54-bian-common-mistakes.md)
+- [55. Measures, Quality Gates and the Full-Bank Coverage Audit](../part-05-bian-case-study/55-bian-review-checklist.md)
+- [56. Integrated End-to-End Scenarios and Practitioner Reference](../part-05-bian-case-study/56-bian-quick-reference.md)
 
 ## Part VI: Practical Architecture Reference Guide
 
@@ -89,5 +89,5 @@
 - Appendix D: ArchiMate Quick Reference
 - Appendix E: C4 Quick Reference
 - Appendix F: Data Modelling Quick Reference
-- Appendix G: BIAN Quick Reference
+- Appendix G: Integrated End-to-End Scenarios and Practitioner Reference
 - Appendix H: Glossary and Source Notes

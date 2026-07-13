@@ -1,13 +1,13 @@
 ---
-title: "Common BIAN Implementation Mistakes"
+title: "Governance, Ownership and the Architecture Repository"
 chapter: 54
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 54. Common BIAN Implementation Mistakes
+# 54. Governance, Ownership and the Architecture Repository
 
 ## Chapter purpose
 

@@ -125,26 +125,26 @@ A fictional full-service bank used to connect strategy, capabilities, business p
 - [34. Full Bank Application and Integration Landscape](manuscript/part-05-bian-case-study/34-bank-business-process-architecture.md)
 - [35. Enterprise Information and Data Architecture](manuscript/part-05-bian-case-study/35-bank-value-streams.md)
 - [36. Technology, Security, Resilience and Operating Architecture](manuscript/part-05-bian-case-study/36-bian-business-scenarios.md)
-- [37. Practical Scenario 1: Customer Onboarding](manuscript/part-05-bian-case-study/37-customer-onboarding-scenario.md)
-- [38. Practical Scenario 2: Open a Current Account](manuscript/part-05-bian-case-study/38-current-account-opening-scenario.md)
-- [39. Practical Scenario 3: Execute a Cross-Border Payment](manuscript/part-05-bian-case-study/39-cross-border-payment-scenario.md)
-- [40. Practical Scenario 4: Consumer Loan Origination](manuscript/part-05-bian-case-study/40-consumer-loan-origination-scenario.md)
-- [41. Practical Scenario 5: Card Fraud Investigation](manuscript/part-05-bian-case-study/41-card-fraud-investigation-scenario.md)
-- [42. Practical Scenario 6: Corporate Cash Management](manuscript/part-05-bian-case-study/42-corporate-cash-management-scenario.md)
-- [43. Mapping BIAN to Applications](manuscript/part-05-bian-case-study/43-mapping-bian-to-applications.md)
-- [44. Designing BIAN-Aligned Software Services](manuscript/part-05-bian-case-study/44-bian-aligned-software-services.md)
-- [45. Implementing BIAN Semantic APIs](manuscript/part-05-bian-case-study/45-bian-semantic-apis.md)
-- [46. Implementing BIAN with Events](manuscript/part-05-bian-case-study/46-bian-events.md)
-- [47. BIAN Information and Data Architecture](manuscript/part-05-bian-case-study/47-bian-data-architecture.md)
-- [48. BIAN Security and Control Architecture](manuscript/part-05-bian-case-study/48-bian-security-control-architecture.md)
-- [49. BIAN Deployment and Operational Architecture](manuscript/part-05-bian-case-study/49-bian-deployment-operations.md)
-- [50. Migrating from Legacy Architecture to BIAN](manuscript/part-05-bian-case-study/50-legacy-to-bian-migration.md)
-- [51. BIAN Adoption Roadmap](manuscript/part-05-bian-case-study/51-bian-adoption-roadmap.md)
-- [52. BIAN Governance Model](manuscript/part-05-bian-case-study/52-bian-governance.md)
-- [53. Measuring BIAN Implementation Success](manuscript/part-05-bian-case-study/53-bian-success-measures.md)
-- [54. Common BIAN Implementation Mistakes](manuscript/part-05-bian-case-study/54-bian-common-mistakes.md)
-- [55. BIAN Implementation Review Checklist](manuscript/part-05-bian-case-study/55-bian-review-checklist.md)
-- [56. BIAN Quick Reference](manuscript/part-05-bian-case-study/56-bian-quick-reference.md)
+- [37. Customer, Party, CRM, Sales, Onboarding, KYC and Customer Servicing](manuscript/part-05-bian-case-study/37-customer-onboarding-scenario.md)
+- [38. Deposits, Accounts, Term Deposits, Interest, Fees, Statements and Correspondence](manuscript/part-05-bian-case-study/38-current-account-opening-scenario.md)
+- [39. Lending and Credit: Consumer, Mortgage, SME and Corporate](manuscript/part-05-bian-case-study/39-cross-border-payment-scenario.md)
+- [40. Collateral, Limits, Exposure, Collections, Recovery and the Credit-Risk Lifecycle](manuscript/part-05-bian-case-study/40-consumer-loan-origination-scenario.md)
+- [41. Payments, Clearing, Settlement, Correspondent Banking and Foreign Exchange](manuscript/part-05-bian-case-study/41-card-fraud-investigation-scenario.md)
+- [42. Cards and Merchant Acquiring](manuscript/part-05-bian-case-study/42-corporate-cash-management-scenario.md)
+- [43. Corporate Banking, Cash Management and Trade Finance](manuscript/part-05-bian-case-study/43-mapping-bian-to-applications.md)
+- [44. Wealth, Investments, Securities, Custody and Asset Servicing](manuscript/part-05-bian-case-study/44-bian-aligned-software-services.md)
+- [45. Treasury, Markets, Funding, Liquidity, ALM and Capital](manuscript/part-05-bian-case-study/45-bian-semantic-apis.md)
+- [46. Finance, Accounting, General Ledger, Reconciliation, Tax and Reporting](manuscript/part-05-bian-case-study/46-bian-events.md)
+- [47. Risk, Compliance, Financial Crime, Fraud, Audit and Legal](manuscript/part-05-bian-case-study/47-bian-data-architecture.md)
+- [48. Channels, Communications, Documents, Workflow, Case Management and Shared Services](manuscript/part-05-bian-case-study/48-bian-security-control-architecture.md)
+- [49. BIAN Mapping Method and Full-Stack Traceability](manuscript/part-05-bian-case-study/49-bian-deployment-operations.md)
+- [50. BIAN-Aligned Application, Software-Service and Team Boundaries](manuscript/part-05-bian-case-study/50-legacy-to-bian-migration.md)
+- [51. APIs, Events, Commands, Batch, Files, Workflow and External Networks](manuscript/part-05-bian-case-study/51-bian-adoption-roadmap.md)
+- [52. Deployment, Security, Resilience, Observability and Operations](manuscript/part-05-bian-case-study/52-bian-governance.md)
+- [53. Legacy Modernisation, Data Migration and Transition Architecture](manuscript/part-05-bian-case-study/53-bian-success-measures.md)
+- [54. Governance, Ownership and the Architecture Repository](manuscript/part-05-bian-case-study/54-bian-common-mistakes.md)
+- [55. Measures, Quality Gates and the Full-Bank Coverage Audit](manuscript/part-05-bian-case-study/55-bian-review-checklist.md)
+- [56. Integrated End-to-End Scenarios and Practitioner Reference](manuscript/part-05-bian-case-study/56-bian-quick-reference.md)
 
 ## Part VI: Practical Architecture Reference Guide
 
@@ -164,7 +164,7 @@ A fictional full-service bank used to connect strategy, capabilities, business p
 - Appendix D: ArchiMate Quick Reference
 - Appendix E: C4 Quick Reference
 - Appendix F: Data Modelling Quick Reference
-- Appendix G: BIAN Quick Reference
+- Appendix G: Integrated End-to-End Scenarios and Practitioner Reference
 - Appendix H: Glossary and Source Notes
 
 ## Detailed planning authority
@@ -1204,7 +1204,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 37. Practical Scenario 1: Customer Onboarding
+#### 37. Customer, Party, CRM, Sales, Onboarding, KYC and Customer Servicing
 
 - Manuscript file: `manuscript/part-05-bian-case-study/37-customer-onboarding-scenario.md`
 - Scope: Model onboarding scope, actors, channels, KYC, AML, customer data, identity checks, exceptions, Service Domain interactions and controls.
@@ -1235,7 +1235,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 38. Practical Scenario 2: Open a Current Account
+#### 38. Deposits, Accounts, Term Deposits, Interest, Fees, Statements and Correspondence
 
 - Manuscript file: `manuscript/part-05-bian-case-study/38-current-account-opening-scenario.md`
 - Scope: Model account opening, eligibility, product selection, party verification, account fulfilment, data creation, notifications and operational handover.
@@ -1265,7 +1265,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 39. Practical Scenario 3: Execute a Cross-Border Payment
+#### 39. Lending and Credit: Consumer, Mortgage, SME and Corporate
 
 - Manuscript file: `manuscript/part-05-bian-case-study/39-cross-border-payment-scenario.md`
 - Scope: Model payment initiation, validation, sanctions screening, pricing, routing, account posting, messaging, exceptions and reconciliation.
@@ -1294,7 +1294,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 40. Practical Scenario 4: Consumer Loan Origination
+#### 40. Collateral, Limits, Exposure, Collections, Recovery and the Credit-Risk Lifecycle
 
 - Manuscript file: `manuscript/part-05-bian-case-study/40-consumer-loan-origination-scenario.md`
 - Scope: Model application capture, affordability, credit decisioning, offer, documentation, fulfilment, disbursement and risk controls.
@@ -1323,7 +1323,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 41. Practical Scenario 5: Card Fraud Investigation
+#### 41. Payments, Clearing, Settlement, Correspondent Banking and Foreign Exchange
 
 - Manuscript file: `manuscript/part-05-bian-case-study/41-card-fraud-investigation-scenario.md`
 - Scope: Model alert intake, case triage, customer contact, transaction review, dispute handling, card controls, chargeback and closure.
@@ -1353,7 +1353,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 42. Practical Scenario 6: Corporate Cash Management
+#### 42. Cards and Merchant Acquiring
 
 - Manuscript file: `manuscript/part-05-bian-case-study/42-corporate-cash-management-scenario.md`
 - Scope: Model corporate onboarding, account structures, liquidity services, payments, reporting, approvals, integration and service operations.
@@ -1382,7 +1382,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 43. Mapping BIAN to Applications
+#### 43. Corporate Banking, Cash Management and Trade Finance
 
 - Manuscript file: `manuscript/part-05-bian-case-study/43-mapping-bian-to-applications.md`
 - Scope: Explain mapping from Service Domains and business capabilities to application components, packages, ownership and legacy constraints.
@@ -1409,7 +1409,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 44. Designing BIAN-Aligned Software Services
+#### 44. Wealth, Investments, Securities, Custody and Asset Servicing
 
 - Manuscript file: `manuscript/part-05-bian-case-study/44-bian-aligned-software-services.md`
 - Scope: Explain service boundaries, API responsibilities, events, transactions, consistency, ownership, security and why logical BIAN boundaries do not mandate physical microservices.
@@ -1437,7 +1437,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 45. Implementing BIAN Semantic APIs
+#### 45. Treasury, Markets, Funding, Liquidity, ALM and Capital
 
 - Manuscript file: `manuscript/part-05-bian-case-study/45-bian-semantic-apis.md`
 - Scope: Cover semantic API purpose, resource and operation design, adaptation, governance, versioning, service contracts and consumer usability.
@@ -1470,7 +1470,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 46. Implementing BIAN with Events
+#### 46. Finance, Accounting, General Ledger, Reconciliation, Tax and Reporting
 
 - Manuscript file: `manuscript/part-05-bian-case-study/46-bian-events.md`
 - Scope: Cover business events, integration events, event schemas, producers, consumers, topics, ordering, idempotency, privacy and governance.
@@ -1501,7 +1501,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 47. BIAN Information and Data Architecture
+#### 47. Risk, Compliance, Financial Crime, Fraud, Audit and Legal
 
 - Manuscript file: `manuscript/part-05-bian-case-study/47-bian-data-architecture.md`
 - Scope: Cover Business Object Model usage, canonical information, logical data, ownership, lineage, data quality, reference data and physical implementation choices.
@@ -1537,7 +1537,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 48. BIAN Security and Control Architecture
+#### 48. Channels, Communications, Documents, Workflow, Case Management and Shared Services
 
 - Manuscript file: `manuscript/part-05-bian-case-study/48-bian-security-control-architecture.md`
 - Scope: Cover trust boundaries, access control, customer data protection, financial crime controls, audit, segregation of duties and operational resilience.
@@ -1570,7 +1570,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 49. BIAN Deployment and Operational Architecture
+#### 49. BIAN Mapping Method and Full-Stack Traceability
 
 - Manuscript file: `manuscript/part-05-bian-case-study/49-bian-deployment-operations.md`
 - Scope: Cover deployment models, environments, monitoring, resilience, incident support, service ownership and operational runbooks.
@@ -1601,7 +1601,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 50. Migrating from Legacy Architecture to BIAN
+#### 50. BIAN-Aligned Application, Software-Service and Team Boundaries
 
 - Manuscript file: `manuscript/part-05-bian-case-study/50-legacy-to-bian-migration.md`
 - Scope: Cover current-state assessment, target decomposition, strangler patterns, coexistence, data migration, service transition and risk management.
@@ -1632,7 +1632,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 51. BIAN Adoption Roadmap
+#### 51. APIs, Events, Commands, Batch, Files, Workflow and External Networks
 
 - Manuscript file: `manuscript/part-05-bian-case-study/51-bian-adoption-roadmap.md`
 - Scope: Cover adoption phases, capability sequencing, pilot selection, governance setup, training, tooling and measurable outcomes.
@@ -1658,7 +1658,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 52. BIAN Governance Model
+#### 52. Deployment, Security, Resilience, Observability and Operations
 
 - Manuscript file: `manuscript/part-05-bian-case-study/52-bian-governance.md`
 - Scope: Cover decision rights, reference model stewardship, semantic API governance, architecture review, change control and exception handling.
@@ -1688,7 +1688,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 53. Measuring BIAN Implementation Success
+#### 53. Legacy Modernisation, Data Migration and Transition Architecture
 
 - Manuscript file: `manuscript/part-05-bian-case-study/53-bian-success-measures.md`
 - Scope: Cover metrics for business outcomes, reuse, integration quality, delivery speed, consistency, risk reduction and operating health.
@@ -1713,7 +1713,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 54. Common BIAN Implementation Mistakes
+#### 54. Governance, Ownership and the Architecture Repository
 
 - Manuscript file: `manuscript/part-05-bian-case-study/54-bian-common-mistakes.md`
 - Scope: Cover microservice over-mapping, ignoring business ownership, weak semantics, excessive technical focus, incomplete governance and poor migration sequencing.
@@ -1743,7 +1743,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 55. BIAN Implementation Review Checklist
+#### 55. Measures, Quality Gates and the Full-Bank Coverage Audit
 
 - Manuscript file: `manuscript/part-05-bian-case-study/55-bian-review-checklist.md`
 - Scope: Provide structured review questions for business, process, information, application, API, event, security, operational and migration views.
@@ -1771,7 +1771,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 56. BIAN Quick Reference
+#### 56. Integrated End-to-End Scenarios and Practitioner Reference
 
 - Manuscript file: `manuscript/part-05-bian-case-study/56-bian-quick-reference.md`
 - Scope: Provide compact definitions, mapping guidance, scenario patterns, artefact list, common cautions and review prompts.

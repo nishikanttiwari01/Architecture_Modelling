@@ -1,13 +1,13 @@
 ---
-title: "BIAN Information and Data Architecture"
+title: "Risk, Compliance, Financial Crime, Fraud, Audit and Legal"
 chapter: 47
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 47. BIAN Information and Data Architecture
+# 47. Risk, Compliance, Financial Crime, Fraud, Audit and Legal
 
 ## Chapter purpose
 

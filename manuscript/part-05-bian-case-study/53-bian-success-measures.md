@@ -1,13 +1,13 @@
 ---
-title: "Measuring BIAN Implementation Success"
+title: "Legacy Modernisation, Data Migration and Transition Architecture"
 chapter: 53
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 53. Measuring BIAN Implementation Success
+# 53. Legacy Modernisation, Data Migration and Transition Architecture
 
 ## Chapter purpose
 

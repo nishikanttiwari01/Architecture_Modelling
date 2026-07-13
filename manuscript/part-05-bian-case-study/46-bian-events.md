@@ -1,13 +1,13 @@
 ---
-title: "Implementing BIAN with Events"
+title: "Finance, Accounting, General Ledger, Reconciliation, Tax and Reporting"
 chapter: 46
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 46. Implementing BIAN with Events
+# 46. Finance, Accounting, General Ledger, Reconciliation, Tax and Reporting
 
 ## Chapter purpose
 

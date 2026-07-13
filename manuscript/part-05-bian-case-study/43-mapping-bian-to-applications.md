@@ -1,13 +1,13 @@
 ---
-title: "Mapping BIAN to Applications"
+title: "Corporate Banking, Cash Management and Trade Finance"
 chapter: 43
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 43. Mapping BIAN to Applications
+# 43. Corporate Banking, Cash Management and Trade Finance
 
 ## Chapter purpose
 

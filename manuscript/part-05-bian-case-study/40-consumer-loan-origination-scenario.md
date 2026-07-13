@@ -1,13 +1,13 @@
 ---
-title: "Practical Scenario 4: Consumer Loan Origination"
+title: "Collateral, Limits, Exposure, Collections, Recovery and the Credit-Risk Lifecycle"
 chapter: 40
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 40. Practical Scenario 4: Consumer Loan Origination
+# 40. Collateral, Limits, Exposure, Collections, Recovery and the Credit-Risk Lifecycle
 
 ## Chapter purpose
 

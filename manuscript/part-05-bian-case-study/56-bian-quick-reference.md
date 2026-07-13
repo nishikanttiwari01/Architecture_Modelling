@@ -1,13 +1,13 @@
 ---
-title: "BIAN Quick Reference"
+title: "Integrated End-to-End Scenarios and Practitioner Reference"
 chapter: 56
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 56. BIAN Quick Reference
+# 56. Integrated End-to-End Scenarios and Practitioner Reference
 
 ## Chapter purpose
 

@@ -1,13 +1,13 @@
 ---
-title: "Migrating from Legacy Architecture to BIAN"
+title: "BIAN-Aligned Application, Software-Service and Team Boundaries"
 chapter: 50
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 50. Migrating from Legacy Architecture to BIAN
+# 50. BIAN-Aligned Application, Software-Service and Team Boundaries
 
 ## Chapter purpose
 

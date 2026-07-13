@@ -1,13 +1,13 @@
 ---
-title: "Practical Scenario 6: Corporate Cash Management"
+title: "Cards and Merchant Acquiring"
 chapter: 42
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 42. Practical Scenario 6: Corporate Cash Management
+# 42. Cards and Merchant Acquiring
 
 ## Chapter purpose
 

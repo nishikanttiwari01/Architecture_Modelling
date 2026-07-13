@@ -1,13 +1,13 @@
 ---
-title: "Designing BIAN-Aligned Software Services"
+title: "Wealth, Investments, Securities, Custody and Asset Servicing"
 chapter: 44
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 44. Designing BIAN-Aligned Software Services
+# 44. Wealth, Investments, Securities, Custody and Asset Servicing
 
 ## Chapter purpose
 

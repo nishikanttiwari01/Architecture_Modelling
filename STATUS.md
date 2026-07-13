@@ -55,26 +55,26 @@
 | 34 | Full Bank Application and Integration Landscape | Drafting | 50 | 75 | 0 | 20 | Complete application/interface catalogues and figure specifications |
 | 35 | Enterprise Information and Data Architecture | Drafting | 70 | 80 | 0 | 20 | Complete data-domain and system-of-record catalogues |
 | 36 | Technology, Security, Resilience and Operating Architecture | Drafting | 70 | 80 | 0 | 20 | Complete critical-operation catalogue and figure specifications |
-| 37 | Practical Scenario 1: Customer Onboarding | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into customer and party domain architecture |
-| 38 | Practical Scenario 2: Open a Current Account | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into full deposit lifecycle |
-| 39 | Practical Scenario 3: Execute a Cross-Border Payment | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into full payments domain |
-| 40 | Practical Scenario 4: Consumer Loan Origination | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into lending and credit domain |
-| 41 | Practical Scenario 5: Card Fraud Investigation | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into cards and acquiring domain |
-| 42 | Practical Scenario 6: Corporate Cash Management | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into corporate banking and trade finance |
-| 43 | Mapping BIAN to Applications | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast as full application and integration landscape |
-| 44 | Designing BIAN-Aligned Software Services | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for wealth domain and migrate service guidance |
-| 45 | Implementing BIAN Semantic APIs | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for treasury and migrate API guidance |
-| 46 | Implementing BIAN with Events | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for finance and migrate event guidance |
-| 47 | BIAN Information and Data Architecture | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for enterprise risk and migrate data guidance |
-| 48 | BIAN Security and Control Architecture | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for channels and shared services |
-| 49 | BIAN Deployment and Operational Architecture | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast as BIAN mapping and traceability method |
-| 50 | Migrating from Legacy Architecture to BIAN | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for service and team boundaries; migrate legacy material |
-| 51 | BIAN Adoption Roadmap | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for all interaction styles and external networks |
-| 52 | BIAN Governance Model | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for deployment, resilience and operations |
-| 53 | Measuring BIAN Implementation Success | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for modernisation and transition architecture |
-| 54 | Common BIAN Implementation Mistakes | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for governance and repository ownership |
-| 55 | BIAN Implementation Review Checklist | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for measures, quality gates and coverage audit |
-| 56 | BIAN Quick Reference | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for integrated scenarios and practitioner reference |
+| 37 | Customer, Party, CRM, Sales, Onboarding, KYC and Customer Servicing | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into customer and party domain architecture |
+| 38 | Deposits, Accounts, Term Deposits, Interest, Fees, Statements and Correspondence | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into full deposit lifecycle |
+| 39 | Lending and Credit: Consumer, Mortgage, SME and Corporate | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into full payments domain |
+| 40 | Collateral, Limits, Exposure, Collections, Recovery and the Credit-Risk Lifecycle | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into lending and credit domain |
+| 41 | Payments, Clearing, Settlement, Correspondent Banking and Foreign Exchange | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into cards and acquiring domain |
+| 42 | Cards and Merchant Acquiring | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into corporate banking and trade finance |
+| 43 | Corporate Banking, Cash Management and Trade Finance | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast as full application and integration landscape |
+| 44 | Wealth, Investments, Securities, Custody and Asset Servicing | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for wealth domain and migrate service guidance |
+| 45 | Treasury, Markets, Funding, Liquidity, ALM and Capital | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for treasury and migrate API guidance |
+| 46 | Finance, Accounting, General Ledger, Reconciliation, Tax and Reporting | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for finance and migrate event guidance |
+| 47 | Risk, Compliance, Financial Crime, Fraud, Audit and Legal | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for enterprise risk and migrate data guidance |
+| 48 | Channels, Communications, Documents, Workflow, Case Management and Shared Services | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for channels and shared services |
+| 49 | BIAN Mapping Method and Full-Stack Traceability | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast as BIAN mapping and traceability method |
+| 50 | BIAN-Aligned Application, Software-Service and Team Boundaries | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for service and team boundaries; migrate legacy material |
+| 51 | APIs, Events, Commands, Batch, Files, Workflow and External Networks | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for all interaction styles and external networks |
+| 52 | Deployment, Security, Resilience, Observability and Operations | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for deployment, resilience and operations |
+| 53 | Legacy Modernisation, Data Migration and Transition Architecture | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for modernisation and transition architecture |
+| 54 | Governance, Ownership and the Architecture Repository | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for governance and repository ownership |
+| 55 | Measures, Quality Gates and the Full-Bank Coverage Audit | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for measures, quality gates and coverage audit |
+| 56 | Integrated End-to-End Scenarios and Practitioner Reference | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for integrated scenarios and practitioner reference |
 | 57 | How to Choose the Right Diagram | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 58 | Minimum Diagram Sets | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 59 | Diagram Quality Guidelines | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -102,7 +102,7 @@
 | D: ArchiMate Quick Reference | Planned | Build after Chapter 7 |
 | E: C4 Quick Reference | Planned | Build after Chapter 5 |
 | F: Data Modelling Quick Reference | Planned | Build after Chapter 8 |
-| G: BIAN Quick Reference | Planned | Build after Chapter 56 |
+| G: Integrated End-to-End Scenarios and Practitioner Reference | Planned | Build after Chapter 56 |
 | H: Glossary and Source Notes | In progress | Maintain throughout project |
 
 ## Current recommended next task

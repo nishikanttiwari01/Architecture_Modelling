@@ -4,6 +4,13 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-13
 
+### Corrected the Part V structure and began the governed bank foundation
+
+- Synchronised the final Chapter 37 to 56 titles across `BOOK_PLAN.md`, the table of contents, `STATUS.md` and chapter front matter while retaining existing filenames.
+- Kept Chapters 37 to 56 at `Revision Required`; no domain prose or diagram source was created.
+- Added initial governed Horizon Bank catalogues for profile, assumptions, business lines, legal entities, customer segments, products and value streams.
+- Recorded this as an incomplete Phase 1 checkpoint; detailed catalogues, matrices, validation and Chapter 31 to 36 corrections remain open.
+
 ### Audited and planned the Part V full-service bank redesign
 
 - Recorded the Phase 0 repository baseline and inspected all Chapters 31 to 56, controlled Horizon Bank files, Part V diagram artefacts, BIAN and banking research, and relevant registers.

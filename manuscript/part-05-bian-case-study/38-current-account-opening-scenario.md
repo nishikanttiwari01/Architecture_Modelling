@@ -1,13 +1,13 @@
 ---
-title: "Practical Scenario 2: Open a Current Account"
+title: "Deposits, Accounts, Term Deposits, Interest, Fees, Statements and Correspondence"
 chapter: 38
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 38. Practical Scenario 2: Open a Current Account
+# 38. Deposits, Accounts, Term Deposits, Interest, Fees, Statements and Correspondence
 
 ## Chapter purpose
 

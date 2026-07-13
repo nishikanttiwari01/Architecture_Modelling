@@ -1,13 +1,13 @@
 ---
-title: "BIAN Security and Control Architecture"
+title: "Channels, Communications, Documents, Workflow, Case Management and Shared Services"
 chapter: 48
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 48. BIAN Security and Control Architecture
+# 48. Channels, Communications, Documents, Workflow, Case Management and Shared Services
 
 ## Chapter purpose
 

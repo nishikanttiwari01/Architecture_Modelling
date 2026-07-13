@@ -1,13 +1,13 @@
 ---
-title: "Implementing BIAN Semantic APIs"
+title: "Treasury, Markets, Funding, Liquidity, ALM and Capital"
 chapter: 45
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 45. Implementing BIAN Semantic APIs
+# 45. Treasury, Markets, Funding, Liquidity, ALM and Capital
 
 ## Chapter purpose
 

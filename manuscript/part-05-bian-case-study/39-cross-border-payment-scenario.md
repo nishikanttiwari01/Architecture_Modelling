@@ -1,13 +1,13 @@
 ---
-title: "Practical Scenario 3: Execute a Cross-Border Payment"
+title: "Lending and Credit: Consumer, Mortgage, SME and Corporate"
 chapter: 39
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 39. Practical Scenario 3: Execute a Cross-Border Payment
+# 39. Lending and Credit: Consumer, Mortgage, SME and Corporate
 
 ## Chapter purpose
 

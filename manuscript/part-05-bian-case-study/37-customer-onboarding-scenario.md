@@ -1,13 +1,13 @@
 ---
-title: "Practical Scenario 1: Customer Onboarding"
+title: "Customer, Party, CRM, Sales, Onboarding, KYC and Customer Servicing"
 chapter: 37
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 37. Practical Scenario 1: Customer Onboarding
+# 37. Customer, Party, CRM, Sales, Onboarding, KYC and Customer Servicing
 
 ## Chapter purpose
 

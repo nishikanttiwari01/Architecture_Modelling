@@ -1,13 +1,13 @@
 ---
-title: "BIAN Deployment and Operational Architecture"
+title: "BIAN Mapping Method and Full-Stack Traceability"
 chapter: 49
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 49. BIAN Deployment and Operational Architecture
+# 49. BIAN Mapping Method and Full-Stack Traceability
 
 ## Chapter purpose
 

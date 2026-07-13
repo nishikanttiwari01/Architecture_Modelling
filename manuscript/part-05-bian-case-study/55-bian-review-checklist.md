@@ -1,13 +1,13 @@
 ---
-title: "BIAN Implementation Review Checklist"
+title: "Measures, Quality Gates and the Full-Bank Coverage Audit"
 chapter: 55
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 55. BIAN Implementation Review Checklist
+# 55. Measures, Quality Gates and the Full-Bank Coverage Audit
 
 ## Chapter purpose
 

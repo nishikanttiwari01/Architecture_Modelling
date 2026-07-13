@@ -1,13 +1,13 @@
 ---
-title: "BIAN Adoption Roadmap"
+title: "APIs, Events, Commands, Batch, Files, Workflow and External Networks"
 chapter: 51
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 51. BIAN Adoption Roadmap
+# 51. APIs, Events, Commands, Batch, Files, Workflow and External Networks
 
 ## Chapter purpose
 

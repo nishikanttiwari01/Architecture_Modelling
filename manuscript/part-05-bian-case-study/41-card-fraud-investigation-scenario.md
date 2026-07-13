@@ -1,13 +1,13 @@
 ---
-title: "Practical Scenario 5: Card Fraud Investigation"
+title: "Payments, Clearing, Settlement, Correspondent Banking and Foreign Exchange"
 chapter: 41
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Revision Required"
 author: "Nishikant Tiwari"
 last_updated: "2026-06-28"
 ---
 
-# 41. Practical Scenario 5: Card Fraud Investigation
+# 41. Payments, Clearing, Settlement, Correspondent Banking and Foreign Exchange
 
 ## Chapter purpose
 
