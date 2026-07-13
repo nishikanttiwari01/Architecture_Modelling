@@ -1,110 +1,181 @@
 ---
-title: "Modelling Bank Value Streams with BIAN"
+title: "Enterprise Information and Data Architecture"
 chapter: 35
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Drafting"
 author: "Nishikant Tiwari"
-last_updated: "2026-06-28"
+last_updated: "2026-07-13"
 ---
 
-# 35. Modelling Bank Value Streams with BIAN
+# 35. Enterprise Information and Data Architecture
 
 ## Chapter purpose
 
-Show how banking value streams connect customer outcomes to capabilities and Service Domains.
+Establish Horizon Bank's bank-wide information concepts, authority decisions and data movement before the domain chapters add detail.
 
 ## Reader outcomes
 
-By the end of this chapter, the reader should be able to:
-
-- Explain the chapter’s central concepts in plain language.
-- Identify the architecture question each model or technique answers.
-- Select an appropriate model for a realistic situation.
-- Recognise common misuse and review a model critically.
-- Apply the technique to both a simple example and Horizon Bank where relevant.
+By the end of this chapter, the reader should be able to distinguish conceptual, logical and physical models; identify major banking data domains; qualify a system-of-record decision; and trace data from an operational event to accounting, risk and reporting.
 
 ## Prerequisites and dependencies
 
-- Chapter 34: Complete Bank Business Process Architecture
+- Chapter 34: Full Bank Application and Integration Landscape
 
 ## Required models and artefacts
 
-- BIAN-aligned mixed model set
+- Data-domain catalogue, system-of-record matrix, lineage and reconciliation specifications
 
 ## Worked examples
 
-- Horizon Bank
+- Horizon Bank deposit-interest and cross-border-payment data lineage
 
 ## Source requirements
 
-- Identify official or primary sources for normative terminology.
-- Record framework or standard versions where relevant.
-- Create source notes under the matching `research/` directory.
-- Distinguish official definitions from the author’s practical recommendations.
+- Use official risk-data, provenance, security and BIAN sources; qualify all authority decisions as Horizon Bank decisions.
 
 ## Planned chapter structure
 
-## Capability versus value stream versus process
+The following sections establish bank-wide information authority and movement.
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+## Data is part of the bank's control system
 
-## Customer acquisition
+Bank data represents customers, rights, obligations, transactions, balances, positions, decisions and evidence. A data error can become a customer, financial, risk or regulatory error. Data architecture therefore covers meaning, authority, quality, lineage, access and retention, not merely storage technology.
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+## Model levels
 
-## Product acquisition
+A **conceptual model** identifies important business concepts and relationships. A **logical model** adds attributes, identifiers, cardinality and rules without committing to one storage product. A **physical model** describes implementation structures such as tables, messages, indexes or document layouts.
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+BIAN information concepts can inform semantic comparison. They do not replace Horizon Bank's bank-owned models or mandate a physical schema. [BIAN-SERVICE-LANDSCAPE-14]
 
-## Payment
+## Data domains
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+| Domain | Principal information |
+|---|---|
+| Party and customer | Persons, organisations, relationships, segments and due-diligence status |
+| Product and pricing | Product definitions, features, rates, fees and eligibility references |
+| Agreement and entitlement | Contracts, mandates, consent, access rights and authorised parties |
+| Account and balance | Accounts, status, balances, holds and interest conditions |
+| Transaction and payment | Instructions, transactions, clearing, settlement and status |
+| Credit | Applications, decisions, facilities, loans, schedules and exposure |
+| Collateral and limit | Assets, valuations, liens, limits and utilisation |
+| Card and merchant | Cards, tokens, authorisations, disputes, merchants and terminals |
+| Trade | Instruments, documents, obligations, guarantees and presentations |
+| Investment and securities | Instruments, orders, trades, portfolios, positions and corporate actions |
+| Treasury and market | Deals, curves, prices, funding, liquidity and risk positions |
+| Finance | Accounting events, journals, subledgers, general ledger and reports |
+| Risk and control | Assessments, limits, alerts, controls, evidence and issues |
+| Case, document and communication | Cases, tasks, records, documents, messages and retention |
+| Reference and organisation | Legal entities, branches, currencies, calendars, countries and roles |
 
-## Lending
+Domain ownership does not mean one database. It establishes accountable meaning and decision rights.
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+## Data categories
 
-## Customer servicing
+Master data identifies relatively stable subjects such as parties and products. Reference data provides controlled codes and classifications. Transactional data records activity. Event data communicates completed facts. Analytical data is organised for analysis. Document data preserves content and evidence.
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+The categories overlap. A customer document can be evidence in an operational case and a retained record, while extracted attributes may become governed customer data.
 
-## Risk management
+## Systems of record and authoritative sources
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+`System of record` is too vague unless qualified. Horizon Bank records authority by entity or attribute scope, legal entity, lifecycle state and time.
 
-## Mapping stages to BIAN Service Domains
+| Information | Candidate authority | Qualification |
+|---|---|---|
+| Party identity and relationships | Party and Customer Platform | Target authority; migration and local exceptions to be catalogued |
+| Product definition | Product Catalogue | Product terms and lifecycle, not account balances |
+| Deposit account and balance | Core Deposit System | Retained operational authority during transition |
+| Payment instruction and status | Payments Platform | Payment lifecycle; posting authority remains with account processor |
+| Screening alert and case | Financial Crime Platform | Control case and evidence, not customer master |
+| Accounting journal and ledger balance | Finance application family | Application names and subledger boundaries still to be catalogued |
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+A **source record** is where information originates for a particular event. A **golden record** is a governed consolidated view. A golden record can still preserve provenance and may not be authorised to overwrite every source attribute.
 
-## Chapter summary
+## Identifiers and cross-references
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+Legal entity, party, customer relationship, agreement, account and transaction identifiers answer different questions. Reusing one identifier for all concepts hides lifecycle differences. Cross-reference management links local identifiers without destroying provenance.
 
-## Completion checklist
+Identifiers need an issuer, scope, uniqueness rule, lifecycle, privacy classification and resolution method. Display values such as account numbers may require additional protection and are not always suitable internal keys.
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+## Ownership and stewardship
+
+The data owner is accountable for meaning, permitted use, quality and control. A steward maintains definitions and quality practices. A system owner operates technology. A producer creates data and a consumer uses it. These roles can be held by different teams.
+
+Every business term should have a definition, owner, synonyms, valid values, related terms and source. Near-duplicates such as `client`, `customer`, `party` and `account holder` must either be distinguished or reconciled.
+
+## Quality, lineage and reconciliation
+
+Quality rules address dimensions such as accuracy, completeness, validity, consistency, uniqueness and timeliness. A rule needs a population, threshold or class, measurement point, owner, action and evidence. Numerical thresholds require business approval.
+
+Lineage connects source event, transformations, stores and reports. BCBS 239 links governance, architecture, aggregation and risk reporting, and expects risk reports to be reconciled and validated. Its original scope is not assumed for every Horizon Bank entity, but its principles provide a strong architecture reference. [BCBS-239]
+
+Reconciliation compares two independently meaningful records or control totals. It identifies breaks; it does not by itself decide which side is correct. Repair needs ownership, ageing, materiality and evidence.
+
+## Operational and analytical data
+
+Operational stores support current processing and control. A warehouse, lakehouse or data mart supports historical analysis, aggregation and reporting. The Enterprise Data Platform does not become operational authority merely because it contains a copy.
+
+A governed data product is justified when it has a defined consumer outcome, owner, contract, quality measures, lineage and service expectations. Renaming an unmanaged extract as a data product adds no control.
+
+## Transaction-to-report lineage
+
+```text
+customer or market event
+→ operational validation and processing
+→ authoritative transaction state
+→ accounting event and subledger
+→ general ledger and reconciliation
+→ governed extraction and transformation
+→ management, risk or regulatory report
+→ approval and retained evidence
+```
+
+Late adjustments, rejected records and manual journals must remain visible in the lineage.
+
+## Protection, retention and use
+
+Horizon Bank classifies information as `Public`, `Internal`, `Confidential` or `Highly Restricted`. Classification influences access, encryption, masking, monitoring and sharing. Privacy and confidentiality are related but not identical.
+
+Retention depends on record purpose, legal hold, contract and applicable law. Data residency and cross-border transfer decisions are recorded by legal entity and dataset. Purpose limitation asks whether data is being used compatibly with the reason and authority under which it was collected.
+
+## Artificial intelligence and model data
+
+Models require governed training, validation and production data, reproducible lineage, access control, quality monitoring and accountable decisions. Generated or inferred attributes must not silently overwrite authoritative facts. Model outputs are decisions or evidence only where governance explicitly assigns that role.
+
+## Common mistakes
+
+- Naming a data platform as the system of record for everything.
+- Defining authority at whole-system level without attribute scope.
+- Confusing a golden record with the source of every fact.
+- Drawing lineage without adjustments, controls and report approval.
+- Treating reconciliation breaks as technology errors without business ownership.
+- Copying a reference information model into a physical schema.
 
 ## Key takeaways
 
-> Draft five to eight concise takeaways after the main text is stable.
+- Data domains govern meaning; applications provide implementations.
+- Authority must be qualified by information scope and lifecycle.
+- Identifiers require explicit ownership and cross-reference rules.
+- Quality, lineage and reconciliation are connected control mechanisms.
+- Operational authority remains distinct from analytical copies.
 
 ## Practical exercise
 
-> Add an exercise that requires the reader to select, interpret or create a model. Include a suggested answer or review criteria.
+For a cross-border payment, list party, agreement, account, payment, accounting and case data. Assign a candidate authority to each and identify two reconciliations. Mark all assumptions.
 
 ## Review checklist
 
-- [ ] The question answered by each model is explicit.
-- [ ] The audience and abstraction level are clear.
-- [ ] Formal terms are introduced after a plain-language explanation.
-- [ ] The simple and banking examples are consistent with repository example files.
-- [ ] Comparisons do not imply that one notation is universally superior.
-- [ ] Common mistakes are concrete and actionable.
-- [ ] Required sources and diagrams are registered.
-- [ ] Terminology, link and word-count checks pass.
+- [x] Major data domains and categories are defined.
+- [x] Authority, golden record and source record are distinguished.
+- [x] Lineage includes accounting, reconciliation and reporting.
+- [x] Protection, retention, residency and analytical use are covered.
+- [ ] The full system-of-record matrix and data-domain catalogue remain controlled deliverables.
+
+## References and further reading
+
+- [BIAN-SERVICE-LANDSCAPE-14]
+- [BCBS-239]
+- [W3C-PROV-DM-2013]
 
 ## Drafting notes
 
-- Target length: 2,000 to 4,000 words unless the chapter scope justifies more.
-- Keep this file as the canonical manuscript source for the chapter.
-- Do not mark this chapter `Approved` without explicit author approval.
+- Complete attribute-scope authority, ownership and critical-data-element examples before formal review.

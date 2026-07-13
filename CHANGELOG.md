@@ -2,6 +2,24 @@
 
 All notable repository and manuscript changes are recorded here. This is a project history, not a replacement for Git commits.
 
+## 2026-07-13
+
+### Audited and planned the Part V full-service bank redesign
+
+- Recorded the Phase 0 repository baseline and inspected all Chapters 31 to 56, controlled Horizon Bank files, Part V diagram artefacts, BIAN and banking research, and relevant registers.
+- Added the Part V current-state audit, full-domain gap matrix, old-to-new chapter migration map and phased redesign plan.
+- Changed Chapters 31 to 56 from `Planned` to `Revision Required` because their current outlines require structural redesign before drafting.
+- Proposed `DEC-028` to govern the redesign around controlled catalogues, a master coverage matrix and verified BIAN 14.0 mappings.
+- Added no sources or diagrams. Structural renames and diagram production remain deferred pending author decisions.
+
+### Drafted the redesigned Part V enterprise baseline
+
+- Replaced the Chapter 31 to 36 stubs with coherent drafts covering BIAN essentials, how a full-service bank works, enterprise business architecture, application and integration landscape, information and data architecture, and technology, security, resilience and operations.
+- Synchronized the six redesigned chapter titles in `BOOK_PLAN.md`, the table of contents and `STATUS.md`; retained existing filenames to avoid premature link churn.
+- Added official source notes for BIAN Service Landscape 14.0, BCBS 239 and the Basel operational-resilience principles, and registered them.
+- Added and registered six diagram specifications, one per chapter. All remain `Planned`, with source and export pending author approval.
+- Kept Chapters 31 to 36 at `Drafting`; controlled catalogues, exact BIAN object mappings, detailed matrices, additional sources and formal review remain open.
+
 ## 2026-07-11
 
 ### Completed Chapter 25 requirements analysis

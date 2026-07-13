@@ -44,12 +44,12 @@
 
 ## Part V: Practical BIAN Implementation for a Full-Service Bank
 
-- [31. Introduction to BIAN](../part-05-bian-case-study/31-introduction-to-bian.md)
-- [32. How BIAN Relates to Other Modelling Techniques](../part-05-bian-case-study/32-bian-and-modelling-techniques.md)
-- [33. Defining the Full Banking Operating Model](../part-05-bian-case-study/33-full-banking-operating-model.md)
-- [34. Complete Bank Business Process Architecture](../part-05-bian-case-study/34-bank-business-process-architecture.md)
-- [35. Modelling Bank Value Streams with BIAN](../part-05-bian-case-study/35-bank-value-streams.md)
-- [36. Creating BIAN-Aligned Business Scenarios](../part-05-bian-case-study/36-bian-business-scenarios.md)
+- [31. BIAN Essentials and the Case-Study Method](../part-05-bian-case-study/31-introduction-to-bian.md)
+- [32. How a Full-Service Bank Works](../part-05-bian-case-study/32-bian-and-modelling-techniques.md)
+- [33. Enterprise Business Architecture of Horizon Bank](../part-05-bian-case-study/33-full-banking-operating-model.md)
+- [34. Full Bank Application and Integration Landscape](../part-05-bian-case-study/34-bank-business-process-architecture.md)
+- [35. Enterprise Information and Data Architecture](../part-05-bian-case-study/35-bank-value-streams.md)
+- [36. Technology, Security, Resilience and Operating Architecture](../part-05-bian-case-study/36-bian-business-scenarios.md)
 - [37. Practical Scenario 1: Customer Onboarding](../part-05-bian-case-study/37-customer-onboarding-scenario.md)
 - [38. Practical Scenario 2: Open a Current Account](../part-05-bian-case-study/38-current-account-opening-scenario.md)
 - [39. Practical Scenario 3: Execute a Cross-Border Payment](../part-05-bian-case-study/39-cross-border-payment-scenario.md)

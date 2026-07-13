@@ -119,12 +119,12 @@ A fictional full-service bank used to connect strategy, capabilities, business p
 
 ## Part V: Practical BIAN Implementation for a Full-Service Bank
 
-- [31. Introduction to BIAN](manuscript/part-05-bian-case-study/31-introduction-to-bian.md)
-- [32. How BIAN Relates to Other Modelling Techniques](manuscript/part-05-bian-case-study/32-bian-and-modelling-techniques.md)
-- [33. Defining the Full Banking Operating Model](manuscript/part-05-bian-case-study/33-full-banking-operating-model.md)
-- [34. Complete Bank Business Process Architecture](manuscript/part-05-bian-case-study/34-bank-business-process-architecture.md)
-- [35. Modelling Bank Value Streams with BIAN](manuscript/part-05-bian-case-study/35-bank-value-streams.md)
-- [36. Creating BIAN-Aligned Business Scenarios](manuscript/part-05-bian-case-study/36-bian-business-scenarios.md)
+- [31. BIAN Essentials and the Case-Study Method](manuscript/part-05-bian-case-study/31-introduction-to-bian.md)
+- [32. How a Full-Service Bank Works](manuscript/part-05-bian-case-study/32-bian-and-modelling-techniques.md)
+- [33. Enterprise Business Architecture of Horizon Bank](manuscript/part-05-bian-case-study/33-full-banking-operating-model.md)
+- [34. Full Bank Application and Integration Landscape](manuscript/part-05-bian-case-study/34-bank-business-process-architecture.md)
+- [35. Enterprise Information and Data Architecture](manuscript/part-05-bian-case-study/35-bank-value-streams.md)
+- [36. Technology, Security, Resilience and Operating Architecture](manuscript/part-05-bian-case-study/36-bian-business-scenarios.md)
 - [37. Practical Scenario 1: Customer Onboarding](manuscript/part-05-bian-case-study/37-customer-onboarding-scenario.md)
 - [38. Practical Scenario 2: Open a Current Account](manuscript/part-05-bian-case-study/38-current-account-opening-scenario.md)
 - [39. Practical Scenario 3: Execute a Cross-Border Payment](manuscript/part-05-bian-case-study/39-cross-border-payment-scenario.md)
@@ -1021,7 +1021,7 @@ The subsection structure below records the approved 63-chapter plan currently re
 
 ### Part V: Practical BIAN Implementation for a Full-Service Bank
 
-#### 31. Introduction to BIAN
+#### 31. BIAN Essentials and the Case-Study Method
 
 - Manuscript file: `manuscript/part-05-bian-case-study/31-introduction-to-bian.md`
 - Scope: Explain BIAN as a banking reference architecture and semantic standard, not a product, and separate reference concepts from Horizon Bank implementation choices.
@@ -1050,7 +1050,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 32. How BIAN Relates to Other Modelling Techniques
+#### 32. How a Full-Service Bank Works
 
 - Manuscript file: `manuscript/part-05-bian-case-study/32-bian-and-modelling-techniques.md`
 - Scope: Map BIAN to capability, process, information, application, API, event and deployment views without reducing Service Domains to microservices.
@@ -1077,7 +1077,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 33. Defining the Full Banking Operating Model
+#### 33. Enterprise Business Architecture of Horizon Bank
 
 - Manuscript file: `manuscript/part-05-bian-case-study/33-full-banking-operating-model.md`
 - Scope: Establish Horizon Bank's operating model, major customer groups, channels, product families, operational capabilities and modelling boundaries.
@@ -1103,7 +1103,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 34. Complete Bank Business Process Architecture
+#### 34. Full Bank Application and Integration Landscape
 
 - Manuscript file: `manuscript/part-05-bian-case-study/34-bank-business-process-architecture.md`
 - Scope: Catalogue strategy, market, product, party, onboarding, origination, deposits, lending, payments, cards, corporate banking, trade finance, wealth, treasury, fraud, compliance, risk, reporting, finance, operations, collections, channels, HR, procurement, legal, audit, support and technology process families.
@@ -1148,7 +1148,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 35. Modelling Bank Value Streams with BIAN
+#### 35. Enterprise Information and Data Architecture
 
 - Manuscript file: `manuscript/part-05-bian-case-study/35-bank-value-streams.md`
 - Scope: Connect value streams to capabilities, Service Domains, customer outcomes, products, channels and process scenarios.
@@ -1175,7 +1175,7 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Review checklist
   - Drafting notes
 
-#### 36. Creating BIAN-Aligned Business Scenarios
+#### 36. Technology, Security, Resilience and Operating Architecture
 
 - Manuscript file: `manuscript/part-05-bian-case-study/36-bian-business-scenarios.md`
 - Scope: Explain business events, participating Service Domains, interaction paths, information exchanged, process complements and scenario review criteria.

@@ -304,3 +304,16 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Context:** Chapter 25 needs a beginner-readable lifecycle model that connects discovery evidence, requirements analysis, design and assessment without implying a one-pass waterfall. The author instructed Codex on 2026-07-11 to create the diagram without a separate approval pause.
 - **Decision:** Use `FIG-25-01` as an original PlantUML traceability teaching view. Show stable identifiers and labelled forward links from need to requirements, analysis models, design response, verification and evidence, plus feedback links for iterative refinement. Keep the figure at `Review` pending author decision.
 - **Consequences:** Readers receive one compact analysis thread; detailed SysML notation remains in Chapter 13; the source and exports are reproducible; author review at book-page width remains required.
+
+## DEC-028: Redesign Part V around a governed full-service bank model
+
+- **Status:** Proposed
+- **Date:** 2026-07-13
+- **Decision owner:** Author
+- **Context:** The current Chapters 31 to 56 are useful outlines but do not yet fulfil the reader promise of an integrated full-service bank architecture. The controlled Horizon Bank example covers only a small subset of the required domains, applications, data, accounting, controls and critical operations.
+- **Decision:** Redesign Part V using the Chapter 31 to 56 structure and controlled artefact model defined in `codex-master-instruction-part-v-full-service-bank-bian-redesign.md`. Treat governed Horizon Bank catalogues and the master coverage matrix as the source of truth. Use BIAN 14.0 as a verified reference and never infer a one-to-one Service Domain, microservice, application or team boundary.
+- **Alternatives considered:** Preserve the current scenario-led structure and add prose incrementally; draft Chapter 31 before building the bank baseline; treat diagrams or chapters as independent sources of truth.
+- **Reason:** A full-bank catalogue and traceability foundation is necessary to connect business, application, data, integration, accounting, control, security, operations and transformation consistently.
+- **Consequences:** Chapters 31 to 56 move to `Revision Required`. Bulk drafting waits for coherent research and catalogues. Structural titles, filename changes, architecture principles and every diagram specification remain subject to explicit author review or approval.
+- **Related chapters/files:** Chapters 31 to 56, `BOOK_PLAN.md`, `STATUS.md`, `examples/horizon-bank/`, `reviews/part-05/part-v-current-state-audit.md`, `reviews/part-05/part-v-full-domain-gap-matrix.md`, `reviews/part-05/part-v-redesign-plan.md`.
+- **Supersedes / superseded by:** Proposed; does not supersede earlier BIAN guardrails.

@@ -49,32 +49,32 @@
 | 28 | Architecture Review | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 29 | Operations and Support | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 30 | Change and Migration | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 31 | Introduction to BIAN | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 32 | How BIAN Relates to Other Modelling Techniques | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 33 | Defining the Full Banking Operating Model | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 34 | Complete Bank Business Process Architecture | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 35 | Modelling Bank Value Streams with BIAN | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 36 | Creating BIAN-Aligned Business Scenarios | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 37 | Practical Scenario 1: Customer Onboarding | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 38 | Practical Scenario 2: Open a Current Account | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 39 | Practical Scenario 3: Execute a Cross-Border Payment | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 40 | Practical Scenario 4: Consumer Loan Origination | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 41 | Practical Scenario 5: Card Fraud Investigation | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 42 | Practical Scenario 6: Corporate Cash Management | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 43 | Mapping BIAN to Applications | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 44 | Designing BIAN-Aligned Software Services | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 45 | Implementing BIAN Semantic APIs | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 46 | Implementing BIAN with Events | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 47 | BIAN Information and Data Architecture | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 48 | BIAN Security and Control Architecture | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 49 | BIAN Deployment and Operational Architecture | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 50 | Migrating from Legacy Architecture to BIAN | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 51 | BIAN Adoption Roadmap | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 52 | BIAN Governance Model | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 53 | Measuring BIAN Implementation Success | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 54 | Common BIAN Implementation Mistakes | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 55 | BIAN Implementation Review Checklist | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 56 | BIAN Quick Reference | Planned | 0 | 0 | 0 | 0 | 0 | — |
+| 31 | BIAN Essentials and the Case-Study Method | Drafting | 100 | 85 | 20 | 20 | 70 | Verify exact BIAN objects and approve `FIG-31-01` specification |
+| 32 | How a Full-Service Bank Works | Drafting | 70 | 80 | 0 | 20 | 60 | Complete banking-source review and enterprise figure specifications |
+| 33 | Enterprise Business Architecture of Horizon Bank | Drafting | 40 | 70 | 0 | 20 | Complete controlled Level 2 catalogues and matrices |
+| 34 | Full Bank Application and Integration Landscape | Drafting | 50 | 75 | 0 | 20 | Complete application/interface catalogues and figure specifications |
+| 35 | Enterprise Information and Data Architecture | Drafting | 70 | 80 | 0 | 20 | Complete data-domain and system-of-record catalogues |
+| 36 | Technology, Security, Resilience and Operating Architecture | Drafting | 70 | 80 | 0 | 20 | Complete critical-operation catalogue and figure specifications |
+| 37 | Practical Scenario 1: Customer Onboarding | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into customer and party domain architecture |
+| 38 | Practical Scenario 2: Open a Current Account | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into full deposit lifecycle |
+| 39 | Practical Scenario 3: Execute a Cross-Border Payment | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into full payments domain |
+| 40 | Practical Scenario 4: Consumer Loan Origination | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into lending and credit domain |
+| 41 | Practical Scenario 5: Card Fraud Investigation | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into cards and acquiring domain |
+| 42 | Practical Scenario 6: Corporate Cash Management | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into corporate banking and trade finance |
+| 43 | Mapping BIAN to Applications | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast as full application and integration landscape |
+| 44 | Designing BIAN-Aligned Software Services | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for wealth domain and migrate service guidance |
+| 45 | Implementing BIAN Semantic APIs | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for treasury and migrate API guidance |
+| 46 | Implementing BIAN with Events | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for finance and migrate event guidance |
+| 47 | BIAN Information and Data Architecture | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for enterprise risk and migrate data guidance |
+| 48 | BIAN Security and Control Architecture | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for channels and shared services |
+| 49 | BIAN Deployment and Operational Architecture | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast as BIAN mapping and traceability method |
+| 50 | Migrating from Legacy Architecture to BIAN | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for service and team boundaries; migrate legacy material |
+| 51 | BIAN Adoption Roadmap | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for all interaction styles and external networks |
+| 52 | BIAN Governance Model | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for deployment, resilience and operations |
+| 53 | Measuring BIAN Implementation Success | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for modernisation and transition architecture |
+| 54 | Common BIAN Implementation Mistakes | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for governance and repository ownership |
+| 55 | BIAN Implementation Review Checklist | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for measures, quality gates and coverage audit |
+| 56 | BIAN Quick Reference | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for integrated scenarios and practitioner reference |
 | 57 | How to Choose the Right Diagram | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 58 | Minimum Diagram Sets | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 59 | Diagram Quality Guidelines | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -119,4 +119,4 @@ Chapter 14, **Modelling Business Strategy and Capabilities**, remains `Revision 
 
 Chapter 13, **Other Useful Modelling Approaches**, remains `Ready for Author Approval` with final quality score 9.0. Its six figures remain at `Review`, with explicit author decisions still open for chapter and figure approval, native Draw.io graphical-open and export-fidelity comparison (`DEC-021`), and final book-page layout placement of wider landscape figures (`DEC-014`).
 
-Last updated: 2026-07-08 (Chapter 18 ready for author approval)
+Last updated: 2026-07-13 (Part V baseline audited; Chapters 31 to 56 require structural revision)

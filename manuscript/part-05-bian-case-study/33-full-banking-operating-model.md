@@ -1,106 +1,196 @@
 ---
-title: "Defining the Full Banking Operating Model"
+title: "Enterprise Business Architecture of Horizon Bank"
 chapter: 33
 part: "part-05-bian-case-study"
-status: "Planned"
+status: "Drafting"
 author: "Nishikant Tiwari"
-last_updated: "2026-06-28"
+last_updated: "2026-07-13"
 ---
 
-# 33. Defining the Full Banking Operating Model
+# 33. Enterprise Business Architecture of Horizon Bank
 
 ## Chapter purpose
 
-Model strategy, stakeholders, organisation, capabilities and the operating model of Horizon Bank.
+Establish the governed business architecture baseline that later domain chapters will refine.
 
 ## Reader outcomes
 
-By the end of this chapter, the reader should be able to:
-
-- Explain the chapter’s central concepts in plain language.
-- Identify the architecture question each model or technique answers.
-- Select an appropriate model for a realistic situation.
-- Recognise common misuse and review a model critically.
-- Apply the technique to both a simple example and Horizon Bank where relevant.
+By the end of this chapter, the reader should be able to distinguish stakeholder outcomes, value streams, capabilities, processes, products and organisation; navigate Horizon Bank's business coverage; and explain how ownership and candidate BIAN mappings are recorded.
 
 ## Prerequisites and dependencies
 
-- Chapter 32: How BIAN Relates to Other Modelling Techniques
+- Chapter 32: How a Full-Service Bank Works
 
 ## Required models and artefacts
 
-- BIAN-aligned mixed model set
+- Controlled value-stream, capability, process, product, organisation and ownership catalogues
 
 ## Worked examples
 
-- Horizon Bank
+- Horizon Bank transaction execution and customer-management architecture threads
 
 ## Source requirements
 
-- Identify official or primary sources for normative terminology.
-- Record framework or standard versions where relevant.
-- Create source notes under the matching `research/` directory.
-- Distinguish official definitions from the author’s practical recommendations.
+- Use official business-architecture and BIAN sources; identify Horizon Bank taxonomy as an author model.
 
 ## Planned chapter structure
 
-## Bank vision and objectives
+The following sections establish the enterprise business architecture before domain drill-downs.
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+## Scope and modelling levels
 
-## Stakeholder model
+This chapter covers the whole bank at catalogue level. It does not attempt to show every procedure on one diagram. Enterprise views establish coverage; domain chapters provide readable detail.
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+Four concepts must remain separate:
 
-## Organisation model
+- a **value stream** describes how value progresses towards a stakeholder outcome;
+- a **capability** describes an ability the bank needs;
+- a **process** describes ordered work triggered to produce an outcome;
+- an **organisation element** assigns people and accountability.
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+A capability may support several processes. A process may use several capabilities. Neither relationship proves a BIAN or application boundary.
 
-## Capability map
+## Stakeholder outcomes
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+| ID | Stakeholder | Desired outcome |
+|---|---|---|
+| OUT-01 | Customer | Access suitable, reliable and understandable financial services |
+| OUT-02 | Business customer | Control cash, financing and risk across authorised users and entities |
+| OUT-03 | Board and shareholders | Maintain a sustainable, controlled and transparent bank |
+| OUT-04 | Regulator and central bank | Receive reliable evidence that obligations and risks are managed |
+| OUT-05 | Employee | Perform accountable work with appropriate information and tools |
+| OUT-06 | Market and payment participants | Exchange obligations accurately and on time |
 
-## Capability heat map
+These are Horizon Bank modelling assumptions, not regulatory definitions.
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+## Value-stream portfolio
 
-## Operating model choices
+Horizon Bank uses the following Level 0 value streams:
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+| ID | Value stream | Starts with | Ends with |
+|---|---|---|---|
+| VS-01 | Establish and manage a customer relationship | Customer or bank interest | Relationship established, serviced or exited |
+| VS-02 | Design and manage a product | Identified need | Product retired with obligations resolved |
+| VS-03 | Acquire and service an account or facility | Customer need | Agreement closed or transferred |
+| VS-04 | Execute and settle a transaction | Valid instruction or event | Transaction settled, posted and communicated |
+| VS-05 | Provide and manage credit | Financing need | Exposure repaid, restructured or recovered |
+| VS-06 | Safeguard and service assets | Asset received or acquired | Asset transferred, realised or returned |
+| VS-07 | Manage financial position and resources | Position or forecast changes | Funding, liquidity, capital and risk within decisions |
+| VS-08 | Detect, decide and resolve an exception | Alert, failure, dispute or complaint | Resolved case with evidence and learning |
+| VS-09 | Record, reconcile and report | Business or accounting event | Approved internal or external report |
 
-## Governance and ownership
+## Level 1 capability map
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+The enterprise capability map groups abilities without implying departments or applications.
 
-## Chapter summary
+| Category | Level 1 capabilities |
+|---|---|
+| Direction | Strategy Management; Governance; Portfolio Management; Product Management; Pricing Management |
+| Customer | Party Management; Customer Onboarding; Relationship Management; Sales Management; Customer Servicing |
+| Channels | Digital Servicing; Branch Servicing; Contact Centre Servicing; Partner Channel Management; Communication Management |
+| Deposits | Account Opening; Deposit Processing; Account Servicing; Interest and Fee Management; Statement Management |
+| Credit | Credit Assessment; Lending; Limit Management; Collateral Management; Collections and Recovery |
+| Payments | Payment Initiation; Payment Execution; Clearing and Settlement; Correspondent Banking; Payment Investigation |
+| Cards | Card Issuing; Card Authorisation; Card Clearing; Dispute Management; Merchant Acquiring |
+| Corporate and trade | Cash Management; Trade Finance; Corporate Lending; Mandate Management |
+| Wealth and securities | Advice; Portfolio Management; Order Management; Custody; Asset Servicing |
+| Treasury | Funding; Liquidity Management; Asset and Liability Management; Markets; Capital Management |
+| Finance | Accounting; Reconciliation; Financial Control; Tax; Management and Regulatory Reporting |
+| Risk and assurance | Enterprise Risk; Financial Crime; Fraud Management; Compliance; Legal; Internal Audit |
+| Shared enterprise | Data Governance; Identity and Access; Document and Case Management; Technology Operations; Supplier Management; People Management |
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+Level 2 decomposition belongs in the controlled catalogue. A child capability is counted within its parent, while a contributing peer remains independently scoped.
 
-## Completion checklist
+## Process architecture
 
-> Draft this section. State the reader question, explain the concept, and connect it to the chapter purpose.
+Horizon Bank's Level 0 process groups are:
+
+1. Direct and govern the bank.
+2. Understand markets and manage products.
+3. Acquire and manage customers.
+4. Originate and service products.
+5. Execute, clear and settle transactions.
+6. Manage positions, funding, liquidity and capital.
+7. Manage risk, compliance and assurance.
+8. Record, reconcile and report.
+9. Operate technology and enterprise services.
+10. Manage change, incidents and resilience.
+
+Each Level 1 process record needs an identifier, trigger, outcome, owner, participants, input and output information, controls, exceptions, supporting capabilities, applications, candidate BIAN mappings and source.
+
+For example, `Acquire and manage customers` decomposes into prospect management, due diligence, relationship establishment, entitlement setup, periodic review, servicing and exit. A Level 3 onboarding process may use BPMN to show document repair, screening referral and rejection. That behaviour does not belong on the Level 0 landscape.
+
+## Products, services and operating-model variation
+
+The product catalogue records product family, customer segment, legal entity, lifecycle, owner, pricing authority, processor, authoritative agreement data, accounting treatment and controls. A current account sold to a retail customer and a corporate operating account may share deposit-processing capabilities while differing in mandates, channels, fees and servicing.
+
+Operating models may vary by segment, geography and legal entity. Group functions can provide standards and platforms; country entities can retain contractual and regulatory accountability; shared services can perform work; external providers can supply services. Every variation needs an explicit rationale and retained owner.
+
+## Organisation and decision rights
+
+Important owners include:
+
+- **capability owner:** maintains the ability and improvement roadmap;
+- **process owner:** owns end-to-end performance and controls;
+- **product owner:** owns proposition, terms and lifecycle;
+- **data owner:** is accountable for meaning, access, quality and use;
+- **control owner:** ensures a control is designed, operated and evidenced;
+- **application service owner:** owns service performance, support and lifecycle.
+
+One person may hold several roles, but the responsibilities should not be collapsed in the model.
+
+## Capability-to-process and BIAN relationships
+
+A capability-to-process matrix exposes missing support and unnecessary duplication. Candidate BIAN responsibilities are then mapped to the capability or process responsibility with a qualified many-to-many relationship. BIAN does not replace the process owner or capability owner.
+
+Example:
+
+| Capability | Process | Candidate BIAN mapping | Application | Status |
+|---|---|---|---|---|
+| Payment Initiation | Accept payment instruction | Requires 14.0 verification | Payments Platform | Proposed |
+| Financial Crime Screening | Screen payment | Requires 14.0 verification | Financial Crime Platform | Proposed |
+| Accounting | Post financial consequence | Requires 14.0 verification | General Ledger family, to catalogue | Proposed |
+
+The explicit `Requires 14.0 verification` value is safer than an invented name.
+
+## Maturity and pain-point heat maps
+
+Heat maps are decision aids, not facts without evidence. Horizon Bank uses a one-to-five illustrative score for business criticality, current effectiveness and change urgency. Every score needs a date, owner, evidence and comment. Colour is never the only carrier of meaning.
+
+The initial hypothesis is that party data, payment repair, reconciliation, data governance and event governance need improvement. This remains a hypothesis until catalogue evidence is reviewed.
+
+## Enterprise controls and measures
+
+Business architecture connects outcomes and processes to controls and measures. Useful measures include service completion, failure and repair rates, time to decision, manual intervention, reconciliation breaks, customer complaints and control exceptions. Measures must state population, calculation, owner, frequency and decision use.
+
+## Common mistakes
+
+- Calling a department, process step or application a capability.
+- Treating a value-stream stage as a detailed process.
+- Building separate maps with inconsistent names and no identifiers.
+- Assigning maturity colours without evidence or date.
+- Mapping BIAN names before defining the local responsibility.
 
 ## Key takeaways
 
-> Draft five to eight concise takeaways after the main text is stable.
+- Enterprise maps establish coverage; drill-downs establish readability.
+- Value streams, capabilities, processes, products and organisation answer different questions.
+- Ownership is part of architecture, not an administrative afterthought.
+- BIAN mappings are qualified references and need versioned evidence.
+- Controls and measures must connect to real outcomes and processes.
 
 ## Practical exercise
 
-> Add an exercise that requires the reader to select, interpret or create a model. Include a suggested answer or review criteria.
+Choose `Execute and settle a transaction`. Identify three supporting capabilities, two Level 1 processes, two owners and one control. Explain why none of these elements is automatically a Service Domain or application.
 
 ## Review checklist
 
-- [ ] The question answered by each model is explicit.
-- [ ] The audience and abstraction level are clear.
-- [ ] Formal terms are introduced after a plain-language explanation.
-- [ ] The simple and banking examples are consistent with repository example files.
-- [ ] Comparisons do not imply that one notation is universally superior.
-- [ ] Common mistakes are concrete and actionable.
-- [ ] Required sources and diagrams are registered.
-- [ ] Terminology, link and word-count checks pass.
+- [x] Whole-bank value streams, Level 1 capabilities and Level 0 processes are represented.
+- [x] Ownership roles and operating-model variations are explicit.
+- [x] Candidate BIAN mappings are not asserted without verification.
+- [ ] Complete Level 2 catalogues and matrices remain Phase 1 controlled-artefact work.
+- [ ] Figure specifications require author approval before source creation.
 
 ## Drafting notes
 
-- Target length: 2,000 to 4,000 words unless the chapter scope justifies more.
-- Keep this file as the canonical manuscript source for the chapter.
-- Do not mark this chapter `Approved` without explicit author approval.
+- Complete Level 2 catalogues, capability-to-process matrix and explicit heat-map evidence before review.
