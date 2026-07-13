@@ -11,7 +11,7 @@ All notable repository and manuscript changes are recorded here. This is a proje
 - Added product hierarchy fields and separated deposit/account servicing from the complete credit lifecycle through `DEC-029`.
 - Replaced duplicate README lists with a governed catalogue index and introduced controlled vocabularies.
 - Added baseline process, organisation, data-domain, system-of-record, accounting-event, control, critical-operation, BIAN-mapping, scenario and coverage artefacts.
-- Added a test-driven Horizon Bank catalogue validator for identifiers, references, owners, definitions, controlled values, orphans and conflicting parents.
+- Added a test-driven Horizon Bank catalogue validator for identifiers, references, owners, definitions, controlled values, orphans and conflicting parents, including reference and status validation for the machine-readable coverage matrix.
 - Updated only the structural modification date in Chapters 37 to 56; their prose and detailed outlines remain unchanged.
 
 ### Corrected the Part V structure and began the governed bank foundation

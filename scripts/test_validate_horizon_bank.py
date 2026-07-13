@@ -28,6 +28,10 @@ class HorizonBankValidationTests(unittest.TestCase):
                 "| HB-VS-01 | Orphan | no governed relationship | Owner | Group | Current | |\n",
                 encoding="utf-8",
             )
+            (root / "coverage-matrix.csv").write_text(
+                "coverage_id,product,status\nHB-COV-001,HB-PRD-88,Proposed\n",
+                encoding="utf-8",
+            )
             errors = validate_catalogues(root)
             joined = "\n".join(errors)
             self.assertIn("duplicate ID", joined)
@@ -40,6 +44,7 @@ class HorizonBankValidationTests(unittest.TestCase):
             self.assertIn("conflicting parent", joined)
             self.assertIn("orphan value stream", joined)
             self.assertIn("orphan product", joined)
+            self.assertIn("coverage-matrix.csv:HB-COV-001: unknown reference HB-PRD-88", joined)
 
 
 if __name__ == "__main__":

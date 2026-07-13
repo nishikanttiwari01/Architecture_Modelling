@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import re
 import sys
+import csv
 from pathlib import Path
 
 ID_PATTERN = re.compile(r"^HB-[A-Z]+-[0-9]{2,3}$")
@@ -79,6 +80,28 @@ def validate_catalogues(root: Path) -> list[str]:
         for reference in REFERENCE_PATTERN.findall(searchable):
             if reference not in ids:
                 errors.append(f"{path.name}:{identifier}: unknown reference {reference}")
+
+    coverage_path = root / "coverage-matrix.csv"
+    if coverage_path.exists():
+        coverage_ids: set[str] = set()
+        with coverage_path.open(encoding="utf-8-sig", newline="") as handle:
+            for row in csv.DictReader(handle):
+                identifier = row.get("coverage_id", "").strip()
+                label = f"coverage-matrix.csv:{identifier or '<blank>'}"
+                if identifier in coverage_ids:
+                    errors.append(f"{label}: duplicate ID")
+                coverage_ids.add(identifier)
+                if not re.fullmatch(r"HB-COV-[0-9]{3}", identifier):
+                    errors.append(f"{label}: malformed ID")
+                status = row.get("status", "").strip()
+                if status and status not in vocab.get("lifecycle_status", set()):
+                    errors.append(f"{label}: invalid status {status}")
+                for key, value in row.items():
+                    if key == "coverage_id" or not value:
+                        continue
+                    for reference in REFERENCE_PATTERN.findall(value):
+                        if reference not in ids:
+                            errors.append(f"{label}: unknown reference {reference}")
     return sorted(set(errors))
 
 
