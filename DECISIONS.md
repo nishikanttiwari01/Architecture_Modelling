@@ -317,3 +317,14 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Consequences:** Chapters 31 to 56 move to `Revision Required`. Bulk drafting waits for coherent research and catalogues. Structural titles, filename changes, architecture principles and every diagram specification remain subject to explicit author review or approval.
 - **Related chapters/files:** Chapters 31 to 56, `BOOK_PLAN.md`, `STATUS.md`, `examples/horizon-bank/`, `reviews/part-05/part-v-current-state-audit.md`, `reviews/part-05/part-v-full-domain-gap-matrix.md`, `reviews/part-05/part-v-redesign-plan.md`.
 - **Supersedes / superseded by:** Proposed; does not supersede earlier BIAN guardrails.
+
+## DEC-029: Separate deposit servicing from the complete credit lifecycle
+
+- **Status:** Approved
+- **Date:** 2026-07-13
+- **Decision owner:** Author
+- **Context:** `HB-VS-03 Acquire and Service Facility` overlapped with `HB-VS-05 Provide and Manage Credit`, and the word `Facility` could incorrectly place deposits and credit in one lifecycle.
+- **Decision:** Define `HB-VS-03` as `Acquire and Service Deposit or Account`, covering non-credit deposit and account agreements. Define `HB-VS-05` as `Provide and Manage Credit`, covering origination, servicing, repayment, restructuring and recovery of credit exposure.
+- **Consequences:** Deposit products map to `HB-VS-03`; credit products map to `HB-VS-05`. Transaction execution remains in `HB-VS-04`. Cross-stream relationships must use full stable IDs.
+- **Related chapters/files:** Chapters 33, 38, 39 and 40; `examples/horizon-bank/products.md`; `examples/horizon-bank/value-streams.md`.
+- **Supersedes / superseded by:** Supersedes the overlapping value-stream wording introduced in commit `adb2440`.

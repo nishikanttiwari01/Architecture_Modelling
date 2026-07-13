@@ -4,7 +4,7 @@ chapter: 48
 part: "part-05-bian-case-study"
 status: "Revision Required"
 author: "Nishikant Tiwari"
-last_updated: "2026-06-28"
+last_updated: "2026-07-13"
 ---
 
 # 48. Channels, Communications, Documents, Workflow, Case Management and Shared Services

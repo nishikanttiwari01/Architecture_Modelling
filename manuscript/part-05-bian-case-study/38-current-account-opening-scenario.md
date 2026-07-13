@@ -4,7 +4,7 @@ chapter: 38
 part: "part-05-bian-case-study"
 status: "Revision Required"
 author: "Nishikant Tiwari"
-last_updated: "2026-06-28"
+last_updated: "2026-07-13"
 ---
 
 # 38. Deposits, Accounts, Term Deposits, Interest, Fees, Statements and Correspondence

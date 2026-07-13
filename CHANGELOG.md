@@ -4,6 +4,16 @@ All notable repository and manuscript changes are recorded here. This is a proje
 
 ## 2026-07-13
 
+### Corrected the Phase 1 checkpoint and expanded governed taxonomy
+
+- Corrected shifted Chapter 39 to 43 next actions and clarified the Part V status note.
+- Replaced abbreviated and ranged catalogue references with explicit controlled IDs.
+- Added product hierarchy fields and separated deposit/account servicing from the complete credit lifecycle through `DEC-029`.
+- Replaced duplicate README lists with a governed catalogue index and introduced controlled vocabularies.
+- Added baseline process, organisation, data-domain, system-of-record, accounting-event, control, critical-operation, BIAN-mapping, scenario and coverage artefacts.
+- Added a test-driven Horizon Bank catalogue validator for identifiers, references, owners, definitions, controlled values, orphans and conflicting parents.
+- Updated only the structural modification date in Chapters 37 to 56; their prose and detailed outlines remain unchanged.
+
 ### Corrected the Part V structure and began the governed bank foundation
 
 - Synchronised the final Chapter 37 to 56 titles across `BOOK_PLAN.md`, the table of contents, `STATUS.md` and chapter front matter while retaining existing filenames.

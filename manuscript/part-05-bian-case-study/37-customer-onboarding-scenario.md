@@ -4,7 +4,7 @@ chapter: 37
 part: "part-05-bian-case-study"
 status: "Revision Required"
 author: "Nishikant Tiwari"
-last_updated: "2026-06-28"
+last_updated: "2026-07-13"
 ---
 
 # 37. Customer, Party, CRM, Sales, Onboarding, KYC and Customer Servicing

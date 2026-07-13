@@ -57,11 +57,11 @@
 | 36 | Technology, Security, Resilience and Operating Architecture | Drafting | 70 | 80 | 0 | 20 | Complete critical-operation catalogue and figure specifications |
 | 37 | Customer, Party, CRM, Sales, Onboarding, KYC and Customer Servicing | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into customer and party domain architecture |
 | 38 | Deposits, Accounts, Term Deposits, Interest, Fees, Statements and Correspondence | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into full deposit lifecycle |
-| 39 | Lending and Credit: Consumer, Mortgage, SME and Corporate | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into full payments domain |
-| 40 | Collateral, Limits, Exposure, Collections, Recovery and the Credit-Risk Lifecycle | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into lending and credit domain |
-| 41 | Payments, Clearing, Settlement, Correspondent Banking and Foreign Exchange | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into cards and acquiring domain |
-| 42 | Cards and Merchant Acquiring | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into corporate banking and trade finance |
-| 43 | Corporate Banking, Cash Management and Trade Finance | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast as full application and integration landscape |
+| 39 | Lending and Credit: Consumer, Mortgage, SME and Corporate | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into full lending and credit domain |
+| 40 | Collateral, Limits, Exposure, Collections, Recovery and the Credit-Risk Lifecycle | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into collateral, limits, exposure, collections, recovery and credit-risk lifecycle |
+| 41 | Payments, Clearing, Settlement, Correspondent Banking and Foreign Exchange | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into payments, clearing, settlement, correspondent banking and FX |
+| 42 | Cards and Merchant Acquiring | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into cards issuing, processing and merchant acquiring |
+| 43 | Corporate Banking, Cash Management and Trade Finance | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into corporate banking, cash management and trade finance |
 | 44 | Wealth, Investments, Securities, Custody and Asset Servicing | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for wealth domain and migrate service guidance |
 | 45 | Treasury, Markets, Funding, Liquidity, ALM and Capital | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for treasury and migrate API guidance |
 | 46 | Finance, Accounting, General Ledger, Reconciliation, Tax and Reporting | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for finance and migrate event guidance |
@@ -119,4 +119,4 @@ Chapter 14, **Modelling Business Strategy and Capabilities**, remains `Revision 
 
 Chapter 13, **Other Useful Modelling Approaches**, remains `Ready for Author Approval` with final quality score 9.0. Its six figures remain at `Review`, with explicit author decisions still open for chapter and figure approval, native Draw.io graphical-open and export-fidelity comparison (`DEC-021`), and final book-page layout placement of wider landscape figures (`DEC-014`).
 
-Last updated: 2026-07-13 (Part V baseline audited; Chapters 31 to 56 require structural revision)
+Last updated: 2026-07-13 (Chapters 31 to 36 are Drafting and require catalogue-backed completion; Chapters 37 to 56 are Revision Required and await Phase 2 structural redesign)

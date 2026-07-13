@@ -1,0 +1,4 @@
+coverage_id,business_line,segment,product,value_stream,process,organisation,data_domain,accounting_event,control,critical_operation,bian_mapping,chapter,status,gap
+HB-COV-001,HB-BL-01,HB-SEG-01,HB-PRD-02,HB-VS-03,HB-PROC-02,HB-ORG-03,HB-DATA-03,HB-ACC-01,HB-CTRL-03,HB-CRIT-01,HB-BIAN-01,38,Proposed,Application and interface mappings pending
+HB-COV-002,HB-BL-01,HB-SEG-01,HB-PRD-07,HB-VS-04,HB-PROC-04,HB-ORG-03,HB-DATA-03,HB-ACC-03,HB-CTRL-02,HB-CRIT-02,HB-BIAN-02,41,Proposed,External network and settlement detail pending
+HB-COV-003,HB-BL-02,HB-SEG-02,HB-PRD-06,HB-VS-05,HB-PROC-03,HB-ORG-04,HB-DATA-04,HB-ACC-02,HB-CTRL-03,,HB-BIAN-03,39,Proposed,Collateral and recovery coverage pending

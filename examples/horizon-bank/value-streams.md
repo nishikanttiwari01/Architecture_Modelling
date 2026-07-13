@@ -1,13 +1,15 @@
 # Horizon Bank Value Streams
 
-| ID | Name | Trigger | Outcome | Owner | Scope | Status | Relationships/Gap |
-|---|---|---|---|---|---|---|---|
-| HB-VS-01 | Establish and Manage Relationship | Customer or bank interest | Governed relationship established, serviced or exited | Customer Director | Group | Current | Customer capabilities; detailed stages open |
-| HB-VS-02 | Design and Manage Product | Identified need | Product launched, changed and retired | Product Director | Group | Current | Product capabilities |
-| HB-VS-03 | Acquire and Service Facility | Customer need | Agreement serviced then closed | Product Operations Director | Group | Current | Deposit, credit, trade capabilities |
-| HB-VS-04 | Execute and Settle Transaction | Valid instruction/event | Settled, posted and communicated transaction | Operations Director | Group | Current | Payment, card, treasury capabilities |
-| HB-VS-05 | Provide and Manage Credit | Financing need | Exposure repaid, restructured or recovered | Chief Credit Officer | Group | Current | Credit, collateral, collection capabilities |
-| HB-VS-06 | Safeguard and Service Assets | Asset received | Asset serviced, transferred or returned | Securities Director | Group | Current | Wealth and custody capabilities |
-| HB-VS-07 | Manage Financial Position | Position changes | Funding, liquidity and capital managed | Treasurer | Group | Current | Treasury and finance capabilities |
-| HB-VS-08 | Resolve Exception | Alert/failure/dispute | Resolved case and evidence | Operations Director | Group | Current | Control and case capabilities |
-| HB-VS-09 | Record, Reconcile and Report | Business/accounting event | Approved report and evidence | Chief Financial Officer | Group | Current | Accounting and reporting capabilities |
+`HB-VS-03` covers deposits and non-credit account agreements. `HB-VS-05` covers the complete credit lifecycle from need through repayment, restructuring or recovery. Credit products must not use `HB-VS-03` merely because a loan is sometimes called a facility.
+
+| ID | Name | Definition | Trigger | Outcome | Owner | Scope | Status | Relationships | Source Type | Gap |
+|---|---|---|---|---|---|---|---|---|---|---|
+| HB-VS-01 | Establish and Manage Relationship | Establish, maintain and exit a governed customer relationship | Customer or bank interest | Relationship established, serviced or exited | Customer Director | Group | Current | HB-PRD-02; HB-PRD-05; HB-PRD-06 | Author model | Detailed stages open |
+| HB-VS-02 | Design and Manage Product | Govern a product from need through retirement | Identified need | Product launched, changed and retired | Product Director | Group | Current | HB-PRD-01; HB-PRD-04; HB-PRD-07; HB-PRD-08; HB-PRD-09; HB-PRD-10 | Author model | Portfolio decisions open |
+| HB-VS-03 | Acquire and Service Deposit or Account | Open, service and close a non-credit deposit or account agreement | Customer deposit or account need | Account agreement serviced and closed | Deposit Operations Director | Group | Current | HB-PRD-02; HB-PRD-03 | Author model | Account variants open |
+| HB-VS-04 | Execute and Settle Transaction | Validate, execute, settle, post and communicate a transaction | Valid instruction or event | Transaction settled, posted and communicated | Operations Director | Group | Current | HB-PRD-02; HB-PRD-07; HB-PRD-08; HB-PRD-09 | Author model | Rail stages open |
+| HB-VS-05 | Provide and Manage Credit | Originate, service and resolve credit exposure | Financing need | Exposure repaid, restructured or recovered | Chief Credit Officer | Group | Current | HB-PRD-05; HB-PRD-06 | Author model | Credit variants open |
+| HB-VS-06 | Safeguard and Service Assets | Safeguard, administer and transfer investment assets | Asset received or acquired | Asset serviced, transferred or returned | Securities Director | Group | Current | HB-PRD-10 | Author model | Market coverage open |
+| HB-VS-07 | Manage Financial Position | Manage funding, liquidity, market position, ALM and capital | Position or forecast changes | Position remains within governed decisions | Treasurer | Group | Current | HB-BL-04 | Author model | Measures open |
+| HB-VS-08 | Resolve Exception | Investigate and resolve alerts, failures, disputes and complaints | Alert, failure, dispute or complaint | Resolved case with evidence | Operations Director | Group | Current | HB-VS-01; HB-VS-03; HB-VS-04; HB-VS-05; HB-VS-06 | Author model | Case taxonomy open |
+| HB-VS-09 | Record, Reconcile and Report | Record financial consequences, reconcile and report | Business or accounting event | Approved report and retained evidence | Chief Financial Officer | Group | Current | HB-VS-03; HB-VS-04; HB-VS-05; HB-VS-06; HB-VS-07 | Author model | Reporting scope open |

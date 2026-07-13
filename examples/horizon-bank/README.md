@@ -1,50 +1,41 @@
-# Horizon Bank Case Study
+# Horizon Bank Governed Case Study
 
-Horizon Bank is a fictional full-service bank used throughout the handbook.
+Horizon Bank is the fictional full-service bank used throughout the handbook. Controlled catalogues, not narrative lists in this README, define its architecture elements.
 
-## Business lines
+## Governed foundation
 
-- Retail banking
-- Business banking
-- Corporate banking
-- Lending
-- Payments and cards
-- Trade finance
-- Wealth management
-- Treasury and capital markets
+| Subject | Authoritative catalogue |
+|---|---|
+| Bank scope | `bank-profile.md` |
+| Current and target assumptions | `assumptions.md` |
+| Controlled values | `controlled-vocabularies.md` |
+| Business lines | `business-lines.md` |
+| Legal entities | `legal-entities.md` |
+| Customer segments | `customer-segments.md` |
+| Products and hierarchy | `products.md` |
+| Value streams | `value-streams.md` |
+| Actors and roles | `actors.md`; replacement organisation catalogue pending |
+| Capabilities | `capabilities.md`; stable-ID expansion pending |
+| Applications | `system-landscape.md`; replacement application catalogue pending |
+| Processes | `processes.md` |
+| Organisation and roles | `organisation-and-roles.md` |
+| Data domains | `data-domains.md` |
+| Systems of record | `systems-of-record.md` |
+| Accounting events | `accounting-events.md` |
+| Controls | `controls.md` |
+| Critical operations | `critical-operations.md` |
+| Candidate BIAN mappings | `bian-mapping-register.md` |
+| Scenarios | `scenario-catalogue.md` |
+| Coverage | `coverage-matrix.csv`; readable context in `coverage-summary.md` |
 
-## Supporting functions
+## Governance rules
 
-- Operations
-- Risk
-- Compliance and financial crime
-- Finance
-- Legal and audit
-- Human resources
-- Procurement
-- Technology
+- Reuse exact IDs and names from the catalogues.
+- Use only values defined in `controlled-vocabularies.md`.
+- Record relationships with explicit IDs, never prose ranges.
+- Treat source type `Author model` as a fictional teaching decision, not an industry fact.
+- Do not start domain drafting until the Phase 1 catalogue set and coverage matrix form a coherent validated baseline.
 
-## Starting problems
+## Phase 1 gaps
 
-- Multiple customer databases
-- Product-specific process and application silos
-- Duplicate onboarding and screening activities
-- Point-to-point integrations
-- Slow product launches
-- High manual reconciliation effort
-- Inconsistent data ownership
-- Limited end-to-end process visibility
-
-## Transformation goals
-
-- Improve digital journeys
-- Increase straight-through processing
-- Establish a trusted party and customer view
-- Adopt modular, governed capabilities
-- Reduce legacy integration complexity
-- Improve compliance traceability
-- Modernise incrementally using BIAN as a reference
-
-## Naming control
-
-Add stable names for people, applications, channels, products and events to the files in this folder before using them in multiple chapters.
+Business domains, stable-ID capabilities, Level 1 and Level 2 processes, the complete organisation model, applications, interfaces, external networks, attribute-level authority, complete accounting and control coverage, technology platforms, non-functional requirements, verified BIAN 14.0 mappings and full-bank coverage remain to be completed.
