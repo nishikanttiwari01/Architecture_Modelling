@@ -49,6 +49,12 @@ class HorizonBankValidationTests(unittest.TestCase):
         text = "| ID | Name |\n|---|---|\n| HB-PRD-01 | A |\n"
         self.assertIn("missing required column Definition", self.validate({"products.md": text}))
 
+    def test_requires_bian_mapping_confidence_and_verification(self):
+        text = "| ID | Name | Definition | Owner | Record Status |\n|---|---|---|---|---|\n| HB-BIAN-01 | A | a | O | Proposed |\n"
+        errors = self.validate({"bian-mapping-register.md": text})
+        self.assertIn("missing required column Confidence", errors)
+        self.assertIn("missing required column Verification Status", errors)
+
     def test_rejects_unknown_and_wrong_typed_relationships(self):
         products = "| ID | Name | Definition | Owner | Relationships |\n|---|---|---|---|---|\n| HB-PRD-01 | A | a | O | HB-CTRL-01; HB-VS-99 |\n"
         controls = "| ID | Name | Definition | Owner |\n|---|---|---|---|\n| HB-CTRL-01 | C | c | O |\n"

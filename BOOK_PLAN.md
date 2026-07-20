@@ -1024,7 +1024,7 @@ The subsection structure below records the approved 63-chapter plan currently re
 #### 31. BIAN Essentials and the Case-Study Method
 
 - Manuscript file: `manuscript/part-05-bian-case-study/31-introduction-to-bian.md`
-- Scope: Explain BIAN as a banking reference architecture and semantic standard, not a product, and separate reference concepts from Horizon Bank implementation choices.
+- Scope: Introduce the Banking Industry Architecture Network (BIAN) concepts needed in Part V and explain how Horizon Bank will combine them with business, application, data and technology models.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1033,27 +1033,32 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Worked examples
   - Source requirements
   - Planned chapter structure
-  - Why BIAN exists
-  - Service Landscape
-  - Business Areas and Business Domains
-  - Service Domains
-  - Business Scenarios
-  - Service Operations
-  - Business Object Model
-  - Semantic APIs and events
-  - What BIAN does not prescribe
-  - Logical reference versus physical implementation
+  - The problem is shared meaning, not a shortage of diagrams
+  - What BIAN is
+  - The core concepts and the questions they answer
+  - A Service Domain is a logical responsibility
+  - Business Scenarios show collaboration, not the complete process
+  - Service Operations, semantic APIs and events
+  - Control Records and bank-owned information
+  - BIAN works with other modelling techniques
+  - The governed Horizon Bank case-study baseline
+  - The Part V method
+  - Worked traceability: payment initiation
+  - Evidence, status and confidence
+  - When to use BIAN
+  - Common mistakes
   - Chapter summary
   - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
+  - References and further reading
   - Drafting notes
 
 #### 32. How a Full-Service Bank Works
 
 - Manuscript file: `manuscript/part-05-bian-case-study/32-bian-and-modelling-techniques.md`
-- Scope: Map BIAN to capability, process, information, application, API, event and deployment views without reducing Service Domains to microservices.
+- Scope: Give readers the commercial and operational foundation needed to understand the architecture of Horizon Bank.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1062,25 +1067,32 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Worked examples
   - Source requirements
   - Planned chapter structure
-  - BIAN and ArchiMate
-  - BIAN and BPMN
-  - BIAN and C4
-  - BIAN and UML
-  - BIAN and data modelling
-  - BIAN and DMN
-  - BIAN and event modelling
-  - Cross-reference matrix
+  - Start with obligations, not applications
+  - The governed scope of Horizon Bank
+  - Customer segments are service contexts
+  - Business lines, products and legal entities answer different questions
+  - How a bank earns, spends and absorbs loss
+  - Front, middle and back office are responsibility patterns
+  - Connected lifecycles explain the bank
+  - Dates and the banking day
+  - Worked example: deposit interest posting
+  - Why a full bank needs many application responsibilities
+  - Group, country, shared service and supplier boundaries
+  - Critical operations join the layers
+  - Models to use, and models not to use
+  - Common mistakes
   - Chapter summary
   - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
+  - References and further reading
   - Drafting notes
 
 #### 33. Enterprise Business Architecture of Horizon Bank
 
 - Manuscript file: `manuscript/part-05-bian-case-study/33-full-banking-operating-model.md`
-- Scope: Establish Horizon Bank's operating model, major customer groups, channels, product families, operational capabilities and modelling boundaries.
+- Scope: Establish the governed business architecture baseline that later domain chapters will refine. The Banking Industry Architecture Network (BIAN) provides the industry reference used for qualified mappings in this chapter.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1089,24 +1101,33 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Worked examples
   - Source requirements
   - Planned chapter structure
-  - Bank vision and objectives
-  - Stakeholder model
-  - Organisation model
-  - Capability map
-  - Capability heat map
-  - Operating model choices
-  - Governance and ownership
+  - Enterprise business architecture is a connected model
+  - Keep the business concepts separate
+  - Stakeholder outcomes provide direction
+  - The value-stream portfolio
+  - Navigate the bank through business domains
+  - Capabilities describe abilities
+  - Processes describe ordered work
+  - Products connect commercial promise to fulfilment
+  - Organisation records accountability and performance
+  - Candidate BIAN mappings remain qualified references
+  - Worked thread 1: establish and manage a customer relationship
+  - Worked thread 2: execute and settle a transaction
+  - Heat maps, measures and evidence
+  - When to use each business view
+  - Common mistakes
   - Chapter summary
   - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
+  - References and further reading
   - Drafting notes
 
 #### 34. Full Bank Application and Integration Landscape
 
 - Manuscript file: `manuscript/part-05-bian-case-study/34-bank-business-process-architecture.md`
-- Scope: Catalogue strategy, market, product, party, onboarding, origination, deposits, lending, payments, cards, corporate banking, trade finance, wealth, treasury, fraud, compliance, risk, reporting, finance, operations, collections, channels, HR, procurement, legal, audit, support and technology process families.
+- Scope: Present the complete governed application taxonomy for Horizon Bank and explain how enterprise and domain views connect. The landscape is a logical model of responsibilities and exchanges, not a vendor inventory or deployment diagram.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1115,43 +1136,31 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Worked examples
   - Source requirements
   - Planned chapter structure
-  - Strategy and governance
-  - Market and business development
-  - Product and pricing
-  - Party and customer management
-  - Onboarding and KYC
-  - Sales and origination
-  - Deposits and accounts
-  - Lending
-  - Payments
-  - Cards
-  - Corporate banking and cash management
-  - Trade finance
-  - Wealth and investments
-  - Treasury and capital markets
-  - Fraud
-  - Financial crime compliance
-  - Enterprise risk
-  - Regulatory reporting
-  - Finance and accounting
-  - Banking operations
-  - Collections and recovery
-  - Channels
-  - Human resources
-  - Procurement and suppliers
-  - Legal, audit and support
-  - Technology management
+  - What an application landscape answers
+  - The complete logical application estate
+  - Classify application roles precisely
+  - Integration is a portfolio of contracts
+  - External connectivity is inside the architecture boundary
+  - Worked trace: establish a customer relationship
+  - Worked trace: execute a cross-border payment
+  - Current, target and transition views
+  - Security and trust across the landscape
+  - Criticality and operational ownership
+  - BIAN alignment without false equivalence
+  - Rationalisation uses evidence
+  - Common mistakes
   - Chapter summary
   - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
+  - References and further reading
   - Drafting notes
 
 #### 35. Enterprise Information and Data Architecture
 
 - Manuscript file: `manuscript/part-05-bian-case-study/35-bank-value-streams.md`
-- Scope: Connect value streams to capabilities, Service Domains, customer outcomes, products, channels and process scenarios.
+- Scope: Establish Horizon Bank's bank-wide information concepts, authority decisions and data movement before the domain chapters add detail. The chapter connects operational facts to accounting, reconciliation, risk, analytics and reporting without treating one data platform as authoritative for everything.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1160,25 +1169,33 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Worked examples
   - Source requirements
   - Planned chapter structure
-  - Capability versus value stream versus process
-  - Customer acquisition
-  - Product acquisition
-  - Payment
-  - Lending
-  - Customer servicing
-  - Risk management
-  - Mapping stages to BIAN Service Domains
+  - Data architecture is an accountability model
+  - The 20 governed data domains
+  - Information categories can overlap
+  - Authority must be qualified
+  - Identifiers, time and provenance
+  - Data ownership and stewardship
+  - Quality, metadata and lineage services
+  - Accounting events are part of information architecture
+  - Reconciliation is a controlled comparison
+  - Worked lineage: deposit interest
+  - Worked lineage: cross-border payment
+  - Protection, retention and permitted use
+  - BIAN information concepts and local models
+  - Current, transition and target considerations
+  - Common mistakes
   - Chapter summary
   - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
+  - References and further reading
   - Drafting notes
 
 #### 36. Technology, Security, Resilience and Operating Architecture
 
 - Manuscript file: `manuscript/part-05-bian-case-study/36-bian-business-scenarios.md`
-- Scope: Explain business events, participating Service Domains, interaction paths, information exchanged, process complements and scenario review criteria.
+- Scope: Explain how Horizon Bank's application and information estate runs securely, reliably and accountably across hybrid technology and third-party services. The chapter starts with critical operations and traces the technology, identity, control, observability, recovery and operating responsibilities needed to sustain them.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1187,27 +1204,36 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Worked examples
   - Source requirements
   - Planned chapter structure
-  - Business Scenario definition
-  - Scenario versus BPMN process
-  - Trigger and outcome
-  - Participating Service Domains
-  - Interaction levels
-  - Human activities
-  - Decisions
-  - Technical interactions
-  - Events
-  - Scenario template
+  - Start with the operation, not the platform
+  - Keep four architecture levels separate
+  - The 30 technology and resilience classifications
+  - The 20 critical operations
+  - Placement follows evidence
+  - Trust boundaries and identity
+  - Security is a system of controls
+  - Secure delivery and change
+  - Observability connects telemetry to action
+  - Availability, recovery and impact tolerance differ
+  - Worked dependency map: a time-critical payment
+  - Worked recovery: payment service after cyber disruption
+  - Batch, close and business-day operation
+  - Third parties, concentration and exit
+  - Service operations and ownership
+  - BIAN and runtime architecture
+  - Current, transition and target considerations
+  - Common mistakes
   - Chapter summary
   - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
+  - References and further reading
   - Drafting notes
 
 #### 37. Customer, Party, CRM, Sales, Onboarding, KYC and Customer Servicing
 
 - Manuscript file: `manuscript/part-05-bian-case-study/37-customer-onboarding-scenario.md`
-- Scope: Model onboarding scope, actors, channels, KYC, AML, customer data, identity checks, exceptions, Service Domain interactions and controls.
+- Scope: Explain how a full-service bank establishes and maintains a governed relationship with a person or organisation. The chapter connects customer journeys to party identity, customer relationship management (CRM), sales, onboarding, Know Your Customer (KYC), customer due diligence, servicing, information authority, applications, controls and operations.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1216,29 +1242,32 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Worked examples
   - Source requirements
   - Planned chapter structure
-  - Business objective
-  - Customer journey
-  - BIAN Service Domains
-  - ArchiMate capability view
-  - BPMN process
-  - DMN risk classification
-  - Business Scenario interaction map
-  - C4 architecture
-  - UML sequence
-  - Party data model
-  - Security and privacy
-  - Events and metrics
+  - Start with the relationship, not the form
+  - Business objective and customer journey
+  - CRM, sales and relationship planning
+  - Customer due diligence and KYC
+  - Model the process and decisions separately
+  - Application responsibilities
+  - Interaction path and interface catalogue
+  - Information authority and lifecycle
+  - Security, privacy and control
+  - Customer servicing and ongoing review
+  - Resilience and operating ownership
+  - BIAN candidate mapping
+  - Current, transition and target considerations
+  - Common mistakes
   - Chapter summary
   - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
+  - References and further reading
   - Drafting notes
 
 #### 38. Deposits, Accounts, Term Deposits, Interest, Fees, Statements and Correspondence
 
 - Manuscript file: `manuscript/part-05-bian-case-study/38-current-account-opening-scenario.md`
-- Scope: Model account opening, eligibility, product selection, party verification, account fulfilment, data creation, notifications and operational handover.
+- Scope: Explain the complete non-credit deposit and account lifecycle, from product selection and agreement creation through funding, balance servicing, interest, fees, statements, maturity and closure. The chapter shows how a bank keeps the customer agreement, operational account record and financial books consistent.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1247,28 +1276,33 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Worked examples
   - Source requirements
   - Planned chapter structure
-  - Business objective
-  - BPMN process
-  - Service Domain mapping
-  - Eligibility decision
-  - Agreement creation
-  - Account state machine
-  - C4 design
-  - API and events
-  - Data model
-  - Accounting entries
-  - Controls
+  - A deposit is both a customer service and a bank obligation
+  - Product, agreement and account
+  - Account opening process
+  - Eligibility is a governed decision
+  - Account lifecycle and state
+  - Application architecture
+  - Interfaces and event behaviour
+  - Data model and authority
+  - Interest, fees and correspondence
+  - Accounting events and reconciliation
+  - Controls and operational handling
+  - Resilience and critical operations
+  - BIAN candidate mapping
+  - Current, transition and target considerations
+  - Common mistakes
   - Chapter summary
   - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
+  - References and further reading
   - Drafting notes
 
 #### 39. Lending and Credit: Consumer, Mortgage, SME and Corporate
 
 - Manuscript file: `manuscript/part-05-bian-case-study/39-cross-border-payment-scenario.md`
-- Scope: Model payment initiation, validation, sanctions screening, pricing, routing, account posting, messaging, exceptions and reconciliation.
+- Scope: Explain the lending domain from financing need through application, assessment, decision, contracting, disbursement and servicing. The chapter compares consumer, mortgage, small and medium-sized enterprise (SME), and corporate credit while preserving one governed credit lifecycle.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1277,27 +1311,33 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Worked examples
   - Source requirements
   - Planned chapter structure
-  - Customer journey
-  - End-to-end BPMN
-  - Service Domains
-  - Payment routing DMN
-  - UML sequence
-  - Payment state machine
-  - ISO 20022 information
-  - Events
-  - C4 deployment
-  - Exceptions and investigations
+  - Lending is a lifecycle, not a decision API
+  - Core credit concepts
+  - What is common and what differs
+  - Customer journey and origination process
+  - Credit decisioning and explainability
+  - External credit information
+  - Origination and servicing applications
+  - Information model and authority
+  - Loan state and servicing
+  - Accounting events and financial control
+  - Controls through fulfilment
+  - Resilience and operation
+  - BIAN candidate mapping
+  - Current, transition and target considerations
+  - Common mistakes
   - Chapter summary
   - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
+  - References and further reading
   - Drafting notes
 
 #### 40. Collateral, Limits, Exposure, Collections, Recovery and the Credit-Risk Lifecycle
 
 - Manuscript file: `manuscript/part-05-bian-case-study/40-consumer-loan-origination-scenario.md`
-- Scope: Model application capture, affordability, credit decisioning, offer, documentation, fulfilment, disbursement and risk controls.
+- Scope: Complete the credit architecture begun in Chapter 39. This chapter follows approved credit through limit use, collateral, exposure monitoring, delinquency, collections, restructuring, recovery, impairment-related events, write-off and closure.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1306,27 +1346,33 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Worked examples
   - Source requirements
   - Planned chapter structure
-  - Customer journey
-  - BPMN process
-  - Service Domain map
-  - Credit DMN
-  - Affordability and collateral
-  - Loan state machine
-  - C4 architecture
-  - UML sequence
-  - Loan data model
-  - Events and accounting
+  - The credit lifecycle continues after disbursement
+  - Separate the key concepts
+  - Limits and utilisation
+  - Collateral is not merely a value field
+  - Exposure aggregation
+  - Monitoring and early action
+  - Collections, restructuring and recovery
+  - Applications and ownership boundaries
+  - Data authority and history
+  - Accounting events and expected credit loss
+  - Control, challenge and segregation
+  - Resilience across distressed credit
+  - BIAN candidate mapping
+  - Current, transition and target considerations
+  - Common mistakes
   - Chapter summary
   - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
+  - References and further reading
   - Drafting notes
 
 #### 41. Payments, Clearing, Settlement, Correspondent Banking and Foreign Exchange
 
 - Manuscript file: `manuscript/part-05-bian-case-study/41-card-fraud-investigation-scenario.md`
-- Scope: Model alert intake, case triage, customer contact, transaction review, dispute handling, card controls, chargeback and closure.
+- Scope: A payment is not complete merely because a customer has pressed **Send**. The bank must accept an instruction, establish authority, control financial-crime risk, route the instruction, exchange it with other institutions, settle the resulting obligation, post the financial outcome and resolve exceptions. This chapter shows how to model those responsibilities without hiding them inside one box called `Payments`. The central architecture question is: **which business and application responsibility owns each state of a payment, and what evidence proves that money and status remain consistent?** Horizon Bank is fictional. Its catalogue is an author model, not a statement about a particular country's payment schemes or settlement law.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1334,29 +1380,30 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
-  - Monitoring
-  - Fraud evaluation
-  - Alert generation
-  - Case investigation
-  - Customer contact
-  - Blocking actions
-  - BPMN process
-  - DMN disposition
-  - Event architecture
-  - Case state machine
-  - Service Domain map
-  - Chapter summary
-  - Completion checklist
+  - What is the payment domain?
+  - Initiation, clearing and settlement are different
+  - Operating model and end-to-end process
+  - Application responsibilities and interactions
+  - Domestic rails and external networks
+  - Correspondent banking is a relationship and an account service
+  - Foreign exchange linked to a payment
+  - Information authority, accounting and reconciliation
+  - Controls, security and operational resilience
+  - BIAN alignment and model choices
+  - Worked traceability: a cross-border payment with FX
+  - Current-to-target considerations
+  - When should this model set be used?
+  - Common mistakes
   - Key takeaways
   - Practical exercise
   - Review checklist
+  - References and further reading
   - Drafting notes
 
 #### 42. Cards and Merchant Acquiring
 
 - Manuscript file: `manuscript/part-05-bian-case-study/42-corporate-cash-management-scenario.md`
-- Scope: Model corporate onboarding, account structures, liquidity services, payments, reporting, approvals, integration and service operations.
+- Scope: A card purchase joins two customer relationships. An issuer serves the cardholder, while an acquirer serves the merchant. Between them, processing and network responsibilities carry authorisation, clearing, settlement and dispute information. This chapter shows how to model those responsibilities without treating `Cards` as one product or one application. The central architecture question is: **who owns the cardholder, merchant, transaction and financial states from credential issuance to final settlement and dispute resolution?** The Horizon Bank catalogue is a fictional author model. Card-network participation, licences, rules and deadlines remain unverified.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1364,28 +1411,30 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
-  - Corporate journey
-  - Mandate management
-  - Cash concentration
-  - Virtual accounts
-  - Bulk payments
-  - Capability map
-  - BPMN collaboration
-  - C4 architecture
-  - Data and liquidity models
-  - Controls and reporting
-  - Chapter summary
-  - Completion checklist
+  - What is the card and acquiring domain?
+  - Issuing and credential lifecycle
+  - Authorisation is a decision, not settlement
+  - Processing, presentment, clearing and settlement
+  - Billing, statements and revolving credit
+  - Fraud, customer claims and disputes
+  - Merchant acquiring is a separate lifecycle
+  - Information and security boundaries
+  - Controls and resilience
+  - BIAN alignment and model selection
+  - Worked traceability: purchase and later dispute
+  - Current-to-target considerations
+  - When should this model set be used?
+  - Common mistakes
   - Key takeaways
   - Practical exercise
   - Review checklist
+  - References and further reading
   - Drafting notes
 
 #### 43. Corporate Banking, Cash Management and Trade Finance
 
 - Manuscript file: `manuscript/part-05-bian-case-study/43-mapping-bian-to-applications.md`
-- Scope: Explain mapping from Service Domains and business capabilities to application components, packages, ownership and legacy constraints.
+- Scope: Corporate banking is not retail banking with larger balances. A corporate customer can contain many legal entities, accounts, authorised users, approval mandates, cash structures and cross-border obligations. Trade finance adds instruments, documents, contingent exposure and claims. This chapter explains how those responsibilities connect without treating trade finance as deposit acquisition. The central architecture question is: **how does the bank preserve corporate authority, liquidity visibility and trade obligations across organisations, applications and external parties?** Horizon Bank is fictional. Its cash structures and trade lifecycle are an author model, not legal, tax or documentary-credit advice.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1393,26 +1442,30 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
-  - Application inventory
-  - Map applications to Service Domains
-  - Many-to-many mappings
-  - Application-function matrix
-  - Duplication heat map
-  - Rationalisation decisions
-  - ArchiMate application view
-  - C4 landscape
-  - Chapter summary
-  - Completion checklist
+  - What is the corporate banking domain?
+  - Corporate relationship and mandate model
+  - Cash management and liquidity services
+  - Operating a corporate cash structure
+  - Trade finance is a complete instrument lifecycle
+  - Trade-finance applications and external interaction
+  - Exposure, accounting and reconciliation
+  - Controls, resilience and exception ownership
+  - BIAN alignment
+  - Choosing the right models
+  - Worked traceability: issue and settle a trade instrument
+  - Current-to-target considerations
+  - When should this model set be used?
+  - Common mistakes
   - Key takeaways
   - Practical exercise
   - Review checklist
+  - References and further reading
   - Drafting notes
 
 #### 44. Wealth, Investments, Securities, Custody and Asset Servicing
 
 - Manuscript file: `manuscript/part-05-bian-case-study/44-bian-aligned-software-services.md`
-- Scope: Explain service boundaries, API responsibilities, events, transactions, consistency, ownership, security and why logical BIAN boundaries do not mandate physical microservices.
+- Scope: An investment journey does not end when an order is executed. The bank must preserve the client mandate, suitability evidence, order and allocation, settlement obligation, custody holding, income and corporate-action outcome. This chapter separates those responsibilities so that a portfolio view cannot be mistaken for the authoritative securities position. The central architecture question is: **which responsibility owns each client, order, position and entitlement state from advice through safekeeping and asset servicing?** Horizon Bank is fictional. Jurisdictional advice duties, client-asset rules, market memberships and custody chains remain explicit assumptions.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1420,27 +1473,31 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
-  - Logical versus physical boundaries
-  - Why Service Domain is not automatically a microservice
-  - Boundary factors
-  - Bounded contexts
-  - Service components
-  - Orchestration services
-  - Platform services
-  - C4 and UML models
-  - Avoiding distributed monoliths
-  - Chapter summary
-  - Completion checklist
+  - Two related domains, not one application
+  - Advice, suitability and portfolio responsibility
+  - Order capture, execution and allocation
+  - Securities processing and settlement
+  - Custody and safekeeping
+  - Corporate actions and asset servicing
+  - Information authority and lineage
+  - Controls and operational resilience
+  - BIAN alignment and software boundaries
+  - Choosing the right models
+  - Worked traceability: advice through settlement
+  - Worked traceability: corporate action
+  - Current-to-target considerations
+  - When should this model set be used?
+  - Common mistakes
   - Key takeaways
   - Practical exercise
   - Review checklist
+  - References and further reading
   - Drafting notes
 
 #### 45. Treasury, Markets, Funding, Liquidity, ALM and Capital
 
 - Manuscript file: `manuscript/part-05-bian-case-study/45-bian-semantic-apis.md`
-- Scope: Cover semantic API purpose, resource and operation design, adaptation, governance, versioning, service contracts and consumer usability.
+- Scope: Show how to model the part of a full-service bank that manages funding, liquidity, market positions, balance-sheet structure and capital. The chapter separates business decisions from transaction execution, independent risk oversight, accounting and settlement, then traces those responsibilities through Horizon Bank's governed catalogues.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1448,32 +1505,28 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
-  - Semantic API concepts
-  - Service Domain operations
-  - Action terms
-  - REST mapping
-  - Bank-specific adaptation
-  - OpenAPI
-  - Messages
-  - Security
-  - Error handling
-  - Idempotency
-  - Versioning
-  - API gateway
-  - Legacy adapters
-  - Conformance
+  - The question this architecture answers
+  - Scope and responsibility boundaries
+  - Model the four connected lifecycles
+  - Applications and authoritative information
+  - Interfaces, accounting and reconciliation
+  - Controls, risk and resilience
+  - Worked trace: liquidity shortfall
+  - BIAN alignment without invented precision
+  - Current-to-target considerations
+  - When to use each model
+  - Common mistakes
   - Chapter summary
-  - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
-  - Drafting notes
+  - References and source notes
+  - Deferred work
 
 #### 46. Finance, Accounting, General Ledger, Reconciliation, Tax and Reporting
 
 - Manuscript file: `manuscript/part-05-bian-case-study/46-bian-events.md`
-- Scope: Cover business events, integration events, event schemas, producers, consumers, topics, ordering, idempotency, privacy and governance.
+- Scope: Explain how a full-service bank turns product and transaction activity into controlled accounting records, reconciled books, tax positions and approved reports. The chapter makes the boundaries between business events, accounting events, subledgers, the General Ledger and reporting datasets explicit.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1481,30 +1534,30 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
-  - Commands, events and queries
-  - Domain versus integration events
-  - Ownership
-  - Event catalogue
-  - Schemas
-  - Kafka topic design
-  - Ordering
-  - Duplicates
-  - Versioning
-  - Eventual consistency
-  - Sagas
-  - Lineage and audit
+  - The question this architecture answers
+  - Governed responsibility model
+  - Follow the accounting chain
+  - Tax is more than a filing interface
+  - Management and external reporting
+  - Data architecture and lineage
+  - Commands, events, files and batch
+  - Worked trace: close the books and submit a return
+  - Controls and resilience
+  - Current-to-target considerations
+  - Choose the model that matches the finance question
+  - BIAN alignment and limits
+  - Common mistakes
   - Chapter summary
-  - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
-  - Drafting notes
+  - References and source notes
+  - Deferred work
 
 #### 47. Risk, Compliance, Financial Crime, Fraud, Audit and Legal
 
 - Manuscript file: `manuscript/part-05-bian-case-study/47-bian-data-architecture.md`
-- Scope: Cover Business Object Model usage, canonical information, logical data, ownership, lineage, data quality, reference data and physical implementation choices.
+- Scope: Show how to model oversight, control, investigation, assurance and legal responsibilities without collapsing them into one `risk system`. The chapter separates enterprise risk, compliance, financial crime, fraud, internal audit and legal work and traces their different authorities through Horizon Bank.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1512,35 +1565,33 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
-  - Business Object Model
-  - Canonical versus local models
-  - Party and customer
-  - Product
-  - Agreement
-  - Account
-  - Transaction and payment
-  - Loan and collateral
-  - Position and balance
-  - Case and document
-  - Conceptual architecture
-  - Logical model
-  - Physical model
-  - Data ownership
-  - Master and reference data
-  - Lineage
-  - Privacy and retention
+  - The question this architecture answers
+  - Three governed domain families
+  - Responsibility comparison
+  - Application boundaries
+  - Alerts, cases, decisions and evidence
+  - Risk data aggregation and model governance
+  - Compliance and regulatory change
+  - Financial-crime and fraud control chain
+  - Audit, legal privilege and records
+  - Accounting and financial-control boundary
+  - Worked trace: investigate a financial-crime alert
+  - Security, privacy and resilience
+  - BIAN alignment without name matching
+  - Current-to-target considerations
+  - Choose the model that matches the oversight question
+  - Common mistakes
   - Chapter summary
-  - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
-  - Drafting notes
+  - References and source notes
+  - Deferred work
 
 #### 48. Channels, Communications, Documents, Workflow, Case Management and Shared Services
 
 - Manuscript file: `manuscript/part-05-bian-case-study/48-bian-security-control-architecture.md`
-- Scope: Cover trust boundaries, access control, customer data protection, financial crime controls, audit, segregation of duties and operational resilience.
+- Scope: Explain the shared capabilities through which customers and colleagues interact with a full-service bank. The chapter separates channels, identity, entitlement, communications, documents, workflow, rules and case management, then shows how they support product domains without taking over product authority.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1548,32 +1599,35 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
-  - Trust zones
-  - Customer identity
-  - Employee identity
-  - Service identity
-  - Customer entitlements
-  - Employee entitlements
-  - Segregation of duties
-  - Consent
-  - Transaction authorisation
-  - Data protection
-  - Audit
-  - STRIDE
-  - Fraud and financial-crime controls
-  - Security diagrams
+  - The question this architecture answers
+  - Governed domains, capabilities and processes
+  - Channels are views into bank responsibilities
+  - Identity is not entitlement
+  - Communications and notifications
+  - Documents and content
+  - Workflow and rules
+  - Case management
+  - Shared platform selection
+  - Information and integration
+  - Worked trace: complaint and redress
+  - Accounting and settlement boundary
+  - Security and trust boundaries
+  - Resilience and operations
+  - BIAN alignment and limits
+  - Current-to-target considerations
+  - When these models should and should not be used
+  - Common mistakes
   - Chapter summary
-  - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
-  - Drafting notes
+  - References and source notes
+  - Deferred work
 
 #### 49. BIAN Mapping Method and Full-Stack Traceability
 
 - Manuscript file: `manuscript/part-05-bian-case-study/49-bian-deployment-operations.md`
-- Scope: Cover deployment models, environments, monitoring, resilience, incident support, service ownership and operational runbooks.
+- Scope: Explain how to map Horizon Bank responsibilities to the Banking Industry Architecture Network (BIAN) without turning a reference architecture into an implementation blueprint. The method connects a versioned BIAN candidate to business outcome, process, organisation, application, information, integration, accounting, control, resilience and operational evidence.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1581,30 +1635,25 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
-  - Environments
-  - Cloud, on-premises and hybrid
-  - Kubernetes
-  - Availability zones
-  - Load balancing
-  - Databases
-  - Event platform
-  - Disaster recovery
-  - Observability
-  - Business service monitoring
-  - SLOs
-  - Operational ownership
+  - The question this method answers
+  - Who uses the mapping
+  - What a BIAN mapping is
+  - Separate four questions before mapping
+  - The mapping method
+  - Worked trace: cross-border payment
+  - How mapping supports architecture decisions
+  - Common mistakes
   - Chapter summary
-  - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
-  - Drafting notes
+  - References and source notes
+  - Deferred work
 
 #### 50. BIAN-Aligned Application, Software-Service and Team Boundaries
 
 - Manuscript file: `manuscript/part-05-bian-case-study/50-legacy-to-bian-migration.md`
-- Scope: Cover current-state assessment, target decomposition, strangler patterns, coexistence, data migration, service transition and risk management.
+- Scope: Explain how Horizon Bank turns business and Banking Industry Architecture Network (BIAN) responsibilities into defensible application, software-service, deployment and team boundaries. The chapter keeps these boundaries separate, then shows how they can be aligned without assuming a one-to-one relationship.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1612,30 +1661,30 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
-  - Assess current architecture
-  - Map legacy applications
-  - Identify gaps and duplication
-  - Select pilot
-  - Transition architectures
-  - Strangler pattern
-  - API façade
-  - Event interception
-  - Data migration
-  - Parallel operation
-  - Decommissioning
-  - Benefits
+  - The question this architecture answers
+  - Who uses boundary decisions
+  - Five boundaries that must not be confused
+  - Start with responsibility, not technology
+  - Boundary factors
+  - A practical boundary decision method
+  - Common mapping patterns
+  - Ownership is multidimensional
+  - Worked boundary assessment: payments
+  - Avoiding a distributed monolith
+  - When to use these boundary models
+  - Current-to-target considerations
+  - Common mistakes
   - Chapter summary
-  - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
-  - Drafting notes
+  - References and source notes
+  - Deferred work
 
 #### 51. APIs, Events, Commands, Batch, Files, Workflow and External Networks
 
 - Manuscript file: `manuscript/part-05-bian-case-study/51-bian-adoption-roadmap.md`
-- Scope: Cover adoption phases, capability sequencing, pilot selection, governance setup, training, tooling and measurable outcomes.
+- Scope: Explain how Horizon Bank selects and governs interaction styles across a full-service-bank estate. The chapter distinguishes synchronous Application Programming Interfaces (APIs), commands, events, messages, batch, files, workflow hand-offs and external-network exchanges, then connects each style to semantics, security, failure, reconciliation and operations.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1643,25 +1692,33 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
-  - Evaluate BIAN
-  - Define pilot
-  - Execute pilot
-  - Establish adoption
-  - Evolve architecture practice
-  - Realise benefits
-  - Roadmap artefacts
+  - The question this architecture answers
+  - Who uses interaction models
+  - Interaction style is a design decision
+  - A minimum governed contract
+  - Synchronous APIs
+  - BIAN Semantic APIs require adaptation
+  - Commands
+  - Events
+  - General asynchronous messages
+  - Batch and file exchange
+  - Workflow hand-offs
+  - External networks
+  - Worked interaction trace: cross-border payment
+  - Choosing the style
+  - Current-to-target considerations
+  - Common mistakes
   - Chapter summary
-  - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
-  - Drafting notes
+  - References and source notes
+  - Deferred work
 
 #### 52. Deployment, Security, Resilience, Observability and Operations
 
 - Manuscript file: `manuscript/part-05-bian-case-study/52-bian-governance.md`
-- Scope: Cover decision rights, reference model stewardship, semantic API governance, architecture review, change control and exception handling.
+- Scope: Explain how Horizon Bank turns logical applications and interfaces into an operable architecture. The chapter connects deployment, identity, security, resilience, observability, incident response, recovery and service ownership without claiming unsupported physical products or numerical objectives.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1669,29 +1726,36 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
-  - Architecture board
-  - Capability owners
-  - Service Domain owners
-  - Data owners
-  - API owners
-  - Product owners
-  - Review process
-  - Exception process
-  - Conformance levels
-  - Repository management
-  - Version management
+  - The question this architecture answers
+  - Who uses the operating architecture
+  - Keep logical and physical levels separate
+  - Deployment architecture begins with requirements
+  - Environments and release flow
+  - Container platforms are implementation choices
+  - Data placement and recovery
+  - Security follows identities and resources
+  - Security telemetry and sensitive data
+  - Resilience begins with the critical operation
+  - Degraded operation is a business decision
+  - Dependency-aware recovery
+  - Observability explains system behaviour
+  - From telemetry to action
+  - Operational ownership and runbooks
+  - Worked recovery trace: payment service after cyber disruption
+  - Selecting the right operational model
+  - Current-to-target considerations
+  - Common mistakes
   - Chapter summary
-  - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
-  - Drafting notes
+  - References and source notes
+  - Deferred work
 
 #### 53. Legacy Modernisation, Data Migration and Transition Architecture
 
 - Manuscript file: `manuscript/part-05-bian-case-study/53-bian-success-measures.md`
-- Scope: Cover metrics for business outcomes, reuse, integration quality, delivery speed, consistency, risk reduction and operating health.
+- Scope: Modernisation is the controlled movement of business responsibilities, data and operations from one architecture state to another. It is not a mass renaming of old systems and it is rarely a single cutover. This chapter answers: **How can a bank change a live estate without losing financial integrity, customer service, control evidence or a credible route back?** It provides a practical transition method for Horizon Bank, using its governed catalogues as an author model rather than claiming one universal migration sequence.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1699,24 +1763,26 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
-  - Business measures
-  - Architecture measures
-  - Technology measures
-  - Risk and compliance measures
-  - Baseline and targets
-  - Benefits dashboard
+  - Start with business continuity, not replacement technology
+  - Describe three architecture states explicitly
+  - Select a modernisation strategy by responsibility
+  - Slice change into controlled work packages
+  - Treat data migration as governed state transfer
+  - Design coexistence deliberately
+  - Prepare cutover, rollback and recovery together
+  - Decommission the old responsibility, not only the server
+  - Common mistakes
   - Chapter summary
   - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
-  - Drafting notes
+  - References and further reading
 
 #### 54. Governance, Ownership and the Architecture Repository
 
 - Manuscript file: `manuscript/part-05-bian-case-study/54-bian-common-mistakes.md`
-- Scope: Cover microservice over-mapping, ignoring business ownership, weak semantics, excessive technical focus, incomplete governance and poor migration sequencing.
+- Scope: Architecture governance makes design information usable for decisions. It assigns authority, records evidence, controls change and makes exceptions visible. A repository supports that work, but a folder or modelling tool cannot govern itself. This chapter answers: **Who is accountable for the full-bank architecture model, how do records change, and what makes the repository trustworthy?** It applies those questions to Horizon Bank's controlled catalogues.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1724,29 +1790,28 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
-  - BIAN as an IT-only exercise
-  - API-first without capability understanding
-  - Service Domain equals microservice
-  - Big-bang implementation
-  - Renaming legacy systems
-  - Ignoring processes and journeys
-  - Misusing the data model
-  - Copying APIs unchanged
-  - Missing ownership
-  - Unmaintained repositories
-  - Wrong success measures
+  - Governance is a decision system
+  - Keep ownership types distinct
+  - Use federated decision rights
+  - Make the repository a governed model
+  - Operate a controlled change workflow
+  - Define conformance without pretending all differences are equal
+  - Govern exceptions as temporary decisions
+  - Version the right things
+  - Validate structure and review meaning
+  - Use event-driven maintenance as well as a calendar
+  - Common governance failures
   - Chapter summary
   - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
-  - Drafting notes
+  - References and further reading
 
 #### 55. Measures, Quality Gates and the Full-Bank Coverage Audit
 
 - Manuscript file: `manuscript/part-05-bian-case-study/55-bian-review-checklist.md`
-- Scope: Provide structured review questions for business, process, information, application, API, event, security, operational and migration views.
+- Scope: Measures make architecture claims testable. Quality gates stop work from advancing when essential evidence is absent. A coverage audit asks whether the bank model connects every required viewpoint, not whether the repository contains many files. This chapter answers: **How can reviewers test that Horizon Bank's full-bank architecture is complete enough, internally consistent and useful for a decision?** It defines a reproducible audit method without inventing performance targets or claiming that an unresolved record is complete.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1754,27 +1819,25 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
-  - Business review
-  - BIAN alignment review
-  - Process review
-  - Information review
-  - Application review
-  - Technology review
-  - Security review
-  - Transformation review
-  - Decision log
+  - Measure what the architecture is meant to improve
+  - Define every measure before using it
+  - Use balanced architecture measures
+  - Build quality gates around evidence
+  - Audit the full-bank coverage matrix reproducibly
+  - Worked audit: immediate domestic payment
+  - Review viewpoints
+  - Common measurement mistakes
   - Chapter summary
   - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
-  - Drafting notes
+  - References and further reading
 
 #### 56. Integrated End-to-End Scenarios and Practitioner Reference
 
 - Manuscript file: `manuscript/part-05-bian-case-study/56-bian-quick-reference.md`
-- Scope: Provide compact definitions, mapping guidance, scenario patterns, artefact list, common cautions and review prompts.
+- Scope: An end-to-end scenario connects a business trigger to an observable outcome across responsibilities, applications, information, interfaces, financial consequences, controls and operations. It prevents each specialist view from appearing complete while the customer or bank outcome falls through the gaps. This final Part V chapter answers: **How does a practitioner assemble and review the minimum coherent model set for a full banking scenario?** It consolidates the Horizon Bank method, worked traces and reusable templates. It is not a substitute for the governed catalogues or for the technique guidance in earlier chapters.
 - Subsections:
   - Chapter purpose
   - Reader outcomes
@@ -1782,23 +1845,24 @@ The subsection structure below records the approved 63-chapter plan currently re
   - Required models and artefacts
   - Worked examples
   - Source requirements
-  - Planned chapter structure
+  - The integrated scenario contract
   - Hierarchy cheat sheet
-  - BIAN-to-ArchiMate
-  - BIAN-to-BPMN
-  - BIAN-to-C4
-  - BIAN-to-UML
-  - BIAN-to-data
+  - Choose views by question
+  - Scenario pattern 1: relationship to account to payment
+  - Scenario pattern 2: corporate trade finance
+  - Scenario pattern 3: investment through asset servicing
+  - Scenario pattern 4: close, reporting and recovery
   - Service Domain assessment template
   - Business Scenario template
   - Application mapping template
   - Implementation decision tree
+  - Common integrated-modelling mistakes
   - Chapter summary
   - Completion checklist
   - Key takeaways
   - Practical exercise
   - Review checklist
-  - Drafting notes
+  - References and further reading
 
 ### Part VI: Practical Architecture Reference Guide
 

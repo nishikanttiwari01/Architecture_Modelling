@@ -56,6 +56,7 @@ REQUIRED["business-domains.md"] = {
     "Architecture State", "Relationships", "Source Type", "Confidence", "Verification Status", "Gap",
 }
 REQUIRED["capabilities.md"] = set(REQUIRED["business-domains.md"])
+REQUIRED["bian-mapping-register.md"].update({"Confidence", "Verification Status"})
 REQUIRED["applications.md"] = {
     "ID", "Name", "Definition", "Responsibility Family", "Owner", "Ownership Type",
     "Business Responsibilities", "Product and Value Stream Relationships", "Data Domain Relationships",

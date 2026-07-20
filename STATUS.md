@@ -49,32 +49,32 @@
 | 28 | Architecture Review | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 29 | Operations and Support | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 30 | Change and Migration | Planned | 0 | 0 | 0 | 0 | 0 | — |
-| 31 | BIAN Essentials and the Case-Study Method | Drafting | 100 | 85 | 20 | 20 | 70 | Verify exact BIAN objects and approve `FIG-31-01` specification |
-| 32 | How a Full-Service Bank Works | Drafting | 70 | 80 | 0 | 20 | 60 | Complete banking-source review and enterprise figure specifications |
-| 33 | Enterprise Business Architecture of Horizon Bank | Drafting | 40 | 70 | 0 | 20 | Complete controlled Level 2 catalogues and matrices |
-| 34 | Full Bank Application and Integration Landscape | Drafting | 50 | 75 | 0 | 20 | Complete application/interface catalogues and figure specifications |
-| 35 | Enterprise Information and Data Architecture | Drafting | 70 | 80 | 0 | 20 | Complete data-domain and system-of-record catalogues |
-| 36 | Technology, Security, Resilience and Operating Architecture | Drafting | 70 | 80 | 0 | 20 | Complete critical-operation catalogue and figure specifications |
-| 37 | Customer, Party, CRM, Sales, Onboarding, KYC and Customer Servicing | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into customer and party domain architecture |
-| 38 | Deposits, Accounts, Term Deposits, Interest, Fees, Statements and Correspondence | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into full deposit lifecycle |
-| 39 | Lending and Credit: Consumer, Mortgage, SME and Corporate | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into full lending and credit domain |
-| 40 | Collateral, Limits, Exposure, Collections, Recovery and the Credit-Risk Lifecycle | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into collateral, limits, exposure, collections, recovery and credit-risk lifecycle |
-| 41 | Payments, Clearing, Settlement, Correspondent Banking and Foreign Exchange | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into payments, clearing, settlement, correspondent banking and FX |
-| 42 | Cards and Merchant Acquiring | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into cards issuing, processing and merchant acquiring |
-| 43 | Corporate Banking, Cash Management and Trade Finance | Revision Required | 0 | 0 | 0 | 0 | 0 | Expand into corporate banking, cash management and trade finance |
-| 44 | Wealth, Investments, Securities, Custody and Asset Servicing | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for wealth domain and migrate service guidance |
-| 45 | Treasury, Markets, Funding, Liquidity, ALM and Capital | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for treasury and migrate API guidance |
-| 46 | Finance, Accounting, General Ledger, Reconciliation, Tax and Reporting | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for finance and migrate event guidance |
-| 47 | Risk, Compliance, Financial Crime, Fraud, Audit and Legal | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for enterprise risk and migrate data guidance |
-| 48 | Channels, Communications, Documents, Workflow, Case Management and Shared Services | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for channels and shared services |
-| 49 | BIAN Mapping Method and Full-Stack Traceability | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast as BIAN mapping and traceability method |
-| 50 | BIAN-Aligned Application, Software-Service and Team Boundaries | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for service and team boundaries; migrate legacy material |
-| 51 | APIs, Events, Commands, Batch, Files, Workflow and External Networks | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for all interaction styles and external networks |
-| 52 | Deployment, Security, Resilience, Observability and Operations | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for deployment, resilience and operations |
-| 53 | Legacy Modernisation, Data Migration and Transition Architecture | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for modernisation and transition architecture |
-| 54 | Governance, Ownership and the Architecture Repository | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for governance and repository ownership |
-| 55 | Measures, Quality Gates and the Full-Bank Coverage Audit | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for measures, quality gates and coverage audit |
-| 56 | Integrated End-to-End Scenarios and Practitioner Reference | Revision Required | 0 | 0 | 0 | 0 | 0 | Recast for integrated scenarios and practitioner reference |
+| 31 | BIAN Essentials and the Case-Study Method | Under Review | 100 | 100 | 20 | 80 | 100 | Author review; verify exact BIAN 14.0 candidates and approve `FIG-31-01` specification before diagram source |
+| 32 | How a Full-Service Bank Works | Under Review | 100 | 100 | 20 | 80 | 100 | Author review; confirm jurisdiction and legal-entity assumptions and approve `FIG-32-01` specification |
+| 33 | Enterprise Business Architecture of Horizon Bank | Under Review | 100 | 100 | 20 | 80 | 100 | Author review; resolve candidate BIAN mappings and product variants, then approve `FIG-33-01` specification |
+| 34 | Full Bank Application and Integration Landscape | Under Review | 100 | 100 | 20 | 80 | 100 | Author review; retain physical-product gaps and approve `FIG-34-01` specification |
+| 35 | Enterprise Information and Data Architecture | Under Review | 100 | 100 | 20 | 80 | 100 | Author review; complete future attribute-level authority decisions and approve `FIG-35-01` specification |
+| 36 | Technology, Security, Resilience and Operating Architecture | Under Review | 100 | 100 | 20 | 80 | 100 | Author review; approve `FIG-36-01` specification and add evidence-based quantitative tolerances later |
+| 37 | Customer, Party, CRM, Sales, Onboarding, KYC and Customer Servicing | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; prioritise domain figures and jurisdiction-specific customer-due-diligence variants |
+| 38 | Deposits, Accounts, Term Deposits, Interest, Fees, Statements and Correspondence | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; prioritise figures and add primary sources if normative deposit claims are introduced |
+| 39 | Lending and Credit: Consumer, Mortgage, SME and Corporate | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; prioritise figures and product or jurisdiction-specific credit variants |
+| 40 | Collateral, Limits, Exposure, Collections, Recovery and the Credit-Risk Lifecycle | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; prioritise figures and evidence-based impairment and recovery variants |
+| 41 | Payments, Clearing, Settlement, Correspondent Banking and Foreign Exchange | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; prioritise figures and complete network-finality and scheme details |
+| 42 | Cards and Merchant Acquiring | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; prioritise figures and complete scheme, authentication and jurisdiction variants |
+| 43 | Corporate Banking, Cash Management and Trade Finance | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; prioritise figures and complete country and instrument-rule variants |
+| 44 | Wealth, Investments, Securities, Custody and Asset Servicing | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; prioritise figures and complete market and client-asset variants |
+| 45 | Treasury, Markets, Funding, Liquidity, ALM and Capital | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; prioritise figures and add institution-specific liquidity and capital policies |
+| 46 | Finance, Accounting, General Ledger, Reconciliation, Tax and Reporting | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; prioritise figures and complete legal-entity accounting-policy details |
+| 47 | Risk, Compliance, Financial Crime, Fraud, Audit and Legal | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; prioritise figures and complete jurisdiction-specific examination and financial-crime variants |
+| 48 | Channels, Communications, Documents, Workflow, Case Management and Shared Services | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; prioritise figures and govern the explicitly identified missing interfaces |
+| 49 | BIAN Mapping Method and Full-Stack Traceability | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; replace `Pending` and `Unverified` evidence only after exact BIAN 14.0 assessment |
+| 50 | BIAN-Aligned Application, Software-Service and Team Boundaries | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; apply the boundary-assessment method to further priority domains |
+| 51 | APIs, Events, Commands, Batch, Files, Workflow and External Networks | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; add contract schema, version and operational evidence for implementation decisions |
+| 52 | Deployment, Security, Resilience, Observability and Operations | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; add physical placement and evidence-based recovery objectives when available |
+| 53 | Legacy Modernisation, Data Migration and Transition Architecture | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; add programme-specific transition, cutover and decommissioning evidence |
+| 54 | Governance, Ownership and the Architecture Repository | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; decide whether to govern a dedicated conformance vocabulary |
+| 55 | Measures, Quality Gates and the Full-Bank Coverage Audit | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; rerun the full-bank audit when quantitative operating evidence is introduced |
+| 56 | Integrated End-to-End Scenarios and Practitioner Reference | Under Review | 100 | 100 | 0 | 80 | 100 | Author review; prioritise and approve specifications before producing scenario diagrams |
 | 57 | How to Choose the Right Diagram | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 58 | Minimum Diagram Sets | Planned | 0 | 0 | 0 | 0 | 0 | — |
 | 59 | Diagram Quality Guidelines | Planned | 0 | 0 | 0 | 0 | 0 | — |
@@ -119,4 +119,4 @@ Chapter 14, **Modelling Business Strategy and Capabilities**, remains `Revision 
 
 Chapter 13, **Other Useful Modelling Approaches**, remains `Ready for Author Approval` with final quality score 9.0. Its six figures remain at `Review`, with explicit author decisions still open for chapter and figure approval, native Draw.io graphical-open and export-fidelity comparison (`DEC-021`), and final book-page layout placement of wider landscape figures (`DEC-014`).
 
-Last updated: 2026-07-13 (Chapters 31 to 36 are Drafting and require catalogue-backed completion; Chapters 37 to 56 are Revision Required and await Phase 2 structural redesign)
+Last updated: 2026-07-20 (Chapters 31 to 56 are `Under Review` after catalogue-backed drafting and final technical, beginner, consistency and source reviews. No Part V chapter is `Ready for Author Approval` or `Approved`; author review, BIAN evidence resolution and author-gated diagram work remain.)

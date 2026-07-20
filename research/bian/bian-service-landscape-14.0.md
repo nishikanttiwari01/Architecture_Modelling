@@ -14,7 +14,7 @@
 
 - Claim: The Service Landscape is a reference structure that categorises and organises BIAN Service Domains.
 - Claim: Release 14.0 rationalised Service Domain definitions, removed unnecessary Service Operations, increased ISO 20022 links and renamed, removed or added some Service Domains, especially in payments.
-- Intended chapter(s): 31, 33, 34 and 49 to 56
+- Intended chapter(s): 31 to 56
 - Normative or interpretive: Official release description; implementation cautions are the author's interpretation.
 
 ## Relevant summary

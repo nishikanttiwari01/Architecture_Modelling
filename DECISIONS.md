@@ -339,3 +339,14 @@ Use the format below for all material decisions. Do not delete superseded decisi
 - **Consequences:** Retail Banking explicitly offers card issuing. Business and Corporate Banking offers card issuing, merchant acquiring and Trade Finance. Trade Finance coverage uses explicit process, data, accounting, control, BIAN and scenario records. Shared card processing has no customer-segment applicability.
 - **Related chapters/files:** Chapters 33, 41, 42 and 43; `examples/horizon-bank/business-lines.md`; `products.md`; `value-streams.md`; `coverage-matrix.csv`.
 - **Supersedes / superseded by:** Not superseded.
+
+## DEC-031: Govern Horizon Bank as a full logical application estate
+
+- **Status:** Proposed
+- **Date:** 2026-07-20
+- **Decision owner:** Author
+- **Context:** A small set of illustrative systems cannot support traceability across the full-service-bank domains required by Part V. A vendor inventory would introduce unsupported product choices and would age quickly.
+- **Decision:** Model Horizon Bank through governed logical applications, typed interfaces and logical external networks. Keep logical application responsibilities distinct where lifecycle, accountable owner, data authority or operational boundary differs. Use qualitative resilience tiers until evidence supports quantitative objectives. Do not interpret one logical application as one deployable service, vendor product, team, database or BIAN Service Domain.
+- **Consequences:** The baseline contains 90 logical applications, 106 typed interfaces and 17 external-network classes, connected to business, information, control and resilience catalogues through stable identifiers. Physical products, deployment units, network memberships, recovery objectives and jurisdiction variants remain explicit gaps.
+- **Related chapters/files:** Chapters 34 and 37 to 56; `examples/horizon-bank/applications.md`; `interfaces.md`; `external-networks.md`; `technology-resilience.md`; `coverage-matrix.csv`.
+- **Supersedes / superseded by:** Not superseded.

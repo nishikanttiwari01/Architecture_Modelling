@@ -2,6 +2,23 @@
 
 All notable repository and manuscript changes are recorded here. This is a project history, not a replacement for Git commits.
 
+## 2026-07-20
+
+### Completed the Part V full-bank draft and final integration reviews
+
+- Completed substantive, catalogue-backed Chapters 31 to 56 across the enterprise baseline, banking domains, implementation, transformation, governance and integrated scenarios.
+- Reconciled 2,776 governed identifier uses and 183 source-key uses against the Horizon Bank catalogues, coverage matrix, source register and research notes.
+- Added final technical, beginner, consistency and source/copyright review reports; resolved BIAN evidence-field and payment-interface findings with no Critical or Important blocker remaining.
+- Moved Chapters 31 to 56 to `Under Review`, never `Ready for Author Approval` or `Approved`; author-gated diagrams, exact BIAN mapping evidence and institution-specific operating values remain explicit follow-up work.
+
+### Built the governed full-bank architecture foundation
+
+- Added 95 business domains and subdomains, 178 capabilities, 96 processes and a full organisation-and-role baseline.
+- Added 90 logical applications, 106 typed interfaces and 17 logical external networks spanning all major full-service-bank responsibilities.
+- Expanded accounting, data, system-of-record, reconciliation, control, critical-operation, scenario and technology/resilience catalogues.
+- Hardened validation for required foundation catalogues, domain and capability hierarchy, application prefixes, interface endpoints and controlled interface, security, technology and resilience values.
+- Recorded `DEC-031` to distinguish logical applications from vendor products, deployable services, teams, databases and BIAN Service Domains.
+
 ## 2026-07-13
 
 ### Corrected semantic mappings and hardened Phase 1 governance
