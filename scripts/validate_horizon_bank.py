@@ -14,27 +14,74 @@ RANGE_PATTERN = re.compile(r"\bHB-[A-Z]+-\d{2,3}\s+(?:to|through|[-–])\s*(?:HB
 
 PREFIX_BY_FILE = {
     "accounting-events.md": "ACC", "assumptions.md": "ASM", "bank-profile.md": "BANK",
-    "bian-mapping-register.md": "BIAN", "business-lines.md": "BL", "controls.md": "CTRL",
+    "bian-mapping-register.md": "BIAN", "business-domains.md": "DOM", "business-lines.md": "BL",
+    "capabilities.md": "CAP", "applications.md": "APP", "interfaces.md": "INT",
+    "external-networks.md": "EXT", "reconciliations.md": "REC", "technology-resilience.md": "TECH",
+    "controls.md": "CTRL",
     "critical-operations.md": "CRIT", "customer-segments.md": "SEG", "data-domains.md": "DATA",
     "legal-entities.md": "LE", "organisation-and-roles.md": "ORG", "processes.md": "PROC",
     "products.md": "PRD", "scenario-catalogue.md": "SCN", "systems-of-record.md": "SOR",
     "value-streams.md": "VS",
 }
 ALLOWED_PREFIXES = set(PREFIX_BY_FILE.values()) | {"COV", "CAP", "APP", "INT", "EXT", "REC", "TECH"}
+REQUIRED_FOUNDATION_CATALOGUES = {
+    "business-domains.md", "capabilities.md", "applications.md", "interfaces.md",
+    "external-networks.md", "reconciliations.md", "technology-resilience.md",
+}
 RELATIONSHIP_TARGETS = {
+    "DOM": {"BL", "CAP", "ORG", "PRD", "PROC", "VS"},
+    "CAP": {"BL", "CAP", "DOM", "ORG", "PRD", "PROC", "VS"},
+    "APP": {"CAP", "DATA", "DOM", "INT", "ORG", "PRD", "SOR", "TECH", "VS"},
+    "INT": {"APP", "DATA", "EXT", "PRD", "PROC", "VS"},
+    "EXT": {"APP", "INT", "PRD", "VS"},
+    "REC": {"ACC", "APP", "CRIT", "CTRL", "DATA", "EXT", "INT", "PRD", "PROC", "SCN", "SOR", "VS"},
+    "TECH": {"ACC", "APP", "CAP", "CRIT", "CTRL", "DATA", "DOM", "EXT", "INT", "PRD", "PROC", "REC", "SCN", "SOR", "VS"},
     "BL": {"PRD", "VS"}, "PRD": {"PRD", "VS"}, "VS": {"BL", "PRD", "PROC", "VS"},
-    "PROC": {"PROC", "VS", "ORG"}, "DATA": {"PRD", "VS", "SOR"},
-    "SOR": {"DATA", "PRD", "APP"}, "ACC": {"PRD", "VS"},
-    "CTRL": {"PROC", "DATA", "VS"}, "CRIT": {"PRD", "PROC", "CTRL"},
+    "PROC": {"CAP", "DOM", "ORG", "PROC", "VS"},
+    "DATA": {"APP", "CAP", "DOM", "INT", "PRD", "REC", "SOR", "TECH", "VS"},
+    "SOR": {"APP", "DATA", "PRD", "REC", "TECH"}, "ACC": {"APP", "DATA", "PRD", "REC", "SOR", "TECH", "VS"},
+    "CTRL": {"ACC", "APP", "CAP", "CRIT", "DATA", "DOM", "EXT", "INT", "PROC", "REC", "SCN", "SOR", "TECH", "VS"},
+    "CRIT": {"APP", "CAP", "CTRL", "DATA", "DOM", "EXT", "INT", "PRD", "PROC", "REC", "SCN", "SOR", "TECH", "VS"},
     "BIAN": {"PRD", "VS", "PROC", "CAP"},
-    "SCN": {"PRD", "VS", "PROC", "DATA", "ACC", "CTRL", "BIAN"},
-    "ORG": {"BANK", "BL", "VS"}, "SEG": {"PRD", "BL"}, "LE": {"BANK", "BL", "LE"},
+    "SCN": {"ACC", "APP", "BIAN", "CAP", "CRIT", "CTRL", "DATA", "DOM", "EXT", "INT", "ORG", "PRD", "PROC", "REC", "SOR", "TECH", "VS"},
+    "ORG": {"BANK", "BL", "CAP", "DOM", "PROC", "VS"}, "SEG": {"PRD", "BL"}, "LE": {"BANK", "BL", "LE"},
 }
 REQUIRED = {name: {"ID", "Name", "Definition", "Owner", "Record Status"} for name in PREFIX_BY_FILE}
 for name in REQUIRED:
     if name in {"business-lines.md", "products.md", "value-streams.md", "processes.md"}:
         REQUIRED[name].add("Relationships")
 REQUIRED["assumptions.md"] = {"ID", "Assumption", "Owner"}
+REQUIRED["business-domains.md"] = {
+    "ID", "Name", "Definition", "Level", "Parent ID", "Owner", "Record Status",
+    "Architecture State", "Relationships", "Source Type", "Confidence", "Verification Status", "Gap",
+}
+REQUIRED["capabilities.md"] = set(REQUIRED["business-domains.md"])
+REQUIRED["applications.md"] = {
+    "ID", "Name", "Definition", "Responsibility Family", "Owner", "Ownership Type",
+    "Business Responsibilities", "Product and Value Stream Relationships", "Data Domain Relationships",
+    "Data Authority Role", "System-of-Record Relationships", "Interface Relationships",
+    "Architecture State", "Record Status", "Resilience Class", "Source Type", "Gap",
+}
+REQUIRED["interfaces.md"] = {
+    "ID", "Name", "Definition", "Type", "Direction", "Producer Application",
+    "Consumer Application", "Information", "Security Classification", "Owner",
+    "Architecture State", "Record Status", "Source Type", "Gap",
+}
+REQUIRED["external-networks.md"] = {
+    "ID", "Name", "Definition", "Network Class", "Connectivity Purpose", "Owner",
+    "Connected Applications", "Interface Relationships", "Architecture State", "Record Status",
+    "Source Type", "Confidence", "Verification Status", "Gap",
+}
+REQUIRED["reconciliations.md"] = {
+    "ID", "Name", "Definition", "Reconciliation Type", "Compared Record A", "Compared Record B",
+    "Trigger or Cadence", "Owner", "Exception Owner", "Record Status", "Architecture State",
+    "Relationships", "Source Type", "Confidence", "Verification Status", "Gap",
+}
+REQUIRED["technology-resilience.md"] = {
+    "ID", "Name", "Definition", "Technology Class", "Resilience Class", "Continuity Focus",
+    "Recovery Authority", "Owner", "Record Status", "Architecture State", "Relationships",
+    "Source Type", "Confidence", "Verification Status", "Gap",
+}
 CONTROLLED_FIELDS = {
     "Record Status": "record_status", "Architecture State": "architecture_state",
     "Source Type": "source_type", "Confidence": "confidence",
@@ -42,8 +89,13 @@ CONTROLLED_FIELDS = {
     "Legal Entity Scope": "legal_entity_scope", "Jurisdiction Scope": "jurisdiction_scope",
     "Segment Scope": "customer_segment_scope", "Ownership Type": "ownership_type",
 }
+FILE_CONTROLLED_FIELDS = {
+    "applications.md": {"Resilience Class": "application_resilience_tier"},
+    "interfaces.md": {"Type": "interface_type", "Security Classification": "security_classification"},
+    "technology-resilience.md": {"Technology Class": "technology_class", "Resilience Class": "resilience_class"},
+}
 COVERAGE_COLUMNS = [
-    "coverage_id", "business_line", "legal_entity", "segment", "product", "value_stream",
+    "coverage_id", "business_domain", "business_line", "legal_entity", "segment", "product", "value_stream",
     "capability", "process", "organisation", "application", "authoritative_data/system_of_record",
     "interface", "external_network", "accounting_event", "reconciliation", "control",
     "critical_operation", "technology_or_resilience_classification", "bian_mapping", "scenario",
@@ -74,6 +126,9 @@ def read_tables(path: Path, errors: list[str]) -> list[dict[str, str]]:
 
 def validate_catalogues(root: Path) -> list[str]:
     errors: list[str] = []
+    for filename in sorted(REQUIRED_FOUNDATION_CATALOGUES):
+        if not (root / filename).exists():
+            errors.append(f"missing required catalogue {filename}")
     vocab: dict[str, set[str]] = {}
     vocab_path = root / "controlled-vocabularies.md"
     if vocab_path.exists():
@@ -117,6 +172,15 @@ def validate_catalogues(root: Path) -> list[str]:
             value = row.get(field, "")
             if value and value not in vocab.get(vocabulary, set()):
                 errors.append(f"{label}: invalid {field} {value}")
+        for field, vocabulary in FILE_CONTROLLED_FIELDS.get(path.name, {}).items():
+            value = row.get(field, "")
+            if value and value not in vocab.get(vocabulary, set()):
+                errors.append(f"{label}: invalid {field} {value}")
+        if path.name == "interfaces.md":
+            for field in ("Producer Application", "Consumer Application"):
+                value = row.get(field, "")
+                if value and not value.startswith("HB-APP-"):
+                    errors.append(f"{label}: {field} must reference HB-APP")
         searchable = " ".join(row.values())
         if ABBREVIATED_PATTERN.search(searchable):
             errors.append(f"{label}: abbreviated reference")
@@ -141,27 +205,32 @@ def validate_catalogues(root: Path) -> list[str]:
             if reference not in ids:
                 errors.append(f"{path.name}:{identifier}: unknown reference {reference}")
 
-    product_rows = {i: r for i, r in by_id.items() if i.startswith("HB-PRD-")}
-    for identifier, row in product_rows.items():
-        parent, level = row.get("Parent ID", ""), row.get("Level", "")
-        label = f"products.md:{identifier}"
-        if parent == identifier:
-            errors.append(f"{label}: self-parent")
-        if level == "1" and parent:
-            errors.append(f"{label}: conflicting parent for level 1")
-        if level in {"2", "3"} and not parent:
-            errors.append(f"{label}: orphan product missing parent")
-        if parent in product_rows:
-            expected_level = str(int(product_rows[parent].get("Level", "0")) + 1)
-            if level != expected_level:
-                errors.append(f"{label}: parent level constraint")
-        seen, current = set(), identifier
-        while current in product_rows and product_rows[current].get("Parent ID"):
-            if current in seen:
-                errors.append(f"{label}: hierarchy cycle")
-                break
-            seen.add(current)
-            current = product_rows[current].get("Parent ID", "")
+    for prefix, filename, noun in (
+        ("PRD", "products.md", "product"),
+        ("DOM", "business-domains.md", "business domain"),
+        ("CAP", "capabilities.md", "capability"),
+    ):
+        hierarchy_rows = {i: r for i, r in by_id.items() if i.startswith(f"HB-{prefix}-")}
+        for identifier, row in hierarchy_rows.items():
+            parent, level = row.get("Parent ID", ""), row.get("Level", "")
+            label = f"{filename}:{identifier}"
+            if parent == identifier:
+                errors.append(f"{label}: self-parent")
+            if level == "1" and parent:
+                errors.append(f"{label}: conflicting parent for level 1")
+            if level in {"2", "3"} and not parent:
+                errors.append(f"{label}: orphan {noun} missing parent")
+            if parent in hierarchy_rows:
+                expected_level = str(int(hierarchy_rows[parent].get("Level", "0")) + 1)
+                if level != expected_level:
+                    errors.append(f"{label}: parent level constraint")
+            seen, current = set(), identifier
+            while current in hierarchy_rows and hierarchy_rows[current].get("Parent ID"):
+                if current in seen:
+                    errors.append(f"{label}: hierarchy cycle")
+                    break
+                seen.add(current)
+                current = hierarchy_rows[current].get("Parent ID", "")
 
     coverage = root / "coverage-matrix.csv"
     if coverage.exists():

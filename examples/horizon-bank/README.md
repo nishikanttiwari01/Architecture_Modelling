@@ -10,20 +10,25 @@ Horizon Bank is the fictional full-service bank used throughout the handbook. Co
 | Current and target assumptions | `assumptions.md` |
 | Controlled values | `controlled-vocabularies.md` |
 | Business lines | `business-lines.md` |
+| Business domains and subdomains | `business-domains.md` |
 | Legal entities | `legal-entities.md` |
 | Customer segments | `customer-segments.md` |
 | Products and hierarchy | `products.md` |
 | Value streams | `value-streams.md` |
-| Actors and roles | `actors.md`; replacement organisation catalogue pending |
-| Capabilities | `capabilities.md`; stable-ID expansion pending |
-| Applications | `system-landscape.md`; replacement application catalogue pending |
+| Actors and roles | `organisation-and-roles.md` |
+| Capabilities | `capabilities.md` |
+| Logical applications | `applications.md` |
+| Interfaces | `interfaces.md` |
+| External networks | `external-networks.md` |
 | Processes | `processes.md` |
 | Organisation and roles | `organisation-and-roles.md` |
 | Data domains | `data-domains.md` |
 | Systems of record | `systems-of-record.md` |
 | Accounting events | `accounting-events.md` |
+| Reconciliations | `reconciliations.md` |
 | Controls | `controls.md` |
 | Critical operations | `critical-operations.md` |
+| Technology and resilience classifications | `technology-resilience.md` |
 | Candidate BIAN mappings | `bian-mapping-register.md` |
 | Scenarios | `scenario-catalogue.md` |
 | Coverage | `coverage-matrix.csv`; readable context in `coverage-summary.md` |
@@ -39,4 +44,4 @@ Horizon Bank is the fictional full-service bank used throughout the handbook. Co
 
 ## Phase 1 gaps
 
-Business domains, stable-ID capabilities, the complete Level 1 and Level 2 process hierarchy, the complete organisation model, applications, interfaces, external networks, attribute-level authority, reconciliation, complete accounting and control coverage, technology and resilience classifications, verified BIAN 14.0 mappings and full-bank scenario coverage remain to be completed. `Pending` in the coverage matrix identifies these governed Phase 1 gaps.
+The governed baseline now includes business domains, capabilities, Level 1 and Level 2 processes, organisation and roles, 90 logical applications, typed interfaces, external networks, accounting events, reconciliations, controls, critical operations and technology/resilience classifications. Attribute-level authority, jurisdiction-specific variants, quantitative recovery objectives, verified BIAN mappings and complete scenario-level coverage remain governed gaps. `Pending` in the coverage matrix identifies an unresolved relationship rather than an implied one.

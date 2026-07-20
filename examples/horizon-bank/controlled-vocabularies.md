@@ -28,6 +28,7 @@
 | customer_segment_scope | Retail and SME | Retail and SME segments |
 | customer_segment_scope | Retail, SME and Corporate | Retail, SME and corporate segments |
 | customer_segment_scope | Private and Institutional | Private-banking and institutional segments |
+| customer_segment_scope | Institutional | Institutional segment |
 | customer_segment_scope | All segments | Every governed customer segment |
 | customer_segment_scope | Not applicable | Customer segment does not apply |
 | source_type | Author model | Fictional teaching decision created for this book |
@@ -44,6 +45,32 @@
 | ownership_type | Steward | Role maintaining controlled information |
 | ownership_type | Service owner | Role accountable for an application service |
 | ownership_type | Control owner | Role accountable for a control |
+| interface_type | API | Synchronous application programming interface exchange |
+| interface_type | Command | Directed request to perform a governed action |
+| interface_type | Event | Published notification of a completed or observed fact |
+| interface_type | Message | Asynchronous information exchange not classified as an event or command |
+| interface_type | Batch | Scheduled or grouped processing exchange |
+| interface_type | File | Governed file-based exchange |
+| interface_type | Workflow | Work or case hand-off between responsibilities |
+| security_classification | Internal | Information restricted to authorised internal use |
+| security_classification | Confidential | Sensitive business or customer information requiring controlled access |
+| security_classification | Restricted | Highly sensitive information requiring the strongest governed access |
+| technology_class | Customer interaction | Customer, employee or partner interaction technology |
+| technology_class | Financial transaction processing | Technology that records, controls, routes or settles financial activity |
+| technology_class | Business record and workflow | Governed record, document, case, decision or workflow technology |
+| technology_class | Control and decisioning | Risk, compliance, fraud, authorisation or other control technology |
+| technology_class | Data, accounting and reporting | Data, ledger, analytics and reporting technology |
+| technology_class | Integration and external connectivity | Integration and external exchange technology |
+| technology_class | Security and technology control plane | Security and technology-management services |
+| technology_class | Enterprise support | Workforce, supplier and enterprise support technology |
+| resilience_class | Critical operation direct | Directly performs a critical banking operation |
+| resilience_class | Critical operation supporting | Supports one or more critical banking operations |
+| resilience_class | Time-sensitive financial processing | Performs time-sensitive transaction or position processing |
+| resilience_class | Controlled business service | Provides a governed business service without an approved quantitative target |
+| resilience_class | Enterprise support | Supports enterprise operation without direct critical-operation classification |
+| application_resilience_tier | Tier 1 | Highest qualitative application-resilience tier pending approved quantitative objectives |
+| application_resilience_tier | Tier 2 | Intermediate qualitative application-resilience tier pending approved quantitative objectives |
+| application_resilience_tier | Tier 3 | Standard qualitative application-resilience tier pending approved quantitative objectives |
 
 ## Migration rule
 

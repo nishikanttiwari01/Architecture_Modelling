@@ -90,9 +90,70 @@ class HorizonBankValidationTests(unittest.TestCase):
         self.assertIn("missing required column gap", errors)
 
     def test_rejects_invalid_coverage_status(self):
-        header = ",".join(__import__("scripts.validate_horizon_bank", fromlist=["COVERAGE_COLUMNS"]).COVERAGE_COLUMNS)
-        row = ",".join(["HB-COV-001"] + ["Pending"] * 20 + ["Wrong", "gap"])
+        columns = __import__("scripts.validate_horizon_bank", fromlist=["COVERAGE_COLUMNS"]).COVERAGE_COLUMNS
+        header = ",".join(columns)
+        values = {column: "Pending" for column in columns}
+        values.update(coverage_id="HB-COV-001", status="Wrong", gap="gap")
+        row = ",".join(values[column] for column in columns)
         self.assertIn("invalid status Wrong", self.validate({"coverage-matrix.csv": header + "\n" + row + "\n"}))
+
+    def test_requires_full_bank_foundation_catalogues(self):
+        errors = self.validate({})
+        for filename in (
+            "business-domains.md", "capabilities.md", "applications.md",
+            "interfaces.md", "external-networks.md", "reconciliations.md",
+            "technology-resilience.md",
+        ):
+            self.assertIn(f"missing required catalogue {filename}", errors)
+
+    def test_rejects_wrong_application_and_interface_prefixes(self):
+        applications = (
+            "| ID | Name | Definition | Owner | Record Status |\n"
+            "|---|---|---|---|---|\n"
+            "| HB-INT-01 | Wrong | wrong prefix | Owner | Proposed |\n"
+        )
+        interfaces = (
+            "| ID | Name | Definition | Owner | Record Status |\n"
+            "|---|---|---|---|---|\n"
+            "| HB-APP-01 | Wrong | wrong prefix | Owner | Proposed |\n"
+        )
+        errors = self.validate({"applications.md": applications, "interfaces.md": interfaces})
+        self.assertIn("applications.md:HB-INT-01: expected prefix HB-APP", errors)
+        self.assertIn("interfaces.md:HB-APP-01: expected prefix HB-INT", errors)
+
+    def test_rejects_domain_and_capability_hierarchy_cycles(self):
+        domains = (
+            "| ID | Name | Definition | Level | Parent ID | Owner | Record Status |\n"
+            "|---|---|---|---|---|---|---|\n"
+            "| HB-DOM-001 | One | one | 2 | HB-DOM-002 | Owner | Proposed |\n"
+            "| HB-DOM-002 | Two | two | 2 | HB-DOM-001 | Owner | Proposed |\n"
+        )
+        capabilities = (
+            "| ID | Name | Definition | Level | Parent ID | Owner | Record Status |\n"
+            "|---|---|---|---|---|---|---|\n"
+            "| HB-CAP-001 | One | one | 2 | HB-CAP-001 | Owner | Proposed |\n"
+        )
+        errors = self.validate({"business-domains.md": domains, "capabilities.md": capabilities})
+        self.assertIn("business-domains.md:HB-DOM-001: hierarchy cycle", errors)
+        self.assertIn("capabilities.md:HB-CAP-001: self-parent", errors)
+
+    def test_rejects_invalid_interface_type_and_endpoint_prefix(self):
+        interfaces = (
+            "| ID | Name | Definition | Type | Producer Application | Consumer Application | Owner | Record Status |\n"
+            "|---|---|---|---|---|---|---|---|\n"
+            "| HB-INT-001 | Bad | bad interface | Carrier pigeon | HB-VS-01 | HB-APP-01 | Owner | Proposed |\n"
+        )
+        errors = self.validate({"interfaces.md": interfaces})
+        self.assertIn("invalid Type Carrier pigeon", errors)
+        self.assertIn("Producer Application must reference HB-APP", errors)
+
+    def test_rejects_invalid_application_resilience_tier(self):
+        applications = (
+            "| ID | Name | Definition | Owner | Record Status | Resilience Class |\n"
+            "|---|---|---|---|---|---|\n"
+            "| HB-APP-001 | App | app | Owner | Proposed | Urgent |\n"
+        )
+        self.assertIn("invalid Resilience Class Urgent", self.validate({"applications.md": applications}))
 
 
 if __name__ == "__main__":
